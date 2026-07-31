@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:11.432
+IP addressing is a topic we are going to cover in detail later in this course. As it relates to LANs, however, the vast majority of the time, LANs will have private IP addresses.
+
+00:11.432 --> 00:27.040
+Take, for example, the IP address of this device. I am in a command-line tool and I'm going to run the ipconfig command. The IP address on this adaptor starts with 10.
+
+00:27.040 --> 00:39.202
+Any IP address starting with 10 is a private IP address, meaning it is not routable over a public network, like the Internet. Here's another adaptor with a private IP address.
+
+00:39.202 --> 00:46.870
+This IP address starts with 192.168. That is another range of private IP addresses.
+
+00:46.870 --> 00:55.055
+The last range of private IP addresses you need to know about for the exam is this one: this address starts with 172.22,
+
+00:55.055 --> 01:04.135
+but any IP address that starts with the numbers 172.16 through 172.31 is a private IP address.
+
+01:04.135 --> 01:13.397
+With this addressing scheme, you will often see the same IP addresses being used on different LANs. That is the whole point of private IP addressing.
+
+01:13.397 --> 01:21.408
+These addresses can be reused, which saves from public IP addresses having to be used on every device.
+

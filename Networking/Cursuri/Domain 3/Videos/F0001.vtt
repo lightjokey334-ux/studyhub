@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:09.312
+The first hardware device we are going to explore is that of a network switch. A switch uses a MAC address table to direct traffic within a network.
+
+00:09.312 --> 00:14.421
+A switch does this through learning MAC addresses of the devices connected to it.
+
+00:14.421 --> 00:20.047
+A MAC address, in case you have not seen one, is a hardware address burned into every network device.
+
+00:20.047 --> 00:23.824
+We will look at MAC addresses in a little bit more detail later.
+
+00:23.824 --> 00:35.378
+Back to switches. Switches can transmit data at different speeds: 10 Mbps, 100 Mbps, 1 Gbps, and 10 Gbps.
+
+00:35.378 --> 00:41.097
+Of course, the media plugged into these switches has to be able to transmit at these speeds as well.
+
+00:41.097 --> 00:54.231
+A couple of terms you need to know for the exam: Fast Ethernet is the same as 100 Mbps, and Gigabit Ethernet is the 1 Gbps speed.
+

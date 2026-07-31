@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.690 --> 00:00:04.870
+Two more protocol and port combinations to
+know about for the exam are Remote Desktop
+
+00:00:04.870 --> 00:00:08.870
+Protocol (RDP) and Secure Shell (SSH).
+
+00:00:08.870 --> 00:00:15.329
+RDP, which is used to connect one device to
+another remotely, as I am doing here, runs
+
+00:00:15.329 --> 00:00:17.510
+on port 3389.
+
+00:00:17.510 --> 00:00:24.890
+SSH is often used to connect a device such
+as this to a hardware device, such as a router.
+
+00:00:24.890 --> 00:00:30.320
+SSH can also connect one device to another,
+which is especially the case with Linux devices.
+
+00:00:30.320 --> 00:00:33.180
+SSH runs on port 22.
+
+00:00:33.180 --> 00:00:37.960
+One more note about SSH: It is encrypted and
+is thus secure.
+
+00:00:37.960 --> 00:00:42.719
+Telnet, another protocol used to connect to
+devices, is not secure.
+

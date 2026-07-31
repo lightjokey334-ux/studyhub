@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.560 --> 00:00:05.920
+Another type of connection is a remote desktop&nbsp;
+connection where one connects to and takes over&nbsp;&nbsp;
+
+00:00:05.920 --> 00:00:11.360
+a device. To demonstrate, I will search&nbsp;
+for and start Remote Desktop Connection.&nbsp;&nbsp;
+
+00:00:12.000 --> 00:00:16.720
+From here, I will enter the IP address of&nbsp;
+the device I am connecting to, and then&nbsp;&nbsp;
+
+00:00:16.720 --> 00:00:22.480
+when I select Connect, I will be asked for the&nbsp;
+credentials of the device, which I will enter,&nbsp;&nbsp;
+
+00:00:24.320 --> 00:00:30.560
+and then I will be connected to the machine.&nbsp;
+Once I am connected, I am the only one that&nbsp;&nbsp;
+
+00:00:30.560 --> 00:00:36.240
+can do anything on this machine. Furthermore,&nbsp;
+no one can see what I am doing. As an aside,&nbsp;&nbsp;
+
+00:00:36.240 --> 00:00:40.960
+Windows also has Remote Assistance, which does&nbsp;
+allow one to see what someone is doing when&nbsp;&nbsp;
+
+00:00:40.960 --> 00:00:46.720
+connected to a machine. Other remote tools have&nbsp;
+similar behavior. Some allow for passing control&nbsp;&nbsp;
+
+00:00:46.720 --> 00:00:51.680
+of a device back and forth between the person&nbsp;
+on a device and the person remoted into it.
+

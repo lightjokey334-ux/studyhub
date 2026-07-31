@@ -1,0 +1,39 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.470 --> 00:00:06.680
+An OTDR, an optical time-domain reflectometer,
+is a tool that is used to find faults in fiber-optic
+
+00:00:06.680 --> 00:00:10.450
+cables, specifically kinks and breaks in the
+cable.
+
+00:00:10.450 --> 00:00:13.680
+Here's how it works: A signal is sent down
+the cable.
+
+00:00:13.680 --> 00:00:17.679
+If the signal goes through, the cable can
+handle a signal just fine.
+
+00:00:17.679 --> 00:00:22.029
+If there is a break, the signal will bounce
+off the break and back to its origin.
+
+00:00:22.029 --> 00:00:26.999
+OTDRs can also measure cable length and overall
+attenuation, which is its loss of signal over
+
+00:00:26.999 --> 00:00:27.999
+distance.
+
+00:00:27.999 --> 00:00:33.430
+An OTDR tool performs these actions by reading
+the optical fiber, also known as a light meter.
+
+00:00:33.430 --> 00:00:39.110
+The copper cable equivalent of an OTDR is
+simply a TDR, a time-domain reflectometer.
+

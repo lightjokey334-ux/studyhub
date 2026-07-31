@@ -1,0 +1,60 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:08.160
+I am on a device, and I decided to look up my IP&nbsp;
+address. This IP address is a class A address.&nbsp;&nbsp;
+
+00:00:08.160 --> 00:00:13.680
+How do I know this? Well, IP addresses and their&nbsp;
+subnet masks fall into one of two types: classful&nbsp;&nbsp;
+
+00:00:13.680 --> 00:00:18.560
+or classless. Classful addresses have a pretty&nbsp;
+organized structure for subnet masks, in that the&nbsp;&nbsp;
+
+00:00:18.560 --> 00:00:25.680
+subnet mask number for each octet is either 0 or&nbsp;
+255. Remember, the subnet mask dictates which part&nbsp;&nbsp;
+
+00:00:25.680 --> 00:00:31.680
+of an IP address is the network portion and which&nbsp;
+part is the host portion. The first three classes,&nbsp;&nbsp;
+
+00:00:31.680 --> 00:00:37.600
+A, B, and C, all represent IP addresses in&nbsp;
+wide use on networks. Here are the particulars.&nbsp;&nbsp;
+
+00:00:38.480 --> 00:00:42.880
+There are two more classes you need to know&nbsp;
+about for the exam, classes D and E. They&nbsp;&nbsp;
+
+00:00:42.880 --> 00:00:47.680
+are not used in the same vein as classes&nbsp;
+A through C. We don't assign IP addresses&nbsp;&nbsp;
+
+00:00:47.680 --> 00:00:53.520
+using class D or class E addresses. Class D&nbsp;
+addresses are used for multicast transmissions.&nbsp;&nbsp;
+
+00:00:53.520 --> 00:00:59.920
+Class E addresses are used for research. Here are&nbsp;
+the ranges of class D and class E IP addresses.&nbsp;&nbsp;
+
+00:01:03.680 --> 00:01:08.560
+Going back and looking at these ranges, you may be&nbsp;
+thinking, what about the first number of 127? An&nbsp;&nbsp;
+
+00:01:08.560 --> 00:01:14.480
+address that uses 127 is a loopback or diagnostic&nbsp;
+address and does not fit into this IP addressing&nbsp;&nbsp;
+
+00:01:14.480 --> 00:01:19.920
+scheme. Let's take a look at a classless IP&nbsp;
+address. This IP address has a subnet mask of&nbsp;&nbsp;
+
+00:01:19.920 --> 00:01:27.840
+255.255.240.0, which means it does not fit into&nbsp;
+the scheme of classful addresses we have covered.
+

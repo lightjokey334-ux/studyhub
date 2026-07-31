@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00.000 --> 00:09.619
+IPv4, you may recall, has a group of reserved IP addresses. So does IPv6. Some of these will be similar to IPv4. Here is the list.
+
+00:09.619 --> 00:18.513
+All zeros is the address of a host before it receives an IPv6 address. ::1 is the loopback address.
+
+00:18.513 --> 00:34.704
+This is akin to the 127.0.0.1 address for IPv4. 2000::/3 is the global unicast range for Internet access. FC00::/7, the unique local unicast address range.
+
+00:34.704 --> 00:47.522
+FE80::/10 is the link-local unicast address range, which is similar to APIPA in IPv4. And FF00::/8 is the multicast range.
+
+00:47.522 --> 01:06.028
+In addition to those address ranges, two other address ranges are reserved for examples and documentation. They are: 3FFF:FFFF::/32 and 2001:0DB8::/32.
+

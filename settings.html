@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setări — StudyHub</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+  <header class="topbar" id="settingsTopbar">
+    <a href="index.html" class="brand" style="text-decoration:none; color:inherit;">
+      <span class="brand-mark">&lt;/&gt;</span>
+      <span class="brand-name">StudyHub</span>
+    </a>
+    <div class="topbar-actions">
+      <a href="index.html" class="back-btn" style="text-decoration:none; display:inline-block;">← Înapoi</a>
+    </div>
+  </header>
+
+  <main class="settings-main">
+    <h1 class="screen-title">Setări</h1>
+    <p class="screen-sub">Alege ce se întâmplă când apeși pe numele materiei din interiorul Cursurilor sau Examenelor.</p>
+
+    <div class="settings-card">
+
+      <div class="settings-row" data-key="networking">
+        <div class="settings-row-label">
+          <span class="settings-icon">🌐</span>
+          <span>Networking</span>
+        </div>
+        <select class="settings-select" data-key="networking">
+          <option value="home">Pagina principală (StudyHub)</option>
+          <option value="options">Ecranul de opțiuni al materiei (Cursuri / Examene)</option>
+          <option value="cursuri">Direct la Cursuri (fără ecranul de opțiuni)</option>
+        </select>
+      </div>
+
+      <div class="settings-row" data-key="python">
+        <div class="settings-row-label">
+          <span class="settings-icon">🐍</span>
+          <span>Python</span>
+        </div>
+        <select class="settings-select" data-key="python">
+          <option value="home">Pagina principală (StudyHub)</option>
+          <option value="options">Ecranul de opțiuni al materiei (Cursuri / Examene)</option>
+          <option value="cursuri">Direct la Cursuri (fără ecranul de opțiuni)</option>
+        </select>
+      </div>
+
+      <div class="settings-row" data-key="databases">
+        <div class="settings-row-label">
+          <span class="settings-icon">🗄️</span>
+          <span>Databases</span>
+        </div>
+        <select class="settings-select" data-key="databases">
+          <option value="home">Pagina principală (StudyHub)</option>
+          <option value="options">Ecranul de opțiuni al materiei (Cursuri / Examene)</option>
+          <option value="cursuri">Direct la Cursuri (fără ecranul de opțiuni)</option>
+        </select>
+      </div>
+
+      <p class="settings-note">
+        ℹ️ Logo-ul „StudyHub" de pe pagina principală te duce mereu înapoi
+        la ecranul cu cele 3 carduri — acesta nu e configurabil, pentru că
+        deja ești pe pagina principală.
+      </p>
+    </div>
+
+    <h2 class="settings-section-title">Capitole video (Cursuri)</h2>
+    <p class="screen-sub">Cum pornesc secțiunile din panoul cu capitole video, la fiecare domeniu.</p>
+    <div class="settings-card">
+      <div class="settings-row">
+        <div class="settings-row-label">
+          <span class="settings-icon">🎬</span>
+          <span>Secțiuni video deschise implicit</span>
+        </div>
+        <label class="settings-toggle">
+          <input type="checkbox" class="settings-toggle-input" data-key="videoSections" data-on="expanded" data-off="collapsed">
+          <span class="settings-toggle-slider"></span>
+        </label>
+      </div>
+      <p class="settings-note">
+        ℹ️ Header-ele din sidebar-ul stâng (Domain 1-5) țin minte automat
+        ce ai lăsat deschis/închis ultima dată — nu au nevoie de setare
+        separată aici.
+      </p>
+    </div>
+
+    <h2 class="settings-section-title">Teste și examene</h2>
+    <p class="screen-sub">Panoul cu comenzi rapide de tastatură, afișat lângă panoul „Întrebări".</p>
+    <div class="settings-card">
+      <div class="settings-row">
+        <div class="settings-row-label">
+          <span class="settings-icon">⌨️</span>
+          <span>Panou comenzi rapide</span>
+        </div>
+        <label class="settings-toggle">
+          <input type="checkbox" class="settings-toggle-input" data-key="shortcutsPanel" data-on="shown" data-off="hidden">
+          <span class="settings-toggle-slider"></span>
+        </label>
+      </div>
+      <p class="settings-note">
+        ℹ️ Panoul e disponibil doar pe calculator — pe telefon nu apare
+        oricum, pentru că nu are sens fără tastatură.
+      </p>
+    </div>
+  </main>
+
+  <div class="settings-saved hidden" id="savedNote">✓ Salvat</div>
+
+  <script src="settings.js"></script>
+  <script>
+    // Dacă rulăm în modal (iframe deschis de settings-modal.js), ascunde
+    // navigarea proprie a paginii — închiderea se face din fereastra
+    // părinte (✕, click pe fundal, sau Escape), nu prin navigare.
+    if (window.self !== window.top) {
+      document.getElementById('settingsTopbar').style.display = 'none';
+      document.querySelector('.settings-main').style.paddingTop = '24px';
+    }
+
+    const savedNote = document.getElementById('savedNote');
+    const current = studyhubLoadSettings();
+
+    function showSaved(){
+      savedNote.classList.remove('hidden');
+      clearTimeout(window.__savedNoteTimer);
+      window.__savedNoteTimer = setTimeout(() => savedNote.classList.add('hidden'), 1800);
+    }
+
+    // Select-uri (setări cu 3 opțiuni: logo-ul fiecărei materii)
+    document.querySelectorAll('.settings-select').forEach(sel => {
+      sel.value = current[sel.dataset.key] || STUDYHUB_DEFAULT_SETTINGS[sel.dataset.key];
+      sel.addEventListener('change', () => {
+        const settings = studyhubLoadSettings();
+        settings[sel.dataset.key] = sel.value;
+        studyhubSaveSettings(settings);
+        showSaved();
+      });
+    });
+
+    // Toggle-uri on/off (setări binare)
+    document.querySelectorAll('.settings-toggle-input').forEach(toggle => {
+      const key = toggle.dataset.key;
+      const onValue = toggle.dataset.on;
+      const offValue = toggle.dataset.off;
+      toggle.checked = (current[key] || STUDYHUB_DEFAULT_SETTINGS[key]) === onValue;
+      toggle.addEventListener('change', () => {
+        const settings = studyhubLoadSettings();
+        settings[key] = toggle.checked ? onValue : offValue;
+        studyhubSaveSettings(settings);
+        showSaved();
+      });
+    });
+  </script>
+</body>
+</html>

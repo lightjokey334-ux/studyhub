@@ -1,0 +1,4 @@
+Pune aici fișierele video (.mp4) pentru Domain 1.
+După ce le adaugi, deschide ../cursuri.js și completează câmpul
+"src" al capitolului corespunzător cu numele fișierului, ex:
+{ title: 'Introducere', src: '01-introducere.mp4' }

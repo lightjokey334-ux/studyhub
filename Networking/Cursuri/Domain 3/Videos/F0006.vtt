@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:09.334
+The next exam topic, hardware redundancy, is in the series of exam topics on switches, but really this can apply to any hardware you have on your network.
+
+00:09.334 --> 00:19.858
+The idea of redundancy is to have multiple devices of the same type set up and ready to use on a network so that if one device fails, the other can take over.
+
+00:19.858 --> 00:27.627
+In the case of switches, it would be helpful to have a backup switch ready to go so that if a switch fails, another switch can take over.
+
+00:27.627 --> 00:31.581
+The same goes for routers, servers, and other devices.
+
+00:31.581 --> 00:39.478
+The other added benefit of having backup devices is that, in many cases, they can perform load balancing,
+
+00:39.478 --> 00:45.461
+which is the act of having multiple devices share a workload, thus increasing overall performance.
+
+00:45.461 --> 00:53.527
+And, they support each other in the way of one device taking over the workload should a device fail.
+

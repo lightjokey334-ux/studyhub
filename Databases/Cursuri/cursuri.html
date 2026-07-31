@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Databases — Cursuri</title>
+<link rel="stylesheet" href="../../engine.css">
+<link rel="stylesheet" href="cursuri.css">
+<link rel="stylesheet" href="../../settings-modal.css">
+</head>
+<body>
+
+  <header class="c-topbar">
+    <button class="c-hamburger" id="hamburgerBtn" aria-label="Meniu domenii">☰</button>
+    <div class="c-brand" id="subjectLogo" title="Setările stabilesc unde te duce acest logo">🗄️ Databases</div>
+    <h1 class="c-current-title" id="currentTitle">Domain 1: Database Design — Videos</h1>
+    <div class="c-topnav">
+      <button class="c-arrow" id="historyLink" title="Progresul tău">📊</button>
+      <button class="c-arrow" id="settingsLink" title="Setări">⚙</button>
+      <button id="navPrev" class="c-arrow">‹</button>
+      <button id="navNext" class="c-arrow">›</button>
+    </div>
+  </header>
+
+  <div class="c-layout">
+
+    <nav class="c-sidebar" id="sidebar"></nav>
+    <div class="c-sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <main class="c-main" id="mainArea"></main>
+
+  </div>
+
+  <!-- Motor de întrebări -->
+  <script src="../../progress-bridge.js"></script>
+  <script src="../../engine.js"></script>
+  <script src="../../settings-modal.js"></script>
+
+  <!-- Fișiere cu întrebări (le completezi cu Deepseek + README) -->
+  <script src="Domain 1/Pre-Assessment/pre-assessment.js"></script>
+  <script src="Domain 1/Post-Assessment/post-assessment.js"></script>
+  <script src="Domain 2/Pre-Assessment/pre-assessment.js"></script>
+  <script src="Domain 2/Post-Assessment/post-assessment.js"></script>
+  <script src="Domain 3/Pre-Assessment/pre-assessment.js"></script>
+  <script src="Domain 3/Post-Assessment/post-assessment.js"></script>
+  <script src="Domain 4/Pre-Assessment/pre-assessment.js"></script>
+  <script src="Domain 4/Post-Assessment/post-assessment.js"></script>
+  <script src="Domain 5/Pre-Assessment/pre-assessment.js"></script>
+  <script src="Domain 5/Post-Assessment/post-assessment.js"></script>
+
+  <script src="cursuri.js"></script>
+  <script>
+    document.getElementById('settingsLink').addEventListener('click', () => {
+      openSettingsModal('../../settings.html');
+    });
+    document.getElementById('historyLink').addEventListener('click', () => {
+      openHistoryModal('../../history.html?subject=Databases');
+    });
+  </script>
+</body>
+</html>

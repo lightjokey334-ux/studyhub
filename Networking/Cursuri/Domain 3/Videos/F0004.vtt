@@ -1,0 +1,14 @@
+WEBVTT
+
+00:00.000 --> 00:07.538
+Switches can be managed or unmanaged. Simply put, a managed switch is one that can be configured.
+
+00:07.538 --> 00:15.205
+It can have an IP address set, it can have security settings enabled, and it will usually support VLANs.
+
+00:15.205 --> 00:26.577
+An unmanaged switch, on the other hand, is also known as a plug and play switch because that is basically all you do with it. You plug it in, you plug devices into it, and that is it.
+
+00:26.577 --> 00:37.762
+There is no configuration to set up. For the exam, know that managed switches are configurable and unmanaged switches are not configurable.
+

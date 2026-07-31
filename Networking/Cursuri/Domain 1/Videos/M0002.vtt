@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.620 --> 00:00:04.430
+Within hypervisors, we have virtual machines.
+
+00:00:04.430 --> 00:00:08.711
+Virtual machines are software-based, fully
+functional instances of an operating system
+
+00:00:08.711 --> 00:00:15.040
+inside a hypervisor, allowing us to run multiple
+operating systems in one.
+
+00:00:15.040 --> 00:00:21.050
+Just for an example, I have two virtual machines
+here: one Linux and one Windows.
+
+00:00:21.050 --> 00:00:23.540
+Each serves a specific purpose.
+
+00:00:23.540 --> 00:00:30.180
+The Linux virtual machine is here so that
+I do not need a separate machine to run Linux.
+
+00:00:30.180 --> 00:00:35.260
+This instance of Windows is a test machine
+that I can use to test things without running
+
+00:00:35.260 --> 00:00:37.739
+tests on my regular operating system.
+
+00:00:37.739 --> 00:00:42.460
+That is another reason for having a virtual:
+to have a place to test apps and features
+
+00:00:42.460 --> 00:00:45.530
+without risking one's regular operating system.
+

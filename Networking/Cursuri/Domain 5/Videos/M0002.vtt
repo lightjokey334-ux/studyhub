@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:09.408
+The next command we are going to explore is tracert, short for traceroute. Let me get one started and then I will explain what is going on.
+
+00:09.408 --> 00:22.652
+I will type tracert www.learnkey.com, and press Enter, and what is happening here is we are seeing each router,
+
+00:22.652 --> 00:35.529
+each hop, on the way from this device to the destination of learnkey.com. This is used to possibly troubleshoot where data is having trouble reaching a destination.
+
+00:35.529 --> 00:47.449
+Specifically, if you see a bunch of asterisks here, like we are right now, instead of return times, you can deduce that the problem is with that particular router,
+
+00:47.449 --> 00:55.689
+or it's just looking for another route. In real life, this tool is used to troubleshoot intermittent connectivity problems.
+
+00:55.689 --> 01:04.484
+And, you will be able to see if this problem is with one of your routers or not. You may have to run this several times to get a pattern.
+
+01:04.484 --> 01:13.772
+And despite a couple of issues here, the trace completed, so we see that this route is fine for now.
+

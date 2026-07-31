@@ -1,0 +1,60 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.780 --> 00:00:05.460
+An important aspect of DNS to understand&nbsp;
+both for the exam and beyond is the concept&nbsp;&nbsp;
+
+00:00:05.460 --> 00:00:08.400
+of different types of resources&nbsp;
+records and what they do in DNS.&nbsp;&nbsp;
+
+00:00:08.940 --> 00:00:13.380
+Here we’ll cover some of the more popular&nbsp;
+types of resource records starting with the&nbsp;&nbsp;
+
+00:00:13.380 --> 00:00:20.580
+most common type of record an A record. A&nbsp;
+records resolve host names to IP addresses,&nbsp;&nbsp;
+
+00:00:21.300 --> 00:00:31.680
+specifically IPv4 records. AAAA or quad A&nbsp;
+records resolve host names to IPv6 addresses,&nbsp;&nbsp;
+
+00:00:32.460 --> 00:00:40.260
+where as A records resolve host names to IP&nbsp;
+addresses. Pointer records (PTR) records do just&nbsp;&nbsp;
+
+00:00:40.260 --> 00:00:48.780
+the opposite, they resolve IP addresses to fully&nbsp;
+qualified domain names a reverse of A records.&nbsp;&nbsp;
+
+00:00:51.720 --> 00:00:56.640
+CNAME records canonical name records&nbsp;
+create aliases for host names,&nbsp;&nbsp;
+
+00:00:57.300 --> 00:01:01.920
+this allows users to access a machine by&nbsp;
+a potentially easier to understand name&nbsp;&nbsp;
+
+00:01:02.580 --> 00:01:09.360
+rather than a possibly cryptic name for&nbsp;
+the machine. And then we have MX records,&nbsp;&nbsp;
+
+00:01:09.900 --> 00:01:15.000
+MX Mail Exchanger records are used to&nbsp;
+indicate mail servers used in a network,&nbsp;&nbsp;
+
+00:01:15.540 --> 00:01:21.960
+these and CNAME records must be entered&nbsp;
+manually, an MX record has to entered&nbsp;&nbsp;
+
+00:01:21.960 --> 00:01:28.740
+even after a mail server like Exchange is&nbsp;
+installed. Start of authority (SOA) records&nbsp;&nbsp;
+
+00:01:28.740 --> 00:01:35.280
+contain data for DNS zones, which are the parts&nbsp;
+of a domain each DNS server is responsible for.
+

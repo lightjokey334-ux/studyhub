@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00.000 --> 00:06.271
+Directly connected routes are routes that have just two devices. Usually, this means two routers.
+
+00:06.271 --> 00:14.327
+But, to demonstrate a directly connected route, I will run the tracert command from this command prompt to route me to the default gateway.
+
+00:14.327 --> 00:29.961
+Notice that this only goes through one hop to get there. That is a directly connected route.
+
+00:29.961 --> 00:45.165
+If we contrast this with a tracert to, say, www.learnkey.com, we will see that this route goes through several routers to get to a destination.
+
+00:45.165 --> 00:55.618
+For the exam, know that a directly connected route is a literal connection between two routers.
+

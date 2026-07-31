@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:07.995
+When data moves from a source to a destination via the Physical layer of the OSI model, data is moved in bits of 0s and 1s.
+
+00:07.995 --> 00:19.920
+Before the data is crunched into bits, however, it goes through a process of going from segments to packets to frames as it moves down from layers 4 through 2 of the OSI model.
+
+00:19.920 --> 00:32.169
+Specifically, data looks like this as it moves down the bottom four layers of the OSI model. In the Transport layer, data is broken up into segments and numbered, if TCP is being used.
+
+00:32.169 --> 00:37.388
+This ensures that all of the data segments are accounted for at the destination.
+
+00:37.388 --> 00:44.696
+The Network layer, layer 3, data segments have IP address information added and then they are converted to packets.
+
+00:44.696 --> 00:51.794
+In the Data-link layer, layer 2, data packets have MAC address information added and then are converted to frames.
+
+00:51.794 --> 00:58.707
+And the Physical layer, layer 1, data is converted to bits and then transported to the destination.
+
+00:58.707 --> 01:10.082
+For the exam, the big takeaway is the data going into segments, then packets, then frames, and then bits as it moves down the last four layers of the OSI model.
+

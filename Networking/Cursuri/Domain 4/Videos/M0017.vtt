@@ -1,0 +1,11 @@
+WEBVTT
+
+00:00.000 --> 00:13.206
+An LMHOSTS file is to WINS what a HOSTS file is to DNS. LMHOSTS files resolve IP addresses to NetBIOS names on devices.
+
+00:13.206 --> 00:30.781
+To see a sample of one, I'm in File Explorer and I've navigated to C: drive, Windows, System32, drivers, etc. From here, I'm going to open this LMHOSTS file in Notepad.
+
+00:30.781 --> 00:49.832
+Here we see, commented out, some examples of IP addresses to NetBIOS names. This is the key to know for the exam, not necessarily how to set up or configure one of these files.
+

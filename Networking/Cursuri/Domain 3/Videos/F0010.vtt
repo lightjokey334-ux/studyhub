@@ -1,0 +1,45 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.429 --> 00:00:03.920
+One problem that can come up with switches
+is that loops can occur.
+
+00:00:03.920 --> 00:00:08.099
+They can be physical, such as when a device
+is plugged into itself by accident, which
+
+00:00:08.099 --> 00:00:13.270
+can cause what is known as a broadcast storm,
+in that broadcasts flood through a switch,
+
+00:00:13.270 --> 00:00:14.370
+eventually overloading it.
+
+00:00:14.370 --> 00:00:18.810
+If not physical, switches are prone to receiving
+multiple copies of the same frame of data
+
+00:00:18.810 --> 00:00:21.980
+as it goes through a network.
+
+00:00:21.980 --> 00:00:26.890
+Switches should have a protocol called Spanning
+Tree Protocol enabled to combat this.
+
+00:00:26.890 --> 00:00:32.810
+STP, as it is known, when enabled, uses a
+spanning-tree algorithm, known as STA, to
+
+00:00:32.810 --> 00:00:37.780
+search for, find, and then destroy redundant
+links.
+
+00:00:37.780 --> 00:00:43.850
+Links are found by transmitting BPDUs, Bridge
+Protocol Data Units, and then once a redundant
+
+00:00:43.850 --> 00:00:45.879
+link is identified, it is destroyed.
+

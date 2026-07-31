@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00.000 --> 00:10.610
+Wireless networks operate on the IEEE 802.11 standard. They run on one of two frequencies: the 2.4 GHz frequency or the 5 GHz frequency.
+
+00:10.610 --> 00:18.147
+Generally, 5 GHz networks are faster but do not carry signals nearly as well as that of the 2.4 GHz frequency signals.
+
+00:18.147 --> 00:23.947
+Try setting up a 5 GHz wireless access point behind some walls sometime and you will see what I mean.
+
+00:23.947 --> 00:28.529
+The two frequencies are not compatible on the same wireless network, meaning, for example,
+
+00:28.529 --> 00:34.756
+that if you try to connect a device that has a wireless network card that only runs on the 2.4 GHz frequency
+
+00:34.756 --> 00:44.812
+to a wireless router that only runs on the 5 GHz frequency, you will not be able to do so. Fortunately, most wireless access points run both frequencies.
+
+00:44.812 --> 00:54.954
+And, one of the standards, the 802.11 standard, and one of the standards, the 802.11n standard, supports both frequencies.
+
+00:54.954 --> 01:03.781
+Make sure you know the different 802.11 standards, there are five of them that you need to know for the exam, the frequencies they run on, and their top speeds.
+
+01:03.781 --> 01:11.703
+In other words, this table.  And yes, you may want to pause the video for a moment and take note of these.
+

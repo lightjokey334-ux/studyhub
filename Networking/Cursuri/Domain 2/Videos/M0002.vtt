@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:11.934
+We just discussed private IP addresses, which are reserved address ranges for local use. Here is one more set of IP addresses not used publicly: any address starting with 127.
+
+00:11.934 --> 00:25.756
+To demonstrate, from a command prompt I will type, ping 127.0.0.1, and press Enter. I just pinged my own network card to see if it is working.
+
+00:25.756 --> 00:34.823
+I got a response, so the network card is working. This means that any network connectivity issues will not be a result of a bad network card.
+
+00:34.823 --> 00:46.152
+Here is one more address range for you: 169.254. This is known as APIPA, or Automatic Private IP Addressing.
+
+00:46.152 --> 00:53.983
+This is used when a device cannot get an IP address through a DHCP server, which is a server that gives out IP addresses to devices.
+
+00:53.983 --> 01:01.294
+DHCP will be covered in a little more detail later, but understand that if you see an IP address in this range,
+
+01:01.294 --> 01:15.243
+it means that the device cannot get an IP address from a DHCP server and thus can't connect to any devices except those in the same 169.254 address range.
+

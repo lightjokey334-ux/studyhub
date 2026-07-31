@@ -1,0 +1,109 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.550 --> 00:00:05.150
+Next, we will look at some Linux software
+tools we can use to troubleshoot a problem.
+
+00:00:05.150 --> 00:00:08.950
+As we go through each of these, the key is
+to learn when you would use each tool and
+
+00:00:08.950 --> 00:00:11.060
+the syntax behind each tool.
+
+00:00:11.060 --> 00:00:14.240
+Many of these tools are similar to ones you
+would see in Windows.
+
+00:00:14.240 --> 00:00:18.320
+First, we have a ping, which runs the same
+as in Windows, where we are trying to get
+
+00:00:18.320 --> 00:00:19.730
+to an IP address.
+
+00:00:19.730 --> 00:00:25.619
+I will type, ping 10.1.10.1, and select the
+Enter key on the keyboard.
+
+00:00:25.619 --> 00:00:29.919
+We see that we can reach this destination,
+which happens to be a gateway router.
+
+00:00:29.919 --> 00:00:34.780
+After letting this run, I will select Ctrl+C
+on the keyboard to end this command.
+
+00:00:34.780 --> 00:00:43.780
+Next, I will run the ip addr command, which
+shows the IP address for each network adapter
+
+00:00:43.780 --> 00:00:46.089
+on this device.
+
+00:00:46.089 --> 00:00:50.480
+Traceroute is similar to tracert in Windows
+as it shows a complete path from a source
+
+00:00:50.480 --> 00:00:52.030
+to a destination.
+
+00:00:52.030 --> 00:00:59.570
+I will type, traceroute www.learnkey.com,
+select the Enter key on the keyboard, and
+
+00:00:59.570 --> 00:01:03.089
+we see the path of routers going from the
+source to the destination.
+
+00:01:03.089 --> 00:01:10.260
+Tracepath, which I will run next, shows the
+actual addresses of each destination on the
+
+00:01:10.260 --> 00:01:13.610
+path to a final destination.
+
+00:01:13.610 --> 00:01:19.330
+The dig command is similar to the nslookup
+command in Windows, as the dig command when
+
+00:01:19.330 --> 00:01:25.471
+I run it here shows the location of the current
+DNS server plus the addresses of the 13 root
+
+00:01:25.471 --> 00:01:28.820
+domain servers around the world.
+
+00:01:28.820 --> 00:01:32.330
+The host command actually performs DNS lookups.
+
+00:01:32.330 --> 00:01:39.280
+For example, if I type, host google.com, and
+select the Enter key on the keyboard, we see
+
+00:01:39.280 --> 00:01:41.670
+the DNS servers for google.
+
+00:01:41.670 --> 00:01:47.140
+The netstat command, just like the one in
+Windows, shows open and listening ports on
+
+00:01:47.140 --> 00:01:48.510
+a device.
+
+00:01:48.510 --> 00:01:51.670
+For this, I do not need to run netstat with
+any attributes.
+
+00:01:51.670 --> 00:01:53.950
+I can just run netstat.
+
+00:01:53.950 --> 00:02:00.740
+Lastly, the arp command does in Linux what
+it does in Windows: Show addresses and their
+
+00:02:00.740 --> 00:02:02.100
+accompanying MAC addresses.
+

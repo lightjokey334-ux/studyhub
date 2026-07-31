@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00.000 --> 00:09.831
+The next set of exam topics will cover different topologies, that is, different network layouts. The most common topology for small networks is a star topology.
+
+00:09.831 --> 00:17.631
+In a star topology, a central device, usually a switch, is the centerpiece of the network through which all other devices connect.
+
+00:17.631 --> 00:23.209
+It is easily scalable as it is easy to plug another device into the switch.
+
+00:23.209 --> 00:30.381
+It is also fairly fault tolerant, as a break between a device and a switch typically does not affect the rest of the network.
+
+00:30.381 --> 00:37.930
+Of course, should the central device fail, the network will be down as there is no leftover method for the devices to connect to each other.
+
+00:37.930 --> 00:46.440
+A mesh connection is one you see far more often in WANs than in LANs. Within a mesh connection, every device has a connection to every other device.
+
+00:46.440 --> 00:57.047
+Again, you don't often see this in LANs. But in WANs, it is not uncommon to have every office in a WAN connected to every other office in the WAN, via dedicated lines.
+
+00:57.047 --> 01:05.275
+This provides redundancy and ensures that each office can connect to other offices even if one of the connections fails.
+
+01:05.275 --> 01:14.270
+For the exam, make sure you know the formula for figuring out how many connections are needed for a full mesh given a number of devices.
+
+01:14.270 --> 01:26.948
+For example, in this diagram, four devices are present. The formula looks like this: n * (n-1) / 2 where n is the number of devices.
+
+01:26.948 --> 01:46.391
+In this diagram, there are 4 * (4-1) / 2, or 6 connections. For a mesh with 10 devices, there would be 10 * (10-1) / 2, or 45 connections.
+

@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:13.225
+Well-known ports are ports used for services such as HTTP, for webpages, FTP, for file transfers, DNS, for name resolution, and many others.
+
+00:13.225 --> 00:20.033
+The very last topic of this course will provide you with a table of ports and protocols you need to know for the exam.
+
+00:20.033 --> 00:28.255
+In the meantime, know that port numbers range from 0 to 65535 and they fall into these three categories.
+
+00:28.255 --> 00:42.039
+Ports 0-1023 are well-known ports. Ports 1024-49151 are registered ports which are used for proprietary applications and services.
+
+00:42.039 --> 00:55.283
+Ports 49152-65535 are known as dynamic and private ports, used for applications and for tasks such as open and listening ports for network connections.
+
+00:55.283 --> 01:01.378
+Later, we will see, using the Netstat tool, listening ports on a device.
+

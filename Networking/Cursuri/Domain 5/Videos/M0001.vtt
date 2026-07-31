@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:07.962
+The final set of topics in this course will cover some command-line tools you can use to get information and potentially troubleshoot situations.
+
+00:07.962 --> 00:22.857
+The first tool: ping. Ping is used to see if we can reach a destination. For example, in this command prompt I will type ping (space) www.learnkey.com and press Enter.
+
+00:22.857 --> 00:38.190
+We get four attempts to connect and four responses. This looks good. If we were to get a destination host unreachable message, that would signal a connectivity problem.
+
+00:38.190 --> 00:50.410
+When you need more than four responses from a ping command, you can run ping with a -t option, as I will do here, ping -t www.learnkey.com.
+
+00:50.410 --> 01:03.805
+This will keep pinging a location until I press Ctrl+C to stop the ping. And, if you want to ping an address a specified number of times,
+
+01:03.805 --> 01:27.371
+you can do so using the ping -n command, as I will do here through typing ping (space) -n, let's go 8 times, same website, I'll press Enter. Eight times.
+
+01:27.371 --> 01:36.706
+The latter two pings are often used when you need a larger sample size of pings due to some volatility in a network connection.
+

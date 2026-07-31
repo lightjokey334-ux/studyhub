@@ -1,0 +1,30 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.750 --> 00:00:05.050
+Domain Name Server, DNS, is the next protocol
+we are going to cover.
+
+00:00:05.050 --> 00:00:10.900
+DNS runs on port 53, and the main function
+of DNS is to map hostnames to IP addresses.
+
+00:00:10.900 --> 00:00:15.500
+Here is an example of a DNS table that maps
+hostnames to IP addresses using A records,
+
+00:00:15.500 --> 00:00:17.650
+hostname-to-IP address lookup records.
+
+00:00:17.650 --> 00:00:23.500
+While this DNS table just has entries for
+devices on this network, there are 13 root
+
+00:00:23.500 --> 00:00:30.210
+DNS servers worldwide that carry tables for
+all web addresses and update them as web domains
+
+00:00:30.210 --> 00:00:33.140
+are registered and assigned IP addresses.
+

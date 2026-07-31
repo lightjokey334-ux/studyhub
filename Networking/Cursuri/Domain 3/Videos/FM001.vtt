@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00.000 --> 00:06.384
+In the next domain, we are going to cover the OSI model and talk about layers on the OSI model.
+
+00:06.384 --> 00:15.675
+In relation to that, there are two types of switches we can use: layer 2 and layer 3 switches. Earlier I mentioned that switches use MAC addresses to control traffic.
+
+00:15.675 --> 00:38.077
+Any switch I connect to will learn this MAC address and use it to send traffic to this device. That is a layer 2 switch. What switches do not do is route traffic between networks.
+
+00:38.077 --> 00:42.785
+For this, you need a router, or a layer 3 switch, also known as a multilayer switch.
+
+00:42.785 --> 00:49.681
+That type of switch can use IP addresses, the logical address of this device, to route traffic between networks.
+
+00:49.681 --> 01:00.003
+That's the major difference between a layer 2 and a layer 3 switch. For the exam, you also just need to be aware of security options for a switch.
+
+01:00.003 --> 01:06.322
+Basically, switches use MAC tables to learn MAC addresses of devices connected to the switch.
+
+01:06.322 --> 01:15.426
+In most cases, if no traffic is generated on a connection, these entries will erase themselves from the MAC table in due time.
+
+01:15.426 --> 01:21.094
+One thing you can control on a managed switch is the number of addresses each switch port will memorize.
+
+01:21.094 --> 01:31.279
+If, for example, you only allow one address per port, this will help prevent someone from connecting a rogue device to the network and sending traffic through the switch,
+
+01:31.279 --> 01:40.204
+because that switch will realize, Hey, you're not the MAC address I have down for you on this port, and will not allow that traffic.
+

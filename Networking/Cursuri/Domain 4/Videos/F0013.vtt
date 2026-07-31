@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:12.288
+The next IP address topic we will cover is that of a dual IP stack. Simply put, a dual IP stack is the implementation of both IPv4 and IPv6 within an operating system.
+
+00:12.288 --> 00:27.455
+Common to a dual stack is an IPv4 mapped address, which is an IPv6 address with IPv4 numbering at the end. As an example, take the IPv4 address of 192.168.1.1.
+
+00:27.455 --> 00:49.301
+The IPv6 version that is mapped to this IPv4 address would be ::ffff:192.168.1.1. The :: represents zeros for the first 80 bits of a 128-bit IPv6 address.
+
+00:49.301 --> 00:58.108
+The ffff represent a 1 for the next 16 bits. And then the IPv4 address represents the last 32 bits.
+
+00:58.108 --> 01:08.303
+This exam topic on dual IP stacks is mentioned in both the Understand IPv4 and Understand IPv6 sections.
+
+01:08.303 --> 01:14.618
+Though we are covering it here in the Understand IPv4 section, it would behoove you to come back and view this again
+
+01:14.618 --> 01:25.335
+after you have gone through the first few topics in the IPv6 section, so you get both the IPv4 and IPv6 perspectives of a dual stack.
+

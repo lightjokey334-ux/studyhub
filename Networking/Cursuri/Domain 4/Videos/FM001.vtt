@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00.000 --> 00:12.329
+The subnet mask for an IP address defines the network portion and the host portion of an IP address. To demonstrate, take a look at this IP address and subnet mask.
+
+00:12.329 --> 00:32.122
+The IP address is 10.0.2.46 with a subnet mask of 255.255.255.0. The 255s represent the network portion of the IP address, which in this case is 10.0.2.
+
+00:32.122 --> 00:39.710
+The 0 in the subnet mask represents the host portion of the IP address, which will be different for every device on this network.
+
+00:39.710 --> 00:52.099
+According to this subnet mask, then, in this network, all devices will start with an IP address of 10.0.2 and end with a different number, that number being 0 to 255.
+
+00:52.099 --> 00:59.045
+Technically, the first and last IP addresses in a range are reserved for the network address and broadcast address,
+
+00:59.045 --> 01:05.313
+respectively, so the number ranges available for devices in this subnet would be 1 to 254.
+
+01:05.313 --> 01:23.748
+If the subnet mask were 255.255.0.0, the 10.0 portion would be the host portion and you could have 256 x 256 -2 = 65,534 devices on the network.
+
+01:23.748 --> 01:44.133
+If the subnet mask were 255.0.0.0, the 10 portion would be the host portion and you could have 256 x 256 x 256 -2 = 16,777,214 devices on the network
+
+01:44.133 --> 01:51.486
+Do those numbers sound familiar? They should, because we covered this in the addressing topic earlier in this section.
+
+01:51.486 --> 02:00.344
+Summing this up, the main purpose of a subnet mask is to determine the size of a subnet within a network.
+

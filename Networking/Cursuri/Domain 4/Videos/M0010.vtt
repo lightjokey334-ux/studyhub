@@ -1,0 +1,57 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.849 --> 00:00:05.120
+There are several types of IPv6 addresses
+to know about for the exam and understanding
+
+00:00:05.120 --> 00:00:09.390
+what types of addresses you have and can work
+with when using IPv6.
+
+00:00:09.390 --> 00:00:12.990
+I have run ipconfig on this device, and right
+away, I see two types of IPv6 addresses.
+
+00:00:12.990 --> 00:00:19.050
+The one that starts with 2601 is a global
+unicast address.
+
+00:00:19.050 --> 00:00:23.330
+Global unicast addresses usually start with
+either a 2 or a 3.
+
+00:00:23.330 --> 00:00:27.800
+A global unicast address in IPv6 is equivalent
+to a public IPv4 address.
+
+00:00:27.800 --> 00:00:34.629
+A unique local IPv6 address starts with an
+FC or an FD.
+
+00:00:34.629 --> 00:00:39.589
+Those are public IPv6 addresses as well, but
+they are only routable within a single domain.
+
+00:00:39.589 --> 00:00:43.750
+The other common IPv6 address we see is a
+link-local address.
+
+00:00:43.750 --> 00:00:48.280
+A link-local IPv6 address starts with FE80.
+
+00:00:48.280 --> 00:00:53.870
+These are fairly equivalent to a private IPv4
+address in that these addresses can communicate
+
+00:00:53.870 --> 00:00:56.730
+with other devices on a local network.
+
+00:00:56.730 --> 00:01:02.160
+Still, technically these addresses are most
+similar to the IPv4 APIPA addresses, which
+
+00:01:02.160 --> 00:01:04.790
+start with 169.254.
+

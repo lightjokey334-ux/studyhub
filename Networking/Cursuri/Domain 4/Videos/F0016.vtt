@@ -1,0 +1,44 @@
+WEBVTT
+
+00:00.000 --> 00:10.853
+Being that IPv6 has 128 bits in an IPv6 address, there needs to be a way to write these addresses without having to write 128 binary numbers.
+
+00:10.853 --> 00:21.221
+Fortunately, there is. IPv6 addresses are shown as having eight sets of four hexadecimal numbers. Here is an example of an IPv6 address.
+
+00:21.221 --> 00:29.734
+Hexadecimal numbers range from 0 through 9 and A through F. And therein lies an exam tip.
+
+00:29.734 --> 00:39.030
+If you get an exam question asking to identify an illegitimate IPv6 address, look for letters higher than F in the address.
+
+00:39.030 --> 00:51.062
+There are a couple of methods you can use to shorten the notation of an IPv6 address. First, a contiguous group of four-zero blocks can be replaced with a double colon.
+
+00:51.062 --> 01:01.998
+So, the address above could be rewritten as this. Note, however, that this can only be done once within an IPv6 address.
+
+01:01.998 --> 01:17.567
+You can't replace two sets of zeros with a double colon, another thing to look out for on the exam. In other words, an address like this can become either one of these, but not this.
+
+01:17.567 --> 01:28.664
+The reason: if you had two sets of double colons, how would you know for sure they each were replacing two sets of zeros? You wouldn't. That's why.
+
+01:28.664 --> 01:35.241
+One other shortening method you can use on an IPv6 address is to eliminate leading zeros within a set of numbers.
+
+01:35.241 --> 01:43.415
+For example, using the IP address we shortened earlier, you can eliminate the leading zeros in the last set, and have this.
+
+01:43.415 --> 01:53.678
+For the exam, be able to identify legitimate IPv6 addresses, including ones with shortened notation.
+
+01:53.678 --> 02:03.506
+The equivalent of a subnet mask for IPv4 is a prefix in IPv6. In an earlier topic, we dissected an IPv6 address and mentioned the prefix,
+
+02:03.506 --> 02:15.165
+the first 64 bits of an IPv6 address, is divided into two parts: the network portion, which covers the first 48 bits, and the subnet, which covers the next 16 bits.
+
+02:15.165 --> 02:27.543
+For the exam, be able to take an IPv6 address as the one you see here and be able to identify the network portion, the subnet, and the device address portion.
+

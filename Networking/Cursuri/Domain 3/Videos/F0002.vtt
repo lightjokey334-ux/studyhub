@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:12.272
+We just mentioned that switches have speed capabilities of 10 Mbps to 10 Gbps. Of course, this depends on the type of switch you get. Most switches have multiple capabilities.
+
+00:12.272 --> 00:23.199
+Take for example, a typical switch. It may have a total of 24 or 48 ports, and most of these ports will operate at Fast Ethernet: 100 Mbps.
+
+00:23.199 --> 00:26.889
+A few ports can operate at Gigabit Ethernet speed.
+
+00:26.889 --> 00:40.536
+This allows an administrator to use 100 Mbps ports for devices with 100 Mbps network cards, and, for the faster devices, Gigabit Ethernet ports can be used.
+
+00:40.536 --> 00:48.880
+One thing to look out for in these switches is the LED lights. In most cases, a green light indicates a connection at full speed.
+
+00:48.880 --> 00:58.394
+A yellow light indicates a connection at less than full speed. For example, if you are seeing yellow on a Gigabit Ethernet connection,
+
+00:58.394 --> 01:07.114
+chances are the network cable plugged into the port or the network card from the originating device is only capable of Fast Ethernet speeds.
+
+01:07.114 --> 01:20.471
+A major principle to remember about any network connection is this: With any connection, the speed will only be as good as the slowest device in the connection.
+

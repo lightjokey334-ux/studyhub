@@ -1,0 +1,38 @@
+WEBVTT
+
+00:00.000 --> 00:07.685
+Earlier I mentioned the concept of leased lines, which are dedicated lines a customer can obtain for high-speed, or relatively high-speed, connections.
+
+00:07.685 --> 00:11.720
+The first leased line we are going to cover is that of a T1 line.
+
+00:11.720 --> 00:25.691
+A full T1 line uses twenty-four 64 Kbps channels of data, plus another 8 Kbps for overhead, for a grand total of 1.544 Mbps.
+
+00:25.691 --> 00:36.829
+This is not fast by today's standards, but a T1 line is a dedicated leased line, so whoever leases the line has the full, consistent bandwidth of that line.
+
+00:36.829 --> 00:46.992
+Customers that do not want to pay for a full T1 line can lease a partial T1 line, which really means that the customer is not leasing the full allotment of 24 channels.
+
+00:46.992 --> 00:55.342
+Of course, the speed won't be as high, either. For customers who do not feel that a T1 line is sufficient, a T3 line can be obtained.
+
+00:55.342 --> 01:10.528
+T3 lines run at 44.736 Mbps, which is the equivalent of twenty-eight T1 lines. Technically, T3 lines use six hundred seventy-two 64 Kbps channels.
+
+01:10.528 --> 01:21.263
+As with a T1 line, a customer can lease a partial T3 line and pay accordingly. The European equivalent of the T1 and T3 lines are E1 and E3.
+
+01:21.263 --> 01:27.707
+The concepts are the same but the number of channels each line uses is different, thus making the line speeds different.
+
+01:27.707 --> 01:38.752
+E1 is the European version of the T1 line. It uses thirty-two 64 Kbps channels, so it runs at 2.048 Mbps.
+
+01:38.752 --> 01:56.506
+E3 is the European version of the T3 line. It uses the equivalent of sixteen E1 lines, so the speed is 34.368 Mbps, slower than a T3 line even though the E1 line is faster than a T1 line.
+
+01:56.506 --> 02:08.152
+For the exam, know that the speeds, in order from slowest to fastest, are T1, E1, E3, and T3.
+

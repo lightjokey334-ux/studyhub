@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00.000 --> 00:11.198
+Twisted-pair cables come in multiple categories. There are five of these categories, also known as CATs, that you need to know for the exam, along with their top speeds.
+
+00:11.198 --> 00:23.534
+They are: CAT3—an older cable that is hardly used and only carries data at 10 Mbps; CAT5 is older but still in use in some networks.
+
+00:23.534 --> 00:34.940
+CAT5 is capable of Fast Ethernet, 100 Mbps. CAT5e is used in both 100 Mbps and 1 Gbps capacities.
+
+00:34.940 --> 00:48.006
+CAT6 is used for speeds of up to 10 Gbps but that speed can only be carried for 55 meters instead of the usual 100 meters for twisted-pair cables.
+
+00:48.006 --> 00:58.072
+And then there's CAT6a, which can carry speeds of up to 10 Gbps and for the full distance of 100 meters.
+

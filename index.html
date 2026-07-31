@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudyHub</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="settings-modal.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand" id="homeLogo" title="Înapoi la ecranul principal">
+      <span class="brand-mark">&lt;/&gt;</span>
+      <span class="brand-name">StudyHub</span>
+    </div>
+    <div class="topbar-actions">
+      <button id="historyBtn" class="settings-link" title="Progresul tău">📊 Progres</button>
+      <button id="settingsBtn" class="settings-link" title="Setări">⚙ Setări</button>
+      <button id="backBtn" class="back-btn hidden">← Înapoi</button>
+    </div>
+  </header>
+
+  <main class="home">
+
+    <section id="subjectScreen" class="screen active">
+      <h1 class="screen-title">Ce vrei să înveți azi?</h1>
+      <p class="screen-sub">Alege un domeniu pentru a începe.</p>
+
+      <div class="card-grid">
+        <button class="subject-card" data-subject="Databases">
+          <span class="card-icon">🗄️</span>
+          <span class="card-name">Databases</span>
+          <span class="card-desc">Baze de date & SQL</span>
+        </button>
+
+        <button class="subject-card" data-subject="Networking">
+          <span class="card-icon">🌐</span>
+          <span class="card-name">Networking</span>
+          <span class="card-desc">Rețele & protocoale</span>
+        </button>
+
+        <button class="subject-card" data-subject="Python">
+          <span class="card-icon">🐍</span>
+          <span class="card-name">Python</span>
+          <span class="card-desc">Programare Python</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="optionsScreen" class="screen">
+      <h1 class="screen-title" id="optionsTitle">Networking</h1>
+      <p class="screen-sub">Alege ce vrei să faci.</p>
+
+      <div class="option-grid">
+        <button class="option-card" data-option="cursuri">
+          <span class="option-icon">📘</span>
+          <span class="option-name">Cursuri</span>
+          <span class="option-desc">Videoclipuri &amp; evaluări pe domenii</span>
+        </button>
+        <button class="option-card" data-option="examen1">
+          <span class="option-icon">📝</span>
+          <span class="option-name">Examen 1</span>
+          <span class="option-desc">Test complet, tip examen</span>
+        </button>
+        <button class="option-card" data-option="examen2">
+          <span class="option-icon">📝</span>
+          <span class="option-name">Examen 2</span>
+          <span class="option-desc">Test complet, tip examen</span>
+        </button>
+        <button class="option-card" data-option="examen3">
+          <span class="option-icon">📝</span>
+          <span class="option-name">Examen 3</span>
+          <span class="option-desc">Test complet, tip examen</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="settings.js"></script>
+  <script src="settings-modal.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('settingsBtn').addEventListener('click', () => {
+      openSettingsModal('settings.html');
+    });
+    document.getElementById('historyBtn').addEventListener('click', () => {
+      openHistoryModal('history.html?subject=Networking');
+    });
+  </script>
+</body>
+</html>

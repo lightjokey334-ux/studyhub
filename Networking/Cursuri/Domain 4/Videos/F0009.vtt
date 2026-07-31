@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00.000 --> 00:12.283
+Subnetting is the act of splitting up physical networks into logical subnetworks. Take, for example, a network infrastructure with three areas: administrative, training, and repair.
+
+00:12.283 --> 00:23.491
+You probably would not want all three of these areas on the same logical network. Subnetting allows you to split up this physical network into three logical networks.
+
+00:23.491 --> 00:34.327
+As this is a conceptual exam, the only points for subnetting you really need to know are what it does, and, as we will see later, the purpose of a subnet mask.
+
+00:34.327 --> 00:41.378
+That said, here is what that network I talked about would look like, with each area in its own subnet.
+
+00:41.378 --> 00:54.104
+Then, if you wish to connect these subnets, you would need a router, as each subnet is its own separate network.
+

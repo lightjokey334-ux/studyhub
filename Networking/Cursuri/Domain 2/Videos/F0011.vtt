@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00.000 --> 00:07.109
+The next topology we are going to cover is a ring topology. This is another topology you don't see very often in a LAN.
+
+00:07.109 --> 00:17.334
+One ring topology, Token Ring, was popular, oh, about 20 years ago but since then, the only ring networks commonly in use are Fiber Distributed Data Interface,
+
+00:17.334 --> 00:22.107
+or FDDI networks, to where fiber optic cable connects networks within a ring.
+
+00:22.107 --> 00:30.904
+In a ring topology, data transmissions are token-based, meaning only one token of data is being passed at a time from device to device.
+
+00:30.904 --> 00:39.800
+The positive is that this helps a network to avoid having collisions. The negative is that if there is a break in the ring, the network is down.
+
+00:39.800 --> 00:51.697
+For that reason, FDDI networks often have two rings. Both rings are active, but, if one breaks, that is OK as the other ring will take up the workload until the broken ring is fixed.
+
+00:51.697 --> 00:58.872
+Another network topology that was once very popular but is not used nearly as much now is a bus topology.
+
+00:58.872 --> 01:07.906
+In a bus topology, every device on a network is connected to a backbone cable that runs from one end of the network to the other.
+
+01:07.906 --> 01:12.127
+This backbone cable needs terminators at both ends of the cable so that signals,
+
+01:12.127 --> 01:17.838
+as they travel from one device to another along the bus, can bounce off the end of the cable if needed.
+
+01:17.838 --> 01:22.535
+Without these terminators, signals do not bounce and we do not have a functional network.
+
+01:22.535 --> 01:30.781
+Bus networks are also best kept small in size, because any break in the bus means the entire network is down.
+
+01:30.781 --> 01:36.920
+And, this includes taking down the network to add or remove a device from the network.
+

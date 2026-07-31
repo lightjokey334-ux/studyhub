@@ -1,0 +1,81 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.329 --> 00:00:04.170
+Network segmentation is the act of physically
+and/or logically breaking up a network into
+
+00:00:04.170 --> 00:00:05.430
+smaller networks.
+
+00:00:05.430 --> 00:00:07.140
+Why break up a network?
+
+00:00:07.140 --> 00:00:11.759
+Physical location plays a role in this as,
+in a multi-building campus, for example, it
+
+00:00:11.759 --> 00:00:14.799
+makes sense to have a local network in each
+physical building.
+
+00:00:14.799 --> 00:00:18.600
+There are situations in which, though, in
+a single building, you may want to break up
+
+00:00:18.600 --> 00:00:19.810
+a network logically.
+
+00:00:19.810 --> 00:00:24.269
+Take, for example, a computer training center
+that has two classrooms, an administrative
+
+00:00:24.269 --> 00:00:27.110
+staff, and a repair shop in the back of the
+building.
+
+00:00:27.110 --> 00:00:30.500
+Does it make sense to have everyone on the
+same network?
+
+00:00:30.500 --> 00:00:34.110
+One very important aspect to think through
+here is that of permissions.
+
+00:00:34.110 --> 00:00:38.160
+Do we want classroom students seeing what
+is going on over on the administrative side
+
+00:00:38.160 --> 00:00:39.160
+of the building?
+
+00:00:39.160 --> 00:00:40.610
+Probably not.
+
+00:00:40.610 --> 00:00:43.640
+And the repair shop takes malware off devices.
+
+00:00:43.640 --> 00:00:46.300
+We definitely want that area to be isolated.
+
+00:00:46.300 --> 00:00:51.051
+Right there, that's three logical networks
+we would want: one for the classrooms, one
+
+00:00:51.051 --> 00:00:54.410
+for the administrative staff, and one for
+the repair shop.
+
+00:00:54.410 --> 00:00:59.310
+Again, if you think one group should be isolated
+from others, that defines a network segment.
+
+00:00:59.310 --> 00:01:04.320
+And, as covered elsewhere in this course,
+a physical network can easily be broken up
+
+00:01:04.320 --> 00:01:08.570
+into multiple VLANs to create multiple logical
+networks.
+

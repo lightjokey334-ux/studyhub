@@ -1,0 +1,39 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.429 --> 00:00:05.480
+Within the realm or ports and protocols are
+two email protocols to know for the exam:
+
+00:00:05.480 --> 00:00:14.040
+SMTP or Simple Mail Transfer Protocol and
+IMAP, Internet Message Access Protocol.
+
+00:00:14.040 --> 00:00:21.720
+SMTP is an outgoing mail protocol that runs
+on port 25, and IMAP is an incoming email
+
+00:00:21.720 --> 00:00:24.760
+protocol that runs on port 143.
+
+00:00:24.760 --> 00:00:30.280
+With IMAP, email accessed on a client device
+through an app such as Outlook stays on the
+
+00:00:30.280 --> 00:00:36.300
+email server on which it resides, as opposed
+to Post Office Protocol, POP3, which, by default,
+
+00:00:36.300 --> 00:00:40.110
+would download email off a server and onto
+a client device.
+
+00:00:40.110 --> 00:00:46.670
+With the advent of people using multiple devices
+to access email, email must stay in one location.
+
+00:00:46.670 --> 00:00:51.850
+Thus, IMAP is in use far more than POP3 for
+an incoming email protocol.
+

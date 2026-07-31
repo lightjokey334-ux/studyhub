@@ -1,0 +1,14 @@
+WEBVTT
+
+00:00.000 --> 00:09.893
+In the previous topic, we saw ipconfig used in a variety of ways to show information on IP addresses. But, we focused strictly on IPv4 addresses.
+
+00:09.893 --> 00:28.651
+Now, let's see how the ipconfig command can be used for IPv6 information. For the first example, I will type ipconfig /release6 just to release the IPv6 addresses from this device.
+
+00:28.651 --> 00:41.142
+I'll press Enter, they've been released. Then I will type ipconfig /renew6 to renew some IPv6 addresses.
+
+00:41.142 --> 00:50.714
+I've pressed Enter and this will take a moment. But eventually we'll get some IPv6 addresses assigned to this device.
+

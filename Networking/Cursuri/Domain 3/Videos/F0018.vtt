@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00.000 --> 00:06.015
+By far, the most common type of cable used in LANs is unshielded twisted-pair cable.
+
+00:06.015 --> 00:09.721
+These cables are used for your standard Ethernet networks.
+
+00:09.721 --> 00:17.994
+Unshielded twisted-pair cable, or UTP for short, simply has four twisted pairs of wires that run throughout the cable and transmit data.
+
+00:17.994 --> 00:26.591
+The pairs of wires are twisted as to help avoid EMI, electromagnetic interference. UTP is inexpensive and easy to install.
+
+00:26.591 --> 00:37.293
+For cable that runs through high areas of EMI, such as areas with machinery or fluorescent lighting, you may want to consider STP, shielded twisted-pair cable.
+
+00:37.293 --> 00:47.841
+STP has an extra shielding that coats the wires to, again, help avoid EMI. STP is not used as much as UTP for two reasons.
+
+00:47.841 --> 00:56.859
+First, it is more expensive than UTP. Secondly, the twisting of pairs of wires in UTP is usually enough to hold off EMI.
+
+00:56.859 --> 01:04.261
+One more aspect of twisted-pair cabling you need to know about for the exam is that of plenum cable, which is cable with a plenum jacket.
+
+01:04.261 --> 01:14.764
+In most cases, plenum cable is required for cable running through walls or in between floors. The reason? Plenum cable will not give off a noxious odor in case of a fire.
+
+01:14.764 --> 01:23.991
+Non-plenum cable will. Thus, it is important to check the labels on twisted-pair cables to make sure you have plenum cable when needed.
+

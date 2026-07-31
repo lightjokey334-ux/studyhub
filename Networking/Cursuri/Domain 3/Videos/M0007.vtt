@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.810 --> 00:00:04.730
+Port forwarding offers a way in which one
+can use a specific port as a means to connect
+
+00:00:04.730 --> 00:00:07.160
+to a specific device within a network.
+
+00:00:07.160 --> 00:00:11.710
+Take, for example, someone wanting to remote
+into their home computer through their home
+
+00:00:11.710 --> 00:00:14.860
+internet connection, which is a public facing
+router.
+
+00:00:14.860 --> 00:00:19.140
+The problem is that the home computer probably
+does not have a public IP address.
+
+00:00:19.140 --> 00:00:24.420
+However, we can use a port number to forward
+the connection from the router to the PC.
+
+00:00:24.420 --> 00:00:28.529
+This is known as port forwarding and I will
+open this feature on a router.
+
+00:00:28.529 --> 00:00:33.130
+Then, I will select Add Port Forward and then
+Continue.
+
+00:00:33.130 --> 00:00:42.570
+I will then set my laptop as the connecting
+device and enter port 3389, the Remote Desktop
+
+00:00:42.570 --> 00:00:45.370
+port, as the port to use for this connection.
+
+00:00:45.370 --> 00:00:49.690
+Then I will select Next and the port forward
+has been added.
+
+00:00:49.690 --> 00:00:55.120
+What is very important to do is if a port
+forwarding is no longer needed, remove it,
+
+00:00:55.120 --> 00:01:00.090
+because leaving this here can risk an intruder
+into this device.
+
+00:01:00.090 --> 00:01:05.939
+To remove this, I will select Edit, Delete
+this Port Forward, and then Delete.
+

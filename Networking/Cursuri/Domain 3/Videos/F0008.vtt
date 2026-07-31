@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00.000 --> 00:06.626
+We established earlier that MAC tables store the information needed to direct traffic from a switch to a device.
+
+00:06.626 --> 00:11.765
+When a device connects to a switch, the MAC address of that device is learned.
+
+00:11.765 --> 00:20.255
+This way, if another device transmits data, the switch does one of two things: either it knows the MAC address of the destination and sends the data there,
+
+00:20.255 --> 00:27.799
+or it floods the data out of the other ports to the other devices to find out which device has the destination MAC address.
+
+00:27.799 --> 00:37.645
+As far as transmitting the actual data, switches use two main methods for doing so. Store-and-forward—this is an older method of sending data.
+
+00:37.645 --> 00:45.041
+Basically, a switch will receive a data frame in its entirety, check for errors, and then forward the frame.
+
+00:45.041 --> 00:52.996
+While this is reliable, it is also slower, as a frame isn't sent until its entire contents have been received and checked.
+
+00:52.996 --> 00:57.311
+The other and newer switch type is the cut-through method.
+
+00:57.311 --> 01:05.167
+In this method, a switch just needs to know the frame header that has the destination MAC address and then it sends the frame.
+
+01:05.167 --> 01:15.564
+While this is faster, this doesn't check for errors, so corrupt data frames can be sent, which are then just discarded at the destination.
+

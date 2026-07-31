@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:08.750
+Earlier in this domain, we covered the basics of a VPN, a virtual private network, and how it is a private connection using public networks.
+
+00:08.750 --> 00:16.749
+One piece to understand about VPN connections is that many of these connections use Internet Protocol Security, or IPsec for short.
+
+00:16.749 --> 00:22.686
+IPsec is a suite of protocols that authenticates and encrypts data packets over a VPN connection.
+
+00:22.686 --> 00:32.007
+This helps to provide both confidentiality and integrity of data, which is crucial for making sure data over a VPN connection actually stays private.
+
+00:32.007 --> 00:42.587
+Three IPsec protocols you need to know about for the exam are Security Association, or SA: this generates the authentication and encryption keys used in IPsec;
+
+00:42.587 --> 00:50.625
+Authentication Header, or AH: this provides authentication and integrity of data but not data encryption;
+
+00:50.625 --> 01:00.141
+and then we have Encapsulating Security Protocol, or ESP, which provides authentication, integrity, and encryption of data.
+

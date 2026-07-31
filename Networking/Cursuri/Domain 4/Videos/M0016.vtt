@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:06.432
+Before DNS became popular, HOSTS files were used to resolve hostnames to IP addresses.
+
+00:06.432 --> 00:10.723
+These were tough to manage, as they needed to be updated frequently on users' devices.
+
+00:10.723 --> 00:21.067
+Nowadays, they are only used under special circumstances, such as wanting to have a hostname map to a specific IP address but not have an entry in a DNS table for it.
+
+00:21.067 --> 00:29.302
+Or, maybe you have a private network set up with no DNS server and need some kind of hostname to IP address mapping. Let's take a look at a HOSTS file.
+
+00:29.302 --> 00:52.481
+I am in File Explorer, in the C: drive, and I'm going to navigate to Windows, System32, drivers, etc, and from here, I'm going to open this hosts file in Notepad.
+
+00:52.481 --> 01:04.430
+Here, we see a sample of how this works and instructions on how to set up a hostname entry.
+
+01:04.430 --> 01:14.236
+For the exam, know the purpose of a HOSTS file and its role in resolving hostnames with IP addresses.
+

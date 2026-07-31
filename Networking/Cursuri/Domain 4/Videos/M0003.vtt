@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:08.519
+In networking terms a default gateway is a device to where traffic not meant for the current network is sent. This is almost always a router.
+
+00:08.519 --> 00:17.385
+Without a default gateway, traffic doesn't leave your immediate network. Let's look at a command prompt and I will run ipconfig.
+
+00:17.385 --> 00:34.361
+Notice the IP address for this device, and, not long after that, the default gateway. If you are using DHCP to obtain an IP address, the default gateway should be included.
+
+00:34.361 --> 00:44.321
+Take a look at this server, however, and its network adapter, notice that the IP address is set up statically; so is the default gateway.
+
+00:44.321 --> 00:53.064
+Thus, for any device to where you are setting up the IP address statically, you will also need to know what the default gateway address is.
+
+00:53.064 --> 01:01.581
+Again, this ensures that traffic meant for another network at least gets past this network.
+

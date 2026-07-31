@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:08.966
+Earlier, we covered the use of IPv4 addresses and ports to allow a single IP address to establish connections with multiple locations
+
+00:08.966 --> 00:15.984
+and send packets back and forth to those locations. The same exact thing happens with IPv6 addresses.
+
+00:15.984 --> 00:24.040
+I've left open the netstat -a command I ran in the previous section so we don't have to wait for it to run again,
+
+00:24.040 --> 00:33.639
+and near the bottom of this we had lists for both TCP and UDP connections. Take a look.
+
+00:33.639 --> 00:46.457
+Here is some information on IPv6 addresses and open port numbers for data transmissions. Notice the :: in many places. What does that represent?
+
+00:46.457 --> 00:52.284
+Well, from the addressing topic we covered earlier, a double colon represents all zeros.
+
+00:52.284 --> 01:08.176
+So, these ports are coming from the local address of all zeros, just like they are for IPv4 as we saw earlier. IPv6 has local address ports just like IPv4, only the notation is different.
+

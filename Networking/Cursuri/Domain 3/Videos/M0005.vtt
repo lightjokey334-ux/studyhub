@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:07.961
+Let's take another look at this routing table. Do you see this 0.0.0.0? That is the default route.
+
+00:07.961 --> 00:15.114
+What that is basically saying is, all other traffic not accounted for in one of these network addresses.
+
+00:15.114 --> 00:25.924
+If traffic does not know where to go within a network, chances are it is not destined for that network. That traffic needs somewhere to go, hence the 0.0.0.0 designation.
+
+00:25.924 --> 00:28.525
+And, if we look at the destination,
+
+00:28.525 --> 00:37.224
+it happens to be the default gateway for this network, and this is the default gateway for another network, with another network adapter I have on this device.
+
+00:37.224 --> 00:45.697
+So, what this really means is any traffic not meant for either of these networks will route through their respective default gateways.
+
+00:45.697 --> 00:52.160
+And this makes perfect sense, since the default gateway will lead us out to other networks, like the Internet.
+
+00:52.160 --> 01:05.516
+For the exam, know this about default routes: that the address is 0.0.0.0, and that traffic is usually sent through the default gateway.
+

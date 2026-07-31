@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00.000 --> 00:09.897
+Take a look at this floor plan. This is a common situation in that you need to have multiple physical areas be on the same network.
+
+00:09.897 --> 00:16.955
+Now in this particular situation, you may think you need several levels of switches, such as two on each floor for these two networks,
+
+00:16.955 --> 00:24.306
+and then maybe another switch somewhere to where you can connect all of the operations people to each other and all of the project management people to each other.
+
+00:24.306 --> 00:37.085
+But, you don't. You could, if there aren't that many total users here, do all of this on one switch. You can create logical networks, VLANs, virtual LANs to accomplish this.
+
+00:37.085 --> 00:46.623
+You can do this through allocating some of the switch ports to operations and then the rest to project managers. This, in effect, creates two logical networks in one physical area.
+
+00:46.623 --> 00:50.628
+And if you do have too many users for one physical switch, no problem.
+
+00:50.628 --> 00:59.528
+You can add more physical switches as needed and still have the switches use VLANs to logically segment the network, through setting up trunk ports in between switches.
+
+00:59.528 --> 01:05.898
+In order for these two VLANs to talk to each other, though, you will need a router or a switch with routing capabilities,
+
+01:05.898 --> 01:12.408
+also known as a multilayer switch, and we will talk more about these devices a little later.
+

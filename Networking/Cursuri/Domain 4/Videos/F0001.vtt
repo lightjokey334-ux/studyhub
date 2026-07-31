@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00.000 --> 00:08.595
+To start our discussion on protocols and services, we are going to look at two models for how data gets from a source to a destination.
+
+00:08.595 --> 00:15.467
+The first model is the Open Systems Interconnection model, better known as the OSI model.
+
+00:15.467 --> 00:27.180
+The OSI model is a seven-layer model that defines how data gets from what we see down to binary 1s and 0s as it travels from a source to a destination.
+
+00:27.180 --> 00:35.140
+From the top to the bottom of the OSI model, the seven layers are as follows, with our example being data coming from a website.
+
+00:35.140 --> 00:41.300
+On top we have the Application layer, where application services are represented, like HTTP.
+
+00:41.300 --> 00:49.637
+Then the Presentation layer, where data is formatted and, when necessary, encrypted, like for HTML for webpages.
+
+00:49.637 --> 00:55.041
+The Session layer opens a communication line between the source and the destination.
+
+00:55.041 --> 01:06.913
+The Transport layer gets the data into segments and is responsible for some of the error-checking. TCP is a protocol used heavily on the Transport layer.
+
+01:06.913 --> 01:12.184
+The Network layer is responsible for addressing data, as in giving it an IP address.
+
+01:12.184 --> 01:22.580
+The Data-link layer is responsible for getting data into frames and is responsible for hardware addressing, such as in assigning a MAC address to the data.
+
+01:22.580 --> 01:28.919
+And the Physical layer is responsible for the transport medium, such as Ethernet cables.
+
+01:28.919 --> 01:35.341
+A good way to remember the OSI model is through taking the first letters of each layer and forming a sentence,
+
+01:35.341 --> 01:46.711
+such as All People Seem To Need Data Processing, or, from the bottom up, Please Do Not Throw Sausage Pizza Away.
+

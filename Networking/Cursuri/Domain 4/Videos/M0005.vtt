@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00.000 --> 00:07.266
+In an earlier domain, we introduced the concept of private IP addresses and their use in the overall IP addressing scheme.
+
+00:07.266 --> 00:14.118
+And, since this particular topic is mentioned several times in this course, we will recap those address numbers later.
+
+00:14.118 --> 00:27.880
+Two more ranges of IP addresses of note are multicast addresses and reserved addresses. Take a look at this routing table. In particular, I want you to notice this 224.0.0.0 address.
+
+00:27.880 --> 00:37.693
+This is the first address in the range of multicast addresses. Multicast addresses are not assigned to devices.
+
+00:37.693 --> 00:43.670
+They are used when one device needs to send the same data to multiple devices at once.
+
+00:43.670 --> 00:53.380
+The IP address range for multicast IP addresses is any IP address starting with the numbers 224 through 239.
+
+00:53.380 --> 00:59.438
+Not seen here is a big range of IP addresses with numbers starting from 240 to 255.
+
+00:59.438 --> 01:10.281
+Those are used for experimental purposes, except for this address of 255.255.255.255, which is the overall broadcast address.
+
+01:10.281 --> 01:21.182
+Data sent to this address is sent to every device on a network. This is done when, for example, a device needs to know the MAC address of a device with a certain IP address.
+
+01:21.182 --> 01:31.744
+It asks, quote unquote, everyone on the network for a match. That is the purpose of the overall broadcast address.
+

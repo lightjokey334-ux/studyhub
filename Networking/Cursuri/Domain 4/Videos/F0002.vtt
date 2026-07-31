@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:06.353
+Another network model you need to know about for the exam is the Transmission Control Protocol, or TCP model.
+
+00:06.353 --> 00:18.117
+Whereas the OSI model has seven layers, the TCP model has just four layers: Data-link, Network or Internet, Transport, and Application.
+
+00:18.117 --> 00:29.524
+The four layers of the TCP model map to the seven layers of the OSI model as follows: Physical and Data-link on OSI to Data-link on TCP;
+
+00:29.524 --> 00:44.512
+Network on OSI to Network or Internet on TCP; Transport layer on OSI to Transport layer on TCP; and the Session, Presentation, and Application layers on OSI to Application on TCP.
+
+00:44.512 --> 00:51.612
+The key takeaway for the exam is that the top layer of the TCP model covers the top three layers of the OSI model,
+
+00:51.612 --> 00:57.559
+and that the bottom layer of the TCP model covers the bottom two layers of the OSI model.
+

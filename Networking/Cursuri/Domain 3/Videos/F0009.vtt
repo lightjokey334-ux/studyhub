@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00.000 --> 00:05.726
+We really have not talked much about another type of network device, that of a hub.
+
+00:05.726 --> 00:14.658
+Before switches became popular, hubs were the central devices used to direct traffic in LANs, only they really didn't direct traffic.
+
+00:14.658 --> 00:22.539
+Rather, hubs just took signals and sent them out to all of the devices connected to it, leaving the devices to figure out who the data was for.
+
+00:22.539 --> 00:27.190
+In other words, hubs had no idea whose MAC address was whose or any of that.
+
+00:27.190 --> 00:37.772
+For this reason, once switches became popular and affordable, hubs basically went the way of the dodo bird, except for one use, and that is that hubs do serve as good repeaters.
+
+00:37.772 --> 00:41.387
+They can boost a data signal. So, if for example,
+
+00:41.387 --> 00:49.281
+you have a wired Ethernet network and need to send a signal 500 feet, you can use a hub in the middle of that connection to boost the signal.
+
+00:49.281 --> 00:58.017
+That is necessary, since, as we will discover later, the maximum signal distance in a typical Ethernet cable is 328 feet.
+
+00:58.017 --> 01:08.056
+To sum up: hubs do not store MAC addresses and they do not intelligently forward data to specific locations. Switches do.
+

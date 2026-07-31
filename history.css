@@ -1,0 +1,225 @@
+.history-main{
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+.settings-section-title{
+  margin: 36px 0 14px 0;
+  font-size: 20px;
+}
+
+.history-empty{
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--text-dim);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.history-empty-sub{ font-size: 13px; margin-top: 8px; }
+
+/* ---- taburi materii ---- */
+.hist-subject-tabs{
+  display: flex;
+  gap: 8px;
+  margin: 24px 0 24px 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+.hist-tab{
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 9px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.hist-tab:hover{ border-color: var(--accent-dim); color: var(--text); }
+.hist-tab.hist-tab-active{
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #06140d;
+  font-weight: 700;
+}
+
+/* ---- carduri de domeniu ---- */
+.hist-domain-list{ display: flex; flex-direction: column; gap: 14px; }
+
+.hist-domain-card{
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.hist-domain-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border);
+}
+.hist-domain-title{ font-weight: 700; font-size: 14.5px; }
+.hist-domain-total{
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent-2, #5b8def);
+  background: rgba(91,141,239,.15);
+  padding: 4px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.hist-domain-body{ padding: 6px 0; }
+
+/* ---- rânduri (Videos / Pre / Post / Examen) ---- */
+.hist-subrow{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+}
+.hist-subrow-clickable{ cursor: pointer; transition: background .15s ease; }
+.hist-subrow-clickable:hover{ background: var(--bg-hover, #22233a); }
+
+.hist-subrow-icon{ font-size: 15px; flex-shrink: 0; }
+.hist-subrow-label{ font-size: 14px; flex-shrink: 0; min-width: 140px; }
+.hist-subrow-summary{ font-size: 12.5px; color: var(--text-dim); flex: 1; }
+.hist-subrow-value{
+  font-size: 12.5px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.hist-chevron{
+  color: var(--text-faint);
+  transition: transform .2s ease;
+  flex-shrink: 0;
+}
+.hist-chevron.hist-chevron-open{ transform: rotate(90deg); }
+
+/* ---- lista de încercări ---- */
+/* Animarea max-height forța recalcul de layout la fiecare cadru — pe un
+   CPU slab, asta se simte ca lag. Afișare instant, fără tranziție. */
+.hist-attempts-list{
+  background: var(--bg-elevated);
+}
+.hist-attempts-list.hist-collapsed{
+  display: none;
+}
+
+.hist-attempt-block{ border-top: 1px solid var(--border); }
+.hist-attempt-block:first-child{ border-top: none; }
+
+.hist-attempt-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px 10px 46px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  flex-wrap: wrap;
+}
+.hist-attempt-date{ flex: 1; min-width: 120px; }
+
+.hist-attempt-score{
+  font-weight: 700;
+  min-width: 80px;
+  text-align: right;
+}
+.hist-attempt-score.hist-score-good{ color: #2ecc71; }
+.hist-attempt-score.hist-score-mid{ color: #e0a83e; }
+.hist-attempt-score.hist-score-bad{ color: #e5484d; }
+
+.hist-attempt-duration{ color: var(--text-faint); font-size: 12px; min-width: 70px; text-align: right; }
+
+.hist-mistakes-toggle{
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 11.5px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.hist-mistakes-toggle:hover{ border-color: #e5484d; color: #e5484d; }
+.hist-mistakes-none{ font-size: 11.5px; color: var(--text-faint); white-space: nowrap; }
+
+.hist-mistakes-list{
+  padding: 0 20px 10px 46px;
+}
+.hist-mistakes-list.hist-collapsed{ display: none; }
+
+.hist-mistake-item{
+  font-size: 12.5px;
+  color: var(--text-dim);
+  padding: 10px 12px;
+  background: rgba(229,72,77,.08);
+  border-left: 2px solid #e5484d;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.hist-mistake-question{
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.hist-mistake-part{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  padding: 4px 0;
+}
+.hist-mistake-part-label{
+  font-weight: 700;
+  color: var(--text-dim);
+  min-width: 70px;
+}
+.hist-mistake-your{
+  color: #e5484d;
+  background: rgba(229,72,77,.12);
+  padding: 3px 9px;
+  border-radius: 12px;
+}
+.hist-mistake-correct{
+  color: #2ecc71;
+  background: rgba(46,204,113,.12);
+  padding: 3px 9px;
+  border-radius: 12px;
+}
+
+/* ---- reset ---- */
+.history-reset-row{
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.history-reset-btn{
+  background: transparent;
+  border: 1px solid #e5484d;
+  color: #e5484d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.history-reset-btn:hover{ background: rgba(229,72,77,.12); }
+
+@media (max-width: 560px){
+  .hist-subrow{ flex-wrap: wrap; }
+  .hist-subrow-summary{ width: 100%; order: 3; }
+  .hist-attempt-row{ padding-left: 20px; }
+  .hist-mistakes-list{ padding-left: 20px; }
+}

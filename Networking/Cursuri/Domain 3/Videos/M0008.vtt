@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00.000 --> 00:07.207
+We just discussed and saw that routing can be enabled in Windows Server. Now, let's see how this is set up and configured.
+
+00:07.207 --> 00:19.827
+To install this role, I'll click, from Server Manager, Add roles and features, I'll keep clicking Next until I get to the Server Roles area, and I'll select Remote Access.
+
+00:19.827 --> 00:34.773
+Then I'll click next a couple of times, I'll get to Role Services, and I'm going to click DirectAccess and VPN and add the features necessary, and then the same for Routing.
+
+00:34.773 --> 00:45.168
+I'll click Next and then I'll click Install.  Now, while this is installing, let me show you another server where this stuff has already been installed.
+
+00:45.168 --> 01:02.069
+I've opened in this server, from Server Manager and Tools, Remote Access Management, and I've selected DirectAccess and VPN.
+
+01:02.069 --> 01:10.879
+Now from here I'm going to click Open RRAS management. This is going to open a separate window, which I'm going to maximize.
+
+01:10.879 --> 01:23.083
+This has not yet been configured, so I will right-click this server, and I'll click Configure and Enable Routing and Remote Access. Start the Wizard.
+
+01:23.083 --> 01:30.637
+I'll click Custom configuration, and from here I'm going to set up NAT and LAN routing.
+
+01:30.637 --> 01:38.220
+I'll click Next, double-check and make sure this is what we want here, and then click Finish.
+

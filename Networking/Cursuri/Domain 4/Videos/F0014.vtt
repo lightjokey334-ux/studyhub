@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:10.752
+Whereas IPv4 addresses are 32 bits in length, IPv6 addresses are 128 bits, or, technically, 128 binary 1s and 0s in length.
+
+00:10.752 --> 00:23.720
+IPv6 addressing became necessary as the IPv4 address pool started to become scarce. To put this in perspective, the total number of IPv4 addresses is about four billion.
+
+00:23.720 --> 00:39.808
+The total number of IPv6 addresses? 340 undecillion, or 3.4 x 10 to the 38th power. That is a lot. Here is an example of an IPv6 address.
+
+00:39.808 --> 00:53.514
+Though they are 128 bits in length, they are represented as hexadecimal numbers, 32 of them to be exact. Subnetting in IPv6 is quite a bit different than that of IPv4.
+
+00:53.514 --> 01:03.190
+First, IPv6 networks have /64 prefixes, meaning the first 64 bits in an IPv6 address define the network.
+
+01:03.190 --> 01:14.674
+Within that prefix, the network address is the first 48 bits of the prefix or the first three groups of numbers. The fourth group of numbers represents the subnet address.
+
+01:14.674 --> 01:21.538
+The last four groups of numbers, the last 64 bits, represent the device address.
+

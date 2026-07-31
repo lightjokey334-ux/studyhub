@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:05.819
+Two more pieces of information you need to know about regarding IP addressing are ports and packets.
+
+00:05.819 --> 00:12.998
+Packets we covered in the topic on packets and frames a little earlier in this session. Well-known ports we covered earlier as well.
+
+00:12.998 --> 00:21.995
+Let's see how those ports are used in conjunction with IP addresses. I'm in a command prompt and I want to see which ports are open for data transmissions.
+
+00:21.995 --> 00:37.168
+I'll type the netstat command with a -a option to show all ports, and press Enter. Take a look at these dynamic port numbers. These are all listening for connections from other servers.
+
+00:37.168 --> 00:45.350
+And down here we've got one connection that's established. Note that many of these are using the same IP address.
+
+00:45.350 --> 00:56.148
+Through ports, a single IP address can be used to establish many connections and send data packets back and forth using these ports.
+

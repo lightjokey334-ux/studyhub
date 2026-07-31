@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00.000 --> 00:08.991
+A static route is a route defined by an administrator when, for whatever reason, traffic destined for a certain network needs to go through a certain router.
+
+00:08.991 --> 00:14.380
+As an example, you may have a highly secure portion of your network set to handle sensitive information,
+
+00:14.380 --> 00:24.653
+and you want to make sure that that traffic to that network goes through a specific router. In Windows, a route add command will add a static route.
+
+00:24.653 --> 00:36.710
+As an example, using an elevated command prompt, I've typed route add, then I'll type the network, 192.168.2.0 in this instance,
+
+00:36.710 --> 00:53.021
+the subnet mask with the word, MASK 255.255.255.0, and then the address of where I want this routed through, the default gateway here, 192.168.2.1 in this case.
+
+00:53.021 --> 00:59.280
+I'll press Enter, I'll get the OK signal, and this route has been added.
+
+00:59.280 --> 01:06.848
+The route delete command, with the network specified, will delete a route. Static routes are ok in special circumstances.
+
+01:06.848 --> 01:12.675
+But, you can imagine that trying to manage a lot of these static routes can become problematic.
+
+01:12.675 --> 01:20.023
+For that reason, most routers use dynamic routing, the topic we are covering next.
+

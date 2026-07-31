@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00.000 --> 00:10.413
+The next exam topic will compare two Transport layer protocols: Transmission Control Protocol, or TCP, and User Datagram Protocol, or UDP.
+
+00:10.413 --> 00:16.612
+TCP is a connection-oriented protocol to where data is broken into segments and numbered.
+
+00:16.612 --> 00:26.624
+For example, when you send a Word document to someone via email, that document, at the Transport layer of the OSI model, is broken up into segments of data.
+
+00:26.624 --> 00:33.737
+These segments are then numbered, and, as they travel from source to destination, the segments could take many routes.
+
+00:33.737 --> 00:43.559
+The key is for the Transport layer at the destination to put all of these segments back into order, and let the sender know if any segments need to be resent.
+
+00:43.559 --> 00:52.655
+In other words, TCP requires an acknowledgement of received data. UDP, on the other hand, is a connectionless protocol.
+
+00:52.655 --> 01:01.771
+Data streams from a source to a destination and there is no segment numbering nor acknowledgement of that data received. Now, you may wonder when this is used.
+
+01:01.771 --> 01:12.752
+For one example, UDP is used often in audio and video streaming. Why? Well, there is no need for acknowledgement and resending of data.
+
+01:12.752 --> 01:21.332
+If you are watching a live video, and the video cuts out for a split second, you're not going to call the host up and ask that host to resend that split second.
+
+01:21.332 --> 01:31.330
+UDP uses less overhead than does TCP, which makes it even more favorable for data streams that take up a lot of bandwidth, like for video and audio.
+

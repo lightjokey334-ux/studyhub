@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00.000 --> 00:06.286
+Windows Internet Name Service, or WINS, resolves NetBIOS names to IP addresses.
+
+00:06.286 --> 00:12.148
+This was the common method used to resolve hostnames to IP addresses before DNS came to the forefront.
+
+00:12.148 --> 00:19.159
+Nowadays, you only see WINS used basically on apps that were most likely built a long time ago and still use WINS.
+
+00:19.159 --> 00:25.513
+Most of the time now, DNS is the preferred method of resolving hostnames to IP addresses.
+
+00:25.513 --> 00:31.463
+We have established that DNS is the primary method of resolving host names to IP addresses.
+
+00:31.463 --> 00:38.135
+For the exam and for real-life situations, it is important to know the order in which hostnames are resolved.
+
+00:38.135 --> 00:48.726
+Here is that order:  Before looking at DNS, a host checks to see if the HOSTS file, which we will look at shortly, has a hostname to IP address mapping.
+
+00:48.726 --> 01:03.330
+HOSTS files are used when a DNS entry is not available or wanted for resolving hostnames to IP addresses. The DNS server indicated under one's IP address profile is looked at next.
+
+01:03.330 --> 01:12.855
+If there are multiple DNS servers listed, they will be tried, in order. If none of the local DNS server addresses resolve the name,
+
+01:12.855 --> 01:20.685
+the query is forwarded until a DNS server with the matching IP address is found and then the information is returned to the source.
+

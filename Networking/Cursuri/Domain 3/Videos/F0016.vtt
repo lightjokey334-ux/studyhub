@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:08.201
+The next hardware piece we are going to focus on is cable types and characteristics, including characteristics you need to know for the exam,
+
+00:08.201 --> 00:18.596
+such as optimal cable length and speed. The two types of cables you need to know for the exam are twisted-pair cable: a common copper cable used for Ethernet networks.
+
+00:18.596 --> 00:28.843
+In most cases, a signal will travel up to 100 meters or 328 feet. Speeds range from 10 Mbps to 10 Gbps.
+
+00:28.843 --> 00:38.700
+Twisted-pair cables use RJ-45 connectors, which are slightly larger than that of a phone jack, which is an RJ-11 connector. The other type of cable?
+
+00:38.700 --> 00:47.964
+Fiber optic cable: a cable used more for WAN connections but can be used for high-speed LAN connections, such as for storage area networks.
+
+00:47.964 --> 00:53.545
+Some fiber optic cables can carry signals for up to 70 kilometers, or even a little bit longer.
+
+00:53.545 --> 01:03.277
+Speeds range from 100 Mbps to 10 Gbps. The next three topics will cover these cable types in more detail.
+

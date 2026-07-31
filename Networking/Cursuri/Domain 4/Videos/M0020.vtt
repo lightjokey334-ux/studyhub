@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:06.496
+Earlier, we saw a firewall and we used it to block a port from communication.
+
+00:06.496 --> 00:14.454
+You may recall that on most firewalls, inbound connections tend to be blocked and outbound connections tend to be allowed.
+
+00:14.454 --> 00:26.421
+You may need to open an inbound port to let an app through, like in this example, port 1433 for SQL Server, a database application server.
+
+00:26.421 --> 00:39.315
+I have Windows Firewall with Advanced Security open, I will click Inbound Rules, I'll click New Rule, and then I'll click Port.
+
+00:39.315 --> 00:56.049
+I'll click Next, make sure this is set to TCP, indicate that I want to open port 1433, click Next, make sure this is set to Allow the connection, click Next again,
+
+00:56.049 --> 01:12.157
+I'll apply it to all aspects of this firewall, I'll click Next one more time, I'll name this Allow SQL Server port 1433, and I'll click Finish.
+
+01:12.157 --> 01:19.971
+And now this device will have no trouble accepting incoming connections from a SQL server.
+

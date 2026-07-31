@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00.000 --> 00:12.889
+Telnet is a command-line tool used to connect remotely to devices. It used to be very popular in Windows. The problem with Telnet, though, is that it is not secure.
+
+00:12.889 --> 00:19.904
+Data using a Telnet connection, including usernames and passwords, transmits in cleartext.
+
+00:19.904 --> 00:27.812
+This means that any data going over a Telnet connection is a prime target to be intercepted and used in a negative way.
+
+00:27.812 --> 00:38.876
+For this reason, Telnet is not enabled by default in Windows. Instead of using Telnet, you should use Secure Shell, SSH, whenever possible.
+
+00:38.876 --> 00:50.072
+Unlike Telnet, SSH data transmissions are encrypted, meaning the data, including usernames and passwords, does not transmit in cleartext.
+

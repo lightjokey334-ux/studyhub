@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00.000 --> 00:08.480
+We covered four types of topologies in the last four topics: star, mesh, ring, and bus.
+
+00:08.480 --> 00:16.273
+There is one more aspect to understand about topologies: the difference between a physical topology and a logical topology.
+
+00:16.273 --> 00:20.223
+A physical topology is the actual appearance and setup of a network.
+
+00:20.223 --> 00:29.892
+For example, if you have a device such as a switch or a hub in the middle of a network and devices connected to it, you have a physical star network.
+
+00:29.892 --> 00:39.101
+However, that does not mean the data flows through the network as if it were a star network. This is where the concept of a logical topology comes in.
+
+00:39.101 --> 00:43.461
+A logical topology describes how data flows through a network.
+
+00:43.461 --> 00:48.418
+For example, in the days of Token Ring networks, the physical setup was a star,
+
+00:48.418 --> 00:54.797
+but data flowed through the network as if it were a ring, with a single token bouncing from device to device.
+
+00:54.797 --> 01:01.016
+And Ethernet networks, even though usually a physical star, actually flow logically as a bus topology.
+
+01:01.016 --> 01:08.759
+For the exam, know that there is a difference between a physical and a logical topology.
+

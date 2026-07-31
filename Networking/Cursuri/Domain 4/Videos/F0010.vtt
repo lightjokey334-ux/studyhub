@@ -1,0 +1,14 @@
+WEBVTT
+
+00:00.000 --> 00:10.349
+The next exam topic is actually in the form of a question: why use IP version 4? The answer is simple. It has been the standard for IP addresses for decades.
+
+00:10.349 --> 00:19.911
+And, it is easy to use and configure. For example, you can plug most devices into a network and automatically obtain an IPv4 address.
+
+00:19.911 --> 00:30.755
+It will probably be a private address, but that will allow you to connect to other devices on a network. The other reason: IPv6 is not yet universally implemented.
+
+00:30.755 --> 00:44.610
+Even though the IPv4 address space is running out, or has run out, technically, we are years, possibly decades away from IPv6 becoming the de facto standard for all networks.
+

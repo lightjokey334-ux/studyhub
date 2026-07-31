@@ -1,0 +1,14 @@
+WEBVTT
+
+00:00.000 --> 00:05.789
+We have covered the ipconfig command throughout this course, including in several topics in this domain.
+
+00:05.789 --> 00:15.329
+Given that ipconfig is mentioned one more time here as an exam topic, I'll take this opportunity to get some help on the ipconfig command.
+
+00:15.329 --> 00:31.952
+In this command prompt, I will type ipconfig /? and press Enter. And here are some of the different options for ipconfig. You will want to study these for the exam.
+
+00:31.952 --> 00:50.412
+In fact, I would suggest running the /? help with all of the commands we are covering in this section: ping, tracert, pathping, telnet, ipconfig, and the next one, netstat.
+

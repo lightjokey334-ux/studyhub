@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:11.436
+Many switches have a special type of port called an uplink port. An uplink port is usually used to connect one switch to another switch. Uplink ports have two distinct characteristics.
+
+00:11.436 --> 00:24.858
+First, they are usually faster than the other ports. Whereas, for example, typical ports on a switch have 100 Mbps speed capability, these uplink ports may have a speed of 1 Gbps.
+
+00:24.858 --> 00:30.278
+Secondly, uplink ports are designed to handle both straight through and crossover cables.
+
+00:30.278 --> 00:38.578
+We are covering cables in more detail later in this domain, but understand that normally you need a crossover cable to connect two switches.
+
+00:38.578 --> 00:46.982
+Typically, uplink ports will do the crossing over for you, meaning that you can use a straight through or crossover cable in these types of ports.
+
+00:46.982 --> 00:58.796
+And, you may see these ports as MDI ports or Medium Dependent Interface ports. That is just another name for an uplink port.
+

@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:05.288
+When routing tables determine which routes are the best routes, the routing protocols used,
+
+00:05.288 --> 00:11.290
+as we have seen with RIP and OSPF, help determine which routes are considered to be the best routes.
+
+00:11.290 --> 00:23.130
+All other things being equal, however, a big determining factor in routes is one column we see here, the metric column. Basically, the lower the metric, the better the route.
+
+00:23.130 --> 00:32.844
+Factors that determine the metric include: directly connected routers, which will have a very low metric, static routes will also have a low metric,
+
+00:32.844 --> 00:41.271
+like this one here, and then after that, the routing protocol being used and the mechanisms it uses will determine the metric.
+
+00:41.271 --> 00:49.090
+For the exam, keep in mind the importance of the metric number in determining best routes for a routing table.
+

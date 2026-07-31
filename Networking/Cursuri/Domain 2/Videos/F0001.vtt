@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00.000 --> 00:09.455
+The next series of topics will focus on different types of networks, starting with local area networks, or as they are commonly known, LANs.
+
+00:09.455 --> 00:17.474
+LANs, by definition, are networks that are generally confined to a single building or even a single area of a building.
+
+00:17.474 --> 00:23.996
+LANs share common resources, such as servers, printers, and to an extent, workstations.
+
+00:23.996 --> 00:31.562
+One type of LAN, which we actually covered a little bit in the previous topic, is a perimeter network, otherwise known as a DMZ.
+
+00:31.562 --> 00:37.758
+A perimeter network holds devices that need to be seen by both the public and private security zones of a network.
+
+00:37.758 --> 00:42.261
+These tend to include web servers, email servers, and proxy servers.
+
+00:42.261 --> 00:50.804
+In the example we saw earlier, with a firewall on both sides of a perimeter network, that configuration is known as a back-to-back configuration.
+
+00:50.804 --> 00:59.927
+Here's another possible configuration for a perimeter network. Notice in this configuration that there is a single firewall, with connections to all three security zones.
+
+00:59.927 --> 01:06.017
+This is known as a three-leg perimeter configuration, with each leg connected to a single firewall.
+
+01:06.017 --> 01:13.492
+The exam takeaway here is this: know the difference between a back-to-back configuration, which has a firewall on either side of the perimeter network,
+
+01:13.492 --> 01:19.810
+and the three-leg perimeter configuration, which utilizes a single firewall.
+

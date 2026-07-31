@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.459 --> 00:00:06.810
+Within the TCP model, layers have devices,
+protocols, and applications used at each layer.
+
+00:00:06.810 --> 00:00:11.420
+For example, on the Application Layer, we
+have all the software pieces of data, such
+
+00:00:11.420 --> 00:00:17.050
+as the application protocols, HTTP, DNS, and
+others, and data formats such as text and
+
+00:00:17.050 --> 00:00:18.400
+image formats.
+
+00:00:18.400 --> 00:00:23.650
+Encryption takes place on this layer and the
+use of session protocols such as RPC and PPTP.
+
+00:00:23.650 --> 00:00:26.109
+On the transport layer, TCP is the main protocol.
+
+00:00:26.109 --> 00:00:32.759
+IP is the main protocol on the Internet layer,
+and we start to see hardware come into the
+
+00:00:32.759 --> 00:00:36.800
+model, as routers are used on this layer.
+
+00:00:36.800 --> 00:00:41.390
+On the Network Access layer, switches and
+the media used to transmit data, such as Ethernet
+
+00:00:41.390 --> 00:00:42.610
+cables, are featured.
+

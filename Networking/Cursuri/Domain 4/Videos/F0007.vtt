@@ -1,0 +1,69 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.230 --> 00:00:06.130
+A networking model worth looking into is the
+TCP model or Transmission Control Protocol
+
+00:00:06.130 --> 00:00:07.370
+model.
+
+00:00:07.370 --> 00:00:13.199
+Unlike the OSI model, which has seven layers,
+the TCP model, also known as the TCP/IP model,
+
+00:00:13.199 --> 00:00:18.590
+has four layers: the Network Access Layer,
+the Internet Layer, the Transport Layer, and
+
+00:00:18.590 --> 00:00:20.359
+the Application Layer.
+
+00:00:20.359 --> 00:00:25.439
+From the top-down, the Application Layer performs
+the duties of the Application, Presentation,
+
+00:00:25.439 --> 00:00:27.650
+and Session Layers of the OSI model.
+
+00:00:27.650 --> 00:00:32.570
+Thus, this layer is responsible for formatting
+data and opening a session with a recipient
+
+00:00:32.570 --> 00:00:33.960
+of the data.
+
+00:00:33.960 --> 00:00:38.320
+The Transport Layer in the TCP model does
+the same thing as the Transport Layer in the
+
+00:00:38.320 --> 00:00:42.250
+OSI model, which is data segmentation.
+
+00:00:42.250 --> 00:00:47.260
+The Internet Layer in the TCP model mirrors
+the Network Layer in the OSI model.
+
+00:00:47.260 --> 00:00:52.160
+This layer is responsible for getting data
+into packets and addressing those packets.
+
+00:00:52.160 --> 00:00:58.160
+Finally, the Network Access Layer in the TCP
+model has the same duties as the Data Link
+
+00:00:58.160 --> 00:01:00.600
+and Physical Layers in the OSI model.
+
+00:01:00.600 --> 00:01:06.980
+That is to break the data down into frames,
+add a physical address to the frames, break
+
+00:01:06.980 --> 00:01:11.400
+the data down into bits, and get those bits
+transferred over physical media from a source
+
+00:01:11.400 --> 00:01:12.270
+to a destination.
+

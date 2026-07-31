@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.480 --> 00:00:04.800
+The next set of topics will cover cloud and&nbsp;
+virtualization concepts, the first being a&nbsp;&nbsp;
+
+00:00:04.800 --> 00:00:10.960
+Hypervisor. A Hypervisor is a tool that manages&nbsp;
+physical resources for virtual machines. Take a&nbsp;&nbsp;
+
+00:00:10.960 --> 00:00:18.160
+look at Hyper-V manager, Microsoft's hypervisor.&nbsp;
+I have two virtual machines here as of now, and&nbsp;&nbsp;
+
+00:00:18.160 --> 00:00:23.760
+the job of the hypervisor is to manage how these&nbsp;
+virtual machines handle physical system resources.&nbsp;&nbsp;
+
+00:00:24.400 --> 00:00:32.160
+For example, I have 3 GB of RAM allocated to this&nbsp;
+instance of Ubuntu, a Linux operating system.&nbsp;&nbsp;
+
+00:00:32.160 --> 00:00:37.520
+It is up to the hypervisor to get the physical RAM&nbsp;
+needed for this virtual machine. Hyper-V manager&nbsp;&nbsp;
+
+00:00:37.520 --> 00:00:43.280
+is a Type II hypervisor, meaning it sits within&nbsp;
+an operating system, such as Windows 10 Pro,&nbsp;&nbsp;
+
+00:00:43.280 --> 00:00:48.400
+which I am running on this computer. Hypervisors&nbsp;
+like vSphere and Citrix XenServer are Type I&nbsp;&nbsp;
+
+00:00:48.400 --> 00:00:55.280
+hypervisors, also known as bare-metal hypervisors.&nbsp;
+These run on their own operating systems.
+

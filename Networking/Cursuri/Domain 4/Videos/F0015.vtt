@@ -1,0 +1,14 @@
+WEBVTT
+
+00:00.000 --> 00:10.112
+As we continue to cover IPv6, a question we need to answer is, why use IPv6? The two biggest reasons: security and address space.
+
+00:10.112 --> 00:21.309
+IPsec, a leading security protocol, is built into IPv6. IPsec provides authentication and encryption on data, which helps to secure data transmissions.
+
+00:21.309 --> 00:34.961
+Secondly, as IPv6 addresses have 128 bits, as mentioned previously, we also mentioned that there are 3.4 x 10 to the 38th power of IPv6 addresses available.
+
+00:34.961 --> 00:45.698
+Unlike IPv4, we aren't going to run out of IPv6 addresses anytime soon. Those are the two biggest reasons to use IPv6.
+

@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:05.600
+With NAT, three kinds of address translations&nbsp;
+can occur as a request from a private address&nbsp;&nbsp;
+
+00:00:05.600 --> 00:00:10.640
+is attached to a public IP address. First, we&nbsp;
+have NAT that takes place where every private&nbsp;&nbsp;
+
+00:00:10.640 --> 00:00:15.600
+IP address that makes a request gets a public&nbsp;
+IP address to use. This process is a rare way&nbsp;&nbsp;
+
+00:00:15.600 --> 00:00:19.760
+to do NAT as most homes and businesses&nbsp;
+have only one public IP address to use.&nbsp;&nbsp;
+
+00:00:20.320 --> 00:00:24.720
+Another way to do NAT is to use a NAT pool&nbsp;
+where a private IP address request uses an&nbsp;&nbsp;
+
+00:00:24.720 --> 00:00:29.680
+available public IP address from a pool of IP&nbsp;
+addresses. This process can be problematic.&nbsp;&nbsp;
+
+00:00:30.560 --> 00:00:37.760
+Say there are five public IP addresses in a pool&nbsp;
+and 20 devices with private IP addresses making&nbsp;&nbsp;
+
+00:00:37.760 --> 00:00:42.720
+requests, then 15 devices will need to wait&nbsp;
+for a public IP address to become available.&nbsp;&nbsp;
+
+00:00:43.600 --> 00:00:50.160
+The most common form of NAT is Port NAT, often&nbsp;
+known as Port Address Translation. In this setup,&nbsp;&nbsp;
+
+00:00:50.160 --> 00:00:55.680
+each private IP address request gets assigned a&nbsp;
+port from a public IP address. This combination&nbsp;&nbsp;
+
+00:00:55.680 --> 00:01:02.160
+of public IP address and port is used to send&nbsp;
+a request for data to another network. Then,&nbsp;&nbsp;
+
+00:01:02.160 --> 00:01:06.320
+when the data is received, the router knows&nbsp;
+what port number matches up with the private IP&nbsp;&nbsp;
+
+00:01:06.320 --> 00:01:11.840
+address requesting the data, and then the data&nbsp;
+is sent to the device that requested the data.
+

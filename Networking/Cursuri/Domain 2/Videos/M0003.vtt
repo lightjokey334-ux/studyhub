@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:08.075
+There are two basic types of wireless networks: infrastructure, and ad hoc, otherwise known as point-to-point, or P2P.
+
+00:08.075 --> 00:15.245
+An infrastructure wireless network is one in which one or more wireless access points, like the one we see here, is the central point of the network.
+
+00:15.245 --> 00:19.712
+Clients connect to the network and possibly to each other through this wireless access point.
+
+00:19.712 --> 00:28.129
+And, the service set identifier, the SSID, of which we see one here, is the name for the network.
+
+00:28.129 --> 00:38.241
+The other type of wireless network, ad hoc, or P2P, has no central wireless access point. In this type of network, two devices wirelessly connect directly to each other.
+
+00:38.241 --> 00:40.385
+This is not very common for two reasons.
+
+00:40.385 --> 00:51.542
+First, an infrastructure network like this is easy to set up. Secondly, an ad hoc connection does not have the security nor encryption that an infrastructure network has.
+

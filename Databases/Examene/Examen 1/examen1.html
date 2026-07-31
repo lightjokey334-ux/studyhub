@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Databases — Examen 1</title>
+<link rel="stylesheet" href="../../../engine.css">
+<link rel="stylesheet" href="../exam.css">
+<link rel="stylesheet" href="../../../settings-modal.css">
+</head>
+<body>
+
+  <header class="ex-topbar">
+    <div class="ex-brand" id="subjectLogo" title="Setările stabilesc unde te duce acest logo">🗄️ Databases</div>
+    <div id="examTitle">Examen 1</div>
+    <div class="ex-actions">
+      <button class="ex-back" id="historyBtn" title="Progresul tău">📊 Progres</button>
+      <button class="ex-back" id="settingsBtn" title="Setări">⚙ Setări</button>
+      <button class="ex-back" id="examBackBtn">✕ Închide</button>
+    </div>
+  </header>
+
+  <main class="ex-main">
+    <div id="examContainer"></div>
+  </main>
+
+  <script src="../../../progress-bridge.js"></script>
+  <script src="../../../engine.js"></script>
+  <script src="../../../settings-modal.js"></script>
+  <script src="examen1-questions.js"></script>
+  <script src="../exam-runner.js"></script>
+  <script>
+    document.getElementById("settingsBtn").addEventListener("click", () => {
+      openSettingsModal("../../../settings.html");
+    });
+    document.getElementById("historyBtn").addEventListener("click", () => {
+      openHistoryModal("../../../history.html?subject=Databases");
+    });
+  </script>
+</body>
+</html>

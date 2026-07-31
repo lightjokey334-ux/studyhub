@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:11.608
+Routers, which route traffic between networks, have a wide variety of speeds in which they can transmit data. Some routers can transmit data in excess of 1 Gbps.
+
+00:11.608 --> 00:20.447
+But, here is the thing to consider with router speeds: they, like other devices, can only transmit data as fast as the media connected to them.
+
+00:20.447 --> 00:30.887
+For example, say you have an 802.11n router, which can reach speeds of up to 600 Mbps wirelessly. And, that router has some Ethernet ports.
+
+00:30.887 --> 00:42.101
+Let's assume, for the sake of argument, that those are Fast Ethernet ports. Well, in that case, the wireless connection will be faster, as Fast Ethernet is 100 Mbps speed.
+
+00:42.101 --> 00:46.750
+Quite a difference. For router speeds, just understand that most routers, speed-wise,
+
+00:46.750 --> 00:52.259
+are going to be at the mercy of the media plugged into them or the wireless devices connected to them.
+
+00:52.259 --> 00:58.413
+In other words, you may often not get the top speeds as advertised by the device itself.
+

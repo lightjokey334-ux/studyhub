@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>StudyHub storage bridge</title></head>
+<body>
+<!--
+  storage-bridge.html — pagină "invizibilă", încărcată într-un iframe ascuns
+  pe cursuri.html și examenX.html. Scopul ei: orice citire/scriere în
+  localStorage legată de progres (istoricul testelor, timpul petrecut pe
+  taburi) se face AICI, în contextul rădăcinii proiectului — la fel cum
+  settings.html rezolvă problema pentru Setări. Fără acest bridge, fiecare
+  folder (Networking/Cursuri/, Networking/Examene/Examen 1/, etc.) ar avea
+  propriul localStorage izolat pe unele browsere, la file://, și progresul
+  nu s-ar aduna niciodată într-un singur loc.
+
+  Comunicare prin postMessage:
+    { type: 'studyhub-bridge-get', requestId, key }
+      -> răspunde { type: 'studyhub-bridge-value', requestId, value }
+    { type: 'studyhub-bridge-set', requestId, key, value }
+      -> răspunde { type: 'studyhub-bridge-ack', requestId }
+-->
+<script>
+window.addEventListener('message', (e) => {
+  const msg = e.data || {};
+
+  if (msg.type === 'studyhub-bridge-get') {
+    let value = null;
+    try { value = localStorage.getItem(msg.key); } catch (err) { /* ignoră */ }
+    if (e.source) e.source.postMessage({ type: 'studyhub-bridge-value', requestId: msg.requestId, value }, '*');
+  }
+
+  if (msg.type === 'studyhub-bridge-set') {
+    try { localStorage.setItem(msg.key, msg.value); } catch (err) { /* ignoră */ }
+    if (e.source) e.source.postMessage({ type: 'studyhub-bridge-ack', requestId: msg.requestId }, '*');
+  }
+});
+</script>
+</body>
+</html>

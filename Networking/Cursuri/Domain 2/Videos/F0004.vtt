@@ -1,0 +1,32 @@
+WEBVTT
+
+00:00.000 --> 00:11.782
+We are now going to turn our attention to wide area networks, also known as WANs. WANs are networks that cover multiple geographical areas and are usually a collection of LANs.
+
+00:11.782 --> 00:20.593
+For example, a company could have its corporate headquarters in one location and have satellite offices in multiple locations, each with its own LAN.
+
+00:20.593 --> 00:29.019
+And often, leased lines are used to connect these networks. A leased line is a dedicated connection from one location to another.
+
+00:29.019 --> 00:38.079
+There are several types of leased lines you need to know about for the exam, and the next few topics will go into details on those types of leased lines.
+
+00:38.079 --> 00:48.205
+One type of line that is not a leased line is a dial-up line. Though pretty rare, dial-up is still the only means of getting to the outside world for some users.
+
+00:48.205 --> 01:00.711
+In order to utilize a dial-up connection, a phone line and a server which accepts dial-up connections is needed. Dial-up connections are very, very slow by today's standards.
+
+01:00.711 --> 01:11.484
+The top advertised speed is 56 Kbps, but in reality, 38 Kbps or so is about as fast of a connection as one can expect through dial-up connections.
+
+01:11.484 --> 01:21.116
+One of the first advancements from dial-up is that of Integrated Services Digital Network, or ISDN for short. There are two types of ISDN connections.
+
+01:21.116 --> 01:36.185
+Basic Rate ISDN, or BRI, this uses two 64 Kbps channels for a total speed of 128 Kbps, more than double that of a dial-up connection. There's also Primary Rate ISDN, or PRI.
+
+01:36.185 --> 01:50.872
+This uses twenty-three 64 Kbps channels for a total speed of 1.536 Mbps. PRI runs on a T1 circuit line. T-lines will be covered shortly.
+

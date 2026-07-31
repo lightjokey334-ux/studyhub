@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:10.907
+Most routing is not going to be done through static routing, because, as previously discussed, having to manage a lot of these static routes is, at best, tough to do.
+
+00:10.907 --> 00:17.099
+Rather, routing tables should be able to form and update as routers enter and exit a network infrastructure.
+
+00:17.099 --> 00:27.172
+To best handle this, dynamic routing protocols should be used. In Windows, TCP/IP is the default dynamic routing protocol.
+
+00:27.172 --> 00:32.854
+And, that is the routing protocol you see in this routing table on a Windows device.
+
+00:32.854 --> 00:43.608
+Other routing protocols you need to know about for the exam are Routing Information Protocol, or RIP, and Open Shortest Path First, or, OSPF.
+
+00:43.608 --> 00:49.816
+RIP and OSPF will be covered in some detail in the next topic.
+

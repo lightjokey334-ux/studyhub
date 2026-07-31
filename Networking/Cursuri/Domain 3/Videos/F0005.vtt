@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:11.364
+We established that for situations in which you need to create logical networks with devices scattered throughout an infrastructure, you will want to create virtual LANs, VLANs for short.
+
+00:11.364 --> 00:23.792
+Let's further plan this scenario. You can create two VLANs on a switch, VLAN1 and VLAN2 for example. You could then allocate half the switch ports to each VLAN.
+
+00:23.792 --> 00:31.049
+If, for whatever reason, you end up with more people in operations than in project management, no problem.
+
+00:31.049 --> 00:38.427
+You can easily move some physical switch ports to VLAN1 to accommodate the need for more ports being in operations.
+
+00:38.427 --> 00:43.875
+That is the beauty of VLANs: being able to adjust the number of ports assigned to each VLAN.
+
+00:43.875 --> 00:55.087
+Let's say, as these departments grow, you end up placing a second physical switch in the network. You can then make a connection between this and the original switch a trunk line.
+
+00:55.087 --> 01:01.575
+This will extend the VLAN capabilities to the second switch and give you a better physical situation for your network,
+
+01:01.575 --> 01:14.327
+as you won't have to run cables over long distances just to connect your devices to a switch. And, on any switch using VLANs, you can allocate ports to each VLAN as needed.
+

@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:08.436
+We are now in the portion of the course that covers IP addressing. We'll start with the most common of IP addresses, IPv4 addresses.
+
+00:08.436 --> 00:13.406
+An IP address, in its simplest form, is a logical address for a device on a network.
+
+00:13.406 --> 00:21.614
+To see an IP address on this device, I am in the command prompt tool and I am going to type ipconfig, and press Enter.
+
+00:21.614 --> 00:31.875
+We see both IPv4 addresses and IPv6 addresses for this device. We'll get to IPv6 addresses a little bit later.
+
+00:31.875 --> 00:39.187
+IPv4 addresses are 32-bit addresses, which literally means 32 binary numbers.
+
+00:39.187 --> 00:49.530
+They display, however, in blocks of four decimal numbers, as we see here, in blocks of numbers from 0 to 255.
+

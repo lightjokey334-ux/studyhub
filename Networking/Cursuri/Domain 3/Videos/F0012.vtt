@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:06.892
+Let's take a moment to compare two of the leading dynamic routing protocols, RIP and OSPF.
+
+00:06.892 --> 00:17.155
+These are the two mentioned on the exam objectives, so we may as well compare them. Routing Information Protocol, RIP, is a distance-vector routing protocol.
+
+00:17.155 --> 00:25.161
+It uses hop counts, which is the number of routers from a source to a destination, to determine the best route for data packets.
+
+00:25.161 --> 00:35.303
+This does not take speed into consideration. For example, let's say from this diagram that you are trying to send data from Router A to Router D.
+
+00:35.303 --> 00:44.614
+In the diagram, there is only one hop from Router A to Router D, and three hops going through Routers B and C.
+
+00:44.614 --> 00:58.638
+Even though going from A to B to C to D is a much faster connection, RIP will think A to D is the best route, based on the lower number of hops.
+
+00:58.638 --> 01:12.573
+Let's compare this with OSPF, Open Shortest Path First. OSPF is a link-state protocol that uses multiple factors to determine the best route, including hops and speed.
+
+01:12.573 --> 01:23.672
+For either of these dynamic routing protocols, routing tables are updated through receiving updates from neighboring routers as a network topology changes.
+

@@ -1,0 +1,41 @@
+WEBVTT
+
+00:00.000 --> 00:04.641
+Remote access can be defined two different ways in a networking environment.
+
+00:04.641 --> 00:12.273
+Specifically, we are either talking about remote access to networks, or we are talking about remote access to specific devices.
+
+00:12.273 --> 00:21.191
+As we have seen in this course, remote access from a user to a corporate network is often done through a VPN, the details of which we have already covered.
+
+00:21.191 --> 00:30.912
+Here, we do see a wireless access point with the capability of hosting a VPN, lest you think Windows Servers and other servers are the only options out there.
+
+00:30.912 --> 00:36.052
+Let's take a look, then, at the other form of remote access, and that is Remote Desktop.
+
+00:36.052 --> 00:48.768
+On this device, I will, from File Explorer, right-click This PC and click Properties, and then I'll click Remote settings.
+
+00:48.768 --> 00:55.352
+There are two forms of remote access you could allow on a device.
+
+00:55.352 --> 01:05.469
+Remote Assistance allows for someone to remotely connect to your device and perform tasks in it while you are watching. This is commonly used in help desk support.
+
+01:05.469 --> 01:14.515
+Remote Desktop allows one to connect to the device and work, but that person has exclusive viewing and use of the device while connected to it,
+
+01:14.515 --> 01:21.403
+unless multiple people are connected at once. In order to allow remote desktop connections, this setting needs to be enabled.
+
+01:21.403 --> 01:31.971
+Then, one or more users need to be specified. From here, I will click Select Users. Always look to see who already has access.
+
+01:31.971 --> 01:43.798
+And then if you want to add another user or group, click Add, type in the name of the user or group, click OK, and then this person or group,
+
+01:43.798 --> 01:52.526
+if in possession of your IP address, can remote into this device. Be careful who you let in, obviously.
+

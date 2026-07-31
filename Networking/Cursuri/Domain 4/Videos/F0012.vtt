@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00.000 --> 00:09.179
+A problem you may run into with IP is that you may have apps that use IPv6, which we are covering shortly, but your networks may be IPv4-only networks.
+
+00:09.179 --> 00:17.793
+To get around this, you can encapsulate IPv6 packets inside of IPv4 data. This is IPv6 tunneling.
+
+00:17.793 --> 00:26.393
+One example of this on some Windows devices is Teredo, which provides IPv6 connectivity to IPv4 hosts.
+
+00:26.393 --> 00:34.547
+Another tunnel is ISATAP, which transmits IPv6 packets between dual-stack nodes on an IPv4 network.
+
+00:34.547 --> 00:50.648
+And then, there is 6 to 4, which allows a router with a public IPv4 address to be an IPv6 gateway for a set of LANs. All three of these allow IPv6 traffic to flow through IPv4 networks.
+

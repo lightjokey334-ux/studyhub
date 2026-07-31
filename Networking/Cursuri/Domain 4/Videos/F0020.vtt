@@ -1,0 +1,47 @@
+WEBVTT
+
+00:00.000 --> 00:05.709
+The next service we are going to cover is Network Address Translation, or NAT for short.
+
+00:05.709 --> 00:12.925
+NAT allows devices with private IP addresses to use public IP addresses to communicate with other networks.
+
+00:12.925 --> 00:22.128
+You may recall from earlier that private IP addresses are not routable, meaning that data from these devices will not route to other networks, namely the Internet.
+
+00:22.128 --> 00:30.563
+That is, until NAT appeared on the scene. The most common form of NAT is Port Address Translation, or PAT for short.
+
+00:30.563 --> 00:35.409
+In this, any data request from a private IP address is assigned a port number.
+
+00:35.409 --> 00:41.936
+The data request is then translated to the public IP address this device has and is routed where it needs to go.
+
+00:41.936 --> 00:45.586
+When data is returned, like from the Internet for example,
+
+00:45.586 --> 00:56.040
+this device knows the port number for the return data and then translates the address back to the private IP address of the original recipient and sends the data to that address.
+
+00:56.040 --> 01:06.385
+With over 65000 port numbers available, this literally allows up to 65000 devices with private IP addresses to share one public IP address for routing purposes.
+
+01:06.385 --> 01:18.025
+That is one type of NAT you need to know about for the exam. Here are the other two. Static NAT: a one-to-one mapping between a private IP address and a public IP address.
+
+01:18.025 --> 01:28.025
+For this to work, there needs to be a public IP address available for every device with a private IP address. For this reason, it is not commonly used in networks.
+
+01:28.025 --> 01:38.316
+Dynamic NAT: a many-to-many mapping between private IP addresses and public IP addresses to where a pool of public IP addresses is used,
+
+01:38.316 --> 01:48.793
+and when a device with a private IP address needs to use a public IP address, it does, so long as there is a public IP address available from the pool.
+
+01:48.793 --> 01:55.314
+When the connection is done, the public IP address goes back into the pool, waiting to be used again.
+
+01:55.314 --> 02:06.424
+PAT is by far the most common form of NAT used, and it is set up by default on many routers, especially small office/home office routers.
+

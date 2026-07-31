@@ -1,0 +1,44 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.550 --> 00:00:06.410
+Hypertext Transfer Protocol, HTTP, is the
+main protocol used for webpages, such as the
+
+00:00:06.410 --> 00:00:07.600
+one we see.
+
+00:00:07.600 --> 00:00:12.841
+With a heightened awareness of security in
+data transfers, most webpages use the secure
+
+00:00:12.841 --> 00:00:18.199
+version of HTTP, HTTPS, as we see here.
+
+00:00:18.199 --> 00:00:28.099
+The difference between HTTP and HTTPS is simply
+this: Data transmitted over HTTP is not encrypted.
+
+00:00:28.099 --> 00:00:32.390
+Data transmitted over HTTPS is encrypted.
+
+00:00:32.390 --> 00:00:37.719
+Any sensitive data transmitted over the internet
+should be encrypted, and thus HTTPS should
+
+00:00:37.719 --> 00:00:39.059
+always be used.
+
+00:00:39.059 --> 00:00:44.741
+A protocol in the same realm as HTTP and HTTPS
+is FTP, File Transfer Protocol.
+
+00:00:44.741 --> 00:00:50.860
+This protocol is often used to upload and
+download files to and from a web server.
+
+00:00:50.860 --> 00:00:59.129
+For port numbers, HTTP transmits over port
+80, HTTPS port 443, and FTP port 21.
+

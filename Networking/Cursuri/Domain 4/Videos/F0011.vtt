@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:11.557
+Earlier, we covered the anatomy of an IPv4 address and how it has four numbers that range from 0 to 255, which represent four octets of binary numbers.
+
+00:11.557 --> 00:23.012
+Let's now further break this down into classes. The original intent of classes in IPv4 was to define network sizes based on an IP address range.
+
+00:23.012 --> 00:32.024
+Here are three classes used for IP address ranges: class A, with the first number of the IP address being 1 through 126;
+
+00:32.024 --> 00:42.650
+class B, with the first number being 128 through 191; and class C, with the first address being 192 through 223.
+
+00:42.650 --> 00:53.281
+These tie to subnet masks, which we will cover shortly. The original intent of class A networks was that you could have roughly 16 million devices in a single network.
+
+00:53.281 --> 01:07.925
+For class B, about 65,000 devices. For class C, 254 devices. Now you may be wondering, what about IP addresses that start with 127 or 224 through 255?
+
+01:07.925 --> 01:19.490
+Those all have special purposes and those purposes will be discovered later. For now, just be able to associate the first number of an IP address with a class.
+

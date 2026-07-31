@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:08.846
+Now that we have a little familiarity with the OSI model, let's look at some devices, protocols, and applications and see which layers are used for these on the OSI model.
+
+00:08.846 --> 00:20.110
+On Application layer we see HTTP, SMTP, DNS, basically anything controlling an app or service, but not the app or service itself.
+
+00:20.110 --> 00:27.409
+Thus, while HTTP is on this Application layer, a web browser is not.
+
+00:27.409 --> 00:40.422
+Presentation covers formatting, like HTML, JPEG, GIF, and encryption happens at this layer as well. Session layer we usually see protocols like NetBIOS.
+
+00:40.422 --> 00:53.728
+Transport layer has protocols such as TCP, UDP, and IP. The Network layer has routers and layer 3 switches. The Data-link layer, layer 2 switches.
+
+00:53.728 --> 00:58.399
+And the Physical layer, hubs, Ethernet, and network cables.
+
+00:58.399 --> 01:08.076
+Another way to look at this is that layers 1 through 3 are hardware layers, while layers 4 through 7 are mainly protocol-based.
+

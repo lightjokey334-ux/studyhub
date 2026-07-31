@@ -1,0 +1,81 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.740 --> 00:00:05.870
+When virtual machines are used, one determination
+to make is how the virtual machines will be
+
+00:00:05.870 --> 00:00:06.870
+networked.
+
+00:00:06.870 --> 00:00:11.870
+Most hypervisors have some type of virtual
+switch manager, and Hyper-V is no exception.
+
+00:00:11.870 --> 00:00:14.309
+Within Hyper-V, I will select Virtual Switch
+Manager.
+
+00:00:14.309 --> 00:00:20.060
+Then, I will select New virtual network switch
+as I want to set up a testing network for
+
+00:00:20.060 --> 00:00:22.390
+some new virtual machines.
+
+00:00:22.390 --> 00:00:25.289
+From here, we have three choices.
+
+00:00:25.289 --> 00:00:30.580
+External gives the virtual machines using
+this switch access to whatever the host PC
+
+00:00:30.580 --> 00:00:36.700
+has access to, meaning if the host PC has
+internet access, so do the virtual machines
+
+00:00:36.700 --> 00:00:38.560
+using this switch.
+
+00:00:38.560 --> 00:00:43.830
+With internal, the virtual machines on this
+switch have access to each other and the host
+
+00:00:43.830 --> 00:00:45.340
+machine, but that is it.
+
+00:00:45.340 --> 00:00:51.020
+Finally, with a private network, virtual machines
+will only have access to each other.
+
+00:00:51.020 --> 00:00:56.570
+Given that a best practice is to keep testing
+networks isolated, I will select Private and
+
+00:00:56.570 --> 00:01:03.260
+then Create Virtual Switch, name it, Private,
+and select the OK button.
+
+00:01:03.260 --> 00:01:06.890
+Switches are then assigned to network adapters
+on virtual machines.
+
+00:01:06.890 --> 00:01:11.979
+To demonstrate this, while I have this Windows
+10 desktop off, I will select the virtual
+
+00:01:11.979 --> 00:01:13.460
+machine and then Settings.
+
+00:01:13.460 --> 00:01:20.140
+Then, I will select Network Adapter and Add,
+choosing the private virtual switch we just
+
+00:01:20.140 --> 00:01:27.109
+created, select the OK button, and now the
+virtual machine has a network adapter on a
+
+00:01:27.109 --> 00:01:27.960
+private network.
+

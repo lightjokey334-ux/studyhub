@@ -1,0 +1,14 @@
+WEBVTT
+
+00:00.000 --> 00:06.294
+Another concept you need to know for the exam regarding switches is backplane speed.
+
+00:06.294 --> 00:15.837
+This is mostly a math question, as backplane speed is defined as the total throughput a switch is capable of at any given time.
+
+00:15.837 --> 00:26.005
+For example, let's say you have a 48-port switch with Fast Ethernet capabilities. That's 100 Mbps per port.
+
+00:26.005 --> 00:39.831
+Multiply the speed of 100 Mbps x 48 ports and that comes out to 4.8 Gbps as a total backplane speed.
+

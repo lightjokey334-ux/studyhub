@@ -1,0 +1,50 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.810 --> 00:00:06.730
+With twisted-pair Ethernet cable, there are
+two wiring standards: 568a and 568b.
+
+00:00:06.730 --> 00:00:12.810
+In 568a, pins 1 and 2 are white/green and
+green, pins 3 and 6 are white/orange and orange,
+
+00:00:12.810 --> 00:00:18.640
+pins 4 and 5 are blue and white/blue, and
+pins 7 and 8 are white/brown and brown.
+
+00:00:18.640 --> 00:00:23.419
+In a 568b standard, pins 1 and 2 are white/orange
+and orange and pins 3 and 6 are white/green
+
+00:00:23.419 --> 00:00:24.419
+and green.
+
+00:00:24.419 --> 00:00:28.279
+A straight-through cable, which represents
+most Ethernet cables, is used to connect unlike
+
+00:00:28.279 --> 00:00:32.230
+devices to each other, like a PC to a switch
+or a router.
+
+00:00:32.230 --> 00:00:35.900
+When two like devices are connected to each
+other, a crossover cable is used.
+
+00:00:35.900 --> 00:00:40.740
+The reason for that is that when two like
+devices are connected, they both want to send
+
+00:00:40.740 --> 00:00:44.230
+and receive on the same wires, which will
+cause many collisions of data.
+
+00:00:44.230 --> 00:00:50.070
+Thus, the four wires primarily used for transmission
+are crossed over so the data can transmit
+
+00:00:50.070 --> 00:00:52.320
+freely from one device to another.
+

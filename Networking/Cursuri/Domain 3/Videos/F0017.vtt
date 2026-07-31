@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00.000 --> 00:04.147
+The fastest type of cable you can get is fiber optic cable.
+
+00:04.147 --> 00:14.925
+Fiber optic cable transmits data over light pulses at speeds of up to 10 Gbps and at distances up to 70 kilometers, or even longer in some cases.
+
+00:14.925 --> 00:19.731
+The advantage of fiber optic cable, besides its speed and distance,
+
+00:19.731 --> 00:27.578
+is that it is least susceptible to electromagnetic interference, due to the data traveling over light pulses and not electrical wire.
+
+00:27.578 --> 00:40.107
+The two main disadvantages of fiber optic cable is that it is expensive and it is not very bendable due to the glass inside of it, so great care must be taken when installing it.
+
+00:40.107 --> 00:46.564
+For these reasons, you typically will see fiber optic cable used for WANs and for high-speed storage area networks.
+
+00:46.564 --> 00:54.997
+Fiber optic cables come in many standards, but for the exam it is most important to know the two types of fiber optic cables:
+
+00:54.997 --> 01:01.734
+single mode—these transmit one ray of light and tend to carry signals over longer distances;
+
+01:01.734 --> 01:12.663
+and multimode, which carry multiple rays of light but only for about 600 meters, which is still six times longer than that of twisted-pair cables.
+

@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:08.608
+Not all switches are physical switches. With the increase in virtualized computing, virtual switches are commonly used in virtual networks.
+
+00:08.608 --> 00:16.951
+To demonstrate, I will set up a virtual switch in Hyper-V, a virtual machine manager in Windows. I will click Virtual Switch Manager.
+
+00:16.951 --> 00:27.539
+Notice that there are three types of switches we can create: external, which will give virtual machines on this network access to external networks, including the Internet,
+
+00:27.539 --> 00:36.271
+assuming the physical machine has an Internet connection; internal, which networks the virtual machines and allows connectivity to the physical machine;
+
+00:36.271 --> 00:47.167
+and private, which isolates virtual machines from any other network. I don't have an internal switch on this server, so I will create one here.
+
+00:47.167 --> 01:16.877
+I'll name it and click OK. Now, to see which switch or switches a virtual machine is using, I'll click on a virtual machine, I'll click Settings, and I'll take a look at the Network Adapter area.
+
+01:16.877 --> 01:29.026
+This tells us the switch or switches in use on the virtual machine. If the virtual machine has multiple network adapters, each adapter can be assigned to a different switch.
+

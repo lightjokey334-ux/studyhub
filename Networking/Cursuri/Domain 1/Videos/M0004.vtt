@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:05.280
+Let's look now at some remote access methods&nbsp;
+we have available for networking. The first one&nbsp;&nbsp;
+
+00:00:05.280 --> 00:00:10.400
+will be for virtual private networks or VPNs for&nbsp;
+short. By definition, a virtual private network is&nbsp;&nbsp;
+
+00:00:10.400 --> 00:00:15.760
+a private network that uses a public network,&nbsp;
+usually the internet, to transmit data from a&nbsp;&nbsp;
+
+00:00:15.760 --> 00:00:22.960
+source to a destination. As I use the search bar&nbsp;
+to search for and then open the VPN settings area,&nbsp;&nbsp;
+
+00:00:23.680 --> 00:00:30.320
+I have a VPN connection set up just for&nbsp;
+demonstration purposes. I will select it and&nbsp;&nbsp;
+
+00:00:30.320 --> 00:00:37.920
+then Advanced options. Then, I will select Edit.&nbsp;
+This example is a remote-to-site VPN connection&nbsp;&nbsp;
+
+00:00:38.640 --> 00:00:44.480
+where I am using this to connect to a business&nbsp;
+network. We have the name of the VPN connection,&nbsp;&nbsp;
+
+00:00:45.520 --> 00:00:49.760
+the server address, and the type&nbsp;
+of VPN, from which you can choose&nbsp;&nbsp;
+
+00:00:49.760 --> 00:00:55.200
+which type of encrypted connection to use.&nbsp;
+Then, a type of authentication is specified.&nbsp;&nbsp;
+
+00:00:56.080 --> 00:00:59.200
+The other type of VPN connection&nbsp;
+made is a site-to-site connection,&nbsp;&nbsp;
+
+00:00:59.840 --> 00:01:05.200
+in which two businesses or two locations&nbsp;
+within a network are connected to each other.
+

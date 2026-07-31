@@ -1,0 +1,35 @@
+WEBVTT
+
+00:00.000 --> 00:10.758
+Domain Name System, DNS, is the service of choice for resolving hostnames to IP addresses. Take a look at this DNS setup on Windows Server.
+
+00:10.758 --> 00:20.064
+Here, we see a couple of hostnames on the network and their IP addresses. In a Windows environment, DNS is set up when Active Directory is set up.
+
+00:20.064 --> 00:24.982
+Or, DNS can be installed as a role on a server that is not a domain controller.
+
+00:24.982 --> 00:34.323
+This DNS server you see is an example of an internal DNS server as it is only resolving hostnames on this internal network.
+
+00:34.323 --> 00:44.695
+Many DNS servers are external DNS servers, which resolve Internet names to addresses. Take, for example, a simple ping command.
+
+00:44.695 --> 01:02.066
+On this device, I'm going to ping www.google.com. Somewhere, a DNS server had to resolve this hostname to this IP address.
+
+01:02.066 --> 01:09.141
+There are actually 13 root DNS servers worldwide that have these massive tables of hostnames and IP addresses.
+
+01:09.141 --> 01:18.352
+Having DNS sure beats the alternative, which is that you would have to memorize the IP address of every website and host you visit. That would not be fun.
+
+01:18.352 --> 01:37.136
+Speaking of DNS servers, to find out what DNS server you are running, run the ipconfig /all command. It will tell you in order which DNS servers are being applied to your device.
+
+01:37.136 --> 01:44.923
+Here, I have a couple of external DNS servers followed by three internal DNS servers.
+
+01:44.923 --> 01:54.500
+This means that we should have no problem resolving both internal and external hostnames to IP addresses.
+

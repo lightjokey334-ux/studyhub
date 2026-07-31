@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+Another performance enhancement we can have on a network is to control the way resources are used as it pertains to the traffic they take up on a network.
+
+00:09.000 --> 00:22.758
+This is done through QoS, Quality of Service. To demonstrate QoS, I am in the QoS setup area of this wireless router. I'm going to set up a QoS rule, as we've enabled QoS.
+
+00:22.758 --> 00:27.017
+And for this example, this particular company uses Skype quite a bit,
+
+00:27.017 --> 00:37.496
+so I am going to give Skype traffic the highest priority here, through clicking the drop-down arrow on Service Names and looking for Skype.
+
+00:37.496 --> 00:57.431
+Then I'll click Add, and I'll give this a priority of Maximum, and then I will save these changes.
+
+00:57.431 --> 01:05.675
+So now, using Quality of Service, Skype traffic has Maximum priority on this network.
+
+01:05.675 --> 01:11.388
+Overall, Quality of Service focuses on five specific problems with data transfers:
+
+01:11.388 --> 01:25.122
+delay, dropped packets, errors, jitter, which is an inconsistency in signals, and out-of-order delivery. Giving a service higher priority will help negate those problems.
+

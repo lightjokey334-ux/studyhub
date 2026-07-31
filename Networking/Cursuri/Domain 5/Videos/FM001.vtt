@@ -1,0 +1,23 @@
+WEBVTT
+
+00:00.000 --> 00:09.434
+Earlier in this course, we covered reserved address ranges. This topic is mentioned again in this section on TCP/IP, so let's review what we learned earlier.
+
+00:09.434 --> 00:24.008
+On this device, I will run ipconfig /all so that we can see IP address information for all adapters on this device. Remember the ranges of private IP addresses.
+
+00:24.008 --> 00:44.336
+Class A: anything starting with 10. Class B: anything starting with 172.16 to 172.31. And class C: anything starting with 192.168.
+
+00:44.336 --> 00:53.215
+And remember we also have the APIPA range of 169.254 addresses.
+
+00:53.215 --> 01:04.439
+Finally, remember that the 127 range of addresses is used for local loopback IP addresses, and thus you will not see those assigned to anyone.
+
+01:04.439 --> 01:11.615
+The final exam topic covers protocols commonly used in networking. These protocols have port numbers as well.
+
+01:11.615 --> 01:27.106
+You're going to want to pause the video here and take the time to learn these port numbers, protocols, and what these protocols do. Here they are.
+

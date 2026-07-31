@@ -1,0 +1,29 @@
+WEBVTT
+
+00:00.000 --> 00:10.761
+The next command-line tool we are going to explore is netstat. Netstat displays network statistics, including open and listening ports and protocol statistics.
+
+00:10.761 --> 00:22.080
+I'm first going to run netstat /? and press Enter to see the different options for netstat.
+
+00:22.080 --> 00:36.668
+The three most common ones used are the -a, to display all connections and listening ports, -p, to specify connections by protocol, and -s, to display per-protocol statistics.
+
+00:36.668 --> 00:47.291
+Let's run through each one of these. Netstat -a displays open and listening ports.
+
+00:47.291 --> 00:56.934
+As I run this, notice that many of these port numbers that are returned are mostly dynamic ports, meaning port numbers of 49152 and up.
+
+00:56.934 --> 01:01.031
+These ports open when needed as connections are established.
+
+01:01.031 --> 01:10.152
+Now instead of waiting for this to finish, I'm going to press Ctrl+C to stop this, and then let's say I just want to see statistics for a single protocol.
+
+01:10.152 --> 01:24.209
+I'll type netstat -p and then tcp for the TCP protocol, I'll press Enter, and only the TCP information is going to display.
+
+01:24.209 --> 01:46.754
+And again, instead of waiting I'll stop the run here. Finally, to see per-protocol statistics, I'll type netstat -s, and this is exactly what we see: per-protocol statistics.
+

@@ -1,0 +1,71 @@
+/* ===================================================================
+   settings-modal.css — fereastra plutitoare pentru Setări (folosită de
+   settings-modal.js). Inclus în index.html, cursuri.html, examenX.html.
+   =================================================================== */
+
+.sh-modal-overlay{
+  position: fixed;
+  inset: 0;
+  /* backdrop-filter: blur() e foarte costisitor pe GPU-uri slabe/integrate,
+     recalculat continuu — și costul crește cu suprafața ecranului, exact
+     de-aia mergea fluid pe un viewport mic (telefon/F12) dar devenea lent
+     pe ecran mare. Compensăm blur-ul lipsă cu un fundal puțin mai opac. */
+  background: rgba(5, 6, 10, .78);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: shFadeIn .15s ease;
+}
+
+@keyframes shFadeIn{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
+
+.sh-modal-window{
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  height: 82vh;
+  max-height: 720px;
+  background: #0f0f17;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  border: 1px solid #2a2b3d;
+}
+
+.sh-modal-close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #2a2b3d;
+  background: rgba(15,15,23,.85);
+  color: #e8e8f0;
+  font-size: 15px;
+  cursor: pointer;
+  z-index: 2;
+  transition: border-color .15s ease, color .15s ease;
+}
+.sh-modal-close:hover{ border-color: #5b8def; color: #5b8def; }
+
+.sh-modal-iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.sh-modal-window.sh-modal-wide{
+  max-width: 920px;
+}
+
+@media (max-width: 600px){
+  .sh-modal-overlay{ padding: 10px; }
+  .sh-modal-window{ height: 90vh; max-height: none; border-radius: 12px; }
+}

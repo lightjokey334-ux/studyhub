@@ -1,0 +1,20 @@
+WEBVTT
+
+00:00.000 --> 00:08.445
+One concern you may have with routing tables is the size of routing tables. Routing tables use RAM within a router for storage.
+
+00:08.445 --> 00:14.225
+If a routing table becomes too large and cumbersome, it can adversely affect the performance of a router.
+
+00:14.225 --> 00:19.877
+RIP, a protocol we covered earlier, tends to not use too much router memory.
+
+00:19.877 --> 00:28.684
+But, a protocol like Border Gateway Protocol, or BGP, tends to build very large routing tables and thus take up a lot of memory.
+
+00:28.684 --> 00:36.913
+Network administrators can use filters and other means to limit the size of routing tables. That process is not something you need to know for this exam.
+
+00:36.913 --> 00:45.741
+You do need to know that routing tables are stored in memory and that overloading the memory can degrade router performance.
+

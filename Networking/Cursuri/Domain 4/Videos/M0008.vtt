@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:09.249
+Just as is the case with IPv4 addressing, for IPv6 traffic to be routed to different networks, a default gateway must be specified.
+
+00:09.249 --> 00:17.937
+One thing we really haven't looked at is how IPv6 addresses are obtained. Like IPv4, they usually are obtained through a DHCP server,
+
+00:17.937 --> 00:23.566
+but let's take a look at the properties of this network card and see if we can find some IPv6 information.
+
+00:23.566 --> 00:31.294
+I've used the Control Panel to bring up the window with my network adapters, and I've right-clicked in network adaptor and I've gone to properties.
+
+00:31.294 --> 00:44.134
+Then I'm going to click IPv6 and click Properties. You'll notice, similar to IPv4, this is getting an IPv6 address automatically.
+
+00:44.134 --> 00:52.312
+If I wanted to manually define the address, I could click Use the following IPv6 address and define that here.
+
+00:52.312 --> 01:05.301
+Same for the DNS server. If I want to manually define a gateway, I could click the Advanced button and, under Default gateways, I could click Add and then type the address here.
+
+01:05.301 --> 01:13.865
+This is usually only done, though, if an IPv6 address is assigned statically, which very rarely happens.
+

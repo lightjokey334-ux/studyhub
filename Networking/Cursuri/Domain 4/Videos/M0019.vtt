@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:11.859
+The next set of topics will cover network services. The first network service we will look at is Dynamic Host Configuration Protocol, or better known as DHCP.
+
+00:11.859 --> 00:22.360
+DHCP provides IP addresses for clients connecting to a network. On larger networks, DHCP is usually handled on a Windows server.
+
+00:22.360 --> 00:33.830
+In smaller networks, such as this network, a wireless access point, like the one we see here, often serves as a DHCP server.
+
+00:33.830 --> 00:48.626
+In order for DHCP to work, an address pool must be defined. In this instance, a pool with up to 50 addresses is defined. If we want to assign DNS addresses at the same time, we can.
+
+00:48.626 --> 01:01.811
+The key to any address pool is to make sure the addresses in the pool are not already statically assigned to devices. The other aspect of DHCP is the lease time for an IP address.
+
+01:01.811 --> 01:11.572
+On this server, it is set to 1440 minutes, or 24 hours. On Windows Servers, the default lease time is usually eight days.
+
+01:11.572 --> 01:18.670
+In either case, a client will attempt to renew an IP address lease once the lease is halfway up.
+
+01:18.670 --> 01:31.744
+And even if a DHCP server fails, those clients that still have a lease will continue to function, while new clients will not be able to get a lease until the DHCP server is fixed.
+

@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00.000 --> 00:09.431
+We have seen ipconfig used in some of the exam topics covered in this course. Let's take a moment to focus solely on ipconfig as a command-line tool.
+
+00:09.431 --> 00:24.103
+Simply put, ipconfig gives us IP address information. If I run ipconfig by itself, we see IP address information for each network adapter on this device.
+
+00:24.103 --> 00:41.028
+If we run ipconfig /all, we get further information, such as the DHCP server and DNS server or servers for each network adapter.
+
+00:41.028 --> 00:47.943
+Two more ipconfig commands we can run are ipconfig /release and ipconfig /renew.
+
+00:47.943 --> 00:56.792
+I don't want to run ipconfig /release right now because doing so will release these IP addresses and I will lose my network connectivity.
+
+00:56.792 --> 01:12.759
+ipconfig /renew is used when you need to try to obtain an IP address. I will run this command, though: ipconfig /displaydns. I'll press Enter.
+
+01:12.759 --> 01:20.959
+This displays the DNS server addresses for all of the sites I have recently visited.
+
+01:20.959 --> 01:41.720
+And, if for whatever reason you can't get to websites by name and your device has recently changed networks, you can run ipconfig /flushdns to empty the DNS cache.
+

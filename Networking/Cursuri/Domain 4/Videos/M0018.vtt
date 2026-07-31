@@ -1,0 +1,65 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.830 --> 00:00:04.270
+Earlier, we saw resource records inside a
+DNS server.
+
+00:00:04.270 --> 00:00:08.280
+You may, however, at times need to look up
+some DNS information on an entity, and you
+
+00:00:08.280 --> 00:00:10.620
+may not have a DNS server in front of you.
+
+00:00:10.620 --> 00:00:13.480
+For this, we can use the nslookup command.
+
+00:00:13.480 --> 00:00:18.570
+I have opened a command prompt, and I am going
+to type, nslookup, and select the Enter key
+
+00:00:18.570 --> 00:00:19.570
+on the keyboard.
+
+00:00:19.570 --> 00:00:22.529
+The result is a DNS server address to which
+I am connected.
+
+00:00:22.529 --> 00:00:28.570
+Doing this also puts us in nslookup mode,
+where we can look up DNS information on other
+
+00:00:28.570 --> 00:00:29.640
+entities.
+
+00:00:29.640 --> 00:00:36.500
+For instance, if I type, google.com, and select
+the Enter key on the keyboard, I have DNS
+
+00:00:36.500 --> 00:00:38.720
+information from Google.
+
+00:00:38.720 --> 00:00:42.220
+By default, nslookup returns A type records.
+
+00:00:42.220 --> 00:00:45.980
+However, let's say I want to see the mail
+exchange record for an entity.
+
+00:00:45.980 --> 00:00:54.520
+I will type, set type=mx, to have nslookup
+look up mail exchange records.
+
+00:00:54.520 --> 00:01:01.040
+Then, I will type, google.com, again, and
+this time, I see mail exchange records.
+
+00:01:01.040 --> 00:01:07.360
+When I'm done using nslookup, I can just type,
+exit, select the Enter key on the keyboard,
+
+00:01:07.360 --> 00:01:09.100
+and exit nslookup.
+
