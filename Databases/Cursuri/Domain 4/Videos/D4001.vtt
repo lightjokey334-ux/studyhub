@@ -1,0 +1,95 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.819 --> 00:00:06.390
+The SQL keywords you learned for querying
+are harmless as they make no changes to your
+
+00:00:06.390 --> 00:00:07.700
+existing data.
+
+00:00:07.700 --> 00:00:10.710
+Now, we will cover some keywords that do change
+data.
+
+00:00:10.710 --> 00:00:13.169
+Changing data can be both good and bad.
+
+00:00:13.169 --> 00:00:18.590
+It’s good in the sense of using keywords
+to add, change, and remove data, but we want
+
+00:00:18.590 --> 00:00:23.330
+to make sure only those who know how to use
+these keywords can.
+
+00:00:23.330 --> 00:00:27.260
+The main reason: SQL doesn’t feature an
+undo button.
+
+00:00:27.260 --> 00:00:32.169
+Once you change data, it’s changed.
+
+00:00:32.169 --> 00:00:36.350
+Our next goal in working with queries is to
+insert data into an entity.
+
+00:00:36.350 --> 00:00:41.120
+There are two basic ways to do this: We can
+either copy records from one table to another
+
+00:00:41.120 --> 00:00:45.960
+or insert records manually or from a data
+source such as an app.
+
+00:00:45.960 --> 00:00:49.609
+In the first example, we see a query that
+inserts all the records from the BikeRepairs
+
+00:00:49.609 --> 00:00:56.200
+table into the BikeRepairsTest table.
+
+00:00:56.200 --> 00:01:02.370
+I will execute this query, and the records
+from the BikeRepairs table have been copied
+
+00:01:02.370 --> 00:01:05.290
+into the BikeRepairsTest table.
+
+00:01:05.290 --> 00:01:10.860
+INSERT INTO with a SELECT is used to copy
+records from one table to an existing table.
+
+00:01:10.860 --> 00:01:16.549
+But, what if you want to copy records from
+an existing table into a new table.
+
+00:01:16.549 --> 00:01:21.710
+A SELECT INTO statement will make this happen.
+
+00:01:21.710 --> 00:01:27.579
+Take a look at this statement that selects
+everything into a BikeRepairsArchive table
+
+00:01:27.579 --> 00:01:30.350
+from the BikeRepairs table.
+
+00:01:30.350 --> 00:01:33.380
+The BikeRepairsArchive table does not yet
+exist.
+
+00:01:33.380 --> 00:01:40.700
+However, once I select and execute this statement,
+the table will exist with the records from
+
+00:01:40.700 --> 00:01:43.509
+the BikeRepairs table.
+
+00:01:43.509 --> 00:01:48.219
+SELECT INTO is a great option to use when
+one wants to make a copy of an entire table,
+
+00:01:48.219 --> 00:01:50.700
+including the table's structure.
+

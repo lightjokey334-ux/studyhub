@@ -1,0 +1,121 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.150 --> 00:00:04.960
+Hi, I’m Marie, and welcome to LearnKey’s
+course on Databases.
+
+00:00:04.960 --> 00:00:09.340
+This course covers the material on the IT
+Specialist Databases exam.
+
+00:00:09.340 --> 00:00:15.210
+If you ever wondered how to build and manage
+databases properly, this course is for you.
+
+00:00:15.210 --> 00:00:19.500
+Building a database is not just a matter of
+typing data into a spreadsheet.
+
+00:00:19.500 --> 00:00:24.869
+There is a lot of organization involved, and
+Senior Instructor, Jason Manibog, is standing
+
+00:00:24.869 --> 00:00:26.339
+by.
+
+00:00:26.339 --> 00:00:31.599
+This IT Specialist course on Databases is
+a solid foundational course for building databases
+
+00:00:31.599 --> 00:00:34.750
+and working with existing databases.
+
+00:00:34.750 --> 00:00:39.500
+Not only will this course help you prepare
+to take and pass the Certiport IT Specialist
+
+00:00:39.500 --> 00:00:43.410
+Database exam, but this course will also help
+you gain employability prospects in the role
+
+00:00:43.410 --> 00:00:46.450
+of a data specialist or even a junior database
+administrator.
+
+00:00:46.450 --> 00:00:50.980
+In fact, that is the mentality I want you
+to have for this course, that you are being
+
+00:00:50.980 --> 00:00:56.100
+trained to become a junior database administrator
+for a retail bicycle company.
+
+00:00:56.100 --> 00:00:59.480
+For this course, you will want to have access
+to a SQL Server installation, whether you
+
+00:00:59.480 --> 00:01:03.600
+download and install it or have access to
+one in Azure.
+
+00:01:03.600 --> 00:01:08.040
+You will also want to get the sample AdventureWorks
+database to follow along with the course videos
+
+00:01:08.040 --> 00:01:09.310
+and projects.
+
+00:01:09.310 --> 00:01:13.550
+Links to the SQL Server download and the sample
+database tend to change, so I would use a
+
+00:01:13.550 --> 00:01:15.070
+search engine to find both.
+
+00:01:15.070 --> 00:01:19.430
+There are instructions for getting the database
+loaded into SQL Server once you have installed
+
+00:01:19.430 --> 00:01:22.570
+SQL Server and obtained the database.
+
+00:01:22.570 --> 00:01:26.510
+By the way, you will want the OLTP version
+of the database as that will give you the
+
+00:01:26.510 --> 00:01:30.120
+most opportunity to practice the skills you
+will learn in this course.
+
+00:01:30.120 --> 00:01:34.640
+On to the course itself, there are five domains
+in this course.
+
+00:01:34.640 --> 00:01:41.930
+They are: Database Design, Database Object
+Management, Data Retrieval, Data Manipulation,
+
+00:01:41.930 --> 00:01:48.870
+and Troubleshooting With the course, you get
+the instructional videos, pre and post-assessments
+
+00:01:48.870 --> 00:01:53.870
+for each domain, practice labs, and a project
+workbook to reinforce what you learn in this
+
+00:01:53.870 --> 00:01:55.090
+course.
+
+00:01:55.090 --> 00:01:59.630
+To work well with databases, one needs a solid
+understanding of database design, which is
+
+00:01:59.630 --> 00:02:04.460
+the first domain of this course, so let's
+get right to the first topic, which is identifying
+
+00:02:04.460 --> 00:02:05.649
+parts of a database.
+

@@ -1,3 +1,5 @@
+var EXAM_TITLE = "Examen 1";
+var EXAM_ID = "Networking_exam1";
 var EXAM_QUESTIONS = [
   {
     id: "ex1_01",

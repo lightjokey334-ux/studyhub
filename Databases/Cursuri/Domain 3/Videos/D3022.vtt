@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:05.760
+One question that comes up with queries with&nbsp;
+aggregates is this: How do I do criteria based&nbsp;&nbsp;
+
+00:00:05.760 --> 00:00:11.600
+on an aggregate. We are about to answer this and&nbsp;
+one other question: If we use a WHERE clause,&nbsp;&nbsp;
+
+00:00:12.240 --> 00:00:18.560
+does it go? Before or after the GROUP BY clause?&nbsp;
+Let's answer the second question first. The WHERE&nbsp;&nbsp;
+
+00:00:18.560 --> 00:00:26.000
+clause filters out individual records. Knowing&nbsp;
+this, we need to ensure the WHERE clause is&nbsp;&nbsp;
+
+00:00:26.000 --> 00:00:33.040
+used before we group columns for an aggregate.&nbsp;
+To demonstrate this, I will add a WHERE clause&nbsp;&nbsp;
+
+00:00:33.040 --> 00:00:43.840
+before the GROUP BY clause to limit this list&nbsp;
+to orders that happened on or after May 1, 2014.&nbsp;&nbsp;
+
+00:00:48.400 --> 00:00:54.880
+In executing this, we see a list of salespersons&nbsp;
+and the amount they have sold since that date.&nbsp;&nbsp;
+
+00:00:55.840 --> 00:00:59.280
+Having the WHERE clause is good for&nbsp;
+individual record filtering, but what&nbsp;&nbsp;
+
+00:00:59.280 --> 00:01:03.760
+about a group criterion? What if we wanted to&nbsp;
+limit these results to show only salespersons&nbsp;&nbsp;
+
+00:01:03.760 --> 00:01:09.920
+who did at least 300000 in sales during this&nbsp;
+period? Two important points to note here:&nbsp;&nbsp;
+
+00:01:09.920 --> 00:01:16.800
+First, we can only have one WHERE clause in a SQL&nbsp;
+statement, so the WHERE keyword is not used again.&nbsp;&nbsp;
+
+00:01:17.360 --> 00:01:23.360
+Secondly, this criterion needs to be placed&nbsp;
+after the GROUP BY clause because we cannot&nbsp;&nbsp;
+
+00:01:23.360 --> 00:01:30.000
+do aggregates until we have a group. The&nbsp;
+keyword here is HAVING, and with this,&nbsp;&nbsp;
+
+00:01:30.000 --> 00:01:41.600
+I will add HAVING SUM(Subtotal) &gt;= 300000 to the&nbsp;
+end of this query. Then, I will execute this,&nbsp;&nbsp;
+
+00:01:43.920 --> 00:01:50.160
+and we see four people made the goal of at least&nbsp;
+300000 in sales. To recap: The WHERE clause&nbsp;&nbsp;
+
+00:01:50.160 --> 00:01:55.760
+filters individual records and runs before any&nbsp;
+grouping of columns for aggregates takes place.&nbsp;&nbsp;
+
+00:01:55.760 --> 00:02:03.440
+The HAVING clause filters based on aggregates&nbsp;
+and is added after grouping takes place.
+

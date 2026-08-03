@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:04.960
+To this point, in learning the different&nbsp;
+ways in which we can use criteria in queries,&nbsp;&nbsp;
+
+00:00:04.960 --> 00:00:10.400
+we have just used a single criterion. Many&nbsp;
+queries require multiple criteria and the key&nbsp;&nbsp;
+
+00:00:10.400 --> 00:00:16.400
+to using multiple criteria is to use the correct&nbsp;
+keywords given a situation. Here is an example.&nbsp;&nbsp;
+
+00:00:17.040 --> 00:00:22.320
+I have a query with people and locations, and I&nbsp;
+am looking for anyone with the last name of Adams&nbsp;&nbsp;
+
+00:00:22.960 --> 00:00:27.120
+in the city of Los Angeles. I already&nbsp;
+have a WHERE clause started to restrict&nbsp;&nbsp;
+
+00:00:27.120 --> 00:00:31.840
+the query to return people with the last&nbsp;
+name of Adams. I will execute the query,&nbsp;&nbsp;
+
+00:00:33.280 --> 00:00:39.200
+and so far, everything works. When using&nbsp;
+multiple criteria, the two main keywords&nbsp;&nbsp;
+
+00:00:39.200 --> 00:00:49.120
+to use between criterion pieces are AND and OR. We&nbsp;
+just have to ask ourselves this: Are we trying to&nbsp;&nbsp;
+
+00:00:49.120 --> 00:00:55.920
+narrow our results further? If the answer is&nbsp;
+yes, then AND is the keyword we want to use.&nbsp;&nbsp;
+
+00:00:56.720 --> 00:01:02.720
+We do want to narrow this list to show only&nbsp;
+those with the last name of Adams in Los Angeles.&nbsp;&nbsp;
+
+00:01:03.440 --> 00:01:12.960
+To the existing WHERE clause, I will add AND&nbsp;
+City = 'Los Angeles'. I will execute this,&nbsp;&nbsp;
+
+00:01:14.800 --> 00:01:20.880
+and we have just one record&nbsp;
+that fits the criteria.
+

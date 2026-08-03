@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:06.720
+One convenience in using keywords to&nbsp;
+get tasks done is the ease of getting&nbsp;&nbsp;
+
+00:00:06.720 --> 00:00:12.160
+an opposite of a criterion. Take a look at this&nbsp;
+query, which has person information, and the&nbsp;&nbsp;
+
+00:00:12.160 --> 00:00:18.640
+query has a WHERE clause to only show people&nbsp;
+from Los Angeles. I will execute this query,&nbsp;&nbsp;
+
+00:00:19.600 --> 00:00:26.320
+and we see 91 rows. However, what if we wanted&nbsp;
+to see everyone outside of Los Angeles? We&nbsp;&nbsp;
+
+00:00:26.320 --> 00:00:30.880
+certainly do not want to have to account for&nbsp;
+every other possible city in the recordset.&nbsp;&nbsp;
+
+00:00:31.760 --> 00:00:37.120
+In most cases, we can use the word NOT to&nbsp;
+get the opposite of an existing criterion.&nbsp;&nbsp;
+
+00:00:37.120 --> 00:00:42.880
+Here is the tricky part, though. Watch what&nbsp;
+happens when I put the word NOT in front of&nbsp;&nbsp;
+
+00:00:42.880 --> 00:00:51.280
+the equals sign and execute this query. It does&nbsp;
+not work. What needs to happen is that the NOT&nbsp;&nbsp;
+
+00:00:51.280 --> 00:00:57.840
+needs to be in front of the entire criterion of&nbsp;
+City = Los Angeles. I will put the keyword there,&nbsp;&nbsp;
+
+00:01:00.880 --> 00:01:08.720
+execute the query, and now we see everyone&nbsp;
+outside of Los Angeles. Just think opposites&nbsp;&nbsp;
+
+00:01:08.720 --> 00:01:16.000
+in terms of when to use the NOT keyword, and&nbsp;
+you will be successful in using the NOT keyword.
+

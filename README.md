@@ -324,8 +324,10 @@ sunt tipul `match` de mai jos. `dragtext` e doar pentru propoziții
 narative cu spații libere în mijlocul textului.
 
 ### f) `match` — „Match each X to its Y" (listă de perechi)
-Cel mai des întâlnit tip la testele GMetrix cu drag & drop — o etichetă
-fixă în stânga, cu propriul spațiu liber în dreptul ei:
+Cel mai des întâlnit tip la testele GMetrix cu drag & drop — etichetele
+fixe apar de obicei în DREAPTA capturii, iar variantele de răspuns
+disponibile în STÂNGA (la fel randează și motorul: pool-ul de opțiuni în
+stânga, rândurile cu etichete în dreapta):
 ```js
 {
   id: "d2_post_11",
@@ -651,7 +653,6 @@ acele secțiuni.
 
 ## 10. Limitări cunoscute / lucruri de verificat
 
-- Titlul „IPv6 Address Types" la Domain 4 e o presupunere (vezi punctul 3).
 - Video playerul citește fișiere locale direct din `Videos/`; nu am
   adăugat conversie/compresie — pune fișierele deja în format `.mp4`
   redabil în browser (H.264/AAC).

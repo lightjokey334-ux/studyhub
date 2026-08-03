@@ -1,0 +1,44 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:05.520
+The next aggregate we are going to look at is&nbsp;
+the MIN aggregate. The MIN aggregate returns the&nbsp;&nbsp;
+
+00:00:05.520 --> 00:00:10.800
+lowest number in a list of numbers per group&nbsp;
+of columns. Here, we see a query that shows&nbsp;&nbsp;
+
+00:00:12.000 --> 00:00:17.200
+the sum of sales for each salesperson.&nbsp;
+Let's say, within all of these sales,&nbsp;&nbsp;
+
+00:00:17.200 --> 00:00:21.600
+we want to see the lowest sale&nbsp;
+amount as if it is really low,&nbsp;&nbsp;
+
+00:00:21.600 --> 00:00:27.520
+it may not be worth what it takes to process&nbsp;
+the sale. After the SUM line, I will add a comma&nbsp;&nbsp;
+
+00:00:27.520 --> 00:00:35.680
+and then, on the next line, a MIN aggregate for&nbsp;
+the Subtotal column and alias it as 'Lowest Sale'.&nbsp;&nbsp;
+
+00:00:39.680 --> 00:00:44.080
+We do see some very low sales&nbsp;
+here. We have the lowest sale,&nbsp;&nbsp;
+
+00:00:44.080 --> 00:00:49.520
+but what about the highest sale? For that,&nbsp;
+we use the MAX aggregate. I will go back&nbsp;&nbsp;
+
+00:00:49.520 --> 00:00:59.600
+into the query and add a MAX aggregate for the&nbsp;
+Subtotal column and alias it as 'Highest Sale'.&nbsp;&nbsp;
+
+00:01:00.240 --> 00:01:06.000
+I will execute this, and we see that&nbsp;
+some individual sales were rather large.
+

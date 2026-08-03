@@ -1,0 +1,92 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:05.200
+Elsewhere in the course, we established a&nbsp;
+relationship between the Person.CountryRegion&nbsp;&nbsp;
+
+00:00:05.200 --> 00:00:12.560
+and Person.StateProvince tables, with the&nbsp;
+CountryRegionCode column, the primary key&nbsp;&nbsp;
+
+00:00:12.560 --> 00:00:18.000
+in the Person.CountryRegion table, being linked&nbsp;
+to the foreign key field of the same field name&nbsp;&nbsp;
+
+00:00:18.000 --> 00:00:23.840
+in the Person.StateProvince table. Let's&nbsp;
+look at one aspect of this relationship&nbsp;&nbsp;
+
+00:00:23.840 --> 00:00:30.320
+from a practical standpoint. I still have the&nbsp;
+design of the Person.StateProvince table open,&nbsp;&nbsp;
+
+00:00:30.320 --> 00:00:36.880
+and I am going to select the Table&nbsp;
+Designer menu and the Relationships option.&nbsp;&nbsp;
+
+00:00:38.160 --> 00:00:44.480
+Then, I will select the relationship we created,&nbsp;
+and I just want you to notice one setting:&nbsp;&nbsp;
+
+00:00:45.200 --> 00:00:51.760
+the Enforce Foreign Key Constraint option&nbsp;
+is set to Yes. That is the default setting&nbsp;&nbsp;
+
+00:00:51.760 --> 00:00:57.120
+when a relationship is created. This setting&nbsp;
+enforces a concept called referential integrity,&nbsp;&nbsp;
+
+00:00:57.120 --> 00:01:03.120
+which ensures that a primary key value exists in&nbsp;
+a relationship before the corresponding foreign&nbsp;&nbsp;
+
+00:01:03.120 --> 00:01:10.880
+key value is allowed. That is the technical&nbsp;
+definition of referential integrity. Let me&nbsp;&nbsp;
+
+00:01:10.880 --> 00:01:17.840
+now explain this through the lens of looking at&nbsp;
+the Person.CountryRegion table. I've closed this&nbsp;&nbsp;
+
+00:01:17.840 --> 00:01:24.880
+Foreign Key Relationships window and then return&nbsp;
+the top 1000 rows from the Person.CountryRegion&nbsp;&nbsp;
+
+00:01:24.880 --> 00:01:32.160
+table. Let me now pose a question: Should a&nbsp;
+country region code be defined in this table&nbsp;&nbsp;
+
+00:01:32.880 --> 00:01:39.840
+before it is allowed anywhere else? In other&nbsp;
+words, what do you think would happen if in this&nbsp;&nbsp;
+
+00:01:42.080 --> 00:01:50.880
+Person.StateProvince table, a CountryRegionCode&nbsp;
+was entered that did not exist here? As you can&nbsp;&nbsp;
+
+00:01:50.880 --> 00:01:57.280
+imagine, we would have a problem because we&nbsp;
+would have no idea what the CountryRegionCode&nbsp;&nbsp;
+
+00:01:57.280 --> 00:02:04.800
+should represent. This situation causes orphaned&nbsp;
+records, which are records in a foreign key table&nbsp;&nbsp;
+
+00:02:06.880 --> 00:02:13.120
+with no matches in a primary key table.&nbsp;
+Enforcing referential integrity ensures&nbsp;&nbsp;
+
+00:02:13.120 --> 00:02:20.000
+this does not happen, that a primary key&nbsp;
+value must exist for it to be allowed in&nbsp;&nbsp;
+
+00:02:20.000 --> 00:02:26.000
+any foreign key table. In other words,&nbsp;
+only CountryRegionCodes that exist here&nbsp;&nbsp;
+
+00:02:26.640 --> 00:02:32.560
+are allowed in any entity to which this&nbsp;
+has a relationship using this field.
+

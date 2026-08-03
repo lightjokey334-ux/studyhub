@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:05.600
+There might be times when you want to combine&nbsp;
+two datasets into one but with no logical way&nbsp;&nbsp;
+
+00:00:05.600 --> 00:00:11.520
+or reason to join the two tables. You may want to&nbsp;
+stack a list of records, one on top of the other.&nbsp;&nbsp;
+
+00:00:11.520 --> 00:00:17.920
+To do this, we use a UNION keyword in between&nbsp;
+two SELECT statements. Notice that column names&nbsp;&nbsp;
+
+00:00:17.920 --> 00:00:24.080
+are not quite the same on each SELECT statement.&nbsp;
+They don't need to be, but you will want to make&nbsp;&nbsp;
+
+00:00:24.080 --> 00:00:28.560
+sure you line the data up so that one set of&nbsp;
+records stacks neatly on top of the other.&nbsp;&nbsp;
+
+00:00:28.560 --> 00:00:35.920
+I have this set to ORDER BY RecruitID, which&nbsp;
+is a sort, and I will execute this query.&nbsp;&nbsp;
+
+00:00:37.440 --> 00:00:42.720
+Notice that it would seem we have duplicates, but&nbsp;
+we do not. Remember that this shows a combined&nbsp;&nbsp;
+
+00:00:42.720 --> 00:00:48.720
+set of two recordsets, so there are bound to be&nbsp;
+some duplicates among individual columns. Whereas&nbsp;&nbsp;
+
+00:00:48.720 --> 00:00:54.080
+UNION stacks two recordsets into one output,&nbsp;
+the INTERSECT keyword shows records that are&nbsp;&nbsp;
+
+00:00:54.080 --> 00:01:02.080
+alike in both tables. I will change the keyword&nbsp;
+from UNION to INTERSECT and execute the query.&nbsp;&nbsp;
+
+00:01:03.600 --> 00:01:08.240
+It turns out that one person is in both&nbsp;
+tables. To be considered an intersect,&nbsp;&nbsp;
+
+00:01:08.240 --> 00:01:13.440
+each column in the query must have identical&nbsp;
+values in both tables. The real-life application&nbsp;&nbsp;
+
+00:01:13.440 --> 00:01:20.400
+here is that we would need to figure&nbsp;
+out if this person is a recruit or not.
+

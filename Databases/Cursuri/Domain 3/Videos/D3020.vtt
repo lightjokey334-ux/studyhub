@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:04.880
+In this course, we have established that the&nbsp;
+BETWEEN keyword is used to set criteria to&nbsp;&nbsp;
+
+00:00:04.880 --> 00:00:10.160
+return records between two numbers or two dates.&nbsp;
+Sometimes, though, we just want to see something&nbsp;&nbsp;
+
+00:00:10.160 --> 00:00:15.920
+greater than or less than a number or something&nbsp;
+that occurs before or after a certain date. Take,&nbsp;&nbsp;
+
+00:00:15.920 --> 00:00:21.360
+for example, this query that shows orders placed&nbsp;
+in a certain month. What if I just want to see&nbsp;&nbsp;
+
+00:00:21.360 --> 00:00:26.480
+orders that happened after a certain date. I will&nbsp;
+change the WHERE clause to use a greater than&nbsp;&nbsp;
+
+00:00:26.480 --> 00:00:34.240
+symbol (&gt;), one of several comparison operators,&nbsp;
+to show orders that occurred after June 1, 2014.&nbsp;&nbsp;
+
+00:00:35.200 --> 00:00:41.360
+I will execute this, and we get&nbsp;
+just over 900 rows. One real-life&nbsp;&nbsp;
+
+00:00:41.360 --> 00:00:47.360
+aspect of comparisons to consider is this: If&nbsp;
+someone says, get me everything after June 1,&nbsp;&nbsp;
+
+00:00:47.360 --> 00:00:54.400
+does the person really mean that? Or, should June&nbsp;
+1 be included? Sometimes, you will need to clarify&nbsp;&nbsp;
+
+00:00:54.400 --> 00:01:00.080
+those situations. Right now, our results&nbsp;
+do not show anything on June 1 because we&nbsp;&nbsp;
+
+00:01:00.080 --> 00:01:05.120
+indicated we wanted to see activity from after&nbsp;
+that date. However, if I change the comparison&nbsp;&nbsp;
+
+00:01:05.120 --> 00:01:13.360
+operator to greater than or equal to (&gt;=) and then&nbsp;
+execute this again, we get the orders from June 1.&nbsp;&nbsp;
+
+00:01:14.800 --> 00:01:19.840
+Let's use the SubTotal field to see the less than&nbsp;
+(&lt;) and less than or equal to (&lt;=) comparisons at&nbsp;&nbsp;
+
+00:01:19.840 --> 00:01:28.880
+work. I will add AND Subtotal &lt; 159 to this&nbsp;
+criteria. We do not need single quotes around&nbsp;&nbsp;
+
+00:01:28.880 --> 00:01:37.120
+this amount because this is a numeric value. I&nbsp;
+will execute this query, and we do lose a few&nbsp;&nbsp;
+
+00:01:37.120 --> 00:01:46.000
+records. Let's see what happens when I change&nbsp;
+the criteria to &lt;= and execute this again.&nbsp;&nbsp;
+
+00:01:48.960 --> 00:01:55.760
+We see three more records as three orders have a&nbsp;
+subtotal of exactly 159 dollars. The big takeaway&nbsp;&nbsp;
+
+00:01:55.760 --> 00:02:00.720
+with comparison operators isn't how to use&nbsp;
+these operators; it is making sure we understand&nbsp;&nbsp;
+
+00:02:00.720 --> 00:02:07.280
+exactly what someone wants in situations&nbsp;
+in which comparison operators can be used.
+

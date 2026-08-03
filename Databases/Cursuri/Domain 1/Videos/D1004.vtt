@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:05.280
+Primary keys in a table usually consist of a&nbsp;
+single column. However, that is not always the&nbsp;&nbsp;
+
+00:00:05.280 --> 00:00:11.520
+case. Let me show you one example. I am going to&nbsp;
+select and hold (or right-click) this Person.Email&nbsp;&nbsp;
+
+00:00:11.520 --> 00:00:19.680
+Address table and then choose Select Top 1000&nbsp;
+Rows. This table stores email addresses that&nbsp;&nbsp;
+
+00:00:19.680 --> 00:00:25.360
+belong to business entities. With every table, we&nbsp;
+want to make sure we know the table's primary key.&nbsp;&nbsp;
+
+00:00:25.360 --> 00:00:31.760
+Let's look at the logic of this table for just&nbsp;
+a moment. Could a business entity have more than&nbsp;&nbsp;
+
+00:00:31.760 --> 00:00:37.840
+one email address? Absolutely. Could two business&nbsp;
+entities, like two people in the same business,&nbsp;&nbsp;
+
+00:00:38.400 --> 00:00:43.840
+share an email address? While that is unlikely,&nbsp;
+it is certainly possible. What is done, then,&nbsp;&nbsp;
+
+00:00:43.840 --> 00:00:49.360
+in situations like these? I will select and hold&nbsp;
+(or right-click) the Person.EmailAddress table&nbsp;&nbsp;
+
+00:00:50.160 --> 00:00:55.120
+and select Design. Note that the primary&nbsp;
+key designation is assigned to both&nbsp;&nbsp;
+
+00:00:55.120 --> 00:01:00.720
+the BusinessEntityID and EmailAddressID&nbsp;
+columns. This situation is known as a&nbsp;&nbsp;
+
+00:01:00.720 --> 00:01:06.880
+composite key or a compound key, a primary&nbsp;
+key that is the combination of two or more&nbsp;&nbsp;
+
+00:01:06.880 --> 00:01:12.960
+columns. What this is telling us is that the&nbsp;
+BusinessEntityID by itself is not a primary key,&nbsp;&nbsp;
+
+00:01:12.960 --> 00:01:17.440
+and neither is the EmailAddressID. A composite&nbsp;
+or compound key says that the two combined&nbsp;&nbsp;
+
+00:01:17.440 --> 00:01:23.760
+cannot be repeated within this table, which makes&nbsp;
+sense because you would not want a duplicate entry&nbsp;&nbsp;
+
+00:01:23.760 --> 00:01:29.360
+of someone's business and an email address.&nbsp;
+However, as stated before, a business could&nbsp;&nbsp;
+
+00:01:29.360 --> 00:01:35.520
+have multiple email addresses, and an email&nbsp;
+address could be shared among multiple business&nbsp;&nbsp;
+
+00:01:35.520 --> 00:01:39.600
+entities, though this would be rare. In those&nbsp;
+situations, a composite or compound primary&nbsp;&nbsp;
+
+00:01:39.600 --> 00:01:46.080
+key should be implemented. Keep in mind that you&nbsp;
+could go years without seeing a setup like this&nbsp;&nbsp;
+
+00:01:46.080 --> 00:01:52.640
+one in a real-life database. Still, it is good to&nbsp;
+know this can be done and is necessary at times.
+

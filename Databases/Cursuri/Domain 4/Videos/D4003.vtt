@@ -1,0 +1,60 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.360 --> 00:00:04.880
+The next action we will take on&nbsp;
+data is to update existing data.&nbsp;&nbsp;
+
+00:00:05.520 --> 00:00:10.160
+I have typed and run a SELECT statement to&nbsp;
+select everything from the BikeRepairs table.&nbsp;&nbsp;
+
+00:00:11.200 --> 00:00:15.920
+We see that the start date is incorrect on one of&nbsp;
+the bike orders, and we want to change that start&nbsp;&nbsp;
+
+00:00:15.920 --> 00:00:24.800
+date. I will comment out the select statement,&nbsp;
+and let's focus on this UPDATE statement.&nbsp;&nbsp;
+
+00:00:27.680 --> 00:00:34.160
+Notice that when we start an update, we always&nbsp;
+update a table, not a column within a table.&nbsp;&nbsp;
+
+00:00:35.280 --> 00:00:42.560
+The SET statement actually sets the column and&nbsp;
+value to be updated. This next part is critical.&nbsp;&nbsp;
+
+00:00:43.200 --> 00:00:50.240
+We always want a WHERE clause within an UPDATE&nbsp;
+statement. Why? Think about this for a minute.&nbsp;&nbsp;
+
+00:00:51.200 --> 00:00:59.760
+If we ran this without a WHERE clause, what do&nbsp;
+you think would happen? Every record in this&nbsp;&nbsp;
+
+00:00:59.760 --> 00:01:05.600
+table would get a new start date. We do not&nbsp;
+want that, so we always want to use the WHERE&nbsp;&nbsp;
+
+00:01:05.600 --> 00:01:16.880
+clause to specify what is being updated, in this&nbsp;
+case, this BikeRepairID. I will execute this,&nbsp;&nbsp;
+
+00:01:19.280 --> 00:01:26.240
+and the update has been made. I will&nbsp;
+then run this SELECT statement again,&nbsp;&nbsp;
+
+00:01:26.240 --> 00:01:31.360
+and we see the updated record here. One&nbsp;
+other reason to be so careful with this&nbsp;&nbsp;
+
+00:01:31.360 --> 00:01:37.120
+is that changes to data are not undoable like&nbsp;
+they are in a program such as Excel, which is why&nbsp;&nbsp;
+
+00:01:37.120 --> 00:01:45.520
+it is so important to have a WHERE clause in an&nbsp;
+UPDATE statement to define what is being updated.
+

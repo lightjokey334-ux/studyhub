@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:06.480
+In writing queries, one will sometimes need to&nbsp;
+join several tables to get a filter on two fields.&nbsp;&nbsp;
+
+00:00:06.480 --> 00:00:11.040
+This process can get expensive on resources,&nbsp;
+so one alternative is to use a subquery,&nbsp;&nbsp;
+
+00:00:12.000 --> 00:00:18.560
+a SELECT statement inside of a SELECT statement,&nbsp;
+and keywords used to meet certain needs. Here&nbsp;&nbsp;
+
+00:00:18.560 --> 00:00:24.000
+is one example. I want to show product&nbsp;
+names for any product that sold at least&nbsp;&nbsp;
+
+00:00:24.000 --> 00:00:31.200
+ten units within a detailed order. Thus,&nbsp;
+I have a query set to show the ProductID&nbsp;&nbsp;
+
+00:00:31.200 --> 00:00:37.200
+and the Name from the Production.Product&nbsp;
+table, and the criteria I want are located&nbsp;&nbsp;
+
+00:00:37.200 --> 00:00:42.320
+in the Sales.SalesOrderDetail table. However, I&nbsp;
+don't need to display any fields from that table,&nbsp;&nbsp;
+
+00:00:42.320 --> 00:00:47.360
+which is the key to using a subquery. If you&nbsp;
+don't need to display any fields from a table&nbsp;&nbsp;
+
+00:00:47.360 --> 00:00:53.680
+you would otherwise join, a subquery&nbsp;
+may be faster. Before I execute this,&nbsp;&nbsp;
+
+00:00:53.680 --> 00:00:58.800
+let's step through this WHERE clause. This&nbsp;
+clause states where Product ID equals ANY&nbsp;&nbsp;
+
+00:00:59.680 --> 00:01:11.840
+ProductID from the Sales.SalesOrderDetail table&nbsp;
+where the orderqty &gt;= 10. In executing this, about&nbsp;&nbsp;
+
+00:01:12.480 --> 00:01:19.280
+136 products have had an order quantity of at&nbsp;
+least ten. The ANY keyword represents this:&nbsp;&nbsp;
+
+00:01:19.280 --> 00:01:25.840
+If there is at least one match in the subquery,&nbsp;
+those records will display in the result set.
+

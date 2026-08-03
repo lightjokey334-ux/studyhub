@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:05.600
+By default, NULL values are allowed&nbsp;
+in columns when tables are created.&nbsp;&nbsp;
+
+00:00:05.600 --> 00:00:10.000
+However, often when creating a table, one or&nbsp;
+more columns should be required to have values.&nbsp;&nbsp;
+
+00:00:10.720 --> 00:00:16.640
+Take a look at this CREATE TABLE statement. This&nbsp;
+command is similar to one we ran elsewhere in the&nbsp;&nbsp;
+
+00:00:16.640 --> 00:00:21.840
+course, but I am now about to create a test&nbsp;
+version of the BikeRepairs table we created,&nbsp;&nbsp;
+
+00:00:21.840 --> 00:00:29.840
+and let's look at which columns should not&nbsp;
+be null. BikeRepairID should be required,&nbsp;&nbsp;
+
+00:00:30.560 --> 00:00:36.480
+and it should be the primary key of this table,&nbsp;
+so I have added the words NOT NULL PRIMARY KEY&nbsp;&nbsp;
+
+00:00:36.480 --> 00:00:42.160
+to this column. CustomerID should not be null&nbsp;
+either. The rest of these fields are debatable&nbsp;&nbsp;
+
+00:00:42.160 --> 00:00:48.640
+as we may not know these fields upon creating a&nbsp;
+repair. One could argue that the estimated rate&nbsp;&nbsp;
+
+00:00:48.640 --> 00:00:54.160
+field should be required so that a customer&nbsp;
+has an idea of how much a repair will cost.&nbsp;&nbsp;
+
+00:00:54.160 --> 00:01:01.040
+I have added NOT NULL to that column as well.&nbsp;
+I will then create this table and execute&nbsp;&nbsp;
+
+00:01:02.640 --> 00:01:09.680
+this command. That worked. What if, however, we&nbsp;
+determine later that the estimated rate column can&nbsp;&nbsp;
+
+00:01:09.680 --> 00:01:18.480
+be left blank? An ALTER command will work, setting&nbsp;
+the column to allow nulls. I will type the ALTER&nbsp;&nbsp;
+
+00:01:18.480 --> 00:01:33.680
+TABLE command needed to do this and notice&nbsp;
+that we need to specify the data type again.&nbsp;&nbsp;
+
+00:01:34.640 --> 00:01:40.160
+In other words, treat the syntax here as if this&nbsp;
+is a brand new column even though it is not.&nbsp;&nbsp;
+
+00:01:41.920 --> 00:01:50.240
+I will run just this portion of the query&nbsp;
+window, and we have a successful result.
+

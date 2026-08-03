@@ -7,15 +7,69 @@
    =================================================================== */
 
 var QUESTIONS_D2_PRE = [
-
-  // Exemplu (șterge-l când adaugi întrebări reale):
-  // {
-  //   id: "d2_pre_01",
-  //   type: "single",
-  //   question: "Exemplu de întrebare?",
-  //   image: null,
-  //   options: ["Răspuns A", "Răspuns B", "Răspuns C", "Răspuns D"],
-  //   correct: [0]
-  // },
-
+  {
+    id: "d2_pre_01",
+    type: "single",
+    question: "While a clustered index is based on a ______, a nonclustered index can be based on any other field.",
+    image: null,
+    options: [
+      "foreign key field",
+      "primary key field",
+      "column",
+      "row"
+    ],
+    correct: [1]
+  },
+  {
+    id: "d2_pre_02",
+    type: "single",
+    question: "Which statement best defines a view?",
+    image: null,
+    options: [
+      "A stored statement that leads one to specific information",
+      "A location within a database that stores specific information",
+      "A stored statement that leads one to general information",
+      "A location within a database that stores general information"
+    ],
+    correct: [0]
+  },
+  {
+    id: "d2_pre_03",
+    type: "single",
+    question: "What type of parameter must be specified when creating a stored procedure?",
+    image: null,
+    options: [
+      "Boolean",
+      "Number",
+      "Input",
+      "Output"
+    ],
+    correct: [3]
+  },
+  {
+    id: "d2_pre_04",
+    type: "single",
+    question: "What is not allowed in object names in SQL?",
+    image: null,
+    options: [
+      "Symbols",
+      "Numbers",
+      "Spaces",
+      "Special characters"
+    ],
+    correct: [2]
+  },
+  {
+    id: "d2_pre_05",
+    type: "single",
+    question: "Which command removes a table from a database?",
+    image: null,
+    options: [
+      "CLEAR TABLE",
+      "DROP TABLE",
+      "ELIMINATE TABLE",
+      "DELETE TABLE"
+    ],
+    correct: [1]
+  }
 ];

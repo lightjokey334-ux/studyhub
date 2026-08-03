@@ -1,0 +1,44 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:06.240
+The next keyword we will look at is used when&nbsp;
+we are just looking to get a small sample&nbsp;&nbsp;
+
+00:00:06.240 --> 00:00:10.400
+of what is in a table or tables that&nbsp;
+have been joined. I have a query that&nbsp;&nbsp;
+
+00:00:10.400 --> 00:00:15.920
+shows people and their addresses. When I&nbsp;
+execute this, we see that the query produces&nbsp;&nbsp;
+
+00:00:17.680 --> 00:00:25.520
+almost 19000 records. The query ran quickly here,&nbsp;
+but if you notice that a query is doing so many&nbsp;&nbsp;
+
+00:00:25.520 --> 00:00:31.840
+things that it's running slowly, and you are just&nbsp;
+testing a query, you can limit this to show a top&nbsp;&nbsp;
+
+00:00:31.840 --> 00:00:38.880
+number of records. To make this happen, I will add&nbsp;
+the keyword TOP after the word SELECT and then a&nbsp;&nbsp;
+
+00:00:38.880 --> 00:00:46.480
+number, 100 in this case. The top 100 records&nbsp;
+will return as soon as I execute this statement.&nbsp;&nbsp;
+
+00:00:47.520 --> 00:00:53.849
+Should you decide you want this sorted a certain&nbsp;
+way, as we saw elsewhere in this course, you would&nbsp;&nbsp;
+
+00:00:53.849 --> 00:01:01.440
+need to add an ORDER BY clause to the end of the&nbsp;
+query, as I will do here to sort this PostalCode,&nbsp;&nbsp;
+
+00:01:03.200 --> 00:01:11.840
+and then I will execute this again. Now, we&nbsp;
+see the top 100 records sorted by postal code.
+

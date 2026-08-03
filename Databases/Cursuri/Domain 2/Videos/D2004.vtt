@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:05.680
+One hallmark of writing any code in any app&nbsp;
+is to protect the code as much as possible.&nbsp;&nbsp;
+
+00:00:05.680 --> 00:00:12.960
+To do so, we want to, when necessary, not have&nbsp;
+SQL statements written directly in apps, such as&nbsp;&nbsp;
+
+00:00:12.960 --> 00:00:18.560
+C#-based apps, for example. One can&nbsp;
+accomplish this by creating and executing&nbsp;&nbsp;
+
+00:00:18.560 --> 00:00:25.600
+a stored procedure. A stored procedure is a saved&nbsp;
+query, but unlike a view, it can accept both input&nbsp;&nbsp;
+
+00:00:25.600 --> 00:00:30.880
+and output parameters. Let's take a look at this&nbsp;
+stored procedure. It still has a SELECT statement,&nbsp;&nbsp;
+
+00:00:32.480 --> 00:00:37.600
+just like a view does, but the similarities to&nbsp;
+a view stop there. This process does start with&nbsp;&nbsp;
+
+00:00:37.600 --> 00:00:44.800
+the CREATE PROCEDURE statement. Then look at&nbsp;
+these two items with at symbols (@). These are&nbsp;&nbsp;
+
+00:00:44.800 --> 00:00:50.720
+used as parameters, which are values that pass&nbsp;
+through a query. The EmployeeID parameter is an&nbsp;&nbsp;
+
+00:00:50.720 --> 00:00:57.440
+input parameter. How do we know this? It is not&nbsp;
+specified as an output parameter, so the employee&nbsp;&nbsp;
+
+00:00:57.440 --> 00:01:03.600
+ID is something a person will need to input when&nbsp;
+executing this stored procedure. The DepartmentID&nbsp;&nbsp;
+
+00:01:03.600 --> 00:01:09.920
+parameter is an output parameter. These parameters&nbsp;
+are used in apps to return a value the app will&nbsp;&nbsp;
+
+00:01:09.920 --> 00:01:16.720
+then use later. The SELECT statement says that we&nbsp;
+want to select the DepartmentID as a parameter,&nbsp;&nbsp;
+
+00:01:19.120 --> 00:01:25.520
+an output parameter, from the&nbsp;
+EmployeeDepartmentHistory table, where&nbsp;&nbsp;
+
+00:01:25.520 --> 00:01:32.800
+the BusinessEntityID is equal to the EmployeeID&nbsp;
+parameter, the input that we specified. If someone&nbsp;&nbsp;
+
+00:01:32.800 --> 00:01:39.360
+were to execute this stored procedure and enter&nbsp;
+16 for an Employee ID, the query would return the&nbsp;&nbsp;
+
+00:01:40.560 --> 00:01:46.400
+employee's department. All that said, an output&nbsp;
+parameter does not show the DepartmentID here.&nbsp;&nbsp;
+
+00:01:46.400 --> 00:01:51.760
+Rather, the output parameter determines the order&nbsp;
+in which outputs are sent to the app. If there are&nbsp;&nbsp;
+
+00:01:51.760 --> 00:01:57.680
+multiple outputs, output one will be sent to an&nbsp;
+app first, followed by output two, and so on. I&nbsp;&nbsp;
+
+00:01:57.680 --> 00:02:04.960
+will run this code to build the stored procedure.&nbsp;
+Then, I will select and run this EXEC statement,&nbsp;&nbsp;
+
+00:02:07.840 --> 00:02:15.600
+which executes the code. We get a message&nbsp;
+that the command was completed successfully,&nbsp;&nbsp;
+
+00:02:15.600 --> 00:02:20.400
+but no results show because they&nbsp;
+are meant to be used within an app.
+

@@ -86,6 +86,22 @@
         ce ai lăsat deschis/închis ultima dată — nu au nevoie de setare
         separată aici.
       </p>
+
+      <div class="settings-row">
+        <div class="settings-row-label">
+          <span class="settings-icon">▶️</span>
+          <span>Redă automat următorul videoclip</span>
+        </div>
+        <label class="settings-toggle">
+          <input type="checkbox" class="settings-toggle-input" data-key="autoplayNextVideo" data-on="on" data-off="off">
+          <span class="settings-toggle-slider"></span>
+        </label>
+      </div>
+      <p class="settings-note">
+        ℹ️ Când un videoclip se termină, trece automat la următorul din
+        același domeniu (dacă mai există unul). Dezactivează dacă preferi
+        să alegi tu manual din listă de fiecare dată.
+      </p>
     </div>
 
     <h2 class="settings-section-title">Teste și examene</h2>
@@ -104,6 +120,21 @@
       <p class="settings-note">
         ℹ️ Panoul e disponibil doar pe calculator — pe telefon nu apare
         oricum, pentru că nu are sens fără tastatură.
+      </p>
+
+      <div class="settings-row">
+        <div class="settings-row-label">
+          <span class="settings-icon">💾</span>
+          <span>Salvare automată a răspunsurilor</span>
+        </div>
+        <label class="settings-toggle">
+          <input type="checkbox" class="settings-toggle-input" data-key="autoSaveAnswers" data-on="on" data-off="off">
+          <span class="settings-toggle-slider"></span>
+        </label>
+      </div>
+      <p class="settings-note">
+        ℹ️ Dacă închizi din greșeală un test înainte să-l finalizezi,
+        reiei exact de unde ai rămas data viitoare când îl deschizi.
       </p>
     </div>
   </main>
@@ -129,6 +160,15 @@
       window.__savedNoteTimer = setTimeout(() => savedNote.classList.add('hidden'), 1800);
     }
 
+    // Anunță pagina părinte (dacă rulăm în fereastra plutitoare) despre
+    // orice schimbare — unele setări (ex: panoul de comenzi rapide) se pot
+    // aplica live, fără să reîncarce pagina și să piardă progresul testului.
+    function notifyParentSettingChanged(key, value) {
+      if (window.self !== window.top) {
+        window.parent.postMessage({ type: 'studyhub-setting-changed', key, value }, '*');
+      }
+    }
+
     // Select-uri (setări cu 3 opțiuni: logo-ul fiecărei materii)
     document.querySelectorAll('.settings-select').forEach(sel => {
       sel.value = current[sel.dataset.key] || STUDYHUB_DEFAULT_SETTINGS[sel.dataset.key];
@@ -137,6 +177,7 @@
         settings[sel.dataset.key] = sel.value;
         studyhubSaveSettings(settings);
         showSaved();
+        notifyParentSettingChanged(sel.dataset.key, settings[sel.dataset.key]);
       });
     });
 
@@ -151,6 +192,7 @@
         settings[key] = toggle.checked ? onValue : offValue;
         studyhubSaveSettings(settings);
         showSaved();
+        notifyParentSettingChanged(key, settings[key]);
       });
     });
   </script>

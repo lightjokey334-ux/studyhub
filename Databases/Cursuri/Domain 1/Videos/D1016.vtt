@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:06.000
+We saw how we can grant a user or group&nbsp;
+specific access to a part of a database&nbsp;&nbsp;
+
+00:00:06.000 --> 00:00:12.420
+in the previous video. Let's look further into&nbsp;
+some granting options. Here is one scenario:&nbsp;&nbsp;
+
+00:00:12.420 --> 00:00:18.480
+an administrator may want to save time in overall&nbsp;
+database administration through not only granting&nbsp;&nbsp;
+
+00:00:18.480 --> 00:00:24.960
+a role to someone, but also giving that person,&nbsp;
+or sometimes group, the option to grant the same&nbsp;&nbsp;
+
+00:00:24.960 --> 00:00:31.860
+permission to others. I have a blank query window&nbsp;
+open and I'm going to type a GRANT statement,&nbsp;&nbsp;
+
+00:00:31.860 --> 00:00:40.980
+explain it, and then execute it. I will type&nbsp;
+GRANT EXECUTE ON GetDepartment to procTester&nbsp;&nbsp;
+
+00:00:41.700 --> 00:00:48.540
+WITH GRANT OPTION. Before I run this statement,&nbsp;
+let's go through its details. GRANT grants a&nbsp;&nbsp;
+
+00:00:48.540 --> 00:00:55.140
+privilege, in this case Execute, on an object.&nbsp;
+The object, in this example, GetDepartment,&nbsp;&nbsp;
+
+00:00:55.140 --> 00:01:01.920
+is a stored procedure, which we will detail later&nbsp;
+in this course. procTester is a user account that&nbsp;&nbsp;
+
+00:01:01.920 --> 00:01:07.200
+I added to this SQL Server instance and then to&nbsp;
+this database. The WITH GRANT OPTION clause gives&nbsp;&nbsp;
+
+00:01:07.200 --> 00:01:14.280
+this account, procTester, the ability to grant&nbsp;
+execute privileges on this stored procedure to&nbsp;&nbsp;
+
+00:01:14.280 --> 00:01:18.660
+other users and groups. While this grant is a&nbsp;
+convenience for allowing people to help control&nbsp;&nbsp;
+
+00:01:18.660 --> 00:01:24.900
+access to an object, of course administrators&nbsp;
+need to show discretion as to who they grant these&nbsp;&nbsp;
+
+00:01:24.900 --> 00:01:31.020
+options to when granting permissions on a resource&nbsp;
+as we want to make sure, as we execute this,&nbsp;&nbsp;
+
+00:01:31.560 --> 00:01:36.840
+only those who know how to handle permissions&nbsp;
+properly grant permissions to others.
+

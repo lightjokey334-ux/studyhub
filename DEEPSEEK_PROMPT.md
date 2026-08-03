@@ -81,11 +81,11 @@ REGULI PE TIP DE ÎNTREBARE:
    its definition")
    - question: DOAR instrucțiunea (fără etichete în text), ex: "Match
      each leased line to its top speed."
-   - pairs: array cu etichetele fixe din stânga, ÎN ORDINEA din captură,
-     ex: ["T1", "E3", "T3", "E1"] sau ["Box 1", "Box 2", "Box 3"].
-   - options: TOATE valorile disponibile de tras (pot fi mai puține decât
-     "pairs" dacă o valoare se repetă, ex: ["VLAN", "Switch"] folosit de
-     mai multe ori).
+   - pairs: array cu etichetele fixe din DREAPTA capturii, ÎN ORDINEA din
+     captură, ex: ["T1", "E3", "T3", "E1"] sau ["Box 1", "Box 2", "Box 3"].
+   - options: TOATE valorile disponibile de tras, aflate în STÂNGA
+     capturii (pot fi mai puține decât "pairs" dacă o valoare se repetă,
+     ex: ["VLAN", "Switch"] folosit de mai multe ori).
    - correct: array cu valoarea corectă (ca text) pentru fiecare element
      din "pairs", ÎN ACEEAȘI ORDINE ca "pairs".
    - Dacă întrebarea are o diagramă (floor plan, topologie) din care provin

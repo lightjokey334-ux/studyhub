@@ -1,0 +1,102 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:02.750 --> 00:00:06.300
+Syntax and runtime errors also occur when
+trying to retrieve data from a database.
+
+00:00:06.300 --> 00:00:12.900
+Here is a query that will attempt to retrieve
+information from a database.
+
+00:00:12.900 --> 00:00:19.170
+When I execute it, we get a syntax error near
+the FROM keyword.
+
+00:00:19.170 --> 00:00:24.940
+Upon further inspection, we see something
+common to queries, a misplacement of commas.
+
+00:00:24.940 --> 00:00:31.060
+The usual reason for this is that a column
+was located after this Status column.
+
+00:00:31.060 --> 00:00:35.690
+It was removed, but the comma was never replaced.
+
+00:00:35.690 --> 00:00:41.120
+One solution to the problem is always to ensure
+there is no comma after the last column listed
+
+00:00:41.120 --> 00:00:43.120
+in a query.
+
+00:00:43.120 --> 00:00:49.980
+Here is a tip for using commas that will make
+the previous issue never happen.
+
+00:00:49.980 --> 00:00:56.570
+It's actually a tip I got from a coworker
+long ago: Put the commas at the beginning
+
+00:00:56.570 --> 00:01:08.950
+of each line after the first line.
+
+00:01:08.950 --> 00:01:17.159
+I will do that and remove the commas from
+the ends of the lines, execute the statement,
+
+00:01:17.159 --> 00:01:23.729
+and the query now works.
+
+00:01:23.729 --> 00:01:26.930
+Let us now see an example of a runtime error.
+
+00:01:26.930 --> 00:01:32.250
+With management applications such as SQL Server
+Management Studio, one could be working with
+
+00:01:32.250 --> 00:01:34.340
+multiple databases.
+
+00:01:34.340 --> 00:01:39.710
+Sometimes, someone could be trying to run
+a well-written query but against the wrong
+
+00:01:39.710 --> 00:01:40.710
+database.
+
+00:01:40.710 --> 00:01:47.390
+I am purposely going to switch databases and
+then try to execute this query.
+
+00:01:47.390 --> 00:01:51.369
+Of course, it will not work because the query
+is running against the wrong database.
+
+00:01:51.369 --> 00:01:58.902
+What is worse is to have two copies of a database,
+such as a production copy and a test copy,
+
+00:01:58.902 --> 00:02:03.390
+and run an action query, such as an UPDATE,
+INSERT, or DELETE query against the wrong
+
+00:02:03.390 --> 00:02:05.440
+database.
+
+00:02:05.440 --> 00:02:09.830
+One way to solve this problem is to utilize
+a USE statement at the beginning of a query.
+
+00:02:09.830 --> 00:02:19.660
+I will add, to the top of this query, the
+statement USE AdventureWorks2019.
+
+00:02:19.660 --> 00:02:27.220
+Then, when I execute this, everything runs.
+
+00:02:27.220 --> 00:02:30.470
+The Available Databases field updates as well.
+

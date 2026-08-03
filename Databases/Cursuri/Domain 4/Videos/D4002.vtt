@@ -1,0 +1,67 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:02.460 --> 00:00:05.690
+The next type of insert statement inserts
+values into a table and does not involve using
+
+00:00:05.690 --> 00:00:07.150
+a SELECT statement.
+
+00:00:07.150 --> 00:00:14.320
+To execute such an insert statement, we need
+to know the table we are inserting data into,
+
+00:00:14.320 --> 00:00:21.180
+the columns that will receive data, and the
+data itself.
+
+00:00:21.180 --> 00:00:27.169
+Here, I have an INSERT statement that shows
+that we will insert some data into the BikeRepairs
+
+00:00:27.169 --> 00:00:28.169
+table.
+
+00:00:28.169 --> 00:00:34.800
+The statement starts with the INSERT INTO
+keywords and the table we are inserting data
+
+00:00:34.800 --> 00:00:38.469
+into: BikeRepairs.
+
+00:00:38.469 --> 00:00:43.989
+Then in parentheses, we see the columns that
+will receive data.
+
+00:00:43.989 --> 00:00:47.800
+Keep in mind that required fields must be
+included here.
+
+00:00:47.800 --> 00:00:56.800
+The VALUES keyword is next, followed by the
+values we will add, making sure each value
+
+00:00:56.800 --> 00:01:03.690
+corresponds with each column listed above.
+
+00:01:03.690 --> 00:01:08.040
+For this example, I am inserting two repairs
+into the table.
+
+00:01:08.040 --> 00:01:12.479
+In real-life apps, code that pulls values
+from form fields is a far more likely scenario
+
+00:01:12.479 --> 00:01:15.960
+than for this example of hard-coded values.
+
+00:01:15.960 --> 00:01:22.140
+Still, the goal is to see how an INSERT statement
+is formed and executed.
+
+00:01:22.140 --> 00:01:28.859
+I will execute this statement, and we have
+two rows added to the BikeRepairs table.
+

@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:06.320
+The next keyword we will look at allows us to&nbsp;
+return records between two numbers or two dates.&nbsp;&nbsp;
+
+00:00:06.320 --> 00:00:10.160
+The actual keyword is the BETWEEN&nbsp;
+keyword. For this example,&nbsp;&nbsp;
+
+00:00:10.160 --> 00:00:18.080
+I want this query to return orders from June 2014.&nbsp;
+To accomplish this, I will add a WHERE clause&nbsp;&nbsp;
+
+00:00:18.080 --> 00:00:29.840
+to the end of this query. Then, I will add the&nbsp;
+following: OrderDate BETWEEN '06/01/2014' and&nbsp;&nbsp;
+
+00:00:33.600 --> 00:00:39.440
+'06/30/2014'. I will add single quotes around&nbsp;
+the dates since they have slashes in them.&nbsp;&nbsp;
+
+00:00:39.440 --> 00:00:47.520
+Otherwise, SQL will think you are trying to do a&nbsp;
+division problem. I will run this, and we now see&nbsp;&nbsp;
+
+00:00:47.520 --> 00:00:54.240
+orders between those two dates. There is one&nbsp;
+real-life situation I want to point out here:&nbsp;&nbsp;
+
+00:00:55.280 --> 00:01:03.280
+This date format assumes 12 AM. If the date field&nbsp;
+you are using keeps track of time, you will want&nbsp;&nbsp;
+
+00:01:03.280 --> 00:01:10.240
+to reflect that in any date criteria. For example,&nbsp;
+if we saw that these dates had timestamps,&nbsp;&nbsp;
+
+00:01:10.800 --> 00:01:16.800
+we would want to change the end date to reflect&nbsp;
+11:59:00 PM, as I am doing with this criterion.&nbsp;&nbsp;
+
+00:01:21.760 --> 00:01:25.840
+Otherwise, you will not see any orders on&nbsp;
+June 30 unless they were placed at midnight.&nbsp;&nbsp;
+
+00:01:26.400 --> 00:01:31.040
+That said, the BETWEEN keyword is inclusive&nbsp;
+with a number range or date range,&nbsp;&nbsp;
+
+00:01:31.040 --> 00:01:37.040
+as we do have orders from&nbsp;
+June 30 in this result set.
+

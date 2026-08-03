@@ -1,0 +1,28 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:05.280
+A little later in the course, we are going&nbsp;
+to be covering SQL keywords. Before we do,&nbsp;&nbsp;
+
+00:00:05.280 --> 00:00:10.480
+though, you can get a decent SQL reference on a&nbsp;
+table by generating the statement necessary to&nbsp;&nbsp;
+
+00:00:10.480 --> 00:00:16.160
+create the table. I will select and hold (or&nbsp;
+right-click) this Person.EmailAddress table,&nbsp;&nbsp;
+
+00:00:16.800 --> 00:00:27.760
+then select Script Table as, CREATE to, and&nbsp;
+New Query Editor Window. Once this is done,&nbsp;&nbsp;
+
+00:00:29.200 --> 00:00:36.720
+we see the syntax for the columns added to the&nbsp;
+table and the primary key, which, as we see here,&nbsp;&nbsp;
+
+00:00:36.720 --> 00:00:43.840
+is a constraint with the two fields we saw&nbsp;
+earlier, BusinessEntityID and EmailAddressID.
+

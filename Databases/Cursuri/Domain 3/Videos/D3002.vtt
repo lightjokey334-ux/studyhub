@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:06.420
+Suppose you specify two tables in a query without&nbsp;
+specifying a join. In that case, you will have&nbsp;&nbsp;
+
+00:00:06.420 --> 00:00:12.480
+a cartesian product in which every record in one&nbsp;
+table is related to every record in another. That&nbsp;&nbsp;
+
+00:00:12.480 --> 00:00:18.840
+is usually done by accident, but, as we see with&nbsp;
+this query, we are trying to display an inventory&nbsp;&nbsp;
+
+00:00:18.840 --> 00:00:26.160
+sheet of every product in every location. Notice,&nbsp;
+that with these two tables, Product and Location,&nbsp;&nbsp;
+
+00:00:26.160 --> 00:00:32.460
+no specific join is specified, which indicates&nbsp;
+a cartesian product. When I run this query,&nbsp;&nbsp;
+
+00:00:33.660 --> 00:00:38.940
+every product is in every&nbsp;
+location and one can print&nbsp;&nbsp;
+
+00:00:38.940 --> 00:00:42.780
+this out and start taking inventory of&nbsp;
+the products that are in each location.&nbsp;&nbsp;
+
+00:00:43.680 --> 00:00:49.020
+If we want to, for the purpose of clarifying&nbsp;
+the use of a query such as this query, we can&nbsp;&nbsp;
+
+00:00:49.020 --> 00:00:55.560
+indicate that this query is a CROSS JOIN, which&nbsp;
+is a cartesian product. I will change the comma&nbsp;&nbsp;
+
+00:00:55.560 --> 00:01:02.220
+to the words CROSS JOIN and execute this query&nbsp;
+again. The results are the same, so whether&nbsp;&nbsp;
+
+00:01:02.220 --> 00:01:07.860
+one uses a comma or a CROSS JOIN clause, the&nbsp;
+end result will still be a Cartesian product.
+

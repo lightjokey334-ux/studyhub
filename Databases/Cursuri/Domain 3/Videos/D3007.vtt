@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:05.920
+For the purposes of a report or to show&nbsp;
+a scenario, one may want to show data&nbsp;&nbsp;
+
+00:00:05.920 --> 00:00:11.200
+in a calculated form. Take, for example, this&nbsp;
+query that shows some information on products,&nbsp;&nbsp;
+
+00:00:11.200 --> 00:00:15.600
+including the product's list price. Say&nbsp;
+we want to add a column that will show&nbsp;&nbsp;
+
+00:00:15.600 --> 00:00:20.160
+the list price minus 10% as a&nbsp;
+column titled 10% Off Price.&nbsp;&nbsp;
+
+00:00:21.360 --> 00:00:27.840
+I will add a comma after the existing List Price&nbsp;
+field and then add the ListPrice column again,&nbsp;&nbsp;
+
+00:00:28.960 --> 00:00:36.320
+this time multiplying it by .9 to take 10% off&nbsp;
+the price, and then I will add a column alias of&nbsp;&nbsp;
+
+00:00:36.880 --> 00:00:45.920
+'10% Off Price' in quotes. I will execute this&nbsp;
+statement, and we see that the query works.&nbsp;&nbsp;
+
+00:00:48.880 --> 00:00:54.160
+However, on a second inspection of the pricing&nbsp;
+column, it would be nice if the dollar amounts&nbsp;&nbsp;
+
+00:00:54.160 --> 00:00:58.640
+looked like dollar amounts, carried to two places.&nbsp;
+There are a few ways to format this number,&nbsp;&nbsp;
+
+00:00:58.640 --> 00:01:05.360
+but the easiest way is to add the string&nbsp;
+function (str) to this new, computed column.&nbsp;&nbsp;
+
+00:01:05.360 --> 00:01:11.840
+I will add the letters str and an open&nbsp;
+parenthesis before the column, then 8,&nbsp;&nbsp;
+
+00:01:14.560 --> 00:01:21.440
+2, and close parenthesis to indicate&nbsp;
+eight characters long with two numbers&nbsp;&nbsp;
+
+00:01:21.440 --> 00:01:34.560
+after the decimal point. Let's see how this&nbsp;
+looks when I execute it. It looks good.
+

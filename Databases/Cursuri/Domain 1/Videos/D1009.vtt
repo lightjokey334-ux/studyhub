@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.040 --> 00:00:05.920
+We have covered primary keys and their use in&nbsp;
+database tables. Primary keys can also be used&nbsp;&nbsp;
+
+00:00:05.920 --> 00:00:12.720
+to establish foreign keys, fields that define&nbsp;
+one-to-one or one-to-many relationships between&nbsp;&nbsp;
+
+00:00:12.720 --> 00:00:16.800
+tables. One-to-one relationships&nbsp;
+use primary keys from two tables.&nbsp;&nbsp;
+
+00:00:17.520 --> 00:00:23.920
+One-to-many relationships use a primary key in&nbsp;
+one table and a non-primary key in another table.&nbsp;&nbsp;
+
+00:00:23.920 --> 00:00:29.840
+Here is an example. I have the&nbsp;
+Person.StateProvince table design open,&nbsp;&nbsp;
+
+00:00:30.400 --> 00:00:35.520
+and I want to add a foreign key to&nbsp;
+the CountryRegion code field in the&nbsp;&nbsp;
+
+00:00:35.520 --> 00:00:40.480
+Person.CountryRegion table. Doing this will allow&nbsp;
+the country region codes to be looked up from the&nbsp;&nbsp;
+
+00:00:40.480 --> 00:00:45.760
+CountryRegion table when forms are built for&nbsp;
+this database. Columns in relationships do not&nbsp;&nbsp;
+
+00:00:45.760 --> 00:00:51.040
+need to have the same name, but they do need to&nbsp;
+have the same data type. In other words, a text&nbsp;&nbsp;
+
+00:00:51.040 --> 00:00:57.600
+field has to be related to another text field,&nbsp;
+and a number field has to be related to another&nbsp;&nbsp;
+
+00:00:57.600 --> 00:01:02.560
+number field. To add a foreign key, we want to be&nbsp;
+in the table where the foreign key will reside,&nbsp;&nbsp;
+
+00:01:02.560 --> 00:01:09.040
+not the table with the primary key. I will select&nbsp;
+the Table Designer menu and then Relationships.&nbsp;&nbsp;
+
+00:01:10.160 --> 00:01:16.720
+Then, to add a foreign key relationship, I will&nbsp;
+select Add. I will then select the ellipsis&nbsp;&nbsp;
+
+00:01:17.280 --> 00:01:24.320
+on the Tables and Columns Specification field.&nbsp;
+The primary key table is the table we are in, and&nbsp;&nbsp;
+
+00:01:24.320 --> 00:01:33.000
+the primary key is listed here. I will switch this&nbsp;
+to the primary key on the CountryRegion table and&nbsp;&nbsp;
+
+00:01:33.680 --> 00:01:39.520
+add the CountryRegionCode field below&nbsp;
+the table. Then, in the Foreign key&nbsp;&nbsp;
+
+00:01:39.520 --> 00:01:45.120
+table area, I will choose the table we are&nbsp;
+in and the matching CountryRegionCode field.&nbsp;&nbsp;
+
+00:01:45.840 --> 00:01:52.720
+As we do this, note that the relationship name&nbsp;
+builds itself to reference the foreign key table&nbsp;&nbsp;
+
+00:01:53.280 --> 00:01:58.000
+and then the primary key table. Some believe&nbsp;
+that we should add the column name here,&nbsp;&nbsp;
+
+00:01:58.000 --> 00:02:05.520
+but for now, I will just select the OK button,&nbsp;
+the Close button, save the changes to the table,&nbsp;&nbsp;
+
+00:02:06.320 --> 00:02:12.480
+and then acknowledge that two tables will&nbsp;
+be affected as a result of this foreign key.
+

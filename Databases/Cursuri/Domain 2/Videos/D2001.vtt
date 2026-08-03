@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:05.680
+Now that you know the steps to take to organize&nbsp;
+and plan a database, let’s get to building one.&nbsp;&nbsp;
+
+00:00:05.680 --> 00:00:13.200
+We are going to be using Structured Query Language&nbsp;
+(SQL) to build our database. To start this domain&nbsp;&nbsp;
+
+00:00:13.200 --> 00:00:17.760
+on database object management, I want to start&nbsp;
+with adding tables to a database. When we create&nbsp;&nbsp;
+
+00:00:17.760 --> 00:00:23.520
+tables, we want to specify three things: The&nbsp;
+table's name. The columns to add to the table,&nbsp;&nbsp;
+
+00:00:23.520 --> 00:00:28.640
+and The data types for each column within the&nbsp;
+table. Notice this CREATE statement for creating&nbsp;&nbsp;
+
+00:00:28.640 --> 00:00:39.600
+a table. It contains the table's (entity's) name,&nbsp;
+the columns to use, and the data type for each&nbsp;&nbsp;
+
+00:00:40.640 --> 00:00:46.800
+column. I also want you to notice the naming&nbsp;
+convention we are using here. There are no spaces&nbsp;&nbsp;
+
+00:00:47.440 --> 00:00:52.720
+in the names of any fields. In SQL, spaces are&nbsp;
+not allowed in object names unless those object&nbsp;&nbsp;
+
+00:00:52.720 --> 00:00:59.440
+names are in square brackets. For consistency's&nbsp;
+sake, it's best not to have spaces in field names.&nbsp;&nbsp;
+
+00:01:00.080 --> 00:01:06.560
+Also, SQL is not case-sensitive by nature, but&nbsp;
+many programming languages that use SQL statements&nbsp;&nbsp;
+
+00:01:07.120 --> 00:01:14.560
+are case-sensitive. Thus, it is important to have&nbsp;
+consistency in casing among column names, as here,&nbsp;&nbsp;
+
+00:01:14.560 --> 00:01:21.280
+we see each word in each column name starts&nbsp;
+with a capital letter. I will run this code,&nbsp;&nbsp;
+
+00:01:23.040 --> 00:01:30.160
+and we have our new table. Once a table is&nbsp;
+created, the only way to change it is to alter&nbsp;&nbsp;
+
+00:01:30.160 --> 00:01:35.040
+the table. We never run a CREATE statement&nbsp;
+again when trying to make changes to an entity.&nbsp;&nbsp;
+
+00:01:35.040 --> 00:01:40.480
+We, instead, as we see in this file,&nbsp;
+alter a table using the ALTER command.&nbsp;&nbsp;
+
+00:01:41.200 --> 00:01:45.600
+Notice that only one alteration&nbsp;
+is allowed per ALTER statement.&nbsp;&nbsp;
+
+00:01:47.600 --> 00:01:55.520
+The first adds a column to a table, but the word&nbsp;
+column is not specified for an ADD statement.&nbsp;&nbsp;
+
+00:01:55.520 --> 00:02:00.880
+The second alters an existing column to change&nbsp;
+the number of characters allowed in the column&nbsp;&nbsp;
+
+00:02:01.440 --> 00:02:06.480
+and switches this to nvarchar as the database&nbsp;
+users want to use symbols when needed in their&nbsp;&nbsp;
+
+00:02:06.480 --> 00:02:14.000
+descriptions. You will also notice the DROP TABLE&nbsp;
+command in the same query. Having multiple SQL&nbsp;&nbsp;
+
+00:02:14.000 --> 00:02:18.400
+statements in one window is fine because we can&nbsp;
+select lines to execute and then select Execute&nbsp;&nbsp;
+
+00:02:18.400 --> 00:02:24.480
+to run the code for just the selected lines. I&nbsp;
+will select the ALTER statements and run those,&nbsp;&nbsp;
+
+00:02:26.800 --> 00:02:33.280
+and we see a successful result. The DROP TABLE&nbsp;
+command removes a table from a database. Of&nbsp;&nbsp;
+
+00:02:33.280 --> 00:02:37.760
+course, we need to be very careful with this&nbsp;
+because dropping a table also deletes everything&nbsp;&nbsp;
+
+00:02:37.760 --> 00:02:45.040
+within that table. I will select and then run&nbsp;
+this DROP TABLE statement to drop this test table,&nbsp;&nbsp;
+
+00:02:47.760 --> 00:02:55.200
+and the table has been removed from the&nbsp;
+database. I will refresh the list of objects&nbsp;&nbsp;
+
+00:02:55.200 --> 00:03:03.840
+within this server to prove this,&nbsp;
+and the test table is now gone.
+

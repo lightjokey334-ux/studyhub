@@ -1,0 +1,39 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:05.520
+The next clause we are going to cover is&nbsp;
+probably the most important clause used in&nbsp;&nbsp;
+
+00:00:05.520 --> 00:00:11.040
+queries. It is the WHERE clause. The WHERE clause&nbsp;
+creates filters on the data we are querying, and&nbsp;&nbsp;
+
+00:00:11.040 --> 00:00:16.160
+most queries will warrant a filter as people are&nbsp;
+often looking for data under specific conditions.&nbsp;&nbsp;
+
+00:00:16.800 --> 00:00:21.360
+I have this query with people and address&nbsp;
+information, and let's say I am looking for&nbsp;&nbsp;
+
+00:00:21.360 --> 00:00:27.200
+people from a certain city, such as Los Angeles.&nbsp;
+The WHERE clause always appears after the tables&nbsp;&nbsp;
+
+00:00:27.200 --> 00:00:38.400
+used in a query. I will go to the end of the&nbsp;
+query and type WHERE City = 'Los Angeles'.&nbsp;&nbsp;
+
+00:00:39.840 --> 00:00:45.440
+Note that we should always have single quotes&nbsp;
+around any value with text. I will execute this,&nbsp;&nbsp;
+
+00:00:47.680 --> 00:00:49.680
+and we have 91 rows.&nbsp;&nbsp;
+
+00:00:50.800 --> 00:00:57.840
+Future topics will go through other ways to use&nbsp;
+this WHERE clause, but this is a good start.
+

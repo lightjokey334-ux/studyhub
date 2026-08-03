@@ -1,0 +1,153 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.979 --> 00:00:05.150
+One very important concept to understand with
+these roles is that SQL has distinct levels
+
+00:00:05.150 --> 00:00:09.700
+of roles for server tasks and database tasks.
+
+00:00:09.700 --> 00:00:16.820
+The roles you just saw, all being server-level
+roles, do not give users access to individual
+
+00:00:16.820 --> 00:00:17.900
+databases.
+
+00:00:17.900 --> 00:00:22.170
+For users to have permissions on databases,
+those permissions either need to be granted
+
+00:00:22.170 --> 00:00:26.680
+specifically or through one or more database
+roles.
+
+00:00:26.680 --> 00:00:36.370
+I will expand the AdventureWorks2019 database
+and then Security, Roles, and Database Roles.
+
+00:00:36.370 --> 00:00:42.719
+As we cover these roles, again, focus on the
+purpose of roles, which is to control permissions
+
+00:00:42.719 --> 00:00:44.930
+on, in this case, a database.
+
+00:00:44.930 --> 00:00:52.070
+Going from least restrictive to most restrictive,
+let's start with the db_owner role, which
+
+00:00:52.070 --> 00:00:57.370
+has complete control on a database, including
+the ability to drop the database.
+
+00:00:57.370 --> 00:01:02.859
+Next, we have the db_securityadmin role, which
+allows one to manage membership of custom
+
+00:01:02.859 --> 00:01:05.729
+roles and manage overall permissions on a
+database.
+
+00:01:05.729 --> 00:01:12.189
+Thirdly, we have the db_accessadmin role,
+which can add or remove access for Windows
+
+00:01:12.189 --> 00:01:17.180
+accounts and groups and SQL accounts to and
+from a database.
+
+00:01:17.180 --> 00:01:21.400
+Earlier I mentioned that the ability to restore
+databases is a server role.
+
+00:01:21.400 --> 00:01:28.020
+For backups, however, the db_backupoperator
+role is assigned to each database.
+
+00:01:28.020 --> 00:01:33.680
+The reasoning behind doing these roles on
+these levels is: restores need to happen quickly,
+
+00:01:33.680 --> 00:01:41.799
+so a person in that role should be able to
+restore any database on a server.
+
+00:01:41.799 --> 00:01:46.340
+Backups happen on different schedules depending
+upon the volume of data being backed up and
+
+00:01:46.340 --> 00:01:51.220
+the needs for data to be as current as possible
+should it need to be restored.
+
+00:01:51.220 --> 00:01:57.409
+The db_ddladmin role can run any data definition
+language command, which includes CREATE, ALTER,
+
+00:01:57.409 --> 00:02:02.039
+and DROP commands, the latter being the main
+reason administrators need to be careful as
+
+00:02:02.039 --> 00:02:04.079
+to who receives this role.
+
+00:02:04.079 --> 00:02:11.200
+The db_datawriter role allows one to add,
+change, or delete data to, in, or from any
+
+00:02:11.200 --> 00:02:13.220
+table in a database.
+
+00:02:13.220 --> 00:02:19.980
+The db_datareader role allows for viewing
+any data in tables or filtered data through
+
+00:02:19.980 --> 00:02:21.080
+views.
+
+00:02:21.080 --> 00:02:27.430
+There are two explicit deny roles that can
+be placed on users in a database.
+
+00:02:27.430 --> 00:02:34.440
+The db_denydatawriter role prevents those
+in that role from adding data to, deleting
+
+00:02:34.440 --> 00:02:38.330
+data from, or modifying data in a database.
+
+00:02:38.330 --> 00:02:45.140
+The db_denydatareader role prevents one from
+reading data in tables and views.
+
+00:02:45.140 --> 00:02:50.550
+Lastly, the public role for a database is
+the same as that of the public role for the
+
+00:02:50.550 --> 00:02:55.800
+server except, of course, the role is at the
+database level and whatever permissions are
+
+00:02:55.800 --> 00:03:01.140
+granted to the role apply to anyone with an
+account assigned to the database.
+
+00:03:01.140 --> 00:03:06.390
+Before leaving this topic, the deny permissions
+bring up an interesting point: why use them
+
+00:03:06.390 --> 00:03:09.280
+when we can just keep people in the public
+role?
+
+00:03:09.280 --> 00:03:15.319
+The reason: these two roles ensure that certain
+users can be prevented from ever reading data
+
+00:03:15.319 --> 00:03:21.510
+or changing data even if a group they belong
+to has access to a database.
+

@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:05.880
+Though SQL is a keyword-based language, it
+is a programming language.
+
+00:00:05.880 --> 00:00:11.550
+With any programming language, what we want
+to happen and what happens often differ.
+
+00:00:11.550 --> 00:00:16.490
+In this domain on troubleshooting, we will
+see how to troubleshoot both syntax and runtime
+
+00:00:16.490 --> 00:00:17.490
+errors.
+
+00:00:17.490 --> 00:00:22.739
+As we do this, take note of the most common
+mistakes people make when building queries.
+
+00:00:22.739 --> 00:00:27.320
+This way, if this happens to you, you will
+know what to do.
+
+00:00:27.320 --> 00:00:34.370
+This domain is all about going through two
+types of errors: syntax errors and runtime
+
+00:00:34.370 --> 00:00:35.500
+errors.
+
+00:00:35.500 --> 00:00:41.110
+For the most part, a syntax error will cause
+a statement not to run, and a runtime error
+
+00:00:41.110 --> 00:00:46.260
+will appear when there are no syntax errors
+present, but something in a query is causing
+
+00:00:46.260 --> 00:00:49.360
+it not to run properly.
+
+00:00:49.360 --> 00:00:53.080
+Some errors occur when trying to work with
+database objects.
+
+00:00:53.080 --> 00:00:59.880
+Take a look at this statement attempting to
+add a column to an existing table in the BikeRepair
+
+00:00:59.880 --> 00:01:02.020
+database.
+
+00:01:02.020 --> 00:01:09.640
+I will execute this statement, and immediately
+we see an error about an object type.
+
+00:01:09.640 --> 00:01:14.570
+This error is a syntax error because whoever
+built this query did not specify the type
+
+00:01:14.570 --> 00:01:17.040
+of object being altered.
+
+00:01:17.040 --> 00:01:24.659
+I will change this to an ALTER TABLE statement.
+
+00:01:24.659 --> 00:01:27.770
+I will attempt to execute this again.
+
+00:01:27.770 --> 00:01:34.710
+Now, it is saying there is incorrect syntax
+near the keyword column.
+
+00:01:34.710 --> 00:01:41.040
+When adding something to a table, SQL knows
+we are adding a column, so the keyword is
+
+00:01:41.040 --> 00:01:43.490
+unnecessary.
+
+00:01:43.490 --> 00:01:45.259
+Let's try this again.
+
+00:01:45.259 --> 00:01:50.029
+Now, when we execute it, this works.
+
+00:01:50.029 --> 00:01:56.240
+Let me show you a runtime error as it pertains
+to working with objects.
+
+00:01:56.240 --> 00:02:03.789
+I will run this statement, free of syntax
+errors, and we get an error stating that every
+
+00:02:03.789 --> 00:02:06.529
+column in a table must be unique.
+
+00:02:06.529 --> 00:02:13.250
+Again, a runtime error is an error that is
+not caused by a badly written query.
+
+00:02:13.250 --> 00:02:18.250
+A runtime error occurs when a well-written
+query attempts to do something to a database
+
+00:02:18.250 --> 00:02:21.200
+that cannot be done.
+

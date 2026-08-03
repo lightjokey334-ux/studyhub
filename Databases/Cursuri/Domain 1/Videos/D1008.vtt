@@ -1,0 +1,92 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.040 --> 00:00:07.760
+Let's now get into some details on these data&nbsp;
+types. I'm back in the sales.salesorderheader&nbsp;&nbsp;
+
+00:00:07.760 --> 00:00:12.240
+table, and we want to see why these data&nbsp;
+types have been chosen for these columns.&nbsp;&nbsp;
+
+00:00:12.960 --> 00:00:17.840
+Integer columns can have numbers ranging from&nbsp;
+approximately negative to positive two billion.&nbsp;&nbsp;
+
+00:00:18.720 --> 00:00:25.520
+Small integer numbers range&nbsp;
+from -32767 to positive 32767.&nbsp;&nbsp;
+
+00:00:28.000 --> 00:00:34.560
+Tiny integers range from zero to 255. If&nbsp;
+you know a number range will be smaller,&nbsp;&nbsp;
+
+00:00:34.560 --> 00:00:38.880
+you may want to use a smaller number value&nbsp;
+to use fewer bytes overall for storage.&nbsp;&nbsp;
+
+00:00:39.440 --> 00:00:45.280
+For money fields, the number range is about&nbsp;
+negative 922 to positive 922 trillion,&nbsp;&nbsp;
+
+00:00:45.920 --> 00:00:52.960
+which, of course, is huge. Smallmoney values range&nbsp;
+from negative to positive 214000. For text fields,&nbsp;&nbsp;
+
+00:00:52.960 --> 00:00:58.240
+we covered elsewhere the number of bytes&nbsp;
+varchar fields use versus nvarchar fields.&nbsp;&nbsp;
+
+00:00:59.440 --> 00:01:04.640
+That said, nvarchar fields allow for Unicode&nbsp;
+characters while varchar fields do not.&nbsp;&nbsp;
+
+00:01:05.280 --> 00:01:11.760
+Two columns in this table show this well. This&nbsp;
+CreditCardApprovalCode column uses varchar.&nbsp;&nbsp;
+
+00:01:11.760 --> 00:01:17.120
+There is no need for symbols in this column.&nbsp;
+Let's contrast that with the Comment column,&nbsp;&nbsp;
+
+00:01:17.120 --> 00:01:23.280
+which is an nvarchar column. Someone posting&nbsp;
+comments may want to include Unicode symbols,&nbsp;&nbsp;
+
+00:01:23.280 --> 00:01:30.320
+hence the need for nvarchar even though nvarchar&nbsp;
+columns use almost double the space of varchar&nbsp;&nbsp;
+
+00:01:30.320 --> 00:01:40.160
+columns. For date and time fields, the datetime&nbsp;
+field has a date range of 1753 to 9999 in years,&nbsp;&nbsp;
+
+00:01:40.160 --> 00:01:46.800
+and time can be calculated to the thousandth of a&nbsp;
+second. Just to compare, the smalldatetime field&nbsp;&nbsp;
+
+00:01:46.800 --> 00:01:54.240
+has a date range of 1900 to 2079, specifically&nbsp;
+June 6, 2079. More importantly, time can be&nbsp;&nbsp;
+
+00:01:54.240 --> 00:02:00.720
+broken down to the second but no further. A bit&nbsp;
+field, shown here with the OnlineOrderFlag field,&nbsp;&nbsp;
+
+00:02:01.520 --> 00:02:08.240
+is a 0 or 1 field and is usually used as a Boolean&nbsp;
+field, otherwise known as a Yes/No field or a&nbsp;&nbsp;
+
+00:02:08.240 --> 00:02:13.840
+True/False field. To recap, the type of data you&nbsp;
+need to store in a column and the range of data or&nbsp;&nbsp;
+
+00:02:13.840 --> 00:02:19.920
+the characters of data stored in a column dictates&nbsp;
+the data type you will use. You will want to make&nbsp;&nbsp;
+
+00:02:19.920 --> 00:02:27.600
+sure you choose a data type that stores the data&nbsp;
+you need while using as few bytes as possible.
+

@@ -1,0 +1,92 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.480 --> 00:00:06.660
+When working with data we may rarely if ever&nbsp;
+always need every column from a table. And we&nbsp;&nbsp;
+
+00:00:06.660 --> 00:00:11.520
+may not need to see every record from a table.&nbsp;
+Elsewhere in this course we will cover the SQL&nbsp;&nbsp;
+
+00:00:11.520 --> 00:00:16.920
+language needed to select information based on&nbsp;
+criteria. Here we see a statement for a view,&nbsp;&nbsp;
+
+00:00:16.920 --> 00:00:21.540
+a view in databases is a saved query,&nbsp;
+a view does not store information,&nbsp;&nbsp;
+
+00:00:21.540 --> 00:00:27.120
+rather it is a storage statement that leads to&nbsp;
+getting specific information. For a real-life&nbsp;&nbsp;
+
+00:00:27.120 --> 00:00:32.640
+analogy it’s like going to the store and looking&nbsp;
+in a specific produce section for apples rather&nbsp;&nbsp;
+
+00:00:32.640 --> 00:00:38.880
+than scanning the entire store for apples. And,&nbsp;
+with a view, one does not need to type the same&nbsp;&nbsp;
+
+00:00:38.880 --> 00:00:45.300
+SELECT statement every time one wants to see a&nbsp;
+specific set of records. The statement starts with&nbsp;&nbsp;
+
+00:00:45.300 --> 00:00:53.580
+a CREATE VIEW and the name of the view, then&nbsp;
+we see a SELECT statement that selects from,&nbsp;&nbsp;
+
+00:00:53.580 --> 00:01:00.180
+but not all the columns from the SALESORDERHEADER&nbsp;
+table, and there is a criterion that restricts the&nbsp;&nbsp;
+
+00:01:00.180 --> 00:01:05.640
+query to just show the orders from just the month&nbsp;
+of June 2011. You will also notice that there is&nbsp;&nbsp;
+
+00:01:05.640 --> 00:01:10.740
+a SELECT statement below this with two dashes&nbsp;
+in front of it. These two dashes comment out&nbsp;&nbsp;
+
+00:01:10.740 --> 00:01:16.380
+the statement, so it will not run at this time.&nbsp;
+I am going to execute this CREATE VIEW statement.&nbsp;&nbsp;
+
+00:01:18.660 --> 00:01:25.680
+And then I will select the&nbsp;
+SELECT statement and run it.&nbsp;&nbsp;
+
+00:01:27.840 --> 00:01:32.460
+And we see the columns and rows from the&nbsp;
+SALESORDERHEADER table that are included&nbsp;&nbsp;
+
+00:01:32.460 --> 00:01:40.080
+in this view. Altering the view is a far&nbsp;
+different process than altering a table.&nbsp;&nbsp;
+
+00:01:40.080 --> 00:01:46.500
+To alter a view the syntax is basically the&nbsp;
+same as it is to create a view except we need&nbsp;&nbsp;
+
+00:01:46.500 --> 00:01:56.760
+to change the keyword CREATE to ALTER. Then I&nbsp;
+will add another column to this view, TotalDue,&nbsp;&nbsp;
+
+00:02:01.260 --> 00:02:06.840
+then I will execute this statement and&nbsp;
+the view has been altered. Dropping a&nbsp;&nbsp;
+
+00:02:06.840 --> 00:02:12.360
+view is similar to dropping a table. I want&nbsp;
+to drop this sales view test view, I will type&nbsp;&nbsp;
+
+00:02:14.280 --> 00:02:26.820
+DROP VIEW Sales.SaleViewTest to drop the&nbsp;
+version of this view which I created earlier,&nbsp;&nbsp;
+
+00:02:26.820 --> 00:02:34.800
+and then I will select and execute the&nbsp;
+statement. That view has now been deleted.
+

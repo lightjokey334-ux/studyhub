@@ -1,0 +1,167 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.640 --> 00:00:05.600
+The database has been built, and some data&nbsp;
+has been entered. Now let’s retrieve the&nbsp;&nbsp;
+
+00:00:05.600 --> 00:00:11.920
+information we will need to build reports. We do&nbsp;
+this by building queries, questions we ask of the&nbsp;&nbsp;
+
+00:00:11.920 --> 00:00:17.840
+information. As we go through this domain, try&nbsp;
+to understand when you would use each keyword in&nbsp;&nbsp;
+
+00:00:17.840 --> 00:00:24.240
+building queries. The majority of queries one will&nbsp;
+run in a database will use two or more tables.&nbsp;&nbsp;
+
+00:00:24.240 --> 00:00:29.360
+The whole purpose of having a relational database&nbsp;
+is to store data efficiently across tables&nbsp;&nbsp;
+
+00:00:29.360 --> 00:00:34.480
+and then bring data from those tables together&nbsp;
+using queries. For this example, we are going&nbsp;&nbsp;
+
+00:00:34.480 --> 00:00:41.520
+to build a query that retrieves information from&nbsp;
+both the Sales.Customer and Sales.SalesOrderHeader&nbsp;&nbsp;
+
+00:00:41.520 --> 00:00:46.640
+tables. I have a SELECT statement started that&nbsp;
+has columns from both these tables, and so far,&nbsp;&nbsp;
+
+00:00:46.640 --> 00:00:51.840
+the FROM line indicates that we are just&nbsp;
+selecting data from the Sales.Customer table.&nbsp;&nbsp;
+
+00:00:52.640 --> 00:00:59.680
+To add the Sales.SalesOrderHeader table,&nbsp;
+we need a JOIN statement. I will type,&nbsp;&nbsp;
+
+00:00:59.680 --> 00:01:07.560
+JOIN Sales.SalesOrderHeader&nbsp;
+on Sales.Customer.CustomerID =&nbsp;&nbsp;
+
+00:01:13.280 --> 00:01:24.800
+Sales.SalesOrderHeader.CustomerID as the&nbsp;
+field used to relate these two tables is&nbsp;&nbsp;
+
+00:01:24.800 --> 00:01:29.840
+CustomerID. CustomerID is the primary&nbsp;
+key in the Sales.Customer table and is&nbsp;&nbsp;
+
+00:01:29.840 --> 00:01:39.360
+a foreign key in the Sales.SalesOrderHeader&nbsp;
+table. Before running this, here is a fairly&nbsp;&nbsp;
+
+00:01:39.360 --> 00:01:46.480
+common problem with a join: The CustomerID and&nbsp;
+AccountNumber columns both have red squiggly&nbsp;&nbsp;
+
+00:01:46.480 --> 00:01:51.920
+lines under them. When hovering the mouse over&nbsp;
+each, we see that the column name is ambiguous,&nbsp;&nbsp;
+
+00:01:51.920 --> 00:01:57.520
+meaning it is in both tables. In these&nbsp;
+situations, we need to specify which table&nbsp;&nbsp;
+
+00:01:57.520 --> 00:02:07.840
+we want to represent for each column. I will add&nbsp;
+Sales.Customer. in front of both of these columns.&nbsp;&nbsp;
+
+00:02:14.080 --> 00:02:22.240
+I will now execute this, and we have just over&nbsp;
+31000 records involving customers and their&nbsp;&nbsp;
+
+00:02:22.240 --> 00:02:30.160
+orders. We just ran what is called an inner join,&nbsp;
+which is a join in which records will only display&nbsp;&nbsp;
+
+00:02:30.160 --> 00:02:36.960
+if the value of the join field is in both tables.&nbsp;
+To put this an easier way, as the CustomerID&nbsp;&nbsp;
+
+00:02:36.960 --> 00:02:43.760
+field is the one used to join these two tables,&nbsp;
+records will only show if the customer ID appears&nbsp;&nbsp;
+
+00:02:43.760 --> 00:02:48.880
+in both tables. However, what if we want to see&nbsp;
+all of the customers from the customer table?&nbsp;&nbsp;
+
+00:02:48.880 --> 00:02:53.200
+For that, we need an outer join, and there&nbsp;
+are three types of outer joins we can use:&nbsp;&nbsp;
+
+00:02:53.760 --> 00:03:00.640
+left, right, and full outer joins. To determine&nbsp;
+what join we should use, we first want to figure&nbsp;&nbsp;
+
+00:03:00.640 --> 00:03:06.000
+out the table with all the records we want to&nbsp;
+see. In this case, it would be Sales.Customer.&nbsp;&nbsp;
+
+00:03:06.000 --> 00:03:11.920
+Secondly, which table is left and which is&nbsp;
+right? Between the two tables used in a join,&nbsp;&nbsp;
+
+00:03:11.920 --> 00:03:18.640
+the table on the left is listed first.&nbsp;
+That would be Sales.Customer in this case.&nbsp;&nbsp;
+
+00:03:18.640 --> 00:03:23.520
+Thus, we want a left outer join.&nbsp;
+I will add the words LEFT OUTER&nbsp;&nbsp;
+
+00:03:25.680 --> 00:03:35.360
+to the join and notice that we have about 700&nbsp;
+more records than before when executing this,&nbsp;&nbsp;
+
+00:03:35.360 --> 00:03:40.880
+indicating that we have 700 or so customers who&nbsp;
+have never placed an order. To see the other joins&nbsp;&nbsp;
+
+00:03:40.880 --> 00:03:46.880
+working, I will change this join from a left outer&nbsp;
+join to a right outer join and execute this again.&nbsp;&nbsp;
+
+00:03:49.120 --> 00:03:52.880
+The number of records reverts to the same number&nbsp;&nbsp;
+
+00:03:52.880 --> 00:04:03.440
+as the inner join, which is good because the&nbsp;
+right table is this Sales.SalesOrderHeader table.&nbsp;&nbsp;
+
+00:04:03.440 --> 00:04:07.600
+Should there be any customer IDs&nbsp;
+from this table if they do not exist&nbsp;&nbsp;
+
+00:04:07.600 --> 00:04:14.080
+in the Sales.Customer table? The answer is&nbsp;
+no. Though not all customers place orders,&nbsp;&nbsp;
+
+00:04:14.640 --> 00:04:20.240
+customers should exist before they place orders.&nbsp;
+If you need to see both customers that have not&nbsp;&nbsp;
+
+00:04:20.240 --> 00:04:25.040
+placed orders and customers that have sales&nbsp;
+but no definition in the Sales.Customer table,&nbsp;&nbsp;
+
+00:04:25.040 --> 00:04:31.120
+you can use a full outer join, as I am building&nbsp;
+here. Normally you would only use this after&nbsp;&nbsp;
+
+00:04:31.120 --> 00:04:36.480
+combining two datasets into one, and you want to&nbsp;
+see mismatched records from both tables in a join.&nbsp;&nbsp;
+
+00:04:36.480 --> 00:04:45.440
+I will execute this, and we are back to showing&nbsp;
+all customers, including ones with no orders.
+

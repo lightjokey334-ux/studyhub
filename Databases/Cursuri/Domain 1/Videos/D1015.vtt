@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:06.560
+As is the case with any network-based objects,&nbsp;
+databases should be subject to the principle of&nbsp;&nbsp;
+
+00:00:06.560 --> 00:00:11.600
+least privilege (PoLP), which is a principle that&nbsp;
+states that people should have, from a permissions&nbsp;&nbsp;
+
+00:00:11.600 --> 00:00:16.880
+standpoint, what they need to do their jobs, but&nbsp;
+no more than that. For databases, this is true&nbsp;&nbsp;
+
+00:00:16.880 --> 00:00:22.480
+both on a database level and an object level&nbsp;
+within a database, such as the table level.&nbsp;&nbsp;
+
+00:00:22.480 --> 00:00:27.600
+To get an idea of how permissions work in a&nbsp;
+database such as this one, I will select and hold&nbsp;&nbsp;
+
+00:00:27.600 --> 00:00:36.080
+(or right-click) the AdventureWorks database,&nbsp;
+select Properties, and then Permissions. Of&nbsp;&nbsp;
+
+00:00:36.080 --> 00:00:41.440
+interest is this public role. I will select&nbsp;
+it, and we see that this public role has&nbsp;&nbsp;
+
+00:00:42.640 --> 00:00:48.240
+very few permissions on the database, which&nbsp;
+is the way it should be as anyone who sees&nbsp;&nbsp;
+
+00:00:48.240 --> 00:00:53.120
+this database is in the public role. Let's&nbsp;
+see what permissions look like on objects.&nbsp;&nbsp;
+
+00:00:54.080 --> 00:00:57.840
+I will select and hold (or&nbsp;
+right-click) the Person.Address table,&nbsp;&nbsp;
+
+00:00:58.720 --> 00:01:06.240
+select Properties, and then select Permissions.&nbsp;
+No one has explicit permissions on this table,&nbsp;&nbsp;
+
+00:01:06.240 --> 00:01:10.880
+and again, that is by design, as permissions&nbsp;
+should be controlled first on a database level&nbsp;&nbsp;
+
+00:01:10.880 --> 00:01:16.960
+and then on an object level. If we want to grant&nbsp;
+a permission to a user or group, we can search&nbsp;&nbsp;
+
+00:01:16.960 --> 00:01:21.920
+for that group. I have added a dbanalyst&nbsp;
+group to this database, and I will search&nbsp;&nbsp;
+
+00:01:21.920 --> 00:01:30.720
+for that group. From here, I can grant or deny&nbsp;
+specific permissions on this table to this group.&nbsp;&nbsp;
+
+00:01:31.280 --> 00:01:36.480
+I will grant Select permissions to this&nbsp;
+role, which will allow anyone in this&nbsp;&nbsp;
+
+00:01:36.480 --> 00:01:41.840
+role to run SELECT queries, queries that gather&nbsp;
+information from this table. With this principle,&nbsp;&nbsp;
+
+00:01:41.840 --> 00:01:46.240
+it is a good idea to start a database&nbsp;
+with minimal or no permissions granted&nbsp;&nbsp;
+
+00:01:46.240 --> 00:01:53.680
+and then grant those permissions as needed. Again,&nbsp;
+people should have just the permissions they need.
+

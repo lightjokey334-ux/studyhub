@@ -15,6 +15,8 @@ const STUDYHUB_DEFAULT_SETTINGS = {
   databases: 'home',
   videoSections: 'expanded', // 'expanded' | 'collapsed' — capitolele video din Cursuri
   shortcutsPanel: 'shown', // 'shown' | 'hidden' — panoul cu comenzi rapide din teste
+  autoSaveAnswers: 'on', // 'on' | 'off' — reia testul de unde ai rămas dacă închizi din greșeală
+  autoplayNextVideo: 'on', // 'on' | 'off' — trece automat la următorul videoclip din domeniu
 };
 
 function studyhubLoadSettings() {

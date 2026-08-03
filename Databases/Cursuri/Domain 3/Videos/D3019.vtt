@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:06.080
+One of the needs we may have when running queries&nbsp;
+is to find records where certain values are empty,&nbsp;&nbsp;
+
+00:00:06.080 --> 00:00:11.280
+whether by design or by accident. Take, for&nbsp;
+example, this query that has some header&nbsp;&nbsp;
+
+00:00:11.280 --> 00:00:16.080
+information for sales orders. There is a rumor&nbsp;
+that some orders may be missing a SalesPersonID.&nbsp;&nbsp;
+
+00:00:18.880 --> 00:00:26.320
+I will add a WHERE clause to this query that&nbsp;
+looks for empty values in the SalesPersonID&nbsp;&nbsp;
+
+00:00:26.320 --> 00:00:33.040
+field to find those orders. There are two keys&nbsp;
+to understand. First, the keyword for empty is&nbsp;&nbsp;
+
+00:00:33.040 --> 00:00:41.120
+NULL. Secondly, we do not want to use equals NULL&nbsp;
+because technically, we would look for the word&nbsp;&nbsp;
+
+00:00:41.120 --> 00:00:48.880
+NULL. We do not want that. We are looking to see&nbsp;
+if a field is null, and that is what we will type&nbsp;&nbsp;
+
+00:00:48.880 --> 00:00:58.720
+here. I will execute this, and it turns out over&nbsp;
+60000 orders do not have a SalesPersonID. Maybe&nbsp;&nbsp;
+
+00:00:58.720 --> 00:01:04.400
+there is a huge data entry problem, or this is&nbsp;
+by design, like a cash sale or something similar.&nbsp;&nbsp;
+
+00:01:05.920 --> 00:01:10.320
+To compare orders with no SalesPersonID&nbsp;
+with orders that do have one,&nbsp;&nbsp;
+
+00:01:10.320 --> 00:01:17.360
+I will change the criteria from NULL&nbsp;
+to NOT NULL and execute this again,&nbsp;&nbsp;
+
+00:01:18.720 --> 00:01:23.040
+and we have about 60000 orders with a&nbsp;
+SalesPersonID. Therefore, this was probably&nbsp;&nbsp;
+
+00:01:23.040 --> 00:01:32.960
+by design. The takeaway here is that the NULL&nbsp;
+keyword will help us find those empty values.
+

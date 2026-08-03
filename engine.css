@@ -15,6 +15,7 @@
   padding: 24px;
   flex: 1;
   min-width: 0;
+  overflow-x: hidden;
   box-shadow: 0 4px 24px rgba(0,0,0,.18);
 }
 
@@ -69,6 +70,7 @@
   top: 20px;
   box-shadow: 0 4px 24px rgba(0,0,0,.18);
 }
+.qe-shortcuts-hidden .qe-shortcuts-panel{ display: none; }
 .qe-shortcuts-title{
   margin: 0 0 12px 0;
   font-size: 14px;
@@ -195,17 +197,23 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: var(--bg-elevated, #171724);
-  border: 1px solid var(--border, #2a2b3d);
+  background: #232438;
+  border: 1px solid #3d3f5c;
   border-radius: 10px;
   padding: 13px 16px;
   cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
   transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.qe-option span{
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .qe-option.qe-option-focused{
   box-shadow: 0 0 0 2px var(--accent-2, #5b8def);
 }
-.qe-option:hover{ border-color: var(--accent-dim, #2a9d6f); }
+.qe-option:hover{ border-color: var(--accent-dim, #2a9d6f); background: #282a42; }
 .qe-option input[type="radio"],
 .qe-option input[type="checkbox"],
 .qe-tf-radio input[type="radio"]{
@@ -276,14 +284,14 @@
 .qe-tf-statement{
   border-top: 1px solid var(--border, #2a2b3d);
   line-height: 1.5;
-  background: var(--bg-elevated, #171724);
+  background: #1e1f30;
 }
 .qe-tf-radio{
   border-top: 1px solid var(--border, #2a2b3d);
   justify-content: center;
   min-width: 80px;
-  background: var(--bg-elevated, #171724);
-  transition: box-shadow .15s ease;
+  background: #232438;
+  transition: box-shadow .15s ease, background .15s ease;
 }
 .qe-tf-radio.qe-tf-correct{ box-shadow: 0 0 0 2px #2ecc71 inset; }
 .qe-tf-radio.qe-tf-incorrect{ box-shadow: 0 0 0 2px #e5484d inset; }
@@ -307,8 +315,8 @@
 .qe-dd-select{
   flex: 1;
   min-width: 200px;
-  background: var(--bg-elevated, #171724);
-  border: 1px solid var(--border, #2a2b3d);
+  background: #232438;
+  border: 1px solid #3d3f5c;
   border-radius: 8px;
   padding: 9px 12px;
   color: var(--text, #e8e8f0);
@@ -721,6 +729,96 @@
 }
 .qe-empty-sub{ font-size: 13px; margin-top: 6px; }
 
+/* Ecranul de alegere Mod Test / Mod Învățare, la pornirea unui test nou */
+.qe-mode-picker{
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.qe-mode-picker-title{
+  font-size: 22px;
+  margin: 0 0 6px 0;
+  color: var(--text, #e8e8f0);
+}
+.qe-mode-picker-sub{
+  color: var(--text-dim, #9494a8);
+  font-size: 14px;
+  margin: 0 0 28px 0;
+}
+.qe-mode-picker-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.qe-mode-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  background: var(--bg-card, #1b1c2b);
+  border: 1px solid var(--border, #2a2b3d);
+  border-radius: 14px;
+  padding: 28px 20px;
+  cursor: pointer;
+  transition: border-color .15s ease, transform .12s ease, box-shadow .15s ease;
+}
+.qe-mode-card:hover{
+  border-color: var(--accent, #3ecf8e);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+.qe-mode-card-icon{ font-size: 34px; }
+.qe-mode-card-title{ font-size: 17px; font-weight: 700; color: var(--text, #e8e8f0); }
+.qe-mode-card-desc{ font-size: 13px; color: var(--text-dim, #9494a8); line-height: 1.5; }
+
+/* Ecranul de sesiuni (examene) — "Sesiune nouă" + una câte una din cele nefinalizate */
+.qe-session-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+.qe-session-card-row{ display: flex; align-items: stretch; gap: 8px; }
+.qe-session-card{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--bg-card, #1b1c2b);
+  border: 1px solid var(--border, #2a2b3d);
+  border-radius: 10px;
+  padding: 14px 18px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color .15s ease, transform .1s ease;
+}
+.qe-session-card:hover{ border-color: var(--accent, #3ecf8e); }
+.qe-session-card-new{
+  border-style: dashed;
+  border-color: var(--accent-dim, #2a9d6f);
+}
+.qe-session-card-title{ font-size: 15px; font-weight: 700; color: var(--text, #e8e8f0); }
+.qe-session-card-desc{ font-size: 12.5px; color: var(--text-dim, #9494a8); }
+.qe-session-delete-btn{
+  width: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid var(--border, #2a2b3d);
+  background: transparent;
+  color: var(--text-dim, #9494a8);
+  cursor: pointer;
+  font-size: 14px;
+  transition: border-color .15s ease, color .15s ease;
+}
+.qe-session-delete-btn:hover{ border-color: #e5484d; color: #e5484d; }
+
+@media (max-width: 640px){
+  .qe-mode-picker{ margin: 24px auto; }
+  .qe-mode-picker-grid{ grid-template-columns: 1fr; }
+}
+
 /* .qe-panel-fab / .qe-panel-backdrop nu au niciun rol pe desktop — panoul e
    mereu vizibil, fix în layout. Regula asta TREBUIE să stea înaintea
    media query-ului de mai jos, altfel câștigă ea la egalitate de
@@ -816,7 +914,8 @@
   .qe-match-container{ flex-direction: column; }
   .qe-match-pool{ width: 100%; }
   .qe-match-rows{ width: 100%; min-width: 0; }
-  .qe-match-label{ min-width: 110px; font-size: 13px; }
+  .qe-match-row{ flex-wrap: wrap; }
+  .qe-match-label{ width: auto; min-width: 90px; max-width: 100%; font-size: 13px; }
 
   .qe-options{ gap: 8px; }
   .qe-option{ padding: 11px 14px; }

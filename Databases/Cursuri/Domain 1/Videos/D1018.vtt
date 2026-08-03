@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:05.820
+To finish this section on data protection,&nbsp;
+let's look at some predefined security roles&nbsp;&nbsp;
+
+00:00:05.820 --> 00:00:11.340
+within SQL Server. Roles have a big purpose, and&nbsp;
+that is, to have pre-defined sets of permissions&nbsp;&nbsp;
+
+00:00:11.340 --> 00:00:16.860
+that are applied to users, so that, in theory,&nbsp;
+individual permissions do not need to be used&nbsp;&nbsp;
+
+00:00:16.860 --> 00:00:23.640
+and thus tracked within both a server instance and&nbsp;
+its databases, streamlining security with users.&nbsp;&nbsp;
+
+00:00:24.180 --> 00:00:30.420
+As I expand the Security folder and then Server&nbsp;
+Roles in this instance of SQL Server, understand&nbsp;&nbsp;
+
+00:00:30.420 --> 00:00:36.480
+that for the exam the main focus in on the purpose&nbsp;
+of roles, not having to know each individual role,&nbsp;&nbsp;
+
+00:00:36.480 --> 00:00:42.420
+but having an idea of each role will help define&nbsp;
+the overall purpose of roles. There are nine&nbsp;&nbsp;
+
+00:00:42.420 --> 00:00:49.020
+pre-defined server roles and I am going to cover&nbsp;
+these in the order of least restrictive to most&nbsp;&nbsp;
+
+00:00:49.020 --> 00:00:55.500
+restrictive. First, we have sysadmin. One with&nbsp;
+this role can perform any activity on the server,&nbsp;&nbsp;
+
+00:00:55.500 --> 00:01:01.020
+so this role should be used sparingly. Next,&nbsp;
+we have the serveradmin role, which allows&nbsp;&nbsp;
+
+00:01:01.020 --> 00:01:06.600
+one to change server configurations and shut&nbsp;
+down the server. The third role to look at is&nbsp;&nbsp;
+
+00:01:06.600 --> 00:01:12.900
+securityadmin. A user in this role can grant and&nbsp;
+revoke permissions on a server level and do the&nbsp;&nbsp;
+
+00:01:12.900 --> 00:01:19.860
+same for databases on which they have permissions.&nbsp;
+The fourth role to look at is processadmin, which&nbsp;&nbsp;
+
+00:01:19.860 --> 00:01:25.860
+allows one to end running processes on a server,&nbsp;
+such as a backup process that is taking far longer&nbsp;&nbsp;
+
+00:01:25.860 --> 00:01:32.340
+than anticipated. Next we have the setupadmin&nbsp;
+role, which allows one to add and remove linked&nbsp;&nbsp;
+
+00:01:32.340 --> 00:01:37.020
+servers, which allow one to use queries to&nbsp;
+get information from remote data sources,&nbsp;&nbsp;
+
+00:01:37.680 --> 00:01:44.520
+such as another SQL server instance. The bulkadmin&nbsp;
+role allows one to use a bulk insert statement,&nbsp;&nbsp;
+
+00:01:45.120 --> 00:01:52.020
+which imports large amounts of data into a&nbsp;
+database. The diskadmin role allows one to&nbsp;&nbsp;
+
+00:01:52.020 --> 00:01:59.580
+manage disk files. The dbcreator role allows one&nbsp;
+to create, alter, drop, and restore a database.&nbsp;&nbsp;
+
+00:02:00.120 --> 00:02:05.580
+If you are wondering about a backup role,&nbsp;
+you will see where it is and why soon.&nbsp;&nbsp;
+
+00:02:05.580 --> 00:02:11.640
+Lastly, we have the public role, which is a&nbsp;
+role that is assigned to everyone on a server,&nbsp;&nbsp;
+
+00:02:11.640 --> 00:02:17.940
+so whatever permissions that are granted to&nbsp;
+that role apply to everyone on a server. Thus,&nbsp;&nbsp;
+
+00:02:17.940 --> 00:02:21.840
+one needs to be very careful about any&nbsp;
+permissions assigned to the public role.
+

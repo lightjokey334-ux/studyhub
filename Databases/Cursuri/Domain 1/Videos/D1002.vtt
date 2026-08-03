@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:06.320
+Before we get deep into the details of building a&nbsp;
+database and then querying parts of a database, we&nbsp;&nbsp;
+
+00:00:06.320 --> 00:00:11.360
+need to understand what we are looking at within a&nbsp;
+database. I have an instance of SQL Server up and&nbsp;&nbsp;
+
+00:00:11.360 --> 00:00:15.920
+running with the sample AdventureWorks database,&nbsp;
+which will be used heavily in this course,&nbsp;&nbsp;
+
+00:00:16.480 --> 00:00:21.120
+displayed in the Object Explorer. With&nbsp;
+a database, data is stored in tables,&nbsp;&nbsp;
+
+00:00:22.000 --> 00:00:27.360
+otherwise known as entities, and this database&nbsp;
+has roughly 70 tables used to store information.&nbsp;&nbsp;
+
+00:00:28.000 --> 00:00:32.480
+To see what is in one of these entities, I&nbsp;
+will select and hold (or right-click) a table,&nbsp;&nbsp;
+
+00:00:32.480 --> 00:00:40.240
+specifically this Person.Person table, and I will&nbsp;
+choose Select Top 100 Rows. This option is good to&nbsp;&nbsp;
+
+00:00:40.240 --> 00:00:45.360
+use when you are trying to get familiar with a&nbsp;
+database and the tables inside of it. We see the&nbsp;&nbsp;
+
+00:00:45.360 --> 00:00:52.400
+structure of the entity plus some data within the&nbsp;
+entity. A line within an entity is known as a row&nbsp;&nbsp;
+
+00:00:52.400 --> 00:00:59.280
+or a record. Entities store data using records.&nbsp;
+We see a name and a little bit of information&nbsp;&nbsp;
+
+00:00:59.280 --> 00:01:04.480
+about the person within the record for each entry.&nbsp;
+Whereas records are rows of information, fields,&nbsp;&nbsp;
+
+00:01:04.480 --> 00:01:11.600
+seen here, are columns of information. Just as&nbsp;
+the terms entity and table are interchangeable&nbsp;&nbsp;
+
+00:01:11.600 --> 00:01:17.840
+and the terms row and record are interchangeable,&nbsp;
+the terms column and field are interchangeable.&nbsp;&nbsp;
+
+00:01:18.480 --> 00:01:24.800
+Columns are entity properties that define the data&nbsp;
+to be stored in records. As we will learn later,&nbsp;&nbsp;
+
+00:01:25.360 --> 00:01:32.160
+we can also define the type of data to store in&nbsp;
+each column. For example, the name fields store&nbsp;&nbsp;
+
+00:01:32.160 --> 00:01:41.360
+text while this email promotion field is probably&nbsp;
+a number and the ModifiedDate field is a date and&nbsp;&nbsp;
+
+00:01:41.360 --> 00:01:48.640
+time field. Recap: An entity stores information, a&nbsp;
+row or record is a line of data within an entity,&nbsp;&nbsp;
+
+00:01:49.360 --> 00:01:56.583
+and a column or field is a property that helps&nbsp;
+define the data stored within an entity's records.
+

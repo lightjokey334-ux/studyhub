@@ -25,6 +25,22 @@ function resolveExamShortcutsPanelDefault() {
   return 'shown';
 }
 
+// Aceeași metodă și pentru auto-salvarea răspunsurilor (Setări -> Teste).
+const EXAM_AUTO_SAVE_KEY = 'studyhub_exam_autosave_answers_v1';
+
+function resolveExamAutoSaveAnswersDefault() {
+  const fromUrl = new URLSearchParams(window.location.search).get('autoSaveAnswers');
+  if (fromUrl === 'on' || fromUrl === 'off') {
+    try { localStorage.setItem(EXAM_AUTO_SAVE_KEY, fromUrl); } catch (e) { /* ignoră */ }
+    return fromUrl;
+  }
+  try {
+    const cached = localStorage.getItem(EXAM_AUTO_SAVE_KEY);
+    if (cached === 'on' || cached === 'off') return cached;
+  } catch (e) { /* ignoră */ }
+  return 'on';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof initProgressBridge === 'function') {
     initProgressBridge('../../../storage-bridge.html');
@@ -36,16 +52,29 @@ document.addEventListener('DOMContentLoaded', () => {
   titleEl.textContent = typeof EXAM_TITLE !== 'undefined' ? EXAM_TITLE : 'Examen';
   const questions = typeof EXAM_QUESTIONS !== 'undefined' ? EXAM_QUESTIONS : [];
   const showShortcuts = resolveExamShortcutsPanelDefault() !== 'hidden';
+  const autoSaveAnswers = resolveExamAutoSaveAnswersDefault() !== 'off';
   const testId = typeof EXAM_ID !== 'undefined' ? EXAM_ID : null;
 
-  new QuestionEngine(container, questions, { title: titleEl.textContent, showShortcuts, testId });
+  const engine = new QuestionEngine(container, questions, { title: titleEl.textContent, showShortcuts, autoSaveAnswers, testId });
+
+  // Aplică live schimbarea panoului de comenzi rapide, dacă vine din
+  // fereastra plutitoare de Setări (deschisă peste pagina de examen) —
+  // altfel setarea nu se vedea decât la o navigare nouă din index.html.
+  window.addEventListener('message', (e) => {
+    const msg = e.data || {};
+    if (msg.type !== 'studyhub-setting-changed') return;
+    if (msg.key === 'shortcutsPanel') {
+      try { localStorage.setItem(EXAM_SHORTCUTS_PANEL_KEY, msg.value); } catch (err) { /* ignoră */ }
+      engine.setShowShortcuts(msg.value !== 'hidden');
+    }
+  });
 
   // Logo -> decizia se ia pe index.html (vezi script.js), nu aici —
   // citirea Setărilor e nesigură cross-folder pe unele browsere.
   const logo = document.getElementById('subjectLogo');
   if (logo) {
     logo.addEventListener('click', () => {
-      window.location.href = '../../../index.html?logoFrom=Databases';
+      window.location.href = '../../../index.html?logoFrom=Networking';
     });
   }
 
@@ -53,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const backBtn = document.getElementById('examBackBtn');
   if (backBtn) {
     backBtn.addEventListener('click', () => {
-      window.location.href = '../../../index.html?subject=Databases';
+      window.location.href = '../../../index.html?subject=Networking';
     });
   }
 });

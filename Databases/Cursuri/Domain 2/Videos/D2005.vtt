@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.660 --> 00:00:04.740
+We have gotten an introduction to stored&nbsp;
+procedures and specifically the input and&nbsp;&nbsp;
+
+00:00:04.740 --> 00:00:08.760
+output parameters, but we discovered that&nbsp;
+output does not appear in a query window.&nbsp;&nbsp;
+
+00:00:08.760 --> 00:00:13.980
+Output information is used in an app instead.&nbsp;
+If we want to actually see the results from&nbsp;&nbsp;
+
+00:00:13.980 --> 00:00:19.740
+the query that run inside a stored procedure,&nbsp;
+we need to include, in the stored procedure a&nbsp;&nbsp;
+
+00:00:19.740 --> 00:00:25.080
+RETURN function. This is a stored procedure, it&nbsp;
+is similar to the one with the input and output&nbsp;&nbsp;
+
+00:00:25.080 --> 00:00:30.600
+parameters as the SELECT statement goes through&nbsp;
+and gets to DepartmentID for each employee, WHERE&nbsp;&nbsp;
+
+00:00:30.600 --> 00:00:39.120
+the BusinessEntityID matches with whatever the&nbsp;
+input is through the input parameter EmployeeID,&nbsp;&nbsp;
+
+00:00:39.120 --> 00:00:44.820
+which is declared before the query used in this&nbsp;
+stored procedure starts to run. This makes sense,&nbsp;&nbsp;
+
+00:00:44.820 --> 00:00:50.460
+in that we need to know what is in the&nbsp;
+parameter before it can be used as criteria.&nbsp;&nbsp;
+
+00:00:51.540 --> 00:00:57.060
+After the SELECT statement notice the&nbsp;
+RETURN word, this returns the information&nbsp;&nbsp;
+
+00:00:57.060 --> 00:01:02.100
+found in the query to the query window. I&nbsp;
+will run the CREATE PROCEDURE statement,&nbsp;&nbsp;
+
+00:01:03.480 --> 00:01:10.620
+and then run the execute statement to see the&nbsp;
+Department history for Employee number 16.&nbsp;&nbsp;
+
+00:01:14.880 --> 00:01:19.320
+It turns out that the employee has been in&nbsp;
+two departments. Before we leave this topic&nbsp;&nbsp;
+
+00:01:19.320 --> 00:01:24.240
+you may wonder why this line is commented out to&nbsp;
+begin with. For some stored procedure statements,&nbsp;&nbsp;
+
+00:01:24.240 --> 00:01:29.460
+no other statements are allowed in the same&nbsp;
+window. Now importantly, some stored procedures&nbsp;&nbsp;
+
+00:01:29.460 --> 00:01:34.980
+actually change data. We want to make sure a&nbsp;
+CREATE PROCEDURE statement can be run before&nbsp;&nbsp;
+
+00:01:34.980 --> 00:01:41.040
+we execute a line using a stored procedure.&nbsp;
+Again, one main purpose of a stored procedure&nbsp;&nbsp;
+
+00:01:41.040 --> 00:01:46.800
+is to hide its code from code written within&nbsp;
+an app and not have SELECT statements, which&nbsp;&nbsp;
+
+00:01:46.800 --> 00:01:53.880
+expose database objects, shown within code for a&nbsp;
+console app, desktop app, mobile app, or web app.
+

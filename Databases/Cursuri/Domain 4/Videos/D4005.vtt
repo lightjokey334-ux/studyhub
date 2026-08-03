@@ -1,0 +1,44 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.280 --> 00:00:06.240
+Another way to delete all the information within&nbsp;
+a table is to run a TRUNCATE TABLE statement&nbsp;&nbsp;
+
+00:00:06.240 --> 00:00:12.560
+with the table name. With DELETE, you can specify&nbsp;
+criteria to use for what is deleted from a table.&nbsp;&nbsp;
+
+00:00:13.600 --> 00:00:18.880
+With TRUNCATE TABLE, the table is emptied,&nbsp;
+as there are no criteria to be specified.&nbsp;&nbsp;
+
+00:00:20.720 --> 00:00:31.040
+Also, note that a table with a one-to-many&nbsp;
+relationship with another table will, by default,&nbsp;&nbsp;
+
+00:00:31.040 --> 00:00:36.640
+have the records from the many table deleted&nbsp;
+if any records from the one table are deleted.&nbsp;&nbsp;
+
+00:00:37.440 --> 00:00:46.000
+To illustrate this, I am going to show some&nbsp;
+records from the Sales.SalesOrderHeader table.&nbsp;&nbsp;
+
+00:00:51.840 --> 00:00:56.640
+This table has a one-to-many relationship&nbsp;
+with the Sales.SalesOrderDetail table.&nbsp;&nbsp;
+
+00:00:57.440 --> 00:01:05.600
+If I were to delete specific records from this&nbsp;
+table, any records with the same sales order&nbsp;&nbsp;
+
+00:01:05.600 --> 00:01:10.080
+numbers in the SalesOrderDetail&nbsp;
+table would be deleted as well.&nbsp;&nbsp;
+
+00:01:10.960 --> 00:01:19.200
+For this reason, it is so important to be&nbsp;
+careful with any deletes from any tables.
+

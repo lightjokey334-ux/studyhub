@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:06.880
+Sometimes when running a query, we only want to&nbsp;
+see a value once because we may be trying to see&nbsp;&nbsp;
+
+00:00:06.880 --> 00:00:13.120
+how many values of a column are in a table. For&nbsp;
+example, I have a very small query set to list&nbsp;&nbsp;
+
+00:00:13.120 --> 00:00:20.800
+product IDs from the Production.ProductCostHistory&nbsp;
+table. I will execute it, and we have&nbsp;&nbsp;
+
+00:00:21.440 --> 00:00:28.640
+395 rows, but notice that we have many duplicates.&nbsp;
+I only want to see each product ID once.&nbsp;&nbsp;
+
+00:00:28.640 --> 00:00:33.280
+The keyword DISTINCT will accomplish&nbsp;
+this. I will add the word DISTINCT&nbsp;&nbsp;
+
+00:00:36.240 --> 00:00:46.160
+after SELECT and execute this again. Now we only&nbsp;
+have 293 rows, meaning 293 products have a cost&nbsp;&nbsp;
+
+00:00:46.160 --> 00:00:50.560
+history. Let's see what happens if I add&nbsp;
+the StandardCost column to this query.&nbsp;&nbsp;
+
+00:00:57.680 --> 00:01:04.560
+We are back up to 395 rows, meaning that there&nbsp;
+are 395 distinct combinations of a product ID&nbsp;&nbsp;
+
+00:01:04.560 --> 00:01:10.160
+and a standard cost, and this also tells us&nbsp;
+there are no duplicates of a product ID and&nbsp;&nbsp;
+
+00:01:10.160 --> 00:01:17.360
+cost since we saw 395 product IDs originally. The&nbsp;
+takeaway here is that DISTINCT means a distinct&nbsp;&nbsp;
+
+00:01:17.360 --> 00:01:23.920
+occurrence of a combination of values for&nbsp;
+all of the columns specified in a query.
+

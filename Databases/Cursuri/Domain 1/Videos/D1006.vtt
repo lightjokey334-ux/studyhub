@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:05.200
+One advantage to having data in databases&nbsp;
+is to organize data by data type.&nbsp;&nbsp;
+
+00:00:05.200 --> 00:00:10.560
+The next group of topics we will cover is common&nbsp;
+data types and the importance of data types. Keep&nbsp;&nbsp;
+
+00:00:10.560 --> 00:00:15.840
+in mind that I am using SQL Server here, and&nbsp;
+depending on your platform, data types may vary,&nbsp;&nbsp;
+
+00:00:15.840 --> 00:00:21.280
+but the core principles of each type will be the&nbsp;
+same. To see some data types, I will select and&nbsp;&nbsp;
+
+00:00:21.280 --> 00:00:29.360
+hold (or right-click) the sales.salesorderheader&nbsp;
+table and select Design. Most data types are&nbsp;&nbsp;
+
+00:00:29.360 --> 00:00:35.840
+going to be either in text or numbers in some&nbsp;
+form. Elsewhere in the course, we will get&nbsp;&nbsp;
+
+00:00:35.840 --> 00:00:43.840
+into some details, but in SQL Server, varchar&nbsp;
+and nvarchar data types are both text fields.&nbsp;&nbsp;
+
+00:00:45.200 --> 00:00:51.360
+Int and money fields are numeric fields. Int&nbsp;
+fields accept whole numbers, and money fields&nbsp;&nbsp;
+
+00:00:51.360 --> 00:00:58.640
+accept decimal values. The datetime field is&nbsp;
+technically numeric, but it stores numbers in&nbsp;&nbsp;
+
+00:00:58.640 --> 00:01:07.040
+a date format. The last data type we will look&nbsp;
+at for now is a bit data type. A bit data type&nbsp;&nbsp;
+
+00:01:07.040 --> 00:01:12.560
+stores either a zero or a one. This data type&nbsp;
+should not be confused with the char data type&nbsp;&nbsp;
+
+00:01:12.560 --> 00:01:17.680
+in some database formats, which&nbsp;
+stores any single character.
+

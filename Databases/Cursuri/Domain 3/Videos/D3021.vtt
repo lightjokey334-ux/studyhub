@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.720 --> 00:00:05.120
+This next section of the course will deal with&nbsp;
+aggregates, summaries of numeric portions of&nbsp;&nbsp;
+
+00:00:05.120 --> 00:00:10.720
+our data. There are several aggregates to cover,&nbsp;
+but I will start with what is, for most, the most&nbsp;&nbsp;
+
+00:00:10.720 --> 00:00:19.920
+common one, and that is SUM. Take a look at this&nbsp;
+query. It just has each salesperson by name and ID&nbsp;&nbsp;
+
+00:00:20.640 --> 00:00:25.440
+and the total for each salesperson.&nbsp;
+I have joined the tables necessary to&nbsp;&nbsp;
+
+00:00:25.440 --> 00:00:31.440
+get the names of the salespersons. I will&nbsp;
+execute this query, and we see right away&nbsp;&nbsp;
+
+00:00:32.240 --> 00:00:35.840
+a very common problem people see when&nbsp;
+trying to run a query with aggregates,&nbsp;&nbsp;
+
+00:00:36.560 --> 00:00:43.280
+such as this SUM aggregate we see. The error&nbsp;
+message states that the LastName column is invalid&nbsp;&nbsp;
+
+00:00:43.280 --> 00:00:48.800
+because it is not being used in an aggregate,&nbsp;
+which is true, it is not being summarized,&nbsp;&nbsp;
+
+00:00:49.680 --> 00:00:57.120
+and there is no GROUP BY clause. For aggregates&nbsp;
+in SQL, this is the important part: The query has&nbsp;&nbsp;
+
+00:00:57.120 --> 00:01:03.360
+to be told how to summarize the data. In this&nbsp;
+case, is it just for each SalesPersonID? Is it&nbsp;&nbsp;
+
+00:01:03.360 --> 00:01:09.600
+just for each last name? In reality, any column&nbsp;
+not in an aggregate in a query like this needs to&nbsp;&nbsp;
+
+00:01:09.600 --> 00:01:17.920
+be grouped. Thus, we need to add a GROUP BY clause&nbsp;
+so that this query is grouped by the three columns&nbsp;&nbsp;
+
+00:01:18.720 --> 00:01:24.240
+above the summary. Here is a real-life trick&nbsp;
+I like to use. Notice that I have the columns&nbsp;&nbsp;
+
+00:01:24.240 --> 00:01:28.880
+listed first and then the SUM aggregate. Doing&nbsp;
+it this way makes it easy for me to add the words&nbsp;&nbsp;
+
+00:01:28.880 --> 00:01:36.160
+GROUP BY and then copy and paste the columns&nbsp;
+to be grouped here. I will execute this again,&nbsp;&nbsp;
+
+00:01:38.640 --> 00:01:45.280
+and we see the SUM total of&nbsp;
+sales for each salesperson.
+

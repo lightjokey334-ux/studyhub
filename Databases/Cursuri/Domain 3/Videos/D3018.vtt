@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.120 --> 00:00:05.520
+Whereas the ANY key will return a set of&nbsp;
+records matching a WHERE clause in a subquery,&nbsp;&nbsp;
+
+00:00:05.520 --> 00:00:08.880
+you may want to know if you have a&nbsp;
+subset of data to where every record&nbsp;&nbsp;
+
+00:00:08.880 --> 00:00:14.720
+matches the same or similar criteria. We&nbsp;
+can do this using the ALL keyword. I will&nbsp;&nbsp;
+
+00:00:14.720 --> 00:00:21.920
+take the query I used with the ANY keyword and&nbsp;
+change ANY to ALL. We will only see results if&nbsp;&nbsp;
+
+00:00:21.920 --> 00:00:27.440
+every product has had an order with a quantity&nbsp;
+of at least ten. I will execute this query,&nbsp;&nbsp;
+
+00:00:28.880 --> 00:00:35.440
+and we have no records. I will change&nbsp;
+the number in the criteria from ten&nbsp;&nbsp;
+
+00:00:36.160 --> 00:00:43.840
+to one. Upon executing this again, still no&nbsp;
+records. However, if I change the ALL back to ANY,&nbsp;&nbsp;
+
+00:00:47.120 --> 00:00:53.440
+we see that 266 of our products have sold at&nbsp;
+least one time. This next part has nothing to&nbsp;&nbsp;
+
+00:00:53.440 --> 00:01:00.480
+do with the ANY or ALL keywords. However, we may&nbsp;
+want to compare how many products were sold versus&nbsp;&nbsp;
+
+00:01:00.480 --> 00:01:06.480
+how many we have in a real-life situation. I will&nbsp;
+select just the portion of the query that deals&nbsp;&nbsp;
+
+00:01:06.480 --> 00:01:15.840
+with the Production.Product table and execute it.&nbsp;
+We have 504 products. Two hundred sixty-six have&nbsp;&nbsp;
+
+00:01:15.840 --> 00:01:23.200
+sold. One may want to see what is going on&nbsp;
+with the rest of the products in real life.
+

@@ -1,0 +1,55 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:07.120
+Elsewhere in this domain, we saw the keywords AND&nbsp;
+and OR used for multiple criteria within a query.&nbsp;&nbsp;
+
+00:00:07.120 --> 00:00:12.960
+However, you may have multiple possibilities&nbsp;
+for criteria you want within a field. For this,&nbsp;&nbsp;
+
+00:00:12.960 --> 00:00:18.720
+instead of multiple OR conditions, you may want&nbsp;
+to use an IN keyword. The IN keyword basically&nbsp;&nbsp;
+
+00:00:18.720 --> 00:00:24.640
+means in one of these, as we are about to see.&nbsp;
+Here is the same query we have used for several&nbsp;&nbsp;
+
+00:00:24.640 --> 00:00:29.760
+examples using the WHERE clause. In this example,&nbsp;
+we are looking for people in one of three cities:&nbsp;&nbsp;
+
+00:00:29.760 --> 00:00:38.800
+Los Angeles, Long Beach, or Bellflower. I will add&nbsp;
+a WHERE clause to this query and then add CITY IN&nbsp;&nbsp;
+
+00:00:39.520 --> 00:00:44.880
+and, in parentheses, the three cities I mentioned&nbsp;
+in single quotes and separated by commas.&nbsp;&nbsp;
+
+00:00:50.000 --> 00:00:51.360
+I will execute this query,&nbsp;&nbsp;
+
+00:00:54.160 --> 00:01:00.720
+and we see 380 rows, all from one of the three&nbsp;
+cities in the criteria. Elsewhere in the domain,&nbsp;&nbsp;
+
+00:01:00.720 --> 00:01:06.800
+we saw the NOT keyword return the opposite of a&nbsp;
+criterion. The same holds true for the IN keyword.&nbsp;&nbsp;
+
+00:01:06.800 --> 00:01:11.840
+If we want to see all the people outside of&nbsp;
+these three cities, we can add the word NOT&nbsp;&nbsp;
+
+00:01:14.000 --> 00:01:16.960
+in front of the IN keyword&nbsp;
+(NOT IN). When I execute this,&nbsp;&nbsp;
+
+00:01:17.920 --> 00:01:24.800
+we see everyone who is not in Los&nbsp;
+Angeles, Long Beach, or Bellflower.
+

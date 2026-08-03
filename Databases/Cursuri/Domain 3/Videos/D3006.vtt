@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:04.480
+Many column names in databases are&nbsp;
+named in a very technical fashion,&nbsp;&nbsp;
+
+00:00:04.480 --> 00:00:08.640
+which makes perfect sense to a database designer&nbsp;
+but not much sense to those who need to understand&nbsp;&nbsp;
+
+00:00:08.640 --> 00:00:14.240
+what a column title means on a report. In those&nbsp;
+situations, a column alias can and should be used.&nbsp;&nbsp;
+
+00:00:14.880 --> 00:00:19.760
+For this example, I have a query with a column&nbsp;
+called SalesOrderID, but most who work with&nbsp;&nbsp;
+
+00:00:19.760 --> 00:00:25.760
+this data know this as an order number. Thus,&nbsp;
+I will place the cursor just before the comma&nbsp;&nbsp;
+
+00:00:26.400 --> 00:00:35.120
+and add the words AS 'Order Number', making&nbsp;
+sure order number is in quotes because it&nbsp;&nbsp;
+
+00:00:35.120 --> 00:00:43.840
+has a space in it. To make sure this works,&nbsp;
+I will execute this statement, and it works.&nbsp;&nbsp;
+
+00:00:44.880 --> 00:00:51.520
+As seen elsewhere in this course, table aliasing&nbsp;
+is powerful as it offers a shortcut for using&nbsp;&nbsp;
+
+00:00:51.520 --> 00:00:57.088
+joins and clearing ambiguities in columns used in&nbsp;
+a query. This feature does not just apply to self&nbsp;&nbsp;
+
+00:00:57.088 --> 00:01:04.400
+joins. To demonstrate this, I will add aliases&nbsp;
+to both the order detail and order header tables.&nbsp;&nbsp;
+
+00:01:08.480 --> 00:01:13.600
+Notice that I am using soh as&nbsp;
+an alias for SalesOrderHeader&nbsp;&nbsp;
+
+00:01:13.600 --> 00:01:20.240
+and sod as the alias for SalesOrderDetail&nbsp;
+as consistency is key with table aliasing.&nbsp;&nbsp;
+
+00:01:20.880 --> 00:01:24.800
+I will then change these long name&nbsp;
+references to use the aliasing as&nbsp;&nbsp;
+
+00:01:24.800 --> 00:01:39.840
+once a table alias is established, it&nbsp;
+has to be used throughout the query.&nbsp;&nbsp;
+
+00:01:45.200 --> 00:01:49.600
+The more complex your queries, the more&nbsp;
+benefits you will get out of table aliasing.&nbsp;&nbsp;
+
+00:01:49.600 --> 00:01:58.160
+I will execute this statement to make sure&nbsp;
+everything still works, and yes, it does.
+

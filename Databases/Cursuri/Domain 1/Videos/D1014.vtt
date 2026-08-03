@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:05.520
+To finish this domain on database design,&nbsp;
+let's look at backing up and securing our data.&nbsp;&nbsp;
+
+00:00:05.520 --> 00:00:09.760
+It is important to make sure a database&nbsp;
+is backed up regularly to restore the data&nbsp;&nbsp;
+
+00:00:11.520 --> 00:00:18.400
+if it is accidentally deleted or changed. Ideally,&nbsp;
+a backup should go to a different drive than the&nbsp;&nbsp;
+
+00:00:18.400 --> 00:00:25.360
+one hosting a database, but for now, let's just&nbsp;
+see how a backup is done. I will select and hold&nbsp;&nbsp;
+
+00:00:25.360 --> 00:00:32.400
+(or right-click) the AdventureWorks database,&nbsp;
+select Tasks, and then Back Up. The Back Up&nbsp;&nbsp;
+
+00:00:32.400 --> 00:00:39.600
+Database window appears. We have two choices for&nbsp;
+a backup. We can do a full backup, which backs&nbsp;&nbsp;
+
+00:00:39.600 --> 00:00:48.080
+up the entire database, or a differential backup,&nbsp;
+which backs up all the changes since the last full&nbsp;&nbsp;
+
+00:00:48.080 --> 00:00:55.040
+backup. If you ever need to restore a database&nbsp;
+from a differential backup, you first need to&nbsp;&nbsp;
+
+00:00:55.040 --> 00:01:02.320
+restore the last full backup and then the most&nbsp;
+recent differential backup of the same database.&nbsp;&nbsp;
+
+00:01:02.320 --> 00:01:09.440
+For this example, we will do a full backup. We&nbsp;
+can back this database up to a disk or to a URL,&nbsp;&nbsp;
+
+00:01:10.160 --> 00:01:16.800
+which would most likely be to a storage area&nbsp;
+in Azure. I will use a disk for this example.&nbsp;&nbsp;
+
+00:01:16.800 --> 00:01:21.360
+I will not run the backup right now, as doing&nbsp;
+so would take considerable time, but I wanted&nbsp;&nbsp;
+
+00:01:21.360 --> 00:01:26.960
+you to see how this is done and emphasize the&nbsp;
+importance of backing up a database regularly.
+

@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:04.880
+Whereas an AND keyword further filters&nbsp;
+information in a WHERE clause, the OR&nbsp;&nbsp;
+
+00:00:04.880 --> 00:00:10.080
+keyword expands the possible number of records&nbsp;
+returned within a query. For example, take this&nbsp;&nbsp;
+
+00:00:10.080 --> 00:00:16.080
+query where a criterion has been added to&nbsp;
+filter this list to show only people in Los&nbsp;&nbsp;
+
+00:00:16.080 --> 00:00:26.080
+Angeles. I will execute this, and we have 91 rows.&nbsp;
+Suppose we want people from both Los Angeles and&nbsp;&nbsp;
+
+00:00:26.080 --> 00:00:32.320
+Long Beach. At this point, we really need to&nbsp;
+analyze what people say they want against how&nbsp;&nbsp;
+
+00:00:32.320 --> 00:00:40.880
+we need to build a query. What if we put the AND&nbsp;
+keyword here and then added City = 'Long Beach'.&nbsp;&nbsp;
+
+00:00:42.400 --> 00:00:49.920
+Would this work? In executing this,&nbsp;
+clearly, this did not work. Why? Because&nbsp;&nbsp;
+
+00:00:49.920 --> 00:00:55.360
+no person in this list will be in both Los Angeles&nbsp;
+and Long Beach, at least, not in the same record.&nbsp;&nbsp;
+
+00:00:56.160 --> 00:01:02.560
+For this criteria piece, we need an OR clause.&nbsp;
+Literally, this means the person can be in Los&nbsp;&nbsp;
+
+00:01:02.560 --> 00:01:10.800
+Angeles, or the person can be in Long Beach.&nbsp;
+I will execute this, and we have 186 rows now,&nbsp;&nbsp;
+
+00:01:10.800 --> 00:01:16.080
+about double what we had before. Before leaving&nbsp;
+this topic, what if we have situations where&nbsp;&nbsp;
+
+00:01:16.080 --> 00:01:23.760
+AND and OR clauses need to be used? For example,&nbsp;
+what if we now wanted to limit this list to anyone&nbsp;&nbsp;
+
+00:01:23.760 --> 00:01:31.920
+in either city but with a last name of Cox?&nbsp;
+Watch what happens as I add an AND clause here,&nbsp;&nbsp;
+
+00:01:33.520 --> 00:01:39.840
+set the LastName to Cox, and then execute this.&nbsp;&nbsp;
+
+00:01:43.600 --> 00:01:50.480
+We still have 93 people. Why? Because this is&nbsp;
+literally saying the city can be Los Angeles,&nbsp;&nbsp;
+
+00:01:51.120 --> 00:01:55.840
+or this could be someone with the last name&nbsp;
+of Cox living in Long Beach. In other words,&nbsp;&nbsp;
+
+00:01:55.840 --> 00:02:01.920
+you could put parentheses around this piece of&nbsp;
+the query, and the results would be the same.&nbsp;&nbsp;
+
+00:02:01.920 --> 00:02:07.680
+That said, we want the query to analyze the&nbsp;
+city portion first and then the last name. Thus,&nbsp;&nbsp;
+
+00:02:07.680 --> 00:02:12.080
+I will put parentheses around&nbsp;
+the city portion of the criteria,&nbsp;&nbsp;
+
+00:02:13.920 --> 00:02:18.960
+execute this again, and now&nbsp;
+we have just three people.&nbsp;&nbsp;
+
+00:02:18.960 --> 00:02:24.320
+For multiple criteria in AND/OR situations,&nbsp;
+treat the criteria like you would a math problem&nbsp;&nbsp;
+
+00:02:24.320 --> 00:02:29.600
+and put parentheses around that which&nbsp;
+you want to treat as a single criterion.
+

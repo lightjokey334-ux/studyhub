@@ -1,0 +1,53 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.989 --> 00:00:05.180
+When a permission that has been granted on
+a resource is no longer needed, it should
+
+00:00:05.180 --> 00:00:06.640
+be revoked.
+
+00:00:06.640 --> 00:00:11.120
+People who have permission on a resource when
+that permission is not needed are a risk for
+
+00:00:11.120 --> 00:00:16.990
+doing something harmful to data, such as accidentally
+updating or deleting data or worse, performing
+
+00:00:16.990 --> 00:00:18.850
+malicious acts on data.
+
+00:00:18.850 --> 00:00:21.930
+The REVOKE statement revokes permissions on
+an object.
+
+00:00:21.930 --> 00:00:26.119
+I have the GRANT statement up that we used
+in the previous video to give the procTester
+
+00:00:26.119 --> 00:00:31.269
+account execute privileges on the GetDepartment
+stored procedure.
+
+00:00:31.269 --> 00:00:34.750
+The REVOKE statement is similar to the GRANT
+statement.
+
+00:00:34.750 --> 00:00:41.750
+I will just replace the word GRANT with REVOKE,
+replace WITH GRANT OPTION with CASCADE as
+
+00:00:41.750 --> 00:00:48.760
+that is needed to eliminate the grant option,
+and run this statement.
+
+00:00:48.760 --> 00:00:53.520
+We see the message that the command completed
+successfully and the permission has been revoked
+
+00:00:53.520 --> 00:00:54.800
+from this account.
+

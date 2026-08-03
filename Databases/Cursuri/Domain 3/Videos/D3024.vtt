@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:05.600
+The next aggregate we are going to use is&nbsp;
+the COUNT aggregate. COUNT just shows the&nbsp;&nbsp;
+
+00:00:05.600 --> 00:00:11.040
+number of records for each item in a group. In&nbsp;
+this query, we already have aggregates for SUM,&nbsp;&nbsp;
+
+00:00:11.040 --> 00:00:15.920
+MIN, and MAX, and I will just add&nbsp;
+another for a count of subtotals&nbsp;&nbsp;
+
+00:00:15.920 --> 00:00:20.640
+for each salesperson. I will copy&nbsp;
+and paste an existing aggregate&nbsp;&nbsp;
+
+00:00:25.360 --> 00:00:32.880
+and then change this aggregate to COUNT,&nbsp;
+change the alias to 'Total number of Sales',&nbsp;&nbsp;
+
+00:00:37.840 --> 00:00:45.280
+and execute this. Now we see the number&nbsp;
+of orders each salesperson has achieved.&nbsp;&nbsp;
+
+00:00:45.280 --> 00:00:52.560
+Before we get to any other aggregates, let's&nbsp;
+see if we can sort based on an aggregate. I will&nbsp;&nbsp;
+
+00:00:52.560 --> 00:01:03.640
+attempt to add an ORDER BY clause to the end of&nbsp;
+this query to sort this list on the subtotal count&nbsp;&nbsp;
+
+00:01:05.920 --> 00:01:14.000
+in descending order. I will run this, and indeed&nbsp;
+it worked. The next aggregate has a keyword that&nbsp;&nbsp;
+
+00:01:14.000 --> 00:01:18.240
+may differ depending upon the exact version&nbsp;
+of SQL you are using. This aggregate is the&nbsp;&nbsp;
+
+00:01:18.240 --> 00:01:24.640
+AVERAGE aggregate. In some versions of SQL,&nbsp;
+AVG is the keyword to use, as it is here for&nbsp;&nbsp;
+
+00:01:24.640 --> 00:01:29.920
+Microsoft SQL Server. I will paste another copy&nbsp;
+of the aggregate I copied earlier to this query,&nbsp;&nbsp;
+
+00:01:30.560 --> 00:01:36.000
+change the keyword to AVG to get an&nbsp;
+average subtotal for each salesperson,&nbsp;&nbsp;
+
+00:01:36.880 --> 00:01:46.480
+make sure I have a comma at the end of the&nbsp;
+COUNT aggregate, and then execute this query.&nbsp;&nbsp;
+
+00:01:50.080 --> 00:02:01.520
+Look at all the aggregates we have&nbsp;
+now: SUM, MIN, MAX, COUNT, and AVERAGE.
+

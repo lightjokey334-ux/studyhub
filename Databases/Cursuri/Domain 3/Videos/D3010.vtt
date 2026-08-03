@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:06.240
+The example of the WHERE clause we have seen uses&nbsp;
+precise criteria to filter records down to what we&nbsp;&nbsp;
+
+00:00:06.240 --> 00:00:12.000
+want within a query. Sometimes though, we may not&nbsp;
+know the exact spelling of the criteria for which&nbsp;&nbsp;
+
+00:00:12.000 --> 00:00:18.800
+we are looking. In these situations, a LIKE clause&nbsp;
+added to a WHERE clause allows us to use wildcards&nbsp;&nbsp;
+
+00:00:18.800 --> 00:00:24.640
+to get approximate matches for criteria. For this&nbsp;
+query, instead of using an exact match for the&nbsp;&nbsp;
+
+00:00:24.640 --> 00:00:30.400
+city criteria, let's say we are not sure of the&nbsp;
+city name but that it starts with the letters&nbsp;&nbsp;
+
+00:00:30.400 --> 00:00:37.120
+LO. I will adjust the City criterion to first&nbsp;
+change the equals sign to the keyword LIKE.&nbsp;&nbsp;
+
+00:00:40.080 --> 00:00:48.720
+Then, I will change Los Angeles to LO%. The&nbsp;
+percent symbol (%) is a wildcard that means&nbsp;&nbsp;
+
+00:00:48.720 --> 00:00:54.960
+any number of characters. The criterion&nbsp;
+now basically reads this way: The city&nbsp;&nbsp;
+
+00:00:54.960 --> 00:01:00.480
+must start with the letters LO but can have&nbsp;
+anything after it. I will execute this query,&nbsp;&nbsp;
+
+00:01:02.080 --> 00:01:08.480
+and we see that we have about 600 records and&nbsp;
+multiple cities that start with the letters LO&nbsp;&nbsp;
+
+00:01:09.040 --> 00:01:16.000
+Let's see what happens if we add a percent symbol&nbsp;
+in front of the L and then execute this again.&nbsp;&nbsp;
+
+00:01:18.320 --> 00:01:25.280
+We are now over 1500 records. The reason is that&nbsp;
+the criteria now reads: We want to see any city&nbsp;&nbsp;
+
+00:01:25.280 --> 00:01:32.640
+with the letters LO in the name, no matter&nbsp;
+what is in front of the LO or after the LO.
+

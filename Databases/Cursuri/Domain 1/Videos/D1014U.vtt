@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.780 --> 00:00:06.000
+Part of the backup process is the occasional&nbsp;
+need to restore data. Sometimes, data is&nbsp;&nbsp;
+
+00:00:06.000 --> 00:00:11.820
+deleted accidentally. Sometimes, data can become&nbsp;
+corrupt. And, as part of the backup process,&nbsp;&nbsp;
+
+00:00:11.820 --> 00:00:17.040
+a data restore should be tested on occasion to&nbsp;
+make sure the restore works when it is needed.&nbsp;&nbsp;
+
+00:00:17.760 --> 00:00:24.420
+I have backed up the AdventureWorks2019 database&nbsp;
+and I want to restore it to this SQL instance,&nbsp;&nbsp;
+
+00:00:25.020 --> 00:00:32.460
+as someone accidentally deleted a table in the&nbsp;
+database. Do keep in mind that restores overwrite&nbsp;&nbsp;
+
+00:00:32.460 --> 00:00:37.980
+existing data, which is why it is important&nbsp;
+to back up data frequently. I will select&nbsp;&nbsp;
+
+00:00:37.980 --> 00:00:45.360
+and hold (or right-click) AdventureWorks2019,&nbsp;
+and then select Tasks, Restore, and Database.&nbsp;&nbsp;
+
+00:00:46.620 --> 00:00:52.740
+Available restores will show here in the Backup&nbsp;
+sets to restore area. Any backup can be verified&nbsp;&nbsp;
+
+00:00:52.740 --> 00:00:58.260
+through selecting it and then Verify Backup&nbsp;
+Media. Though this step is not necessary,&nbsp;&nbsp;
+
+00:00:58.260 --> 00:01:05.040
+I do want to make sure this backup is ready to&nbsp;
+restore, so I will select Verify Backup Media.&nbsp;&nbsp;
+
+00:01:05.700 --> 00:01:10.980
+I don't see any error messages, so I will&nbsp;
+select the Ok button to restore this database,&nbsp;&nbsp;
+
+00:01:11.940 --> 00:01:16.860
+and we get a message indicating a successful&nbsp;
+restoration of the data has taken place.&nbsp;&nbsp;
+
+00:01:17.580 --> 00:01:22.680
+Remember, a backup is only as good as&nbsp;
+one's ability to restore said backup.
+

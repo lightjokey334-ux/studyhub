@@ -15,11 +15,11 @@ const READY_SUBJECTS = ['Networking', 'Databases'];
 // Maps an option key to the relative path (from index.html) that should open.
 function buildPath(subject, optionKey){
   const settings = studyhubLoadSettings();
-  const qs = `shortcutsPanel=${settings.shortcutsPanel}`;
+  const qs = `shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}`;
 
   switch(optionKey){
     case 'cursuri':
-      return `${subject}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&${qs}`;
+      return `${subject}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&${qs}`;
     case 'examen1':
       return `${subject}/Examene/Examen 1/examen1.html?${qs}`;
     case 'examen2':
@@ -97,7 +97,7 @@ homeLogo.addEventListener('click', showSubjectScreen);
     const target = settings[key] || 'home';
 
     if(target === 'cursuri'){
-      window.location.replace(`${logoFrom}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&shortcutsPanel=${settings.shortcutsPanel}`);
+      window.location.replace(`${logoFrom}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}`);
       return;
     }
     if(target === 'options'){

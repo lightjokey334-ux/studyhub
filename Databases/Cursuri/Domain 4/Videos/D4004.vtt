@@ -1,0 +1,66 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.370 --> 00:00:06.520
+The next data manipulation keyword we are
+going to look at is the DELETE keyword.
+
+00:00:06.520 --> 00:00:09.490
+The DELETE keyword deletes records from a
+table.
+
+00:00:09.490 --> 00:00:12.440
+It does not delete an object such as a table.
+
+00:00:12.440 --> 00:00:17.100
+If you want to delete an entire object, you
+will want to use the DROP keyword, which is
+
+00:00:17.100 --> 00:00:20.040
+covered elsewhere in this course.
+
+00:00:20.040 --> 00:00:24.750
+I have a file open that has both a SELECT
+statement and a DELETE statement.
+
+00:00:24.750 --> 00:00:29.500
+Before running a DELETE statement, it is always
+a good idea to run a SELECT statement on the
+
+00:00:29.500 --> 00:00:31.610
+table you are about to change.
+
+00:00:31.610 --> 00:00:36.489
+Doing this will ensure it is the table you
+want to delete records from because, as stated
+
+00:00:36.489 --> 00:00:40.469
+elsewhere in this course, these changes cannot
+be undone.
+
+00:00:40.469 --> 00:00:46.920
+I will run the SELECT statement, and indeed
+this is the table that has the records I want
+
+00:00:46.920 --> 00:00:48.820
+to delete.
+
+00:00:48.820 --> 00:00:51.399
+The DELETE statement itself is very simple.
+
+00:00:51.399 --> 00:00:56.420
+All this contains is DELETE FROM and then
+the table to be emptied.
+
+00:00:56.420 --> 00:01:02.449
+If we wanted to use a WHERE clause to limit
+what is being deleted, we can.
+
+00:01:02.449 --> 00:01:09.930
+That said, I will select and execute this
+DELETE statement, and this table has been
+
+00:01:09.930 --> 00:01:10.580
+emptied.
+

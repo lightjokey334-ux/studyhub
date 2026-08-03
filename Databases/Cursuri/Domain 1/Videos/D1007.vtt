@@ -1,0 +1,44 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:06.880
+Still in this sales.salesorderheader table,&nbsp;
+let's look at the impact on space each data&nbsp;&nbsp;
+
+00:00:06.880 --> 00:00:11.920
+type has. Space will make database designers stop&nbsp;
+and think through which data types should be used&nbsp;&nbsp;
+
+00:00:11.920 --> 00:00:16.560
+given different situations. Each data type&nbsp;
+will use a certain amount of memory to store&nbsp;&nbsp;
+
+00:00:16.560 --> 00:00:24.000
+the data in the column. For example, integers&nbsp;
+use four bytes of data while tinyint fields&nbsp;&nbsp;
+
+00:00:24.640 --> 00:00:30.320
+use just one byte. Elsewhere in the course, we&nbsp;
+will cover ranges of numbers for these values.&nbsp;&nbsp;
+
+00:00:30.320 --> 00:00:37.440
+Money fields use eight bytes of data, while&nbsp;
+small money fields use four bytes of data.&nbsp;&nbsp;
+
+00:00:37.440 --> 00:00:44.400
+For text, varchar uses the number of characters&nbsp;
+plus two bytes. Thus, a 20-character varchar field&nbsp;&nbsp;
+
+00:00:44.400 --> 00:00:50.000
+uses 22 bytes of data. Nvarchars use double&nbsp;
+the number of characters. In other words,&nbsp;&nbsp;
+
+00:00:50.000 --> 00:00:55.520
+a 20-character nvarchar field uses 40 bytes of&nbsp;
+data. Elsewhere in the course, we will cover&nbsp;&nbsp;
+
+00:00:55.520 --> 00:01:03.280
+the difference between varchar and nvarchar.&nbsp;
+A datetime field stores eight bytes as well.
+

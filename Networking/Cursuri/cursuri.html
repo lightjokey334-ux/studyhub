@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Networking — Cursuri</title>
 <link rel="stylesheet" href="../../engine.css">
-<link rel="stylesheet" href="cursuri.css">
+<link rel="stylesheet" href="../../cursuri-shared.css">
 <link rel="stylesheet" href="../../settings-modal.css">
 </head>
 <body>
@@ -48,14 +48,11 @@
   <script src="Domain 5/Pre-Assessment/pre-assessment.js"></script>
   <script src="Domain 5/Post-Assessment/post-assessment.js"></script>
 
+  <!-- Date specifice materiei (SUBJECT + DOMAINS) — DOAR fișierul ăsta
+       diferă între Networking/Databases/Python. Trebuie încărcat ÎNAINTE
+       de cursuri-engine.js, care le folosește. -->
   <script src="cursuri.js"></script>
-  <script>
-    document.getElementById('settingsLink').addEventListener('click', () => {
-      openSettingsModal('../../settings.html');
-    });
-    document.getElementById('historyLink').addEventListener('click', () => {
-      openHistoryModal('../../history.html?subject=Networking');
-    });
-  </script>
+  <!-- Logica comună, identică pentru toate materiile — nu se copiază per materie. -->
+  <script src="../../cursuri-engine.js"></script>
 </body>
 </html>

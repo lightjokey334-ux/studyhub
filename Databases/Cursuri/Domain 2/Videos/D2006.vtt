@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.880 --> 00:00:06.080
+The next two topics will focus on indexing.&nbsp;
+Indexing helps speed up queries within a table&nbsp;&nbsp;
+
+00:00:06.080 --> 00:00:12.320
+so long as the indexes are done with some&nbsp;
+strategic purpose. To best define an index,&nbsp;&nbsp;
+
+00:00:12.320 --> 00:00:17.520
+think of your local library for just a moment.&nbsp;
+Books are stored by some type of classification,&nbsp;&nbsp;
+
+00:00:17.520 --> 00:00:21.920
+usually the Dewey Decimal Classification. This&nbsp;
+classification system helps to organize books&nbsp;&nbsp;
+
+00:00:21.920 --> 00:00:27.520
+and make them easier to find. Such an index can&nbsp;
+also be added to a table. This type of index is&nbsp;&nbsp;
+
+00:00:27.520 --> 00:00:33.520
+a clustered index and is automatically added to&nbsp;
+a table's primary key if one exists. I have a&nbsp;&nbsp;
+
+00:00:33.520 --> 00:00:38.800
+BikeRepairs table that I created elsewhere in this&nbsp;
+course, and the table currently has no indexes.&nbsp;&nbsp;
+
+00:00:38.800 --> 00:00:46.560
+I will find and expand this table, select and&nbsp;
+hold (or right-click) Indexes, select New Index,&nbsp;&nbsp;
+
+00:00:47.840 --> 00:00:52.320
+Clustered Index, and in this New&nbsp;
+Index window, I will do two things.&nbsp;&nbsp;
+
+00:00:52.320 --> 00:00:57.840
+First, I will select the Unique check&nbsp;
+box under Clustered. Then, I will select&nbsp;&nbsp;
+
+00:01:00.080 --> 00:01:03.680
+Add, select the check box next&nbsp;
+to the BikeRepairID column,&nbsp;&nbsp;
+
+00:01:05.600 --> 00:01:11.840
+select the OK button, and before we select the&nbsp;
+OK button here, I want to show you how you can&nbsp;&nbsp;
+
+00:01:11.840 --> 00:01:19.440
+generate a script working with one of these&nbsp;
+windows. I will select the Script drop-down arrow,&nbsp;&nbsp;
+
+00:01:19.440 --> 00:01:23.840
+and we can generate the SQL code used&nbsp;
+to create this index to a new window,&nbsp;&nbsp;
+
+00:01:23.840 --> 00:01:28.880
+file, or just the clipboard. I will&nbsp;
+select New Query Editor Window,&nbsp;&nbsp;
+
+00:01:31.120 --> 00:01:37.840
+select the OK button, and not only has this&nbsp;
+index been created, but look at the code used to&nbsp;&nbsp;
+
+00:01:37.840 --> 00:01:44.480
+generate a clustered index in ascending order on&nbsp;
+the BikeRepairID field. This table will now store&nbsp;&nbsp;
+
+00:01:44.480 --> 00:01:52.560
+information in the order of the BikeRepairID,&nbsp;
+making queries that utilize this field run faster.
+

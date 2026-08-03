@@ -1,0 +1,94 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.060 --> 00:00:05.529
+We have identified three major components
+of a database: an entity and the records and
+
+00:00:05.529 --> 00:00:07.569
+fields within an entity.
+
+00:00:07.569 --> 00:00:12.500
+We now want to look at a key component of
+entity design, a primary key.
+
+00:00:12.500 --> 00:00:17.330
+Take a look at the data in this Person.Person
+table.
+
+00:00:17.330 --> 00:00:22.060
+See if you can spot which value is unique
+in every record.
+
+00:00:22.060 --> 00:00:28.180
+For one, the BusinessEntityID field looks
+to have a unique value in each record.
+
+00:00:28.180 --> 00:00:33.070
+In this table, the BusinessEntityID field
+is a primary key field.
+
+00:00:33.070 --> 00:00:37.910
+A primary key field is a field that ensures
+that every record in a table is unique, which
+
+00:00:37.910 --> 00:00:40.150
+is a key to solid database design.
+
+00:00:40.150 --> 00:00:45.030
+Imagine for a moment that within this table,
+you have two people with the same title, name,
+
+00:00:45.030 --> 00:00:46.890
+and other information.
+
+00:00:46.890 --> 00:00:50.370
+This situation does happen within a company
+or customer list at times.
+
+00:00:50.370 --> 00:00:53.920
+How then are we to discern one person from
+the other?
+
+00:00:53.920 --> 00:00:56.580
+The answer is a primary key field.
+
+00:00:56.580 --> 00:00:59.890
+Let's make sure we have a primary key in this
+table.
+
+00:00:59.890 --> 00:01:07.109
+I will select and hold (or right-click) the
+Person.Person table and select Design.
+
+00:01:07.109 --> 00:01:11.999
+Doing this will allow other tables to use
+this BusinessIdentityID on a person to get
+
+00:01:11.999 --> 00:01:14.619
+the corresponding information.
+
+00:01:14.619 --> 00:01:18.530
+Though this table already has a primary key,
+if we wanted to set a different column as
+
+00:01:18.530 --> 00:01:25.130
+a primary key, we could select and hold (or
+right-click) the column and then choose Set
+
+00:01:25.130 --> 00:01:26.130
+Primary Key.
+
+00:01:26.130 --> 00:01:31.530
+That said, a primary key really needs to be
+determined when an entity is first conceptualized
+
+00:01:31.530 --> 00:01:36.630
+because a database designer should know right
+away which column in a table will be used
+
+00:01:36.630 --> 00:01:39.509
+to make sure every record in that table is
+unique.
+

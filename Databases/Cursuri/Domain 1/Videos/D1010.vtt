@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:07.040
+Let's step away from a database server for just a&nbsp;
+moment and talk more about relationships between&nbsp;&nbsp;
+
+00:00:07.040 --> 00:00:13.520
+tables. Relationships should be planned before&nbsp;
+a database is ever built. One way to organize&nbsp;&nbsp;
+
+00:00:13.520 --> 00:00:21.760
+relationships is to create an entity relationship&nbsp;
+diagram (ERD). An ERD will show, for a database,&nbsp;&nbsp;
+
+00:00:21.760 --> 00:00:28.320
+relationships that should be established or are&nbsp;
+established between entities. Some ERDs only show&nbsp;&nbsp;
+
+00:00:28.320 --> 00:00:34.240
+entity names, but most show the columns used in&nbsp;
+relationships, as we see with this portion of an&nbsp;&nbsp;
+
+00:00:34.240 --> 00:00:41.680
+ERD for the AdventureWorks database. I do not have&nbsp;
+all the tables or the columns in each table listed&nbsp;&nbsp;
+
+00:00:41.680 --> 00:00:49.920
+here as this topic's emphasis is simply to learn&nbsp;
+what an ERD is and its role in database design.&nbsp;&nbsp;
+
+00:00:50.720 --> 00:00:56.800
+Note that the primary key field is indicated for&nbsp;
+all three of these tables, which is the hallmark&nbsp;&nbsp;
+
+00:00:56.800 --> 00:01:05.280
+of a well-built ERD. Also, we see lines drawn&nbsp;
+between columns used in relationships. Again,&nbsp;&nbsp;
+
+00:01:05.280 --> 00:01:10.640
+this should be built before the actual database&nbsp;
+is built so that a database design is clearly&nbsp;&nbsp;
+
+00:01:10.640 --> 00:01:18.400
+known and can be adjusted if necessary before&nbsp;
+the database building process commences.
+

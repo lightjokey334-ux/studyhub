@@ -1,0 +1,60 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:07.120
+Another form of normalization covered in the exam&nbsp;
+topics is third normal form (3NF). In third normal&nbsp;&nbsp;
+
+00:00:07.120 --> 00:00:14.160
+form, a value change in a non-key column in one&nbsp;
+table should not necessitate a change in another&nbsp;&nbsp;
+
+00:00:14.160 --> 00:00:19.760
+non-key column elsewhere, as this can cause&nbsp;
+problems with historical data. That sounds&nbsp;&nbsp;
+
+00:00:19.760 --> 00:00:25.840
+like a lot, so let's see an example of this.&nbsp;
+I have a small sample of products with prices.&nbsp;&nbsp;
+
+00:00:26.400 --> 00:00:31.520
+Sometimes, these products go on sale. What&nbsp;
+do you think would happen if I changed one&nbsp;&nbsp;
+
+00:00:31.520 --> 00:00:38.400
+of these prices in the price column? Every order&nbsp;
+referencing this product would be wrong because&nbsp;&nbsp;
+
+00:00:39.040 --> 00:00:45.600
+if there were an orders table referencing&nbsp;
+this list, all of the prices in every order&nbsp;&nbsp;
+
+00:00:45.600 --> 00:00:50.800
+would change. This example demonstrates&nbsp;
+a value change in one non-key column&nbsp;&nbsp;
+
+00:00:51.520 --> 00:00:58.240
+necessitating a change in another non-key column.&nbsp;
+Thus, there are two plausible solutions. Either&nbsp;&nbsp;
+
+00:00:58.240 --> 00:01:05.120
+the price of a product needs to be adjustable&nbsp;
+when placing an order, or we would need a sale&nbsp;&nbsp;
+
+00:01:05.120 --> 00:01:10.320
+price column, which I will add, that will have a&nbsp;
+sale price we can use when products go on sale.&nbsp;&nbsp;
+
+00:01:11.120 --> 00:01:14.240
+Of course, this would mean that each&nbsp;
+product can only have one sale price,&nbsp;&nbsp;
+
+00:01:14.880 --> 00:01:20.080
+so it may be better to allow price&nbsp;
+adjustments in an orders table. The point&nbsp;&nbsp;
+
+00:01:20.080 --> 00:01:27.520
+is that we do not want one change triggering&nbsp;
+unexpected changes elsewhere in a database.
+

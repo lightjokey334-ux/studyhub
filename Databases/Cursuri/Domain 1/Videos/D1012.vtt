@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.960 --> 00:00:05.680
+Normalization is the process of ensuring that&nbsp;
+an entity in a database has a solid design&nbsp;&nbsp;
+
+00:00:06.320 --> 00:00:10.080
+and that the data in the entity can&nbsp;
+work well with other entities as needed.&nbsp;&nbsp;
+
+00:00:10.800 --> 00:00:14.560
+There are several forms of normalization,&nbsp;
+but the first form of normalization&nbsp;&nbsp;
+
+00:00:14.560 --> 00:00:18.480
+ensures that every record is unique and&nbsp;
+that fields are independent of each other.&nbsp;&nbsp;
+
+00:00:19.440 --> 00:00:24.240
+Take a look at this data example. Is there&nbsp;
+any field that ensures each record in this&nbsp;&nbsp;
+
+00:00:24.240 --> 00:00:31.440
+entity is unique? At first glance, no. Thus,&nbsp;
+we should add a primary key field to this data.&nbsp;&nbsp;
+
+00:00:32.000 --> 00:00:39.120
+I will add a field to the left of the existing&nbsp;
+fields and number these records accordingly.&nbsp;&nbsp;
+
+00:00:40.480 --> 00:00:46.080
+The second problem is that sorting on the name&nbsp;
+field can be problematic because we have the&nbsp;&nbsp;
+
+00:00:46.080 --> 00:00:51.760
+first and last names in the same field.&nbsp;
+In first normal form (1NF), each field&nbsp;&nbsp;
+
+00:00:51.760 --> 00:00:57.760
+needs to have a single value so that data&nbsp;
+can be sorted in any way possible. Normally,&nbsp;&nbsp;
+
+00:00:57.760 --> 00:01:04.240
+I would use a formula to separate these, but given&nbsp;
+we have so few names here, I will just quickly&nbsp;&nbsp;
+
+00:01:04.240 --> 00:01:16.560
+add a column and separate these names manually.&nbsp;
+To recap, in the first step for normalization, we&nbsp;&nbsp;
+
+00:01:16.560 --> 00:01:25.840
+want to make sure that every record in an entity&nbsp;
+is unique and every field has a single value.
+

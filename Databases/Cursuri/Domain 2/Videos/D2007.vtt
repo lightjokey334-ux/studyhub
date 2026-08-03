@@ -1,0 +1,44 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:05.680
+Whereas a clustered index is based on a primary&nbsp;
+key field, a nonclustered index can be based on&nbsp;&nbsp;
+
+00:00:05.680 --> 00:00:12.080
+any other field. Nonclustered indexes are used&nbsp;
+to speed up queries, but this comes at a cost&nbsp;&nbsp;
+
+00:00:12.080 --> 00:00:18.800
+as each nonclustered index adds another way to&nbsp;
+store information in a table, which adds size&nbsp;&nbsp;
+
+00:00:18.800 --> 00:00:24.400
+to the table. Take a look at this BikeRepairs&nbsp;
+table. Which column, besides the BikeRepairID,&nbsp;&nbsp;
+
+00:00:25.040 --> 00:00:30.400
+is the most likely to be used as criteria in&nbsp;
+a query? The CustomerID field is very likely,&nbsp;&nbsp;
+
+00:00:30.400 --> 00:00:34.560
+so let's index that column. I have an INDEX&nbsp;
+statement open here, and as you can see,&nbsp;&nbsp;
+
+00:00:34.560 --> 00:00:40.880
+creating a nonclustered index takes little&nbsp;
+text. First, we have a CREATE INDEX command&nbsp;&nbsp;
+
+00:00:40.880 --> 00:00:48.880
+and a name. Then, the keyword ON is used to get us&nbsp;
+to the table on which this index will be created.&nbsp;&nbsp;
+
+00:00:48.880 --> 00:00:54.320
+Then in parentheses, we have the column&nbsp;
+being indexed. I will execute this statement,&nbsp;&nbsp;
+
+00:00:56.880 --> 00:01:05.760
+and just like that, we have both a clustered and&nbsp;
+nonclustered index in this BikeRepairs table.
+

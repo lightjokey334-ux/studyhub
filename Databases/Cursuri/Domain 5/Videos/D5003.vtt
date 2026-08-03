@@ -1,0 +1,81 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.560 --> 00:00:06.350
+Let us now look at syntax and runtime errors
+when manipulating data, which means one is
+
+00:00:06.350 --> 00:00:09.940
+trying to insert, update, or delete data.
+
+00:00:09.940 --> 00:00:14.549
+I have a query here that is looking to add
+two records to a BikeRepairs table.
+
+00:00:14.549 --> 00:00:16.040
+I will execute the query.
+
+00:00:16.040 --> 00:00:20.980
+There is a syntax error near the number 1.
+
+00:00:20.980 --> 00:00:25.490
+With queries, it is not hard to miss a keyword
+or two at times.
+
+00:00:25.490 --> 00:00:28.499
+The VALUES keyword is missing.
+
+00:00:28.499 --> 00:00:36.100
+I will add that where it needs to go and then
+execute this query again.
+
+00:00:36.100 --> 00:00:41.790
+The syntax errors are gone, but now we have
+a runtime error.
+
+00:00:41.790 --> 00:00:47.430
+The error basically says we cannot duplicate
+a primary key entry.
+
+00:00:47.430 --> 00:00:56.930
+I'm going to quickly add a SELECT statement
+below this to select everything from the BikeRepairs
+
+00:00:56.930 --> 00:01:11.320
+table, and sure enough, these two values for
+BikeRepairID are already used.
+
+00:01:11.320 --> 00:01:15.140
+Seeing that these records have already been
+entered, I do not need to run this INSERT
+
+00:01:15.140 --> 00:01:16.799
+statement again.
+
+00:01:16.799 --> 00:01:28.250
+That said, you have now seen both syntax and
+runtime errors for data manipulation queries.
+
+00:01:28.250 --> 00:01:33.750
+Throughout this course, you have learned how
+to organize, build, enter data into, and retrieve
+
+00:01:33.750 --> 00:01:35.719
+data from a database.
+
+00:01:35.719 --> 00:01:40.909
+With this knowledge, you are set up well for
+the IT Specialist Databases exam, which, when
+
+00:01:40.909 --> 00:01:44.649
+passed, will get you the IT Specialist Databases
+certification.
+
+00:01:44.649 --> 00:01:47.139
+This course will also help improve your employability.
+
+00:01:47.139 --> 00:01:51.450
+Thank you for taking this course, and good
+luck with your exam.
+

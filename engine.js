@@ -34,19 +34,39 @@ class QuestionEngine {
     this.randomize = opts.randomize !== false; // implicit: da
     this.testId = opts.testId || null; // ex: "d1_pre", "exam1" — folosit pentru istoricul de progres
     this.testLabel = opts.title || 'Test';
-    this._startTime = Date.now();
     this._pausedAccumMs = 0; // timp total petrecut cu fila ascunsă / un modal deschis peste test
     this._pausedAt = null; // momentul la care a început pauza curentă (null = nu e în pauză acum)
     this.showShortcuts = opts.showShortcuts !== false; // implicit: da
     this.keyMode = 'navigate'; // 'navigate' | 'answer' — vezi butonul rotund din topbar
     this._answerCursorIdx = 0; // poziția evidențiată în modul "Răspuns" (multi)
     this.autoSaveAnswers = opts.autoSaveAnswers === true; // setarea din Setări -> Teste și examene
+    this.mode = 'test'; // 'test' | 'learn' — ales din ecranul de start, sau restaurat dintr-o sesiune salvată
+    this._learnRevealed = new Set(); // ID-urile întrebărilor deja "verificate" în Modul Învățare (vezi goNext())
+    this.multiSession = opts.multiSession === true; // implicit: nu — vezi ecranul de sesiuni, doar la examene
+    this.sessionNum = null; // numărul sesiunii curente, DOAR când multiSession e activ
 
     const source = questions || [];
-    // Dacă auto-salvarea e activă și există progres salvat pentru acest test,
-    // restaurăm ordinea EXACTĂ a întrebărilor (nu doar răspunsurile) —
-    // altfel, cum testul se amestecă din nou la fiecare deschidere,
-    // "current" ar indica altă întrebare decât cea la care ai rămas.
+
+    if (source.length === 0) {
+      this.questions = [];
+      this.renderEmpty();
+      return;
+    }
+
+    this._pendingSource = source;
+
+    if (this.multiSession) {
+      // Examene: poți avea mai multe încercări nefinalizate în paralel —
+      // arată mereu un ecran cu "Sesiune nouă" + una câte una din cele
+      // existente, înainte de alegerea Test/Învățare.
+      const sessions = this.autoSaveAnswers ? this.loadSessionsIndex() : [];
+      this.renderSessionPicker(sessions);
+      return;
+    }
+
+    // Cursuri (Pre/Post-Assessment): un singur "slot" de progres salvat,
+    // ca până acum — dacă există, sărim peste ecranul de alegere a
+    // modului și reluăm direct în modul cu care a fost pornită sesiunea.
     const restored = this.autoSaveAnswers ? this.loadAutoSave() : null;
 
     if (restored) {
@@ -54,28 +74,144 @@ class QuestionEngine {
       this.userAnswers = restored.userAnswers || {};
       this.marked = new Set(restored.marked || []);
       this.current = Math.min(Math.max(restored.current || 0, 0), Math.max(this.questions.length - 1, 0));
+      this.mode = restored.mode === 'learn' ? 'learn' : 'test';
+      this._learnRevealed = new Set(restored.learnRevealed || []);
+      this.startTest();
     } else {
-      this.questions = this.randomize
-        ? this.shuffleArray(source).map(q => this.shuffleQuestionOptions(q))
-        : source.slice();
+      this.renderModePicker();
     }
+  }
 
-    if (this.questions.length === 0) {
-      this.renderEmpty();
-    } else {
-      this.renderShell();
-      this.renderQuestion();
-      this.bindKeyboardShortcuts();
-      this.bindActivityPause();
-    }
+  // Ecran de sesiuni (doar la examene, multiSession) — apare mereu, chiar
+  // dacă nu ai nicio sesiune nefinalizată încă (atunci arată doar "Sesiune
+  // nouă"). O sesiune = o încercare la care ai salvat răspunsuri, dar n-ai
+  // apăsat încă "Finalizează testul".
+  renderSessionPicker(sessions) {
+    const sorted = sessions.slice().sort((a, b) => a.num - b.num);
+    const rows = sorted.map(s => {
+      const dateStr = s.updatedAt
+        ? new Date(s.updatedAt).toLocaleDateString('ro-RO', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })
+        : '';
+      return `
+        <div class="qe-session-card-row">
+          <button type="button" class="qe-session-card" data-session="${s.num}">
+            <span class="qe-session-card-title">Sesiunea ${s.num}</span>
+            <span class="qe-session-card-desc">${s.answered} / ${s.total} răspunse · ${dateStr}</span>
+          </button>
+          <button type="button" class="qe-session-delete-btn" data-delete-session="${s.num}" title="Șterge sesiunea" aria-label="Șterge sesiunea">✕</button>
+        </div>`;
+    }).join('');
+
+    this.container.innerHTML = `
+      <div class="qe-mode-picker">
+        <h2 class="qe-mode-picker-title">${this.testLabel}</h2>
+        <p class="qe-mode-picker-sub">${sorted.length
+          ? `Ai ${sorted.length} sesiune${sorted.length === 1 ? '' : 'i'} nefinalizată${sorted.length === 1 ? '' : 'e'}. Continui una, sau începi una nouă?`
+          : 'Pornește o sesiune nouă.'}</p>
+        <div class="qe-session-list">
+          <button type="button" class="qe-session-card qe-session-card-new" data-session="new">
+            <span class="qe-session-card-title">+ Sesiune nouă</span>
+            <span class="qe-session-card-desc">Pornește un test complet nou</span>
+          </button>
+          ${rows}
+        </div>
+      </div>`;
+
+    this.container.querySelectorAll('[data-session]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.dataset.session;
+        if (val === 'new') {
+          this.sessionNum = this.getNextSessionNum(sorted);
+          this.renderModePicker();
+          return;
+        }
+        this.sessionNum = parseInt(val, 10);
+        const restored = this.loadAutoSave();
+        if (restored) {
+          this.questions = restored.questions;
+          this.userAnswers = restored.userAnswers || {};
+          this.marked = new Set(restored.marked || []);
+          this.current = Math.min(Math.max(restored.current || 0, 0), Math.max(restored.questions.length - 1, 0));
+          this.mode = restored.mode === 'learn' ? 'learn' : 'test';
+          this._learnRevealed = new Set(restored.learnRevealed || []);
+          this.startTest();
+        } else {
+          // date lipsă/corupte -> curăță intrarea orfană din index, tratează ca sesiune nouă
+          this.removeSessionIndexEntry();
+          this.renderModePicker();
+        }
+      });
+    });
+
+    this.container.querySelectorAll('[data-delete-session]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const num = parseInt(btn.dataset.deleteSession, 10);
+        if (!confirm(`Ștergi Sesiunea ${num}? Nu se poate anula.`)) return;
+        try { localStorage.removeItem(`studyhub_autosave_${this.testId}_s${num}`); } catch (err) { /* ignoră */ }
+        const list = this.loadSessionsIndex().filter(s => s.num !== num);
+        this.saveSessionsIndex(list);
+        this.renderSessionPicker(list);
+      });
+    });
+  }
+
+  // Ecran de start: alegi Modul Test (ca până acum — corectarea apare
+  // toată la final) sau Modul Învățare (corectarea apare imediat, după
+  // fiecare întrebare răspunsă, fără să blocheze editarea). Apare doar la
+  // pornirea unei sesiuni noi — dacă exista deja o sesiune auto-salvată,
+  // se sare peste acest ecran (vezi constructor).
+  renderModePicker() {
+    this.container.innerHTML = `
+      <div class="qe-mode-picker">
+        <h2 class="qe-mode-picker-title">Cum vrei să faci testul?</h2>
+        <p class="qe-mode-picker-sub">${this.testLabel}</p>
+        <div class="qe-mode-picker-grid">
+          <button type="button" class="qe-mode-card" data-mode="test">
+            <span class="qe-mode-card-icon">📝</span>
+            <span class="qe-mode-card-title">Mod Test</span>
+            <span class="qe-mode-card-desc">Răspunzi la toate întrebările; corectarea completă apare abia după „Finalizează testul".</span>
+          </button>
+          <button type="button" class="qe-mode-card" data-mode="learn">
+            <span class="qe-mode-card-icon">🎓</span>
+            <span class="qe-mode-card-title">Mod Învățare</span>
+            <span class="qe-mode-card-desc">Vezi imediat dacă ai răspuns corect, după fiecare întrebare — poți să-ți schimbi răspunsul oricând.</span>
+          </button>
+        </div>
+      </div>`;
+
+    this.container.querySelectorAll('.qe-mode-card').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.mode = btn.dataset.mode === 'learn' ? 'learn' : 'test';
+        const source = this._pendingSource;
+        this.questions = this.randomize
+          ? this.shuffleArray(source).map(q => this.shuffleQuestionOptions(q))
+          : source.slice();
+        this.startTest();
+      });
+    });
+  }
+
+  // Randează efectiv testul — apelat fie imediat după alegerea modului,
+  // fie direct din constructor, la reluarea unei sesiuni salvate.
+  startTest() {
+    this._startTime = Date.now(); // pornește abia acum — nu contorizăm timpul petrecut pe ecranul de alegere a modului
+    this.renderShell();
+    this.renderQuestion();
+    this.bindKeyboardShortcuts();
+    this.bindActivityPause();
   }
 
   // ---- Auto-salvare (opțională, din Setări) ----
   // Cheia e legată de testId, deci fiecare test (domeniu/tip sau examen)
   // are propriul progres salvat. Se face direct în localStorage, fără
   // bridge — motorul rulează mereu pe aceeași pagină unde se și citește.
+  // La examene (multiSession), cheia include și numărul sesiunii, ca
+  // fiecare încercare nefinalizată să aibă propriul "slot", separat.
   _autoSaveKey() {
-    return this.testId ? `studyhub_autosave_${this.testId}` : null;
+    if (!this.testId) return null;
+    if (this.multiSession && this.sessionNum) return `studyhub_autosave_${this.testId}_s${this.sessionNum}`;
+    return `studyhub_autosave_${this.testId}`;
   }
 
   loadAutoSave() {
@@ -101,14 +237,70 @@ class QuestionEngine {
         userAnswers: this.userAnswers,
         marked: [...this.marked],
         current: this.current,
+        mode: this.mode,
+        learnRevealed: [...this._learnRevealed],
       }));
     } catch (e) { /* ex: localStorage plin — ignorăm, nu blocăm testul */ }
+    if (this.multiSession) this.updateSessionIndexEntry();
   }
 
   clearAutoSave() {
     const key = this._autoSaveKey();
     if (!key) return;
     try { localStorage.removeItem(key); } catch (e) { /* ignoră */ }
+    if (this.multiSession) this.removeSessionIndexEntry();
+  }
+
+  // ---- Sesiuni multiple (doar la examene, multiSession) ----
+  // O listă separată ("indexul"), cu câte o intrare per sesiune
+  // nefinalizată — doar metadate (nu întregul test), ca ecranul de
+  // alegere să se randeze rapid, fără să încarce fiecare sesiune întreagă.
+  _sessionsIndexKey() {
+    return this.testId ? `studyhub_sessions_${this.testId}` : null;
+  }
+
+  loadSessionsIndex() {
+    const key = this._sessionsIndexKey();
+    if (!key) return [];
+    try {
+      const raw = localStorage.getItem(key);
+      const list = raw ? JSON.parse(raw) : [];
+      return Array.isArray(list) ? list : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  saveSessionsIndex(list) {
+    const key = this._sessionsIndexKey();
+    if (!key) return;
+    try { localStorage.setItem(key, JSON.stringify(list)); } catch (e) { /* ignoră */ }
+  }
+
+  getNextSessionNum(list) {
+    if (!list.length) return 1;
+    return Math.max(...list.map(s => s.num)) + 1;
+  }
+
+  updateSessionIndexEntry() {
+    if (!this.sessionNum) return;
+    const list = this.loadSessionsIndex();
+    const entry = {
+      num: this.sessionNum,
+      updatedAt: new Date().toISOString(),
+      answered: this.questions.filter(q => this.isAnswered(q.id)).length,
+      total: this.questions.length,
+      mode: this.mode,
+    };
+    const idx = list.findIndex(s => s.num === this.sessionNum);
+    if (idx >= 0) list[idx] = entry; else list.push(entry);
+    this.saveSessionsIndex(list);
+  }
+
+  removeSessionIndexEntry() {
+    if (!this.sessionNum) return;
+    const list = this.loadSessionsIndex().filter(s => s.num !== this.sessionNum);
+    this.saveSessionsIndex(list);
   }
 
   // Pauzează cronometrul duratei testului cât timp fila e ascunsă (ai
@@ -204,7 +396,7 @@ class QuestionEngine {
   }
 
   renderShell() {
-    const shortcutsHtml = this.showShortcuts ? `
+    const shortcutsHtml = `
         <aside class="qe-shortcuts-panel">
           <h3 class="qe-shortcuts-title">Comenzi rapide</h3>
           <div class="qe-shortcuts-list">
@@ -216,10 +408,10 @@ class QuestionEngine {
             <div class="qe-shortcut-row"><span class="qe-shortcut-key">Ctrl+Shift</span><span>Comută Navigare ↔ Răspuns</span></div>
           </div>
           <p class="qe-shortcuts-note">Poți opri acest panou din Setări.</p>
-        </aside>` : '';
+        </aside>`;
 
     this.container.innerHTML = `
-      <div class="qe-layout">
+      <div class="qe-layout${this.showShortcuts ? '' : ' qe-shortcuts-hidden'}" id="qeLayout">
         <div class="qe-wrap">
           <div class="qe-topbar">
             <button class="qe-nav-btn" id="qePrev">← Anterior</button>
@@ -244,7 +436,7 @@ class QuestionEngine {
       </div>`;
 
     this.container.querySelector('#qePrev').addEventListener('click', () => this.go(-1));
-    this.container.querySelector('#qeNext').addEventListener('click', () => this.go(1));
+    this.container.querySelector('#qeNext').addEventListener('click', () => this.goNext());
     this.container.querySelector('#qeReset').addEventListener('click', () => this.resetCurrent());
     this.container.querySelector('#qeSubmit').addEventListener('click', () => this.finish());
     this.container.querySelector('#qeMark').addEventListener('click', () => this.toggleMark());
@@ -252,6 +444,17 @@ class QuestionEngine {
     this.container.querySelector('#qePanelBackdrop').addEventListener('click', () => this.closePanel());
     this.container.querySelector('#qeKeyModeToggle').addEventListener('click', () => this.toggleKeyMode());
     this.updateKeyModeButton();
+  }
+
+  // Aplică live setarea "Panou comenzi rapide" din Setări, fără să
+  // reconstruiască testul (deci fără să pierzi întrebarea/răspunsurile
+  // curente) — necesar pentru că Setările se deschid ca fereastră
+  // plutitoare PESTE pagina curentă, nu navighează nicăieri, deci nimic
+  // altceva nu declanșează automat o re-randare.
+  setShowShortcuts(show) {
+    this.showShortcuts = show;
+    const layout = this.container.querySelector('#qeLayout');
+    if (layout) layout.classList.toggle('qe-shortcuts-hidden', !show);
   }
 
   // Panoul "Întrebări" pe mobil: sertar (drawer) care culisează din marginea
@@ -306,6 +509,33 @@ class QuestionEngine {
     this.renderQuestion();
   }
 
+  // Folosită de butonul "Următor →" și de tasta Enter. În Modul Învățare,
+  // dacă întrebarea curentă e răspunsă dar încă NEverificată, primul apel
+  // doar arată corectarea și NU navighează încă — dacă era corect, trece
+  // singură mai departe după 1 secundă; dacă era greșit, rămâi pe loc ca
+  // să vezi greșeala, și abia o a doua apăsare chiar navighează. Săgeata
+  // dreapta din tastatură ocolește tot asta și navighează direct (go(1)).
+  goNext() {
+    const q = this.questions[this.current];
+    if (this.mode === 'learn' && !this.submitted && q && this.isAnswered(q.id) && !this._learnRevealed.has(q.id)) {
+      this.saveCurrentAnswer();
+      const body = this.container.querySelector('#qeBody');
+      this.applyCorrectnessUI(q, body);
+      this._learnRevealed.add(q.id);
+      if (this.autoSaveAnswers) this.saveAutoSave();
+
+      if (this.isCorrect(q, this.userAnswers[q.id])) {
+        const idxAtReveal = this.current;
+        setTimeout(() => {
+          if (this.current === idxAtReveal) this.go(1);
+        }, 1000);
+      }
+      // dacă e greșit, ne oprim aici — rămânem pe întrebarea curentă
+      return;
+    }
+    this.go(1);
+  }
+
   jumpBy(delta) {
     this.saveCurrentAnswer();
     const next = this.current + delta;
@@ -348,12 +578,19 @@ class QuestionEngine {
 
       if (e.ctrlKey || e.altKey || e.metaKey) return;
 
-      const tag = (document.activeElement && document.activeElement.tagName) || '';
-      const isTyping = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+      const activeEl = document.activeElement;
+      const tag = (activeEl && activeEl.tagName) || '';
+      const inputType = (activeEl && activeEl.type) || '';
+      // Doar input de TEXT/textarea sunt "scriere" — radio/checkbox/select
+      // NU trebuie tratate ca atare, altfel browserul le mișcă nativ cu
+      // săgețile (schimbă radio-ul selectat / valoarea din dropdown) ÎNAINTE
+      // să apucăm noi să facem preventDefault() pentru navigare, exact
+      // bug-ul "săgeata îmi schimbă răspunsul în loc să navigheze".
+      const isTyping = tag === 'TEXTAREA' || (tag === 'INPUT' && inputType !== 'radio' && inputType !== 'checkbox');
 
       if (e.key === 'Enter') {
         e.preventDefault();
-        this.go(1);
+        this.goNext();
         return;
       }
       if (isTyping) return; // nu interceptăm săgețile cât timp tastezi un răspuns
@@ -457,6 +694,7 @@ class QuestionEngine {
   resetCurrent() {
     const q = this.questions[this.current];
     delete this.userAnswers[q.id];
+    this._learnRevealed.delete(q.id);
     this.renderQuestion();
   }
 
@@ -489,6 +727,9 @@ class QuestionEngine {
 
   getStatus(q) {
     if (this.submitted) {
+      return this.isCorrect(q, this.userAnswers[q.id]) ? 'correct' : 'incorrect';
+    }
+    if (this.mode === 'learn' && this._learnRevealed.has(q.id)) {
       return this.isCorrect(q, this.userAnswers[q.id]) ? 'correct' : 'incorrect';
     }
     if (this.marked.has(q.id)) return 'marked';
@@ -583,6 +824,16 @@ class QuestionEngine {
     }
 
     if (this.autoSaveAnswers) this.saveAutoSave();
+
+    // Modul Învățare: NU arătăm corectarea la fiecare schimbare (ar fi
+    // prematur la match/order/etc., unde răspunsul se construiește din mai
+    // mulți pași) — verificarea reală se declanșează doar din goNext()
+    // (butonul "Următor" sau Enter). Aici doar ținem corectarea la zi DACĂ
+    // întrebarea a fost deja verificată o dată (ex: ai greșit, o corectezi).
+    if (this.mode === 'learn' && !this.submitted && this._learnRevealed.has(q.id)) {
+      if (this.isAnswered(q.id)) this.applyCorrectnessUI(q, body);
+      else this.clearCorrectnessUI(body);
+    }
   }
 
   renderQuestion() {
@@ -767,7 +1018,7 @@ class QuestionEngine {
     if (resetBtn) resetBtn.disabled = this.submitted;
     if (keyModeBtn) keyModeBtn.disabled = this.submitted;
 
-    if (this.submitted) this.applyCorrectnessUI(q, body);
+    if (this.submitted || (this.mode === 'learn' && this._learnRevealed.has(q.id))) this.applyCorrectnessUI(q, body);
     if (this.autoSaveAnswers && !this.submitted) this.saveAutoSave();
   }
 
@@ -925,7 +1176,30 @@ class QuestionEngine {
     });
   }
 
+  // Curăță orice corectare arătată anterior pentru întrebarea curentă —
+  // necesar în Modul Învățare, unde applyCorrectnessUI() poate fi apelată
+  // de mai multe ori pentru ACEEAȘI întrebare (pe măsură ce răspunzi),
+  // fără o re-randare completă de fiecare dată.
+  clearCorrectnessUI(body) {
+    const oldBanner = body.querySelector('.qe-correctness-banner');
+    if (oldBanner) oldBanner.remove();
+    const oldOrderNote = body.querySelector('.qe-correct-note');
+    if (oldOrderNote) oldOrderNote.remove();
+    body.querySelectorAll('.qe-correct-inline-hint').forEach(el => el.remove());
+    body.querySelectorAll('.qe-opt-correct, .qe-opt-incorrect')
+      .forEach(el => el.classList.remove('qe-opt-correct', 'qe-opt-incorrect'));
+    body.querySelectorAll('.qe-input-correct, .qe-input-incorrect')
+      .forEach(el => el.classList.remove('qe-input-correct', 'qe-input-incorrect'));
+    body.querySelectorAll('.qe-dropzone-correct, .qe-dropzone-incorrect')
+      .forEach(el => el.classList.remove('qe-dropzone-correct', 'qe-dropzone-incorrect'));
+    body.querySelectorAll('.qe-tf-correct, .qe-tf-incorrect')
+      .forEach(el => el.classList.remove('qe-tf-correct', 'qe-tf-incorrect'));
+    body.querySelectorAll('.qe-dd-correct, .qe-dd-incorrect')
+      .forEach(el => el.classList.remove('qe-dd-correct', 'qe-dd-incorrect'));
+  }
+
   applyCorrectnessUI(q, body) {
+    this.clearCorrectnessUI(body);
     const given = this.userAnswers[q.id];
     const correct = this.isCorrect(q, given);
     const questionEl = body.querySelector('.qe-question');

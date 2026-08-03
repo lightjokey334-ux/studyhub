@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.800 --> 00:00:06.240
+We will spend the next several topics going&nbsp;
+through some pretty typical situations we see&nbsp;&nbsp;
+
+00:00:06.240 --> 00:00:10.720
+in queries. For the first few situations,&nbsp;
+the starting point will be this query,&nbsp;&nbsp;
+
+00:00:11.440 --> 00:00:15.920
+which lists people and their&nbsp;
+addresses. I will execute this as is,&nbsp;&nbsp;
+
+00:00:17.040 --> 00:00:23.440
+and we have a solid list, but what if we&nbsp;
+want to sort the list? The ORDER BY clause&nbsp;&nbsp;
+
+00:00:23.440 --> 00:00:32.480
+is used to sort information. At the end of&nbsp;
+the query, I will type ORDER BY LastName&nbsp;&nbsp;
+
+00:00:34.320 --> 00:00:41.280
+to sort this on the last name column. I&nbsp;
+will execute this statement, and now this is&nbsp;&nbsp;
+
+00:00:41.280 --> 00:00:48.080
+alphabetical by LastName. We only need one ORDER&nbsp;
+BY clause for multiple columns in a sort. I will&nbsp;&nbsp;
+
+00:00:48.080 --> 00:00:57.760
+add FirstName and then execute this again, and now&nbsp;
+this is sorted by LastName and then by FirstName.&nbsp;&nbsp;
+
+00:00:57.760 --> 00:01:02.960
+To sort a column in descending order, we&nbsp;
+just need to add the letters DECS at the end&nbsp;&nbsp;
+
+00:01:02.960 --> 00:01:07.760
+of whichever column we want in descending&nbsp;
+order, which will be the LastName field.&nbsp;&nbsp;
+
+00:01:11.120 --> 00:01:17.520
+I will execute this again, and now we have the&nbsp;
+last names sorted alphabetically from Z to A&nbsp;&nbsp;
+
+00:01:18.080 --> 00:01:24.240
+and then within each last name,&nbsp;
+by first name from A to Z.
+
