@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:05.320
+We have seen parts of a function and how they&nbsp;
+work. Let’s put these parts together and define&nbsp;&nbsp;
+
+00:00:05.320 --> 00:00:11.560
+our own function. As we define a function, pay&nbsp;
+close attention to the keyword used to define&nbsp;&nbsp;
+
+00:00:11.560 --> 00:00:18.000
+a function, as it’s not the word, function, as&nbsp;
+is the case in many other languages. To start,&nbsp;&nbsp;
+
+00:00:18.000 --> 00:00:24.080
+I have a blank file, except for a comment on line&nbsp;
+1 explaining the function we are about to build,&nbsp;&nbsp;
+
+00:00:24.080 --> 00:00:30.440
+which will multiply a score and multiplier&nbsp;
+and return the result. The keyword to define&nbsp;&nbsp;
+
+00:00:30.440 --> 00:00:38.280
+a function is def, short for definition. I&nbsp;
+will type that keyword, def, on line 2. Next,&nbsp;&nbsp;
+
+00:00:38.280 --> 00:00:44.360
+we need a name for the function. I will name&nbsp;
+this calculate_score, with an underscore between&nbsp;&nbsp;
+
+00:00:44.360 --> 00:00:52.800
+the two words. Next, we need to determine if the&nbsp;
+function will take arguments, variables that will&nbsp;&nbsp;
+
+00:00:52.800 --> 00:00:59.960
+be used in a condition, calculation, or both.&nbsp;
+Since this function will multiply two numbers,&nbsp;&nbsp;
+
+00:00:59.960 --> 00:01:07.640
+I will add two arguments in parentheses: score and&nbsp;
+multiplier. Then, as with many other code blocks,&nbsp;&nbsp;
+
+00:01:07.640 --> 00:01:12.920
+I will add a colon to the end of the line.&nbsp;
+Most functions will want to return a value to&nbsp;&nbsp;
+
+00:01:12.920 --> 00:01:18.400
+be used later in code. As we saw in the previous&nbsp;
+topic, the return keyword returns a value that&nbsp;&nbsp;
+
+00:01:18.400 --> 00:01:25.280
+can be used later in code. Any code running&nbsp;
+within a function must be indented under the&nbsp;&nbsp;
+
+00:01:25.280 --> 00:01:33.160
+def statement. For this example, we only need one&nbsp;
+line to return the score times the multiplier. To&nbsp;&nbsp;
+
+00:01:33.160 --> 00:01:41.800
+call this function, I will type, on line 5, the&nbsp;
+name of the function, and then, in parentheses,&nbsp;&nbsp;
+
+00:01:41.800 --> 00:01:56.320
+the score and the multiplier, wrapped inside&nbsp;
+of a print statement. I will run this code,&nbsp;&nbsp;
+
+00:01:56.320 --> 00:02:02.760
+and we will see the result. Next, let’s see&nbsp;
+the main benefit of functions. I will copy&nbsp;&nbsp;
+
+00:02:02.760 --> 00:02:15.800
+the print statements calling the function,&nbsp;
+change the numbers, and rerun the code. The&nbsp;&nbsp;
+
+00:02:15.800 --> 00:02:21.840
+same block of code is now run twice. One could&nbsp;
+run a function thousands of times if needed,&nbsp;&nbsp;
+
+00:02:21.840 --> 00:02:26.800
+and if the function changes, the code for&nbsp;
+the function only needs to be changed once,&nbsp;&nbsp;
+
+00:02:26.800 --> 00:02:33.080
+thus increasing the efficiency of code&nbsp;
+and helping to prevent errors in code.
+

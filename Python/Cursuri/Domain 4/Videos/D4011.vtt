@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.840 --> 00:00:07.640
+Elsewhere in the course, we saw the pass keyword&nbsp;
+and its use as a placeholder within code. We used&nbsp;&nbsp;
+
+00:00:07.640 --> 00:00:13.520
+pass within the context of a loop. Now, we&nbsp;
+want to know how pass is used in the context&nbsp;&nbsp;
+
+00:00:13.520 --> 00:00:20.760
+of a function. We also want to see what an output&nbsp;
+screen shows when pass is used within a function.&nbsp;&nbsp;
+
+00:00:20.760 --> 00:00:28.680
+The eventual goal of this code example, 425-pass,&nbsp;
+is to calculate the total amount for a car,&nbsp;&nbsp;
+
+00:00:28.680 --> 00:00:35.120
+given its amount, the licensing fee,&nbsp;
+and all applicable taxes. As of now,&nbsp;&nbsp;
+
+00:00:35.120 --> 00:00:39.960
+we do not know what the proper formula is for&nbsp;
+calculating the total car amount. However,&nbsp;&nbsp;
+
+00:00:39.960 --> 00:00:50.680
+on lines 1 and 2, we have the calculate total&nbsp;
+function with the pass keyword. In this context,&nbsp;&nbsp;
+
+00:00:50.680 --> 00:00:56.720
+the pass keyword is being used as a placeholder&nbsp;
+for future code. We can wait for the information&nbsp;&nbsp;
+
+00:00:56.720 --> 00:01:02.880
+or calculations needed to finish creating the&nbsp;
+calculate_total function. The get amounts function&nbsp;&nbsp;
+
+00:01:02.880 --> 00:01:14.400
+starts on line 4 and, on lines 5 and 6, gathers&nbsp;
+input for a car amount and a license amount and&nbsp;&nbsp;
+
+00:01:14.400 --> 00:01:24.160
+converts those entries to integers so that they&nbsp;
+can be used in calculations. Then, on line 7,&nbsp;&nbsp;
+
+00:01:24.160 --> 00:01:32.280
+the total is rendered in a print statement. The&nbsp;
+amount is printed on line 8. And the get_amounts&nbsp;&nbsp;
+
+00:01:32.280 --> 00:01:40.840
+function is run and stored in a subtotal variable&nbsp;
+on line 10. I will run this code and enter the two&nbsp;&nbsp;
+
+00:01:40.840 --> 00:01:50.000
+dollar amounts called for in the input statements.&nbsp;
+Notice the result. The print statement runs,&nbsp;&nbsp;
+
+00:01:50.000 --> 00:01:57.680
+but the total does not show because the only&nbsp;
+code in the calculate_total function is in the&nbsp;&nbsp;
+
+00:01:57.680 --> 00:02:03.000
+pass statement. The benefit of having the pass&nbsp;
+statement here is that, within this code, we can&nbsp;&nbsp;
+
+00:02:03.000 --> 00:02:08.880
+still test the functionality of the get_amounts&nbsp;
+function. At the same time, we await the&nbsp;&nbsp;
+
+00:02:08.880 --> 00:02:15.000
+information needed to finish the calculate_total&nbsp;
+function, which will save time for later testing&nbsp;&nbsp;
+
+00:02:15.000 --> 00:02:23.000
+of this code, as we now know one function works as&nbsp;
+expected. We have come to the end of the section&nbsp;&nbsp;
+
+00:02:23.000 --> 00:02:28.040
+on functions. That means it’s time to analyze a&nbsp;
+block of code and answer some questions about the&nbsp;&nbsp;
+
+00:02:28.040 --> 00:02:33.520
+code. Look over the 425-analyze code and then&nbsp;
+answer the questions in the workbook project&nbsp;&nbsp;
+
+00:02:33.520 --> 00:02:39.640
+Review 4.2. I encourage you to enter this code&nbsp;
+into a code editor and then run the code to help&nbsp;&nbsp;
+
+00:02:39.640 --> 00:02:46.440
+answer the questions in the review exercise. We&nbsp;
+will go through the answers in the next video.
+

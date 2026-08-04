@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.320 --> 00:00:08.280
+Continuing our quest for solid error handling,&nbsp;
+whereas a try statement attempts to run code,&nbsp;&nbsp;
+
+00:00:08.280 --> 00:00:15.000
+the except statement runs code if the code being&nbsp;
+run in the try statement causes a runtime error.&nbsp;&nbsp;
+
+00:00:15.000 --> 00:00:20.880
+Continuing from the previous video, I have&nbsp;
+added, to this 522-except file, which shows&nbsp;&nbsp;
+
+00:00:20.880 --> 00:00:28.840
+a list of figuratives for a language, an except&nbsp;
+block on lines 5 and 6. Within the except block,&nbsp;&nbsp;
+
+00:00:28.840 --> 00:00:32.680
+we see a print statement telling the person&nbsp;
+running this app to try again by entering a&nbsp;&nbsp;
+
+00:00:32.680 --> 00:00:38.480
+number for a figurative. We did not try to run&nbsp;
+the code in the previous video because a try&nbsp;&nbsp;
+
+00:00:38.480 --> 00:00:44.800
+block will not run without an except block, as we&nbsp;
+have now, or a finally block, which we will see&nbsp;&nbsp;
+
+00:00:44.800 --> 00:00:53.120
+in an upcoming topic. I will run this code and&nbsp;
+enter a legitimate value. There was no output,&nbsp;&nbsp;
+
+00:00:53.120 --> 00:00:57.840
+as we will add the code for that in the next&nbsp;
+video, but there was no error, which is what&nbsp;&nbsp;
+
+00:00:57.840 --> 00:01:08.000
+we anticipated. I will rerun the code and&nbsp;
+enter an illegitimate value, and this time,&nbsp;&nbsp;
+
+00:01:08.000 --> 00:01:15.440
+we get the error message that says we did not&nbsp;
+enter a figurative, so the except block worked.&nbsp;&nbsp;
+
+00:01:15.440 --> 00:01:26.360
+In other words, this message looks a lot better&nbsp;
+than this message. Before we proceed, let's take a&nbsp;&nbsp;
+
+00:01:26.360 --> 00:01:33.840
+moment to remind ourselves what an exception is in&nbsp;
+Python. An exception is an event that disrupts the&nbsp;&nbsp;
+
+00:01:33.840 --> 00:01:40.000
+normal flow of the program, often due to some kind&nbsp;
+of error or exceptional condition. Exceptions are&nbsp;&nbsp;
+
+00:01:40.000 --> 00:01:45.360
+types of runtime errors, but they can be handled&nbsp;
+gracefully using mechanisms like try, except,&nbsp;&nbsp;
+
+00:01:45.360 --> 00:01:51.720
+finally, and else blocks, allowing the program to&nbsp;
+continue or terminate in a controlled way. Again,&nbsp;&nbsp;
+
+00:01:51.720 --> 00:01:55.800
+the purpose of an except block is to handle an&nbsp;
+exception gracefully and control the message&nbsp;&nbsp;
+
+00:01:55.800 --> 00:02:00.440
+given when a runtime error occurs, perhaps&nbsp;
+even to provide instructions on what to do&nbsp;&nbsp;
+
+00:02:00.440 --> 00:02:08.600
+to avoid the error in the future, as we have&nbsp;
+here with instructions in the except block.
+

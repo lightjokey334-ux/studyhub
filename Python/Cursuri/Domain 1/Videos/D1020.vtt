@@ -1,0 +1,118 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.000 --> 00:00:05.080
+The next two topics deal with operators,&nbsp;
+which help perform calculations and check&nbsp;&nbsp;
+
+00:00:05.080 --> 00:00:09.440
+for conditions within a block of code.&nbsp;
+For the first of these two topics,&nbsp;&nbsp;
+
+00:00:09.440 --> 00:00:15.080
+the emphasis is learning not so much the operators&nbsp;
+themselves but the sequence of execution of these&nbsp;&nbsp;
+
+00:00:15.080 --> 00:00:21.040
+operators. I will first take you through the list&nbsp;
+of operators and their order. After doing that,&nbsp;&nbsp;
+
+00:00:21.040 --> 00:00:25.360
+the next topic emphasizes what these operators&nbsp;
+do for calculations and comparisons within&nbsp;&nbsp;
+
+00:00:25.360 --> 00:00:29.960
+Python code. The six types of operators and&nbsp;
+the order in which they are applied are:
+
+00:00:31.080 --> 00:00:32.520
+Arithmetic
+
+00:00:32.520 --> 00:00:34.280
+Containment
+
+00:00:34.280 --> 00:00:36.360
+Comparison
+
+00:00:36.360 --> 00:00:38.320
+Identity
+
+00:00:38.320 --> 00:00:39.800
+Logical
+
+00:00:39.800 --> 00:00:41.600
+Assignment
+
+00:00:41.600 --> 00:00:47.560
+Those six types are all listed as exam topics,&nbsp;
+both for the order of execution and for how these&nbsp;&nbsp;
+
+00:00:47.560 --> 00:00:53.640
+operators drive results. There is an order of&nbsp;
+operations to follow within each type of operator.&nbsp;&nbsp;
+
+00:00:53.640 --> 00:01:01.120
+Before we go any further, though, understand this:&nbsp;
+parentheses supersede these six operators. Over&nbsp;&nbsp;
+
+00:01:01.120 --> 00:01:06.400
+the next few videos, we will look at some examples&nbsp;
+of how parentheses take priority. So that we can&nbsp;&nbsp;
+
+00:01:06.400 --> 00:01:11.240
+focus on these operators, I will cover these first&nbsp;
+with mostly raw numbers and then incorporate how&nbsp;&nbsp;
+
+00:01:11.240 --> 00:01:17.520
+these operators help build code for games.&nbsp;
+Let’s now look at some code. Let’s look first&nbsp;&nbsp;
+
+00:01:17.520 --> 00:01:23.880
+at assignments, which set values to variables.&nbsp;
+The order of assignments is dependent upon the&nbsp;&nbsp;
+
+00:01:23.880 --> 00:01:33.800
+order in which they are introduced within code.&nbsp;
+Looking at this 131-assignment file, x equals 5,&nbsp;&nbsp;
+
+00:01:33.800 --> 00:01:43.160
+and y equals 3. Then, we have a print statement&nbsp;
+on line 3 to print x and y, which, when I run,&nbsp;&nbsp;
+
+00:01:43.160 --> 00:01:51.760
+prints 5 and 3. Let’s now look at how these&nbsp;
+assignments can be sequenced. I’m going to,&nbsp;&nbsp;
+
+00:01:51.760 --> 00:02:00.640
+on line 4, add a statement to make y equal x.&nbsp;
+There are two principles to note here. First,&nbsp;&nbsp;
+
+00:02:00.640 --> 00:02:07.200
+because y is being assigned another value later in&nbsp;
+the code, it will take this new value over the old&nbsp;&nbsp;
+
+00:02:07.200 --> 00:02:16.880
+value, three in this case. Secondly, when using&nbsp;
+an assignment, the variable on the left side of&nbsp;&nbsp;
+
+00:02:16.880 --> 00:02:24.440
+the equal sign is always set to the value on the&nbsp;
+right. In this case, y is now equal to what x is,&nbsp;&nbsp;
+
+00:02:24.440 --> 00:02:34.200
+which is five and I will prove that by adding&nbsp;
+a print statement on line 5: to print y and&nbsp;&nbsp;
+
+00:02:34.200 --> 00:02:39.840
+running the code. It is important to understand&nbsp;
+the sequence of assignments so that, at any&nbsp;&nbsp;
+
+00:02:39.840 --> 00:02:46.600
+given time, one can assign the correct value to&nbsp;
+a variable and determine the value of a variable.&nbsp;&nbsp;
+
+00:02:46.600 --> 00:02:53.520
+Getting this process wrong leads to logic errors,&nbsp;
+which can take valuable time to locate and fix.
+

@@ -1,0 +1,112 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:02.010 --> 00:00:06.870
+The next few topics will cover unit testing
+and how unit testing is done in Python.
+
+00:00:06.870 --> 00:00:12.070
+Before we cover unit tests, we need to define
+unit testing.
+
+00:00:12.070 --> 00:00:18.100
+Unit testing is testing done on a small unit
+of code, usually to check the functionality
+
+00:00:18.100 --> 00:00:19.550
+of that code.
+
+00:00:19.550 --> 00:00:24.710
+For example, we can use a unit test to test
+logic within a game, such as whether two values
+
+00:00:24.710 --> 00:00:27.869
+that should be equal are equal.
+
+00:00:27.869 --> 00:00:31.490
+Running a unit test involves adding code we
+need to become familiar with.
+
+00:00:31.490 --> 00:00:36.960
+I will go through this code, the 531-unittest
+file, from top to bottom.
+
+00:00:36.960 --> 00:00:44.960
+First, we need to import the unittest library
+to have access to the built-in unittest functions.
+
+00:00:44.960 --> 00:00:47.100
+That code is on line 1.
+
+00:00:47.100 --> 00:00:50.070
+Unittests are inside classes.
+
+00:00:50.070 --> 00:00:59.660
+On line three, we have a class that I named
+TestMain that holds a test case as an argument.
+
+00:00:59.660 --> 00:01:01.829
+Within the class, a function is defined.
+
+00:01:01.829 --> 00:01:06.210
+The function needs to start with the word,
+test.
+
+00:01:06.210 --> 00:01:15.189
+I named this test test_location as a unit
+test for colored locations in a game.
+
+00:01:15.189 --> 00:01:19.549
+The self argument indicates a self-contained
+unittest.
+
+00:01:19.549 --> 00:01:27.450
+I have two values assigned to variables a
+and b on line 7 in this test.
+
+00:01:27.450 --> 00:01:30.890
+The real test is on line 8.
+
+00:01:30.890 --> 00:01:36.189
+This assertEqual test is one of many assertion
+tests we can run.
+
+00:01:36.189 --> 00:01:41.610
+We will cover assert methods in more detail
+in an upcoming video.
+
+00:01:41.610 --> 00:01:45.770
+The assertEqual test asserts whether two values
+are equal.
+
+00:01:45.770 --> 00:01:53.229
+The code on line 10 is an if statement indicating
+that, if we are in the app's main file, to
+
+00:01:53.229 --> 00:01:58.100
+run the unittest.
+
+00:01:58.100 --> 00:02:06.820
+I will run this code, and we get a failure,
+as the two values are not equal.
+
+00:02:06.820 --> 00:02:15.190
+I will change the b variable to red and run
+this code again.
+
+00:02:15.190 --> 00:02:24.140
+This time, the test succeeds, as a = b.
+
+00:02:24.140 --> 00:02:27.900
+Unit tests are important because they provide
+an effective way to test a small amount of
+
+00:02:27.900 --> 00:02:33.230
+code, and in doing so, one can more easily
+isolate potential problems within an app,
+
+00:02:33.230 --> 00:02:35.640
+pinpoint where those problems are, and fix
+them.
+

@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:09.480
+Functions serve two purposes in Python. They&nbsp;
+return a value, or they do not. In Python,&nbsp;&nbsp;
+
+00:00:09.480 --> 00:00:15.200
+functions can return a value, perform some action,&nbsp;
+or both. The value returned by a function can be&nbsp;&nbsp;
+
+00:00:15.200 --> 00:00:20.760
+stored in a variable for future use or for&nbsp;
+further calculations. In this topic, we will&nbsp;&nbsp;
+
+00:00:20.760 --> 00:00:28.400
+see when the return keyword should be used and&nbsp;
+when it is not needed. In this 423-return file,&nbsp;&nbsp;
+
+00:00:28.400 --> 00:00:35.600
+I have two functions: one that calculates a total&nbsp;
+score and another that displays a welcome message&nbsp;&nbsp;
+
+00:00:35.600 --> 00:00:43.360
+whenever the function is called. Without going&nbsp;
+through the code yet, which of these two functions&nbsp;&nbsp;
+
+00:00:43.360 --> 00:00:51.760
+I just described would warrant a value stored for&nbsp;
+later use? If you said the total score function,&nbsp;&nbsp;
+
+00:00:51.760 --> 00:00:57.720
+you would be correct. Functions that print&nbsp;
+messages do not need to return any values.&nbsp;&nbsp;
+
+00:00:57.720 --> 00:01:02.480
+Those messages can be stored in a variable.&nbsp;
+Functions that do not return any values are&nbsp;&nbsp;
+
+00:01:02.480 --> 00:01:10.240
+often called void functions or procedures. The&nbsp;
+welcome function on lines 4 and 5 is an example&nbsp;&nbsp;
+
+00:01:10.240 --> 00:01:16.040
+of a function that outputs text. The reason for&nbsp;
+the function is so that we can call the function,&nbsp;&nbsp;
+
+00:01:16.040 --> 00:01:24.120
+as we do on line 10, as many times as we want, and&nbsp;
+if someone wants to change the welcome message,&nbsp;&nbsp;
+
+00:01:24.120 --> 00:01:32.080
+they need only do it once. Let’s go back to the&nbsp;
+function on lines 1 and 2. This function has a&nbsp;&nbsp;
+
+00:01:32.080 --> 00:01:37.680
+return statement to return the score times&nbsp;
+the multiplier. Why the need for a return&nbsp;&nbsp;
+
+00:01:37.680 --> 00:01:44.200
+statement and not just a print statement?&nbsp;
+If we print the result here, we cannot use&nbsp;&nbsp;
+
+00:01:44.200 --> 00:01:55.280
+it again in code. Look at the code on lines 7&nbsp;
+and 8. The total score function is run twice,&nbsp;&nbsp;
+
+00:01:55.280 --> 00:02:03.960
+and the results are stored in two variables:&nbsp;
+score1 and score2. Then, both scores are revealed&nbsp;&nbsp;
+
+00:02:03.960 --> 00:02:14.680
+in an f-string statement on line 11. For lines&nbsp;
+7, 8, and 11 to work, the function on line 1 must&nbsp;&nbsp;
+
+00:02:14.680 --> 00:02:26.160
+return a value. I will run this code, and we will&nbsp;
+get the welcome message and the print statement&nbsp;&nbsp;
+
+00:02:26.160 --> 00:02:33.440
+with the two scores. The return statement is&nbsp;
+very important to understand because it allows&nbsp;&nbsp;
+
+00:02:33.440 --> 00:02:40.000
+a function result to be used later in code as&nbsp;
+part of a print statement or further calculation.
+

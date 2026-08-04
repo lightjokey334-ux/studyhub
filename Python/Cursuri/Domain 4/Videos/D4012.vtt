@@ -1,0 +1,40 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.800 --> 00:00:05.640
+The review exercise has three questions.&nbsp;
+The first was a general question asking if&nbsp;&nbsp;
+
+00:00:05.640 --> 00:00:10.400
+the tax variable is required when calling&nbsp;
+the calculate_total function. The answer&nbsp;&nbsp;
+
+00:00:10.400 --> 00:00:17.840
+is false because, on line 1, we have a&nbsp;
+default value for the tax variable. Thus,&nbsp;&nbsp;
+
+00:00:17.840 --> 00:00:24.880
+if no tax is provided when calling the function,&nbsp;
+the default tax rate will be .08. Next, we want to&nbsp;&nbsp;
+
+00:00:24.880 --> 00:00:31.960
+know what the two subtotals will be. For both&nbsp;
+subtotals, the amount being taxed is 20,000;&nbsp;&nbsp;
+
+00:00:31.960 --> 00:00:39.320
+the car amount is 19,000, plus the license&nbsp;
+fee is 1000. For the first subtotal,&nbsp;&nbsp;
+
+00:00:39.320 --> 00:00:49.960
+the default tax rate is overridden. 10 percent of&nbsp;
+20,000 is 2000, and the sum of those two amounts&nbsp;&nbsp;
+
+00:00:49.960 --> 00:00:59.920
+is 22,000. For the second subtotal, no tax&nbsp;
+rate is specified, so the default rate of&nbsp;&nbsp;
+
+00:01:01.040 --> 00:01:11.840
+8 percent is used. 8 percent of 20,000 is&nbsp;
+1600. Add the two, and you have 21,600.
+

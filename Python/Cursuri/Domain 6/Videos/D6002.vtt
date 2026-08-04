@@ -1,0 +1,144 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.989 --> 00:00:05.950
+The next module, os, allows a programmer to
+work within the operating system to perform
+
+00:00:05.950 --> 00:00:08.290
+actions in Python.
+
+00:00:08.290 --> 00:00:14.090
+As with the io module, os needs to be imported
+to have its functions available.
+
+00:00:14.090 --> 00:00:19.130
+One such function is to rename a file, which
+may be needed when playing a game so that
+
+00:00:19.130 --> 00:00:25.610
+a new file, such as a configuration or description
+file on a game character, can be written.
+
+00:00:25.610 --> 00:00:32.790
+In this code example, 612-os, we have code
+that will show our current working directory,
+
+00:00:32.790 --> 00:00:35.649
+and a type of file within the directory.
+
+00:00:35.649 --> 00:00:40.360
+From a gaming or other aspect, you can use
+this code to where files are being written,
+
+00:00:40.360 --> 00:00:48.020
+and if a specific file exists, it can then
+be overwritten, appended to, renamed, or deleted.
+
+00:00:48.020 --> 00:00:51.630
+On line 1 of this code, we import the os module.
+
+00:00:51.630 --> 00:00:59.219
+Then, on line three, a print statement uses
+the os module and the getcwd function to get
+
+00:00:59.219 --> 00:01:03.789
+the current working directory.
+
+00:01:03.789 --> 00:01:11.800
+Line 5 starts a for loop that uses the listdir
+method, which lists all the files within a
+
+00:01:11.800 --> 00:01:13.930
+directory.
+
+00:01:13.930 --> 00:01:20.640
+We see an if statement, inside the loop, on
+lines 6 and 7, that prints any file name that
+
+00:01:20.640 --> 00:01:23.490
+ends with .txt.
+
+00:01:23.490 --> 00:01:34.570
+I will run the code, and we see our working
+directory plus a few text files in the directory.
+
+00:01:34.570 --> 00:01:40.390
+For renaming a file, like adding the word
+old to old files, that should not be in use,
+
+00:01:40.390 --> 00:01:45.110
+we can use the rename method in the os module.
+
+00:01:45.110 --> 00:01:59.799
+I will add code, on line 9, to rename the
+601-message.txt file OLD601-message.txt.
+
+00:01:59.799 --> 00:02:13.470
+Then, I will cut this for loop and paste it
+after the rename code so that we can see the
+
+00:02:13.470 --> 00:02:16.430
+results once we run the code.
+
+00:02:16.430 --> 00:02:23.960
+I will run the code, and we see the list of
+text files, including the one we have renamed.
+
+00:02:23.960 --> 00:02:27.459
+Before we move on, it's important to highlight
+some other versatile functionalities that
+
+00:02:27.459 --> 00:02:29.640
+the os module offers.
+
+00:02:29.640 --> 00:02:34.489
+For instance, we’ll cover the os.path submodule
+in the next video.
+
+00:02:34.489 --> 00:02:39.849
+The os.environ dictionary lets you access
+and manipulate environment variables, which
+
+00:02:39.849 --> 00:02:45.489
+can be particularly useful for setting up
+dynamic application configurations.
+
+00:02:45.489 --> 00:02:49.409
+The module also has the capability to run
+shell commands within Python code through
+
+00:02:49.409 --> 00:02:51.709
+os.system().
+
+00:02:51.709 --> 00:02:58.150
+For those dealing with directory operations,
+you have a variety of methods such as os.mkdir(),
+
+00:02:58.150 --> 00:03:07.080
+os.rmdir(), and os.makedirs() for creating
+and deleting directories.
+
+00:03:07.080 --> 00:03:12.780
+If you need in-depth file information like
+size, permissions, or creation time, the os.stat()
+
+00:03:12.780 --> 00:03:15.159
+function provides these details.
+
+00:03:15.159 --> 00:03:20.310
+For temporary data storage or intermediate
+processing steps, the module also offers utilities
+
+00:03:20.310 --> 00:03:22.980
+for working with temporary files and directories.
+
+00:03:22.980 --> 00:03:28.030
+The os module helps us manipulate files from
+within a Python app, helping us avoid using
+
+00:03:28.030 --> 00:03:32.129
+another source to modify those files and thus
+complicate a system that works with files.
+

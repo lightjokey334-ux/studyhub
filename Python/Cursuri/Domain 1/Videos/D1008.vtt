@@ -1,0 +1,32 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:06.120
+Let’s see how we did in figuring out the&nbsp;
+data types for each of these statements.&nbsp;&nbsp;
+
+00:00:06.120 --> 00:00:13.480
+I will run this code, and we will see each&nbsp;
+data type listed in the terminal window. The&nbsp;&nbsp;
+
+00:00:13.480 --> 00:00:22.880
+first statement is a string, as the data is&nbsp;
+in quotes. The second statement is a bool,&nbsp;&nbsp;
+
+00:00:22.880 --> 00:00:30.720
+short for Boolean, as the word True with a capital&nbsp;
+T is the value, and we just covered how True and&nbsp;&nbsp;
+
+00:00:30.720 --> 00:00:40.280
+False with title cases represent Booleans. The&nbsp;
+third statement is a string, even though we see&nbsp;&nbsp;
+
+00:00:40.280 --> 00:00:52.800
+a number here. Why? Because it is in quotes.&nbsp;
+The fourth statement is a float with a decimal,&nbsp;&nbsp;
+
+00:00:52.800 --> 00:01:01.760
+and the fifth statement is an integer, as&nbsp;
+it is a whole number and not in quotes. 
+

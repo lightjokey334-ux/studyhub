@@ -1,0 +1,120 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.840 --> 00:00:06.520
+From conditions, we move to loops, technically,&nbsp;
+iterations, and the different types of loops used&nbsp;&nbsp;
+
+00:00:06.520 --> 00:00:12.520
+in Python and many other programming languages.&nbsp;
+When using a loop, the first determination is:&nbsp;&nbsp;
+
+00:00:12.520 --> 00:00:17.560
+should the loop run a set number of times,&nbsp;
+or should the loop run until a condition is&nbsp;&nbsp;
+
+00:00:17.560 --> 00:00:25.520
+true or false? Here is a case in point: this&nbsp;
+221-while code file. A person playing a game&nbsp;&nbsp;
+
+00:00:25.520 --> 00:00:33.760
+starts with a score of 0. Every time the player&nbsp;
+does something good, 10 points are awarded. The&nbsp;&nbsp;
+
+00:00:33.760 --> 00:00:38.680
+task that needs to be done to get the points is&nbsp;
+not important here. We want the player to get a&nbsp;&nbsp;
+
+00:00:38.680 --> 00:00:44.800
+message every 10 points updating the score, and&nbsp;
+then, when 100 points are reached, we want the&nbsp;&nbsp;
+
+00:00:44.800 --> 00:00:51.400
+player to see a congratulatory message. Loops&nbsp;
+that run while conditions are true or false are&nbsp;&nbsp;
+
+00:00:51.400 --> 00:00:57.360
+known as while loops. I will follow this code&nbsp;
+example to show the facets of a while loop and&nbsp;&nbsp;
+
+00:00:57.360 --> 00:01:05.360
+when one is used. Line 4 shows a while keyword&nbsp;
+with a condition: while the score is less than&nbsp;&nbsp;
+
+00:01:05.360 --> 00:01:14.400
+100. As with an if statement, the while clause&nbsp;
+ends with a colon. Lines 5 and 6 are indented,&nbsp;&nbsp;
+
+00:01:14.400 --> 00:01:19.440
+so they are part of the while loop. Line 5 has&nbsp;
+a print statement printing a message containing&nbsp;&nbsp;
+
+00:01:19.440 --> 00:01:26.000
+the score. Yes, you can use plus signs or commas&nbsp;
+as concatenating symbols in Python. Commas work&nbsp;&nbsp;
+
+00:01:26.000 --> 00:01:32.320
+better with data of different types, like these&nbsp;
+two strings with an integer in between. And commas&nbsp;&nbsp;
+
+00:01:32.320 --> 00:01:38.800
+put automatic spaces in between strings of text.&nbsp;
+I will run this code, and we see the code loop&nbsp;&nbsp;
+
+00:01:38.800 --> 00:01:45.320
+through and add 10 points. Then, when the score&nbsp;
+reaches 100, the loop ends, and we see the last&nbsp;&nbsp;
+
+00:01:45.320 --> 00:01:53.800
+print statement from line 8. There are two aspects&nbsp;
+of conditional loops to be careful about. First,&nbsp;&nbsp;
+
+00:01:53.800 --> 00:01:59.040
+ensure you have the correct comparison operator&nbsp;
+when setting a condition. To illustrate this&nbsp;&nbsp;
+
+00:01:59.040 --> 00:02:07.800
+point, I will change the operator on line 4 from&nbsp;
+a less than symbol to less than or equal to. When&nbsp;&nbsp;
+
+00:02:07.800 --> 00:02:15.680
+rerunning the code, the only change we see in&nbsp;
+the output is that we get a message for having&nbsp;&nbsp;
+
+00:02:15.680 --> 00:02:22.560
+100 points. Neither situation is right or wrong,&nbsp;
+but notice that operators can control output,&nbsp;&nbsp;
+
+00:02:22.560 --> 00:02:27.280
+so think through what you want the code to do&nbsp;
+and set your operators accordingly so that an&nbsp;&nbsp;
+
+00:02:27.280 --> 00:02:32.520
+app can behave as expected. The other point of&nbsp;
+awareness for conditional loops is to ensure&nbsp;&nbsp;
+
+00:02:32.520 --> 00:02:39.840
+the loop stops running at some point. If we were&nbsp;
+to change the score increase to 0, for example,&nbsp;&nbsp;
+
+00:02:39.840 --> 00:02:46.680
+and rerun the code, the code would be stuck in&nbsp;
+an endless loop because the while clause would&nbsp;&nbsp;
+
+00:02:46.680 --> 00:02:52.200
+never be reached. At this point, the only way&nbsp;
+to stop running the app is by selecting Ctrl+C&nbsp;&nbsp;
+
+00:02:52.200 --> 00:02:59.800
+on the keyboard or waiting for the app to crash&nbsp;
+from running out of memory. For these reasons,&nbsp;&nbsp;
+
+00:02:59.800 --> 00:03:04.200
+we want to ensure we know what we want a&nbsp;
+conditional loop to do before building the code&nbsp;&nbsp;
+
+00:03:04.200 --> 00:03:10.400
+for the loop so that the loop runs efficiently&nbsp;
+and produces the desired results within an app.
+

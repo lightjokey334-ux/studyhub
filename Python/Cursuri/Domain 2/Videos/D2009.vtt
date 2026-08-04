@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.880 --> 00:00:06.080
+Whereas break ends a loop, the Continue&nbsp;
+keyword skips an iteration of a loop.&nbsp;&nbsp;
+
+00:00:06.080 --> 00:00:12.160
+Using our coins example from the previous topic&nbsp;
+as a starting point, in the file 224-continue,&nbsp;&nbsp;
+
+00:00:12.160 --> 00:00:17.280
+we see the same lines of code as we did in the&nbsp;
+break topic except that, on line 6, the continue&nbsp;&nbsp;
+
+00:00:17.280 --> 00:00:23.000
+keyword has replaced the break keyword. The goal&nbsp;
+for this output is to show the print statement on&nbsp;&nbsp;
+
+00:00:23.000 --> 00:00:31.960
+line 3 for all the coins in line 1, except that if&nbsp;
+the coin is platinum, we see the print statement&nbsp;&nbsp;
+
+00:00:31.960 --> 00:00:42.960
+on line 5 instead. With four coins, we want&nbsp;
+four print statements. The code sort of works,&nbsp;&nbsp;
+
+00:00:42.960 --> 00:00:48.840
+which is a widespread occurrence the first&nbsp;
+time one runs a code block. We got the special&nbsp;&nbsp;
+
+00:00:48.840 --> 00:00:59.480
+message for the platinum coin and the gold coin&nbsp;
+prints, but so does the standard statement for&nbsp;&nbsp;
+
+00:00:59.480 --> 00:01:05.560
+the platinum coin, which we do not want. Let’s&nbsp;
+take this opportunity to run through a bit of&nbsp;&nbsp;
+
+00:01:05.560 --> 00:01:14.480
+code analysis and troubleshooting. The first&nbsp;
+statement in the for loop, line 2, loops through&nbsp;&nbsp;
+
+00:01:14.480 --> 00:01:24.600
+each coin within these coins. The first statement&nbsp;
+inside the for loop, line 3, prints the next coin&nbsp;&nbsp;
+
+00:01:24.600 --> 00:01:35.520
+in the loop. This means that if the loop sees a&nbsp;
+platinum coin, it prints that statement. Then,&nbsp;&nbsp;
+
+00:01:35.520 --> 00:01:43.440
+the if statement on line 4 is evaluated. Are you&nbsp;
+seeing the change we should make? The if block of&nbsp;&nbsp;
+
+00:01:43.440 --> 00:01:51.360
+code should run before the print statement on line&nbsp;
+3. In making the move, the continue portion of the&nbsp;&nbsp;
+
+00:01:51.360 --> 00:01:58.080
+code can run if the unique platinum statement&nbsp;
+prints. I will move the print statement on line&nbsp;&nbsp;
+
+00:01:58.080 --> 00:02:09.920
+3 down to line 7, ensuring the indentation stays&nbsp;
+the same. Then, I will rerun the code, and now the&nbsp;&nbsp;
+
+00:02:09.920 --> 00:02:17.200
+code does what we need it to do, which is print&nbsp;
+the list of coins unless the coin is platinum,&nbsp;&nbsp;
+
+00:02:17.200 --> 00:02:23.880
+in which case, the print statement on line 5&nbsp;
+prints and, because of the continue keyword,&nbsp;&nbsp;
+
+00:02:23.880 --> 00:02:30.720
+the print statement on line 7 does not print. When&nbsp;
+analyzing code, if the logic seems close to what&nbsp;&nbsp;
+
+00:02:30.720 --> 00:02:36.720
+it needs to be but seems out of order, check to&nbsp;
+see if your code needs rearranging. Sometimes,&nbsp;&nbsp;
+
+00:02:36.720 --> 00:02:43.440
+moving lines of code solves a problem, which&nbsp;
+is a big timesaver compared to rewriting code.
+

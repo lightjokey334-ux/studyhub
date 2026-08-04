@@ -1,0 +1,141 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.319 --> 00:00:06.200
+One hallmark of writing good code is ensuring
+an app does not crash due to a runtime error.
+
+00:00:06.200 --> 00:00:11.080
+Many programming languages, Python included,
+have keywords we can use to attempt to run
+
+00:00:11.080 --> 00:00:16.740
+code, control the error message displayed
+if the code would otherwise cause a crash,
+
+00:00:16.740 --> 00:00:21.630
+and then run certain logic depending on whether
+the original intent to run code worked.
+
+00:00:21.630 --> 00:00:27.720
+This concept of controlling errors and their
+messages is known as exception handling.
+
+00:00:27.720 --> 00:00:35.090
+To start this exception handling process,
+we have a project in this 521-try file, where,
+
+00:00:35.090 --> 00:00:41.969
+on line 1, we have a list of figuratives for
+language, five to be exact.
+
+00:00:41.969 --> 00:00:52.390
+And then, on line 3, we have code to get someone
+to input a number from 1 to 5 to get further
+
+00:00:52.390 --> 00:00:55.640
+information on one of the five figuratives.
+
+00:00:55.640 --> 00:01:05.150
+On line 6, I have a formatted print statement
+to print the figurative someone requested.
+
+00:01:05.150 --> 00:01:11.520
+On line four, we assign the number to the
+index value of whatever figurative was chosen.
+
+00:01:11.520 --> 00:01:13.549
+Why the -1?
+
+00:01:13.549 --> 00:01:20.560
+Remember that lists are zero-based, so these
+five figuratives have an index of 0 through
+
+00:01:20.560 --> 00:01:22.079
+4.
+
+00:01:22.079 --> 00:01:26.110
+Asking someone to type that in could confuse
+one trying to run the app.
+
+00:01:26.110 --> 00:01:32.320
+Thus, we can have one enter a number 1 through
+5 and then subtract 1 from that entry to fit
+
+00:01:32.320 --> 00:01:35.110
+the parameters of our zero-based list.
+
+00:01:35.110 --> 00:01:43.270
+I will run the code and enter a legitimate
+number.
+
+00:01:43.270 --> 00:01:46.090
+That code works as expected.
+
+00:01:46.090 --> 00:01:53.490
+Next, I will rerun the code and enter a bad
+value.
+
+00:01:53.490 --> 00:02:02.490
+The result returns an index out of range error,
+known as an IndexError, as the number we submitted
+
+00:02:02.490 --> 00:02:05.579
+is out of the range of items in the list.
+
+00:02:05.579 --> 00:02:11.420
+While that error message is descriptive, it
+will not make sense to most, hence the need
+
+00:02:11.420 --> 00:02:12.739
+to control an error message.
+
+00:02:12.739 --> 00:02:19.069
+In this case, the first step in exception
+handling is to add a try block to the code
+
+00:02:19.069 --> 00:02:22.480
+we are trying to run, lines 3 and 4.
+
+00:02:22.480 --> 00:02:39.319
+On line 2, I will type try and a colon, and
+then indent lines 3 and 4 so that they sit
+
+00:02:39.319 --> 00:02:40.440
+in this try block.
+
+00:02:40.440 --> 00:02:45.220
+A try block cannot run by itself, so we will
+not run the code here.
+
+00:02:45.220 --> 00:02:51.989
+It's important to note that a try block usually
+has at least an except block to catch exceptions
+
+00:02:51.989 --> 00:02:57.709
+and often includes a finally block to execute
+code regardless of whether an exception occurs.
+
+00:02:57.709 --> 00:03:00.620
+Sometimes, it also includes an else block.
+
+00:03:00.620 --> 00:03:06.120
+However, a try block cannot run without at
+least a finally or except block accompanying
+
+00:03:06.120 --> 00:03:07.120
+it.
+
+00:03:07.120 --> 00:03:12.980
+The try block tells the app to run a code
+block, hopefully without errors.
+
+00:03:12.980 --> 00:03:18.019
+In the following two topics, we will see how
+to account for an error within the try block
+
+00:03:18.019 --> 00:03:20.590
+and when the code in a try block causes no
+errors.
+

@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.960 --> 00:00:07.040
+The next type of operator, a comparison operator,&nbsp;
+compares two values. The comparisons include&nbsp;&nbsp;
+
+00:00:07.040 --> 00:00:13.000
+equal to, not equal to, less than, greater than,&nbsp;
+less than or equal to, or greater than or equal&nbsp;&nbsp;
+
+00:00:13.000 --> 00:00:18.720
+to. Compared to assignments, comparisons happen&nbsp;
+earlier in a sequence, but technically, the two&nbsp;&nbsp;
+
+00:00:18.720 --> 00:00:24.440
+are not congruent, as an assignment cannot be part&nbsp;
+of a comparison. We will cover comparisons in more&nbsp;&nbsp;
+
+00:00:24.440 --> 00:00:31.520
+detail in the section on selecting operators, but&nbsp;
+to see two examples in this 132-comparison file,&nbsp;&nbsp;
+
+00:00:31.520 --> 00:00:37.800
+notice the print statements on lines 3 and 4,&nbsp;
+first seeing if x equals y, and then if x is&nbsp;&nbsp;
+
+00:00:37.800 --> 00:00:45.680
+greater than or equal to y. Comparisons return&nbsp;
+either a True or False Boolean value. I will&nbsp;&nbsp;
+
+00:00:45.680 --> 00:00:55.720
+run this code, and we see that the first value&nbsp;
+is false as x does not equal y, and the second&nbsp;&nbsp;
+
+00:00:55.720 --> 00:01:02.840
+value is true as x is greater than or equal to&nbsp;
+y. The takeaway here is knowing that assignments&nbsp;&nbsp;
+
+00:01:02.840 --> 00:01:08.400
+and comparisons happen at different times.&nbsp;
+If you are looking for multiple comparisons,&nbsp;&nbsp;
+
+00:01:08.400 --> 00:01:15.360
+let’s see what happens if we add greater than&nbsp;
+two to the end of the comparison on line 4 and&nbsp;&nbsp;
+
+00:01:15.360 --> 00:01:25.040
+then rerun the code. The second value is still&nbsp;
+true. Another takeaway is that comparisons run&nbsp;&nbsp;
+
+00:01:25.040 --> 00:01:31.000
+left to right in a line of code for a sequence.&nbsp;
+If any part of a comparison is false, the entire&nbsp;&nbsp;
+
+00:01:31.000 --> 00:01:37.520
+comparison is false. To demonstrate, I will change&nbsp;
+the greater than symbol here, on line 4, to a less&nbsp;&nbsp;
+
+00:01:37.520 --> 00:01:46.600
+than symbol and rerun the code. Both statements&nbsp;
+are now false because, in the second statement,&nbsp;&nbsp;
+
+00:01:46.600 --> 00:01:53.800
+x is greater than or equal to y, not less than or&nbsp;
+equal to. Logically, most programmers want this&nbsp;&nbsp;
+
+00:01:53.800 --> 00:01:59.240
+value returned because, for example, if someone is&nbsp;
+trying to win a prize for conquering quests, that&nbsp;&nbsp;
+
+00:01:59.240 --> 00:02:05.640
+person should not get said prize if any quests&nbsp;
+are not conquered, meaning every condition needs&nbsp;&nbsp;
+
+00:02:05.640 --> 00:02:12.680
+to be true for the premise of winning a prize to&nbsp;
+be true. Knowing that any part of a comparison&nbsp;&nbsp;
+
+00:02:12.680 --> 00:02:18.520
+statement being false will return false can help&nbsp;
+one understand why a statement is false even&nbsp;&nbsp;
+
+00:02:18.520 --> 00:02:26.960
+though parts of it are true. Then, one can adjust&nbsp;
+the code as needed to fit the scope of an app.
+

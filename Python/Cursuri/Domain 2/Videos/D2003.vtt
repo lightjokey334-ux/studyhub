@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.880 --> 00:00:05.400
+Continuing our time with conditions, I will&nbsp;
+introduce a potential problem with our score&nbsp;&nbsp;
+
+00:00:05.400 --> 00:00:12.680
+and level code. I have the same code in this&nbsp;
+file, 213-else, from the previous file. I will&nbsp;&nbsp;
+
+00:00:12.680 --> 00:00:23.040
+change the score to 3000 and run the code. What&nbsp;
+displayed? Nothing. That might be the logic you&nbsp;&nbsp;
+
+00:00:23.040 --> 00:00:28.240
+want in an app like this, but you will likely&nbsp;
+want a message to display if a player has yet&nbsp;&nbsp;
+
+00:00:28.240 --> 00:00:33.440
+to reach a level so that the player at least&nbsp;
+knows what is going on within a game and we&nbsp;&nbsp;
+
+00:00:33.440 --> 00:00:39.200
+avoid overall confusion within the app. The else&nbsp;
+keyword allows one to perform an action that runs&nbsp;&nbsp;
+
+00:00:39.200 --> 00:00:45.640
+as part of a condition when the if condition is&nbsp;
+not true and none of the other elif conditions&nbsp;&nbsp;
+
+00:00:45.640 --> 00:00:52.920
+are true. Listen to a real-life application of&nbsp;
+else. If it is sunny and over 80 degrees outside,&nbsp;&nbsp;
+
+00:00:52.920 --> 00:01:01.000
+I will go to the beach. Else, if it’s sunny, I&nbsp;
+will play golf. Else, I will stay at home. The&nbsp;&nbsp;
+
+00:01:01.000 --> 00:01:06.320
+stay at home part applies if it’s not sunny at&nbsp;
+all. For our code example, we want to let the&nbsp;&nbsp;
+
+00:01:06.320 --> 00:01:10.240
+game player know that if a target score has&nbsp;
+not been exceeded, the player needs to work&nbsp;&nbsp;
+
+00:01:10.240 --> 00:01:19.320
+to reach a level. Thus, starting on line 7, I&nbsp;
+will add the else keyword with a colon. Then,&nbsp;&nbsp;
+
+00:01:19.320 --> 00:01:27.440
+on the following line, I will indent four spaces&nbsp;
+to match these indents and add this statement:&nbsp;&nbsp;
+
+00:01:27.440 --> 00:01:38.120
+print(“You need to score higher to reach a&nbsp;
+level”). Then, I will skip a line and add a&nbsp;&nbsp;
+
+00:01:38.120 --> 00:01:46.120
+print statement that is not indented, thanking&nbsp;
+them for playing. Recall that statements not&nbsp;&nbsp;
+
+00:01:46.120 --> 00:01:52.280
+indented are not part of a condition and, thus,&nbsp;
+should always run. Before running this code,&nbsp;&nbsp;
+
+00:01:52.280 --> 00:01:58.680
+know this about indents: Python recommends four&nbsp;
+spaces for an indent, which many apps will give&nbsp;&nbsp;
+
+00:01:58.680 --> 00:02:03.840
+you when using the Tab key on the keyboard.&nbsp;
+You can use the Tab key or add spaces manually,&nbsp;&nbsp;
+
+00:02:03.840 --> 00:02:10.240
+but for the code to work correctly, you need&nbsp;
+to be consistent in your indentation methods.&nbsp;&nbsp;
+
+00:02:10.240 --> 00:02:16.840
+I always use four spaces, but the indentation&nbsp;
+method is your choice. Just be consistent with&nbsp;&nbsp;
+
+00:02:16.840 --> 00:02:26.160
+your indentations. I will rerun this code now,&nbsp;
+and we see the two messages we anticipated: that&nbsp;&nbsp;
+
+00:02:26.160 --> 00:02:32.800
+the player needs to get to a higher score, and the&nbsp;
+player was thanked for playing. I will test this&nbsp;&nbsp;
+
+00:02:32.800 --> 00:02:44.720
+code again, using scores over 5000 and over 10000,&nbsp;
+and, in each case, we see the results we want:&nbsp;&nbsp;
+
+00:02:44.720 --> 00:02:51.040
+that the player has reached a level matching the&nbsp;
+score and that the player is thanked for playing.
+

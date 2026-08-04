@@ -520,6 +520,31 @@
 }
 .qe-result h3{ margin: 0 0 6px 0; font-size: 15px; }
 .qe-result p{ margin: 0; color: var(--text-dim, #9494a8); font-size: 13px; }
+
+/* Explicație opțională per întrebare (q.explanation) — apare doar după
+   "Finalizează testul", vezi renderQuestion() din engine.js. Accent
+   albastru (--accent-2), diferit de verde/roșu de la corectare, ca să se
+   citească drept "informație", nu drept "corect/greșit". */
+.qe-explanation{
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--bg-elevated, #171724);
+  border: 1px solid var(--accent-2, #5b8def);
+}
+.qe-explanation-label{
+  font-weight: 700;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--accent-2, #5b8def);
+  margin-bottom: 6px;
+}
+.qe-explanation-text{
+  color: var(--text, #e8e8f0);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
 .hidden{ display: none !important; }
 
 .qe-side-panel{

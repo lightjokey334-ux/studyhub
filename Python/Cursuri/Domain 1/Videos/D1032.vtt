@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.200 --> 00:00:06.440
+Let’s now look at an order of operations&nbsp;
+example. I will uncomment line 18,&nbsp;&nbsp;
+
+00:00:06.440 --> 00:00:14.320
+making it live code. We have x plus 2 times y&nbsp;
+and, in analyzing this code, one could come up&nbsp;&nbsp;
+
+00:00:14.320 --> 00:00:24.640
+with two possible answers. X (five) plus 2 is&nbsp;
+7 times 3 (for Y) is 21. That’s one possible&nbsp;&nbsp;
+
+00:00:24.640 --> 00:00:34.720
+answer. Two times y is 6 plus 5 equals 11. That’s&nbsp;
+the other possible answer. In a previous topic,&nbsp;&nbsp;
+
+00:00:34.720 --> 00:00:40.720
+we covered order of operations with arithmetic,&nbsp;
+so what do you think will be the answer: 21,&nbsp;&nbsp;
+
+00:00:40.720 --> 00:00:50.600
+or 11? Let’s run the code and find out. The&nbsp;
+answer is 11, because multiplication occurs&nbsp;&nbsp;
+
+00:00:50.600 --> 00:00:56.720
+before addition in order of operations. Thus,&nbsp;
+2 times y happens first, and then the result,&nbsp;&nbsp;
+
+00:00:56.720 --> 00:01:04.920
+six, is added to x, five, to get 11. What if&nbsp;
+we put parentheses around x plus 2? Will that&nbsp;&nbsp;
+
+00:01:04.920 --> 00:01:13.240
+make a difference? Let’s find out. Indeed&nbsp;
+it does, and now the result is 21 because,&nbsp;&nbsp;
+
+00:01:13.240 --> 00:01:20.160
+whatever is inside parentheses in a calculation&nbsp;
+is calculated first. X plus 2 is 7, and multiplied&nbsp;&nbsp;
+
+00:01:20.160 --> 00:01:28.320
+by 3 y equals 21. Finally, let’s look at a unary&nbsp;
+operator, which makes a positive value negative,&nbsp;&nbsp;
+
+00:01:28.320 --> 00:01:36.640
+and a negative value positive. I will add a line&nbsp;
+of code on line 20 to print the negative of x,&nbsp;&nbsp;
+
+00:01:36.640 --> 00:01:46.720
+since x is a positive number. Adding +x will do&nbsp;
+nothing here because x is already positive. But&nbsp;&nbsp;
+
+00:01:46.720 --> 00:01:58.320
+printing -x prints negative 5. As is the case with&nbsp;
+comparison and logical operators, understanding&nbsp;&nbsp;
+
+00:01:58.320 --> 00:02:04.280
+the order of operations is critical to applying&nbsp;
+the correct logic within code. Furthermore, the&nbsp;&nbsp;
+
+00:02:04.280 --> 00:02:09.120
+more operators you know about with Python and any&nbsp;
+other programming language, the less time you are&nbsp;&nbsp;
+
+00:02:09.120 --> 00:02:16.840
+spending writing unnecessary code to work around&nbsp;
+an operator you may not have known that exists.
+

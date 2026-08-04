@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.320 --> 00:00:04.880
+Python is great at managing files, but&nbsp;
+sometimes, we need to check to see if a&nbsp;&nbsp;
+
+00:00:04.880 --> 00:00:11.920
+file exists before running code to either work on&nbsp;
+an existing file or create a new one. For example,&nbsp;&nbsp;
+
+00:00:11.920 --> 00:00:18.280
+knowing if a file exists can determine if we need&nbsp;
+to open a file in write mode or append mode, lest&nbsp;&nbsp;
+
+00:00:18.280 --> 00:00:25.440
+we accidentally overwrite an existing file and&nbsp;
+lose valuable information. In a gaming context, if&nbsp;&nbsp;
+
+00:00:25.440 --> 00:00:31.640
+a player file does not exist, the player may need&nbsp;
+to register for a game before playing that game.&nbsp;&nbsp;
+
+00:00:31.640 --> 00:00:40.080
+This code example, 316-check existence, checks&nbsp;
+to see if a file, specifically 316-message.txt,&nbsp;&nbsp;
+
+00:00:41.440 --> 00:00:50.120
+does not exist and takes action accordingly.&nbsp;
+In another domain, we are covering libraries,&nbsp;&nbsp;
+
+00:00:50.120 --> 00:00:57.120
+but we need one here: the os library, which&nbsp;
+is imported on line 1. Libraries add built-in&nbsp;&nbsp;
+
+00:00:57.120 --> 00:01:04.400
+functions we can run to complete tasks within our&nbsp;
+code. One such function is the exists function,&nbsp;&nbsp;
+
+00:01:04.400 --> 00:01:11.880
+which is part of a path statement and the os&nbsp;
+library. This if statement on line 3 checks&nbsp;&nbsp;
+
+00:01:11.880 --> 00:01:22.240
+whether this 316-message text file exists in the&nbsp;
+current path. If the file does not exist, the code&nbsp;&nbsp;
+
+00:01:22.240 --> 00:01:31.560
+on lines 4 through 8 runs, creating the file,&nbsp;
+writing text to the file, and then confirming&nbsp;&nbsp;
+
+00:01:31.560 --> 00:01:38.480
+that this configuration file is done. On line 9,&nbsp;
+we have an else statement, meaning the file does&nbsp;&nbsp;
+
+00:01:38.480 --> 00:01:51.680
+exist. If that is the case, the code on lines 10&nbsp;
+through 13 runs. This code opens, reads, prints,&nbsp;&nbsp;
+
+00:01:51.680 --> 00:02:01.320
+and closes the file. I will run the code, and&nbsp;
+on the first run, we see that the file has been&nbsp;&nbsp;
+
+00:02:01.320 --> 00:02:13.400
+created. When I run the code a second time, the&nbsp;
+file exists, so the contents of the file display.
+

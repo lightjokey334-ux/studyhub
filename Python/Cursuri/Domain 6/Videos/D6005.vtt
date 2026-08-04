@@ -1,0 +1,36 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.080 --> 00:00:06.720
+We are back. This review exercise aimed to&nbsp;
+identify the library needed to enable writing&nbsp;&nbsp;
+
+00:00:06.720 --> 00:00:14.080
+the streams of text on lines 5 through 7 to&nbsp;
+memory without writing that text to a file.&nbsp;&nbsp;
+
+00:00:14.080 --> 00:00:19.400
+Such a task requires the io library,&nbsp;
+and that code is on line 1. Secondly,&nbsp;&nbsp;
+
+00:00:19.400 --> 00:00:24.520
+we need the method from the IO library that&nbsp;
+will, again, allow us to write this text&nbsp;&nbsp;
+
+00:00:24.520 --> 00:00:30.960
+to memory. The StringIO method is the one&nbsp;
+needed, so after the equal sign on line 3,&nbsp;&nbsp;
+
+00:00:30.960 --> 00:00:38.160
+I’ve added io.StringIO with a set of parentheses.&nbsp;
+Remember that most anything in Python is&nbsp;&nbsp;
+
+00:00:38.160 --> 00:00:49.440
+case-sensitive. I will run this code, and we&nbsp;
+see all three lines of the stream. By the way,&nbsp;&nbsp;
+
+00:00:49.440 --> 00:00:59.400
+do you know the answer to this question? It is&nbsp;
+PI R squared, R being the radius of a circle.
+

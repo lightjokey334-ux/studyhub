@@ -1,0 +1,128 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:07.200
+In Python, a for loop is designed to iterate over&nbsp;
+a sequence, collection, or data structure, such&nbsp;&nbsp;
+
+00:00:07.200 --> 00:00:14.480
+as a list, tuple, or string. Unlike a while loop,&nbsp;
+which runs as long as a certain condition is true,&nbsp;&nbsp;
+
+00:00:14.480 --> 00:00:20.240
+a for loop runs for a predetermined number of&nbsp;
+iterations based on the length of the collection.&nbsp;&nbsp;
+
+00:00:20.240 --> 00:00:25.120
+For our first example, we will use a for loop&nbsp;
+to track a player moving through a series of 10&nbsp;&nbsp;
+
+00:00:25.120 --> 00:00:33.560
+positions on a game grid. In this 222-for file,&nbsp;
+we have, on line 1, a position variable set to&nbsp;&nbsp;
+
+00:00:33.560 --> 00:00:41.600
+the number of positions, 10. The for statement&nbsp;
+starts on line 2. P is a variable we are just&nbsp;&nbsp;
+
+00:00:41.600 --> 00:00:49.280
+using while inside the for loop, and the range&nbsp;
+signifies the number of times the loop should run,&nbsp;&nbsp;
+
+00:00:49.280 --> 00:00:57.720
+which in this case is 10. Line 3 is indented and&nbsp;
+contains a print statement to tell the game player&nbsp;&nbsp;
+
+00:00:57.720 --> 00:01:06.400
+what position has been reached. I will run this&nbsp;
+code and we see something quite interesting in the&nbsp;&nbsp;
+
+00:01:06.400 --> 00:01:14.760
+results. The loop ran 10 times, as expected, but&nbsp;
+look at the numbers we see within these results.&nbsp;&nbsp;
+
+00:01:14.760 --> 00:01:22.160
+The positions are 0 through 9, not 1 through&nbsp;
+10. As is the case with getting items in lists,&nbsp;&nbsp;
+
+00:01:22.160 --> 00:01:30.120
+for loops are also zero-based by default. However,&nbsp;
+with a slight change to the range, we can get the&nbsp;&nbsp;
+
+00:01:30.120 --> 00:01:37.960
+numbers 1 through 10 as desired in this code. On&nbsp;
+line 2, I will add a 1 inside the parentheses and&nbsp;&nbsp;
+
+00:01:37.960 --> 00:01:46.120
+a comma to indicate that I want this range&nbsp;
+to start at 1, not 0. Then, to get the loop&nbsp;&nbsp;
+
+00:01:46.120 --> 00:01:53.840
+to run to position 10, I will add +1 to the end of&nbsp;
+positions. These changes will shift the range from&nbsp;&nbsp;
+
+00:01:53.840 --> 00:02:04.840
+0 to 9 to 1 to 10. I will rerun this code, and&nbsp;
+we see the changes as expected. There is one more&nbsp;&nbsp;
+
+00:02:04.840 --> 00:02:10.800
+argument we can add to the range of a for loop: a&nbsp;
+step which tells the loop to run in gaps based on&nbsp;&nbsp;
+
+00:02:10.800 --> 00:02:18.840
+the step number indicated. For example, if I add&nbsp;
+a comma and a 2 after the positions+1 part of the&nbsp;&nbsp;
+
+00:02:18.840 --> 00:02:28.720
+range and then rerun the code, the loop starts&nbsp;
+at 1 and then steps 2 numbers forward with each&nbsp;&nbsp;
+
+00:02:28.720 --> 00:02:34.640
+iteration of the loop. In a quiz situation,&nbsp;
+this type of loop can work if one wants to,&nbsp;&nbsp;
+
+00:02:34.640 --> 00:02:41.600
+for example, ask every other question from a pool&nbsp;
+of questions. Knowing the for loop is important as&nbsp;&nbsp;
+
+00:02:41.600 --> 00:02:47.120
+one needs to know when a block of code needs&nbsp;
+to be run a set number of times, as not all&nbsp;&nbsp;
+
+00:02:47.120 --> 00:02:53.160
+loops are conditional. To see the other type&nbsp;
+of for example, which iterates through a list,&nbsp;&nbsp;
+
+00:02:53.160 --> 00:03:01.680
+let’s look at this 222-for-each file, which starts&nbsp;
+with, on line 1, a tuple of coins a player has in&nbsp;&nbsp;
+
+00:03:01.680 --> 00:03:12.680
+a game. Then, on line 2, we see a for loop with a&nbsp;
+new variable, coin, that is used to retrieve the&nbsp;&nbsp;
+
+00:03:12.680 --> 00:03:21.880
+coins we see on line 1. This word can be any word&nbsp;
+or letter, but as a good practice, people tend to&nbsp;&nbsp;
+
+00:03:21.880 --> 00:03:28.360
+use the singular version of a word in a for loop&nbsp;
+to loop through a plural version of the variable&nbsp;&nbsp;
+
+00:03:28.360 --> 00:03:34.560
+that stores a list type. The code on line 3 is&nbsp;
+indented as part of the loop and contains a print&nbsp;&nbsp;
+
+00:03:34.560 --> 00:03:42.040
+statement that concatenates text around the coin&nbsp;
+variable. We have three coins, so this loop should&nbsp;&nbsp;
+
+00:03:42.040 --> 00:03:51.640
+run three times, and when I run this code, that is&nbsp;
+exactly what happens. Again, for loops can be used&nbsp;&nbsp;
+
+00:03:51.640 --> 00:03:59.680
+to run a block of code a set number of times or&nbsp;
+iterate through a list such as this list of coins.
+

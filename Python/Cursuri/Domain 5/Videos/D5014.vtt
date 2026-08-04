@@ -1,0 +1,154 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.610 --> 00:00:06.860
+As part of unit testing, Python has several
+assert methods one can use to help test the
+
+00:00:06.860 --> 00:00:09.010
+functionality of a unit of code.
+
+00:00:09.010 --> 00:00:14.450
+Unit testing, as we have seen, helps determine,
+for a block of code, whether a tester is or
+
+00:00:14.450 --> 00:00:18.619
+is not getting an anticipated result for that
+block of code.
+
+00:00:18.619 --> 00:00:25.130
+There are several different types of unit
+tests, five of which are in this 534-assert
+
+00:00:25.130 --> 00:00:26.650
+file.
+
+00:00:26.650 --> 00:00:31.010
+Assert tests compare two values and return
+either a true or false, depending upon the
+
+00:00:31.010 --> 00:00:32.010
+comparison.
+
+00:00:32.010 --> 00:00:39.200
+This code block is a continuation of the code
+we used in the topic on unit tests.
+
+00:00:39.200 --> 00:00:45.579
+We have the unittest library imported on line
+1, and a class named TestMain that uses the
+
+00:00:45.579 --> 00:00:51.890
+built-in TestCase function on line 3.
+
+00:00:51.890 --> 00:00:57.199
+We previously ran this assertEqual test on
+lines 5 through 8.
+
+00:00:57.199 --> 00:01:03.000
+Thus, let's focus on some of these other assert
+methods.
+
+00:01:03.000 --> 00:01:12.020
+Lines 10 and 11 show an assertTrue test, a
+test that asserts whether a statement is true.
+
+00:01:12.020 --> 00:01:20.250
+On lines 13 through 16, we see an assertIs
+test, which tests whether two variables use
+
+00:01:20.250 --> 00:01:23.730
+the same memory space.
+
+00:01:23.730 --> 00:01:34.790
+Lines 18 through 21 run an assertIn test to
+see if one object is part of a list of objects.
+
+00:01:34.790 --> 00:01:40.100
+Lines 23 through 25 test to see if a variable
+is an instance of a class.
+
+00:01:40.100 --> 00:01:48.719
+I have these lines commented out as classes
+are beyond the scope of this exam, but assertIsInstance
+
+00:01:48.719 --> 00:01:53.520
+is mentioned in the exam objectives, so I
+wanted you to see an example of that type
+
+00:01:53.520 --> 00:01:55.939
+of unit test.
+
+00:01:55.939 --> 00:02:03.180
+How many of these tests do you expect to fail
+in looking through these test conditions?
+
+00:02:03.180 --> 00:02:05.090
+Let’s find out.
+
+00:02:05.090 --> 00:02:13.690
+I will run this code, and one test failed,
+the assertTrue test.
+
+00:02:13.690 --> 00:02:14.700
+Why?
+
+00:02:14.700 --> 00:02:21.769
+2 + 5 * 3 is not 21.
+
+00:02:21.769 --> 00:02:27.410
+Remember, the order of operations dictates
+that multiplication occurs before addition.
+
+00:02:27.410 --> 00:02:34.489
+So, the answer to the math problem on line
+11 is 17, not 21.
+
+00:02:34.489 --> 00:02:47.870
+If we add parentheses around the addition
+portion and test again, all tests will succeed.
+
+00:02:47.870 --> 00:02:53.040
+In a real-life situation, you can use these
+assertions to ensure a game flows the way
+
+00:02:53.040 --> 00:02:54.190
+it should.
+
+00:02:54.190 --> 00:03:00.080
+From a practical sense, you can have several
+assert-type tests built and then use them
+
+00:03:00.080 --> 00:03:05.620
+to plug in variables as needed to see if one’s
+assertions about code are true and if not,
+
+00:03:05.620 --> 00:03:11.940
+one can more easily isolate, diagnose, and
+fix the problem, often a logic problem, with
+
+00:03:11.940 --> 00:03:13.980
+the code.
+
+00:03:13.980 --> 00:03:18.830
+We have reached the end of this section on
+unit testing, so it is time for another code
+
+00:03:18.830 --> 00:03:21.130
+analysis exercise.
+
+00:03:21.130 --> 00:03:28.879
+Use the code you see here in this 534-analyze
+file to answer the questions in the Review
+
+00:03:28.879 --> 00:03:30.920
+5.3 exercise in your project workbook.
+
+00:03:30.920 --> 00:03:36.299
+When you have answered those questions, come
+back here and move to the next video, and
+
+00:03:36.299 --> 00:03:38.489
+we will go over these answers.
+

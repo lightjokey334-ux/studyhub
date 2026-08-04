@@ -1,0 +1,116 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.880 --> 00:00:06.040
+While an if statement works well for checking&nbsp;
+a condition, many logic flows within an app&nbsp;&nbsp;
+
+00:00:06.040 --> 00:00:10.920
+need to check for multiple possibilities for&nbsp;
+conditions and then perform an action based on&nbsp;&nbsp;
+
+00:00:10.920 --> 00:00:17.800
+which condition in a set of conditions is true.&nbsp;
+For example, in a situation in which a person&nbsp;&nbsp;
+
+00:00:17.800 --> 00:00:23.480
+playing a game reaches level two after reaching&nbsp;
+10000 points but also reaches level one after&nbsp;&nbsp;
+
+00:00:23.480 --> 00:00:31.160
+reaching 5000 points, we want to next figure out&nbsp;
+how to get the correct actions to take place based&nbsp;&nbsp;
+
+00:00:31.160 --> 00:00:39.440
+on multiple conditions or multiple possibilities&nbsp;
+within a condition. In this 212-elif code example,&nbsp;&nbsp;
+
+00:00:39.440 --> 00:00:46.640
+the score is stored in a variable on line 1. Then,&nbsp;
+we have two if statements, starting on lines 3 and&nbsp;&nbsp;
+
+00:00:46.640 --> 00:00:54.800
+5. One if statement looks for a score over 10000&nbsp;
+and the other a score over 5000. I will run this&nbsp;&nbsp;
+
+00:00:54.800 --> 00:01:02.080
+code. The second statement was printed. Through&nbsp;
+going back and analyzing this code, that makes&nbsp;&nbsp;
+
+00:01:02.080 --> 00:01:09.640
+sense because the score is set to 8000, meaning it&nbsp;
+is not over 10000, so this print statement on line&nbsp;&nbsp;
+
+00:01:09.640 --> 00:01:16.880
+4 should not run. The print statement on line&nbsp;
+6 should run as the score is over 5000. Let’s&nbsp;&nbsp;
+
+00:01:16.880 --> 00:01:27.280
+change the score from 8000 to 18000 and test this&nbsp;
+code again. The statement on line 4 is printed as&nbsp;&nbsp;
+
+00:01:27.280 --> 00:01:34.920
+the score is over 10000. But, the statement on&nbsp;
+line 6 was printed as well. Do we want to remind&nbsp;&nbsp;
+
+00:01:34.920 --> 00:01:41.080
+someone they reached level 1 in a game when&nbsp;
+they’ve already reached level 2? Probably not.&nbsp;&nbsp;
+
+00:01:41.080 --> 00:01:46.480
+This situation brings us to a common programming&nbsp;
+need: to have a single if statement with multiple&nbsp;&nbsp;
+
+00:01:46.480 --> 00:01:53.600
+possibilities and just have one result based&nbsp;
+on which condition ends up being true. It’s&nbsp;&nbsp;
+
+00:01:53.600 --> 00:01:59.160
+like saying this: I will go to the beach if&nbsp;
+it’s sunny outside and over 80 degrees, but&nbsp;&nbsp;
+
+00:01:59.160 --> 00:02:05.720
+if it’s just sunny, I will take a walk. The code&nbsp;
+equivalent in Python for such a situation is elif,&nbsp;&nbsp;
+
+00:02:05.720 --> 00:02:15.960
+short for else if. I will change the if on line&nbsp;
+5 to an elif. Within an if statement, the code is&nbsp;&nbsp;
+
+00:02:15.960 --> 00:02:24.800
+exited on the first match. Thus, now we are saying&nbsp;
+if the score is over 10000, print line 4. Else,&nbsp;&nbsp;
+
+00:02:24.800 --> 00:02:34.160
+if the score is over 5000, meaning it’s not&nbsp;
+over 10000, print line 6. I will rerun the code,&nbsp;&nbsp;
+
+00:02:34.160 --> 00:02:39.760
+and we only get the print statement on line 4,&nbsp;
+so the adjustment worked. Let’s ensure this code&nbsp;&nbsp;
+
+00:02:39.760 --> 00:02:47.600
+works when I lower the score to 8000. It does&nbsp;
+work. When learning about conditions in code,&nbsp;&nbsp;
+
+00:02:47.600 --> 00:02:52.720
+it is essential to know what the code is to go&nbsp;
+through a condition with multiple possibilities&nbsp;&nbsp;
+
+00:02:52.720 --> 00:02:57.600
+so that the output is not cluttered with&nbsp;
+unnecessary results. In this situation,&nbsp;&nbsp;
+
+00:02:57.600 --> 00:03:02.840
+we are testing the same variable multiple&nbsp;
+times with a desired output of one result,&nbsp;&nbsp;
+
+00:03:02.840 --> 00:03:08.600
+so we need the elif statement to represent the&nbsp;
+else if. There is no set limit to the number of&nbsp;&nbsp;
+
+00:03:08.600 --> 00:03:14.880
+elifs in code, so you could theoretically have a&nbsp;
+different message for many different score levels.
+

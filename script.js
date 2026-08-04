@@ -10,7 +10,7 @@ let currentSubject = null;
 
 // Which subjects currently have real content built.
 // Add "Python" / "Databases" here once those folders exist.
-const READY_SUBJECTS = ['Networking', 'Databases'];
+const READY_SUBJECTS = ['Networking', 'Databases', 'Python'];
 
 // Maps an option key to the relative path (from index.html) that should open.
 function buildPath(subject, optionKey){

@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.000 --> 00:00:05.720
+Let’s get some answers to these two situations.&nbsp;
+What did you come up with for what line 2 will&nbsp;&nbsp;
+
+00:00:05.720 --> 00:00:13.880
+print? Line 2 is a slicing statement,&nbsp;
+as we have square brackets on the quote,&nbsp;&nbsp;
+
+00:00:13.880 --> 00:00:20.320
+and the slice starts at character 4 and goes to&nbsp;
+character 9. In looking at the quote, I think the&nbsp;&nbsp;
+
+00:00:20.320 --> 00:00:27.160
+word quick should display, as the q is in position&nbsp;
+4, and we are looking to display the next five&nbsp;&nbsp;
+
+00:00:27.160 --> 00:00:35.800
+characters. We will run this code in a moment.&nbsp;
+Regarding the question on line 4 as to what type&nbsp;&nbsp;
+
+00:00:35.800 --> 00:00:41.920
+of data structure this is, this data structure&nbsp;
+is a tuple, as the items in this list are in&nbsp;&nbsp;
+
+00:00:41.920 --> 00:00:47.640
+parentheses. Sets and dictionaries have items in&nbsp;
+curly brackets, and lists have items in square&nbsp;&nbsp;
+
+00:00:47.640 --> 00:00:54.120
+brackets. The next question is, can we change&nbsp;
+the value of platinum to bronze? Technically,&nbsp;&nbsp;
+
+00:00:54.120 --> 00:01:01.240
+we can, but we cannot do it just by changing a&nbsp;
+value, as I am attempting to do here, on line 6,&nbsp;&nbsp;
+
+00:01:01.240 --> 00:01:06.600
+as tuples are immutable, meaning they cannot be&nbsp;
+changed. The only way to make the change is to&nbsp;&nbsp;
+
+00:01:06.600 --> 00:01:17.600
+redo the tuple, as I will do on line 6, with the&nbsp;
+new value. And then I will add a print statement&nbsp;&nbsp;
+
+00:01:17.600 --> 00:01:30.120
+on line 7 to display the new tuple values. I will&nbsp;
+now run the code, and both results display in the&nbsp;&nbsp;
+
+00:01:30.120 --> 00:01:37.320
+terminal. Knowing how to manipulate lists is a big&nbsp;
+time-saver as, just like we saw in creating lists,&nbsp;&nbsp;
+
+00:01:37.320 --> 00:01:42.240
+being able to group values in a single variable&nbsp;
+and then make changes to the group saves one&nbsp;&nbsp;
+
+00:01:42.240 --> 00:01:47.400
+from having to create and store separate values in&nbsp;
+separate variables, which can be tough to manage&nbsp;&nbsp;
+
+00:01:47.400 --> 00:01:53.560
+given every variable has to have a different name.&nbsp;
+Imagine trying to store 50 state capitals and&nbsp;&nbsp;
+
+00:01:53.560 --> 00:01:59.840
+having to name the variables capital1 through&nbsp;
+capital50. That list would be tough to track.
+

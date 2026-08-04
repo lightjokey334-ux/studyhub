@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:04.800
+Within loops, there may be a time in which&nbsp;
+you need to have a condition for exiting a&nbsp;&nbsp;
+
+00:00:04.800 --> 00:00:10.320
+loop early. Using the previous code example&nbsp;
+as a guide, I have added a platinum coin&nbsp;&nbsp;
+
+00:00:10.320 --> 00:00:16.320
+to a player's list of coins. Players collect&nbsp;
+coins by answering questions correctly. They&nbsp;&nbsp;
+
+00:00:16.320 --> 00:00:22.080
+are automatically moved to the next level if they&nbsp;
+obtain a platinum coin. Thus, we want this code,&nbsp;&nbsp;
+
+00:00:22.080 --> 00:00:29.680
+the 223-break file, to stop and print a different&nbsp;
+message if the player gets a platinum coin. I will&nbsp;&nbsp;
+
+00:00:29.680 --> 00:00:40.040
+add an if statement on line 4 to see if the&nbsp;
+coin is Platinum. Remember that criteria are&nbsp;&nbsp;
+
+00:00:40.040 --> 00:00:51.040
+case-sensitive. I will then indent line 5 and add&nbsp;
+a congratulatory print statement. The new keyword,&nbsp;&nbsp;
+
+00:00:51.040 --> 00:00:57.320
+break, I will add to line 6. Break exits&nbsp;
+a loop. We are saying logically here that&nbsp;&nbsp;
+
+00:00:57.320 --> 00:01:02.560
+if a player obtains a platinum coin, no other&nbsp;
+coins matter as the player automatically gets&nbsp;&nbsp;
+
+00:01:02.560 --> 00:01:08.000
+moved to the next level. Here is a question:&nbsp;
+how many statements do you think will print&nbsp;&nbsp;
+
+00:01:08.000 --> 00:01:18.080
+when we run this code? Let’s find out. The&nbsp;
+code prints four statements. The first three&nbsp;&nbsp;
+
+00:01:18.080 --> 00:01:23.440
+statements represent getting through the&nbsp;
+first three coins in the coins tuple. Then,&nbsp;&nbsp;
+
+00:01:23.440 --> 00:01:28.280
+being that the third coin is platinum, the&nbsp;
+congratulatory statement prints, and then,&nbsp;&nbsp;
+
+00:01:28.280 --> 00:01:36.360
+because of the break line, the loop ends before&nbsp;
+it gets to the gold coin. The real-life gaming&nbsp;&nbsp;
+
+00:01:36.360 --> 00:01:40.840
+application is that the gold coin is irrelevant&nbsp;
+after the platinum coin and thus does not need&nbsp;&nbsp;
+
+00:01:40.840 --> 00:01:46.720
+to be displayed. Break statements break out of&nbsp;
+loops when required and prevent one from adding&nbsp;&nbsp;
+
+00:01:46.720 --> 00:01:53.640
+multiple conditional statements to break out of a&nbsp;
+loop, saving time and potential errors in logic.
+

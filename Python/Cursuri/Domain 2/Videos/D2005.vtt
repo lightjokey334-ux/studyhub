@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:06.480
+What did you come up with? Let’s talk through&nbsp;
+this code and find and fix the two problems&nbsp;&nbsp;
+
+00:00:06.480 --> 00:00:16.640
+with the code. First, for the print statement on&nbsp;
+line 7 to display, the score must be over 10,000,&nbsp;&nbsp;
+
+00:00:16.640 --> 00:00:22.760
+and the coin needs to be gold or platinum. The&nbsp;
+first problem exists on line 5, and it’s a common&nbsp;&nbsp;
+
+00:00:22.760 --> 00:00:29.320
+problem. The app's logic should dictate that once&nbsp;
+someone reaches a score of 10,000, the person&nbsp;&nbsp;
+
+00:00:29.320 --> 00:00:36.400
+could be on level 2 or 3. But, the logic on line 5&nbsp;
+is only looking for scores over 10,000. The common&nbsp;&nbsp;
+
+00:00:36.400 --> 00:00:40.680
+problem with this code is that people often say,&nbsp;
+“Well, if they are over 10,000, do this,” when&nbsp;&nbsp;
+
+00:00:40.680 --> 00:00:48.000
+they really mean, “If they are at or over 10,000,&nbsp;
+do this.” When someone tells you this logic, you&nbsp;&nbsp;
+
+00:00:48.000 --> 00:00:53.440
+may need to clarify if they mean that the amount&nbsp;
+they want to use as a condition includes the exact&nbsp;&nbsp;
+
+00:00:53.440 --> 00:01:01.160
+amount. In many cases, the condition will include&nbsp;
+the exact amount. Thus, we want to change the&nbsp;&nbsp;
+
+00:01:01.160 --> 00:01:10.080
+comparison on line 5 to greater than or equal.&nbsp;
+I will make that change and rerun the code. The&nbsp;&nbsp;
+
+00:01:10.080 --> 00:01:19.600
+result is different, but note that we do not quite&nbsp;
+get the result we are looking for. We are about to&nbsp;&nbsp;
+
+00:01:19.600 --> 00:01:24.920
+see the example I said you would need to think&nbsp;
+through, at least possibly. The coin is gold,&nbsp;&nbsp;
+
+00:01:24.920 --> 00:01:32.440
+as we see on line 2, but look at the casing here&nbsp;
+compared to the if statement on line 6. Though&nbsp;&nbsp;
+
+00:01:32.440 --> 00:01:38.360
+the word is the same, Python is treating these&nbsp;
+as two different values because one is lowercase&nbsp;&nbsp;
+
+00:01:38.360 --> 00:01:45.200
+and the other is title case. The lesson here is&nbsp;
+that Python criteria are case-sensitive. Thus,&nbsp;&nbsp;
+
+00:01:45.200 --> 00:01:54.240
+I will change the criterion on line 2 to&nbsp;
+capital G Gold and rerun the code. Now,&nbsp;&nbsp;
+
+00:01:54.240 --> 00:02:01.520
+the code works as intended. Get practice analyzing&nbsp;
+code line by line, as learning how to analyze code&nbsp;&nbsp;
+
+00:02:01.520 --> 00:02:07.120
+will help you for the exam and help you greatly&nbsp;
+in figuring out and troubleshooting code.
+

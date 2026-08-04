@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.840 --> 00:00:06.560
+When running a loop, you may need to change&nbsp;
+the code that displays for a loop iteration,&nbsp;&nbsp;
+
+00:00:06.560 --> 00:00:11.200
+as we have seen with the break or continue&nbsp;
+statement. Still, as you build an app, you may not&nbsp;&nbsp;
+
+00:00:11.200 --> 00:00:16.560
+know what code is needed in a certain spot and may&nbsp;
+want to leave a placeholder for possible code to&nbsp;&nbsp;
+
+00:00:16.560 --> 00:00:23.640
+add later. The Pass keyword is that placeholder.&nbsp;
+Pass is unlike the break or continue keywords,&nbsp;&nbsp;
+
+00:00:23.640 --> 00:00:29.120
+as it does not break out of a loop or pause a&nbsp;
+loop. To see how pass works in the context of&nbsp;&nbsp;
+
+00:00:29.120 --> 00:00:38.880
+a loop, I will, in this 225-pass file, replace the&nbsp;
+print statement, on line 5, with a pass statement,&nbsp;&nbsp;
+
+00:00:38.880 --> 00:00:45.320
+as the game testers are not sure if the message&nbsp;
+in place is correct. I will leave the continue&nbsp;&nbsp;
+
+00:00:45.320 --> 00:00:54.160
+statement in so that the print statement on line 7&nbsp;
+runs for the other coins. Let’s run this code. As&nbsp;&nbsp;
+
+00:00:54.160 --> 00:01:01.640
+expected, the coins that are not platinum printed.&nbsp;
+Pass is valuable because it allows one to build&nbsp;&nbsp;
+
+00:01:01.640 --> 00:01:06.440
+parts of code while waiting for information and&nbsp;
+thus continue to structure code without waiting&nbsp;&nbsp;
+
+00:01:06.440 --> 00:01:12.160
+unnecessarily, saving overall time in building&nbsp;
+apps. After all, having a framework and filling&nbsp;&nbsp;
+
+00:01:12.160 --> 00:01:19.280
+in details is much more efficient than waiting&nbsp;
+on information before even building a framework.
+

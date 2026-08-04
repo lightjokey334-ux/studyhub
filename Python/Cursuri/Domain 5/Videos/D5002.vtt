@@ -1,0 +1,123 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:02.139 --> 00:00:06.189
+The second type of error is often the toughest
+to discover, a logic error.
+
+00:00:06.189 --> 00:00:10.480
+With a logic error, there is no syntax problem
+with the code, and the code does not cause
+
+00:00:10.480 --> 00:00:16.119
+a crash, but the code does not perform the
+way one expects it to when the code is run.
+
+00:00:16.119 --> 00:00:21.200
+We saw, in an earlier domain, how the order
+of the code determines the logic in how code
+
+00:00:21.200 --> 00:00:26.759
+flows, and sometimes, we need to rearrange
+code to get it to flow in the correct order
+
+00:00:26.759 --> 00:00:28.109
+logically.
+
+00:00:28.109 --> 00:00:33.340
+However, many logic errors stem from either
+flawed formulas or the wrong information being
+
+00:00:33.340 --> 00:00:35.200
+given to someone to use in a formula.
+
+00:00:35.200 --> 00:00:40.510
+Take, for example, this 512-logic file.
+
+00:00:40.510 --> 00:00:45.930
+I’m only focusing on one piece of logic
+in this code so we can better identify logic
+
+00:00:45.930 --> 00:00:46.930
+errors.
+
+00:00:46.930 --> 00:00:52.300
+We have three variables on lines 1 through
+3, the second variable being a calculation.
+
+00:00:52.300 --> 00:00:58.440
+Then, on line 5, we have a print statement
+that calculates the score plus the bonus and
+
+00:00:58.440 --> 00:01:02.100
+then applies the multiplier, or so we think.
+
+00:01:02.100 --> 00:01:07.270
+I have comments in the code on line 2 to calculate
+the bonus and then the expected result on
+
+00:01:07.270 --> 00:01:08.439
+line 5.
+
+00:01:08.439 --> 00:01:11.409
+Let’s run this code.
+
+00:01:11.409 --> 00:01:20.180
+The result is 3600, not 6600.
+
+00:01:20.180 --> 00:01:34.329
+Logically, one could argue that 3000 plus
+300 is 3300, and multiplied by two is 6600.
+
+00:01:34.329 --> 00:01:39.400
+But do you spot the logic problem in the code?
+
+00:01:39.400 --> 00:01:44.329
+It’s not that the variable on line 2 is
+derived from line 1’s value.
+
+00:01:44.329 --> 00:01:46.340
+That happens quite a bit in programming.
+
+00:01:46.340 --> 00:01:53.189
+We need to know and apply the order of operations
+to identify the logic error, a concept we
+
+00:01:53.189 --> 00:01:55.220
+covered in detail earlier in the course.
+
+00:01:55.220 --> 00:02:02.250
+What’s happening with the code is that the
+bonus and multiplier calculation is happening
+
+00:02:02.250 --> 00:02:08.629
+first because multiplication happens before
+addition in order of operations.
+
+00:02:08.629 --> 00:02:15.740
+Thus, the logic fix is to add parentheses
+around the score plus the bonus to make that
+
+00:02:15.740 --> 00:02:17.650
+calculation happen first.
+
+00:02:17.650 --> 00:02:32.500
+I will make the change, rerun the code, and
+get the anticipated result of 6600.
+
+00:02:32.500 --> 00:02:37.870
+Identifying logic errors is crucial to working
+well with any programming language, as logic
+
+00:02:37.870 --> 00:02:42.140
+errors do not return any error message and
+thus can be very tough and time-consuming
+
+00:02:42.140 --> 00:02:43.140
+to identify.
+
+00:02:43.140 --> 00:02:49.889
+The more we know what types of logic errors
+to expect, the easier they are to identify.
+

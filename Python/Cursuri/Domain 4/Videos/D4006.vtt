@@ -1,0 +1,32 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.840 --> 00:00:05.560
+The review exercise aimed to get some essential&nbsp;
+practice in documenting code. The assignment was&nbsp;&nbsp;
+
+00:00:05.560 --> 00:00:11.400
+to write documentation explaining what this code&nbsp;
+does and then print it on the screen when it runs.&nbsp;&nbsp;
+
+00:00:11.400 --> 00:00:16.920
+To accomplish this task, we need a docstring,&nbsp;
+which can be added anywhere to the code. I will&nbsp;&nbsp;
+
+00:00:16.920 --> 00:00:24.120
+add the docstring above the current code, using&nbsp;
+triple quotation marks for the docstring. Then,&nbsp;&nbsp;
+
+00:00:24.120 --> 00:00:32.720
+to print the documentation out as part of the&nbsp;
+output, I will add, to line 12, a print statement&nbsp;&nbsp;
+
+00:00:32.720 --> 00:00:45.000
+that prints the docstrings, indicated by a double&nbsp;
+underscore, doc, and another double underscore. I&nbsp;&nbsp;
+
+00:00:45.000 --> 00:00:54.640
+will run this code, and we see the game results&nbsp;
+and the docstring at the end of the results.
+

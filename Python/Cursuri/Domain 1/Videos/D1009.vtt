@@ -1,0 +1,144 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.000 --> 00:00:05.680
+Part of learning a programming language is&nbsp;
+to learn how to convert data from one type&nbsp;&nbsp;
+
+00:00:05.680 --> 00:00:11.520
+to another. This conversion knowledge is necessary&nbsp;
+because, in many cases, data can either be input&nbsp;&nbsp;
+
+00:00:11.520 --> 00:00:18.040
+as an incorrect data type or imported as a wrong&nbsp;
+data type. Here is an example related to the&nbsp;&nbsp;
+
+00:00:18.040 --> 00:00:25.440
+code we are building for simple games within&nbsp;
+Python. Line 2 of this 121-conversion file&nbsp;&nbsp;
+
+00:00:25.440 --> 00:00:31.960
+shows a variable that stores a rating someone&nbsp;
+enters. That rating is supposed to be a whole&nbsp;&nbsp;
+
+00:00:31.960 --> 00:00:42.040
+number. I will run this code and enter a floating&nbsp;
+decimal number. We see two problems here. First,&nbsp;&nbsp;
+
+00:00:42.040 --> 00:00:50.520
+the decimal number was accepted. Secondly, this&nbsp;
+result does not look like the number times 100,&nbsp;&nbsp;
+
+00:00:50.520 --> 00:00:57.480
+which is the calculation that is supposed to take&nbsp;
+place on line 3. There are three basic programming&nbsp;&nbsp;
+
+00:00:57.480 --> 00:01:02.080
+concepts I want to cover here in addition to&nbsp;
+the data type conversions we are covering in&nbsp;&nbsp;
+
+00:01:02.080 --> 00:01:08.800
+this topic. First, when troubleshooting,&nbsp;
+fix one problem at a time. Sometimes,&nbsp;&nbsp;
+
+00:01:08.800 --> 00:01:15.480
+fixing one problem either fixes multiple problems&nbsp;
+or causes a problem elsewhere. But, if you try to&nbsp;&nbsp;
+
+00:01:15.480 --> 00:01:20.360
+fix numerous problems at once and the fix does&nbsp;
+not work, identifying the other problems the&nbsp;&nbsp;
+
+00:01:20.360 --> 00:01:27.800
+fix causes can be tough. The second lesson to&nbsp;
+learn here is to know, when an input is taken,&nbsp;&nbsp;
+
+00:01:27.800 --> 00:01:35.680
+what kind of data is stored in the input variable&nbsp;
+by default? In our case, the input is a string&nbsp;&nbsp;
+
+00:01:35.680 --> 00:01:42.600
+because this calculation below displays the&nbsp;
+input value 100 times rather than multiplying&nbsp;&nbsp;
+
+00:01:42.600 --> 00:01:49.760
+it by 100. What does this situation tell us?&nbsp;
+That the default data type for an input is a&nbsp;&nbsp;
+
+00:01:49.760 --> 00:01:57.760
+string. While that works for many apps, this&nbsp;
+one needs the rating to become a number. Thus,&nbsp;&nbsp;
+
+00:01:57.760 --> 00:02:03.040
+we will convert the rating to an integer using the&nbsp;
+int function, which I will wrap around the rating&nbsp;&nbsp;
+
+00:02:03.040 --> 00:02:11.720
+variable on line 3 through placing the cursor in&nbsp;
+front of rating, typing int, and then wrapping a&nbsp;&nbsp;
+
+00:02:11.720 --> 00:02:16.480
+set of parentheses around rating, so that the&nbsp;
+rating is converted to an integer just before&nbsp;&nbsp;
+
+00:02:16.480 --> 00:02:23.640
+the calculation occurs. Thirdly, this course will&nbsp;
+teach you a lot about functions and methods. A&nbsp;&nbsp;
+
+00:02:23.640 --> 00:02:29.760
+function is a procedure that performs an action—in&nbsp;
+this case, converting one data type to another.&nbsp;&nbsp;
+
+00:02:31.800 --> 00:02:38.280
+Python has a variety of built-in functions, such&nbsp;
+as int for converting to integers and str for&nbsp;&nbsp;
+
+00:02:38.280 --> 00:02:45.120
+strings, among others. Additionally, you'll learn&nbsp;
+how to define your own custom functions. A method&nbsp;&nbsp;
+
+00:02:45.120 --> 00:02:51.000
+is a specific type of function that belongs to an&nbsp;
+instance of a class or an object and can access or&nbsp;&nbsp;
+
+00:02:51.000 --> 00:02:57.040
+modify the instance or object to which it belongs.&nbsp;
+We will see an example of a method later in the&nbsp;&nbsp;
+
+00:02:57.040 --> 00:02:58.300
+course. For example, in 113-numbers, we can run&nbsp;
+the is_integer() method on the [line 4 variable&nbsp;&nbsp;
+
+00:02:58.300 --> 00:02:58.394
+that holds the number 2 as a float] variable,&nbsp;
+which is an instance of the float data type, to&nbsp;&nbsp;
+
+00:02:58.394 --> 00:02:58.495
+confirm that it is an integer as well as a float.&nbsp;
+This is a built-in method for the float data type.&nbsp;&nbsp;
+
+00:02:58.495 --> 00:02:59.760
+You can also create methods for your own data&nbsp;
+types and classes. I will run the code again,&nbsp;&nbsp;
+
+00:03:02.520 --> 00:03:10.760
+enter 2.2 again, and we have a good news-bad news&nbsp;
+situation. The good news is the previous problem&nbsp;&nbsp;
+
+00:03:10.760 --> 00:03:19.120
+is gone. However, a new problem is here: we are&nbsp;
+told we cannot concatenate, meaning combine a&nbsp;&nbsp;
+
+00:03:19.120 --> 00:03:27.160
+string with an integer. Some languages implicitly&nbsp;
+convert data types to avoid this problem. Python&nbsp;&nbsp;
+
+00:03:27.160 --> 00:03:34.720
+is not one of them. Thus, we need to convert this&nbsp;
+result on line 4 to a string, because we are now&nbsp;&nbsp;
+
+00:03:34.720 --> 00:03:45.680
+trying to concatenate a string, an integer,&nbsp;
+and another string, which is not allowed.
+

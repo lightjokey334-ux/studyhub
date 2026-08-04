@@ -1,0 +1,51 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:06.830 --> 00:00:07.830
+We are back.
+
+00:00:07.830 --> 00:00:08.830
+The first question in the review exercise
+asked which assert method is needed to fulfill
+
+00:00:08.830 --> 00:00:10.059
+the request on line 8.
+
+00:00:10.059 --> 00:00:17.310
+We have a value within the list of values,
+so we need an assertIn test, which I will
+
+00:00:17.310 --> 00:00:22.380
+build to replace the comment on line 8.
+
+00:00:22.380 --> 00:00:35.010
+Secondly, the review exercise asked if the
+test would pass or fail.
+
+00:00:35.010 --> 00:00:40.190
+I hope that you entered the code needed for
+the test and then ran the test because, if
+
+00:00:40.190 --> 00:00:45.469
+you did that as I am doing here, you would
+find that the test failed.
+
+00:00:45.469 --> 00:00:52.680
+The third question asked you to identify the
+cause of the failure if one existed.
+
+00:00:52.680 --> 00:01:02.399
+Vilnius, the capital of Lithuania, has a capital
+V in variable a, but is all lowercase in variable
+
+00:01:02.399 --> 00:01:03.399
+b.
+
+00:01:03.399 --> 00:01:10.980
+Remember, values are case-sensitive in Python,
+so these two values are different, which is
+
+00:01:10.980 --> 00:01:12.530
+why the test failed.
+

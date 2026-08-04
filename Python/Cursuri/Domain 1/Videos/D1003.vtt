@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.050 --> 00:00:05.140
+Before we get into the course objectives,
+I want to take you through two tools you will
+
+00:00:05.140 --> 00:00:09.760
+need to install so that you can follow along
+with what you see in this course.
+
+00:00:09.760 --> 00:00:13.450
+The downloads and installations are pretty
+straightforward, but know that what you will
+
+00:00:13.450 --> 00:00:18.550
+see on the websites I am about to show you
+now may differ from what you will end up seeing,
+
+00:00:18.550 --> 00:00:21.110
+as these tools get updated fairly frequently.
+
+00:00:21.110 --> 00:00:24.190
+First, you will need the Python engine.
+
+00:00:24.190 --> 00:00:29.670
+While it does come with some development tools,
+the best way to ensure you have the engine
+
+00:00:29.670 --> 00:00:33.500
+is to download it straight from the source,
+python.org.
+
+00:00:33.500 --> 00:00:41.039
+I am on the site now and will select the latest
+version of Python to download.
+
+00:00:41.039 --> 00:00:45.720
+Your operating system will dictate which version
+you download, but I downloaded and installed
+
+00:00:45.720 --> 00:00:50.860
+the Windows Installer 64-bit version as I
+am running Windows 11.
+
+00:00:50.860 --> 00:00:56.570
+Once that installation is complete, you will
+need an Integrated Development Environment
+
+00:00:56.570 --> 00:01:01.469
+app, which is a tool that supports one or
+multiple programming languages.
+
+00:01:01.469 --> 00:01:07.840
+PyCharm is a leading Python IDE, but I will
+use Visual Studio code for this course, which
+
+00:01:07.840 --> 00:01:10.990
+can be downloaded here.
+
+00:01:10.990 --> 00:01:14.960
+I use this tool because it supports all the
+programming and markup languages covered in
+
+00:01:14.960 --> 00:01:23.030
+the IT Specialist programming certification
+courses, such as this course, HTML, CSS, JavaScript,
+
+00:01:23.030 --> 00:01:28.479
+Java, and C#, for software development fundamentals.
+
+00:01:28.479 --> 00:01:33.110
+You can take the default installation once
+you have installed the Python engine.
+
+00:01:33.110 --> 00:01:35.110
+How do you know Python is installed correctly?
+
+00:01:35.110 --> 00:01:37.000
+I’m glad you asked.
+
+00:01:37.000 --> 00:01:43.460
+To verify that Python is installed, open a
+command prompt, as I am doing here, and then
+
+00:01:43.460 --> 00:01:49.190
+type py and select the Enter key on the keyboard.
+
+00:01:49.190 --> 00:01:55.869
+If you see three arrows and some Python information,
+Python is installed and ready to be used.
+
+00:01:55.869 --> 00:02:01.580
+Holding down the Ctrl key, selecting Z, and
+then selecting the Enter key on the keyboard
+
+00:02:01.580 --> 00:02:05.980
+closes the Python session within the command
+prompt.
+
+00:02:05.980 --> 00:02:10.319
+Here is what Visual Studio Code looks like
+once it is installed.
+
+00:02:10.319 --> 00:02:16.330
+The next step is installing the Python extension,
+making writing, editing, and running Python
+
+00:02:16.330 --> 00:02:17.800
+code easier.
+
+00:02:17.800 --> 00:02:24.319
+I will select the gear icon in the lower-left
+corner of the screen, select Extensions, and
+
+00:02:24.319 --> 00:02:29.170
+search for Python.
+
+00:02:29.170 --> 00:02:34.740
+I already have the extension installed, but
+if you don’t, select Install to install
+
+00:02:34.740 --> 00:02:39.129
+the extension and then restart Visual Studio
+Code if necessary.
+
+00:02:39.129 --> 00:02:43.480
+One of the main benefits of the extension
+is Intellisense, which helps us to write code
+
+00:02:43.480 --> 00:02:49.569
+but also provides useful visual indicators
+for any code that might contain syntax errors
+
+00:02:49.569 --> 00:02:52.739
+and, thus, will not run correctly.
+
+00:02:52.739 --> 00:02:59.330
+As we go through each domain, a student folder
+with practice files for each domain is accessible.
+
+00:02:59.330 --> 00:03:08.540
+To open a folder for a domain, we just need
+to select File, Open Folder, select the folder
+
+00:03:08.540 --> 00:03:15.330
+we want to open, and then choose Select Folder
+to open that folder, as I am doing with the
+
+00:03:15.330 --> 00:03:18.349
+Domain 1 student files.
+
+00:03:18.349 --> 00:03:22.910
+Once you have completed these installations,
+you can start learning and building with Python.
+

@@ -1,0 +1,120 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.960 --> 00:00:05.800
+This domain covers code documentation and&nbsp;
+structure. In this domain, we will see how&nbsp;&nbsp;
+
+00:00:05.800 --> 00:00:11.080
+to document code, and then we will see how to&nbsp;
+structure functions, which allow for blocks of&nbsp;&nbsp;
+
+00:00:11.080 --> 00:00:18.280
+code to be reused as needed. The first piece of&nbsp;
+structure we will cover is that of indentation.&nbsp;&nbsp;
+
+00:00:18.280 --> 00:00:24.200
+As we have seen in many topics up to this point,&nbsp;
+any block of code that runs as part of a loop or&nbsp;&nbsp;
+
+00:00:24.200 --> 00:00:30.120
+conditional statement needs to be indented.&nbsp;
+This indentation structure sets Python apart&nbsp;&nbsp;
+
+00:00:30.120 --> 00:00:35.880
+from other languages. With most other languages,&nbsp;
+these code blocks are inside curly brackets,&nbsp;&nbsp;
+
+00:00:35.880 --> 00:00:42.040
+and indentation is used merely to make code more&nbsp;
+readable. To further illustrate the importance&nbsp;&nbsp;
+
+00:00:42.040 --> 00:00:47.200
+of indentation, I am reusing a code example&nbsp;
+from earlier in the course, one with a lot of&nbsp;&nbsp;
+
+00:00:47.200 --> 00:00:55.000
+indentation. This file, 411-indentation,&nbsp;
+has a while loop, and everything inside&nbsp;&nbsp;
+
+00:00:55.000 --> 00:01:02.680
+the while loop is indented. Inside the while&nbsp;
+loop, we have a for loop and an if statement,&nbsp;&nbsp;
+
+00:01:02.680 --> 00:01:10.880
+and the code under each block is also indented.&nbsp;
+Besides generating error messages if code is not&nbsp;&nbsp;
+
+00:01:10.880 --> 00:01:20.840
+indented properly, let’s see where indentation&nbsp;
+can affect code logic. I will run this code,&nbsp;&nbsp;
+
+00:01:20.840 --> 00:01:29.840
+and the print statement on line 8 prints only&nbsp;
+once because it is not part of any loop. However,&nbsp;&nbsp;
+
+00:01:30.560 --> 00:01:41.240
+if I indent this to fit under the while loop and&nbsp;
+rerun the code, the print statement prints each&nbsp;&nbsp;
+
+00:01:41.240 --> 00:01:48.480
+time this while loop iterates. This behavior&nbsp;
+is not the app's intent, so I will move the&nbsp;&nbsp;
+
+00:01:48.480 --> 00:01:56.360
+print statement back outside of the while loop.&nbsp;
+The amount of indentation we have within a code&nbsp;&nbsp;
+
+00:01:56.360 --> 00:02:01.200
+example like this does affect code logic, so&nbsp;
+we need to make sure what needs to go into a&nbsp;&nbsp;
+
+00:02:01.200 --> 00:02:07.680
+loop is indented under it and, more importantly,&nbsp;
+what needs to be outside loops is not indented,&nbsp;&nbsp;
+
+00:02:07.680 --> 00:02:13.800
+lest we get bad results with code. I have&nbsp;
+saved some critical aspects of indentation for&nbsp;&nbsp;
+
+00:02:13.800 --> 00:02:22.600
+last. First, you need to be consistent with your&nbsp;
+indentation. Four spaces is the recommended amount&nbsp;&nbsp;
+
+00:02:22.600 --> 00:02:29.320
+per indentation level. You can use the Tab key on&nbsp;
+the keyboard to indent lines, but whatever you do,&nbsp;&nbsp;
+
+00:02:29.320 --> 00:02:38.840
+be consistent. Watch what happens if I vary an&nbsp;
+indent inside of the while loop. Immediately,&nbsp;&nbsp;
+
+00:02:38.840 --> 00:02:46.040
+the code editor has a tooltip message that&nbsp;
+tells us the indent amounts are inconsistent.&nbsp;&nbsp;
+
+00:02:46.040 --> 00:02:50.680
+Having inconsistent indentation will lead to&nbsp;
+syntax errors, which we will cover elsewhere&nbsp;&nbsp;
+
+00:02:50.680 --> 00:02:58.560
+in the course. Second, beginning with Python 3,&nbsp;
+mixing tabs and spaces in a single block is not&nbsp;&nbsp;
+
+00:02:58.560 --> 00:03:04.000
+allowed. This is because Python considers tabs&nbsp;
+and spaces as different characters even though&nbsp;&nbsp;
+
+00:03:04.000 --> 00:03:11.200
+they might look the same in your text editor.&nbsp;
+Lastly, some text editors like Notepad++ offer&nbsp;&nbsp;
+
+00:03:11.200 --> 00:03:16.640
+settings to automatically convert tabs to spaces&nbsp;
+for better consistency. Because tabs and spaces&nbsp;&nbsp;
+
+00:03:16.640 --> 00:03:23.880
+are invisible characters, you may need to enable&nbsp;
+a setting to view all symbols to identify them.
+

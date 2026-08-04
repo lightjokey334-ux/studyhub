@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.240 --> 00:00:07.080
+The review exercise’s main goal was to identify,&nbsp;
+find, and fix the errors in this code. Whenever&nbsp;&nbsp;
+
+00:00:07.080 --> 00:00:12.680
+we suspect errors in code, we should inspect&nbsp;
+the code for possible obvious errors and use&nbsp;&nbsp;
+
+00:00:12.680 --> 00:00:18.720
+any hints we get within the code editor&nbsp;
+to find syntax errors. When in doubt,&nbsp;&nbsp;
+
+00:00:18.720 --> 00:00:25.760
+run the code and see if errors come up. I will&nbsp;
+run this code, and we see, in the traceback,&nbsp;&nbsp;
+
+00:00:25.760 --> 00:00:37.120
+a syntax error on line 7. Syntax errors will&nbsp;
+usually be identified before runtime errors.&nbsp;&nbsp;
+
+00:00:37.120 --> 00:00:43.880
+We should fix one error at a time, as fixing one&nbsp;
+error could fix multiple errors. The syntax error&nbsp;&nbsp;
+
+00:00:43.880 --> 00:00:50.960
+is that we have a space between the f and the&nbsp;
+opening quotation mark in this f-string. You&nbsp;&nbsp;
+
+00:00:50.960 --> 00:00:59.880
+may recall that a space is not allowed there. So,&nbsp;
+I will remove that space. When you fix an error,&nbsp;&nbsp;
+
+00:00:59.880 --> 00:01:07.520
+you should run the code immediately to ensure the&nbsp;
+fix works. I will rerun the code, and the syntax&nbsp;&nbsp;
+
+00:01:07.520 --> 00:01:22.240
+error is gone, but there is a runtime error on&nbsp;
+line 8. The error indicates that the equal sign&nbsp;&nbsp;
+
+00:01:22.240 --> 00:01:31.360
+is not allowed as a symbol to align text. The&nbsp;
+symbol should be less than 15 to get this value&nbsp;&nbsp;
+
+00:01:31.360 --> 00:01:38.600
+to take 15 spaces. Even if you don’t remember the&nbsp;
+exact phrasing of an alignment symbol, one way to&nbsp;&nbsp;
+
+00:01:38.600 --> 00:01:45.560
+try to fix an error is to react directly to what&nbsp;
+you’re being told. The equal sign is not allowed,&nbsp;&nbsp;
+
+00:01:45.560 --> 00:01:54.920
+so we should remove it, which is what I will do.&nbsp;
+I will rerun the code, and now the code works as&nbsp;&nbsp;
+
+00:01:54.920 --> 00:02:01.400
+anticipated. Again, look over code for possible&nbsp;
+errors, and run code when in doubt about errors,&nbsp;&nbsp;
+
+00:02:01.400 --> 00:02:07.080
+as Python will help you find both syntax&nbsp;
+and runtime errors. For logical errors,&nbsp;&nbsp;
+
+00:02:07.080 --> 00:02:15.280
+you may need to test code in multiple ways to see&nbsp;
+where the logic has gone wrong within the code.
+

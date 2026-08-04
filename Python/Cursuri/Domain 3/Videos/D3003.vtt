@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.360 --> 00:00:07.080
+Many apps need to store information in files and&nbsp;
+read information from files. Now that we know&nbsp;&nbsp;
+
+00:00:07.080 --> 00:00:11.960
+how to open and close a file, let’s further&nbsp;
+investigate how to read information from a&nbsp;&nbsp;
+
+00:00:11.960 --> 00:00:17.640
+file. I have the same code example we have been&nbsp;
+working on in this section, and in this version,&nbsp;&nbsp;
+
+00:00:17.640 --> 00:00:24.440
+313-read, we will add a read statement to&nbsp;
+read the file’s contents. Before doing that,&nbsp;&nbsp;
+
+00:00:24.440 --> 00:00:32.920
+we need to ensure a file is open in read mode. The&nbsp;
+code on line 6, which contains the open method,&nbsp;&nbsp;
+
+00:00:32.920 --> 00:00:41.600
+has two arguments: the file we are opening&nbsp;
+and the status of the file: r stands for read,&nbsp;&nbsp;
+
+00:00:41.600 --> 00:00:50.840
+and r+ stands for both read and write. When&nbsp;
+opening a file for reading purposes, one needs&nbsp;&nbsp;
+
+00:00:50.840 --> 00:00:57.680
+to know whether some writing could also be needed&nbsp;
+for the file. If not, the mode should be r and not&nbsp;&nbsp;
+
+00:00:57.680 --> 00:01:10.480
+r+. On line 7, I will add code to read the file's&nbsp;
+contents. The code is content=message_test.read().&nbsp;&nbsp;
+
+00:01:18.440 --> 00:01:26.480
+We need a variable to store the contents of&nbsp;
+the file being read. Then, on the next line,&nbsp;&nbsp;
+
+00:01:26.480 --> 00:01:37.520
+I will add a print statement to print what has&nbsp;
+been read. I will run the code. Right now, the&nbsp;&nbsp;
+
+00:01:37.520 --> 00:01:44.480
+two lines of text appear as one line. The cause&nbsp;
+of that is how the text is written to the file,&nbsp;&nbsp;
+
+00:01:44.480 --> 00:01:51.080
+which will be addressed in the next topic. For&nbsp;
+now, understand that for a file to be read,&nbsp;&nbsp;
+
+00:01:51.080 --> 00:01:59.840
+it needs to be open in a kind of read mode.&nbsp;
+The contents need to be stored in a variable,&nbsp;&nbsp;
+
+00:02:02.720 --> 00:02:07.560
+and then the content can be disseminated&nbsp;
+through a print statement. Otherwise,&nbsp;&nbsp;
+
+00:02:07.560 --> 00:02:15.280
+a file can be opened, but we won’t be&nbsp;
+able to see the contents of said file.
+

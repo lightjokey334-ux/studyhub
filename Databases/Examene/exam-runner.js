@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const autoSaveAnswers = resolveExamAutoSaveAnswersDefault() !== 'off';
   const testId = typeof EXAM_ID !== 'undefined' ? EXAM_ID : null;
 
-  const engine = new QuestionEngine(container, questions, { title: titleEl.textContent, showShortcuts, autoSaveAnswers, testId });
+  const engine = new QuestionEngine(container, questions, { title: titleEl.textContent, showShortcuts, autoSaveAnswers, testId, multiSession: true });
 
   // Aplică live schimbarea panoului de comenzi rapide, dacă vine din
   // fereastra plutitoare de Setări (deschisă peste pagina de examen) —
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const logo = document.getElementById('subjectLogo');
   if (logo) {
     logo.addEventListener('click', () => {
-      window.location.href = '../../../index.html?logoFrom=Networking';
+      window.location.href = '../../../index.html?logoFrom=Databases';
     });
   }
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const backBtn = document.getElementById('examBackBtn');
   if (backBtn) {
     backBtn.addEventListener('click', () => {
-      window.location.href = '../../../index.html?subject=Networking';
+      window.location.href = '../../../index.html?subject=Databases';
     });
   }
 });

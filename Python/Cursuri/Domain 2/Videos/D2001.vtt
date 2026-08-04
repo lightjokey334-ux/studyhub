@@ -1,0 +1,116 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.960 --> 00:00:08.160
+This domain will cover two prevalent programming&nbsp;
+concepts: decisions and loops. We will learn quite&nbsp;&nbsp;
+
+00:00:08.160 --> 00:00:13.920
+a bit about conditions and how they control the&nbsp;
+flow of a program. As we cover these concepts,&nbsp;&nbsp;
+
+00:00:13.920 --> 00:00:19.440
+you will also learn about some unique syntax&nbsp;
+needs in Python compared to other programming&nbsp;&nbsp;
+
+00:00:19.440 --> 00:00:24.920
+languages such as C#, Java, and JavaScript. The&nbsp;
+first condition we will cover revolves around an&nbsp;&nbsp;
+
+00:00:24.920 --> 00:00:31.240
+if statement. An if statement takes action if&nbsp;
+a condition is true. A real-life example for&nbsp;&nbsp;
+
+00:00:31.240 --> 00:00:39.160
+me on many weekends is if it’s sunny outside, I&nbsp;
+will play golf. Take a look at this 211-if code&nbsp;&nbsp;
+
+00:00:39.160 --> 00:00:45.520
+example. We are setting up conditions for actions&nbsp;
+based on a score achieved in a game. The score&nbsp;&nbsp;
+
+00:00:45.520 --> 00:00:54.440
+variable is on line 1. The if statement starts on&nbsp;
+line 3. We have the keyword if, followed by the&nbsp;&nbsp;
+
+00:00:54.440 --> 00:01:02.880
+condition, the score is greater than 10000, and&nbsp;
+then a colon indicates the condition's end. The&nbsp;&nbsp;
+
+00:01:02.880 --> 00:01:10.400
+following line, line 4, is the action to perform&nbsp;
+if the condition is true, which, for this example,&nbsp;&nbsp;
+
+00:01:10.400 --> 00:01:17.440
+is a print statement with a message. Before we run&nbsp;
+this code, there is a fundamental concept we need&nbsp;&nbsp;
+
+00:01:17.440 --> 00:01:26.480
+to understand for Python syntax: indentation.&nbsp;
+Many programming languages, with if and similar&nbsp;&nbsp;
+
+00:01:26.480 --> 00:01:33.280
+statements, have the actions to take for a&nbsp;
+condition inside curly brackets. Python does not&nbsp;&nbsp;
+
+00:01:33.280 --> 00:01:41.200
+use curly brackets in this manner. Rather, Python&nbsp;
+uses indents to indicate what code should run as&nbsp;&nbsp;
+
+00:01:41.200 --> 00:01:50.200
+part of a condition, loop, or function. Line 4&nbsp;
+is indented four spaces from line 3. To emphasize&nbsp;&nbsp;
+
+00:01:50.200 --> 00:01:56.960
+indenting code, I have a print statement on line&nbsp;
+5 that is not indented and tells the player thank&nbsp;&nbsp;
+
+00:01:56.960 --> 00:02:02.960
+you for playing. In analyzing the code as it&nbsp;
+is now, the if statement is true because the&nbsp;&nbsp;
+
+00:02:02.960 --> 00:02:10.680
+score is over 10000, so the statement on line&nbsp;
+4 should print. Line 5 should print regardless&nbsp;&nbsp;
+
+00:02:10.680 --> 00:02:17.440
+because it is not indented and thus not part of&nbsp;
+the if statement. I will run this code, and both&nbsp;&nbsp;
+
+00:02:17.440 --> 00:02:24.960
+statements print as expected. What if we change&nbsp;
+the code on line 1 to lower the score to a number&nbsp;&nbsp;
+
+00:02:24.960 --> 00:02:32.720
+under 10000? I will change the score to 8000. How&nbsp;
+many print statements do you think will print when&nbsp;&nbsp;
+
+00:02:32.720 --> 00:02:43.280
+we run this code? If the if condition is false,&nbsp;
+this statement should not print. However, the&nbsp;&nbsp;
+
+00:02:43.280 --> 00:02:50.120
+statement on line 5 should be printed because it&nbsp;
+is not indented and thus not part of the condition&nbsp;&nbsp;
+
+00:02:50.120 --> 00:02:56.680
+in the if statement on line 3. Having rerun the&nbsp;
+code, that is what happened. The print statement&nbsp;&nbsp;
+
+00:02:56.680 --> 00:03:04.640
+on line 4 did not print because the condition&nbsp;
+on line 3 is false. But the print statement on&nbsp;&nbsp;
+
+00:03:04.640 --> 00:03:14.680
+line 5 did print because it is not part of the&nbsp;
+if statement as it is not indented. Many aspects&nbsp;&nbsp;
+
+00:03:14.680 --> 00:03:19.160
+of an app are based on conditions, and thus, we&nbsp;
+must understand conditional statements such as&nbsp;&nbsp;
+
+00:03:19.160 --> 00:03:26.040
+the if statement so that, based on a situation,&nbsp;
+we can control what happens next within our code.
+

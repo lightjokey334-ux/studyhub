@@ -1,0 +1,104 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.960 --> 00:00:06.480
+The sys library is versatile in allowing us&nbsp;
+to import other modules, manage files, and&nbsp;&nbsp;
+
+00:00:06.480 --> 00:00:12.960
+run command-line arguments. The sys library also&nbsp;
+allows one to work with system-based commands,&nbsp;&nbsp;
+
+00:00:12.960 --> 00:00:19.320
+such as changing file paths and doing what we will&nbsp;
+demonstrate in this 614-sys file, exiting an app,&nbsp;&nbsp;
+
+00:00:19.320 --> 00:00:26.880
+like a game being played. On line 1 of this code,&nbsp;
+I have the import sys command to import the sys&nbsp;&nbsp;
+
+00:00:26.880 --> 00:00:36.080
+library. Then, lines 3 through 6 simulate gameplay&nbsp;
+to where one has three lives in the game. When the&nbsp;&nbsp;
+
+00:00:36.080 --> 00:00:44.360
+loop is done, the game is done. The sys.exit&nbsp;
+command on line 7 terminates the Python script&nbsp;&nbsp;
+
+00:00:44.360 --> 00:00:50.720
+immediately, offering a way to exit the script&nbsp;
+gracefully. Sometimes, when working with apps,&nbsp;&nbsp;
+
+00:00:50.720 --> 00:00:56.320
+one needs to be able to exit an app gracefully&nbsp;
+rather than have an app generate an error,&nbsp;&nbsp;
+
+00:00:56.320 --> 00:01:05.160
+and sys.exit allows for that graceful exit. I will&nbsp;
+run this code, we see two messages, and then the&nbsp;&nbsp;
+
+00:01:05.160 --> 00:01:12.880
+game exits. Next, let’s see how this sys module&nbsp;
+works with command-line arguments. I will switch&nbsp;&nbsp;
+
+00:01:12.880 --> 00:01:21.800
+over to this 614-command file, and here, we see&nbsp;
+the import sys module on line 1. On line three, we&nbsp;&nbsp;
+
+00:01:21.800 --> 00:01:29.040
+see the sys.argv for the first time. Sys.argv is&nbsp;
+used as a placeholder for a command-line argument,&nbsp;&nbsp;
+
+00:01:29.040 --> 00:01:39.320
+as we will see shortly. Sys.argv[0] is always&nbsp;
+the file name, 614-command.py in this case. The&nbsp;&nbsp;
+
+00:01:39.320 --> 00:01:51.280
+filename that we will read is set to sys.argv[1]&nbsp;
+on line 3. On line 4, we have a print statement&nbsp;&nbsp;
+
+00:01:51.280 --> 00:01:59.960
+acknowledging the specified file name. Then, on&nbsp;
+lines 6 thorugh 8, we have a with statement that&nbsp;&nbsp;
+
+00:01:59.960 --> 00:02:08.680
+opens and reads the file. To run this file, I will&nbsp;
+switch to a command prompt where I have already&nbsp;&nbsp;
+
+00:02:08.680 --> 00:02:27.640
+navigated to the folder containing these files. I&nbsp;
+will type python 614-command.py 614-command.txt.&nbsp;&nbsp;
+
+00:02:27.640 --> 00:02:36.360
+614-command.py is system argument 0, or sys.argv&nbsp;
+0, as again, this is the file we are working with.&nbsp;&nbsp;
+
+00:02:36.360 --> 00:02:46.120
+614-command.txt is system argument 1, or sys.argv&nbsp;
+1, the file that is being opened and read. I will&nbsp;&nbsp;
+
+00:02:46.120 --> 00:02:56.440
+select the Enter key on the keyboard, and we see&nbsp;
+both the acknowledgment message and the contents&nbsp;&nbsp;
+
+00:02:56.440 --> 00:03:05.960
+of the text file used in this command. We have&nbsp;
+looked at a few libraries over these last several&nbsp;&nbsp;
+
+00:03:05.960 --> 00:03:12.960
+topics. This group of exam objectives does not&nbsp;
+call for analyzing code, so this review project&nbsp;&nbsp;
+
+00:03:12.960 --> 00:03:20.600
+will have you finish a code example in progress&nbsp;
+instead of doing that. Use the 614-analyze&nbsp;&nbsp;
+
+00:03:20.600 --> 00:03:26.440
+file as your source, and use the Review 6.4&nbsp;
+exercise in your project workbook to answer&nbsp;&nbsp;
+
+00:03:26.440 --> 00:03:33.160
+the questions related to the file. I will reveal&nbsp;
+the answers to those questions in the next video.
+

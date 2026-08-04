@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.080 --> 00:00:06.440
+Whereas integers are whole numbers, floating&nbsp;
+numbers, often referred to as shorts,&nbsp;&nbsp;
+
+00:00:06.440 --> 00:00:13.600
+are numbers with decimals. In the code example&nbsp;
+here, 113-numbers, the multiplier variable on&nbsp;&nbsp;
+
+00:00:13.600 --> 00:00:20.920
+line 2 is a float data type as it contains&nbsp;
+a decimal point. Identifying integers versus&nbsp;&nbsp;
+
+00:00:20.920 --> 00:00:27.520
+floating decimals is easy, as we all look for&nbsp;
+is a decimal point. One facet of any programming&nbsp;&nbsp;
+
+00:00:27.520 --> 00:00:33.600
+language to know to get accurate calculations is&nbsp;
+whether performing arithmetic with an integer and&nbsp;&nbsp;
+
+00:00:33.600 --> 00:00:40.960
+a float returns a float or an integer. On line&nbsp;
+4, I will add a print statement to add these&nbsp;&nbsp;
+
+00:00:40.960 --> 00:00:52.160
+two variables. I will type print, and then within&nbsp;
+parentheses, number_of_tries plus multiplier and&nbsp;&nbsp;
+
+00:00:52.160 --> 00:01:06.560
+then I will run the code. We get a float. Next,&nbsp;
+I will change the operator to multiplication.&nbsp;&nbsp;
+
+00:01:06.560 --> 00:01:13.800
+We still get a float. The real test is division.&nbsp;
+I will change the operator to division and rerun&nbsp;&nbsp;
+
+00:01:13.800 --> 00:01:27.160
+this code. Even though three divided by 1.5&nbsp;
+returns a whole number, 2, it still represents&nbsp;&nbsp;
+
+00:01:27.160 --> 00:01:34.400
+a float. What we have seen adds to the notion&nbsp;
+that Python is a very user-friendly language,&nbsp;&nbsp;
+
+00:01:34.400 --> 00:01:39.520
+as many older programming languages return&nbsp;
+integers when using an integer and a float in&nbsp;&nbsp;
+
+00:01:39.520 --> 00:01:45.920
+a calculation. When building games in Python&nbsp;
+or any other language, when using numbers,&nbsp;&nbsp;
+
+00:01:45.920 --> 00:01:52.440
+take a moment to determine whether you need&nbsp;
+numbers to be integers or floats. For games&nbsp;&nbsp;
+
+00:01:52.440 --> 00:01:59.840
+with scores, integers are likely. But for games&nbsp;
+involving money, you probably need floats.
+

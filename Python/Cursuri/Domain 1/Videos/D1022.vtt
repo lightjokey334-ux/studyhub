@@ -1,0 +1,119 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.130 --> 00:00:06.640
+The next group of operators to look at sequencing
+for is the logical group of operators.
+
+00:00:06.640 --> 00:00:10.430
+Within this group, there is an order of operations
+we need to make sure we understand.
+
+00:00:10.430 --> 00:00:15.230
+I will cover that part first, and then we
+will slot this group of operators against
+
+00:00:15.230 --> 00:00:19.930
+the two types we have already covered: assignment
+and comparison.
+
+00:00:19.930 --> 00:00:24.960
+I have a code example in this 133-logical
+file for a logical game situation where one
+
+00:00:24.960 --> 00:00:30.890
+needs to unlock a level and make a target
+score to get a message that a goal has been
+
+00:00:30.890 --> 00:00:32.000
+met.
+
+00:00:32.000 --> 00:00:37.680
+There are three logical keywords in use in
+Python: not, and, and or.
+
+00:00:37.680 --> 00:00:40.020
+Take a look at the if statement on line 4.
+
+00:00:40.020 --> 00:00:45.340
+We will cover if statements elsewhere in the
+course but focus on the logical keywords here.
+
+00:00:45.340 --> 00:00:53.431
+If they have not unlocked a level or their
+score is less than the target score, they
+
+00:00:53.431 --> 00:00:57.640
+will see a message that they still have goals
+to make.
+
+00:00:57.640 --> 00:01:01.699
+Otherwise, they will see that the goals are
+met.
+
+00:01:01.699 --> 00:01:05.790
+In order of operations, not always comes before
+and.
+
+00:01:05.790 --> 00:01:08.280
+And comes before or.
+
+00:01:08.280 --> 00:01:09.960
+Why is that important?
+
+00:01:09.960 --> 00:01:11.890
+Think of it this way.
+
+00:01:11.890 --> 00:01:20.890
+We need to know whether a condition is not
+something before we can compare it with other
+
+00:01:20.890 --> 00:01:22.940
+conditions.
+
+00:01:22.940 --> 00:01:29.860
+In this context, we have to know if they unlocked
+a level before we can compare it to the condition
+
+00:01:29.860 --> 00:01:32.390
+of the score.
+
+00:01:32.390 --> 00:01:39.000
+For the test variables on lines 1 and 2, we
+see that they unlocked a level, but the score
+
+00:01:39.000 --> 00:01:43.939
+is less than the target score, so the goals
+have not been met.
+
+00:01:43.939 --> 00:01:50.190
+When we run this code, that’s the message
+we get.
+
+00:01:50.190 --> 00:02:00.820
+To see the importance of not, I will reverse
+the criteria in the if statement.
+
+00:02:00.820 --> 00:02:07.390
+Upon rerunning the code, we get the same result.
+
+00:02:07.390 --> 00:02:14.690
+Not takes precedence because it only needs
+to look at one value and deem it true or false.
+
+00:02:14.690 --> 00:02:21.540
+A logical keyword such as and or or needs
+two values to compare.
+
+00:02:21.540 --> 00:02:27.180
+In the order of operator precedence, comparison
+comes before logical, and logical comes before
+
+00:02:27.180 --> 00:02:31.790
+assignment since assignment is last in the
+order of preferences and not any part of any
+
+00:02:31.790 --> 00:02:33.529
+comparison or logical statement.
+

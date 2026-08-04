@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.000 --> 00:00:05.690
+We are now in the section on complex computing
+problems and will look at three categories
+
+00:00:05.690 --> 00:00:13.180
+of problems and solutions: math, datetime,
+and random. We will start with math, and in
+
+00:00:13.180 --> 00:00:22.110
+this code file, 621-math, I have imported
+the math module and declared two variables,
+
+00:00:22.110 --> 00:00:27.420
+one as a positive number with decimals and
+the other as a negative number. Because there
+
+00:00:27.420 --> 00:00:33.130
+are so many math functions to cover in this
+topic, we will take a break from gaming and
+
+00:00:33.130 --> 00:00:39.970
+focus solely on the purpose of teaching these
+math functions. On line 6, I have the fabs
+
+00:00:39.970 --> 00:00:48.230
+method applied to y. Fabs means floating absolute,
+and absolute is the absolute distance from
+
+00:00:48.230 --> 00:00:57.340
+zero, so when I run this, a positive number
+with a decimal should be returned, and indeed,
+
+00:00:57.340 --> 00:01:04.049
+that is what we have. One positive thing
+to keep in mind: all these functions are part
+
+00:01:04.049 --> 00:01:11.220
+of Python's standard library, so no additional
+installations are required to use them. I
+
+00:01:11.220 --> 00:01:17.970
+will uncomment and comment code as needed
+as I run these other math functions. The next
+
+00:01:17.970 --> 00:01:24.979
+two math functions are ceil and floor, on
+lines 8 and 10. Ceil returns the next integer
+
+00:01:24.979 --> 00:01:32.301
+up after a decimal number, and floor returns
+an integer without a decimal number. With
+
+00:01:32.301 --> 00:01:38.479
+that knowledge, what do you think the results
+will be when I run these two lines of code?
+
+00:01:38.479 --> 00:01:50.690
+If you said 4 and 3, you are correct. 3.33
+has a ceiling of 4 and a floor of 3. If I
+
+00:01:50.690 --> 00:01:58.520
+were to switch the x's to y's and rerun this,
+the result would be -12 for both because no
+
+00:01:58.520 --> 00:02:05.939
+decimal number affects this integer. I will
+leave these two statements uncommented for
+
+00:02:05.939 --> 00:02:19.561
+now and uncomment lines 12 and 14 for the
+trunc function. I will set y to -12.5. The
+
+00:02:19.561 --> 00:02:25.210
+trunc function is similar to ceil and floor,
+but let's run this and see if we can spot
+
+00:02:25.210 --> 00:02:32.020
+the differences among these functions. With
+x, trunc returns the same result as the floor
+
+00:02:32.020 --> 00:02:41.159
+function. With y, trunc returns the same value
+as for ceil, but floor is -13. I will change
+
+00:02:41.159 --> 00:02:50.690
+the ceil and the floor back to evaluating
+x. With x, trunc returns the same value as
+
+00:02:50.690 --> 00:02:56.690
+floor. Here are the differences among these
+functions: ceil and floor evaluate the number,
+
+00:02:56.690 --> 00:03:03.330
+not whether it is positive or negative. Trunc
+returns the next highest positive number,
+
+00:03:03.330 --> 00:03:12.379
+like 4 for x, and the next lowest negative
+number, like -13 for y.  In other words,
+
+00:03:12.379 --> 00:03:16.700
+trunc truncates towards zero, not necessarily
+toward the next highest positive or lowest
+
+00:03:16.700 --> 00:03:27.769
+negative number. Speaking of 13, I will set
+y to -13 and x to 3 for the next function,
+
+00:03:27.769 --> 00:03:39.080
+fmod, on line 16. Fmod returns the modulus,
+what we know as a remainder, from dividing
+
+00:03:39.080 --> 00:03:48.300
+two numbers. What do you think the remainder
+will be for dividing -13 by 3? I am thinking
+
+00:03:48.300 --> 00:03:59.209
+-1. Let's run this code, and the result is
+-1 as a float, which is what the f represents
+
+00:03:59.209 --> 00:04:08.900
+in the function. For those of you into statistical
+functions, the frexp function, on line 18,
+
+00:04:08.900 --> 00:04:15.180
+returns the mantissa, the fractional part
+of a logarithm, and the exponent of a number.
+
+00:04:15.180 --> 00:04:19.910
+I will run the frexp function for x and see
+its mantissa and exponent.
+

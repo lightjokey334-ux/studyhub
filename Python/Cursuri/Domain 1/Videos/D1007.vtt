@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.040 --> 00:00:07.480
+The final data type we will cover for now is the&nbsp;
+bool data type, short for Boolean. Boolean values&nbsp;&nbsp;
+
+00:00:07.480 --> 00:00:15.840
+are either true or false or, in binary terms,&nbsp;
+1 or 0. I have a code example, 114-boolean,&nbsp;&nbsp;
+
+00:00:15.840 --> 00:00:24.680
+that shows a Boolean variable on line 1,&nbsp;
+char_life, which is set to True. Part of learning&nbsp;&nbsp;
+
+00:00:24.680 --> 00:00:30.800
+a programming language is learning the nuances&nbsp;
+of its syntax. In most programming languages,&nbsp;&nbsp;
+
+00:00:30.800 --> 00:00:40.960
+the words true and false represent Boolean values.&nbsp;
+Notice that the True and False values on lines 1&nbsp;&nbsp;
+
+00:00:40.960 --> 00:00:50.160
+and 3 are title-cased, meaning they start with&nbsp;
+capital letters. Python is case-sensitive in&nbsp;&nbsp;
+
+00:00:50.160 --> 00:00:56.280
+many spots, including this one. It is important&nbsp;
+to learn these characteristics to use the correct&nbsp;&nbsp;
+
+00:00:56.280 --> 00:01:04.320
+casing for Boolean variables and avoid errors when&nbsp;
+trying to run code containing them. To see the&nbsp;&nbsp;
+
+00:01:04.320 --> 00:01:10.720
+results of this code, which returns a value based&nbsp;
+on the status of a character's life for a game,&nbsp;&nbsp;
+
+00:01:10.720 --> 00:01:21.520
+I will run the code, and the code works,&nbsp;
+showing that I am still in the game. However,&nbsp;&nbsp;
+
+00:01:21.520 --> 00:01:35.000
+it fails if I change True to lowercase true and&nbsp;
+try to rerun this code. We do see a message asking&nbsp;&nbsp;
+
+00:01:35.000 --> 00:01:42.800
+us if we meant to use the title-cased version&nbsp;
+of the word, True, at least. To finish this&nbsp;&nbsp;
+
+00:01:42.800 --> 00:01:50.440
+unit on data types and operators, I will switch&nbsp;
+to this file, 114-analyze, and here we have five&nbsp;&nbsp;
+
+00:01:50.440 --> 00:01:58.040
+print statements that display types for various&nbsp;
+pieces of data. Go to your workbook and do the&nbsp;&nbsp;
+
+00:01:58.040 --> 00:02:06.560
+“Review 1.1” project to identify the data types&nbsp;
+of each piece of data as a string, integer, float,&nbsp;&nbsp;
+
+00:02:06.560 --> 00:02:14.280
+or boolean. In the next video, we will reveal&nbsp;
+and discuss the answers to the workbook project.
+

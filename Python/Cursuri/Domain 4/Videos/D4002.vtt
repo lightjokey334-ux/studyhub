@@ -1,0 +1,116 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:05.560
+Many programming languages have flexible rules&nbsp;
+concerning the use of whitespace, whether within&nbsp;&nbsp;
+
+00:00:05.560 --> 00:00:11.920
+the syntax of the code itself or for separating&nbsp;
+logical sections of a program. However, each&nbsp;&nbsp;
+
+00:00:11.920 --> 00:00:18.800
+language also has its own best practices for using&nbsp;
+whitespace effectively. In Python, for instance,&nbsp;&nbsp;
+
+00:00:18.800 --> 00:00:24.680
+whitespace isn't just about indentation or syntax.&nbsp;
+It's also used to separate different code blocks&nbsp;&nbsp;
+
+00:00:24.680 --> 00:00:31.680
+or functions that perform distinct operations,&nbsp;
+enhancing readability and maintainability. In&nbsp;&nbsp;
+
+00:00:31.680 --> 00:00:39.400
+this code example, 412-white_space, we see some&nbsp;
+inconsistency in spacing within the code. Ideally,&nbsp;&nbsp;
+
+00:00:39.400 --> 00:00:43.920
+you want code to read more like a natural&nbsp;
+language sentence, with spacing between words&nbsp;&nbsp;
+
+00:00:43.920 --> 00:00:50.240
+but not necessarily near punctuation. For&nbsp;
+example, look at lines 1 and 2. There is no&nbsp;&nbsp;
+
+00:00:50.240 --> 00:00:56.720
+space before the equal sign, but there is after&nbsp;
+the equal sign. To be consistent and readable,&nbsp;&nbsp;
+
+00:00:56.720 --> 00:01:03.320
+we should have a space before and after the&nbsp;
+equal sign, which I will rectify here. Often,&nbsp;&nbsp;
+
+00:01:03.320 --> 00:01:08.960
+whitespace or a lack thereof will not affect&nbsp;
+how code will run. However, there are exceptions&nbsp;&nbsp;
+
+00:01:08.960 --> 00:01:15.720
+to that mantra in any programming language, and&nbsp;
+Python is no exception. I will run this code, and&nbsp;&nbsp;
+
+00:01:15.720 --> 00:01:24.040
+we will see an unterminated string literal error,&nbsp;
+which usually means there is a space that does not&nbsp;&nbsp;
+
+00:01:24.040 --> 00:01:30.120
+belong there or there is missing punctuation, like&nbsp;
+a set of quotation marks. The reason for the error&nbsp;&nbsp;
+
+00:01:30.120 --> 00:01:37.200
+is that, for f-strings, there cannot be a space&nbsp;
+between the f and the opening quotation mark. I&nbsp;&nbsp;
+
+00:01:37.200 --> 00:01:46.600
+will delete that space, and when we run the code,&nbsp;
+we see that we failed to close a quotation mark.&nbsp;&nbsp;
+
+00:01:46.600 --> 00:01:54.400
+I will close it, run the code again. And now, the&nbsp;
+code now runs without error. While the importance&nbsp;&nbsp;
+
+00:01:54.400 --> 00:02:02.280
+of whitespace is mostly tied to readability,&nbsp;
+incorrect whitespacing can lead to syntax errors,&nbsp;&nbsp;
+
+00:02:02.280 --> 00:02:08.880
+which causes code not to run properly. There are&nbsp;
+other whitespace considerations in Python. The&nbsp;&nbsp;
+
+00:02:08.880 --> 00:02:14.560
+role of whitespace in Python isn't confined to&nbsp;
+indentation or single lines of code; it extends&nbsp;&nbsp;
+
+00:02:14.560 --> 00:02:22.880
+to separating logical sections of a program for&nbsp;
+better readability and maintenance. For example,&nbsp;&nbsp;
+
+00:02:22.880 --> 00:02:26.680
+it is a common practice to leave one or two&nbsp;
+blank lines between different code blocks&nbsp;&nbsp;
+
+00:02:26.680 --> 00:02:35.520
+or functions that perform distinct operations.&nbsp;
+This visual separation makes it easier to scan&nbsp;&nbsp;
+
+00:02:35.520 --> 00:02:44.200
+the code and understand its organization.&nbsp;
+According to Python's style guide, PEP 8,&nbsp;&nbsp;
+
+00:02:44.200 --> 00:02:49.760
+two blank lines should precede a function&nbsp;
+definition and class definition, and one&nbsp;&nbsp;
+
+00:02:49.760 --> 00:02:56.080
+blank line should separate different code blocks&nbsp;
+within a function that carry out different tasks.&nbsp;&nbsp;
+
+00:02:56.080 --> 00:03:01.320
+These additional whitespace considerations serve&nbsp;
+to make the code more readable and maintainable,&nbsp;&nbsp;
+
+00:03:01.320 --> 00:03:07.800
+which is important in collaborative environments&nbsp;
+or when revisiting your own code after some time.
+

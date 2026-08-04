@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:02.360 --> 00:00:06.800
+In many apps you develop, you may need to&nbsp;
+capture input from the person running the&nbsp;&nbsp;
+
+00:00:06.800 --> 00:00:11.960
+app. This input can be as simple as asking for&nbsp;
+a name to as complex as answering questions in&nbsp;&nbsp;
+
+00:00:11.960 --> 00:00:18.480
+a trivia game with code and then determining what&nbsp;
+to do with that captured input. For our first use&nbsp;&nbsp;
+
+00:00:18.480 --> 00:00:25.240
+of the input keyword, we will go with the asking&nbsp;
+for a name example, as seen here in the 321-input&nbsp;&nbsp;
+
+00:00:25.240 --> 00:00:33.360
+file. I have a very simple two-line code example,&nbsp;
+and on the first line, we see the input function,&nbsp;&nbsp;
+
+00:00:33.360 --> 00:00:40.560
+which has, in quotes, a prompt, in this case,&nbsp;
+asking for a first name. Notice that this input&nbsp;&nbsp;
+
+00:00:40.560 --> 00:00:47.280
+is stored inside a player name variable.&nbsp;
+Typically, one will want to save an input&nbsp;&nbsp;
+
+00:00:47.280 --> 00:00:53.760
+for later use, hence the reason for capturing&nbsp;
+this information into a variable. In gaming,&nbsp;&nbsp;
+
+00:00:53.760 --> 00:01:01.000
+a game often wants a player's name at the start&nbsp;
+of a game. Line 2 shows a print statement showing&nbsp;&nbsp;
+
+00:01:01.000 --> 00:01:10.640
+a welcome message and the player’s name. I will&nbsp;
+run this code. And I am prompted to enter my name,&nbsp;&nbsp;
+
+00:01:10.640 --> 00:01:19.400
+which I will, and then select the Enter&nbsp;
+key on the keyboard. The code works,&nbsp;&nbsp;
+
+00:01:19.400 --> 00:01:27.000
+but do you notice two slight adjustments&nbsp;
+we should make to this presentation? First,&nbsp;&nbsp;
+
+00:01:27.000 --> 00:01:34.400
+we should put a space between the prompt and the&nbsp;
+place where a name is entered. I will add that&nbsp;&nbsp;
+
+00:01:34.400 --> 00:01:46.160
+space within the quotes on line 1. Next, we need a&nbsp;
+comma between the welcome greeting and the name on&nbsp;&nbsp;
+
+00:01:46.160 --> 00:01:53.160
+line 2. Sometimes, code adjustments are merely&nbsp;
+cosmetic adjustments to literal text. I will&nbsp;&nbsp;
+
+00:01:53.160 --> 00:02:11.600
+make that adjustment, rerun the code, and enter&nbsp;
+my name; the output looks good now. Remember,&nbsp;&nbsp;
+
+00:02:11.600 --> 00:02:17.400
+automatic spacing only happens when concatenating&nbsp;
+values using a comma, which explains why we had a&nbsp;&nbsp;
+
+00:02:17.400 --> 00:02:28.640
+space between the welcome message and&nbsp;
+the name, but not after the prompt.
+

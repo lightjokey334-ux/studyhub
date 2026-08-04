@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.000 --> 00:00:07.280
+How, then, do we slice the last four characters&nbsp;
+of this text? Do you remember what we did in the&nbsp;&nbsp;
+
+00:00:07.280 --> 00:00:12.760
+indexing topic to get something from the end&nbsp;
+of a list? We used a minus sign. Let’s try&nbsp;&nbsp;
+
+00:00:12.760 --> 00:00:20.760
+that here. I will copy the code from line two&nbsp;
+to line four, then make the first part of the&nbsp;&nbsp;
+
+00:00:20.760 --> 00:00:29.160
+slice a minus four and delete the text after the&nbsp;
+colon. This iteration of a slice is saying slice&nbsp;&nbsp;
+
+00:00:29.160 --> 00:00:37.800
+four characters, starting at the end of the text.&nbsp;
+I will rerun the code, and the last result brings&nbsp;&nbsp;
+
+00:00:37.800 --> 00:00:45.880
+us the four characters at the end of the serial&nbsp;
+number. Before we go any further, you may wonder,&nbsp;&nbsp;
+
+00:00:45.880 --> 00:00:51.400
+why is the number before the colon? Here’s what&nbsp;
+I think to remember this, compared to the first&nbsp;&nbsp;
+
+00:00:51.400 --> 00:00:59.440
+slice. This slice mirrors this slice because&nbsp;
+we have a negative number here. Think of it as&nbsp;&nbsp;
+
+00:00:59.440 --> 00:01:06.360
+starting from the end, the right side, and working&nbsp;
+back four characters. The last type of slice,&nbsp;&nbsp;
+
+00:01:06.360 --> 00:01:11.720
+to slice characters in the middle of a value,&nbsp;
+may take a little practice. We want to slice the&nbsp;&nbsp;
+
+00:01:11.720 --> 00:01:21.000
+characters in the middle, 2222-3333. I will start&nbsp;
+another print statement for the serial number on&nbsp;&nbsp;
+
+00:01:21.000 --> 00:01:27.160
+line 5 and add the square brackets in anticipation&nbsp;
+of the slice. What character do you think we need&nbsp;&nbsp;
+
+00:01:27.160 --> 00:01:39.120
+to start with? Remember, Python is zero-based,&nbsp;
+so if we count 0, 1, 2, 3, 4, 5, we need to start&nbsp;&nbsp;
+
+00:01:39.120 --> 00:01:47.400
+with character 5, the first two. The number after&nbsp;
+the colon represents the character number to end&nbsp;&nbsp;
+
+00:01:47.400 --> 00:01:54.960
+the slice. All you need to figure out is this:&nbsp;
+how many characters do we need? We have eight&nbsp;&nbsp;
+
+00:01:54.960 --> 00:02:02.440
+numbers and a dash, making nine characters.&nbsp;
+We need to add nine to the first number, five,&nbsp;&nbsp;
+
+00:02:02.440 --> 00:02:13.720
+to get 14. I will rerun this code, and the last&nbsp;
+result gives us the characters we want. Rather&nbsp;&nbsp;
+
+00:02:13.720 --> 00:02:19.080
+than try to count what character you need for&nbsp;
+the ending point, add the number you need to the&nbsp;&nbsp;
+
+00:02:19.080 --> 00:02:25.200
+first number in the slice, and you can easily&nbsp;
+slice characters out of the middle of a value.
+

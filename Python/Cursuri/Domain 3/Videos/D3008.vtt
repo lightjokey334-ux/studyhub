@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.240 --> 00:00:07.520
+The code we have seen so far to work with files&nbsp;
+is efficient but can sometimes seem cumbersome.&nbsp;&nbsp;
+
+00:00:07.520 --> 00:00:12.320
+We can consolidate the amount of code we have&nbsp;
+to write using the with statement, which opens&nbsp;&nbsp;
+
+00:00:12.320 --> 00:00:18.160
+a file, performs an action on a file, and then&nbsp;
+closes that file without having to tell Python to&nbsp;&nbsp;
+
+00:00:18.160 --> 00:00:24.280
+close the file. Having a file close ensures that&nbsp;
+the memory space the file uses will be recovered,&nbsp;&nbsp;
+
+00:00:24.280 --> 00:00:30.240
+thus helping a device run more efficiently and&nbsp;
+reducing the chance of data corruption. In this&nbsp;&nbsp;
+
+00:00:30.240 --> 00:00:35.880
+318-with code file, we have the same first four&nbsp;
+lines of code as we did for the video on writing&nbsp;&nbsp;
+
+00:00:35.880 --> 00:00:45.640
+to a file. Starting on line 6, I am going to&nbsp;
+rewrite this code, using the with keyword, and you&nbsp;&nbsp;
+
+00:00:45.640 --> 00:00:57.240
+will see the difference in the code efficiency. I&nbsp;
+will type with, copy the open statement from line&nbsp;&nbsp;
+
+00:00:57.240 --> 00:01:18.920
+1 to here, add the words as message, and then a&nbsp;
+colon. I will make sure the next line is indented&nbsp;&nbsp;
+
+00:01:18.920 --> 00:01:24.600
+as with is a block of code, and then I will copy&nbsp;
+the two write statements to lines 7 and 8 and&nbsp;&nbsp;
+
+00:01:24.600 --> 00:01:49.520
+ensure both are indented. Then, I will comment&nbsp;
+out the code on lines 1 through 4. On line 9,&nbsp;&nbsp;
+
+00:01:49.520 --> 00:02:05.649
+I will add a print statement to tell us the file&nbsp;
+has been created. Then I will run this code,&nbsp;&nbsp;
+
+00:02:05.649 --> 00:02:09.640
+and the file has been created. The file management&nbsp;
+section is complete, so it is time for a code&nbsp;&nbsp;
+
+00:02:09.640 --> 00:02:19.760
+analysis exercise. This 318-analysis file has the&nbsp;
+same code we just worked on, with one addition:&nbsp;&nbsp;
+
+00:02:19.760 --> 00:02:27.120
+a print statement to read the code on line 10.&nbsp;
+Use the Review 3.1 exercise in the workbook to&nbsp;&nbsp;
+
+00:02:27.120 --> 00:02:35.280
+answer questions on this code. In the next video,&nbsp;
+we will discuss the answers to those questions.
+

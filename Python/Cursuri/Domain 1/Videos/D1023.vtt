@@ -1,0 +1,194 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.420 --> 00:00:07.589
+Order of operations is most prevalent in arithmetic,
+and, as a result, many logic errors, meaning
+
+00:00:07.589 --> 00:00:12.769
+errors in intended calculations, occur with
+arithmetic.
+
+00:00:12.769 --> 00:00:16.379
+Before we look at a code example, let’s
+ensure we understand the order of operations
+
+00:00:16.379 --> 00:00:18.310
+related to arithmetic.
+
+00:00:18.310 --> 00:00:20.930
+The order is as follows:
+
+00:00:20.930 --> 00:00:21.930
+Parentheses
+
+00:00:21.930 --> 00:00:23.310
+Exponents
+
+00:00:23.310 --> 00:00:24.310
+Multiplication
+
+00:00:24.310 --> 00:00:29.070
+Division, including Modulus, which is a remainder
+after division
+
+00:00:29.070 --> 00:00:30.300
+Addition
+
+00:00:30.300 --> 00:00:31.949
+Subtraction
+
+00:00:31.949 --> 00:00:38.870
+A common mnemonic used to remember the order
+of operations is Please Excuse My Dear Aunt
+
+00:00:38.870 --> 00:00:47.800
+Sally for Parentheses, Exponents, Multiplication,
+Division, Addition, and Subtraction.
+
+00:00:47.800 --> 00:00:51.960
+It is very important to ensure we understand
+the order of operations to avoid logic problems
+
+00:00:51.960 --> 00:00:54.230
+in any calculations within our apps.
+
+00:00:54.230 --> 00:00:58.930
+Let’s look at examples of how the order
+of operations works with arithmetic.
+
+00:00:58.930 --> 00:01:08.290
+Here is a code example, 134-arithmetic, where
+the total score should be the base score plus
+
+00:01:08.290 --> 00:01:15.140
+the bonus amount, with that total multiplied
+by a person’s rank within a game.
+
+00:01:15.140 --> 00:01:17.700
+That formula is on line 5.
+
+00:01:17.700 --> 00:01:26.180
+We are looking for a total score of 13,500
+on paper, as the base plus the bonus is 4500,
+
+00:01:26.180 --> 00:01:27.490
+and the rank is 3.
+
+00:01:27.490 --> 00:01:33.189
+But let’s run this code and see what the
+result is, as the calculation is currently
+
+00:01:33.189 --> 00:01:34.189
+built.
+
+00:01:34.189 --> 00:01:41.150
+The result is only 5500, not 13,500.
+
+00:01:41.150 --> 00:01:48.070
+In a game situation, a player would not be
+happy with a much lower score than what is
+
+00:01:48.070 --> 00:01:49.070
+expected.
+
+00:01:49.070 --> 00:01:53.930
+Let’s apply the order of operations to the
+formula on line 5.
+
+00:01:53.930 --> 00:01:59.789
+The perceived problem with this formula is
+the assumption that math always occurs left
+
+00:01:59.789 --> 00:02:00.789
+to right.
+
+00:02:00.789 --> 00:02:08.850
+In this case, one might think that the base
+is added to the bonus, totaling 4500, and
+
+00:02:08.850 --> 00:02:15.530
+then multiplied by the rank, 3, to get to
+13500.
+
+00:02:15.530 --> 00:02:21.910
+In arithmetic, the order of operations dictates
+that multiplication occurs before addition.
+
+00:02:21.910 --> 00:02:29.690
+Thus, the bonus is multiplied by the rank
+first, giving us 1500, and then added to the
+
+00:02:29.690 --> 00:02:36.080
+base score, 4000, giving us the 5500 result
+we see.
+
+00:02:36.080 --> 00:02:38.930
+How do we fix the formula, then?
+
+00:02:38.930 --> 00:02:45.640
+Do you remember what the first priority is
+in the order of operations?
+
+00:02:45.640 --> 00:02:49.470
+If you said parentheses, you are correct.
+
+00:02:49.470 --> 00:02:54.240
+We want the score to be calculated first,
+so I will put parentheses around base plus
+
+00:02:54.240 --> 00:02:56.370
+bonus.
+
+00:02:56.370 --> 00:03:00.959
+That part of the score will calculate first
+and then multiply by the rank to get the total
+
+00:03:00.959 --> 00:03:01.959
+score.
+
+00:03:01.959 --> 00:03:05.340
+Let’s rerun the code.
+
+00:03:05.340 --> 00:03:07.780
+The formula now works as intended.
+
+00:03:07.780 --> 00:03:13.080
+A good practice with any formula with multiple
+operators is to figure out what must be done
+
+00:03:13.080 --> 00:03:21.200
+first and put that part of the code in parentheses,
+even if the parentheses are unnecessary.
+
+00:03:21.200 --> 00:03:26.629
+We want to convey to others the top priorities
+within a calculation.
+
+00:03:26.629 --> 00:03:32.570
+Finally, compared to the other operator types
+we have covered so far: assignment, comparison,
+
+00:03:32.570 --> 00:03:35.900
+and logical, arithmetic takes priority.
+
+00:03:35.900 --> 00:03:36.920
+Why?
+
+00:03:36.920 --> 00:03:41.120
+Think of it this way: if we had two calculations
+to compare to see if one is greater than the
+
+00:03:41.120 --> 00:03:46.010
+other, wouldn’t we need to do the calculations
+first?
+
+00:03:46.010 --> 00:03:50.330
+We would, and that’s why arithmetic is the
+top priority among the different types of
+
+00:03:50.330 --> 00:03:54.750
+operators used in Python and other programming
+languages.
+

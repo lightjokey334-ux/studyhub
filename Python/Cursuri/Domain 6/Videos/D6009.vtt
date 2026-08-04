@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.000 --> 00:00:09.800
+Let’s try an uppercase Y, as in many programming&nbsp;
+languages, uppercase gets us a bigger format. I&nbsp;&nbsp;
+
+00:00:09.800 --> 00:00:19.960
+will rerun the code, and we have the format&nbsp;
+we want for the date. For time, the thinking&nbsp;&nbsp;
+
+00:00:19.960 --> 00:00:27.560
+needs to be a little different. Most, but not&nbsp;
+all time formats use uppercase letters. I will&nbsp;&nbsp;
+
+00:00:27.560 --> 00:00:42.320
+add a space to the formatted date and then type&nbsp;
+percent capital H colon percent capital M. I will&nbsp;&nbsp;
+
+00:00:42.320 --> 00:00:55.400
+rerun the code and the time worked. Note that H&nbsp;
+represents 24-hour time. An uppercase I represents&nbsp;&nbsp;
+
+00:00:55.400 --> 00:01:01.520
+12 hour time, in which case you would also need&nbsp;
+a percent lowercase P to represent AM or PM,&nbsp;&nbsp;
+
+00:01:01.520 --> 00:01:09.160
+as I am doing here. At times, you may want the day&nbsp;
+of the week to display. Many programming languages&nbsp;&nbsp;
+
+00:01:09.160 --> 00:01:15.080
+have a built-in weekday function. Let’s see if&nbsp;
+Python does. I will add a print statement to line&nbsp;&nbsp;
+
+00:01:15.080 --> 00:01:25.080
+4 to indicate the day of the week and then the&nbsp;
+current_time, and I will add the weekday method,&nbsp;&nbsp;
+
+00:01:25.080 --> 00:01:36.920
+with parentheses, to the statement. In running&nbsp;
+this code, we see a number for the weekday,&nbsp;&nbsp;
+
+00:01:36.920 --> 00:01:42.560
+with Monday being 0, Tuesday being 1, and so&nbsp;
+forth. In many cases, one would think we need an&nbsp;&nbsp;
+
+00:01:42.560 --> 00:01:50.440
+if statement to parse out this number and return&nbsp;
+a day. Oh, but wait. The strftime method has a&nbsp;&nbsp;
+
+00:01:50.440 --> 00:01:59.840
+symbol we can use to get the weekday. I will&nbsp;
+copy the print statement on line 4 to line 5,&nbsp;&nbsp;
+
+00:02:01.400 --> 00:02:16.760
+change the method used to strftime, and put&nbsp;
+%uppercase A in the parentheses inside of&nbsp;&nbsp;
+
+00:02:16.760 --> 00:02:28.720
+quotes. I will then rerun the code, and we see&nbsp;
+the day of the week perfectly. One of the vital&nbsp;&nbsp;
+
+00:02:28.720 --> 00:02:33.160
+programming tenets to learn about any language&nbsp;
+is retrieving the current date and then knowing&nbsp;&nbsp;
+
+00:02:33.160 --> 00:02:38.520
+how to format a date. These skills allow one&nbsp;
+to display dates when needed and use dates in&nbsp;&nbsp;
+
+00:02:38.520 --> 00:02:44.240
+calculations when required, such as for figuring&nbsp;
+out how long a game took or, outside of gaming,&nbsp;&nbsp;
+
+00:02:44.240 --> 00:02:50.800
+when tasks are due or the time it took to&nbsp;
+complete a job or tasks within that job.
+

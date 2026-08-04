@@ -1,0 +1,110 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:02.820 --> 00:00:05.650
+You may have a situation where you have to
+print multiple rows of players, almost in
+
+00:00:05.650 --> 00:00:16.010
+a tab or table format, and you want complete
+control of the spacing within the print statement.
+
+00:00:16.010 --> 00:00:25.825
+I will start another f-string on line 8, and
+this time, I will print the player name and
+
+00:00:25.825 --> 00:00:26.825
+score.
+
+00:00:26.825 --> 00:00:33.200
+Then, I will add a colon, a less than symbol,
+and 15 to the end of the player1 variable
+
+00:00:33.200 --> 00:00:39.090
+to indicate that I want that variable to take
+15 spaces and be left-aligned.
+
+00:00:39.090 --> 00:00:48.340
+I will rerun the code, and the last print
+statement formats the output as advertised.
+
+00:00:48.340 --> 00:00:54.079
+If I want the score to take 10 spaces and
+be right-aligned, what should I do here?
+
+00:00:54.079 --> 00:01:04.379
+How about we try a colon, greater than symbol,
+and 10 after the score variable.
+
+00:01:04.379 --> 00:01:16.780
+I will run the code, which seems to work,
+but to ensure it works, I will change the
+
+00:01:16.780 --> 00:01:22.980
+name and the score, rerun the code, and look.
+
+00:01:23.201 --> 00:01:29.109
+The spacing and alignment is consistent for
+the values in these two outputs.
+
+00:01:30.178 --> 00:01:40.130
+The last string format we are going to look
+at is akin to the printf function seen in
+
+00:01:40.130 --> 00:01:41.130
+other programming languages.
+
+00:01:41.130 --> 00:01:44.130
+Python doesn’t have a defined printf function,
+but, it can use a percent symbol along with
+
+00:01:44.130 --> 00:01:48.329
+a number and letter combination to define
+a specific format for text or a number.
+
+00:01:48.329 --> 00:02:00.200
+I will type, on line 9, print, and then placeholders
+for the Player1 and Score variables.
+
+00:02:00.200 --> 00:02:06.930
+Then, after each colon, I will add the exact
+format I want for each variable.
+
+00:02:06.930 --> 00:02:19.010
+I will type %1s after the colon for player1
+to indicate one space and a string.
+
+00:02:19.010 --> 00:02:29.840
+After the colon following score, I will type
+%.2f to indicate I want the score to show
+
+00:02:29.840 --> 00:02:34.570
+with two numbers after a decimal point.
+
+00:02:34.570 --> 00:02:39.810
+By the way, d indicates a whole number and
+f indicates a floating-point decimal.
+
+00:02:39.810 --> 00:02:45.989
+The question remains: how do we tell these
+placeholders to match up to the player1 and
+
+00:02:45.989 --> 00:02:47.010
+score variables?
+
+00:02:47.010 --> 00:03:00.120
+After the text, I will add a %, which in this
+context is known as the Modulo operator, and
+
+00:03:00.120 --> 00:03:09.461
+then the order of the variables I want in
+parentheses, those being player1 and score.
+
+00:03:09.461 --> 00:03:10.461
+Let’s run this code and see the results.
+
+00:03:10.461 --> 00:03:21.850
+The last line shows the formatted text as
+we wanted in the print statement on line 9.
+

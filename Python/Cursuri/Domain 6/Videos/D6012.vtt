@@ -1,0 +1,110 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.979 --> 00:00:05.279
+The workbook scenario called for having a
+person enter two numbers and then return a
+
+00:00:05.279 --> 00:00:11.160
+random calculation for addition, subtraction,
+or multiplication on the two numbers, using
+
+00:00:11.160 --> 00:00:14.460
+a specific format for the statements returned.
+
+00:00:14.460 --> 00:00:19.350
+Here is the code example I did to satisfy
+the need for the scenario: knowing I would
+
+00:00:19.350 --> 00:00:25.800
+need random numbers, the code on line 1 imports
+the random library.
+
+00:00:25.800 --> 00:00:34.490
+Lines 2 and 3 use inputs, converted to integers,
+to store two numbers in two variables.
+
+00:00:34.490 --> 00:00:44.100
+Then, on line 5, a function is defined using
+the two numbers inputted as arguments.
+
+00:00:44.100 --> 00:00:51.129
+On line 6, I use the randint method to get
+a random number between 1 and 3.
+
+00:00:51.129 --> 00:01:00.200
+Then, on lines 7 through 15, we have an if
+statement that checks the number and adds
+
+00:01:00.200 --> 00:01:08.390
+the numbers if the random number is 1, subtracts
+the numbers if the random number is 2, and,
+
+00:01:08.390 --> 00:01:15.930
+if the number is 3, as indicated with the
+else on line 13, the two numbers are multiplied.
+
+00:01:15.930 --> 00:01:22.960
+Regarding the print statements on lines 9,
+12, and 15, I used the comma to do all the
+
+00:01:22.960 --> 00:01:26.950
+concatenation so that I do not need to worry
+about spacing.
+
+00:01:26.950 --> 00:01:31.590
+You can also use an f-string format or string.format
+on these print statements to get the same
+
+00:01:31.590 --> 00:01:32.799
+effect.
+
+00:01:32.799 --> 00:01:38.409
+Lastly, I call the calculate function on line
+17.
+
+00:01:38.409 --> 00:01:51.579
+I will run this code a few times, and we see
+the calculations and the statements that we
+
+00:01:51.579 --> 00:01:52.579
+want.
+
+00:01:52.579 --> 00:01:57.219
+Again, there is more than one way to write
+the code necessary for this project.
+
+00:01:57.219 --> 00:02:02.369
+As we bring this course to a close, I recommend
+getting plenty of practice with the topics
+
+00:02:02.369 --> 00:02:04.520
+we covered in this course.
+
+00:02:04.520 --> 00:02:09.640
+Get plenty of practice looking at existing
+code and analyzing code to figure out what
+
+00:02:09.640 --> 00:02:13.630
+the code will do, as we have done many times
+in this course.
+
+00:02:13.630 --> 00:02:18.560
+Make code examples relate to something related
+to you, as we have for gaming examples in
+
+00:02:18.560 --> 00:02:19.989
+this course.
+
+00:02:19.989 --> 00:02:24.910
+Finally, take advantage of the practice tests
+and extra practice opportunities we have provided
+
+00:02:24.910 --> 00:02:26.450
+in this course.
+
+00:02:26.450 --> 00:02:31.340
+Thanks again for taking this course, and best
+of luck to you in your future endeavors.
+

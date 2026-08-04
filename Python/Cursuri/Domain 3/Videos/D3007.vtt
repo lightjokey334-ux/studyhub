@@ -1,0 +1,104 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.400 --> 00:00:07.320
+As we work through Python apps, sometimes, after&nbsp;
+building and changing files, we may find files we&nbsp;&nbsp;
+
+00:00:07.320 --> 00:00:13.520
+no longer need. In this topic, we will see how to&nbsp;
+delete a file using Python code. Files that are no&nbsp;&nbsp;
+
+00:00:13.520 --> 00:00:20.080
+longer required should be deleted so that the data&nbsp;
+in those files does not pose a security risk. As a&nbsp;&nbsp;
+
+00:00:20.080 --> 00:00:24.200
+real-life example, a game with custom player&nbsp;
+settings and messages in a file may need the&nbsp;&nbsp;
+
+00:00:24.200 --> 00:00:31.360
+file to be deleted when the player quits the game.&nbsp;
+This 317-delete file checks to see if a specific&nbsp;&nbsp;
+
+00:00:31.360 --> 00:00:39.560
+file exists in the current path, and if it does,&nbsp;
+the file is deleted. As with the previous topic,&nbsp;&nbsp;
+
+00:00:39.560 --> 00:00:47.880
+we need the os library to run any path functions,&nbsp;
+so the import os statement, on line 1, imports the&nbsp;&nbsp;
+
+00:00:47.880 --> 00:00:58.080
+library. We have a file name stored in a message&nbsp;
+file variable on line 2. The file name is repeated&nbsp;&nbsp;
+
+00:00:58.080 --> 00:01:03.200
+many times in the code, and because we are not&nbsp;
+creating any new files here, we can store the&nbsp;&nbsp;
+
+00:01:03.200 --> 00:01:13.320
+file name in a variable and not have to type the&nbsp;
+actual name many times in code. This if statement&nbsp;&nbsp;
+
+00:01:13.320 --> 00:01:22.680
+on line 4 checks to see if the file on line 2&nbsp;
+exists. If it does, the remove command on line&nbsp;&nbsp;
+
+00:01:22.680 --> 00:01:28.760
+5 deletes the file, and then a print statement&nbsp;
+on line 6 shows confirmation that the file has&nbsp;&nbsp;
+
+00:01:28.760 --> 00:01:37.480
+been removed. In the else clause on lines 8 and&nbsp;
+9, the file does not exist, and a message shows&nbsp;&nbsp;
+
+00:01:37.480 --> 00:01:47.120
+to tell the person running this code as such. I&nbsp;
+will run this code, and in the first instance,&nbsp;&nbsp;
+
+00:01:47.120 --> 00:01:57.160
+the file did exist and was removed. What do&nbsp;
+you think will happen if I rerun this code?&nbsp;&nbsp;
+
+00:01:57.160 --> 00:02:05.400
+You guessed it. The file was already gone, and we&nbsp;
+are told there was no file to remove. Let's expand&nbsp;&nbsp;
+
+00:02:05.400 --> 00:02:10.560
+a little on deleting files. It’s important to be&nbsp;
+aware of a few potential challenges that might&nbsp;&nbsp;
+
+00:02:10.560 --> 00:02:17.720
+interfere with this operation. First, if the file&nbsp;
+you're attempting to delete is open in another&nbsp;&nbsp;
+
+00:02:17.720 --> 00:02:24.720
+application or being used by another process,&nbsp;
+Python's remove function will throw an error,&nbsp;&nbsp;
+
+00:02:24.720 --> 00:02:30.960
+failing to execute the delete operation. Second,&nbsp;
+if your Python script does not have the required&nbsp;&nbsp;
+
+00:02:30.960 --> 00:02:37.160
+permissions to delete a file, you'll encounter a&nbsp;
+permission error. This is particularly relevant&nbsp;&nbsp;
+
+00:02:37.160 --> 00:02:42.640
+in multi-user systems or environments with&nbsp;
+stringent security protocols. Third, if there&nbsp;&nbsp;
+
+00:02:42.640 --> 00:02:49.160
+are underlying issues with your file system—such&nbsp;
+as corruption or disk errors—these too could&nbsp;&nbsp;
+
+00:02:49.160 --> 00:02:55.640
+prevent file deletion. Lastly, don't overlook&nbsp;
+the permissions of the Python script itself.&nbsp;&nbsp;
+
+00:02:55.640 --> 00:03:03.080
+The script must have sufficient permissions&nbsp;
+to interact with the target file or directory.
+

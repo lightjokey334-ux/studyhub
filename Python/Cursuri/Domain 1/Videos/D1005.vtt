@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.080 --> 00:00:08.240
+The next two data types are numeric data types.&nbsp;
+The first data type, integer, often abbreviated&nbsp;&nbsp;
+
+00:00:08.240 --> 00:00:15.240
+as int, is a data type that represents whole&nbsp;
+numbers, numbers without decimals. In this&nbsp;&nbsp;
+
+00:00:15.240 --> 00:00:23.480
+112-numbers file, we see a variable we could use&nbsp;
+in a game, number_of_tries, and it is set to 3,&nbsp;&nbsp;
+
+00:00:23.480 --> 00:00:30.560
+which is a whole number. Thus, this variable is&nbsp;
+an integer. Sometimes, you may need to verify a&nbsp;&nbsp;
+
+00:00:30.560 --> 00:00:37.160
+suspected data type, as numbers represented as&nbsp;
+strings cannot be used in calculations. I will&nbsp;&nbsp;
+
+00:00:37.160 --> 00:00:44.120
+add, on line 4, a print statement to print the&nbsp;
+type of the number_of_tries variable. The type&nbsp;&nbsp;
+
+00:00:44.120 --> 00:00:50.160
+function reveals the data type of whatever is in&nbsp;
+parentheses after the type function. Thus, I will&nbsp;&nbsp;
+
+00:00:50.160 --> 00:01:03.520
+type print(type(number_of_tries)) and then select&nbsp;
+Run Python File to run this code. In the terminal,&nbsp;&nbsp;
+
+00:01:03.520 --> 00:01:09.480
+we see that the value is indeed an integer.&nbsp;
+Occasionally, you may need to convert a number&nbsp;&nbsp;
+
+00:01:09.480 --> 00:01:14.840
+that is represented as a string to an integer to&nbsp;
+use that number in a calculation. We will see how&nbsp;&nbsp;
+
+00:01:14.840 --> 00:01:22.400
+to do string-to-number conversions in the topic&nbsp;
+on data type conversions elsewhere in this course.
+

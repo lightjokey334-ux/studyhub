@@ -1,0 +1,99 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.480 --> 00:00:04.050
+Not all try block code causes an error.
+
+00:00:04.050 --> 00:00:06.480
+Hopefully, errors are rare.
+
+00:00:06.480 --> 00:00:11.270
+We have seen how an except statement runs
+code if a try block were to cause a runtime
+
+00:00:11.270 --> 00:00:12.270
+error.
+
+00:00:12.270 --> 00:00:15.660
+But what if we want code to run if the try
+block can run without error?
+
+00:00:15.660 --> 00:00:22.660
+What if, for example, someone enters a legitimate
+value for a game piece and no errors occur?
+
+00:00:22.660 --> 00:00:26.800
+For that situation, we want an else statement.
+
+00:00:26.800 --> 00:00:32.480
+Continuing the figurative language example
+we started earlier in this section, we successfully
+
+00:00:32.480 --> 00:00:34.710
+tested the try code.
+
+00:00:34.710 --> 00:00:39.370
+We raised an error if someone entered an invalid
+value for the range of figuratives.
+
+00:00:39.370 --> 00:00:47.880
+To continue building this code, I have added
+an else block to this 523-else file on lines
+
+00:00:47.880 --> 00:00:55.060
+7 and 8 and moved the print statement to confirm
+the choice made to that block.
+
+00:00:55.060 --> 00:00:58.570
+Else runs if the try is successful.
+
+00:00:58.570 --> 00:01:04.110
+While else is not required, we have seen that
+although the else block is optional, including
+
+00:01:04.110 --> 00:01:05.979
+it can be useful.
+
+00:01:05.979 --> 00:01:10.430
+Without it, the code in the try block would
+execute if no exceptions occur, but we would
+
+00:01:10.430 --> 00:01:17.450
+have no way to easily specify additional actions
+to take specifically when the try block is
+
+00:01:17.450 --> 00:01:18.450
+successful.
+
+00:01:18.450 --> 00:01:24.240
+I will run this code and enter a number from
+1 through 5.
+
+00:01:24.240 --> 00:01:29.549
+The code works, and we get a matching figurative.
+
+00:01:29.549 --> 00:01:42.909
+I will run the code again and enter a bad
+value, and, as expected, we get the exception
+
+00:01:42.909 --> 00:01:44.920
+message.
+
+00:01:44.920 --> 00:01:50.090
+To recap what we have learned so far in this
+section: a try block tries to run code without
+
+00:01:50.090 --> 00:01:51.090
+an error.
+
+00:01:51.090 --> 00:01:54.520
+If an error occurs, the except block runs.
+
+00:01:54.520 --> 00:02:00.010
+If no errors occur, the else block runs.
+
+00:02:00.010 --> 00:02:02.740
+We need an except block for an else block
+to work.
+

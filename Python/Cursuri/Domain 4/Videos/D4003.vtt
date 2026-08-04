@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.840 --> 00:00:06.080
+The examples of code you see in this course&nbsp;
+are short, simple code snippets used either&nbsp;&nbsp;
+
+00:00:06.080 --> 00:00:14.400
+alone or as part of a larger, more robust&nbsp;
+program. Code, or the purpose of code written,&nbsp;&nbsp;
+
+00:00:14.400 --> 00:00:20.320
+should be understandable, even to people&nbsp;
+unfamiliar with the intent of the code.&nbsp;&nbsp;
+
+00:00:20.320 --> 00:00:26.200
+Comments are text that follows the number symbol,&nbsp;
+either on a line by itself or at the end of a&nbsp;&nbsp;
+
+00:00:26.200 --> 00:00:33.160
+line of code. Python will ignore this text during&nbsp;
+execution, allowing you to annotate your code for&nbsp;&nbsp;
+
+00:00:33.160 --> 00:00:40.960
+better understanding. I have this 413-comments&nbsp;
+file open and will add a comment on line 4,&nbsp;&nbsp;
+
+00:00:40.960 --> 00:00:47.880
+above the while loop, explaining what the&nbsp;
+while loop does. These explanations can&nbsp;&nbsp;
+
+00:00:47.880 --> 00:00:52.160
+help one remember what code is supposed to&nbsp;
+do, which can help build proper game flows,&nbsp;&nbsp;
+
+00:00:52.160 --> 00:00:58.000
+and comments can help others understand the&nbsp;
+purpose of code. Comments can also be inline,&nbsp;&nbsp;
+
+00:00:58.000 --> 00:01:03.560
+meaning they can be placed to the right of a&nbsp;
+line, and anything after the comment is ignored.&nbsp;&nbsp;
+
+00:01:03.560 --> 00:01:11.960
+Comments do not split lines, however, so each&nbsp;
+line can only have one inline comment. I will&nbsp;&nbsp;
+
+00:01:11.960 --> 00:01:18.120
+add a comment to the end of line 6 explaining why&nbsp;
+we need to set the range to 11 when the loop runs&nbsp;&nbsp;
+
+00:01:18.120 --> 00:01:25.360
+10 times. Finally, and this is something&nbsp;
+we have seen in the course, a comment can&nbsp;&nbsp;
+
+00:01:25.360 --> 00:01:31.400
+comment out a code statement or line of code,&nbsp;
+meaning that the code is legitimate but needs&nbsp;&nbsp;
+
+00:01:31.400 --> 00:01:36.760
+to be ignored temporarily. Lines are commented&nbsp;
+out when developers want to test blocks of code&nbsp;&nbsp;
+
+00:01:36.760 --> 00:01:42.680
+with minimal distractions and thus pinpoint&nbsp;
+potential problems more easily. For example,&nbsp;&nbsp;
+
+00:01:42.680 --> 00:01:47.760
+the print statement on line 10 is unnecessary for&nbsp;
+testing this code. Therefore, I will add a number&nbsp;&nbsp;
+
+00:01:47.760 --> 00:01:55.480
+symbol in front of the code on line 10, run this&nbsp;
+code, and the code executes but does not print the&nbsp;&nbsp;
+
+00:01:55.480 --> 00:02:01.280
+thank you statement on line 10 as it has been&nbsp;
+commented out. Python doesn't natively support&nbsp;&nbsp;
+
+00:02:01.280 --> 00:02:07.160
+block comments, multi-line comments, like&nbsp;
+some other languages, but in the next topic,&nbsp;&nbsp;
+
+00:02:07.160 --> 00:02:14.360
+we will see how we can get the equivalent of a&nbsp;
+multi-line comment through the use of docstrings.
+

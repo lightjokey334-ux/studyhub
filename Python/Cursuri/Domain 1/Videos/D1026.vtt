@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.080 --> 00:00:04.800
+What order did you come up with&nbsp;
+for the six types of operators?&nbsp;&nbsp;
+
+00:00:04.800 --> 00:00:08.080
+Here is the correct order of&nbsp;
+preference, from top to bottom:
+
+00:00:08.080 --> 00:00:09.600
+Arithmetic
+
+00:00:09.600 --> 00:00:11.000
+Containment
+
+00:00:11.000 --> 00:00:12.760
+Comparison
+
+00:00:12.760 --> 00:00:14.200
+Identity
+
+00:00:14.200 --> 00:00:15.440
+Logical
+
+00:00:15.440 --> 00:00:17.080
+Assignments
+
+00:00:17.080 --> 00:00:20.880
+Remember that parentheses supersede all&nbsp;
+operators when looking at any calculation&nbsp;&nbsp;
+
+00:00:20.880 --> 00:00:27.120
+or comparison. For the logical operators,&nbsp;
+not takes precedence over and, which takes&nbsp;&nbsp;
+
+00:00:27.120 --> 00:00:33.240
+precedence over or. And for arithmetic,&nbsp;
+the order of operations is as follows:
+
+00:00:33.240 --> 00:00:34.520
+Parentheses
+
+00:00:34.520 --> 00:00:35.640
+Exponents
+
+00:00:35.640 --> 00:00:37.160
+Multiplication
+
+00:00:37.160 --> 00:00:38.400
+Division
+
+00:00:38.400 --> 00:00:39.400
+Addition
+
+00:00:39.400 --> 00:00:40.960
+Subtraction
+
+00:00:40.960 --> 00:00:48.560
+And, as a friendly reminder, you have a mnemonic&nbsp;
+on this one: Please Excuse My Dear Aunt Sally. To&nbsp;&nbsp;
+
+00:00:48.560 --> 00:00:53.760
+finish this unit, let’s look at one example of a&nbsp;
+calculation involving multiple facets of the six&nbsp;&nbsp;
+
+00:00:53.760 --> 00:01:01.400
+types of operators. I have the 136-analyze file&nbsp;
+open and we want to determine if the result is&nbsp;&nbsp;
+
+00:01:01.400 --> 00:01:10.960
+true or false. In these situations, look over&nbsp;
+the types of operators you have. Here we have&nbsp;&nbsp;
+
+00:01:10.960 --> 00:01:26.120
+assignment, comparison, arithmetic, logical,&nbsp;
+containment, and identity. Arithmetic happens&nbsp;&nbsp;
+
+00:01:26.120 --> 00:01:36.240
+first, so, using a comment on line 5, I will&nbsp;
+add 3 and 2 to get x = 5. Containment is next,&nbsp;&nbsp;
+
+00:01:36.240 --> 00:01:50.360
+and y is in 1, 2, 3, so that is true.&nbsp;
+Comparison is next. X = 5, so that is&nbsp;&nbsp;
+
+00:01:50.360 --> 00:02:04.400
+true. Identity is next. X is not y. That is true.&nbsp;
+What’s left? Logical. All the results are true,&nbsp;&nbsp;
+
+00:02:04.400 --> 00:02:16.120
+so the result, the assignment is true and when&nbsp;
+I run this code, indeed, the result is true.
+

@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.200 --> 00:00:05.400
+Let’s see what we come up with when analyzing&nbsp;
+this code and answering the questions of the&nbsp;&nbsp;
+
+00:00:05.400 --> 00:00:12.960
+four print statements. First, the symbol on line&nbsp;
+4 is a modulus symbol, which means the remainder&nbsp;&nbsp;
+
+00:00:12.960 --> 00:00:23.800
+of 500 (x) divided by 6 is the answer. 500&nbsp;
+divided by 6 is 83 with a remainder of 2,&nbsp;&nbsp;
+
+00:00:23.800 --> 00:00:33.920
+so 2 is the modulus. Next, the code on line&nbsp;
+6 is multiplying x by 3 and assigning the new&nbsp;&nbsp;
+
+00:00:33.920 --> 00:00:43.120
+value to x. Note that in the print statement&nbsp;
+on line 4, no assignments are taking place,&nbsp;&nbsp;
+
+00:00:43.120 --> 00:00:51.080
+but in this code on lines 6 and 7, an assignment&nbsp;
+is indeed taking place, so x times 3 is 1500,&nbsp;&nbsp;
+
+00:00:51.080 --> 00:01:01.760
+and because this code contains an assignment,&nbsp;
+x is now 1500. Looking at the code on line 9,&nbsp;&nbsp;
+
+00:01:01.760 --> 00:01:15.760
+x, being 1500, is greater than y, 200, but&nbsp;
+x is not in the list of values of z. Thus,&nbsp;&nbsp;
+
+00:01:15.760 --> 00:01:23.760
+this print statement should return false. The&nbsp;
+last print statement is somewhat of a visual trap,&nbsp;&nbsp;
+
+00:01:23.760 --> 00:01:29.160
+and I purposely created this trap so that&nbsp;
+you can avoid it both on the exam and when&nbsp;&nbsp;
+
+00:01:29.160 --> 00:01:35.360
+you are building apps in Python. We will&nbsp;
+see the trap in just a moment, but first,&nbsp;&nbsp;
+
+00:01:35.360 --> 00:01:43.840
+always apply order of operations, when applicable,&nbsp;
+to a condition. We have an or and we have a not.&nbsp;&nbsp;
+
+00:01:43.840 --> 00:01:53.920
+Not takes precedence over or. Thus, we want to&nbsp;
+evaluate y not in z first, which is true. Next,&nbsp;&nbsp;
+
+00:01:53.920 --> 00:01:59.840
+let’s look for the trap. The trap is to look at a&nbsp;
+variable assignment at the top of a code block and&nbsp;&nbsp;
+
+00:01:59.840 --> 00:02:07.480
+forget that the variable has changed since then.&nbsp;
+When trying to deduce an answer such as this one,&nbsp;&nbsp;
+
+00:02:07.480 --> 00:02:11.080
+follow a variable from its start all the way&nbsp;
+through the code to the spot where you need&nbsp;&nbsp;
+
+00:02:11.080 --> 00:02:20.000
+to analyze the variable’s value at this point.&nbsp;
+If we forget to do that, x starting at 500 and&nbsp;&nbsp;
+
+00:02:20.000 --> 00:02:28.440
+then dividing by 5 to get an answer of 100 will&nbsp;
+throw us off because, in between here and there,&nbsp;&nbsp;
+
+00:02:28.440 --> 00:02:37.040
+x was tripled. Another way to look at this is to&nbsp;
+track every assignment you see for a variable from&nbsp;&nbsp;
+
+00:02:37.040 --> 00:02:45.880
+its start to the line of code being analyzed.&nbsp;
+It turns out both these statements are true,&nbsp;&nbsp;
+
+00:02:45.880 --> 00:02:51.360
+so the or keyword is not that relevant, as all&nbsp;
+that is needed for this statement to be true is&nbsp;&nbsp;
+
+00:02:51.360 --> 00:03:02.520
+for one of these conditions to be true. Let’s run&nbsp;
+this code. We see the results. The first result&nbsp;&nbsp;
+
+00:03:02.520 --> 00:03:16.520
+is indeed 2, the second result is 1500, the third&nbsp;
+result is false, and the fourth result is true.
+

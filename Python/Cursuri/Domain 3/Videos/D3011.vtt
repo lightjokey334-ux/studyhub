@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.360 --> 00:00:07.120
+We have seen a few examples of concatenating text&nbsp;
+so far in this course, but we often want more&nbsp;&nbsp;
+
+00:00:07.120 --> 00:00:12.560
+control over how text is displayed, especially&nbsp;
+if we are trying to display a custom message,&nbsp;&nbsp;
+
+00:00:12.560 --> 00:00:18.960
+such as giving a game player details on how a&nbsp;
+game is going. Take a look at the 322-format file,&nbsp;&nbsp;
+
+00:00:18.960 --> 00:00:24.120
+which stores values in three variables on&nbsp;
+lines 1 through 3, and then prints out a&nbsp;&nbsp;
+
+00:00:24.120 --> 00:00:31.880
+concatenated string that includes the three&nbsp;
+variables on line 5. I will run this code,&nbsp;&nbsp;
+
+00:00:31.880 --> 00:00:40.440
+and we get a basic message about a player, score,&nbsp;
+and level achieved. There are ways in which we&nbsp;&nbsp;
+
+00:00:40.440 --> 00:00:46.800
+can display this information more smoothly. One&nbsp;
+method is to use the string.format method. This&nbsp;&nbsp;
+
+00:00:46.800 --> 00:00:51.800
+method allows one to control the text spacing&nbsp;
+in one statement using whatever variables should&nbsp;&nbsp;
+
+00:00:51.800 --> 00:01:02.560
+be in the statement. On line 6, I will rewrite&nbsp;
+this print statement, using blank sets of curly&nbsp;&nbsp;
+
+00:01:02.560 --> 00:01:27.640
+brackets for variable placeholders, and then at&nbsp;
+the end of the quote, adding dot format and then,&nbsp;&nbsp;
+
+00:01:27.640 --> 00:01:38.680
+in parentheses, the three variables in the&nbsp;
+order I want them displayed: player1, score,&nbsp;&nbsp;
+
+00:01:38.680 --> 00:02:01.200
+level. I will then run this code, and we see the&nbsp;
+sentence as formatted. For a more complex type of&nbsp;&nbsp;
+
+00:02:01.200 --> 00:02:07.560
+formatting, one could have the variables in the&nbsp;
+format function in the same order as defined,&nbsp;&nbsp;
+
+00:02:07.560 --> 00:02:20.480
+as I will do here, and then go back and fill in&nbsp;
+the curly brackets with the index value of each&nbsp;&nbsp;
+
+00:02:20.480 --> 00:02:37.120
+variable, score being 0, level being 1, and&nbsp;
+player1 being 2, as we have seen in lists.&nbsp;&nbsp;
+
+00:02:37.120 --> 00:02:53.920
+I will place the numbers into the curly brackets&nbsp;
+accordingly, I will run the code, and the sentence&nbsp;&nbsp;
+
+00:02:53.920 --> 00:03:02.480
+prints as expected. The dot format method works&nbsp;
+well, but starting in Python 3.6, f-strings have&nbsp;&nbsp;
+
+00:03:02.480 --> 00:03:07.520
+become a preferred way of formatting strings,&nbsp;
+much like template literals in recent iterations&nbsp;&nbsp;
+
+00:03:07.520 --> 00:03:14.360
+of JavaScript and string interpolation features&nbsp;
+in other languages. These features allow you to&nbsp;&nbsp;
+
+00:03:14.360 --> 00:03:20.600
+embed expressions or variables directly within a&nbsp;
+string, making it easier to concatenate and format&nbsp;&nbsp;
+
+00:03:20.600 --> 00:03:46.840
+text. I will type an f-string print statement&nbsp;
+on line 7 and then explain the code. Variables&nbsp;&nbsp;
+
+00:03:46.840 --> 00:03:54.800
+are in curly brackets, and one does not need to&nbsp;
+use an extra function on the end of this code,&nbsp;&nbsp;
+
+00:03:54.800 --> 00:04:03.240
+saving time in typing and allowing one to focus&nbsp;
+more on the presentation of a print statement.
+

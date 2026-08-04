@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.240 --> 00:00:04.230
+The sort method sorts a list.
+
+00:00:04.230 --> 00:00:11.760
+I will change the reverse statement to a sort,
+rerun the code, and we will see that the list
+
+00:00:11.760 --> 00:00:14.639
+is now in alphabetical order.
+
+00:00:14.639 --> 00:00:20.420
+Before we go any further, I want to cover
+another basic programming concept with you.
+
+00:00:20.420 --> 00:00:26.710
+You may notice that every method we have used
+so far has parentheses.
+
+00:00:26.710 --> 00:00:31.560
+Basically, every method in every programming
+language has parentheses because methods can
+
+00:00:31.560 --> 00:00:35.989
+contain arguments, meaning settings, or items
+that are being manipulated.
+
+00:00:35.989 --> 00:00:37.730
+Take this sort method.
+
+00:00:37.730 --> 00:00:44.300
+There are no arguments yet, so we have the
+default sort, which is in ascending order.
+
+00:00:44.300 --> 00:00:51.460
+However, I can add an argument, reverse=True,
+inside the parentheses.
+
+00:00:51.460 --> 00:00:55.969
+Remember, Boolean values start with a capital
+letter.
+
+00:00:55.969 --> 00:01:05.269
+I will rerun the code, and we see the list
+of cities in reverse order.
+
+00:01:05.269 --> 00:01:11.490
+One aspect of this code we have yet to work
+with is the list of populations on line 5.
+
+00:01:11.490 --> 00:01:17.869
+These populations coincide with these cities.
+
+00:01:17.869 --> 00:01:22.210
+We want to know the largest population among
+these cities and the smallest population among
+
+00:01:22.210 --> 00:01:24.180
+these cities.
+
+00:01:24.180 --> 00:01:29.250
+The max and min functions identify those values,
+respectively.
+
+00:01:29.250 --> 00:01:38.040
+I will add a print statement on line 10 to
+print the max of the population variable.
+
+00:01:38.040 --> 00:01:44.009
+I will run the code, and we see that among
+the populations, 1.6 million is the largest
+
+00:01:44.009 --> 00:01:48.480
+value, again representing the max function.
+
+00:01:48.480 --> 00:01:54.490
+I will change the max to min, rerun the code,
+and we will see the smallest population of
+
+00:01:54.490 --> 00:02:00.870
+32000, again referencing the populations variable
+and the min function.
+
+00:02:00.870 --> 00:02:04.450
+The last list operation we will cover is the
+length of a list.
+
+00:02:04.450 --> 00:02:08.300
+As people collect items in games, there may
+come a time when we need to display how many
+
+00:02:08.300 --> 00:02:10.180
+items they have collected.
+
+00:02:10.180 --> 00:02:13.250
+The len method displays the length of a list.
+
+00:02:13.250 --> 00:02:21.290
+I will add a print statement on line 11 to
+print the length of the capitals list.
+
+00:02:21.290 --> 00:02:29.290
+The code is print(len(capitals)).
+
+00:02:29.290 --> 00:02:37.860
+In rerunning the code, the length is three,
+as we have three capital cities in the list.
+
+00:02:37.860 --> 00:02:42.190
+We have reached the end of data type operations,
+so let’s do a little analysis exercise for
+
+00:02:42.190 --> 00:02:43.900
+a code block.
+
+00:02:43.900 --> 00:02:51.330
+I will open the 126-analyze file, and we have
+a quote and a type of list.
+
+00:02:51.330 --> 00:02:56.620
+Use the second part of the Review 1.2 exercise
+in the project workbook to determine what
+
+00:02:56.620 --> 00:03:03.290
+this print statement will return, and if this
+statement will work, and then we will review
+
+00:03:03.290 --> 00:03:04.879
+this code and reveal the answers.
+

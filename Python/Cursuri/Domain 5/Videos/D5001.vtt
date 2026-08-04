@@ -1,0 +1,165 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.640 --> 00:00:04.850
+We have reached the domain of troubleshooting
+and error handling.
+
+00:00:04.850 --> 00:00:10.400
+In this section on error handling, we will
+explore three types of errors common to Python
+
+00:00:10.400 --> 00:00:11.400
+code.
+
+00:00:11.400 --> 00:00:15.880
+As we go through these examples, I hope that
+you will develop an eye for spotting problems
+
+00:00:15.880 --> 00:00:21.890
+in code before they happen or at least know
+where to look for errors once they do happen,
+
+00:00:21.890 --> 00:00:26.269
+as even the best programmers spend about a
+third of the time coding and two-thirds of
+
+00:00:26.269 --> 00:00:28.660
+the time making code work.
+
+00:00:28.660 --> 00:00:32.500
+The first group of errors to cover is the
+group of syntax errors.
+
+00:00:32.500 --> 00:00:35.570
+Syntax errors in code are like punctuation
+and spelling errors in writing.
+
+00:00:35.570 --> 00:00:40.130
+The difference between the two is that in
+programming, syntax errors cause code not
+
+00:00:40.130 --> 00:00:46.039
+to run, whereas in writing, people might misunderstand
+what you write or form conclusions about you
+
+00:00:46.039 --> 00:00:47.039
+as a writer.
+
+00:00:47.039 --> 00:00:52.240
+In this 511-syntax file, I have three syntax
+errors.
+
+00:00:52.240 --> 00:00:54.980
+Can you spot them?
+
+00:00:54.980 --> 00:01:00.070
+Unlike some errors, which occur during the
+execution of the program, syntax errors prevent
+
+00:01:00.070 --> 00:01:03.570
+the code from even being compiled and executed
+in the first place.
+
+00:01:03.570 --> 00:01:09.091
+Python's compiler checks for syntax correctness
+before running any code, and a syntax error
+
+00:01:09.091 --> 00:01:11.390
+will halt this process.
+
+00:01:11.390 --> 00:01:15.400
+One common syntax error is forgetting the
+colon at the end of a block definition, which
+
+00:01:15.400 --> 00:01:22.159
+is easy to do kfor more experienced programmers
+learning Python because most programming languages
+
+00:01:22.159 --> 00:01:24.770
+use curly brackets to define those blocks.
+
+00:01:24.770 --> 00:01:31.150
+In contrast, Python uses a colon and then
+indentation on the lines part of a block.
+
+00:01:31.150 --> 00:01:36.140
+We are missing a colon at the end of this
+function definition on line 2, so I will add
+
+00:01:36.140 --> 00:01:38.290
+that colon.
+
+00:01:38.290 --> 00:01:44.310
+Speaking of indentation, we stressed elsewhere
+in this course the importance of keeping spacing
+
+00:01:44.310 --> 00:01:47.430
+consistent with indents.
+
+00:01:47.430 --> 00:01:50.240
+Are the indents the same on lines 3 and 4?
+
+00:01:50.240 --> 00:01:51.240
+No.
+
+00:01:51.240 --> 00:01:53.430
+That is a syntax error.
+
+00:01:53.430 --> 00:01:59.070
+I will adjust the indent on line 3 to fix
+that syntax error.
+
+00:01:59.070 --> 00:02:02.050
+Do you see the third syntax error anywhere?
+
+00:02:02.050 --> 00:02:05.289
+Look at line 6.
+
+00:02:05.289 --> 00:02:10.530
+We have a mismatch on the open and closed
+parentheses.
+
+00:02:10.530 --> 00:02:16.280
+Another common syntax error involves opening
+something, like parentheses or quotation marks,
+
+00:02:16.280 --> 00:02:19.250
+and not closing them properly.
+
+00:02:19.250 --> 00:02:25.580
+I will add a closing parenthesis to the end
+of line 6, and at this point, the syntax errors
+
+00:02:25.580 --> 00:02:28.080
+should be fixed.
+
+00:02:28.080 --> 00:02:31.270
+I will run the code.
+
+00:02:31.270 --> 00:02:40.190
+Syntactically, the code works, but the print
+statement on line 4 did not print.
+
+00:02:40.190 --> 00:02:45.730
+Though we are covering logic errors in the
+next topic, what we see on line 4 is an example
+
+00:02:45.730 --> 00:02:47.599
+of a logic error.
+
+00:02:47.599 --> 00:02:53.310
+Lines 3 and 4 are out of order, as, in a function,
+once a return statement is coded into the
+
+00:02:53.310 --> 00:02:57.950
+function, that function is done.
+
+00:02:57.950 --> 00:03:14.330
+I will reverse the code on those two lines,
+rerun the code, and now the code works as
+
+00:03:14.330 --> 00:03:15.190
+intended.
+

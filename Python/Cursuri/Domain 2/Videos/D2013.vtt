@@ -1,0 +1,48 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.960 --> 00:00:05.480
+Let’s now answer the two analysis questions&nbsp;
+presented in this workbook project. First,&nbsp;&nbsp;
+
+00:00:05.480 --> 00:00:10.800
+we want to know how many print statements will run&nbsp;
+with the current code. Going through the list of&nbsp;&nbsp;
+
+00:00:10.800 --> 00:00:18.440
+operands that will display in the for loop, the&nbsp;
+loop runs six times with a different message for&nbsp;&nbsp;
+
+00:00:18.440 --> 00:00:25.800
+the floor division operand on line 3 as part&nbsp;
+of the if statement. Then, the print statement&nbsp;&nbsp;
+
+00:00:25.800 --> 00:00:33.960
+on line 4 prints, and the code continues. That&nbsp;
+print statement is the fifth print statement,&nbsp;&nbsp;
+
+00:00:33.960 --> 00:00:41.960
+as the print statement on line 6 prints the&nbsp;
+first four and the last operand. The second&nbsp;&nbsp;
+
+00:00:41.960 --> 00:00:47.920
+question asks for the number of print statements&nbsp;
+we will get if we change the continue on line 5 to&nbsp;&nbsp;
+
+00:00:47.920 --> 00:00:55.440
+break. I will make that change. Since the code&nbsp;
+will now break when the if condition is true,&nbsp;&nbsp;
+
+00:00:55.440 --> 00:01:02.600
+we will not see the modulus operator print.&nbsp;
+Thus, we should now see five print statements.&nbsp;&nbsp;
+
+00:01:02.600 --> 00:01:09.560
+I will rerun the code, and we see five&nbsp;
+print statements. One way to analyze code&nbsp;&nbsp;
+
+00:01:09.560 --> 00:01:15.080
+with loops is to run through each iteration to&nbsp;
+predict what will happen when the code runs.
+

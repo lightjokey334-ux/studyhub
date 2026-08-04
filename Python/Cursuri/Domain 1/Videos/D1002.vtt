@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.080 --> 00:00:07.680
+What is Python? Python is a general-purpose&nbsp;
+language with a wide variety of uses, including&nbsp;&nbsp;
+
+00:00:07.680 --> 00:00:16.000
+for basic apps, web development, data analysis,&nbsp;
+artificial intelligence, the Internet of Things,&nbsp;&nbsp;
+
+00:00:16.000 --> 00:00:22.120
+automation, and the topic we will use to teach&nbsp;
+the concepts in this course: game development.&nbsp;&nbsp;
+
+00:00:22.120 --> 00:00:29.640
+Take a look at this example of Python code. Python&nbsp;
+code is known for being more natural-looking than&nbsp;&nbsp;
+
+00:00:29.640 --> 00:00:37.440
+some other languages, namely Java, JavaScript,&nbsp;
+and C#. We do not see curly brackets here as we&nbsp;&nbsp;
+
+00:00:37.440 --> 00:00:44.280
+do in other languages. However, and this will be&nbsp;
+emphasized throughout the course, Python is big&nbsp;&nbsp;
+
+00:00:44.280 --> 00:00:55.760
+on indentation. For one example, notice the code&nbsp;
+inside this if statement: it is indented. If the&nbsp;&nbsp;
+
+00:00:55.760 --> 00:01:01.640
+code is not indented properly, it will not work.&nbsp;
+The more practice you get in recognizing when code&nbsp;&nbsp;
+
+00:01:01.640 --> 00:01:10.520
+needs to be indented, the easier it will be to&nbsp;
+determine when code needs to be indented. Python&nbsp;&nbsp;
+
+00:01:10.520 --> 00:01:17.320
+is also an interpreted language, which means you&nbsp;
+can write code and run it in the Python engine,&nbsp;&nbsp;
+
+00:01:17.320 --> 00:01:22.680
+as opposed to a compiled language, such as C#,&nbsp;
+which needs to be compiled into an executable or&nbsp;&nbsp;
+
+00:01:22.680 --> 00:01:29.160
+similar file before it can be run. We also do not&nbsp;
+need to worry about memory management in Python as&nbsp;&nbsp;
+
+00:01:29.160 --> 00:01:35.880
+in other programming languages. Python is one&nbsp;
+of many object-oriented programming languages&nbsp;&nbsp;
+
+00:01:35.880 --> 00:01:42.360
+in that classes can be created, and objects can be&nbsp;
+built within those classes. Classes are beyond the&nbsp;&nbsp;
+
+00:01:42.360 --> 00:01:51.160
+scope of this exam, but know that they do exist.&nbsp;
+Python is also a dynamically typed language,&nbsp;&nbsp;
+
+00:01:51.160 --> 00:01:59.240
+meaning that data types do not need to be declared&nbsp;
+on variables before the variables themselves are&nbsp;&nbsp;
+
+00:01:59.240 --> 00:02:05.680
+declared. While on the subject of data types,&nbsp;
+operations with data types and operators is&nbsp;&nbsp;
+
+00:02:05.680 --> 00:02:12.400
+the first exam objective set in this course, so&nbsp;
+let’s learn about those data types and operators.
+

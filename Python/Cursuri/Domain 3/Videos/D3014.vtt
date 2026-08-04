@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.640 --> 00:00:08.360
+What did you come up with? The output warranted is&nbsp;
+a typical case of needing multiple loops, in this&nbsp;&nbsp;
+
+00:00:08.360 --> 00:00:13.560
+case, multiple for loops, because we have three&nbsp;
+levels to account for and three items to account&nbsp;&nbsp;
+
+00:00:13.560 --> 00:00:21.680
+for within those levels. I decided to store both&nbsp;
+these sets of items in lists on lines 1 and 2,&nbsp;&nbsp;
+
+00:00:21.680 --> 00:00:28.440
+specifically one list for the items and one&nbsp;
+for the levels. Then, I have a for loop for&nbsp;&nbsp;
+
+00:00:28.440 --> 00:00:34.120
+each level as, in the output, the levels, not the&nbsp;
+items, are listed multiple times before going to&nbsp;&nbsp;
+
+00:00:34.120 --> 00:00:39.800
+the next item. That is one tip for multiple loops.&nbsp;
+Whatever needs to be listed in a group needs to be&nbsp;&nbsp;
+
+00:00:39.800 --> 00:00:48.960
+in the outer loop. Within the for loop for levels&nbsp;
+on line 3, I have another for loop for items on&nbsp;&nbsp;
+
+00:00:48.960 --> 00:00:57.080
+line 4. In the output, you’ll notice that one item&nbsp;
+is skipped: the rock on level 2. If that condition&nbsp;&nbsp;
+
+00:00:57.080 --> 00:01:04.400
+is true, I have an if statement on lines 5 and&nbsp;
+6 that uses the continue keyword to continue the&nbsp;&nbsp;
+
+00:01:04.400 --> 00:01:11.960
+loops. Else, on lines 7 and 8, I use an f-string&nbsp;
+to format the message to include both the item and&nbsp;&nbsp;
+
+00:01:11.960 --> 00:01:24.520
+the displayed level. And I will run this code to&nbsp;
+get the desired output. I encourage you to take&nbsp;&nbsp;
+
+00:01:24.520 --> 00:01:28.760
+breaks from the videos and workbook projects&nbsp;
+when needed and make some small code snippets&nbsp;&nbsp;
+
+00:01:28.760 --> 00:01:33.800
+that apply the concepts you are learning in this&nbsp;
+course and to something you can relate to. If I&nbsp;&nbsp;
+
+00:01:33.800 --> 00:01:39.440
+was learning Python, I would make code examples&nbsp;
+related to my interests. Try doing the same,&nbsp;&nbsp;
+
+00:01:39.440 --> 00:01:46.800
+and you will find that the learning process will&nbsp;
+be a little smoother as you learn these concepts.
+

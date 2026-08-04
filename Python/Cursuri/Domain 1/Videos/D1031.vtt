@@ -1,0 +1,84 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.960 --> 00:00:04.360
+The next group of operators is the&nbsp;
+group that is probably most familiar,&nbsp;&nbsp;
+
+00:00:04.360 --> 00:00:09.040
+and that is the arithmetic group. To focus&nbsp;
+more on the operators, we will forego the&nbsp;&nbsp;
+
+00:00:09.040 --> 00:00:15.120
+gaming examples in this code and strictly focus&nbsp;
+on arithmetic operators. We see this code in&nbsp;&nbsp;
+
+00:00:15.120 --> 00:00:23.280
+this 144-arithmetic code file. This code example&nbsp;
+has two variables, x, and y, on lines 1 and 2,&nbsp;&nbsp;
+
+00:00:23.280 --> 00:00:29.960
+and then several calculations using these two&nbsp;
+variables. I will comment out the print statement&nbsp;&nbsp;
+
+00:00:30.760 --> 00:00:39.680
+on line 18, as that has an order of operations&nbsp;
+factor we want to look at separately. If you&nbsp;&nbsp;
+
+00:00:39.680 --> 00:00:47.280
+have done any work on computers, the first&nbsp;
+four print statements, lines 4 through 10,&nbsp;&nbsp;
+
+00:00:47.280 --> 00:00:53.040
+should have operators that look familiar to&nbsp;
+you. I will run this code to get some answers,&nbsp;&nbsp;
+
+00:00:53.040 --> 00:00:59.080
+and then we will go back and evaluate these print&nbsp;
+statements. The first four print statements add,&nbsp;&nbsp;
+
+00:00:59.080 --> 00:01:08.560
+subtract, multiply, and divide x and y; we see the&nbsp;
+first four results here in the terminal. Notice&nbsp;&nbsp;
+
+00:01:08.560 --> 00:01:14.280
+that with Python, dividing two integers does not&nbsp;
+always render an integer, as with many programming&nbsp;&nbsp;
+
+00:01:14.280 --> 00:01:25.200
+languages. Python implicitly converts a result to&nbsp;
+a float, as we see with 5/3 equaling 1.66666667&nbsp;&nbsp;
+
+00:01:25.200 --> 00:01:34.920
+or, one and two-thirds. Lines 12, 14, and 16 have&nbsp;
+what some would consider to be some of the more&nbsp;&nbsp;
+
+00:01:34.920 --> 00:01:42.080
+unfamiliar operators in Python. The double slash&nbsp;
+on line 12 indicates a floor division operator,&nbsp;&nbsp;
+
+00:01:42.080 --> 00:01:47.160
+which returns just the integer portion of an&nbsp;
+answer. Five divided by three without a decimal&nbsp;&nbsp;
+
+00:01:47.160 --> 00:01:57.000
+is 1. The next operator, on line 14, the percent&nbsp;
+symbol, is the modulus operator, which shows the&nbsp;&nbsp;
+
+00:01:57.000 --> 00:02:06.240
+remainder after a division between two numbers.&nbsp;
+5 divided by 3 is 1 with a remainder of 2. Thus,&nbsp;&nbsp;
+
+00:02:06.240 --> 00:02:14.240
+2 is the modulus, and the result shows here.&nbsp;
+On line 16, we see two asterisks. In Python,&nbsp;&nbsp;
+
+00:02:14.240 --> 00:02:21.320
+a double asterisk indicates an exponent,&nbsp;
+or, as some refer, to the power of. Thus,&nbsp;&nbsp;
+
+00:02:21.320 --> 00:02:29.760
+line 16 is 5 to the power of 3, which is&nbsp;
+5 * 5 * 5 which equals this result: 125.
+

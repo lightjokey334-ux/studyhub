@@ -1,0 +1,172 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.040 --> 00:00:05.250
+In this portion of coverage of random methods,
+we will look at randomizing as it relates
+
+00:00:05.250 --> 00:00:07.520
+to words and phrases.
+
+00:00:07.520 --> 00:00:13.380
+The first such method is the shuffle method,
+which rearranges the order of a list.
+
+00:00:13.380 --> 00:00:21.420
+In this 623-shuffle file, I am using the shuffle
+method, shown on line 3, to arrange categories
+
+00:00:21.420 --> 00:00:27.470
+for a quiz on the periodic table of the elements,
+related to chemistry, which are stored in
+
+00:00:27.470 --> 00:00:32.149
+a list named categories on line 2.
+
+00:00:32.149 --> 00:00:36.420
+Notice the import on line 1 looks different
+than the previous import statements on the
+
+00:00:36.420 --> 00:00:39.220
+random module library.
+
+00:00:39.220 --> 00:00:44.059
+Rather than import one element of the library,
+we are importing the entire library so we
+
+00:00:44.059 --> 00:00:47.410
+can use any module within the library.
+
+00:00:47.410 --> 00:00:53.859
+I will run this code and we see the categories
+in a different order, which would then dictate
+
+00:00:53.859 --> 00:00:58.719
+the order of categories being asked about
+for a chemistry quiz.
+
+00:00:58.719 --> 00:01:03.630
+From shuffle, we move to the choice module
+within the random library.
+
+00:01:03.630 --> 00:01:10.189
+Choice, as you may have guessed from the name
+of the module, chooses a value, at random,
+
+00:01:10.189 --> 00:01:12.320
+from a list of values.
+
+00:01:12.320 --> 00:01:20.510
+In this 623-choice file, we have the same
+import statement on line 1 and the same categories
+
+00:01:20.510 --> 00:01:22.939
+list on line 2.
+
+00:01:22.939 --> 00:01:30.510
+However, the code on line 3 is different,
+as the shuffle method has been replaced with
+
+00:01:30.510 --> 00:01:34.720
+the choice method on the categories list.
+
+00:01:34.720 --> 00:01:40.369
+Because we are extracting one value from the
+list of categories, we are storing that choice
+
+00:01:40.369 --> 00:01:42.170
+in a variable-named category.
+
+00:01:42.170 --> 00:01:47.969
+Then, in line 5, we see a print statement
+to print the random category chosen from the
+
+00:01:47.969 --> 00:01:49.329
+categories list.
+
+00:01:49.329 --> 00:01:58.450
+I will run this code, and indeed, each time
+I run the code, we see one category randomly
+
+00:01:58.450 --> 00:02:02.600
+chosen from the list of categories.
+
+00:02:02.600 --> 00:02:08.129
+While a choice returns one random value from
+a list, the sample method returns multiple
+
+00:02:08.129 --> 00:02:10.610
+random values from a list.
+
+00:02:10.610 --> 00:02:16.860
+Suppose we want to get two questions from
+two categories within this list.
+
+00:02:16.860 --> 00:02:21.080
+To return multiple random values from a list,
+we will want to use the sample method instead
+
+00:02:21.080 --> 00:02:23.230
+of the choice method.
+
+00:02:23.230 --> 00:02:31.150
+On line 3, I will change the category variable
+to random.sample, and then, in parentheses,
+
+00:02:31.150 --> 00:02:37.280
+we need two arguments: the list and the number
+of unique values to get from the list.
+
+00:02:37.280 --> 00:02:46.090
+Thus, I will enter categories and then 2 for
+the two needed arguments.
+
+00:02:46.090 --> 00:02:53.420
+I will then run the code, and we get two categories
+returned as a list.
+
+00:02:53.420 --> 00:02:56.980
+One more point to make about sample versus
+choice.
+
+00:02:56.980 --> 00:03:01.360
+You could run the choice method twice here,
+but there is no guarantee you will get two
+
+00:03:01.360 --> 00:03:03.730
+unique values returned.
+
+00:03:03.730 --> 00:03:08.610
+If you want, for example, to ensure a question
+comes out of two different categories before
+
+00:03:08.610 --> 00:03:12.920
+a category is repeated, use the sample method.
+
+00:03:12.920 --> 00:03:17.940
+This topic concludes the domain and all the
+exam topics in this course.
+
+00:03:17.940 --> 00:03:22.480
+Like we did at the halfway point in this course,
+it’s time for you to build a project from
+
+00:03:22.480 --> 00:03:24.170
+the ground up.
+
+00:03:24.170 --> 00:03:29.480
+Look over the Review 6.2 exercise in your
+project workbook, and as you build your app,
+
+00:03:29.480 --> 00:03:33.620
+keep in mind there is no single correct answer
+for the scenario.
+
+00:03:33.620 --> 00:03:38.440
+When you are done, come back to the videos,
+and we will go through a possible answer for
+
+00:03:38.440 --> 00:03:39.140
+the scenario.
+

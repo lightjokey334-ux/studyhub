@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.960 --> 00:00:05.000
+To solve this problem, we will do another&nbsp;
+conversion to convert the points value on&nbsp;&nbsp;
+
+00:00:05.000 --> 00:00:12.160
+line 4 to a string. The str function converts&nbsp;
+a value to a string, so I will wrap the str&nbsp;&nbsp;
+
+00:00:12.160 --> 00:00:19.560
+function around points, through placing the cursor&nbsp;
+in front of the word, points, typing str, and then&nbsp;&nbsp;
+
+00:00:19.560 --> 00:00:29.720
+surrounding the word points in parentheses. Let’s&nbsp;
+rerun the code. I will enter a whole number, and&nbsp;&nbsp;
+
+00:00:29.720 --> 00:00:42.320
+the code works perfectly. I will run this code and&nbsp;
+enter a float value, 2.2, and as often happens,&nbsp;&nbsp;
+
+00:00:42.320 --> 00:00:50.560
+solving one problem causes another. Let’s analyze&nbsp;
+what is happening here. The input on line 2 is&nbsp;&nbsp;
+
+00:00:50.560 --> 00:00:59.680
+a string. We are being told that the value 2.2,&nbsp;
+which I entered, is invalid for an integer. Think&nbsp;&nbsp;
+
+00:00:59.680 --> 00:01:06.360
+about it. Integers are whole numbers, right?&nbsp;
+We are being told here that this value cannot&nbsp;&nbsp;
+
+00:01:06.360 --> 00:01:12.200
+be converted to a whole number from a string.&nbsp;
+Thus, let’s try converting the original input&nbsp;&nbsp;
+
+00:01:12.200 --> 00:01:18.520
+to a float, as one would think we can convert&nbsp;
+one number type to another. I will wrap the&nbsp;&nbsp;
+
+00:01:18.520 --> 00:01:28.840
+float function around the input statement on line&nbsp;
+2, run the code, and this time, after entering a&nbsp;&nbsp;
+
+00:01:28.840 --> 00:01:36.360
+float value, everything converts correctly. Let’s&nbsp;
+run this code again, using an integer value to&nbsp;&nbsp;
+
+00:01:36.360 --> 00:01:43.920
+ensure that it still works. It does. Let’s recap&nbsp;
+what we have learned about converting data types.&nbsp;&nbsp;
+
+00:01:43.920 --> 00:01:50.800
+Converting data types is necessary to make data&nbsp;
+usable in a situation. Also, we learned that data&nbsp;&nbsp;
+
+00:01:50.800 --> 00:01:57.120
+captured via inputs are strings of data, so&nbsp;
+if we use input data in numeric calculations,&nbsp;&nbsp;
+
+00:01:57.120 --> 00:02:02.800
+the data needs to be converted to a number.&nbsp;
+Finally, Python cannot convert what is not&nbsp;&nbsp;
+
+00:02:02.800 --> 00:02:12.320
+possible, such as a string, entered as a float to&nbsp;
+an integer, at least not through the int function.
+

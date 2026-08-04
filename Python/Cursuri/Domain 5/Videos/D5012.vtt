@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.240 --> 00:00:05.680
+One of the most common types of unit tests is&nbsp;
+to test a function to see if it performs as it&nbsp;&nbsp;
+
+00:00:05.680 --> 00:00:11.040
+should. For us to test a function correctly,&nbsp;
+we need to know what results we expect to see&nbsp;&nbsp;
+
+00:00:11.040 --> 00:00:16.200
+when testing said function. For this example,&nbsp;
+I will use the function we built elsewhere in&nbsp;&nbsp;
+
+00:00:16.200 --> 00:00:22.360
+the course to run some tests. Testing a function&nbsp;
+involves anticipating known results and testing&nbsp;&nbsp;
+
+00:00:22.360 --> 00:00:28.800
+the function to see if the expected results&nbsp;
+are returned. In this 532-functions file,&nbsp;&nbsp;
+
+00:00:28.800 --> 00:00:36.440
+we have a function defined on line 2 that&nbsp;
+has two arguments: score and multiplier.&nbsp;&nbsp;
+
+00:00:36.440 --> 00:00:43.680
+The function is used to calculate a game&nbsp;
+player’s total score. Line 3 returns the&nbsp;&nbsp;
+
+00:00:43.680 --> 00:00:52.560
+score multiplied by the multiplier. On lines&nbsp;
+5 and 6, we have two tests for this function,&nbsp;&nbsp;
+
+00:00:52.560 --> 00:00:59.920
+and to the right of each test is a comment&nbsp;
+with an expected value. I will run this code,&nbsp;&nbsp;
+
+00:01:00.880 --> 00:01:07.240
+and we see the two expected values. If the&nbsp;
+tests did not work, we would need to look&nbsp;&nbsp;
+
+00:01:07.240 --> 00:01:13.160
+either at the data being used to test the function&nbsp;
+or the logic of the function itself. Functions,&nbsp;&nbsp;
+
+00:01:13.160 --> 00:01:18.240
+like all other code, should be tested before&nbsp;
+an app is put in production, as having&nbsp;&nbsp;
+
+00:01:18.240 --> 00:01:27.880
+incorrect function results can lead to financial,&nbsp;
+statistical, and credibility issues within an app.
+

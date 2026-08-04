@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.120 --> 00:00:09.200
+The isnan function, on line 20, checks to see if a&nbsp;
+variable or expression is not a number and returns&nbsp;&nbsp;
+
+00:00:09.200 --> 00:00:16.440
+true if that expression is indeed not a number and&nbsp;
+false if the expression is a number. I will check&nbsp;&nbsp;
+
+00:00:16.440 --> 00:00:26.960
+to see if x is not a number. Upon running this&nbsp;
+code and the code on line 22, x is a number, so we&nbsp;&nbsp;
+
+00:00:26.960 --> 00:00:36.680
+see the word False being returned and the result&nbsp;
+of x times y. However, let's see what happens if I&nbsp;&nbsp;
+
+00:00:36.680 --> 00:00:47.360
+change x to a float value that is not a number&nbsp;
+and run this again. Not only are we told x is&nbsp;&nbsp;
+
+00:00:47.360 --> 00:00:55.680
+not a number, but the calculation returns nan,&nbsp;
+meaning not a number. Two key points to remember&nbsp;&nbsp;
+
+00:00:55.680 --> 00:01:04.040
+here are isnan checks to see if a variable or&nbsp;
+expression is not a number, and nan is a result,&nbsp;&nbsp;
+
+00:01:04.040 --> 00:01:19.320
+not a function. As I change x back to 3, the next&nbsp;
+math functions to cover are sqrt and isqrt, on&nbsp;&nbsp;
+
+00:01:19.320 --> 00:01:31.680
+lines 24 and 26. Sqrt returns the square root of a&nbsp;
+number. Isqrt? Let's figure that one out as we run&nbsp;&nbsp;
+
+00:01:31.680 --> 00:01:42.240
+this code. We see the square root of 3, but what&nbsp;
+do you think isqrt represents? In many of these&nbsp;&nbsp;
+
+00:01:42.240 --> 00:01:52.440
+functions, I means integer, so isqrt returns the&nbsp;
+integer of a square root of a number. On line 28,&nbsp;&nbsp;
+
+00:01:52.440 --> 00:02:02.760
+which I will run next, the pow function returns a&nbsp;
+number, raised to the power of another number. In&nbsp;&nbsp;
+
+00:02:02.760 --> 00:02:11.200
+this case, we are raising y, -13, to the power&nbsp;
+of x, 3, which should return a negative number&nbsp;&nbsp;
+
+00:02:11.200 --> 00:02:22.560
+close to 2000. I was close as we see the result&nbsp;
+of -2197. The last math function to cover is pi,&nbsp;&nbsp;
+
+00:02:22.560 --> 00:02:34.680
+on line 30, which returns, you may have guessed,&nbsp;
+pi, I will run this code, and we see the result&nbsp;&nbsp;
+
+00:02:34.680 --> 00:02:43.800
+for pi. To use pi in a practical sense, the&nbsp;
+area of a circle is pi times the radius squared,&nbsp;&nbsp;
+
+00:02:43.800 --> 00:02:50.240
+so I will run this line of code, line 32,&nbsp;
+which will calculate the area of a circle with&nbsp;&nbsp;
+
+00:02:50.240 --> 00:03:01.240
+a radius of x, which is three, and the result is&nbsp;
+28.27. The importance of knowing the math module&nbsp;&nbsp;
+
+00:03:01.240 --> 00:03:08.600
+is its ease in solving complex math problems&nbsp;
+related to statistics, geometry, trigonometry,&nbsp;&nbsp;
+
+00:03:08.600 --> 00:03:13.280
+and other math problems without having to write&nbsp;
+a lot of code. Practically, these math functions&nbsp;&nbsp;
+
+00:03:13.280 --> 00:03:20.200
+can help with gaming apps, as many gaming apps&nbsp;
+have math or statistics-based functionality.
+

@@ -1,0 +1,52 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.320 --> 00:00:15.000
+The first question asked was: Will this code work&nbsp;
+as written? The answer? No. I will run this code,&nbsp;&nbsp;
+
+00:00:15.000 --> 00:00:24.480
+and we get an error message that the file is not&nbsp;
+readable. Why is that? Look at the mode on line 6.&nbsp;&nbsp;
+
+00:00:24.480 --> 00:00:30.960
+The w means write, not read. The second question&nbsp;
+in the exercise asked what one change was needed&nbsp;&nbsp;
+
+00:00:30.960 --> 00:00:36.640
+to make this code work. You may recall that a&nbsp;
+plus sign added to the file opening mode makes&nbsp;&nbsp;
+
+00:00:36.640 --> 00:00:41.680
+a file both readable and writable. Of course, you&nbsp;
+will want to be careful with this setting so you&nbsp;&nbsp;
+
+00:00:41.680 --> 00:00:49.680
+don’t accidentally overwrite a file that should&nbsp;
+be read. But I will add the plus sign after the w,&nbsp;&nbsp;
+
+00:00:49.680 --> 00:00:57.680
+rerun the code, and now, everything works&nbsp;
+as intended. Note: While "w+" allows for&nbsp;&nbsp;
+
+00:00:57.680 --> 00:01:02.120
+both reading and writing, it truncates the file,&nbsp;
+wiping out its existing contents to start with&nbsp;&nbsp;
+
+00:01:02.120 --> 00:01:07.480
+a clean slate. This behavior occurs because&nbsp;
+writing is the primary operation associated&nbsp;&nbsp;
+
+00:01:07.480 --> 00:01:13.360
+with "w". If you're looking to read and write to&nbsp;
+an existing file without deleting its content,&nbsp;&nbsp;
+
+00:01:13.360 --> 00:01:18.400
+you can use "r+". In this mode,&nbsp;
+reading is the primary operation,&nbsp;&nbsp;
+
+00:01:18.400 --> 00:01:27.440
+and it allows you to both read from and write to&nbsp;
+the file while preserving its current content.
+

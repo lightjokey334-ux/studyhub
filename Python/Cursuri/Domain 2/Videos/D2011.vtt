@@ -1,0 +1,136 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.940 --> 00:00:05.150
+We have seen both while loops and for loops
+in our coverage of loops.
+
+00:00:05.150 --> 00:00:10.760
+While loops are used for conditional situations,
+and for loops are run a set number of times.
+
+00:00:10.760 --> 00:00:16.940
+You may sometimes want one loop inside another
+when you have multiple loops to run.
+
+00:00:16.940 --> 00:00:21.580
+Having one loop inside of another is known
+as having a nested loop.
+
+00:00:21.580 --> 00:00:27.420
+Here is a pseudo-gaming situation: a player
+has three lives with a goal to get into 10
+
+00:00:27.420 --> 00:00:28.770
+positions in each life.
+
+00:00:28.770 --> 00:00:33.660
+The player can make these position goals as
+long as the game progresses.
+
+00:00:33.660 --> 00:00:37.480
+We want updates each time a player makes a
+position.
+
+00:00:37.480 --> 00:00:42.730
+To accomplish this goal, look at the following
+code in the 226-nested file.
+
+00:00:42.730 --> 00:00:50.030
+On line 1, we have a Boolean variable, game_state,
+set to True when the game is being played.
+
+00:00:50.030 --> 00:00:55.890
+On line 2, we have a game_lives variable set
+to 1.
+
+00:00:55.890 --> 00:01:02.500
+Lines 3 through 7 have a while statement with
+both a loop and a decision flow.
+
+00:01:02.500 --> 00:01:09.180
+The while statement is necessary because we
+have a condition: run this code as long as
+
+00:01:09.180 --> 00:01:11.820
+game_lives is less than 3.
+
+00:01:11.820 --> 00:01:18.270
+The for loop runs through, 10 times, an indicator
+of what positions the player reached and during
+
+00:01:18.270 --> 00:01:22.020
+which life those positions were reached.
+
+00:01:22.020 --> 00:01:25.869
+Following the for loop, a player moves on
+to the next life so long as the game is still
+
+00:01:25.869 --> 00:01:30.110
+playing, as indicated on lines 6 and 7.
+
+00:01:30.110 --> 00:01:35.780
+This code could have many more logical situations,
+like a game being paused, but this topic's
+
+00:01:35.780 --> 00:01:40.149
+focus is nested loops, which is why I left
+that logic out.
+
+00:01:40.149 --> 00:01:46.130
+Finally, line 8 shows a thank you statement
+as a print statement.
+
+00:01:46.130 --> 00:01:48.540
+I will run this code.
+
+00:01:48.540 --> 00:01:52.479
+The code works, but we could use two adjustments.
+
+00:01:52.479 --> 00:02:00.890
+First, the positions should run 1 through
+10, not 0 through 9.
+
+00:02:00.890 --> 00:02:06.350
+Secondly, the code stops at the second life.
+
+00:02:06.350 --> 00:02:11.290
+What two adjustments do you see to be made
+to the code?
+
+00:02:11.290 --> 00:02:17.060
+The first adjustment should be on line 3,
+where we need to change the operator to less
+
+00:02:17.060 --> 00:02:24.349
+than or equal so that the code loops through
+this while statement on the third life.
+
+00:02:24.349 --> 00:02:31.610
+Secondly, we need the range to go from 1 to
+11, as, if you recall, a range with two numbers
+
+00:02:31.610 --> 00:02:35.879
+starts on the first number and ends just before
+the last number, this time just using the
+
+00:02:35.879 --> 00:02:41.240
+numbers needed rather than a plus one, as
+we did in a previous topic.
+
+00:02:41.240 --> 00:02:51.771
+I will make that change to the range on line
+4, rerun the code, and we see the 10 position
+
+00:02:51.771 --> 00:02:56.040
+messages inside each life.
+
+00:02:56.040 --> 00:03:00.360
+Knowing how to use nested loops allows one
+to know when to run one process inside of
+
+00:03:00.360 --> 00:03:03.439
+another, which is a common occurrence in programming
+logic.
+

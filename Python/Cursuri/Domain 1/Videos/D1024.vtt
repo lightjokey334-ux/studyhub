@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.040 --> 00:00:08.760
+The next operator, identity, determines if two&nbsp;
+variables share the same memory location. We will&nbsp;&nbsp;
+
+00:00:08.760 --> 00:00:14.520
+cover this operator type and its purpose in more&nbsp;
+detail later in this domain, but for this example,&nbsp;&nbsp;
+
+00:00:14.520 --> 00:00:21.680
+look at some teams assigned to a game with their&nbsp;
+color and ranks. In this 135-identity file,&nbsp;&nbsp;
+
+00:00:21.680 --> 00:00:33.920
+Team 2, on line 2, has been made to be a&nbsp;
+clone of Team 1, on line 1. Team 3, on line 3,&nbsp;&nbsp;
+
+00:00:33.920 --> 00:00:43.960
+has the same specs as Team 1. But is Team 3 the&nbsp;
+same as Team 1? The is keyword is used to identify&nbsp;&nbsp;
+
+00:00:43.960 --> 00:00:51.160
+whether two variables share the same memory space.&nbsp;
+On lines 5 and 6, we have two print statements,&nbsp;&nbsp;
+
+00:00:51.160 --> 00:00:56.080
+one to see whether team 1 and team 2 share the&nbsp;
+same memory space and one to see whether team&nbsp;&nbsp;
+
+00:00:56.080 --> 00:01:02.920
+1 and team 3 share the same memory space. Do you&nbsp;
+have any guesses as to what we will see when we&nbsp;&nbsp;
+
+00:01:02.920 --> 00:01:15.120
+run this code? The first statement is True because&nbsp;
+team 2 has been made equal to team 1. Thus,&nbsp;&nbsp;
+
+00:01:15.120 --> 00:01:21.480
+the two variables share the same memory&nbsp;
+space. But, team 3, even though it looks&nbsp;&nbsp;
+
+00:01:21.480 --> 00:01:31.440
+to be the same as team 1, is technically&nbsp;
+a new variable with its own set of values,&nbsp;&nbsp;
+
+00:01:31.440 --> 00:01:38.160
+so it does not share the same memory space as&nbsp;
+team 1. Later, we will see why this is important,&nbsp;&nbsp;
+
+00:01:38.160 --> 00:01:42.720
+but because we are focused on the sequence&nbsp;
+of operator types compared to one another,&nbsp;&nbsp;
+
+00:01:42.720 --> 00:01:49.360
+know that identity happens before logical and&nbsp;
+assignment but after arithmetic and comparison.&nbsp;&nbsp;
+
+00:01:49.360 --> 00:01:54.360
+The importance of identity in this context is&nbsp;
+that if two variables share the same memory space,&nbsp;&nbsp;
+
+00:01:54.360 --> 00:01:58.280
+they will have equal values, and thus,&nbsp;
+a developer can decide which variable to&nbsp;&nbsp;
+
+00:01:58.280 --> 00:02:03.920
+change later in code, if necessary,&nbsp;
+to help fulfill the goal of an app.
+

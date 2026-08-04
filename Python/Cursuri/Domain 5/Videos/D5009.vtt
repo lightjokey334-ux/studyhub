@@ -1,0 +1,104 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.540 --> 00:00:06.339
+There are situations in programming where
+one wants to raise specific types of errors
+
+00:00:06.339 --> 00:00:11.600
+given a specific situation for an error, such
+as for dividing by zero or when a value out
+
+00:00:11.600 --> 00:00:15.180
+of range is entered when getting input from
+someone.
+
+00:00:15.180 --> 00:00:20.510
+For those situations, the raise keyword raises
+either a type of error supported in Python
+
+00:00:20.510 --> 00:00:22.200
+or a custom error.
+
+00:00:22.200 --> 00:00:26.240
+Let’s look at a simple code example for
+asking for input for the Fahrenheit temperature
+
+00:00:26.240 --> 00:00:33.710
+for absolute zero, which is -459.67 degrees
+Fahrenheit.
+
+00:00:33.710 --> 00:00:38.010
+That code is in this 525-raise file.
+
+00:00:38.010 --> 00:00:42.379
+To focus on the raise error, this code does
+not run through guesses until the person guesses
+
+00:00:42.379 --> 00:00:43.640
+correctly.
+
+00:00:43.640 --> 00:00:51.770
+But, if the person tries to enter a positive
+number in the input statement on line 1, which
+
+00:00:51.770 --> 00:01:00.030
+converts the input to a floating decimal,
+the raise statement on line 3 runs.
+
+00:01:00.030 --> 00:01:11.409
+The raise statement raises a value error,
+one of many built-in error types in Python.
+
+00:01:11.409 --> 00:01:14.630
+Why raise an error rather than correct the
+player?
+
+00:01:14.630 --> 00:01:21.439
+If game activity is being logged, and this
+app is being tested, one may be writing results
+
+00:01:21.439 --> 00:01:27.439
+to a log, and raising errors is one way to
+spot unwanted responses within an app and
+
+00:01:27.439 --> 00:01:30.040
+then address fixes for those responses.
+
+00:01:30.040 --> 00:01:39.470
+I will run the code and enter a positive number
+on purpose.
+
+00:01:39.470 --> 00:01:42.860
+Sure enough, the error is raised.
+
+00:01:42.860 --> 00:01:59.579
+If I rerun the code and enter a negative result,
+I get the print statement from line 5.
+
+00:01:59.579 --> 00:02:05.630
+Again, raising errors allows a developer to
+control the type of error to raise and log
+
+00:02:05.630 --> 00:02:07.140
+the error if necessary.
+
+00:02:07.140 --> 00:02:11.530
+It’s time for another code analysis example.
+
+00:02:11.530 --> 00:02:16.830
+For this analysis, we will use this 525-analyze
+code file.
+
+00:02:16.830 --> 00:02:22.840
+Use this code file to answer the questions
+in the Review 5.2 exercise in the project
+
+00:02:22.840 --> 00:02:23.989
+workbook.
+
+00:02:23.989 --> 00:02:26.670
+In the next video, we will review and discuss
+the answers.
+

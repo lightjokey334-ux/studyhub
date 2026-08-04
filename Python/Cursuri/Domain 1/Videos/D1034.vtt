@@ -1,0 +1,68 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.000 --> 00:00:05.720
+As we saw in the previous set of topics,&nbsp;
+containment uses the in keyword to&nbsp;&nbsp;
+
+00:00:05.720 --> 00:00:11.120
+determine whether a value is in a list of values.&nbsp;
+Containment is important when one needs to know,&nbsp;&nbsp;
+
+00:00:11.120 --> 00:00:16.280
+for example, if an answer someone entered&nbsp;
+for a question is in an acceptable list of&nbsp;&nbsp;
+
+00:00:16.280 --> 00:00:23.360
+answers. For example, in this 146-containment&nbsp;
+file, we have a list of ancient civilizations&nbsp;&nbsp;
+
+00:00:23.360 --> 00:00:31.240
+stored in a variable with that name on line&nbsp;
+1. Line 3 has a print statement to see if&nbsp;&nbsp;
+
+00:00:31.240 --> 00:00:41.000
+Egypt is one of the ancient civilizations.&nbsp;
+On line 4, Japan is tested, and on line 5,&nbsp;&nbsp;
+
+00:00:41.000 --> 00:00:51.320
+China is tested. I will run this code, and&nbsp;
+we see that Egypt and China return true,&nbsp;&nbsp;
+
+00:00:51.320 --> 00:00:58.800
+but Japan returns false, which is to be expected&nbsp;
+given the list of ancient civilizations on line&nbsp;&nbsp;
+
+00:00:58.800 --> 00:01:05.680
+1. In programming, many keywords that determine&nbsp;
+a true or false value can have the word not added&nbsp;&nbsp;
+
+00:01:05.680 --> 00:01:11.080
+to look for an opposite result. A person may be&nbsp;
+asked to enter a territory not part of an ancient&nbsp;&nbsp;
+
+00:01:11.080 --> 00:01:22.320
+civilization. To test this not keyword, I will add&nbsp;
+the word not in front of the in keyword on line 5,&nbsp;&nbsp;
+
+00:01:22.320 --> 00:01:29.840
+rerun the code, and now for our third&nbsp;
+test for China, we see a value of false,&nbsp;&nbsp;
+
+00:01:31.400 --> 00:01:39.120
+as this statement of China not being in the list&nbsp;
+of ancient civilizations is indeed false. We have&nbsp;&nbsp;
+
+00:01:39.120 --> 00:01:47.320
+reached the end of this topic, so it is time for&nbsp;
+another review. Use this code file, 146-analyze,&nbsp;&nbsp;
+
+00:01:47.320 --> 00:01:56.320
+to answer the questions on lines 4, 7, 9, and&nbsp;
+11, without running the code. In the next video,&nbsp;&nbsp;
+
+00:01:56.320 --> 00:01:59.840
+I will reveal the answers and recap&nbsp;
+what we have covered in this topic.
+

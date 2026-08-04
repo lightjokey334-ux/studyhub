@@ -1,0 +1,114 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.439 --> 00:00:07.430
+Methods are functions that belong to classes,
+which are frameworks for objects.
+
+00:00:07.430 --> 00:00:11.960
+Though classes are not part of this exam,
+for us to understand the role of a class and
+
+00:00:11.960 --> 00:00:16.090
+the importance of testing methods for those
+classes, let’s look at a brief code example
+
+00:00:16.090 --> 00:00:20.400
+defining a class and then an object within
+that class.
+
+00:00:20.400 --> 00:00:28.119
+In this 533-methods file, I have a class called
+Game_Player, which starts on line 1.
+
+00:00:28.119 --> 00:00:33.000
+Again, classes are not on the exam, but to
+understand method testing, we at least need
+
+00:00:33.000 --> 00:00:35.980
+to know what a class is and what it does.
+
+00:00:35.980 --> 00:00:45.980
+This class defines an initial object, starting
+on line 2, which contains a character and
+
+00:00:45.980 --> 00:00:52.079
+a score for a game, and then on lines 3 and
+4, we see two properties for the character,
+
+00:00:52.079 --> 00:00:54.000
+name, and score.
+
+00:00:54.000 --> 00:01:02.410
+The get_score function on line 5 uses the
+character we defined on lines 2 through 4
+
+00:01:02.410 --> 00:01:09.479
+and then has an interval, set to 10, that
+when the code on line 6 runs, the player’s
+
+00:01:09.479 --> 00:01:16.950
+score increases 10 points, and then the score
+is returned so that it can be used in code
+
+00:01:16.950 --> 00:01:19.579
+later if needed.
+
+00:01:19.579 --> 00:01:27.049
+On line 9, we initiate an instance of a game
+player and name the player Robin.
+
+00:01:27.049 --> 00:01:33.150
+Then, on lines 10 and 11, we run the get score
+method on Robin to add the default value,
+
+00:01:33.150 --> 00:01:39.230
+10, to Robin’s score and then again to add
+100 points to the score.
+
+00:01:39.230 --> 00:01:43.369
+Again, for a test to be successful, we need
+to know the expected outcome before we run
+
+00:01:43.369 --> 00:01:45.140
+said test.
+
+00:01:45.140 --> 00:01:51.170
+I have the expected results in commented code
+on lines 10 and 11.
+
+00:01:51.170 --> 00:01:53.939
+First, we should see 10 as a score.
+
+00:01:53.939 --> 00:02:02.240
+Then, on line 11, we override the default
+interval of 10 and add 100 to Robin’s score,
+
+00:02:02.240 --> 00:02:04.700
+so the total at that point should be 110.
+
+00:02:04.700 --> 00:02:12.690
+I will run this code, and we will get the
+expected results of 10 and 110.
+
+00:02:12.690 --> 00:02:17.010
+You may not work with classes right away in
+Python, but as you continue to learn this
+
+00:02:17.010 --> 00:02:22.130
+language, you eventually will, and for that
+reason, you need to know how to test methods,
+
+00:02:22.130 --> 00:02:26.040
+which are functions inside of classes, to
+ensure they work as a single class could be
+
+00:02:26.040 --> 00:02:31.349
+used once, several times, or thousands of
+times in code and we want these classes to
+
+00:02:31.349 --> 00:02:35.500
+do what their intentions are each time we
+call upon them in code.
+

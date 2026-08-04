@@ -10,8 +10,15 @@
      image: null | "cale/catre/imagine.png",
      options: [...],
      pairs: [...],              // DOAR la tipul "match" — etichetele fixe din stânga
-     correct: [...]
+     correct: [...],
+     explanation: "text..."     // OPȚIONAL — vezi nota de mai jos
    }
+
+   Câmpul opțional "explanation": dacă e prezent, se afișează sub
+   întrebare exact când apare și corectarea — adică fie după „Finalizează
+   testul" (this.submitted === true), fie în Modul Învățare, imediat ce
+   întrebarea a fost "verificată" la Enter/Următor (vezi _learnRevealed
+   din goNext()). Corectă sau greșită, oricum — vezi renderQuestion().
 
    "match" vs "dragtext": amândouă înseamnă "trage un chip peste răspuns",
    dar "match" e pentru liste (ex: "Match each X to its Y" — o etichetă
@@ -519,9 +526,8 @@ class QuestionEngine {
     const q = this.questions[this.current];
     if (this.mode === 'learn' && !this.submitted && q && this.isAnswered(q.id) && !this._learnRevealed.has(q.id)) {
       this.saveCurrentAnswer();
-      const body = this.container.querySelector('#qeBody');
-      this.applyCorrectnessUI(q, body);
       this._learnRevealed.add(q.id);
+      this.renderQuestion(); // re-randează tot (corectare + explicație), nu doar clase peste DOM-ul vechi
       if (this.autoSaveAnswers) this.saveAutoSave();
 
       if (this.isCorrect(q, this.userAnswers[q.id])) {
@@ -992,6 +998,21 @@ class QuestionEngine {
       }
     }
     html += `</div>`;
+
+    // Explicație (opțional, q.explanation) — apare exact când apare și
+    // corectarea (applyCorrectnessUI, mai jos): fie după "Finalizează
+    // testul" (this.submitted), fie în Modul Învățare, imediat ce
+    // întrebarea curentă a fost "verificată" la Enter/Următor
+    // (this._learnRevealed — vezi goNext()). Corectă sau greșită, oricum.
+    const showExplanation = this.submitted || (this.mode === 'learn' && this._learnRevealed.has(q.id));
+    if (showExplanation && q.explanation) {
+      html += `
+        <div class="qe-explanation">
+          <div class="qe-explanation-label">💡 Explicație</div>
+          <div class="qe-explanation-text">${q.explanation}</div>
+        </div>`;
+    }
+
     body.innerHTML = html;
     body.classList.toggle('qe-locked', this.submitted);
 

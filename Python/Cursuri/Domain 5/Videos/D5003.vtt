@@ -1,0 +1,166 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.390 --> 00:00:06.080
+The last type of error we will cover occurs
+when one tries to run code; hence, this type
+
+00:00:06.080 --> 00:00:09.550
+of error is called a runtime error.
+
+00:00:09.550 --> 00:00:12.980
+Runtime errors are not syntax errors, nor
+are they logic errors.
+
+00:00:12.980 --> 00:00:17.130
+They are the type of errors that occur when
+one tries to do with an app what cannot be
+
+00:00:17.130 --> 00:00:19.820
+done as the app’s code is being run.
+
+00:00:19.820 --> 00:00:22.430
+Runtime errors can also stem from logic errors.
+
+00:00:22.430 --> 00:00:25.980
+It’s essential to distinguish among them.
+
+00:00:25.980 --> 00:00:29.570
+Syntax errors trigger a “SyntaxError”
+message.
+
+00:00:29.570 --> 00:00:34.390
+Logic errors don't produce any immediate error
+messages but may lead to runtime errors.
+
+00:00:34.390 --> 00:00:37.950
+Runtime errors generate various Python error
+codes.
+
+00:00:37.950 --> 00:00:41.890
+Additionally, runtime errors can sometimes
+be mitigated through proper error-handling
+
+00:00:41.890 --> 00:00:46.360
+techniques that we will cover in the next
+set of topics.
+
+00:00:46.360 --> 00:00:51.610
+One such example of a runtime error is in
+this 513-runtime file.
+
+00:00:51.610 --> 00:00:57.290
+There are no syntax errors that I can see,
+and logically, all we are trying to do is
+
+00:00:57.290 --> 00:01:04.800
+retrieve, on lines 2 and 3, the first and
+third items on this list of plant types that
+
+00:01:04.800 --> 00:01:08.330
+could be covered in a biology class.
+
+00:01:08.330 --> 00:01:11.720
+Can you spot the potential runtime error here?
+
+00:01:11.720 --> 00:01:14.970
+Let’s run this code.
+
+00:01:14.970 --> 00:01:22.939
+We see a fairly common runtime error telling
+us that for plant type 3, the list index is
+
+00:01:22.939 --> 00:01:25.820
+out of range.
+
+00:01:25.820 --> 00:01:27.250
+What does that mean?
+
+00:01:27.250 --> 00:01:29.659
+Let’s go back and look at the code.
+
+00:01:29.659 --> 00:01:37.869
+We have three plant types on line 1, but remember
+that when referring to list items, the list
+
+00:01:37.869 --> 00:01:44.340
+is zero-based, meaning that the first item
+is item zero, the second item is item 1, and
+
+00:01:44.340 --> 00:01:46.010
+so forth.
+
+00:01:46.010 --> 00:01:51.570
+Thus, getting the item index of three is trying
+to get an item that is out of the range of
+
+00:01:51.570 --> 00:01:56.210
+this list, hence the list index out of range
+error.
+
+00:01:56.210 --> 00:02:02.439
+Another point to make about the error is that
+we see a Traceback indicator, which is an
+
+00:02:02.439 --> 00:02:04.979
+error report showing where the problem occurred.
+
+00:02:04.979 --> 00:02:11.660
+In this case, the problem is on line 3 in
+the code.
+
+00:02:11.660 --> 00:02:16.460
+To fix this problem and get the correct two
+plant items to display, we need to change
+
+00:02:16.460 --> 00:02:21.860
+the index numbers on lines 2 and 3 to 0 and
+2, respectively.
+
+00:02:21.860 --> 00:02:34.700
+I will make the change and rerun the code,
+and the code now works with no runtime errors.
+
+00:02:34.700 --> 00:02:38.580
+The takeaway here is that the emphasis on
+learning runtime errors is understanding what
+
+00:02:38.580 --> 00:02:43.330
+each runtime error means and knowing how to
+read a traceback to see what line number has
+
+00:02:43.330 --> 00:02:46.880
+code that is causing the runtime error to
+occur.
+
+00:02:46.880 --> 00:02:52.250
+Understanding what a runtime error means can
+lead to less time troubleshooting, which leaves
+
+00:02:52.250 --> 00:02:56.530
+more time to do more fun things, like developing
+more apps.
+
+00:02:56.530 --> 00:03:01.290
+Now that we have covered the three types of
+errors, let’s use this knowledge to analyze
+
+00:03:01.290 --> 00:03:03.780
+and then fix a code example.
+
+00:03:03.780 --> 00:03:12.909
+This file, 513-analyze, replicates a code
+example we worked on elsewhere in the course.
+
+00:03:12.909 --> 00:03:19.030
+Use the Review 5.1 workbook project to answer
+questions and perform possible fixes related
+
+00:03:19.030 --> 00:03:20.580
+to this file.
+
+00:03:20.580 --> 00:03:22.750
+I will have the answers for you in the next
+video.
+

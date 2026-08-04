@@ -1,0 +1,161 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.400 --> 00:00:05.930
+When running an app, one may want to write
+information to a file to have that information
+
+00:00:05.930 --> 00:00:10.190
+ready to use later within the app or the next
+time the app is run.
+
+00:00:10.190 --> 00:00:14.460
+An example related to gaming can involve saving
+a player’s status or collection of items
+
+00:00:14.460 --> 00:00:15.880
+used to play games.
+
+00:00:15.880 --> 00:00:21.510
+In our ongoing file example, we will examine
+the code that writes to a file.
+
+00:00:21.510 --> 00:00:25.720
+We also want to see what happens if we try
+to write to a file that does not exist and
+
+00:00:25.720 --> 00:00:30.070
+what happens when attempting to write to a
+file that does exist.
+
+00:00:30.070 --> 00:00:35.520
+To help demonstrate these situations, I have
+my code editor, Visual Studio Code, and Explorer
+
+00:00:35.520 --> 00:00:36.620
+side by side.
+
+00:00:36.620 --> 00:00:43.710
+I have the 314-write file open and the folder
+containing the files we will write to in this
+
+00:00:43.710 --> 00:00:44.710
+video.
+
+00:00:44.710 --> 00:00:46.730
+First, let’s look over this code.
+
+00:00:46.730 --> 00:00:54.670
+On line one, we have an open method to open
+a file called 314-message.txt.
+
+00:00:54.670 --> 00:01:03.949
+The w indicates to open the file in write
+mode.
+
+00:01:03.949 --> 00:01:08.940
+Like r for reading a file, w+ will open a
+file for reading and writing.
+
+00:01:08.940 --> 00:01:15.950
+In looking at the file list in Explorer for
+this folder, we do not see a file named 314-message.txt.
+
+00:01:15.950 --> 00:01:22.460
+In running this code, then, one of two things
+will happen: either the file will be created,
+
+00:01:22.460 --> 00:01:26.329
+or we will get a message indicating that the
+file does not exist.
+
+00:01:26.329 --> 00:01:32.890
+Lines 2 and 3 write statements to the file
+referred to on line 1.
+
+00:01:32.890 --> 00:01:35.790
+Write statements write text to a file.
+
+00:01:35.790 --> 00:01:41.100
+Then, line 4 closes the file to free up the
+memory space the file occupies while it is
+
+00:01:41.100 --> 00:01:42.100
+open.
+
+00:01:42.100 --> 00:01:49.020
+I will run the code, and we do not get an
+error message, so that is a good first step.
+
+00:01:49.020 --> 00:01:55.399
+In our user folder, we also see the 314-message
+text file appear.
+
+00:01:55.399 --> 00:01:59.780
+One key to managing files is knowing how a
+programming language will react to attempting
+
+00:01:59.780 --> 00:02:05.829
+to write to a file that does not exist because
+knowing that determines whether we need to
+
+00:02:05.829 --> 00:02:10.129
+write code to account for a file that does
+not exist.
+
+00:02:10.129 --> 00:02:13.660
+For Python, such code is not necessary.
+
+00:02:13.660 --> 00:02:18.310
+Let’s open the text file that’s been generated.
+
+00:02:18.310 --> 00:02:23.860
+The write statements from lines 2 and 3 were
+written to the file, but there is no line
+
+00:02:23.860 --> 00:02:25.709
+between the two lines of code.
+
+00:02:25.709 --> 00:02:32.240
+As we fix this problem, we will also discover
+how Python handles writing to existing files.
+
+00:02:32.240 --> 00:02:38.180
+Does the file get overwritten or appended,
+meaning the text is added to an existing file?
+
+00:02:38.180 --> 00:02:47.450
+First, we want to add an escape character,
+a backslash, and an n at the end of the first
+
+00:02:47.450 --> 00:02:50.340
+write statement on line 2.
+
+00:02:50.340 --> 00:02:59.370
+I will place the cursor after the word configuration
+and type backslash n to tell Python to add
+
+00:02:59.370 --> 00:03:01.760
+a new line at this point.
+
+00:03:01.760 --> 00:03:03.670
+I will then rerun the code.
+
+00:03:03.670 --> 00:03:08.840
+Then, I will open the 314-message text file.
+
+00:03:08.840 --> 00:03:17.319
+The text is now on two lines, and, and this
+is important to know, the original file was
+
+00:03:17.319 --> 00:03:20.780
+overwritten.
+
+00:03:20.780 --> 00:03:26.900
+Seeing this behavior begs this question: how
+do we add text to an existing file?
+
+00:03:26.900 --> 00:03:29.080
+We will cover how in the next video.
+

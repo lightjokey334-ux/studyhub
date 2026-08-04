@@ -1,0 +1,157 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.060 --> 00:00:04.730
+The first data type we will cover is the string
+data type.
+
+00:00:04.730 --> 00:00:09.460
+Strings of text go inside quotation marks
+and are very versatile in how they are used
+
+00:00:09.460 --> 00:00:11.110
+in the context of a program.
+
+00:00:11.110 --> 00:00:19.340
+In this first code example, a file called
+111-str, we see two variables with strings:
+
+00:00:19.340 --> 00:00:24.160
+one containing a first name and one containing
+a last name.
+
+00:00:24.160 --> 00:00:29.080
+Before getting more into strings, let’s
+go through a basic programming tenet: variables.
+
+00:00:29.080 --> 00:00:35.070
+A variable is a container that stores a value,
+like a string of text, a number, or other
+
+00:00:35.070 --> 00:00:36.090
+data types.
+
+00:00:36.090 --> 00:00:44.490
+I have two such variables on lines 1 and 2,
+first_name and last_name.
+
+00:00:44.490 --> 00:00:50.410
+Variable names can contain letters, numbers,
+and underscores but not symbols.
+
+00:00:50.410 --> 00:00:53.020
+They cannot contain spaces.
+
+00:00:53.020 --> 00:00:58.520
+If you have any experience with C# or Java
+or JavaScript, you may have seen variables
+
+00:00:58.520 --> 00:01:05.019
+using camel case, which makes the first word
+lowercase, and all subsequent words start
+
+00:01:05.019 --> 00:01:06.930
+with a capital letter.
+
+00:01:06.930 --> 00:01:11.940
+You can use camel casing in Python, but the
+standard naming convention in Python is to
+
+00:01:11.940 --> 00:01:17.990
+use all lowercase characters with underscores
+replacing spaces.
+
+00:01:17.990 --> 00:01:27.580
+I want to output this as a full name, so on
+line 3, I will type print(last_name +”,
+
+00:01:27.580 --> 00:01:42.710
+“ + first_name) with a space before the
+comma.
+
+00:01:42.710 --> 00:01:45.460
+A print statement creates output.
+
+00:01:45.460 --> 00:01:51.390
+Within that print statement, any literal text,
+like the comma and space we see here, must
+
+00:01:51.390 --> 00:01:53.220
+be inside quotation marks.
+
+00:01:53.220 --> 00:01:57.511
+Let’s run this code in a terminal to ensure
+it works.
+
+00:01:57.511 --> 00:02:06.600
+I will select the Run Python File icon, and
+below, on the Terminal tab, we will see the
+
+00:02:06.600 --> 00:02:10.580
+results: my last name, comma, and first name.
+
+00:02:10.580 --> 00:02:16.140
+Though not on the exam, one question when
+learning a programming language is: do we
+
+00:02:16.140 --> 00:02:21.000
+use single quotes around text strings or double
+quotes?
+
+00:02:21.000 --> 00:02:22.080
+Double quotes work.
+
+00:02:22.080 --> 00:02:27.860
+But what if I change the quotes inside the
+print statement to single quotes?
+
+00:02:27.860 --> 00:02:33.120
+I will rerun this code, and it works.
+
+00:02:33.120 --> 00:02:37.720
+This output speaks to Python's versatility,
+where we can use single or double quotes but
+
+00:02:37.720 --> 00:02:43.250
+not curly quotes, as is often the case with
+quotes pasted from Word, so be aware of that
+
+00:02:43.250 --> 00:02:44.250
+possible issue.
+
+00:02:44.250 --> 00:02:49.480
+You may be wondering when the quotes used
+matter, then.
+
+00:02:49.480 --> 00:02:52.360
+Let me show you an example of when it does
+matter.
+
+00:02:52.360 --> 00:03:00.360
+I will skip a line and add this print statement
+to line 5: print (‘Jason’s turn’) and
+
+00:03:00.360 --> 00:03:08.020
+then attempt to run this code.
+
+00:03:08.020 --> 00:03:11.640
+Notice that we get an error message.
+
+00:03:11.640 --> 00:03:13.090
+Why?
+
+00:03:13.090 --> 00:03:19.640
+Because Python thinks we have an opening quote
+here with no closing quote, which will generate
+
+00:03:19.640 --> 00:03:21.110
+an error message.
+
+00:03:21.110 --> 00:03:31.900
+But, if I change the quotes here to double
+quotes, this runs again because, now, the
+
+00:03:31.900 --> 00:03:35.900
+single quote is ignoring these double quotes.
+

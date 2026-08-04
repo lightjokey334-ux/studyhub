@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.040 --> 00:00:06.280
+The containment operator checks whether a value&nbsp;
+is contained within a list of values. Containment&nbsp;&nbsp;
+
+00:00:06.280 --> 00:00:12.360
+is used most for lists, sets, tuples, and&nbsp;
+dictionaries. We will see this operator in&nbsp;&nbsp;
+
+00:00:12.360 --> 00:00:18.960
+more context later, but let’s run through a quick&nbsp;
+code example of the containment. On line 1 of&nbsp;&nbsp;
+
+00:00:18.960 --> 00:00:26.880
+this 136-containment file, I have listed the&nbsp;
+four largest islands in Japan. This variable&nbsp;&nbsp;
+
+00:00:26.880 --> 00:00:32.800
+may be used in a game later to quiz someone&nbsp;
+on identifying one or more islands. Line 2&nbsp;&nbsp;
+
+00:00:32.800 --> 00:00:43.320
+simulates a guess one is making on an island. The&nbsp;
+containment portion, line 3, uses the in keyword&nbsp;&nbsp;
+
+00:00:43.320 --> 00:00:51.440
+to test to see if, in this case, the island&nbsp;
+listed is within the large islands variable.&nbsp;&nbsp;
+
+00:00:51.440 --> 00:00:56.600
+Assuming I have everything spelled correctly,&nbsp;
+the result of this code should read True, as&nbsp;&nbsp;
+
+00:00:56.600 --> 00:01:04.640
+I have Hokkaido listed as an island both for the&nbsp;
+simulated guess and in the list of large islands.&nbsp;&nbsp;
+
+00:01:04.640 --> 00:01:12.040
+I will run this code, and we do get a True&nbsp;
+result. In the order of operators, containment&nbsp;&nbsp;
+
+00:01:12.040 --> 00:01:18.160
+occurs just after arithmetic. Containment is&nbsp;
+in front of comparison, logical, and identity&nbsp;&nbsp;
+
+00:01:18.160 --> 00:01:24.160
+because containment is not as precise as the&nbsp;
+other three comparison types. In containment,&nbsp;&nbsp;
+
+00:01:24.160 --> 00:01:31.760
+we are just looking for a value within a list&nbsp;
+of values: a set, a tuple, or a dictionary. It's&nbsp;&nbsp;
+
+00:01:31.760 --> 00:01:38.360
+review time. We have seen six types of operators.&nbsp;
+Your Review 1.3 exercise in the workbook has a&nbsp;&nbsp;
+
+00:01:38.360 --> 00:01:43.320
+place for you to list the six operator types&nbsp;
+in order of preference and then list what&nbsp;&nbsp;
+
+00:01:43.320 --> 00:01:48.640
+takes precedence over all the operator types. You&nbsp;
+also have a place to list the order of operations&nbsp;&nbsp;
+
+00:01:48.640 --> 00:01:56.880
+within both the logical operators and arithmetic&nbsp;
+operators. The next video will have the answers.
+

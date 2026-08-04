@@ -1,0 +1,72 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.840 --> 00:00:05.080
+The next several topics will take us through&nbsp;
+working with and building functions. Though&nbsp;&nbsp;
+
+00:00:05.080 --> 00:00:10.280
+it makes sense to build a function and then work&nbsp;
+with its particulars, the exam topics start with&nbsp;&nbsp;
+
+00:00:10.280 --> 00:00:16.960
+running a function and then building one, which&nbsp;
+is an approach that aligns with practical usage,&nbsp;&nbsp;
+
+00:00:16.960 --> 00:00:22.880
+so that's how we'll proceed. First, let’s&nbsp;
+define a function. A function is a block&nbsp;&nbsp;
+
+00:00:22.880 --> 00:00:28.600
+of code that can be called multiple times&nbsp;
+within an app. Functions are best used when&nbsp;&nbsp;
+
+00:00:28.600 --> 00:00:33.400
+you have a process that needs repeating. A&nbsp;
+real-life example, outside of programming,&nbsp;&nbsp;
+
+00:00:33.400 --> 00:00:40.040
+can be a daily workout routine one has. Instead&nbsp;
+of writing down the same thing to do each day,&nbsp;&nbsp;
+
+00:00:40.040 --> 00:00:44.960
+one could write down the set of workout&nbsp;
+steps once and then, several days a week,&nbsp;&nbsp;
+
+00:00:44.960 --> 00:00:50.560
+have instructions to do that block of&nbsp;
+exercises. Let’s put this idea of functions&nbsp;&nbsp;
+
+00:00:50.560 --> 00:00:55.560
+into a programming example related to gaming.&nbsp;
+A game could often need to multiply a score&nbsp;&nbsp;
+
+00:00:55.560 --> 00:01:04.240
+and a multiplier. In this 421-signatures file,&nbsp;
+a function named total score uses two values,&nbsp;&nbsp;
+
+00:01:04.240 --> 00:01:13.640
+known as arguments, stored as variables, that&nbsp;
+multiply a score, using this multiplier is on&nbsp;&nbsp;
+
+00:01:13.640 --> 00:01:20.560
+line 2. I will get into the anatomy of a function&nbsp;
+over the next few videos, but I want you to focus&nbsp;&nbsp;
+
+00:01:20.560 --> 00:01:29.880
+on the print statements on lines 4 and 5. Lines 4&nbsp;
+and 5 see print statements that call the function,&nbsp;&nbsp;
+
+00:01:29.880 --> 00:01:41.360
+using scores and multipliers as arguments. I will&nbsp;
+run this code, and the two numbers are multiplied&nbsp;&nbsp;
+
+00:01:41.360 --> 00:01:48.160
+for both of the print statements. Functions are&nbsp;
+an integral part of programming as they save time&nbsp;&nbsp;
+
+00:01:48.160 --> 00:01:55.240
+and, as code does need to be repeated, functions&nbsp;
+also reduce the number of errors within code.
+

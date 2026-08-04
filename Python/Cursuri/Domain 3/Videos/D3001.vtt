@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.400 --> 00:00:07.240
+This domain will take us through input and output&nbsp;
+operations. For the next few videos, we will work&nbsp;&nbsp;
+
+00:00:07.240 --> 00:00:14.320
+with files using an app's code. Regarding gaming,&nbsp;
+one often needs to store values in a configuration&nbsp;&nbsp;
+
+00:00:14.320 --> 00:00:22.600
+or similar file for items such as player or game&nbsp;
+settings. One such example is this 311-open file,&nbsp;&nbsp;
+
+00:00:22.600 --> 00:00:27.840
+which has code that opens a file, writes to&nbsp;
+it, and closes it on the first three lines&nbsp;&nbsp;
+
+00:00:27.840 --> 00:00:33.800
+of the code. I have that code in this file to&nbsp;
+ensure we have a file to work with should you&nbsp;&nbsp;
+
+00:00:33.800 --> 00:00:40.360
+decide to run this code from any folder. By&nbsp;
+default, this code sends files to one’s user&nbsp;&nbsp;
+
+00:00:40.360 --> 00:00:50.280
+folder under Users. What I want to focus on is&nbsp;
+the code on line 5. There is a variable called&nbsp;&nbsp;
+
+00:00:50.280 --> 00:01:01.360
+message test. For that variable, we see an open&nbsp;
+command and the name of a file to open. The r&nbsp;&nbsp;
+
+00:01:01.360 --> 00:01:09.120
+argument opens the file in read mode. I will cover&nbsp;
+read mode and other modes in upcoming topics. And&nbsp;&nbsp;
+
+00:01:09.120 --> 00:01:15.280
+since we are not yet reading any content from the&nbsp;
+file, as we are covering that in another topic,&nbsp;&nbsp;
+
+00:01:15.280 --> 00:01:22.600
+I have a print statement on line 6 acknowledging&nbsp;
+the file is open and I will run this code to&nbsp;&nbsp;
+
+00:01:22.600 --> 00:01:29.920
+get that acknowledgement. The key takeaway&nbsp;
+here is that, when opening an external file,&nbsp;&nbsp;
+
+00:01:29.920 --> 00:01:35.280
+we want to store that action in a variable&nbsp;
+because, as we will discover in upcoming videos,&nbsp;&nbsp;
+
+00:01:35.280 --> 00:01:39.960
+there are many methods we can run to read&nbsp;
+content from a file, write to the file, or&nbsp;&nbsp;
+
+00:01:39.960 --> 00:01:48.400
+do other actions on the file. We need to know how&nbsp;
+to open a file to do those actions on the file.
+

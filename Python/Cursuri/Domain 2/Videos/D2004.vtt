@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.880 --> 00:00:05.320
+To finish this section on if statements, we want&nbsp;
+to look at two other aspects of if statements we&nbsp;&nbsp;
+
+00:00:05.320 --> 00:00:13.280
+can use: nested ifs and compound conditional&nbsp;
+expressions. This code example, 214-nested,&nbsp;&nbsp;
+
+00:00:13.280 --> 00:00:19.280
+uses both to run through the logic of a game in&nbsp;
+which players score points and collect coins. To&nbsp;&nbsp;
+
+00:00:19.280 --> 00:00:25.720
+start, look at the variables declared on lines&nbsp;
+one through three. We have a list of coins on&nbsp;&nbsp;
+
+00:00:25.720 --> 00:00:32.440
+line one, a single coin within the list of coins&nbsp;
+on line two, and then a score we will use to test&nbsp;&nbsp;
+
+00:00:32.440 --> 00:00:38.920
+this code on line three. Before we go further,&nbsp;
+here is a quick review question: Is the list on&nbsp;&nbsp;
+
+00:00:38.920 --> 00:00:46.680
+line one immutable? The answer: no. Tuples are&nbsp;
+immutable, meaning they cannot be edited without&nbsp;&nbsp;
+
+00:00:46.680 --> 00:00:56.280
+being redefined completely. But lists are editable&nbsp;
+and not immutable. Moving down to lines 5 through&nbsp;&nbsp;
+
+00:00:56.280 --> 00:01:04.840
+9, we have an example of a nested if, which is an&nbsp;
+if statement inside of an if statement. Why would&nbsp;&nbsp;
+
+00:01:04.840 --> 00:01:10.120
+we need a nested if? If you have a condition&nbsp;
+that leads to checking for another condition,&nbsp;&nbsp;
+
+00:01:10.120 --> 00:01:17.520
+you have a need for a nested if. Let’s go through&nbsp;
+this block of code line by line. On line 5,&nbsp;&nbsp;
+
+00:01:17.520 --> 00:01:27.720
+we first check to see if a player’s score exceeds&nbsp;
+10000. If that is true, the coins the player has&nbsp;&nbsp;
+
+00:01:27.720 --> 00:01:34.640
+received determine which level the player is&nbsp;
+on. The player needs a gold or platinum coin&nbsp;&nbsp;
+
+00:01:34.640 --> 00:01:47.080
+to be on level 3. If not, the player is on level&nbsp;
+2. None of the nested code is analyzed, though,&nbsp;&nbsp;
+
+00:01:47.080 --> 00:01:54.160
+if the score does not exceed 10000. Sometimes,&nbsp;
+you may not have a condition that begets another&nbsp;&nbsp;
+
+00:01:54.160 --> 00:02:00.160
+condition to analyze with multiple possibilities.&nbsp;
+Still, you may need two conditions to be true or&nbsp;&nbsp;
+
+00:02:00.160 --> 00:02:07.120
+one of two conditions to be true for certain&nbsp;
+code to run. Take a look at the example elif&nbsp;&nbsp;
+
+00:02:07.120 --> 00:02:15.200
+statement on line 10. This statement is looking&nbsp;
+for a score over 5000 and that the coin a player&nbsp;&nbsp;
+
+00:02:15.200 --> 00:02:23.440
+possesses is within the list of coins on&nbsp;
+line 1. If both those conditions are true,&nbsp;&nbsp;
+
+00:02:23.440 --> 00:02:33.440
+the print statement on line 11 runs. If not,&nbsp;
+the else part of this if-elif-else statement&nbsp;&nbsp;
+
+00:02:33.440 --> 00:02:38.320
+runs the print statement on line 13. What do&nbsp;
+you think the result will be in looking over&nbsp;&nbsp;
+
+00:02:38.320 --> 00:02:46.600
+this code? Let’s run the code and find out.&nbsp;
+We see that the print statement on line 11 is&nbsp;&nbsp;
+
+00:02:46.600 --> 00:02:55.000
+printed. Part of learning programming is looking&nbsp;
+at existing code, predicting what will run, then&nbsp;&nbsp;
+
+00:02:55.000 --> 00:03:01.360
+running it and seeing if the result matches with&nbsp;
+a prediction and why the result is the result. For&nbsp;&nbsp;
+
+00:03:01.360 --> 00:03:07.880
+the code we have now, though the score is 10000,&nbsp;
+it does not exceed 10000. Thus, the condition on&nbsp;&nbsp;
+
+00:03:07.880 --> 00:03:17.640
+line 5 is false. Thus, we skip down to line 10;&nbsp;
+the score is over 5000, and the coin is Bronze,&nbsp;&nbsp;
+
+00:03:17.640 --> 00:03:23.640
+which is one of the coins in the coins list, so&nbsp;
+this statement is true, and we see the current&nbsp;&nbsp;
+
+00:03:23.640 --> 00:03:28.760
+results within the code. We have reached the end&nbsp;
+of this section on the if statement, so it’s time&nbsp;&nbsp;
+
+00:03:28.760 --> 00:03:35.160
+to do a practice analysis. This time, however,&nbsp;
+you will need to discover one of the pieces to&nbsp;&nbsp;
+
+00:03:35.160 --> 00:03:45.000
+the solution as it is something we have barely&nbsp;
+mentioned. Take a look at this 214-analyze file.&nbsp;&nbsp;
+
+00:03:45.000 --> 00:03:51.000
+Pay close attention to the variables on lines 2&nbsp;
+and 3. The person testing this code expects to&nbsp;&nbsp;
+
+00:03:51.000 --> 00:04:01.680
+see the print statement on line 7. However, when&nbsp;
+we run this code, we see this result, which is not&nbsp;&nbsp;
+
+00:04:01.680 --> 00:04:09.280
+even close to what we expect. Why? Use the Review&nbsp;
+2.1 exercise in the workbook to discover the two&nbsp;&nbsp;
+
+00:04:09.280 --> 00:04:15.880
+items in this code that need fixing and how to&nbsp;
+fix them. Again, one of the fixes will require&nbsp;&nbsp;
+
+00:04:15.880 --> 00:04:20.560
+your thinking outside a little of what you have&nbsp;
+seen, and I would suggest maybe even taking this&nbsp;&nbsp;
+
+00:04:20.560 --> 00:04:26.360
+code file and experimenting with it. In the&nbsp;
+following video, we will reveal the answer.
+

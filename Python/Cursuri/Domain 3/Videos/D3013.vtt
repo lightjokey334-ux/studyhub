@@ -1,0 +1,108 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.320 --> 00:00:06.520
+As part of running an app or even testing an&nbsp;
+app, we can, in some situations, use command-line&nbsp;&nbsp;
+
+00:00:06.520 --> 00:00:11.440
+arguments to run the app. Using command-line&nbsp;
+arguments allows us to run an app multiple&nbsp;&nbsp;
+
+00:00:11.440 --> 00:00:18.600
+ways without changing the code within the app. For&nbsp;
+this example, I have a file named 323-command that&nbsp;&nbsp;
+
+00:00:18.600 --> 00:00:27.080
+writes text to a file and then prints a message&nbsp;
+that the file is complete. I want to run this code&nbsp;&nbsp;
+
+00:00:27.080 --> 00:00:32.440
+from a command line so that we can test calling&nbsp;
+this code from outside the Python development&nbsp;&nbsp;
+
+00:00:32.440 --> 00:00:40.080
+environment. Instead of running the code from&nbsp;
+Visual Studio, I have a command prompt open,&nbsp;&nbsp;
+
+00:00:40.080 --> 00:00:48.280
+and I have navigated to the folder containing the&nbsp;
+Python file we just looked at. I will type python&nbsp;&nbsp;
+
+00:00:48.280 --> 00:00:58.120
+and then the file name, 323-command.py, and&nbsp;
+then select the Enter key on the keyboard. The&nbsp;&nbsp;
+
+00:00:58.120 --> 00:01:07.240
+file runs, and we get the output from the print&nbsp;
+statement. Again, running Python from the command&nbsp;&nbsp;
+
+00:01:07.240 --> 00:01:12.640
+line allows one to test small blocks of code or&nbsp;
+even complete files without being in a development&nbsp;&nbsp;
+
+00:01:12.640 --> 00:01:17.760
+environment, thus allowing people who have the&nbsp;
+Python engine installed, but no development&nbsp;&nbsp;
+
+00:01:17.760 --> 00:01:25.400
+environment installed to test code, helping ensure&nbsp;
+an app works. There are a couple of important&nbsp;&nbsp;
+
+00:01:25.400 --> 00:01:31.160
+points that might cause problems. First, if&nbsp;
+you're running Python files from the command line,&nbsp;&nbsp;
+
+00:01:31.160 --> 00:01:36.880
+make sure Python is set as an environment variable&nbsp;
+on your system. If it isn't, you could encounter&nbsp;&nbsp;
+
+00:01:36.880 --> 00:01:42.400
+some problems trying to run your code. How to set&nbsp;
+this up varies depending on your operating system,&nbsp;&nbsp;
+
+00:01:42.400 --> 00:01:50.120
+so you might want to look up specific instructions&nbsp;
+for your setup. Secondly, a quick heads-up about&nbsp;&nbsp;
+
+00:01:50.120 --> 00:02:01.520
+Python versions: features like f-strings are only&nbsp;
+available in Python 3.6 and later. If you're using&nbsp;&nbsp;
+
+00:02:01.520 --> 00:02:06.480
+an older version, you won't be able to utilize&nbsp;
+these convenient features. It might be a good&nbsp;&nbsp;
+
+00:02:06.480 --> 00:02:10.840
+idea to check your Python version and consider&nbsp;
+upgrading if you're working with an outdated&nbsp;&nbsp;
+
+00:02:10.840 --> 00:02:18.400
+version. We have reached the halfway point in&nbsp;
+this course, and now it’s time for you to take the&nbsp;&nbsp;
+
+00:02:18.400 --> 00:02:26.040
+skills you have learned and build an entire Python&nbsp;
+project. The instructions for what is warranted&nbsp;&nbsp;
+
+00:02:26.040 --> 00:02:32.520
+is in the Review 3.2 exercise in your project&nbsp;
+workbook. Allow yourself to conceptualize what is&nbsp;&nbsp;
+
+00:02:32.520 --> 00:02:40.120
+needed to generate the output in the exercise and,&nbsp;
+if necessary, write down or even map out the logic&nbsp;&nbsp;
+
+00:02:40.120 --> 00:02:47.280
+needed to make the code necessary for the output.&nbsp;
+There is no one perfect answer to this project,&nbsp;&nbsp;
+
+00:02:47.280 --> 00:02:53.480
+but I will tell you this hint: you should&nbsp;
+be able to get this done in under 15 lines&nbsp;&nbsp;
+
+00:02:53.480 --> 00:02:59.760
+of code. Make it happen, and I will see you&nbsp;
+with one potential answer in the next video.
+

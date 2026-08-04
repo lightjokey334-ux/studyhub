@@ -29,7 +29,24 @@ const SUBJECTS = {
       { id: 'exam3', label: 'Examen 3' },
     ],
   },
-  Python: { label: 'Python', icon: '🐍', ready: false, domains: [], exams: [] },
+  Python: {
+    label: 'Python',
+    icon: '🐍',
+    ready: true,
+    domains: [
+      { id: 'd1', title: 'Domain 1: Data Types and Operators' },
+      { id: 'd2', title: 'Domain 2: Branching and Iteration' },
+      { id: 'd3', title: 'Domain 3: Input and Output' },
+      { id: 'd4', title: 'Domain 4: Code Documentation and Functions' },
+      { id: 'd5', title: 'Domain 5: Errors, Exceptions and Testing' },
+      { id: 'd6', title: 'Domain 6: Modules and Problem Solving' },
+    ],
+    exams: [
+      { id: 'exam1', label: 'Examen 1' },
+      { id: 'exam2', label: 'Examen 2' },
+      { id: 'exam3', label: 'Examen 3' },
+    ],
+  },
   Databases: {
     label: 'Databases',
     icon: '🗄️',

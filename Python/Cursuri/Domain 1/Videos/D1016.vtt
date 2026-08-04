@@ -1,0 +1,171 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.199 --> 00:00:05.879
+We are working with a list of state capitals
+that we could use in a quiz-like game.
+
+00:00:05.879 --> 00:00:11.730
+Let’s see some list operations we can apply
+to the list, specifically operations that
+
+00:00:11.730 --> 00:00:16.230
+add items to the list and operations that
+remove items from the list.
+
+00:00:16.230 --> 00:00:20.420
+As we go through each built-in method used
+to affect a list, we should pay close attention
+
+00:00:20.420 --> 00:00:23.240
+to the differences among these methods.
+
+00:00:23.240 --> 00:00:33.020
+To start, I have three state capitals added
+to the 126-list_operations file for the first
+
+00:00:33.020 --> 00:00:37.910
+three states in the United States alphabetically,
+on line 1.
+
+00:00:37.910 --> 00:00:40.910
+I want to add Sacramento to the list next.
+
+00:00:40.910 --> 00:00:51.140
+I will, on line 2, add this statement: capitals.append(“Sacramento”)
+to add the capital of California to the list.
+
+00:00:51.140 --> 00:00:58.420
+Then, with a print statement for the capitals
+variable already in place on line 4, I will
+
+00:00:58.420 --> 00:01:00.870
+run this code.
+
+00:01:00.870 --> 00:01:04.689
+The list prints as expected.
+
+00:01:04.689 --> 00:01:12.390
+Here is a general programming note: in programming,
+a period (.) serves as the "accessor" that
+
+00:01:12.390 --> 00:01:16.110
+allows you to reach into an object and use
+one of its methods.
+
+00:01:16.110 --> 00:01:19.780
+Think of it like opening a toolbox to use
+a specific tool.
+
+00:01:19.780 --> 00:01:27.000
+For example, in capitals.append(), capitals
+is the object (or "toolbox") and append is
+
+00:01:27.000 --> 00:01:29.240
+the method (or "tool").
+
+00:01:29.240 --> 00:01:34.220
+The period is the mechanism that lets you
+access the append method specifically from
+
+00:01:34.220 --> 00:01:36.170
+the capitals object.
+
+00:01:36.170 --> 00:01:43.250
+Therefore, methods are functions that are
+tied to a specific object and are invoked
+
+00:01:43.250 --> 00:01:46.180
+using this period notation.
+
+00:01:46.180 --> 00:01:51.219
+Whereas append adds an item to the end of
+a list, the insert method inserts an item
+
+00:01:51.219 --> 00:01:54.420
+at a specified position.
+
+00:01:54.420 --> 00:02:01.310
+In adding capital cities to our list, I forgot
+that Arkansas and its capital, Little Rock,
+
+00:02:01.310 --> 00:02:05.350
+must be inserted before Sacramento.
+
+00:02:05.350 --> 00:02:11.760
+Using the zero-based positioning Python has,
+I want Little Rock to be the fourth capital,
+
+00:02:11.760 --> 00:02:15.640
+so I will insert this text into position three.
+
+00:02:15.640 --> 00:02:30.349
+I will add a line after the append statement
+and type: capitals.insert(3, “LittleRock”).
+
+00:02:30.349 --> 00:02:34.560
+I will rerun the code.
+
+00:02:34.560 --> 00:02:38.500
+So far, all these list operations are working
+perfectly.
+
+00:02:38.500 --> 00:02:44.310
+Next, let’s see how to change the value
+of a list item.
+
+00:02:44.310 --> 00:02:50.410
+I forgot to put a space between Little and
+Rock, so I want to change that capital.
+
+00:02:50.410 --> 00:02:58.120
+Little Rock is at position 3 in the list,
+so I will move to line 5 in the code and type
+
+00:02:58.120 --> 00:03:08.250
+capitals[3] = “Little Rock” with a space,
+to make that change.
+
+00:03:08.250 --> 00:03:15.030
+Then, using the print(capitals) statement
+on line 6, I will run this code, and see the
+
+00:03:15.030 --> 00:03:16.760
+updated list.
+
+00:03:16.760 --> 00:03:23.180
+Let’s now look at two ways we can remove
+items from a list.
+
+00:03:23.180 --> 00:03:27.530
+First, we can remove an item by value.
+
+00:03:27.530 --> 00:03:36.860
+I will add a statement on line 4 with this
+text: capitals.remove(“Juneau”).
+
+00:03:36.860 --> 00:03:43.620
+Let’s rerun this code.
+
+00:03:43.620 --> 00:03:47.010
+We have a problem now, don’t we?
+
+00:03:47.010 --> 00:03:54.129
+Little Rock is on the list twice, and Sacramento
+is no longer there.
+
+00:03:54.129 --> 00:03:55.129
+Why is that?
+
+00:03:55.129 --> 00:04:00.220
+Take a moment to do the first part of the
+Review 1.2 exercise in the workbook to determine
+
+00:04:00.220 --> 00:04:05.140
+why you think this happened, and then in the
+next video, we will solve this problem and
+
+00:04:05.140 --> 00:04:06.950
+continue with these list operations.
+

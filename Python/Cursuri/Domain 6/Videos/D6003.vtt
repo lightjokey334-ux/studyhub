@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.040 --> 00:00:06.160
+One specific use of the os module, and important&nbsp;
+enough to warrant its own exam objective,&nbsp;&nbsp;
+
+00:00:06.160 --> 00:00:13.600
+is the os.path submodule. Among its many uses,&nbsp;
+os.path is used to see if a file exists in a&nbsp;&nbsp;
+
+00:00:13.600 --> 00:00:20.480
+specific directory, as we are about to witness&nbsp;
+with the following code example to analyze. This&nbsp;&nbsp;
+
+00:00:20.480 --> 00:00:25.240
+code example may look familiar, as we used it&nbsp;
+to see if a file did not exist, and then we&nbsp;&nbsp;
+
+00:00:25.240 --> 00:00:33.160
+created a file if it did not exist and read it&nbsp;
+if it did exist. In this version of the code,&nbsp;&nbsp;
+
+00:00:33.160 --> 00:00:41.320
+this 613-ospath file, notice the import statement&nbsp;
+on line 1. This import allows for any os module&nbsp;&nbsp;
+
+00:00:41.320 --> 00:00:49.600
+to be used in this code. Since this code focuses&nbsp;
+solely on file paths, it's good practice to limit&nbsp;&nbsp;
+
+00:00:49.600 --> 00:00:56.400
+the import to only the os.path submodule, avoiding&nbsp;
+wildcard imports that could clutter the namespace,&nbsp;&nbsp;
+
+00:00:56.400 --> 00:01:01.120
+which is the set of names available in your&nbsp;
+script for referencing objects. I will make&nbsp;&nbsp;
+
+00:01:01.120 --> 00:01:09.120
+that change on line 1. When we import a library,&nbsp;
+we should restrict the import to what is needed&nbsp;&nbsp;
+
+00:01:09.120 --> 00:01:14.600
+so that one does not use a library module that&nbsp;
+is not needed in the code and could disrupt the&nbsp;&nbsp;
+
+00:01:14.600 --> 00:01:23.920
+original intent of the code. In addition to&nbsp;
+checking to see if a file exists, we can use&nbsp;&nbsp;
+
+00:01:23.920 --> 00:01:31.240
+os.path to see if a path exists to a directory and&nbsp;
+possibly files within the directory. On line 15,&nbsp;&nbsp;
+
+00:01:31.240 --> 00:01:44.480
+I will start a new variable, file_path, and set&nbsp;
+it to an os.path.join and then, in parentheses,&nbsp;&nbsp;
+
+00:01:44.480 --> 00:01:52.840
+a folder and a file. Join combines a folder,&nbsp;
+subfolders, and a file into a single entity,&nbsp;&nbsp;
+
+00:01:52.840 --> 00:01:58.880
+that can then be checked for existence. It&nbsp;
+does this in an OS-agnostic manner, enabling&nbsp;&nbsp;
+
+00:01:58.880 --> 00:02:04.960
+cross-platform code that works on any system&nbsp;
+compatible with Python. On the next line, I will&nbsp;&nbsp;
+
+00:02:04.960 --> 00:02:11.760
+add an if statement to see if this path on line&nbsp;
+15 is a legitimate file path. We are simulating&nbsp;&nbsp;
+
+00:02:11.760 --> 00:02:17.680
+if a configuration file for a game has already&nbsp;
+been created in a specific folder. I will add&nbsp;&nbsp;
+
+00:02:17.680 --> 00:02:27.120
+a print statement on line 17 to confirm that the&nbsp;
+file exists. I will run the code. We do not get&nbsp;&nbsp;
+
+00:02:27.120 --> 00:02:34.840
+a message that the file exists, so we would need&nbsp;
+to create that file in a game sequence. Remember,&nbsp;&nbsp;
+
+00:02:34.840 --> 00:02:41.920
+in addition to checking for file existence, you&nbsp;
+can also use os.path to verify if a directory&nbsp;&nbsp;
+
+00:02:41.920 --> 00:02:49.400
+exists. This is particularly useful when your&nbsp;
+application requires certain directory structures.
+

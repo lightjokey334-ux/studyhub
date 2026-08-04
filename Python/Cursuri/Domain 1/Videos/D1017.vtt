@@ -1,0 +1,133 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.189 --> 00:00:03.169
+Did you figure out what the problem was?
+
+00:00:03.169 --> 00:00:07.379
+Let’s trace through this code and see where
+the list went awry.
+
+00:00:07.379 --> 00:00:10.510
+The first three lines of the code are acceptable.
+
+00:00:10.510 --> 00:00:13.710
+But think of what happens on line 4.
+
+00:00:13.710 --> 00:00:20.650
+When we remove Juneau, every list item to
+the right of Juneau moves left one position.
+
+00:00:20.650 --> 00:00:25.420
+I will type a comment on the right to simulate
+what is happening here.
+
+00:00:25.420 --> 00:00:37.030
+When Juneau is removed, the list becomes Montgomery,
+Phoenix, LittleRock with no space, and Sacramento.
+
+00:00:37.030 --> 00:00:40.289
+What position is Little Rock in now?
+
+00:00:40.289 --> 00:00:41.289
+Position 2.
+
+00:00:41.289 --> 00:00:45.110
+Thus, we need to make one of two changes to
+fix this code.
+
+00:00:45.110 --> 00:00:50.620
+Either we need to change the position on line
+6 to position 2, or move the line of code
+
+00:00:50.620 --> 00:00:55.550
+in front of line 4 so that Little Rock is
+changed first and then Juneau is removed.
+
+00:00:55.550 --> 00:01:01.190
+I will do the first change since it involves
+less change.
+
+00:01:01.190 --> 00:01:04.900
+You may have times when you need to remove
+an item from a list, but save the value that
+
+00:01:04.900 --> 00:01:08.330
+has been removed and use it in code.
+
+00:01:08.330 --> 00:01:14.090
+For example, someone may remove a tool from
+a toolbox, and you may want to display the
+
+00:01:14.090 --> 00:01:16.729
+name of the tool that has been removed.
+
+00:01:16.729 --> 00:01:21.270
+The pop method removes the last item of a
+list but allows one to use it in code just
+
+00:01:21.270 --> 00:01:23.790
+after removing it.
+
+00:01:23.790 --> 00:01:35.970
+I will add a line in front of the print statement
+on line 7 and type 
+
+00:01:35.970 --> 00:01:38.920
+print(capitals.pop()).
+
+00:01:38.920 --> 00:01:42.869
+This statement will remove Sacramento from
+the list and display it.
+
+00:01:42.869 --> 00:01:49.100
+I will rerun this code, and we will see the
+popped item and the remaining items in the
+
+00:01:49.100 --> 00:01:52.020
+list, the remaining three state capitals.
+
+00:01:52.020 --> 00:01:56.040
+You can specify an index number to pop a specific
+item.
+
+00:01:56.040 --> 00:02:00.890
+For example, if I add a 0 between the parentheses,
+the first item on the list, Montgomery, will
+
+00:02:00.890 --> 00:02:02.430
+be popped.
+
+00:02:02.430 --> 00:02:11.640
+I will rerun the code, and we see the popped
+city and then the remaining cities in the
+
+00:02:11.640 --> 00:02:12.750
+list.
+
+00:02:12.750 --> 00:02:19.519
+Sometimes, you want to sort a list or reverse
+the order in which a list is displayed.
+
+00:02:19.519 --> 00:02:22.489
+Reversing a list does not sort it in descending
+order.
+
+00:02:22.489 --> 00:02:24.880
+Reverse and sort are two different methods.
+
+00:02:24.880 --> 00:02:32.470
+I will add a reverse method above the print
+statement on line 7 to demonstrate this difference.
+
+00:02:32.470 --> 00:02:35.880
+The statement looks like this: capitals.reverse().
+
+00:02:35.880 --> 00:02:44.209
+Then, I will rerun the code, and the list
+of cities prints in the reverse order in which
+
+00:02:44.209 --> 00:02:46.599
+the list was entered and then manipulated.
+

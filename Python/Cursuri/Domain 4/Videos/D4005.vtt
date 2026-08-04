@@ -1,0 +1,80 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.880 --> 00:00:05.160
+Pydoc is a documentation module that&nbsp;
+generates documentation for modules,&nbsp;&nbsp;
+
+00:00:05.160 --> 00:00:11.200
+classes, and functions. We cover functions later&nbsp;
+in this domain, so let’s focus on how Pydoc can&nbsp;&nbsp;
+
+00:00:11.200 --> 00:00:16.720
+generate documentation for built-in modules.&nbsp;
+Documentation can help people understand these&nbsp;&nbsp;
+
+00:00:16.720 --> 00:00:23.240
+modules without running countless searches on the&nbsp;
+web for the same information. For this example,&nbsp;&nbsp;
+
+00:00:23.240 --> 00:00:29.040
+I am in a command prompt, and I want to get some&nbsp;
+documentation on the built-in datetime module,&nbsp;&nbsp;
+
+00:00:29.040 --> 00:00:39.440
+as we will use that module later in the course.&nbsp;
+At the prompt, I will type Python -m (for module)&nbsp;&nbsp;
+
+00:00:40.200 --> 00:00:51.120
+pydoc datetime and select the Enter key on the&nbsp;
+keyboard. The results show many of the different&nbsp;&nbsp;
+
+00:00:51.120 --> 00:00:57.520
+functions available within the datetime module.&nbsp;
+Note that Pydoc can document not just built-in&nbsp;&nbsp;
+
+00:00:57.520 --> 00:01:03.480
+modules like datetime, but also any custom&nbsp;
+Python files you've created. Simply use the&nbsp;&nbsp;
+
+00:01:03.480 --> 00:01:08.080
+same command format but replace 'datetime'&nbsp;
+with the name of your Python file (minus&nbsp;&nbsp;
+
+00:01:08.080 --> 00:01:15.360
+the '.py' extension).] I will use the Ctrl+C&nbsp;
+keyboard shortcut to end this file. Here’s a&nbsp;&nbsp;
+
+00:01:15.360 --> 00:01:21.520
+tip you won’t see on the exam objectives. If you&nbsp;
+want to send this information to a text file,&nbsp;&nbsp;
+
+00:01:21.520 --> 00:01:29.520
+we can run the same command but add a greater than&nbsp;
+symbol and the name of a file. I will add the file&nbsp;&nbsp;
+
+00:01:29.520 --> 00:01:42.720
+name datetime.txt, select the Enter key on the&nbsp;
+keyboard, and then navigate to this directory,&nbsp;&nbsp;
+
+00:01:42.720 --> 00:01:49.840
+and there is the file with all the documentation&nbsp;
+that I can read anytime without having to scroll&nbsp;&nbsp;
+
+00:01:49.840 --> 00:01:57.480
+through a command prompt. We have reached the end&nbsp;
+of this section on documenting code segments. The&nbsp;&nbsp;
+
+00:01:57.480 --> 00:02:04.000
+exam objectives do not call for any code analyses,&nbsp;
+so for the review portion of this section,&nbsp;&nbsp;
+
+00:02:04.000 --> 00:02:09.680
+proceed to the Review 4.1 exercise in the&nbsp;
+project workbook and use that exercise to&nbsp;&nbsp;
+
+00:02:09.680 --> 00:02:16.200
+enhance this 415-review file. I will share&nbsp;
+the answer with you in the following video.
+

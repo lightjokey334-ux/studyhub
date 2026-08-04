@@ -1,0 +1,152 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.010 --> 00:00:05.810
+From slicing, we move to data structure, also
+known as collection data types, which are
+
+00:00:05.810 --> 00:00:09.190
+types of lists stored inside of variables.
+
+00:00:09.190 --> 00:00:14.360
+You have seen how indexing and slicing work
+with items in a list, but we have yet to cover
+
+00:00:14.360 --> 00:00:15.629
+how to build a list.
+
+00:00:15.629 --> 00:00:18.230
+We will do that in the next topic.
+
+00:00:18.230 --> 00:00:24.650
+This topic will look at three other data types:
+tuples, sets, and dictionaries.
+
+00:00:24.650 --> 00:00:29.820
+I want you to really focus on two pieces from
+each type: what the structure does and the
+
+00:00:29.820 --> 00:00:32.750
+syntax used to build each structure.
+
+00:00:32.750 --> 00:00:39.070
+Strings themselves are data structures as
+they are collections of characters.
+
+00:00:39.070 --> 00:00:43.539
+Dictionaries store data in key-value pairs.
+
+00:00:43.539 --> 00:00:49.780
+If, for example, you have a game where you
+have a point value for each type of coin someone
+
+00:00:49.780 --> 00:00:56.980
+earns based on answering a question, you could
+set up a key-value pair list for those coins,
+
+00:00:56.980 --> 00:01:00.250
+as we have on lines 1 through 6 of this 124-structure
+file.
+
+00:01:00.250 --> 00:01:07.700
+Notice that the collection of key-value pairs
+is inside curly brackets, and the syntax goes
+
+00:01:07.700 --> 00:01:11.800
+key: value.
+
+00:01:11.800 --> 00:01:18.500
+In printing this dictionary, as the code on
+line 7 does, we see the complete set of keys,
+
+00:01:18.500 --> 00:01:22.270
+the coins, and their values.
+
+00:01:22.270 --> 00:01:26.979
+A set is a type of collection that stores
+unique values of data.
+
+00:01:26.979 --> 00:01:33.329
+On line 10, I have started a list with three
+regions, and the command to print the list
+
+00:01:33.329 --> 00:01:35.729
+is on line 12.
+
+00:01:35.729 --> 00:01:47.210
+Watch what happens when I try to add a duplicate
+value by typing regions.add(“east”) 
+
+00:01:47.210 --> 00:01:51.060
+on line 11 and then run the code.
+
+00:01:51.060 --> 00:01:59.969
+We don’t get any errors, which is good,
+but East is not in the list twice because,
+
+00:01:59.969 --> 00:02:04.850
+as mentioned, each value in this type of list
+is unique.
+
+00:02:04.850 --> 00:02:12.890
+However, if I change this value to add West
+and then rerun the code, the value is added
+
+00:02:12.890 --> 00:02:18.900
+as it is a unique value compared to the rest
+of the existing values in the set.
+
+00:02:18.900 --> 00:02:25.530
+Lastly, we have tuples, which is a list with
+immutable values.
+
+00:02:25.530 --> 00:02:30.450
+You may hear the word immutable often with
+values in programming.
+
+00:02:30.450 --> 00:02:34.390
+Immutable means unchangeable, as the only
+way to change what is in a variable is to
+
+00:02:34.390 --> 00:02:36.550
+redeclare the variable.
+
+00:02:36.550 --> 00:02:46.180
+Case in point: I have a tuple, on line 15,
+with a game character’s name and animal
+
+00:02:46.180 --> 00:02:47.790
+type.
+
+00:02:47.790 --> 00:02:58.950
+If I try to change the second value, index
+1, to another animal 
+
+00:02:58.950 --> 00:03:07.280
+and run this code, an error message indicates
+that we cannot assign a new value to that
+
+00:03:07.280 --> 00:03:12.430
+index because tuples are immutable, as we
+just said.
+
+00:03:12.430 --> 00:03:16.780
+Tuples are good for lists that should not
+have their items changed.
+
+00:03:16.780 --> 00:03:21.620
+Knowing which type of data structure to use,
+given a situation, makes apps perform more
+
+00:03:21.620 --> 00:03:26.700
+smoothly, as some data structures are meant
+to have unique values, protecting from duplicate
+
+00:03:26.700 --> 00:03:27.780
+data.
+
+00:03:27.780 --> 00:03:35.590
+Some structures are intended to be immutable,
+and some need to store data in key-value pairs.
+

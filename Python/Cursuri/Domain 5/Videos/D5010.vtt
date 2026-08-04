@@ -1,0 +1,60 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.200 --> 00:00:06.240
+One key to knowing how a try block functions is&nbsp;
+understanding which other blocks run based on what&nbsp;&nbsp;
+
+00:00:06.240 --> 00:00:14.120
+happens in the try block. For starters, the try&nbsp;
+block will return a divide by zero error because&nbsp;&nbsp;
+
+00:00:14.120 --> 00:00:24.320
+games is set to 0, and one cannot divide by&nbsp;
+zero. For this reason, the except block runs as a&nbsp;&nbsp;
+
+00:00:24.320 --> 00:00:30.880
+runtime error has occurred. The else block runs if&nbsp;
+the try block produces no errors, so it will not&nbsp;&nbsp;
+
+00:00:30.880 --> 00:00:38.760
+run in this case. Lastly, the finally block runs&nbsp;
+regardless of what the try block produces. Thus,&nbsp;&nbsp;
+
+00:00:38.760 --> 00:00:45.960
+the try, except, and finally blocks run in this&nbsp;
+case, and I will run this code to prove this&nbsp;&nbsp;
+
+00:00:45.960 --> 00:00:56.000
+point. The second question asked what would happen&nbsp;
+if we changed the games variable value to 2. This&nbsp;&nbsp;
+
+00:00:56.000 --> 00:01:03.360
+time, the try block does not produce an error, so&nbsp;
+the except block does not run, but the else block&nbsp;&nbsp;
+
+00:01:03.360 --> 00:01:09.800
+does run, as it will always run when the code in&nbsp;
+the try block does not produce any errors. And the&nbsp;&nbsp;
+
+00:01:09.800 --> 00:01:15.000
+finally block, again, runs regardless of the try&nbsp;
+block results. Thus, in the second example of this&nbsp;&nbsp;
+
+00:01:15.000 --> 00:01:24.400
+code, the, try, else, and finally blocks run, and&nbsp;
+I will run this code to prove those results. One&nbsp;&nbsp;
+
+00:01:24.400 --> 00:01:30.440
+final note: while the try block's main aim is to&nbsp;
+run code that might raise an exception, it doesn't&nbsp;&nbsp;
+
+00:01:30.440 --> 00:01:36.400
+return an error. Rather, it raises an error or&nbsp;
+allows one to be propagated. So, you might want to&nbsp;&nbsp;
+
+00:01:36.400 --> 00:01:44.280
+use raises instead of returns when talking about&nbsp;
+errors emerging from a try block for clarity.
+

@@ -1,0 +1,64 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.080 --> 00:00:07.800
+The identity operator, is, is used to see if two&nbsp;
+variables are taking up the same memory space.&nbsp;&nbsp;
+
+00:00:07.800 --> 00:00:13.760
+The identity operator is important when speed is&nbsp;
+of utmost importance, as it is often in a game&nbsp;&nbsp;
+
+00:00:13.760 --> 00:00:21.760
+situation. To demonstrate the identity operator,&nbsp;
+I have this 145-identity file open. The code is&nbsp;&nbsp;
+
+00:00:21.760 --> 00:00:28.480
+similar to the code in the 135-identity file.&nbsp;
+The code contains colors and ranks for teams&nbsp;&nbsp;
+
+00:00:28.480 --> 00:00:42.840
+used in a game. The same value is assigned to&nbsp;
+teams 1 and 3 on lines 1 and 3. Team 2 is set&nbsp;&nbsp;
+
+00:00:42.840 --> 00:00:51.280
+to be equal to Team 1, as the code indicates on&nbsp;
+line 2. The two print statements on lines 5 and 6&nbsp;&nbsp;
+
+00:00:51.280 --> 00:00:57.440
+use the is keyword to see if team1 and team2 use&nbsp;
+the same memory space, which saves memory space&nbsp;&nbsp;
+
+00:00:57.440 --> 00:01:07.120
+and can make an app run more efficiently, and if&nbsp;
+team1 and team3 use the same memory space. I will&nbsp;&nbsp;
+
+00:01:07.120 --> 00:01:20.080
+run this code, and we get one True result and one&nbsp;
+False result. Team1 is Team2 because team2 did not&nbsp;&nbsp;
+
+00:01:20.080 --> 00:01:29.320
+have a specific value assigned to it. Instead, it&nbsp;
+took the value of team1, meaning it is a variable&nbsp;&nbsp;
+
+00:01:29.320 --> 00:01:37.000
+that uses the value in team1’s memory space.&nbsp;
+Conversely, team1 is not team3 because, even&nbsp;&nbsp;
+
+00:01:37.000 --> 00:01:45.280
+though the value of team3 is the same as that of&nbsp;
+team1, the value was explicitly assigned to team3,&nbsp;&nbsp;
+
+00:01:46.120 --> 00:01:52.400
+giving team3 its own memory space. To further show&nbsp;
+the difference between identity and comparison&nbsp;&nbsp;
+
+00:01:52.400 --> 00:02:01.200
+operators, I will add a print statement to line 7&nbsp;
+showing whether team1 equals team3. I will rerun&nbsp;&nbsp;
+
+00:02:01.200 --> 00:02:12.440
+the code and value-wise, team1 and team3 have the&nbsp;
+same values so that print statement returns true.
+

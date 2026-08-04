@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.579 --> 00:00:05.960
+In many programming languages, objects should
+be closed when they are no longer needed to
+
+00:00:05.960 --> 00:00:09.090
+save memory usage on a device from the app.
+
+00:00:09.090 --> 00:00:14.889
+In file management, files no longer needed
+should be closed so that one does not accidentally
+
+00:00:14.889 --> 00:00:18.779
+alter a file that should not be altered.
+
+00:00:18.779 --> 00:00:23.150
+Closing a file frees up memory space the file
+is taking while in use, thus helping a device
+
+00:00:23.150 --> 00:00:24.840
+run more efficiently.
+
+00:00:24.840 --> 00:00:29.529
+Additionally, closing a file often allows
+it to be safely modified by other programs.
+
+00:00:29.529 --> 00:00:34.960
+In the previous topic, we saw how to open
+a file.
+
+00:00:34.960 --> 00:00:41.370
+We will continue going through the process
+of working with a file used in game management.
+
+00:00:41.370 --> 00:00:49.489
+In this version of the file, 312-close, we
+have, on line 6, opened the 312-message text
+
+00:00:49.489 --> 00:00:50.489
+file.
+
+00:00:50.489 --> 00:00:54.840
+We will eventually write some text to this
+file, but I want to ensure that when we are
+
+00:00:54.840 --> 00:00:57.309
+done with the file, we close it.
+
+00:00:57.309 --> 00:01:08.670
+Thus, on line 8, I will add this text: message_text.close().
+
+00:01:08.670 --> 00:01:16.619
+The majority of programming languages use
+parentheses for method and function calls
+
+00:01:16.619 --> 00:01:18.120
+and definitions.
+
+00:01:18.120 --> 00:01:20.170
+The parentheses serve multiple purposes.
+
+00:01:20.170 --> 00:01:27.450
+First, it makes functions easily identifiable
+and maintains specific syntax.
+
+00:01:27.450 --> 00:01:34.200
+Second, functions often require arguments—the
+values that get passed into the functions—and
+
+00:01:34.200 --> 00:01:37.590
+parentheses serve as a container for those
+arguments.
+
+00:01:37.590 --> 00:01:44.210
+It's worth noting that not all functions require
+arguments, and there are some cases where
+
+00:01:44.210 --> 00:01:50.560
+functions can be passed as arguments to other
+functions without invoking them, without parentheses.
+
+00:01:50.560 --> 00:01:55.760
+Those exceptions, for example, are in a language
+like Structured Query Language or SQL.
+

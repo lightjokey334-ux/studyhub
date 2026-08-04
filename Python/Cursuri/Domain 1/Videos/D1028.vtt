@@ -1,0 +1,56 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:08.080
+We have two more operators remaining: floor&nbsp;
+division, and exponents. Floor division returns&nbsp;&nbsp;
+
+00:00:08.080 --> 00:00:17.120
+an integer for a result without a remainder. On&nbsp;
+line 18, I will reset the score to 300. Then, on&nbsp;&nbsp;
+
+00:00:17.120 --> 00:00:30.400
+line 19, I will type score //=11. The slash slash&nbsp;
+represents floor division. When I run this code,&nbsp;&nbsp;
+
+00:00:30.400 --> 00:00:37.640
+the result does not show because ...and this&nbsp;
+happens often, we still need a print statement,&nbsp;&nbsp;
+
+00:00:37.640 --> 00:00:49.320
+which I will copy and paste... When I run this&nbsp;
+code now, the result is 27, as 300 divided by 11&nbsp;&nbsp;
+
+00:00:49.320 --> 00:00:56.400
+is 27 with a remainder of 3, but, again, with a&nbsp;
+floor division operation, only the integer in the&nbsp;&nbsp;
+
+00:00:56.400 --> 00:01:03.480
+result is preserved. The last operator to cover:&nbsp;
+exponents. Whereas multiplication is done with one&nbsp;&nbsp;
+
+00:01:03.480 --> 00:01:10.120
+asterisk, exponents are done with two asterisks. I&nbsp;
+will add the code to raise score to the power of 2&nbsp;&nbsp;
+
+00:01:10.120 --> 00:01:23.520
+on line 22 and then print the score on line 23.&nbsp;
+When I rerun the code, the final result is 729,&nbsp;&nbsp;
+
+00:01:23.520 --> 00:01:32.440
+which is 27 raised to the power of 2, or 27 times&nbsp;
+27. One more item of note: if you have multiple&nbsp;&nbsp;
+
+00:01:32.440 --> 00:01:39.080
+assignments in the same statement, the operators&nbsp;
+are assessed from right to left. In the statement&nbsp;&nbsp;
+
+00:01:39.080 --> 00:01:52.640
+“x = y = 2”, first 2 is assigned to y, and then y,&nbsp;
+which is now 2, is assigned to x. Or if you have&nbsp;&nbsp;
+
+00:01:52.640 --> 00:02:12.120
+y = 2 followed by x = y += 2, then you add 2 to&nbsp;
+y, which becomes 4, and then 4 is assigned to x.
+

@@ -1,0 +1,193 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.969 --> 00:00:06.580
+Most, if not all, programming languages have
+built-in libraries of code that focus on specific
+
+00:00:06.580 --> 00:00:14.500
+areas for built-in functions, such as system
+operations, file operations, and math functions.
+
+00:00:14.500 --> 00:00:17.540
+Python refers to these libraries as modules.
+
+00:00:17.540 --> 00:00:22.480
+As you are about to see, these modules must
+be imported before they can be used.
+
+00:00:22.480 --> 00:00:24.750
+Modules are often called libraries.
+
+00:00:24.750 --> 00:00:26.540
+They don't just offer convenience.
+
+00:00:26.540 --> 00:00:34.620
+They help in organizing code, enhancing reusability,
+and separating concerns within a program.
+
+00:00:34.620 --> 00:00:39.309
+The first such module is the io module, short
+for input/output.
+
+00:00:39.309 --> 00:00:44.489
+io allows one to store data and then read
+it from memory instead of creating and working
+
+00:00:44.489 --> 00:00:48.530
+with a physical file, which we did elsewhere
+in the course.
+
+00:00:48.530 --> 00:00:53.039
+If game-playing data needs to be stored and
+retrieved during a game and not between game
+
+00:00:53.039 --> 00:00:58.329
+sessions, there is no need to store the data
+on a physical file and risk the data being
+
+00:00:58.329 --> 00:00:59.660
+hacked.
+
+00:00:59.660 --> 00:01:05.070
+The code in this 611-io file stores data and
+then retrieves it without using a physical
+
+00:01:05.070 --> 00:01:06.620
+file.
+
+00:01:06.620 --> 00:01:12.170
+On line 1, we import the io library, which
+gives us access to many built-in io classes
+
+00:01:12.170 --> 00:01:13.909
+and functions.
+
+00:01:13.909 --> 00:01:19.869
+One such class is StringIO, which allows one
+to input text strings into memory and retrieve
+
+00:01:19.869 --> 00:01:23.119
+them later, much like blobs in JavaScript.
+
+00:01:23.119 --> 00:01:29.780
+On line 3, I have a StringIO instance assigned
+to a game stream variable.
+
+00:01:29.780 --> 00:01:36.090
+Lines 5 and 6 have write commands to write
+information to the game stream.
+
+00:01:36.090 --> 00:01:44.380
+Line 8 runs the seek function, which seeks
+stored text at a given character, character
+
+00:01:44.380 --> 00:01:48.950
+0 being the first character in the text.
+
+00:01:48.950 --> 00:01:53.880
+On line 9, we have a print statement that
+prints the reading of the text.
+
+00:01:53.880 --> 00:02:01.180
+I will run the code, and we see the output
+in the terminal like we did for working with
+
+00:02:01.180 --> 00:02:03.380
+text files.
+
+00:02:03.380 --> 00:02:09.720
+However, using this input output functionality,
+there are no files to manage on one’s hard
+
+00:02:09.720 --> 00:02:10.720
+drive.
+
+00:02:10.720 --> 00:02:15.440
+The takeaway here is that, when storing and
+retrieving data, if the storage is temporary,
+
+00:02:15.440 --> 00:02:21.050
+consider using input output streams instead
+of creating and then having to delete physical
+
+00:02:21.050 --> 00:02:23.000
+files to complete these tasks.
+
+00:02:23.000 --> 00:02:27.970
+Furthermore, the io module's objects are often
+compatible with other Python standard library
+
+00:02:27.970 --> 00:02:33.630
+modules that expect file-like objects, adding
+to their utility.
+
+00:02:33.630 --> 00:02:36.239
+The io module is not limited to text.
+
+00:02:36.239 --> 00:02:41.830
+It also allows for in-memory storage of binary
+data using the BytesIO class.
+
+00:02:41.830 --> 00:02:46.940
+This comes in handy when you're dealing with
+non-text files like images or executables.
+
+00:02:46.940 --> 00:02:53.050
+Both StringIO and BytesIO create file-like
+objects, meaning you can use methods like
+
+00:02:53.050 --> 00:02:59.819
+.read(), .write(), and .seek() as if you were
+interacting with an actual disk-based file.
+
+00:02:59.819 --> 00:03:02.489
+However, there are some differences.
+
+00:03:02.489 --> 00:03:07.110
+For example, when working with actual files
+in Python, you often need to explicitly manage
+
+00:03:07.110 --> 00:03:14.049
+text encodings like UTF-8, Unicode, and others,
+but with StringIO, you don’t have to worry
+
+00:03:14.049 --> 00:03:18.590
+about specifying text encoding because the
+class handles it for you.
+
+00:03:18.590 --> 00:03:24.810
+Beyond gaming, consider using io for unit
+testing, where you can mimic file operations
+
+00:03:24.810 --> 00:03:27.239
+without disk-based files.
+
+00:03:27.239 --> 00:03:32.830
+It's also useful for quick data transformations
+and in-memory caching.
+
+00:03:32.830 --> 00:03:37.610
+If you’re interested in diving deeper into
+the functionalities of the io module, or any
+
+00:03:37.610 --> 00:03:45.090
+other topics covered in this course, the Python
+official documentation is an excellent resource.
+
+00:03:45.090 --> 00:03:49.670
+You can find comprehensive details, examples,
+and best practices there.
+
+00:03:49.670 --> 00:03:56.560
+Though not on the exam, this docs.python.org
+site has valuable documentation on Python
+
+00:03:56.560 --> 00:03:57.650
+libraries.
+
+00:03:57.650 --> 00:04:02.329
+Here is one such documentation page, the page
+for the io library.
+

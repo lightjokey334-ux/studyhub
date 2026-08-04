@@ -1,0 +1,76 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.880 --> 00:00:04.640
+So far, with functions, we have seen&nbsp;
+how to call a function and use arguments&nbsp;&nbsp;
+
+00:00:04.640 --> 00:00:09.680
+within a function. In Python, you can set&nbsp;
+default values for function arguments,&nbsp;&nbsp;
+
+00:00:09.680 --> 00:00:14.080
+which will be used if the caller does&nbsp;
+not provide a value for them. Sometimes,&nbsp;&nbsp;
+
+00:00:14.080 --> 00:00:22.400
+an argument may use a default value, such as&nbsp;
+when a sales tax rate is one predominant rate or,&nbsp;&nbsp;
+
+00:00:22.400 --> 00:00:30.160
+in the case of gaming and this 422-default file,&nbsp;
+the usual multiplier on a score is 1.5. So,&nbsp;&nbsp;
+
+00:00:30.160 --> 00:00:35.360
+to save time and potential errors in calling&nbsp;
+functions, we could make 1.5 the default value&nbsp;&nbsp;
+
+00:00:35.360 --> 00:00:42.960
+for the multiplier argument. To make that happen,&nbsp;
+I will go to the function definition on line 1 and&nbsp;&nbsp;
+
+00:00:42.960 --> 00:00:53.200
+type equal sign 1.5 after the multiplier&nbsp;
+argument. Then, to test this, on line 4,&nbsp;&nbsp;
+
+00:00:53.200 --> 00:01:01.400
+I will remove the second argument from the&nbsp;
+function call. I will run the code, and the&nbsp;&nbsp;
+
+00:01:01.400 --> 00:01:10.120
+first print score is perfect as it took the 3000&nbsp;
+and multiplied it by 1.5. Though not common for&nbsp;&nbsp;
+
+00:01:10.120 --> 00:01:16.560
+smaller functions, one could specify the order&nbsp;
+of the arguments used when calling a function.&nbsp;&nbsp;
+
+00:01:16.560 --> 00:01:21.080
+The use of default and keyword arguments often&nbsp;
+depends on the function's complexity and purpose,&nbsp;&nbsp;
+
+00:01:21.080 --> 00:01:27.080
+not necessarily its size. To illustrate this&nbsp;
+concept, I will add another print statement&nbsp;&nbsp;
+
+00:01:27.080 --> 00:01:35.760
+on line 6 that calls the total score function,&nbsp;
+specifying the name and value of each argument as&nbsp;&nbsp;
+
+00:01:35.760 --> 00:01:43.360
+keyword arguments. A developer may use this method&nbsp;
+of calling a function to either be more specific&nbsp;&nbsp;
+
+00:01:43.360 --> 00:01:49.400
+about displaying which arguments are being used&nbsp;
+or perhaps because the data needed for a function&nbsp;&nbsp;
+
+00:01:49.400 --> 00:01:57.880
+are listed on a form in this order. Whatever&nbsp;
+the case may be, I will rerun this code, and&nbsp;&nbsp;
+
+00:01:57.880 --> 00:02:05.640
+the function returns three total scores, all with&nbsp;
+the function called in slightly different ways.
+

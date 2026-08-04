@@ -1,0 +1,122 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:00.920 --> 00:00:07.280
+The Python course in the IT Specialist series&nbsp;
+introduces one to Python, a very versatile and&nbsp;&nbsp;
+
+00:00:07.280 --> 00:00:12.680
+popular programming language, and maps to&nbsp;
+the IT Specialist-Python exam. The course&nbsp;&nbsp;
+
+00:00:12.680 --> 00:00:17.280
+will introduce you to the basics of Python and&nbsp;
+some of its uses and will go through the exam&nbsp;&nbsp;
+
+00:00:17.280 --> 00:00:24.280
+objectives from start to finish. To help put a&nbsp;
+little real-world application into this course,&nbsp;&nbsp;
+
+00:00:24.280 --> 00:00:29.080
+many of the code examples you will see will be&nbsp;
+snippets of game development, one of the many uses&nbsp;&nbsp;
+
+00:00:29.080 --> 00:00:35.600
+for Python. You will learn about other uses in the&nbsp;
+next topic, What is Python? This course consists&nbsp;&nbsp;
+
+00:00:35.600 --> 00:00:41.560
+of the videos you are watching, practice labs,&nbsp;
+pre- and post-assessment tests for each domain,&nbsp;&nbsp;
+
+00:00:41.560 --> 00:00:47.280
+and a project workbook with exercises geared&nbsp;
+toward helping you solidify what you will&nbsp;&nbsp;
+
+00:00:47.280 --> 00:00:53.560
+learn in these videos. There are six domains&nbsp;
+in this IT Specialist Python exam. They are:
+
+00:00:53.560 --> 00:00:57.080
+Operations using Data Types and Operators
+
+00:00:57.080 --> 00:01:00.000
+Flow Control with Decisions and Loops
+
+00:01:00.000 --> 00:01:02.280
+Input and Output Operations
+
+00:01:02.280 --> 00:01:04.600
+Code Documentation and Structure
+
+00:01:04.600 --> 00:01:07.200
+Troubleshooting and Error Handling
+
+00:01:07.200 --> 00:01:10.840
+Operations using Modules and Tools
+
+00:01:10.840 --> 00:01:18.640
+For the exam, ensure you obtain a copy of the&nbsp;
+objectives, as shown here, and I would download&nbsp;&nbsp;
+
+00:01:18.640 --> 00:01:26.280
+a copy as I have done here as the website version&nbsp;
+is hard to read. Pay close attention to the first&nbsp;&nbsp;
+
+00:01:26.280 --> 00:01:35.400
+words you see in each second group of objectives,&nbsp;
+as those words play into the types of questions&nbsp;&nbsp;
+
+00:01:35.400 --> 00:01:43.040
+you can expect on the exam. For example, when you&nbsp;
+see construct and analyze, be ready to determine&nbsp;&nbsp;
+
+00:01:43.040 --> 00:01:49.240
+the code needed to reach a specified outcome&nbsp;
+and be able to take an existing piece of code&nbsp;&nbsp;
+
+00:01:49.240 --> 00:01:54.920
+and answer questions about what the code does.&nbsp;
+Don’t worry. We will show you some examples of&nbsp;&nbsp;
+
+00:01:54.920 --> 00:02:02.160
+analyzing code as we cover these topics. Also,&nbsp;
+if you have not yet done so, I would suggest&nbsp;&nbsp;
+
+00:02:02.160 --> 00:02:07.640
+taking the 90-minute Introduction to Programming&nbsp;
+course or having an equivalent level of knowledge&nbsp;&nbsp;
+
+00:02:07.640 --> 00:02:13.000
+before tackling this course. The Introduction&nbsp;
+to Programming course covers basic concepts,&nbsp;&nbsp;
+
+00:02:13.000 --> 00:02:20.000
+such as properties, methods, variables, and loops,&nbsp;
+without emphasizing any language. If you already&nbsp;&nbsp;
+
+00:02:20.000 --> 00:02:28.640
+have that knowledge, great. If not, we will still&nbsp;
+review some basic concepts in this Python course,&nbsp;&nbsp;
+
+00:02:28.640 --> 00:02:32.280
+but the Introduction to Programming course&nbsp;
+will help you learn Python or any other&nbsp;&nbsp;
+
+00:02:32.280 --> 00:02:37.200
+programming language. Finally, get some&nbsp;
+hands-on practice. Build small blocks of&nbsp;&nbsp;
+
+00:02:37.200 --> 00:02:42.520
+code that produce a result. In the topic after&nbsp;
+next, we will show you what you need to install&nbsp;&nbsp;
+
+00:02:42.520 --> 00:02:47.800
+to start learning and creating using Python.&nbsp;
+Let’s move on now and get an introduction to&nbsp;&nbsp;
+
+00:02:47.800 --> 00:02:53.520
+Python and examine what differentiates&nbsp;
+it from other programming languages.
+

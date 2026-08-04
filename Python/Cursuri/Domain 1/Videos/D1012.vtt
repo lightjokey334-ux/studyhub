@@ -1,0 +1,130 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.079 --> 00:00:05.830
+Before we continue, I want to let you know
+that for future print statements, I am not
+
+00:00:05.830 --> 00:00:08.670
+going to verbalize every character I am typing.
+
+00:00:08.670 --> 00:00:12.179
+I will call out what I am typing and then
+type it and let you look over what has been
+
+00:00:12.179 --> 00:00:14.180
+added to the code.
+
+00:00:14.180 --> 00:00:19.680
+Whereas indexing extracts a value from a list,
+slicing extracts characters from a list, word,
+
+00:00:19.680 --> 00:00:21.449
+or phrase.
+
+00:00:21.449 --> 00:00:29.869
+For our slicing examples, I have the 123-slicing
+file open, and we have, on line 1, a variable
+
+00:00:29.869 --> 00:00:36.300
+called serialnumber, a series of sixteen numbers,
+with dashes between every four numbers.
+
+00:00:36.300 --> 00:00:41.410
+Each set of four numbers has some significance,
+so we will see how to extract the first four
+
+00:00:41.410 --> 00:00:48.160
+numbers, the eight numbers in the middle with
+the dash, and the last four numbers.
+
+00:00:48.160 --> 00:00:52.760
+Games may contain codes that have some of
+the characters mean something, like a player
+
+00:00:52.760 --> 00:00:57.370
+status or something similar, so knowing how
+to slice a value will save one from having
+
+00:00:57.370 --> 00:01:02.399
+to do it elsewhere, like in Excel, thus saving
+time and potential chance for errors within
+
+00:01:02.399 --> 00:01:04.299
+an app.
+
+00:01:04.299 --> 00:01:08.729
+On line 2, I will add a print function to
+output the first four characters from the
+
+00:01:08.729 --> 00:01:12.190
+serial_number variable.
+
+00:01:12.190 --> 00:01:17.189
+The slice is contained after the value and
+in square brackets.
+
+00:01:17.189 --> 00:01:25.210
+Then, the start and end characters are separated
+with a colon, though only a start or end needs
+
+00:01:25.210 --> 00:01:26.829
+to be specified.
+
+00:01:26.829 --> 00:01:36.560
+Thus, I will type a colon and then 4 to represent
+that I want a slice starting at the beginning
+
+00:01:36.560 --> 00:01:40.369
+of the string and then continuing for four
+characters.
+
+00:01:40.369 --> 00:01:47.210
+When I run this code, we get the first four
+serial number characters.
+
+00:01:47.210 --> 00:01:53.220
+If you think a colon and 4 give us the first
+four characters, what will happen if we reverse
+
+00:01:53.220 --> 00:01:57.020
+the slice and start with a 4 and then a colon?
+
+00:01:57.020 --> 00:01:58.860
+Let’s find out.
+
+00:01:58.860 --> 00:02:08.950
+I will copy the print statement on line two
+to line three, make that change, and then
+
+00:02:08.950 --> 00:02:11.430
+run the code again.
+
+00:02:11.430 --> 00:02:15.269
+Did you expect to see this result?
+
+00:02:15.269 --> 00:02:20.080
+You may have thought that maybe you want to
+see the last four characters, but this slice
+
+00:02:20.080 --> 00:02:23.020
+starts after character four.
+
+00:02:23.020 --> 00:02:26.610
+Let me repeat the key word: after.
+
+00:02:26.610 --> 00:02:34.720
+Remember that Python is zero-based, so technically,
+we are beginning the slice on the fifth character,
+
+00:02:34.720 --> 00:02:36.110
+the first dash.
+
+00:02:36.110 --> 00:02:40.910
+And with nothing after the colon, we are telling
+the slice to slice everything to the end of
+
+00:02:40.910 --> 00:02:41.549
+the value.
+

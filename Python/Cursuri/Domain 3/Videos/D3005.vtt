@@ -1,0 +1,96 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.240 --> 00:00:06.480
+Whereas writing to a file infers that we are&nbsp;
+writing to a new file or overwriting an existing&nbsp;&nbsp;
+
+00:00:06.480 --> 00:00:14.160
+file, the append command adds text to the end&nbsp;
+of an existing file. We have established that,&nbsp;&nbsp;
+
+00:00:14.160 --> 00:00:19.800
+in gaming, one or more configuration files&nbsp;
+may be needed to store essential information,&nbsp;&nbsp;
+
+00:00:19.800 --> 00:00:25.960
+such as a player’s statistics. For this append&nbsp;
+example, we will use a variation of the file we&nbsp;&nbsp;
+
+00:00:25.960 --> 00:00:36.000
+have used throughout this section. This version,&nbsp;
+315-append, will use a file named 315-message.txt.&nbsp;&nbsp;
+
+00:00:37.560 --> 00:00:44.800
+In the first four lines, we open the file in&nbsp;
+write mode, write two statements to the file,&nbsp;&nbsp;
+
+00:00:44.800 --> 00:00:52.480
+and then close the file. Let’s say that some time&nbsp;
+has passed in the game, and we need to append some&nbsp;&nbsp;
+
+00:00:52.480 --> 00:01:01.800
+text to the end of this text file. First, let’s&nbsp;
+ensure any new text goes onto a new line. On line&nbsp;&nbsp;
+
+00:01:01.800 --> 00:01:09.640
+three, I will add a backslash and n inside the&nbsp;
+quoted text to indicate the want for a new line&nbsp;&nbsp;
+
+00:01:09.640 --> 00:01:19.080
+after this text is added to the text file. Next,&nbsp;
+and this is a small example of reusing code, which&nbsp;&nbsp;
+
+00:01:19.080 --> 00:01:30.600
+is always preferable to retyping code, I will copy&nbsp;
+the open statement from line 1 to line 6. Then,&nbsp;&nbsp;
+
+00:01:30.600 --> 00:01:43.760
+I will change the mode from w to a for append.&nbsp;
+As is the case with the r and w modes, a plus&nbsp;&nbsp;
+
+00:01:43.760 --> 00:01:51.400
+sign indicates opening the file in read and write&nbsp;
+mode. On the next line of code, line 7, I will add&nbsp;&nbsp;
+
+00:01:51.400 --> 00:02:05.840
+a write statement to add the player name to the&nbsp;
+text file. Then, on line 8, I will copy down the&nbsp;&nbsp;
+
+00:02:05.840 --> 00:02:16.640
+close function to close the file. So that we can&nbsp;
+see this code work properly, in two stages, I will&nbsp;&nbsp;
+
+00:02:16.640 --> 00:02:28.480
+comment out the last three lines of code. We will&nbsp;
+cover commenting in more detail elsewhere in the&nbsp;&nbsp;
+
+00:02:28.480 --> 00:02:34.560
+course, but adding number symbols to the beginning&nbsp;
+of a line tells Python to ignore the line. I will&nbsp;&nbsp;
+
+00:02:34.560 --> 00:02:49.440
+run the code, and the 315-message text file is&nbsp;
+built. In opening the file, we see the two lines&nbsp;&nbsp;
+
+00:02:49.440 --> 00:02:58.760
+of text from lines 2 and 3 in the code. To run the&nbsp;
+append portion of the code to mimic a real-life&nbsp;&nbsp;
+
+00:02:58.760 --> 00:03:11.920
+situation, I will add number symbols to the&nbsp;
+first four lines to have Python ignore that code,&nbsp;&nbsp;
+
+00:03:11.920 --> 00:03:28.360
+and then I will uncomment lines 6 through 8 and&nbsp;
+run that code. Then, I will open the file again,&nbsp;&nbsp;
+
+00:03:28.360 --> 00:03:34.520
+and the append worked as text has been added&nbsp;
+to the end of the file. Remember that regarding&nbsp;&nbsp;
+
+00:03:34.520 --> 00:03:45.960
+existing files, write overwrites existing files&nbsp;
+while append adds to the end of existing files.
+

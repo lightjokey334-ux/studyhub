@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.000 --> 00:00:06.480
+Every programming language has a means by which&nbsp;
+dates and times can be formatted in several&nbsp;&nbsp;
+
+00:00:06.480 --> 00:00:15.160
+ways. Python is no exception. Some apps use fixed&nbsp;
+dates, while others need to know the current date,&nbsp;&nbsp;
+
+00:00:15.160 --> 00:00:21.280
+such as when a game logs a current date and time&nbsp;
+as a starting point for a game based on timing.&nbsp;&nbsp;
+
+00:00:21.280 --> 00:00:27.280
+The current date and time are located within the&nbsp;
+datetime library, which needs to be imported.&nbsp;&nbsp;
+
+00:00:27.280 --> 00:00:39.520
+I’ve done just that on line 1 of this 622-datetime&nbsp;
+file. On line 2, we have a current time variable;&nbsp;&nbsp;
+
+00:00:39.520 --> 00:00:45.680
+in just a moment, we will replace the comment&nbsp;
+with the current date and time. Line 3 has a&nbsp;&nbsp;
+
+00:00:45.680 --> 00:00:52.280
+print statement with a message that includes the&nbsp;
+current time variable. Let’s return to line 2 and&nbsp;&nbsp;
+
+00:00:52.280 --> 00:00:59.560
+determine what we need to get the current date&nbsp;
+and time to show. I will use the tips I get when&nbsp;&nbsp;
+
+00:00:59.560 --> 00:01:08.920
+typing code in the Visual Studio Code editor.&nbsp;
+I will select and delete the comment. Then,&nbsp;&nbsp;
+
+00:01:08.920 --> 00:01:19.240
+I will type the library name, datetime, and a&nbsp;
+dot. We see a list of possibilities for where&nbsp;&nbsp;
+
+00:01:19.240 --> 00:01:28.520
+to go next. As we want the current date and time,&nbsp;
+I will choose datetime. Then, I will type another&nbsp;&nbsp;
+
+00:01:28.520 --> 00:01:37.920
+dot. In many programming languages, the current&nbsp;
+date and time keyword is either current_time or&nbsp;&nbsp;
+
+00:01:37.920 --> 00:01:49.920
+now. In scrolling through this list, we see now. I&nbsp;
+will select it and then add a set of parentheses,&nbsp;&nbsp;
+
+00:01:49.920 --> 00:01:59.840
+as all built-in methods need them. I will&nbsp;
+run the code, and the date and time show,&nbsp;&nbsp;
+
+00:02:00.800 --> 00:02:08.160
+but I think you would agree that the formatting&nbsp;
+could use some help. The strftime method allows&nbsp;&nbsp;
+
+00:02:08.160 --> 00:02:14.880
+one to format a date and time to a presentable&nbsp;
+format. For example, let’s say we want to format&nbsp;&nbsp;
+
+00:02:14.880 --> 00:02:28.200
+this date in mm/dd/yyyy hh:mm format. First, we&nbsp;
+need to add the strftime method to the current&nbsp;&nbsp;
+
+00:02:28.200 --> 00:02:35.080
+time and then add parentheses to put the argument&nbsp;
+in for the format we want. I will place the cursor&nbsp;&nbsp;
+
+00:02:35.080 --> 00:02:43.560
+in parentheses, and the general principle with&nbsp;
+strftime is that each format piece starts with a&nbsp;&nbsp;
+
+00:02:43.560 --> 00:03:01.800
+percent symbol and then has a letter to designate&nbsp;
+the desired format. I will type %m-%d-%y and add&nbsp;&nbsp;
+
+00:03:01.800 --> 00:03:16.160
+quotes around this text. To try this out and then&nbsp;
+run this code. That is very close to what we want.
+

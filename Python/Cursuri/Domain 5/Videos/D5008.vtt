@@ -1,0 +1,108 @@
+WEBVTT
+Kind: captions
+Language: en-US
+
+00:00:01.280 --> 00:00:05.840
+Within a block of code for catching errors, you&nbsp;
+may want some code to run no matter the outcome&nbsp;&nbsp;
+
+00:00:05.840 --> 00:00:12.320
+of the try portion of the code. The except block&nbsp;
+executes when an error occurs, preventing a crash.&nbsp;&nbsp;
+
+00:00:12.320 --> 00:00:17.400
+Else runs if there are no exceptions to code,&nbsp;
+meaning no errors were caught by the except&nbsp;&nbsp;
+
+00:00:17.400 --> 00:00:23.840
+block. The finally block is a code block that runs&nbsp;
+whether the try portion of a code block worked or&nbsp;&nbsp;
+
+00:00:23.840 --> 00:00:31.480
+did not. I have the code example from the previous&nbsp;
+topic open in a new file version, the 524-finally&nbsp;&nbsp;
+
+00:00:31.480 --> 00:00:38.400
+file. In this file, I will add a finally block&nbsp;
+that thanks the game player for playing. I will&nbsp;&nbsp;
+
+00:00:38.400 --> 00:00:48.480
+start this on line 9 with the word, finally, and&nbsp;
+a colon. Then, I will make sure I am indented on&nbsp;&nbsp;
+
+00:00:48.480 --> 00:00:59.400
+the following line and add a print statement to&nbsp;
+thank the player for playing. Then, I will run&nbsp;&nbsp;
+
+00:00:59.400 --> 00:01:11.680
+this code twice. The first time I run it, I will&nbsp;
+enter a legitimate value, and we see the try,&nbsp;&nbsp;
+
+00:01:11.680 --> 00:01:26.280
+else, and finally blocks all ran. Next, I will&nbsp;
+run this code and enter an illegitimate value,&nbsp;&nbsp;
+
+00:01:26.280 --> 00:01:34.080
+and we get the except clause but we also get the&nbsp;
+thank you message. In this case, the try, except,&nbsp;&nbsp;
+
+00:01:34.080 --> 00:01:41.720
+and finally blocks ran. As we get ready to move&nbsp;
+to the next piece of exception handling, raises,&nbsp;&nbsp;
+
+00:01:41.720 --> 00:01:47.520
+know this about the try block. First, it cannot&nbsp;
+run by itself. Secondly, a try block must have&nbsp;&nbsp;
+
+00:01:47.520 --> 00:01:53.040
+an except clause or a finally clause, or the code&nbsp;
+will fail. An else clause is not always needed,&nbsp;&nbsp;
+
+00:01:53.040 --> 00:01:58.120
+though normally, one would want an else clause&nbsp;
+to continue running code if the try block does&nbsp;&nbsp;
+
+00:01:58.120 --> 00:02:07.080
+not cause an exception unless the subsequent code&nbsp;
+to run needs to happen after the finally block.&nbsp;&nbsp;
+
+00:02:07.080 --> 00:02:13.320
+The whole goal with the try, except, else, and&nbsp;
+finally blocks is to control error messages as&nbsp;&nbsp;
+
+00:02:13.320 --> 00:02:19.440
+they happen and allow an app to end gracefully&nbsp;
+rather than have a hard crash take place, which,&nbsp;&nbsp;
+
+00:02:19.440 --> 00:02:26.480
+when occurring too many times, may dissuade people&nbsp;
+from wanting to use an app. To summarize exception&nbsp;&nbsp;
+
+00:02:26.480 --> 00:02:32.800
+handling, this chart helps us understand an&nbsp;
+important nuance with . It's essential to&nbsp;&nbsp;
+
+00:02:32.800 --> 00:02:39.480
+understand the run flow and interactions between&nbsp;
+try, except, else, and finally blocks. If an&nbsp;&nbsp;
+
+00:02:39.480 --> 00:02:44.760
+error is raised within an except, else, or finally&nbsp;
+block, this error will not be caught by the same&nbsp;&nbsp;
+
+00:02:44.760 --> 00:02:51.200
+except block. Rather, it will turn into a runtime&nbsp;
+error. Before that happens, if a finally block&nbsp;&nbsp;
+
+00:02:51.200 --> 00:02:57.160
+exists, the finally block will always execute. For&nbsp;
+instance, if there's a runtime error in the except&nbsp;&nbsp;
+
+00:02:57.160 --> 00:03:03.040
+block, that block will halt at the error. Python&nbsp;
+will then look for a finally block. If found,&nbsp;&nbsp;
+
+00:03:03.040 --> 00:03:09.280
+the finally block will execute, followed&nbsp;
+by the raising of the unhandled exception.
+

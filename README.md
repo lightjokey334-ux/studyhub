@@ -81,6 +81,15 @@
 >   cuvinte subliniate în enunț, fără tip nou de întrebare — vezi aceeași
 >   secțiune.
 
+> **A șaptea actualizare:** câmp nou, opțional, `explanation`, pe orice
+> întrebare (orice tip) — text care explică răspunsul corect. Apare DOAR
+> după „Finalizează testul" (nu în timpul Modului Învățare, înainte de
+> finalizare), la fiecare întrebare pe care o revezi, corectă sau greșită
+> — vezi secțiunea 4. Am construit și scheletul complet de **Cursuri**
+> pentru **Python** (6 domenii, cu titlurile secțiunilor/capitolelor pe
+> care mi le-ai trimis) — vezi secțiunea 1 și 4. Python va avea 4 Examene
+> (nu 3, ca Networking/Databases) — de reținut la extinderea la Examene.
+
 Platformă locală, offline-first, pentru studiu — dark mode, în română,
 inspirată vizual după interfața LearnKey/GMetrix. Deocamdată e construită
 complet secțiunea **Networking** și **Databases**; Python e schelet gol,
@@ -96,6 +105,10 @@ SiteFile/
 │
 ├─ engine.js              motorul unic de întrebări (folosit peste tot)
 ├─ engine.css             stilul motorului de întrebări
+│
+├─ cursuri-engine.js      logica COMUNĂ a paginii Cursuri (identică pentru
+│                         toate materiile — vezi secțiunea 3)
+├─ cursuri-shared.css     stilul paginii Cursuri (la fel, comun)
 │
 ├─ settings.js            citire/scriere Setări (localStorage)
 ├─ settings.html          pagina propriu-zisă de Setări
@@ -113,8 +126,7 @@ SiteFile/
 ├─ Networking/
 │  ├─ Cursuri/
 │  │  ├─ cursuri.html     pagina cu sidebar stânga + player video / test
-│  │  ├─ cursuri.css
-│  │  ├─ cursuri.js       ← aici sunt titlurile capitolelor video pe domenii
+│  │  ├─ cursuri.js       DOAR SUBJECT + DOMAINS (titluri, capitole, src video)
 │  │  ├─ Domain 1/ … Domain 5/
 │  │  │  ├─ Videos/                  (.mp4 + opțional .vtt cu același nume)
 │  │  │  ├─ Pre-Assessment/
@@ -134,7 +146,7 @@ SiteFile/
 ├─ Python/     (gol, deocamdată)
 └─ Databases/  (structură completă, la fel ca Networking — vezi mai jos)
    ├─ Cursuri/
-   │  ├─ cursuri.html / cursuri.css / cursuri.js
+   │  ├─ cursuri.html / cursuri.js   (cursuri.js: DOAR SUBJECT + DOMAINS)
    │  └─ Domain 1/ … Domain 5/  (Videos + Pre-Assessment + Post-Assessment)
    └─ Examene/
       ├─ exam.css / exam-runner.js
@@ -147,6 +159,20 @@ care conține DOAR datele întrebărilor (un array). Motorul care le afișează
 poți completa fișierele de întrebări unul câte unul, fără să atingi codul
 de randare.
 
+Același principiu se aplică și paginii Cursuri: `cursuri-engine.js` +
+`cursuri-shared.css` (la rădăcină) conțin TOATĂ logica/stilul, identice
+pentru orice materie — nu se copiază, nu se editează per materie. Singurul
+lucru care diferă între Networking/Databases/Python e `cursuri.js`, mic,
+cu DOAR `SUBJECT` și `DOMAINS`. `cursuri.html` diferă și el minim (doar
+titlul paginii + emoji-ul din brand), fără nicio logică proprie.
+
+⚠️ **Ordinea scripturilor în `cursuri.html` contează**: `cursuri.js`
+(datele materiei) TREBUIE încărcat înaintea lui `cursuri-engine.js` (care
+le folosește ca variabile globale — `SUBJECT`, `DOMAINS`). Dacă adaugi
+Cursuri la o materie nouă (Python), copiază `cursuri.html` de la
+Networking/Databases ca șablon (schimbi doar titlul + emoji) și păstrează
+exact această ordine.
+
 ## 2. Cum deschizi site-ul
 
 Deschide `index.html` direct în browser (dublu-click, funcționează pe
@@ -156,9 +182,9 @@ Fluxul de navigare:
 1. `index.html` → alegi un card (Databases / Networking / Python).
 2. Apar 4 opțiuni: **Cursuri**, **Examen 1**, **Examen 2**, **Examen 3**.
 3. Fiecare opțiune se deschide în **același tab** (nu tab nou).
-   (Deocamdată doar Networking e „activ" — celelalte două arată un mesaj
-   „în lucru"; vezi `READY_SUBJECTS` din `script.js` când vrei să activezi
-   Python/Databases.)
+   (Networking și Databases sunt „active"; Python încă arată un mesaj
+   „în lucru" — vezi `READY_SUBJECTS` din `script.js` când vrei să-l
+   activezi și pe el.)
 
 Din interiorul Cursurilor/Examenelor, apeși pe numele materiei
 (ex: „🌐 Networking") ca să te întorci — vezi secțiunea 8 (Setări) pentru
@@ -213,11 +239,11 @@ Types" în `cursuri.js`; verifică și corectează dacă e nevoie.
 Doar lista de capitole din dreapta (jos, pe mobil) are scroll propriu —
 playerul rămâne mereu vizibil, fix, în partea de sus. Pre/Post-Assessment
 rămân cu scroll normal (au conținut de lungime variabilă, nu are sens să
-fie fixate). Tehnic: `selectItem()` din `cursuri.js` pune o clasă,
+fie fixate). Tehnic: `selectItem()` din `cursuri-engine.js` pune o clasă,
 `c-main-video`, pe containerul principal DOAR când tab-ul activ e Videos;
-`cursuri.css` o folosește ca să transforme `.c-main` într-un container cu
-`overflow: hidden` pe mobil, cu playerul la înălțime naturală și lista de
-capitole ocupând tot spațiul rămas (`flex: 1`, cu scroll intern).
+`cursuri-shared.css` o folosește ca să transforme `.c-main` într-un
+container cu `overflow: hidden` pe mobil, cu playerul la înălțime naturală
+și lista de capitole ocupând tot spațiul rămas (`flex: 1`, cu scroll intern).
 
 ## 4. Schema unei întrebări (folosită peste tot: Pre/Post-Assessment + Examene)
 
@@ -232,9 +258,23 @@ Fiecare întrebare e un obiect JS cu această formă:
   options: [...],        // vezi mai jos, diferă în funcție de tip
   pairs: [...],          // DOAR la tipul "match" — vezi litera f) mai jos
   statements: [...],     // DOAR la "truefalse" (litera g) și "dropdown" (litera h)
-  correct: [...]         // vezi mai jos, diferă în funcție de tip
+  correct: [...],        // vezi mai jos, diferă în funcție de tip
+  explanation: "..."     // OPȚIONAL — vezi nota de mai jos
 }
 ```
+
+### Câmpul opțional `explanation` (orice tip de întrebare)
+Dacă îl adaugi, e text (poate conține HTML, la fel ca `question` — deci
+merge și `<u>`, `<table>`, etc.) care explică răspunsul corect:
+```js
+explanation: "DNS rezolvă nume în adrese IP; DHCP alocă automat adresele — de-asta primul spațiu e DNS, al doilea DHCP."
+```
+Apare într-o casetă distinctă sub întrebare, **doar după „Finalizează
+testul"** — la fiecare întrebare pe care o revezi, indiferent dacă ai
+răspuns corect sau greșit. NU apare în timpul Modului Învățare, înainte
+de finalizare (acolo corectarea per-întrebare e altceva — vine imediat,
+la fiecare răspuns, fără explicație). Dacă nu adaugi câmpul, nu se
+întâmplă nimic diferit — e complet opțional, întrebare cu întrebare.
 
 ### a) `single` — alegere unică (radio button)
 ```js
@@ -457,7 +497,7 @@ Fișierul trebuie pus lângă `.js`-ul testului respectiv, ex:
 
 Fiecare fișier există deja, gol, cu comentarii-exemplu. Trebuie doar să
 înlocuiești array-ul cu întrebările reale — numele variabilei NU trebuie
-schimbat, altfel `cursuri.js` / `exam-runner.js` nu le va găsi.
+schimbat, altfel `cursuri-engine.js` / `exam-runner.js` nu le va găsi.
 
 ⚠️ **`EXAM_ID` e ușor de uitat, dar esențial** — fără el, `exam-runner.js`
 nu are cum să lege încercarea de o cheie în Progres, și scorul acelui
@@ -607,7 +647,7 @@ materiile deodată (cu confirmare).
 
 Timpul per secțiune se scria inițial în `localStorage` DOAR la schimbarea
 secțiunii (sau la închiderea paginii) — deci dacă deschideai Progres în
-timp ce stăteai pe loc, vedeai valori vechi. `cursuri.js` are acum o
+timp ce stăteai pe loc, vedeai valori vechi. `cursuri-engine.js` are acum o
 funcție `flushSectionTime()` („checkpoint"): scrie timpul acumulat până
 acum și repornește cronometrul, FĂRĂ să schimbe secțiunea urmărită.
 `trackSectionTime()` (schimbarea reală) o folosește ca prim pas, dar ea
@@ -636,7 +676,7 @@ pe `cursuri.html`/`examenX.html`; orice salvare de progres trece prin el
 indiferent din ce folder pornește. Fișierele implicate:
 `storage-bridge.html` (bridge-ul propriu-zis) și `progress-bridge.js`
 (funcțiile `recordTestAttempt()` / `recordTimeSpent()`, apelate din
-`engine.js` și `cursuri.js`).
+`engine.js` și `cursuri-engine.js`).
 
 Chei folosite: `studyhub_test_history_v1` (istoricul testelor, cu
 greșelile per încercare), `studyhub_time_spent_v1` (timpul per secțiune).
@@ -653,14 +693,20 @@ acele secțiuni.
 
 ## 10. Limitări cunoscute / lucruri de verificat
 
+- Titlul „IPv6 Address Types" la Domain 4 e o presupunere (vezi punctul 3).
 - Video playerul citește fișiere locale direct din `Videos/`; nu am
   adăugat conversie/compresie — pune fișierele deja în format `.mp4`
   redabil în browser (H.264/AAC).
 - `EXAM_ID` trebuie completat manual în fiecare `examenX-questions.js`
   (vezi secțiunea 5) — nu e validat automat, deci o greșeală acolo nu dă
   nicio eroare vizibilă, doar progresul acelui examen nu se salvează.
-- `cursuri.js`/`exam-runner.js` sunt duplicate per materie (fiecare cu
-  propriul `SUBJECT`/link-uri hardcodate la numele materiei) — orice fix
-  făcut pe copia din Networking trebuie oglindit manual și în Databases
-  (și, mai târziu, Python), inclusiv câteva string-uri hardcodate direct
-  (ex: link-ul logo-ului din `cursuri.js`), nu doar constanta `SUBJECT`.
+- **`exam-runner.js` e ÎNCĂ duplicat per materie** (spre deosebire de
+  `cursuri.js`, care s-a rezolvat — vezi secțiunea 1: logica lui e acum
+  în `cursuri-engine.js`, comun). `exam-runner.js` are 2 string-uri
+  hardcodate cu numele materiei (link-ul logo-ului + butonul „✕ Închide"),
+  plus întreaga funcționalitate de sesiuni multiple, auto-salvare, etc. —
+  orice fix făcut pe copia din Networking trebuie oglindit manual în
+  Databases (și, mai târziu, Python), altfel materia respectivă rămâne cu
+  o versiune mai veche/incompletă, fără nicio eroare care să te avertizeze.
+  Dacă vrei, se poate aplica exact același tipar de despărțire ca la
+  `cursuri.js` (fișier comun + o mică bucată per materie cu `SUBJECT`).
