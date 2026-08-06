@@ -29,7 +29,7 @@ var QUESTIONS_D5_POST = [
     question: "Refer to the image. What is the runtime error in the query?",
     image: "sql_error_invalid_object.png",
     options: ["The Sales.Customer table has not been created yet", "The query is being run against the wrong database", "There are too many columns from which data is being taken", "The wrong type of join is used"],
-    correct: [0]
+    correct: [1]
   },
   {
     id: "d5_post_04",

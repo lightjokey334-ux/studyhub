@@ -11,6 +11,14 @@
 const HISTORY_KEY = 'studyhub_test_history_v1';
 const TIME_KEY = 'studyhub_time_spent_v1';
 
+// Lista implicită de rânduri per domeniu (Pre + Post) — folosită dacă un
+// domeniu NU declară propriul `assessments` mai jos. Comportament vechi,
+// neschimbat pentru Networking/Databases.
+const DEFAULT_HIST_ASSESSMENTS = [
+  { key: 'pre', label: '📊 Pre-Assessment' },
+  { key: 'post', label: '📊 Post-Assessment' },
+];
+
 const SUBJECTS = {
   Networking: {
     label: 'Networking',
@@ -34,12 +42,43 @@ const SUBJECTS = {
     icon: '🐍',
     ready: true,
     domains: [
-      { id: 'd1', title: 'Domain 1: Data Types and Operators' },
-      { id: 'd2', title: 'Domain 2: Branching and Iteration' },
-      { id: 'd3', title: 'Domain 3: Input and Output' },
-      { id: 'd4', title: 'Domain 4: Code Documentation and Functions' },
-      { id: 'd5', title: 'Domain 5: Errors, Exceptions and Testing' },
-      { id: 'd6', title: 'Domain 6: Modules and Problem Solving' },
+      { id: 'd1', title: 'Domain 1: Data Types and Operators', assessments: [
+        { key: 'pre', label: '📊 Pre-Assessment' },
+        { key: 'post', label: '📊 Post-Assessment' },
+        { key: 'fillblanks', label: '✏️ Fill in the Blanks' },
+        { key: 'practical1', label: '💻 Practical Application Part 1' },
+        { key: 'practical2', label: '💻 Practical Application Part 2' },
+      ] },
+      { id: 'd2', title: 'Domain 2: Branching and Iteration', assessments: [
+        { key: 'pre', label: '📊 Pre-Assessment' },
+        { key: 'post', label: '📊 Post-Assessment' },
+        { key: 'fillblanks', label: '✏️ Fill in the Blanks' },
+        { key: 'practical', label: '💻 Practical Application' },
+      ] },
+      { id: 'd3', title: 'Domain 3: Input and Output', assessments: [
+        { key: 'pre', label: '📊 Pre-Assessment' },
+        { key: 'post', label: '📊 Post-Assessment' },
+        { key: 'fillblanks', label: '✏️ Fill in the Blanks' },
+        { key: 'practical', label: '💻 Practical Application' },
+      ] },
+      { id: 'd4', title: 'Domain 4: Code Documentation and Functions', assessments: [
+        { key: 'pre', label: '📊 Pre-Assessment' },
+        { key: 'post', label: '📊 Post-Assessment' },
+        { key: 'fillblanks', label: '✏️ Fill in the Blanks' },
+        { key: 'practical', label: '💻 Practical Application' },
+      ] },
+      { id: 'd5', title: 'Domain 5: Errors, Exceptions and Testing', assessments: [
+        { key: 'pre', label: '📊 Pre-Assessment' },
+        { key: 'post', label: '📊 Post-Assessment' },
+        { key: 'fillblanks', label: '✏️ Fill in the Blanks' },
+        { key: 'practical', label: '💻 Practical Application' },
+      ] },
+      { id: 'd6', title: 'Domain 6: Modules and Problem Solving', assessments: [
+        { key: 'pre', label: '📊 Pre-Assessment' },
+        { key: 'post', label: '📊 Post-Assessment' },
+        { key: 'fillblanks', label: '✏️ Fill in the Blanks' },
+        { key: 'practical', label: '💻 Practical Application' },
+      ] },
     ],
     exams: [
       { id: 'exam1', label: 'Examen 1' },
@@ -149,13 +188,17 @@ function renderSubjectContent() {
 
   subject.domains.forEach(domain => {
     const videoKey = `${activeSubject}_${domain.id}_videos`;
-    const preKey = `${activeSubject}_${domain.id}_pre`;
-    const postKey = `${activeSubject}_${domain.id}_post`;
-
     const videoSec = (timeLog[videoKey] && timeLog[videoKey].seconds) || 0;
-    const preSec = (timeLog[preKey] && timeLog[preKey].seconds) || 0;
-    const postSec = (timeLog[postKey] && timeLog[postKey].seconds) || 0;
-    const totalSec = videoSec + preSec + postSec;
+
+    const assessments = domain.assessments || DEFAULT_HIST_ASSESSMENTS;
+    let totalSec = videoSec;
+    let assessmentRowsHtml = '';
+    assessments.forEach(a => {
+      const key = `${activeSubject}_${domain.id}_${a.key}`;
+      const sec = (timeLog[key] && timeLog[key].seconds) || 0;
+      totalSec += sec;
+      assessmentRowsHtml += renderAssessmentRow(key, a.label, history[key], sec);
+    });
 
     html += `
       <div class="hist-domain-card">
@@ -169,8 +212,7 @@ function renderSubjectContent() {
             <span class="hist-subrow-label">Videos</span>
             <span class="hist-subrow-value">${formatDuration(videoSec)}</span>
           </div>
-          ${renderAssessmentRow(preKey, '📊 Pre-Assessment', history[preKey], preSec)}
-          ${renderAssessmentRow(postKey, '📊 Post-Assessment', history[postKey], postSec)}
+          ${assessmentRowsHtml}
         </div>
       </div>`;
   });

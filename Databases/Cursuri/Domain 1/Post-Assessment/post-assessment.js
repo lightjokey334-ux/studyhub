@@ -32,7 +32,7 @@ var QUESTIONS_D1_POST = [
       "A concept that ensures that a primary key value exists in a relationship before the corresponding foreign key value is allowed"
     ],
     correct: [3]
-  },
+  },  
   {
     id: "d1_post_03",
     type: "single",

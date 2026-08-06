@@ -5,7 +5,7 @@ var QUESTIONS_D2_PRE = [
     question: "Which IPsec protocol generates authentication and encryption keys?",
     image: null,
     options: ["PAP", "ESP", "AH", "SA"],
-    correct: [1]
+    correct: [3]
   },
   {
     id: "d2_pre_02",
@@ -77,7 +77,7 @@ var QUESTIONS_D2_PRE = [
     question: "What are the advantages of a star topology? Choose two answers.",
     image: null,
     options: ["A star topology is easily scalable", "A star topology is independent", "A star topology contains multiple redundancies", "A star topology is fault tolerant", "A star topology is token-based"],
-    correct: [0, 1]
+    correct: [0, 3]
   },
   {
     id: "d2_pre_11",

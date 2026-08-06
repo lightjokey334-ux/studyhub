@@ -13,18 +13,45 @@
      2. cursuri-engine.js      (acest fișier — le folosește pe cele de mai sus)
    =================================================================== */
 
-// Fiecare domeniu are 3 file: Videos, Pre-Assessment, Post-Assessment.
-// (Exercise Labs a fost exclus intenționat, per cerință.)
-const SUBITEM_TYPES = [
+// Fiecare domeniu are, implicit, 3 file, ÎN ORDINEA: Videos, Pre-Assessment,
+// Post-Assessment. (Exercise Labs a fost exclus intenționat, per cerință.)
+//
+// O materie poate avea domenii cu tipuri de test DIFERITE — ex: Python are
+// și "Fill in the Blanks" și "Practical Application" (Domain 1 chiar are
+// Part 1 + Part 2 separat) — declarând un array `assessments` chiar pe
+// obiectul domeniului, în cursuri.js. `assessments`, dacă e prezent,
+// înlocuiește ÎNTREAGA listă (inclusiv poziția lui Videos în ea — poate fi
+// oriunde, nu neapărat primul, ex: Python vrea Pre-Assessment înaintea
+// Videos). Dacă domeniul NU are `assessments`, se folosește automat lista
+// implicită de mai jos (Videos, Pre, Post, în această ordine) — exact
+// comportamentul vechi, neschimbat pentru Networking/Databases.
+//
+// Fiecare intrare custom din `assessments` poate avea:
+//   key          — identificator scurt, unic în cadrul domeniului (ex: "fillblanks")
+//   label        — text afișat (ex: "Fill in the Blanks")
+//   icon         — emoji afișat în sidebar
+//   questionsVar — numele variabilei globale cu întrebările (ex: "QUESTIONS_D1_FILLBLANKS")
+//   folder       — numele folderului fizic (ex: "Fill in the Blanks")
+// Intrarea "videos" (key: "videos") NU are questionsVar/folder — e un caz
+// special, randat de renderVideos(), nu de renderAssessment().
+// Pre/Post STANDARD (fără questionsVar/folder explicit) folosesc convenția
+// veche automat — QUESTIONS_D{n}_PRE/POST, foldere "Pre-Assessment"/"Post-Assessment".
+const DEFAULT_SUBITEMS = [
   { key: 'videos', label: 'Videos', icon: '🎥' },
   { key: 'pre', label: 'Pre-Assessment', icon: '📊' },
   { key: 'post', label: 'Post-Assessment', icon: '📊' },
 ];
 
-// Listă plată (pentru butoanele ‹ › de navigare secvențială)
+function getDomainSubitems(domain) {
+  return domain.assessments || DEFAULT_SUBITEMS;
+}
+
+// Listă plată (pentru butoanele ‹ › de navigare secvențială) — fiecare
+// domeniu își aduce propria ordine/tipuri, deci lungimea/ordinea pot
+// diferi între domenii.
 const FLAT_ITEMS = [];
 DOMAINS.forEach(domain => {
-  SUBITEM_TYPES.forEach(t => {
+  getDomainSubitems(domain).forEach(t => {
     FLAT_ITEMS.push({ domainId: domain.id, type: t.key });
   });
 });
@@ -174,7 +201,7 @@ function buildSidebar() {
         <span class="c-chevron${isOpen ? ' c-chevron-open' : ''}">›</span>
       </div>
       <div class="c-domain-items${isOpen ? '' : ' c-collapsed'}" data-items-for="${domain.id}">`;
-    SUBITEM_TYPES.forEach(t => {
+    getDomainSubitems(domain).forEach(t => {
       html += `
         <div class="c-subitem" data-domain="${domain.id}" data-type="${t.key}">
           <span class="c-icon">${t.icon}</span>
@@ -239,7 +266,7 @@ function selectItem(flatIdx) {
     applySidebarActiveState();
   }
 
-  const typeLabel = SUBITEM_TYPES.find(t => t.key === type).label;
+  const typeLabel = getDomainSubitems(domain).find(t => t.key === type).label;
   titleEl.textContent = `${domain.title} — ${typeLabel}`;
   updateTopbarHeightVar();
 
@@ -314,6 +341,36 @@ document.addEventListener('studyhub:modal-open', () => flushSectionTime());
 
 window.addEventListener('beforeunload', () => trackSectionTime(null, null));
 
+// "Vizionat" — bifă verde la un capitol video, ca reper vizual de unde ai
+// rămas. Persistă în localStorage, simplu — NU trece prin storage-bridge,
+// pentru că se citește/scrie mereu din cursuri.html, niciodată din alt
+// folder (deci nu există problema de izolare cross-folder pe file://).
+// Se marchează la "ended" (video ajuns la final), vezi mai jos.
+const WATCHED_VIDEOS_KEY = 'studyhub_watched_videos_v1';
+
+function loadWatchedVideos() {
+  try {
+    const raw = localStorage.getItem(WATCHED_VIDEOS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) { return {}; }
+}
+
+function isChapterWatched(domain, sectionIdx, chapterIdx) {
+  const data = loadWatchedVideos();
+  const list = data[`${SUBJECT}_${domain.id}`] || [];
+  return list.includes(`${sectionIdx}-${chapterIdx}`);
+}
+
+function markChapterWatched(domain, sectionIdx, chapterIdx) {
+  const data = loadWatchedVideos();
+  const key = `${SUBJECT}_${domain.id}`;
+  if (!data[key]) data[key] = [];
+  const chapterKey = `${sectionIdx}-${chapterIdx}`;
+  if (data[key].includes(chapterKey)) return; // deja marcat, nimic de scris
+  data[key].push(chapterKey);
+  try { localStorage.setItem(WATCHED_VIDEOS_KEY, JSON.stringify(data)); } catch (e) { /* ignoră */ }
+}
+
 function renderVideos(domain) {
   currentEngineInstance = null;
   currentChapter = { domainId: domain.id, sectionIdx: 0, chapterIdx: 0 };
@@ -342,9 +399,11 @@ function renderVideos(domain) {
         </div>
         <div class="c-chapter-section-items${sectionOpen[sIdx] ? '' : ' c-collapsed'}" data-section-items="${sIdx}">`;
       sec.chapters.forEach((ch, cIdx) => {
+        const watched = isChapterWatched(domain, sIdx, cIdx);
         html += `
           <div class="c-chapter-item" data-section="${sIdx}" data-chapter="${cIdx}">
-            ${ch.title}
+            <span class="c-chapter-item-title">${ch.title}</span>
+            ${watched ? '<span class="c-chapter-check" title="Vizionat">✓</span>' : ''}
           </div>`;
       });
       html += `</div>`;
@@ -386,6 +445,9 @@ function renderVideos(domain) {
   // schimbarea capitolului (doar loadChapter() îi schimbă src-ul).
   const player = document.getElementById('videoPlayer');
   player.addEventListener('ended', () => {
+    markChapterWatched(domain, currentChapter.sectionIdx, currentChapter.chapterIdx);
+    renderChapterList(); // arată bifa imediat; păstrează stările collapse (sectionOpen)
+
     if (!autoplayNextVideo) return;
     const next = getNextChapterPosition(domain, currentChapter.sectionIdx, currentChapter.chapterIdx);
     if (!next) return; // era ultimul capitol din domeniu
@@ -449,18 +511,30 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
 
 function renderAssessment(domain, type) {
   const domainNum = domain.folder.replace('Domain ', '');
-  const kind = type === 'pre' ? 'PRE' : 'POST';
-  const questions = getQuestionSet(domainNum, kind);
-  const subfolder = type === 'pre' ? 'Pre-Assessment' : 'Post-Assessment';
+  const item = getDomainSubitems(domain).find(t => t.key === type);
+
+  let questions, subfolder;
+  if (item.questionsVar) {
+    // Tip de test custom (declarat explicit în `assessments`, în cursuri.js
+    // al materiei) — ex: Fill in the Blanks, Practical Application.
+    questions = window[item.questionsVar] || [];
+    subfolder = item.folder;
+  } else {
+    // Pre/Post-Assessment STANDARD — comportament vechi, neschimbat,
+    // pe convenția de nume QUESTIONS_D{n}_PRE/POST.
+    const kind = type === 'pre' ? 'PRE' : 'POST';
+    questions = getQuestionSet(domainNum, kind);
+    subfolder = type === 'pre' ? 'Pre-Assessment' : 'Post-Assessment';
+  }
 
   mainAreaEl.innerHTML = `<div class="c-assessment-wrap" id="assessmentWrap"></div>`;
   const container = document.getElementById('assessmentWrap');
   currentEngineInstance = new QuestionEngine(container, questions, {
-    title: `${domain.title} — ${type === 'pre' ? 'Pre-Assessment' : 'Post-Assessment'}`,
+    title: `${domain.title} — ${item.label}`,
     basePath: `${domain.folder}/${subfolder}/`,
     showShortcuts: showShortcutsDefault,
     autoSaveAnswers: autoSaveAnswersDefault,
-    testId: `${SUBJECT}_${domainNum ? 'd' + domainNum : domain.id}_${type}`,
+    testId: `${SUBJECT}_${domain.id}_${type}`,
   });
 }
 

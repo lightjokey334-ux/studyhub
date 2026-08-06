@@ -141,7 +141,12 @@
 }
 .qe-nav-btn:disabled:hover{ border-color: var(--border, #2a2b3d); transform: none; }
 
-.qe-body{ min-height: 220px; }
+/* Redus de la 220px — pentru întrebări scurte (ex: "blank" cu o singură
+   propoziție) lăsa mult spațiu gol, nejustificat, sub text. 60px e doar
+   un prag minim, ca să nu se simtă cardul "aproape gol" la conținut foarte
+   scurt — restul tipurilor (imagini, tabele, match) își cresc înălțimea
+   natural, din propriul conținut, nu au nevoie de minimul ăsta. */
+.qe-body{ min-height: 60px; }
 
 .qe-text{
   font-size: 17px;
@@ -544,6 +549,29 @@
   color: var(--text, #e8e8f0);
   font-size: 14.5px;
   line-height: 1.55;
+}
+
+/* Cod (Python/SQL) în enunț sau explicație — <code>...</code>, cu <br>
+   pentru rânduri noi (vezi DEEPSEEK_PROMPT.md). Font monospace, ca să se
+   distingă clar de restul textului — Cascadia Code (vine cu Windows 10/11
+   moderne, gândit special pentru cod) cu Consolas ca rezervă (universal pe
+   Windows), fără dependență de internet, la fel ca restul fonturilor de pe
+   site. white-space: pre-wrap păstrează exact spațiile/indentarea scrise
+   în cod (altfel HTML le-ar reduce la unul singur — critic la Python). */
+.qe-text code,
+.qe-explanation-text code{
+  font-family: 'Cascadia Code', Consolas, 'Fira Code', 'SF Mono', Menlo, ui-monospace, 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: 1.6;
+  background: var(--bg-elevated, #171724);
+  border: 1px solid var(--border, #2a2b3d);
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: inline-block;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
 }
 .hidden{ display: none !important; }
 

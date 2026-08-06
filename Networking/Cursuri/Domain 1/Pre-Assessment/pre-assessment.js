@@ -21,7 +21,7 @@ var QUESTIONS_D1_PRE = [
     question: "Which statements are true when Remote Desktop Connection is used to access a device? Choose two answers.",
     image: null,
     options: ["Control can be passed back and forth between the remote user and the user on the device", "The remote user is given total control over the device", "Other persons can view the actions performed by the remote user on the device", "The remote user must input the proper credentials to access the device"],
-    correct: [0, 3]
+    correct: [1, 3]
   },
   {
     id: "d1_pre_04",

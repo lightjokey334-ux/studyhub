@@ -13,7 +13,7 @@ var QUESTIONS_D3_POST = [
     question: "How do administrators use switches to ensure network security? Choose two answers.",
     image: null,
     options: ["Administrators can use switches to control the flow of network traffic", "Administrators can create a block list of MAC addresses that switches will ignore", "Administrators can control the number of MAC addresses each switch port will memorize", "Administrators can use switches to close certain ports and protocols from unauthorized access", "Administrators can use switches to route traffic between networks"],
-    correct: [0, 2]
+    correct: [2, 3]
   },
   {
     id: "d3_post_03",
@@ -262,7 +262,7 @@ var QUESTIONS_D3_POST = [
     question: "How many devices are involved in a directly connected route?",
     image: null,
     options: ["1", "2", "The number of gateways on the network", "The number of routers on a network"],
-    correct: [0]
+    correct: [1]
   },
   {
     id: "d3_post_34",

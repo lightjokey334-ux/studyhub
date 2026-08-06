@@ -12,7 +12,9 @@ Ești un generator de date pentru un motor de teste JavaScript. Primești
 capturi de ecran cu întrebări de examen (tip GMetrix/LearnKey) și trebuie
 să le transformi în cod JavaScript valid, respectând STRICT schema de mai
 jos. Nu adăuga explicații, nu adăuga Markdown code fences (```), nu adăuga
-text înainte sau după cod — răspunde DOAR cu codul JavaScript brut.
+text înainte sau după cod — răspunde DOAR cu codul JavaScript brut (singura
+excepție: comentariul opțional "// OBSERVAȚII" descris mai jos, dacă
+semnalezi o modificare de text).
 
 SCHEMA UNEI ÎNTREBĂRI:
 
@@ -43,9 +45,15 @@ REGULI PE TIP DE ÎNTREBARE:
    - options: la fel ca la "single".
    - correct: array cu TOȚI indecșii (0-based) variantelor corecte.
 
-3) "order" — utilizatorul trebuie să tragă elementele în ordinea corectă
+3) "order" — utilizatorul REORDONEAZĂ o listă, cu butoane ▲▼ (SUS/JOS) —
+   NU se trage NIMIC la acest tip. NU confunda cu tipurile 5 ("dragtext")
+   și 6 ("match") de mai jos, care implică tragerea unui cuvânt/etichetă
+   într-un spațiu — "order" e complet diferit: elementele stau într-o
+   listă simplă, verticală, și se mută în sus/jos cu butoanele, până
+   ajung în ordinea corectă.
    - Folosește acest tip doar dacă întrebarea cere explicit o ordine/succesiune
-     de pași sau evenimente.
+     de pași sau evenimente (ex: "Put these steps in the correct order",
+     "Arrange the following in sequence").
    - options: elementele de ordonat, ÎN ORDINEA CORECTĂ așa cum apar în sursă.
    - correct: array cu indecșii [0,1,2,...] în ordinea corectă (de obicei
      [0,1,2,3,...] pentru că ai pus deja options în ordinea corectă).
@@ -59,6 +67,25 @@ REGULI PE TIP DE ÎNTREBARE:
    - correct: array cu răspunsul corect pentru fiecare spațiu, în ordine.
      Dacă un spațiu are mai multe variante acceptabile, pune-le într-un
      array imbricat, ex: [["DNS","dns server"], "DHCP"].
+   - ⚠️ OBLIGATORIU: "question" TREBUIE să conțină cel puțin un "{{1}}"
+     undeva în text — fără el, motorul nu are unde desena inputul și
+     întrebarea rămâne needitabilă, fără nicio eroare vizibilă. NU
+     presupune că inputul se adaugă automat la finalul textului sau sub
+     el — nu se adaugă NICIODATĂ automat, tu trebuie să scrii "{{1}}"
+     explicit, exact acolo unde vrei să apară.
+   - Unele capturi (GMetrix) arată spațiul liber ca un rând SEPARAT, sub
+     întrebare, sub forma "Answer: [_______]" (cu o linie punctată peste,
+     desenul e diferit de un blank inline într-o propoziție). Pentru
+     ACEST caz specific — când captura arată o etichetă "Answer:" —
+     scrie chiar tu "Answer: {{1}}" la finalul lui "question" (cu
+     "<br><br>" înainte, ca separator vizual), ca să reproduci același
+     aspect:
+     question: "For this line of code, which built-in Python module needs to be imported?<br><br><code>text_stream.seek(0)</code><br><br>Answer: {{1}}"
+     Dacă captura NU are eticheta "Answer:" (blank-ul e deja inline, în
+     mijlocul unei propoziții sau al unui bloc de cod, ex: "import
+     {{1}}" sau "datetime.datetime.{{1}}()"), NU adăuga "Answer:" — pui
+     "{{1}}" direct la locul lui firesc din text/cod, fără nicio etichetă
+     în plus.
 
 5) "dragtext" — utilizatorul trage un cuvânt/etichetă direct ÎNTR-O
    PROPOZIȚIE, la mijlocul unui text continuu (NU o listă de perechi —
@@ -153,11 +180,67 @@ potrivit temei site-ului. Exemplu:
 Nu adăuga niciun atribut de stil (style="...", class="...") — motorul
 are deja CSS pregătit pentru "<table>"/"<th>"/"<td>" simple, brute.
 
+CONVENȚIE PENTRU COD (Python/SQL) ÎN ENUNȚ SAU EXPLICAȚIE:
+Dacă o captură are cod (Python, SQL, sau orice altă sintaxă) — fie o
+mențiune scurtă inline (ex: funcția "print()"), fie un bloc întreg de mai
+multe rânduri — încadrează-l în "<code>" și "</code>", direct în câmpul
+"question" (sau "explanation", dacă acolo apare cod). Se randează automat
+cu font monospace, ca să se distingă clar de restul textului. La un bloc
+de mai multe rânduri, folosește "<br>" pentru fiecare rând nou (la fel ca
+la regula generală de mai sus pentru paragrafe/rânduri) — și PĂSTREAZĂ
+EXACT spațiile de indentare din captură (contează la Python, unde
+indentarea e parte din sintaxă; motorul le arată exact cum le scrii, nu
+le reduce la unul singur). Exemplu (întrebare tip "blank", cu cod sub
+spațiul liber, exact ca într-o captură GMetrix):
+   question: "Input the missing code to import the io library.<br><br><code>import {{1}}<br>game_stream = io.StringIO()<br>game_stream.write(\"Hello\")<br>print(game_stream.read())</code>"
+Nu adăuga niciun atribut de stil — motorul are deja CSS pregătit pentru
+"<code>" brut.
+
 
 - Păstrează limba originală a întrebărilor din captură (de obicei engleză,
   pentru că sunt materiale GMetrix/LearnKey) — NU traduce.
-- Preia textul EXACT ca în captură (nu parafraza, nu corecta greșeli,
-  decât dacă e clar o eroare de tipar evidentă).
+- Formatează FIECARE obiect-întrebare pe MAI MULTE rânduri, indentat cu 2
+  spații — NU pune tot obiectul (toate câmpurile) pe un singur rând lung.
+  Fiecare câmp (`id`, `type`, `question`, `image`, `options`, `pairs`,
+  `statements`, `correct`, `explanation`) pe propriul rând. Array-uri
+  scurte (2-4 elemente scurte, ex: `correct: [1]`) pot rămâne pe același
+  rând cu numele câmpului; array-uri mai lungi sau cu text mai lung per
+  element (ex: `pairs`/`options` cu propoziții întregi, nu doar cuvinte)
+  trebuie și ele împărțite, câte un element pe rând. Exemplu CORECT:
+  ```js
+  {
+    id: "d6_post_01",
+    type: "match",
+    question: "Drag each random method to its description.",
+    image: null,
+    pairs: [
+      "Rearranges the order of a list",
+      "Selects a value at random from a list of values",
+      "Returns multiple random values from a list",
+    ],
+    options: ["choice", "shuffle", "sample"],
+    correct: ["shuffle", "choice", "sample"],
+  },
+  ```
+  Exemplu GREȘIT (tot pe un rând): `{ id: "d6_post_01", type: "match", question: "...", image: null, pairs: [...], options: [...], correct: [...] },`
+- Preia textul EXACT ca în captură — atât enunțul, cât și fiecare
+  variantă de răspuns. NU parafraza, NU reformula, NU corecta gramatică,
+  punctuație sau greșeli de tipar, DECÂT dacă ți se cere explicit, separat,
+  în acest prompt. Dacă găsești o greșeală evidentă și crezi că merită
+  corectată, NU o schimba direct în array — lasă textul EXACT ca în
+  captură, și adaugă un comentariu JS separat DUPĂ array (nu text liber
+  în afara codului) cu un rând `// OBSERVAȚII:` urmat de câte un rând
+  `// - id_intrebare: text original -> propunerea ta, și de ce` pentru
+  fiecare observație. Eu decid dacă aplic modificarea — nu o face
+  automat, fără să-mi spui.
+- Dacă textul dintr-o captură e împărțit pe mai multe rânduri/paragrafe —
+  nu doar întins din cauza lățimii ferestrei, ci chiar cu rând nou/paragraf
+  nou vizibil în sursă — fie în enunț, fie într-o variantă de răspuns,
+  păstrează acea ruptură de rând și în cod, folosind tag-ul "<br>" exact
+  acolo unde apare în captură (la fel cum folosești "<u>" pentru
+  subliniere sau "<table>" pentru tabele, vezi regulile de mai sus). Nu
+  uni totul într-un singur paragraf continuu dacă în sursă erau rânduri
+  sau paragrafe separate.
 - Dacă întrebarea are o imagine/diagramă/schemă (ex: floor plan, topologie
   de rețea), setează image la un NUME DE FIȘIER scurt și descriptiv, fără
   cale (ex: "floorplan.png", "apipa-diagram.png") — nu pun calea completă,
@@ -180,8 +263,22 @@ are deja CSS pregătit pentru "<table>"/"<th>"/"<td>" simple, brute.
 FORMAT DE RĂSPUNS AȘTEPTAT (exemplu de structură, nu de conținut):
 
 var NUMELE_VARIABILEI_GLOBALE = [
-  { id: "...", type: "...", question: "...", image: null, options: [...], correct: [...] },
-  { id: "...", type: "...", question: "...", image: null, options: [...], correct: [...] },
+  {
+    id: "...",
+    type: "...",
+    question: "...",
+    image: null,
+    options: [...],
+    correct: [...],
+  },
+  {
+    id: "...",
+    type: "...",
+    question: "...",
+    image: null,
+    options: [...],
+    correct: [...],
+  },
 ];
 
 <<< COMPLETEAZĂ >>> Numele variabilei globale pentru acest fișier este: ____________
@@ -204,4 +301,11 @@ var NUMELE_VARIABILEI_GLOBALE = [
   șterge primele și ultimele 3 backtick-uri înainte să lipești în fișier.
 - Verifică mereu codul cu ochiul liber înainte să-l lipești: mai ales la
   tipurile "order", "blank" și "dragtext", modelul poate greși ordinea
-  sau indexarea.
+  sau indexarea. La "blank" în special, caută cu ochiul "{{1}}" în
+  fiecare "question" — dacă lipsește (modelul a presupus greșit că
+  inputul se adaugă automat), întrebarea rămâne needitabilă, fără nicio
+  eroare vizibilă la tine, în site.
+- Dacă Deepseek adaugă un bloc `// OBSERVAȚII` la final, citește-l înainte
+  să lipești — înseamnă că a găsit ceva ce crede că ar trebui corectat în
+  text, dar nu a schimbat nimic fără să te întrebe. Array-ul de deasupra
+  rămâne oricum cu textul EXACT din captură.

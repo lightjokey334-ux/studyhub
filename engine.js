@@ -228,8 +228,16 @@ class QuestionEngine {
       const raw = localStorage.getItem(key);
       if (!raw) return null;
       const saved = JSON.parse(raw);
-      if (!saved || !Array.isArray(saved.questions) || saved.questions.length === 0) return null;
-      return saved;
+      if (!saved) return null;
+      // Format vechi (dinainte de fix-ul cu "recipe") — mai avea încă
+      // "questions" complet salvat. Îl mai citim, ca sesiunile pornite
+      // înainte de acest fix să nu se piardă, dar NU mai scriem niciodată
+      // în formatul ăsta (vezi saveAutoSave).
+      if (Array.isArray(saved.questions) && saved.questions.length > 0) return saved;
+      if (!Array.isArray(saved.questionOrder) || saved.questionOrder.length === 0) return null;
+      const questions = this.rebuildQuestionsFromSaved(saved.questionOrder, saved.shuffleRecipes);
+      if (questions.length === 0) return null; // toate întrebările salvate au fost șterse din sursă
+      return { ...saved, questions };
     } catch (e) {
       return null;
     }
@@ -239,8 +247,17 @@ class QuestionEngine {
     const key = this._autoSaveKey();
     if (!key) return;
     try {
+      // NU salvăm this.questions (conținutul complet) — doar ORDINEA
+      // (id-uri) + "rețeta" de amestecare per întrebare. La reluare,
+      // reconstruim din fișierul .js proaspăt (this._pendingSource),
+      // aplicând aceeași rețetă — vezi rebuildQuestionsFromSaved(). Așa,
+      // dacă rescrii o întrebare (text/cod/imagine) cât ai un test salvat
+      // în curs, la reluare vezi versiunea NOUĂ, nu o "poză" veche.
+      const shuffleRecipes = {};
+      this.questions.forEach(q => { if (q._shuffleRecipe) shuffleRecipes[q.id] = q._shuffleRecipe; });
       localStorage.setItem(key, JSON.stringify({
-        questions: this.questions,
+        questionOrder: this.questions.map(q => q.id),
+        shuffleRecipes,
         userAnswers: this.userAnswers,
         marked: [...this.marked],
         current: this.current,
@@ -346,52 +363,82 @@ class QuestionEngine {
   // Întoarce o COPIE a întrebării, cu opțiunile amestecate — niciodată nu
   // modifică array-ul original din fișierul QUESTIONS_..., ca să rămână
   // intact pentru următoarea încărcare a testului.
-  shuffleQuestionOptions(question) {
+  // Amestecă opțiunile/ordinea unei întrebări — SAU, dacă i se dă un
+  // "recipe" (salvat anterior din autosave), reproduce EXACT aceeași
+  // amestecare, dar aplicată pe conținutul PROASPĂT din "question" (nu pe
+  // o copie veche salvată). Așa, la autosave, salvăm doar "rețeta" de
+  // amestecare (poziții), NU conținutul întrebării — dacă rescrii fișierul
+  // de întrebări cât ai un test salvat în curs, la reluare vezi conținutul
+  // ACTUALIZAT (text/cod/imagine), cu aceleași poziții/amestec ca înainte.
+  shuffleQuestionOptions(question, recipe) {
     const q = JSON.parse(JSON.stringify(question));
+    const r = recipe ? { ...recipe } : {};
+    const isReplay = !!recipe;
+    const idx = arr => arr.map((_, i) => i);
 
     if ((q.type === 'single' || q.type === 'multi') && Array.isArray(q.options)) {
-      const order = this.shuffleArray(q.options.map((_, i) => i)); // order[newIdx] = oldIdx
+      const order = isReplay ? r.optionsOrder : this.shuffleArray(idx(q.options)); // order[newIdx] = oldIdx
       const oldToNew = {};
       order.forEach((oldIdx, newIdx) => { oldToNew[oldIdx] = newIdx; });
       q.options = order.map(oldIdx => question.options[oldIdx]);
-      q.correct = q.correct.map(oldIdx => oldToNew[oldIdx]);
+      q.correct = question.correct.map(oldIdx => oldToNew[oldIdx]);
+      r.optionsOrder = order;
     }
 
     if (q.type === 'order' && Array.isArray(q.options)) {
       // "correct" rămâne neschimbat (indecși în options, neschimbat);
       // doar ordinea AFIȘATĂ inițial se amestecă, altfel întrebarea
       // apare deja rezolvată din oficiu.
-      q._initialOrder = this.shuffleArray(q.options.map((_, i) => i));
+      q._initialOrder = isReplay ? r.initialOrder : this.shuffleArray(idx(q.options));
+      r.initialOrder = q._initialOrder;
     }
 
     if ((q.type === 'dragtext' || q.type === 'match') && Array.isArray(q.options)) {
-      // "correct" referă valori (text), nu indecși, deci amestecarea
-      // pool-ului de chip-uri e mereu sigură.
-      q.options = this.shuffleArray(q.options);
+      const order = isReplay ? r.poolOrder : this.shuffleArray(idx(q.options));
+      q.options = order.map(i => question.options[i]);
+      r.poolOrder = order;
     }
 
     if (q.type === 'match' && Array.isArray(q.pairs)) {
-      const zipped = q.pairs.map((p, i) => [p, q.correct[i]]);
-      const shuffled = this.shuffleArray(zipped);
-      q.pairs = shuffled.map(z => z[0]);
-      q.correct = shuffled.map(z => z[1]);
+      const order = isReplay ? r.pairsOrder : this.shuffleArray(idx(q.pairs));
+      q.pairs = order.map(i => question.pairs[i]);
+      q.correct = order.map(i => question.correct[i]);
+      r.pairsOrder = order;
     }
 
     if (q.type === 'truefalse' && Array.isArray(q.statements)) {
-      const zipped = q.statements.map((s, i) => [s, q.correct[i]]);
-      const shuffled = this.shuffleArray(zipped);
-      q.statements = shuffled.map(z => z[0]);
-      q.correct = shuffled.map(z => z[1]);
+      const order = isReplay ? r.statementsOrder : this.shuffleArray(idx(q.statements));
+      q.statements = order.map(i => question.statements[i]);
+      q.correct = order.map(i => question.correct[i]);
+      r.statementsOrder = order;
     }
 
     if (q.type === 'dropdown' && Array.isArray(q.options)) {
       // amestecă doar opțiunile din fiecare dropdown — NU ordinea rândurilor
       // (statements), care poate avea o logică proprie (ex: "problema" apoi
       // "soluția"), spre deosebire de "truefalse"/"match".
-      q.options = q.options.map(rowOptions => this.shuffleArray(rowOptions));
+      const orders = isReplay ? r.dropdownOrders : q.options.map(row => this.shuffleArray(idx(row)));
+      q.options = question.options.map((row, rowIdx) => orders[rowIdx].map(i => row[i]));
+      r.dropdownOrders = orders;
     }
 
+    q._shuffleRecipe = r;
     return q;
+  }
+
+  // Reconstruiește this.questions dintr-un "questionOrder" + "shuffleRecipes"
+  // salvate (autosave), dar folosind conținutul PROASPĂT din sursă (fișierul
+  // .js încărcat acum) — nu conținutul salvat. Întrebările șterse din sursă
+  // de la ultima sesiune sunt ignorate silențios (nu pot fi reconstruite).
+  rebuildQuestionsFromSaved(order, recipes) {
+    const source = this._pendingSource || [];
+    const byId = {};
+    source.forEach(q => { byId[q.id] = q; });
+    recipes = recipes || {};
+    return (order || [])
+      .map(id => byId[id])
+      .filter(Boolean)
+      .map(freshQ => this.randomize ? this.shuffleQuestionOptions(freshQ, recipes[freshQ.id]) : freshQ);
   }
 
   renderEmpty() {

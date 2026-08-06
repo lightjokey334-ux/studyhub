@@ -82,13 +82,63 @@
 >   secțiune.
 
 > **A șaptea actualizare:** câmp nou, opțional, `explanation`, pe orice
-> întrebare (orice tip) — text care explică răspunsul corect. Apare DOAR
-> după „Finalizează testul" (nu în timpul Modului Învățare, înainte de
-> finalizare), la fiecare întrebare pe care o revezi, corectă sau greșită
-> — vezi secțiunea 4. Am construit și scheletul complet de **Cursuri**
-> pentru **Python** (6 domenii, cu titlurile secțiunilor/capitolelor pe
-> care mi le-ai trimis) — vezi secțiunea 1 și 4. Python va avea 4 Examene
-> (nu 3, ca Networking/Databases) — de reținut la extinderea la Examene.
+> întrebare (orice tip) — text care explică răspunsul corect. Apare exact
+> când apare și corectarea normală (verde/roșu): fie după „Finalizează
+> testul", fie în Modul Învățare, la Enter/Următor — corectă sau greșită,
+> la fel — vezi secțiunea 4. Am construit și scheletul complet de
+> **Cursuri** pentru **Python** (6 domenii, cu titlurile secțiunilor/
+> capitolelor pe care mi le-ai trimis) — vezi secțiunea 1 și 4. Python va
+> avea 4 Examene (nu 3, ca Networking/Databases) — de reținut la
+> extinderea la Examene.
+
+> **A opta actualizare:** un domeniu poate acum avea tipuri de test
+> CUSTOM, diferite de simplul Pre/Post — Python are, pe lângă
+> Pre/Post-Assessment, și **Fill in the Blanks** și **Practical
+> Application** la fiecare domeniu (Domain 1: Practical Application
+> Part 1 + Part 2, separat) — vezi secțiunea 1, „Tipuri de test custom
+> per domeniu". Networking/Databases NU sunt afectate — comportamentul
+> lor (doar Pre/Post) a rămas exact la fel, fără nicio modificare la
+> `cursuri.js`-urile lor.
+
+> **A noua actualizare:** cod (Python/SQL) în enunț sau explicație —
+> `<code>...</code>`, randat cu font monospace (Cascadia Code / Consolas),
+> indentare păstrată exact — vezi secțiunea 4. Am documentat aici și
+> convenția `<br>` pentru rânduri noi în enunț, care exista deja în
+> `DEEPSEEK_PROMPT.md` dar îmi lipsea din README. Am reordonat și sidebar-ul
+> de la Python: Pre-Assessment → Videos → Fill in the Blanks → Practical
+> Application → Post-Assessment (înainte Videos era mereu primul). Cursuri
+> are acum și o bifă verde ✓ la orice video vizionat integral, la orice
+> materie — vezi secțiunea 3.
+
+> **A zecea actualizare:** cardul unei întrebări nu se mai întinde inutil
+> pe verticală la întrebări scurte (`.qe-body` avea `min-height: 220px`,
+> redus la `60px`) — se vedea urât mai ales la `blank`. Am întărit și
+> regula pentru `blank` în `DEEPSEEK_PROMPT.md`/README: `question`
+> TREBUIE să conțină `{{1}}` undeva în text (altfel nu apare inputul,
+> fără nicio eroare vizibilă) — și, pentru capturile cu etichetă
+> „Answer:" separată sub întrebare (nu inline într-o propoziție), regula
+> nouă e să scrie explicit `Answer: {{1}}` la final, ca să reproducă
+> același aspect.
+
+> **A unsprezecea actualizare:** salvarea automată (autosave) NU mai ține
+> o "poză" completă a întrebărilor — dacă rescriai o întrebare (text, cod,
+> imagine) cât aveai un test cu progres salvat în curs, la reluare vedeai
+> versiunea VECHE, salvată, nu fișierul proaspăt. Acum se salvează doar
+> poziția/ordinea și "rețeta" de amestecare (`questionOrder` +
+> `shuffleRecipes`), nu conținutul — la reluare, conținutul e mereu citit
+> din fișierul `.js` curent, cu aceleași poziții/amestec ca înainte.
+> Sesiunile salvate în formatul vechi (dinainte de acest fix) încă se
+> citesc normal, o singură dată, și se rescriu automat în formatul nou la
+> următoarea salvare.
+
+> **A douăsprezecea actualizare:** corectat `DEEPSEEK_PROMPT.md` — regula
+> pentru `order` zicea greșit „utilizatorul trebuie să tragă elementele"
+> (moștenire dintr-o formulare veche), exact opusul realității (`order`
+> foloseste butoane ▲▼, NU tragere — asta era sursa confuziei cu
+> `dragtext`). Am scos și blocurile de cod indentate în interiorul unor
+> bullet-uri (fence-uri imbricate), care randau urât, cu scrollbar
+> orizontal, în unele viewere de markdown — înlocuite cu text simplu, ca
+> restul exemplelor din fișier.
 
 Platformă locală, offline-first, pentru studiu — dark mode, în română,
 inspirată vizual după interfața LearnKey/GMetrix. Deocamdată e construită
@@ -192,8 +242,9 @@ a alege exact unde te duce acel click.
 
 ## 3. Pagina „Cursuri" (cursuri.html)
 
-- **Sidebar stânga**: cele 5 domenii, fiecare cu 3 sub-opțiuni:
-  🎥 Videos, 📊 Pre-Assessment, 📊 Post-Assessment.
+- **Sidebar stânga**: fiecare domeniu, cu 🎥 Videos + orice teste are
+  domeniul respectiv (implicit: 📊 Pre-Assessment + 📊 Post-Assessment —
+  dar poate fi altfel, vezi „Tipuri de test custom per domeniu" mai jos).
   *(„Exercise Labs" a fost exclus intenționat, conform cerinței tale.)*
   Fiecare header de domeniu se poate restrânge/extinde (click pe el,
   săgeata „›" se rotește). Domeniul care conține item-ul curent selectat
@@ -203,9 +254,73 @@ a alege exact unde te duce acel click.
   mi le-ai trimis.
 - **Zona video**: player HTML5 + panou din dreapta cu capitolele grupate
   pe secțiuni (ex: „Understand Switches", „Understand Routers"...) — click
-  pe un capitol schimbă videoclipul redat.
-- **Pre/Post-Assessment**: randează testul cu `QuestionEngine`, citind din
-  fișierul `.js` corespunzător al domeniului.
+  pe un capitol schimbă videoclipul redat. Când un videoclip ajunge la
+  final (`ended`), capitolul primește o bifă verde ✓ în listă — reper
+  vizual de unde ai rămas. Salvat în `localStorage`
+  (`studyhub_watched_videos_v1`), persistent între vizite, per materie +
+  domeniu + capitol. Merge automat la orice materie, fără nimic de adăugat
+  în `cursuri.js`.
+- **Orice test dintr-un domeniu** (Pre/Post-Assessment, sau oricare din
+  tipurile custom de mai jos): randează testul cu `QuestionEngine`, citind
+  din fișierul `.js` corespunzător al domeniului.
+
+### Tipuri de test custom per domeniu (opțional)
+
+Implicit, orice domeniu are, în ordinea asta: 🎥 Videos, 📊 Pre-Assessment,
+📊 Post-Assessment — exact comportamentul de dinainte, valabil azi pentru
+**Networking** și **Databases** (`cursuri.js`-urile lor NU au fost atinse,
+nu au nevoie de nimic în plus).
+
+O materie poate declara, per domeniu, o listă `assessments` proprie care
+înlocuiește ÎNTREAGA listă implicită de mai sus — inclusiv unde apare
+Videos în ea (nu neapărat primul). **Python** face exact asta: ordinea e
+Pre-Assessment → Videos → Fill in the Blanks → Practical Application →
+Post-Assessment (Domain 1 are Practical Application împărțit în Part 1 +
+Part 2, între Fill in the Blanks și Post-Assessment). Exemplu, din
+`Python/Cursuri/cursuri.js`:
+
+```js
+{
+  id: 'd2',
+  title: 'Domain 2: Branching and Iteration',
+  folder: 'Domain 2',
+  videoSections: [...],
+  assessments: [
+    { key: 'pre', label: 'Pre-Assessment', icon: '📊' },
+    { key: 'videos', label: 'Videos', icon: '🎥' },
+    { key: 'fillblanks', label: 'Fill in the Blanks', icon: '✏️',
+      questionsVar: 'QUESTIONS_D2_FILLBLANKS', folder: 'Fill in the Blanks' },
+    { key: 'practical', label: 'Practical Application', icon: '💻',
+      questionsVar: 'QUESTIONS_D2_PRACTICAL', folder: 'Practical Application' },
+    { key: 'post', label: 'Post-Assessment', icon: '📊' },
+  ],
+}
+```
+
+Reguli:
+- `key` — identificator scurt, unic în cadrul domeniului (folosit intern,
+  la navigare/progres — nu-l schimba după ce ai progres salvat pe el).
+- Poziția din array = poziția din sidebar ȘI din navigarea secvențială
+  (‹ ›) — pune-le exact în ordinea în care vrei să apară.
+- `label` / `icon` — ce apare în sidebar.
+- Intrarea `videos` (key: `'videos'`) NU are `questionsVar`/`folder` — e
+  cazul special, randat de player-ul video, nu de motorul de întrebări.
+- `questionsVar` — numele EXACT al variabilei globale (`var ...`) definite
+  în fișierul `.js` al testului — trebuie încărcat în `cursuri.html`,
+  ÎNAINTE de `cursuri-engine.js`, la fel ca Pre/Post.
+- `folder` — numele folderului fizic unde stă acel fișier `.js`, relativ
+  la folderul domeniului (ex: `Domain 2/Fill in the Blanks/fillblanks.js`).
+- Pre/Post STANDARD (fără `questionsVar`/`folder`) nu au nevoie de ele —
+  motorul le rezolvă automat, ca înainte (`QUESTIONS_D{n}_PRE`/`POST`,
+  foldere „Pre-Assessment"/„Post-Assessment").
+
+Progresul (istoric + timp petrecut) se salvează automat per tip, la fel ca
+Pre/Post — cheia e `{SUBJECT}_{domainId}_{key}` (ex: `Python_d2_practical`).
+Pagina de Progres (`history.js`) citește aceeași listă `assessments` —
+dacă adaugi un tip nou în `cursuri.js`, adaugă-l și acolo, în `SUBJECTS`,
+identic (`key`+`label`), altfel nu apare în Progres.
+
+
 
 ### Adăugarea fișierelor video
 
@@ -269,12 +384,16 @@ merge și `<u>`, `<table>`, etc.) care explică răspunsul corect:
 ```js
 explanation: "DNS rezolvă nume în adrese IP; DHCP alocă automat adresele — de-asta primul spațiu e DNS, al doilea DHCP."
 ```
-Apare într-o casetă distinctă sub întrebare, **doar după „Finalizează
-testul"** — la fiecare întrebare pe care o revezi, indiferent dacă ai
-răspuns corect sau greșit. NU apare în timpul Modului Învățare, înainte
-de finalizare (acolo corectarea per-întrebare e altceva — vine imediat,
-la fiecare răspuns, fără explicație). Dacă nu adaugi câmpul, nu se
-întâmplă nimic diferit — e complet opțional, întrebare cu întrebare.
+Apare într-o casetă distinctă sub întrebare, în același moment în care
+apare și corectarea normală (verde/roșu): fie **după „Finalizează
+testul"**, fie **în Modul Învățare, imediat ce ai apăsat Enter/Următor**
+pe o întrebare la care ai răspuns deja — la fel indiferent dacă răspunsul
+a fost corect sau greșit. Dacă răspunsul era corect în Modul Învățare,
+reține că testul trece automat mai departe după 1 secundă — s-ar putea
+să fie prea puțin timp să citești o explicație lungă (spune-mi dacă vrei
+să mărim acea pauză când există `explanation` pe întrebare). Dacă nu
+adaugi câmpul, nu se întâmplă nimic diferit — e complet opțional,
+întrebare cu întrebare.
 
 ### a) `single` — alegere unică (radio button)
 ```js
@@ -341,6 +460,20 @@ array în loc de string:
 ```js
 correct: [["DNS", "dns server"], "DHCP"]
 ```
+⚠️ **Obligatoriu**: `question` trebuie să conțină cel puțin un `{{1}}`
+undeva în text — fără el, motorul nu are unde desena inputul, iar
+întrebarea rămâne needitabilă, FĂRĂ nicio eroare vizibilă. Nu se adaugă
+niciodată automat la finalul textului.
+
+Unele capturi GMetrix arată spațiul liber ca un rând separat, sub
+întrebare, gen „Answer: [_______]" (nu inline într-o propoziție). Pentru
+acest caz, scrie chiar tu `Answer: {{1}}` la finalul lui `question`:
+```js
+question: "For this line of code, which built-in Python module needs to be imported?<br><br><code>text_stream.seek(0)</code><br><br>Answer: {{1}}"
+```
+Dacă în captură NU apare eticheta „Answer:" (blank-ul e deja inline, ex:
+`import {{1}}`), NU adaugi „Answer:" — pui `{{1}}` direct la locul lui
+firesc din text/cod, fără etichetă în plus.
 
 ### e) `dragtext` — pui un „chip" într-un spațiu liber DIN MIJLOCUL unei propoziții
 Are exact aceeași sintaxă `{{1}}`, `{{2}}` ca la `blank`, dar în loc de
@@ -463,6 +596,28 @@ el pe orizontală, nu toată pagina.
 poate conține valid un `<table>` — browserul rupea automat paragraful,
 stricând stilul. Am schimbat la `<div>` peste tot, identic vizual, dar
 corect pentru orice HTML din enunț.)*
+
+### Rânduri noi / paragrafe în enunț (orice tip de întrebare)
+La fel ca la subliniere și tabele — dacă textul dintr-o captură are un
+rând nou vizibil în sursă (nu doar întins din cauza lățimii ferestrei),
+pui `<br>` exact acolo, direct în `question`:
+```js
+question: "Read the scenario below.<br><br>A user reports slow file transfers on the network."
+```
+
+### Cod (Python/SQL) în enunț sau explicație (orice tip de întrebare)
+Încadrează codul în `<code>` și `</code>`, direct în `question` sau
+`explanation` — merge și pe o mențiune scurtă inline, și pe un bloc întreg
+de mai multe rânduri (cu `<br>` pentru fiecare rând nou, ca mai sus):
+```js
+question: "Input the missing code to import the io library.<br><br><code>import {{1}}<br>game_stream = io.StringIO()<br>print(game_stream.read())</code>"
+```
+Se randează cu font monospace (**Cascadia Code**, cu **Consolas** ca
+rezervă — amândouă fonturi de sistem, fără nicio dependență de internet,
+la fel ca restul site-ului), într-o cutie cu fundal ușor diferit, ca să se
+distingă clar de restul textului. `white-space: pre-wrap` păstrează EXACT
+spațiile de indentare pe care le scrii — important la Python, unde
+indentarea e parte din sintaxă, nu doar stil vizual.
 
 ### Notă despre amestecare (shuffle)
 Motorul amestecă automat, la fiecare încărcare a testului: ordinea

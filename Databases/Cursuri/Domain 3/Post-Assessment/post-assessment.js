@@ -125,7 +125,7 @@ var QUESTIONS_D3_POST = [
     question: "A user wants to see all records from the Sales.Customer table and only records with an entry in the CustomerID column from the Sales.SalesOrderHeader table. The Sales.Customer table is listed first in the SQL Query Window. What type of join should the user implement?",
     image: null,
     options: ["Inner join", "Left outer join", "Right outer join", "Full outer join"],
-    correct: [0]
+    correct: [1]
   },
   {
     id: "d3_post_16",

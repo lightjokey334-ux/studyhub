@@ -30,6 +30,14 @@ const DOMAINS = [
     id: 'd1',
     title: 'Domain 1: Data Types and Operators',
     folder: 'Domain 1',
+    assessments: [
+      { key: 'pre', label: 'Pre-Assessment', icon: '📊' },
+      { key: 'videos', label: 'Videos', icon: '🎥' },
+      { key: 'fillblanks', label: 'Fill in the Blanks', icon: '✏️', questionsVar: 'QUESTIONS_D1_FILLBLANKS', folder: 'Fill in the Blanks' },
+      { key: 'practical1', label: 'Practical Application Part 1', icon: '💻', questionsVar: 'QUESTIONS_D1_PRACTICAL1', folder: 'Practical Application Part 1' },
+      { key: 'practical2', label: 'Practical Application Part 2', icon: '💻', questionsVar: 'QUESTIONS_D1_PRACTICAL2', folder: 'Practical Application Part 2' },
+      { key: 'post', label: 'Post-Assessment', icon: '📊' },
+    ],
     videoSections: [
       {
         section: 'Identify Data Types',
@@ -92,6 +100,13 @@ const DOMAINS = [
     id: 'd2',
     title: 'Domain 2: Branching and Iteration',
     folder: 'Domain 2',
+    assessments: [
+      { key: 'pre', label: 'Pre-Assessment', icon: '📊' },
+      { key: 'videos', label: 'Videos', icon: '🎥' },
+      { key: 'fillblanks', label: 'Fill in the Blanks', icon: '✏️', questionsVar: 'QUESTIONS_D2_FILLBLANKS', folder: 'Fill in the Blanks' },
+      { key: 'practical', label: 'Practical Application', icon: '💻', questionsVar: 'QUESTIONS_D2_PRACTICAL', folder: 'Practical Application' },
+      { key: 'post', label: 'Post-Assessment', icon: '📊' },
+    ],
     videoSections: [
       {
         section: 'Branching Statements',
@@ -122,6 +137,13 @@ const DOMAINS = [
     id: 'd3',
     title: 'Domain 3: Input and Output',
     folder: 'Domain 3',
+    assessments: [
+      { key: 'pre', label: 'Pre-Assessment', icon: '📊' },
+      { key: 'videos', label: 'Videos', icon: '🎥' },
+      { key: 'fillblanks', label: 'Fill in the Blanks', icon: '✏️', questionsVar: 'QUESTIONS_D3_FILLBLANKS', folder: 'Fill in the Blanks' },
+      { key: 'practical', label: 'Practical Application', icon: '💻', questionsVar: 'QUESTIONS_D3_PRACTICAL', folder: 'Practical Application' },
+      { key: 'post', label: 'Post-Assessment', icon: '📊' },
+    ],
     videoSections: [
       {
         section: 'File Input and Output',
@@ -153,6 +175,13 @@ const DOMAINS = [
     id: 'd4',
     title: 'Domain 4: Code Documentation and Functions',
     folder: 'Domain 4',
+    assessments: [
+      { key: 'pre', label: 'Pre-Assessment', icon: '📊' },
+      { key: 'videos', label: 'Videos', icon: '🎥' },
+      { key: 'fillblanks', label: 'Fill in the Blanks', icon: '✏️', questionsVar: 'QUESTIONS_D4_FILLBLANKS', folder: 'Fill in the Blanks' },
+      { key: 'practical', label: 'Practical Application', icon: '💻', questionsVar: 'QUESTIONS_D4_PRACTICAL', folder: 'Practical Application' },
+      { key: 'post', label: 'Post-Assessment', icon: '📊' },
+    ],
     videoSections: [
       {
         section: 'Document Code Segments',
@@ -182,6 +211,13 @@ const DOMAINS = [
     id: 'd5',
     title: 'Domain 5: Errors, Exceptions and Testing',
     folder: 'Domain 5',
+    assessments: [
+      { key: 'pre', label: 'Pre-Assessment', icon: '📊' },
+      { key: 'videos', label: 'Videos', icon: '🎥' },
+      { key: 'fillblanks', label: 'Fill in the Blanks', icon: '✏️', questionsVar: 'QUESTIONS_D5_FILLBLANKS', folder: 'Fill in the Blanks' },
+      { key: 'practical', label: 'Practical Application', icon: '💻', questionsVar: 'QUESTIONS_D5_PRACTICAL', folder: 'Practical Application' },
+      { key: 'post', label: 'Post-Assessment', icon: '📊' },
+    ],
     videoSections: [
       {
         section: 'Analyze, Detect, and Fix Errors',
@@ -219,6 +255,13 @@ const DOMAINS = [
     id: 'd6',
     title: 'Domain 6: Modules and Problem Solving',
     folder: 'Domain 6',
+    assessments: [
+      { key: 'pre', label: 'Pre-Assessment', icon: '📊' },
+      { key: 'videos', label: 'Videos', icon: '🎥' },
+      { key: 'fillblanks', label: 'Fill in the Blanks', icon: '✏️', questionsVar: 'QUESTIONS_D6_FILLBLANKS', folder: 'Fill in the Blanks' },
+      { key: 'practical', label: 'Practical Application', icon: '💻', questionsVar: 'QUESTIONS_D6_PRACTICAL', folder: 'Practical Application' },
+      { key: 'post', label: 'Post-Assessment', icon: '📊' },
+    ],
     videoSections: [
       {
         section: 'System and Command-Line Operations',
