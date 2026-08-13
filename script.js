@@ -12,23 +12,24 @@ let currentSubject = null;
 // Add "Python" / "Databases" here once those folders exist.
 const READY_SUBJECTS = ['Networking', 'Databases', 'Python'];
 
+// Câte Examene are fiecare materie — Python are 4, restul au 3. Citit și
+// de renderExamCards() mai jos, ca să genereze exact atâtea carduri.
+const EXAM_COUNT = { Networking: 3, Databases: 3, Python: 4 };
+
 // Maps an option key to the relative path (from index.html) that should open.
 function buildPath(subject, optionKey){
   const settings = studyhubLoadSettings();
-  const qs = `shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}`;
+  const qs = `shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}&showSourceImageBtn=${settings.showSourceImageBtn}`;
 
-  switch(optionKey){
-    case 'cursuri':
-      return `${subject}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&${qs}`;
-    case 'examen1':
-      return `${subject}/Examene/Examen 1/examen1.html?${qs}`;
-    case 'examen2':
-      return `${subject}/Examene/Examen 2/examen2.html?${qs}`;
-    case 'examen3':
-      return `${subject}/Examene/Examen 3/examen3.html?${qs}`;
-    default:
-      return null;
+  if(optionKey === 'cursuri'){
+    return `${subject}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&${qs}`;
   }
+  const examMatch = optionKey.match(/^examen(\d+)$/);
+  if(examMatch){
+    const n = examMatch[1];
+    return `${subject}/Examene/Examen ${n}/examen${n}.html?${qs}`;
+  }
+  return null;
 }
 
 function showSubjectScreen(){
@@ -46,6 +47,43 @@ function showOptionsScreen(subject){
   subjectScreen.classList.remove('active');
   optionsScreen.classList.add('active');
   backBtn.classList.remove('hidden');
+  renderExamCards(subject);
+}
+
+// Butoanele de Examen NU mai sunt fixe în index.html — se generează aici,
+// câte unul pentru fiecare Examen din EXAM_COUNT[subject] (Python are 4,
+// restul au 3). Cardul "Cursuri" rămâne static în HTML (identic peste
+// tot), doar Examenele sunt per-materie.
+function renderExamCards(subject){
+  const grid = document.getElementById('optionGrid');
+  grid.querySelectorAll('.option-card[data-option^="examen"]').forEach(el => el.remove());
+  const count = EXAM_COUNT[subject] || 3;
+  for(let i = 1; i <= count; i++){
+    const btn = document.createElement('button');
+    btn.className = 'option-card';
+    btn.dataset.option = `examen${i}`;
+    btn.innerHTML = `
+      <span class="option-icon">📝</span>
+      <span class="option-name">Examen ${i}</span>
+      <span class="option-desc">Test complet, tip examen</span>`;
+    btn.addEventListener('click', () => handleOptionClick(btn.dataset.option));
+    grid.appendChild(btn);
+  }
+}
+
+function handleOptionClick(optionKey){
+  if(!currentSubject) return;
+
+  if(!READY_SUBJECTS.includes(currentSubject)){
+    alert(`${currentSubject} este în lucru. Revino mai târziu!`);
+    return;
+  }
+
+  const path = buildPath(currentSubject, optionKey);
+  if(path){
+    // navigare în ACELAȘI tab (nu tab nou)
+    window.location.href = path;
+  }
 }
 
 document.querySelectorAll('.subject-card').forEach(card => {
@@ -55,20 +93,7 @@ document.querySelectorAll('.subject-card').forEach(card => {
 });
 
 document.querySelectorAll('.option-card').forEach(card => {
-  card.addEventListener('click', () => {
-    if(!currentSubject) return;
-
-    if(!READY_SUBJECTS.includes(currentSubject)){
-      alert(`${currentSubject} este în lucru. Revino mai târziu!`);
-      return;
-    }
-
-    const path = buildPath(currentSubject, card.dataset.option);
-    if(path){
-      // navigare în ACELAȘI tab (nu tab nou)
-      window.location.href = path;
-    }
-  });
+  card.addEventListener('click', () => handleOptionClick(card.dataset.option));
 });
 
 backBtn.addEventListener('click', showSubjectScreen);
@@ -97,7 +122,7 @@ homeLogo.addEventListener('click', showSubjectScreen);
     const target = settings[key] || 'home';
 
     if(target === 'cursuri'){
-      window.location.replace(`${logoFrom}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}`);
+      window.location.replace(`${logoFrom}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}&showSourceImageBtn=${settings.showSourceImageBtn}`);
       return;
     }
     if(target === 'options'){

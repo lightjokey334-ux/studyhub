@@ -20,18 +20,43 @@ SCHEMA UNEI ÎNTREBĂRI:
 
 {
   id: "un_id_unic_string",
-  type: "single" | "multi" | "order" | "blank" | "dragtext" | "match" | "truefalse" | "dropdown",
+  type: "single" | "multi" | "order" | "blank" | "dragtext" | "match" | "truefalse" | "dropdown" | "info",
   question: "textul întrebării",
   image: null,
   options: [...],
   pairs: [...],       // DOAR la tipul "match" — vezi regula 6
   statements: [...],  // DOAR la "truefalse" (regula 7) și "dropdown" (regula 8)
   labels: [...],      // OPȚIONAL, DOAR la "truefalse" — vezi regula 7
-  correct: [...]
+  correct: [...],
+  sourceImage: "..."  // sau array de { label, file } — OBLIGATORIU să-l completezi TU (Deepseek), vezi mai jos
 }
 // ATENȚIE: la "dropdown", "options" e un array DE ARRAY-URI (câte o listă
 // de variante per dropdown), NU un array simplu ca la celelalte tipuri —
 // vezi regula 8.
+
+CÂMPUL "sourceImage" — COMPLETEAZĂ-L LA FIECARE ÎNTREBARE, ÎNTOTDEAUNA:
+Pune EXACT numele fișierului capturii de ecran din care ai extras ACEA
+întrebare (ex: "sourceImage: \"Screenshot_042.png\"") — dacă numele exact
+al fișierului nu ți-a fost dat, folosește o denumire scurtă și descriptivă
+bazată pe conținutul capturii (ex: "sourceImage: \"os-path-exists.png\"").
+Rolul lui: persoana care lipește codul ține toate capturile originale
+într-un folder "Images/" de lângă fișierul de întrebări — cu acest câmp
+completat, poate deschide rapid captura exactă din spatele oricărei
+întrebări, ca să verifice dacă nu a scăpat ceva la transcriere. E diferit
+de câmpul "image" (care e o imagine AFIȘATĂ ÎN întrebare, parte din
+enunț, ex: o diagramă) — "sourceImage" e DOAR pentru verificare, nu se
+arată niciodată automat utilizatorului care dă testul.
+
+Dacă întrebarea a fost extrasă din MAI MULTE capturi separate — cazul tipic
+e "dropdown", unde enunțul are propria captură ȘI fiecare variantă dintr-un
+meniu are propria ei captură separată — nu pune doar un string, pune un
+array de obiecte `{ label, file }`, câte unul pentru fiecare captură:
+sourceImage: [{ label: "Întrebare", file: "d1_post_05_q.png" }, { label: "Opțiunea 1", file: "d1_post_05_opt1.png" }, { label: "Opțiunea 2", file: "d1_post_05_opt2.png" }]
+"label" e textul scurt care apare pe tab-ul din site (ca utilizatorul să
+știe ce captură deschide) — descrie pe scurt CE arată acea captură (ex:
+"Întrebare", "Opțiunea 1", "Dropdown 2 — opțiunea A"). Pentru cazul simplu
+(o singură captură), rămâi la forma cu un singur string, ca mai sus — NU
+transforma inutil în array de un singur element.
 
 REGULI PE TIP DE ÎNTREBARE:
 
@@ -168,6 +193,27 @@ altceva în cod.
    - correct: array cu răspunsul corect (ca TEXT, nu index) pentru fiecare
      dropdown, în aceeași ordine ca "statements".
 
+9) "info" — slide DOAR cu imagine, FĂRĂ nicio opțiune de răspuns, nu se
+   scorează niciodată — NU e o întrebare propriu-zisă, e o "pagină" de
+   răsfoit, cu Următor/Anterior ca restul testului.
+   - Folosește acest tip DOAR dacă persoana îți spune explicit, pentru
+     capturi anume (ex: "captura #23 pune-o tip info", "astea trei
+     pune-le info"), să NU le transformi în întrebare — și DOAR pentru
+     acele capturi, la EXACT poziția indicată de ea (nu le muta, nu le
+     grupa, nu adăuga altele pe cont propriu). NU alege tu tipul ăsta din
+     proprie inițiativă, nici măcar dacă o captură pare foarte complexă —
+     implicit, orice captură se transcrie normal, într-unul din tipurile
+     1-8 de mai sus. Dacă tu (Deepseek) consideri că o captură ar trebui
+     să fie "info" dar persoana nu a cerut asta, transcrie-o normal și
+     semnalează greutatea într-un comentariu `// OBSERVAȚII` (vezi regula
+     de mai sus), nu decide singur să sari peste transcriere.
+   - question: OPȚIONAL — text simplu, dacă vrei o instrucțiune sub
+     imagine; poate rămâne și gol ("").
+   - image: OBLIGATORIU — numele fișierului capturii, la fel ca la
+     celelalte tipuri.
+   - NU are options, pairs, statements, labels, sau correct — nu le
+     adaugi deloc la acest tip.
+
 CONVENȚIE PENTRU TABELE ÎN ENUNȚ (orice tip de întrebare):
 Dacă o captură are informații structurate în tabel DOAR ca parte a
 enunțului (nu confunda cu tipul "truefalse", care e pentru tabele cu
@@ -194,7 +240,62 @@ le reduce la unul singur). Exemplu (întrebare tip "blank", cu cod sub
 spațiul liber, exact ca într-o captură GMetrix):
    question: "Input the missing code to import the io library.<br><br><code>import {{1}}<br>game_stream = io.StringIO()<br>game_stream.write(\"Hello\")<br>print(game_stream.read())</code>"
 Nu adăuga niciun atribut de stil — motorul are deja CSS pregătit pentru
-"<code>" brut.
+"<code>" brut. Notă: "<code>" se desparte SINGUR pe rândul lui, automat
+(nu se amestecă niciodată cu textul dinainte/după) — deci "<br><br>"
+înainte/după el, ca-n exemplul de mai sus, e opțional, doar cosmetic (un
+rând gol în plus), nu obligatoriu ca să nu se lipească de restul textului.
+
+CONVENȚIE PENTRU OPȚIUNI DE RĂSPUNS CARE SUNT COD (tipurile "single"/"multi"):
+Unele capturi (mai ales SQL) au variantele de răspuns ca instrucțiuni de
+cod întregi, nu cuvinte simple — uneori pe UN rând, alteori pe mai multe.
+"options" la "single"/"multi" acceptă ACELAȘI HTML ca "question" — deci
+încadrează fiecare variantă-cod în "<code>" (cu "<br>" între rânduri, dacă
+sunt mai multe):
+   options: [
+     "<code>SELECT lastname, firstname<br>FROM customers<br>WHERE sales >=50000 AND ((city='Los Angeles' AND state='California') OR state IN ('Nevada','Arizona'))</code>",
+     "<code>SELECT lastname, firstname<br>FROM customers<br>WHERE sales >=50000 OR((city='Los Angeles' AND state='California') OR state IN ('Nevada','Arizona'))</code>"
+   ]
+Rămâne tip "single" (radio) sau "multi" (checkbox) normal — DOAR textul
+opțiunii e cod, restul schemei (correct: index-uri) nu se schimbă.
+
+CONVENȚIE PENTRU "COMPLETEAZĂ QUERY-UL" (tipul "dragtext"):
+Unele capturi (SQL, dar și alte limbaje) cer să construiești o instrucțiune
+completă trăgând bucăți de cod dintr-un pool, fie ÎN spații libere dintr-un
+șablon deja scris (ex: o comandă CREATE TABLE cu mai multe câmpuri goale),
+fie pe pași numerotați goi ("Step 1", "Step 2"...), fie pe un "canvas" gol
+care trebuie construit de la zero, în ordine. TOATE aceste variante sunt
+tot tipul "dragtext" — schimbă doar CE pui în "question":
+- Șablon cu spații goale ÎN INTERIORUL codului — pune tot codul, cu
+  "{{1}}", "{{2}}" etc. exact unde sunt spațiile libere din captură:
+   question: "<code>CREATE TABLE [dbo].[Member]<br>(<br>[Id] {{1}},<br>[FirstName] NCHAR(255) NULL,<br>[LastName] {{2}},<br>{{3}},<br>[DateOfBirth] {{4}},<br>[PhoneNumber] NCHAR(10) NULL,<br>{{5}}<br>)</code>"
+- Pași numerotați goi ("Step 1"..."Step N") — un blank per pas, cu
+  eticheta pasului ca text simplu înainte de fiecare "{{n}}":
+   question: "Step 1: {{1}}<br>Step 2: {{2}}<br>Step 3: {{3}}<br>Step 4: {{4}}<br>Step 5: {{5}}<br>Step 6: {{6}}"
+- Canvas complet gol (construiești interogarea de la zero) — doar blank-uri,
+  fără text static între ele, câte unul pe rând:
+   question: "{{1}}<br>{{2}}<br>{{3}}"
+La toate variantele: "options" conține TOATE bucățile disponibile de tras
+(inclusiv distractori care nu se folosesc deloc), iar "correct" conține
+valoarea corectă (ca text) pentru fiecare "{{n}}", în ordine — EXACT ca la
+"dragtext" normal (regula 5 de mai sus). Motorul permite deja ca ACEEAȘI
+bucată să fie trasă la MAI MULTE blank-uri simultan (nu dispare din pool
+după prima folosire) — deci "each item may be used once, more than once,
+or not at all" (frază frecventă în capturile astea) funcționează deja,
+fără nimic special de făcut în date.
+
+CONVENȚIE PENTRU TABEL DE DATE + COD ÎN ACEEAȘI ÎNTREBARE:
+Poți combina liber "<table>" (regula de mai sus) și "<code>" în ACELAȘI
+"question" — ex: un tabel cu date urmat de o interogare SQL care operează
+pe acele date:
+   question: "Evaluate the following table of data:<table><tr><th>ID</th><th>LastName</th><th>Salary</th></tr><tr><td>1</td><td>Gomez</td><td>83000</td></tr></table>What is the result of the following query?<br><br><code>SELECT MAX(salary) FROM employee;</code>"
+
+CONVENȚIE PENTRU LISTE (orice tip de întrebare):
+Dacă o captură are o listă cu marcatori (bullet points) — ex: "Each record
+must contain: • First name • Last name • Date of birth" — folosește
+"<ul>" cu câte un "<li>" per element, direct în "question":
+   question: "Each record will contain the following information:<ul><li>First name</li><li>Last name</li><li>Date of birth</li></ul>"
+Pentru liste NUMEROTATE (1, 2, 3...) folosește "<ol>" în loc de "<ul>",
+la fel, cu "<li>" pentru fiecare element.
 
 
 - Păstrează limba originală a întrebărilor din captură (de obicei engleză,
@@ -270,6 +371,7 @@ var NUMELE_VARIABILEI_GLOBALE = [
     image: null,
     options: [...],
     correct: [...],
+    sourceImage: "...",
   },
   {
     id: "...",
@@ -278,6 +380,7 @@ var NUMELE_VARIABILEI_GLOBALE = [
     image: null,
     options: [...],
     correct: [...],
+    sourceImage: "...",
   },
 ];
 
@@ -305,6 +408,14 @@ var NUMELE_VARIABILEI_GLOBALE = [
   fiecare "question" — dacă lipsește (modelul a presupus greșit că
   inputul se adaugă automat), întrebarea rămâne needitabilă, fără nicio
   eroare vizibilă la tine, în site.
+- Dacă persoana îți cere explicit, pentru o captură anume, să NU
+  transcrii enunțul/opțiunile (ex: cod SQL prea complex, risc mare de
+  greșeală), poți pune captura întreagă la "image", opțiuni cu etichete
+  generice ("Opțiunea 1", "Opțiunea 2"...) și `noShuffle: true` pe acea
+  întrebare (`noShuffle` e OBLIGATORIU aici, altfel etichetele generice
+  se amestecă și nu mai corespund cu poziția din imagine). NU folosi
+  acest tipar din proprie inițiativă — implicit, tot transcrii normal,
+  ca la restul regulilor de mai sus.
 - Dacă Deepseek adaugă un bloc `// OBSERVAȚII` la final, citește-l înainte
   să lipești — înseamnă că a găsit ceva ce crede că ar trebui corectat în
   text, dar nu a schimbat nimic fără să te întrebe. Array-ul de deasupra

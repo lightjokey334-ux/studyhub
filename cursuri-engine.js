@@ -143,6 +143,25 @@ function resolveAutoSaveAnswersDefault() {
 
 const autoSaveAnswersDefault = resolveAutoSaveAnswersDefault() !== 'off';
 
+// ---- Preferința pentru butonul "🖼 Imagine sursă" (Setări -> Teste) ----
+// Aceeași metodă: vine prin URL, cache local pentru vizite directe.
+const SOURCE_IMAGE_BTN_KEY = 'studyhub_cursuri_source_image_btn_v1';
+
+function resolveShowSourceImageBtnDefault() {
+  const fromUrl = new URLSearchParams(window.location.search).get('showSourceImageBtn');
+  if (fromUrl === 'on' || fromUrl === 'off') {
+    try { localStorage.setItem(SOURCE_IMAGE_BTN_KEY, fromUrl); } catch (e) { /* ignoră */ }
+    return fromUrl;
+  }
+  try {
+    const cached = localStorage.getItem(SOURCE_IMAGE_BTN_KEY);
+    if (cached === 'on' || cached === 'off') return cached;
+  } catch (e) { /* ignoră */ }
+  return 'off';
+}
+
+const showSourceImageBtnDefault = resolveShowSourceImageBtnDefault() === 'on';
+
 // ---- Preferința pentru auto-redarea următorului videoclip (Setări -> Cursuri) ----
 const AUTOPLAY_NEXT_VIDEO_KEY = 'studyhub_cursuri_autoplay_next_v1';
 
@@ -529,12 +548,15 @@ function renderAssessment(domain, type) {
 
   mainAreaEl.innerHTML = `<div class="c-assessment-wrap" id="assessmentWrap"></div>`;
   const container = document.getElementById('assessmentWrap');
+  const randomize = typeof item.randomize === 'boolean' ? item.randomize : true;
   currentEngineInstance = new QuestionEngine(container, questions, {
     title: `${domain.title} — ${item.label}`,
     basePath: `${domain.folder}/${subfolder}/`,
     showShortcuts: showShortcutsDefault,
     autoSaveAnswers: autoSaveAnswersDefault,
+    showSourceImageBtn: showSourceImageBtnDefault,
     testId: `${SUBJECT}_${domain.id}_${type}`,
+    randomize,
   });
 }
 

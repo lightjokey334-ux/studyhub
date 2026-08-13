@@ -53,27 +53,15 @@
       <h1 class="screen-title" id="optionsTitle">Networking</h1>
       <p class="screen-sub">Alege ce vrei să faci.</p>
 
-      <div class="option-grid">
+      <div class="option-grid" id="optionGrid">
         <button class="option-card" data-option="cursuri">
           <span class="option-icon">📘</span>
           <span class="option-name">Cursuri</span>
           <span class="option-desc">Videoclipuri &amp; evaluări pe domenii</span>
         </button>
-        <button class="option-card" data-option="examen1">
-          <span class="option-icon">📝</span>
-          <span class="option-name">Examen 1</span>
-          <span class="option-desc">Test complet, tip examen</span>
-        </button>
-        <button class="option-card" data-option="examen2">
-          <span class="option-icon">📝</span>
-          <span class="option-name">Examen 2</span>
-          <span class="option-desc">Test complet, tip examen</span>
-        </button>
-        <button class="option-card" data-option="examen3">
-          <span class="option-icon">📝</span>
-          <span class="option-name">Examen 3</span>
-          <span class="option-desc">Test complet, tip examen</span>
-        </button>
+        <!-- Cardurile de Examen se generează dinamic în script.js (renderExamCards),
+             câte unul pentru fiecare Examen din EXAM_COUNT[materie] — Python are 4,
+             restul au 3. Nu adăuga aici manual butoane de Examen. -->
       </div>
     </section>
 

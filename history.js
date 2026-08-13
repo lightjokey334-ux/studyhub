@@ -84,6 +84,7 @@ const SUBJECTS = {
       { id: 'exam1', label: 'Examen 1' },
       { id: 'exam2', label: 'Examen 2' },
       { id: 'exam3', label: 'Examen 3' },
+      { id: 'exam4', label: 'Examen 4' },
     ],
   },
   Databases: {

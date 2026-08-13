@@ -47,6 +47,7 @@ class QuestionEngine {
     this.keyMode = 'navigate'; // 'navigate' | 'answer' — vezi butonul rotund din topbar
     this._answerCursorIdx = 0; // poziția evidențiată în modul "Răspuns" (multi)
     this.autoSaveAnswers = opts.autoSaveAnswers === true; // setarea din Setări -> Teste și examene
+    this.showSourceImageBtn = opts.showSourceImageBtn === true; // setarea din Setări -> Teste și examene ("Buton imagine sursă")
     this.mode = 'test'; // 'test' | 'learn' — ales din ecranul de start, sau restaurat dintr-o sesiune salvată
     this._learnRevealed = new Set(); // ID-urile întrebărilor deja "verificate" în Modul Învățare (vezi goNext())
     this.multiSession = opts.multiSession === true; // implicit: nu — vezi ecranul de sesiuni, doar la examene
@@ -193,7 +194,11 @@ class QuestionEngine {
         const source = this._pendingSource;
         this.questions = this.randomize
           ? this.shuffleArray(source).map(q => this.shuffleQuestionOptions(q))
-          : source.slice();
+          : source.map(q => {
+              const copy = JSON.parse(JSON.stringify(q));
+              copy._shuffleRecipe = {};
+              return copy;
+            });
         this.startTest();
       });
     });
@@ -309,11 +314,12 @@ class QuestionEngine {
   updateSessionIndexEntry() {
     if (!this.sessionNum) return;
     const list = this.loadSessionsIndex();
+    const scorable = this.questions.filter(q => !this.isInfoSlide(q));
     const entry = {
       num: this.sessionNum,
       updatedAt: new Date().toISOString(),
-      answered: this.questions.filter(q => this.isAnswered(q.id)).length,
-      total: this.questions.length,
+      answered: scorable.filter(q => this.isAnswered(q.id)).length,
+      total: scorable.length,
       mode: this.mode,
     };
     const idx = list.findIndex(s => s.num === this.sessionNum);
@@ -371,6 +377,20 @@ class QuestionEngine {
   // de întrebări cât ai un test salvat în curs, la reluare vezi conținutul
   // ACTUALIZAT (text/cod/imagine), cu aceleași poziții/amestec ca înainte.
   shuffleQuestionOptions(question, recipe) {
+    // O întrebare poate cere explicit să NU fie amestecată deloc — esențial
+    // pentru întrebări "din imagine" (question.image arată tot: enunț +
+    // opțiuni, exact ca-n captură), unde opțiunile din date sunt doar
+    // etichete generice ("Opțiunea 1", "Opțiunea 2"...) care TREBUIE să
+    // rămână în aceeași poziție ca-n imagine — un amestec le-ar desincroniza
+    // complet de la ce se vede în poză.
+    // Totodată, un test poate fi declarat explicit "fără amestecare la
+    // nivelul întregului set" prin `randomize: false` la crearea motorului.
+    if (!this.randomize || question.noShuffle) {
+      const q = JSON.parse(JSON.stringify(question));
+      q._shuffleRecipe = {};
+      return q;
+    }
+
     const q = JSON.parse(JSON.stringify(question));
     const r = recipe ? { ...recipe } : {};
     const isReplay = !!recipe;
@@ -471,6 +491,7 @@ class QuestionEngine {
             <button class="qe-nav-btn" id="qePrev">← Anterior</button>
             <div class="qe-topbar-center">
               <button class="qe-nav-btn" id="qeReset">↺ Resetează întrebarea</button>
+              ${this.showSourceImageBtn ? '<button class="qe-nav-btn hidden" id="qeSourceImageBtn" type="button">🖼 Imagine sursă</button>' : ''}
               <button class="qe-nav-btn qe-mark-btn" id="qeMark">🚩 Marchează</button>
               <button class="qe-nav-btn qe-round-btn" id="qeKeyModeToggle" type="button">⇅</button>
               <div class="qe-progress" id="qeProgress"></div>
@@ -487,6 +508,11 @@ class QuestionEngine {
         ${shortcutsHtml}
         <button class="qe-panel-fab" id="qePanelFab" type="button" title="Întrebări" aria-label="Deschide lista de întrebări">📋</button>
         <div class="qe-panel-backdrop" id="qePanelBackdrop"></div>
+        <div class="qe-lightbox-overlay hidden" id="qeSourceImageOverlay">
+          <button class="qe-lightbox-close" id="qeSourceImageClose" aria-label="Închide" title="Închide">✕</button>
+          <div class="qe-lightbox-tabs hidden" id="qeSourceImageTabs"></div>
+          <img class="qe-lightbox-img" id="qeSourceImageImg" src="" alt="Imagine sursă a întrebării">
+        </div>
       </div>`;
 
     this.container.querySelector('#qePrev').addEventListener('click', () => this.go(-1));
@@ -497,7 +523,62 @@ class QuestionEngine {
     this.container.querySelector('#qePanelFab').addEventListener('click', () => this.openPanel());
     this.container.querySelector('#qePanelBackdrop').addEventListener('click', () => this.closePanel());
     this.container.querySelector('#qeKeyModeToggle').addEventListener('click', () => this.toggleKeyMode());
+    if (this.showSourceImageBtn) {
+      this.container.querySelector('#qeSourceImageBtn').addEventListener('click', () => this.openSourceImage());
+      this.container.querySelector('#qeSourceImageClose').addEventListener('click', () => this.closeSourceImage());
+      this.container.querySelector('#qeSourceImageOverlay').addEventListener('click', (e) => {
+        if (e.target.id === 'qeSourceImageOverlay') this.closeSourceImage();
+      });
+    }
     this.updateKeyModeButton();
+  }
+
+  // Butonul "🖼 Imagine sursă" (opțional, din Setări -> Teste și examene) —
+  // arată captura originală (q.sourceImage) din care a fost extrasă
+  // întrebarea curentă, ca reper rapid de verificare. Butonul însuși e
+  // ascuns automat la întrebările fără acest câmp opțional completat.
+  //
+  // "sourceImage" acceptă DOUĂ forme:
+  //   - un singur nume de fișier (string) — cazul simplu, o singură captură
+  //   - un array de { label, file } — mai multe capturi pentru ACEEAȘI
+  //     întrebare (ex: "dropdown" cu screenshot separat per opțiune) —
+  //     apar ca taburi în lightbox, ca să comuți între ele.
+  openSourceImage() {
+    const q = this.questions[this.current];
+    if (!q || !q.sourceImage) return;
+    const overlay = this.container.querySelector('#qeSourceImageOverlay');
+    const img = this.container.querySelector('#qeSourceImageImg');
+    const tabsEl = this.container.querySelector('#qeSourceImageTabs');
+    if (!overlay || !img || !tabsEl) return;
+
+    const images = Array.isArray(q.sourceImage)
+      ? q.sourceImage
+      : [{ label: null, file: q.sourceImage }];
+    if (images.length === 0) return;
+
+    const showImageAt = (idx) => {
+      img.src = resolveAssetPath(`Images/${images[idx].file}`, this.basePath);
+      tabsEl.querySelectorAll('.qe-lightbox-tab').forEach((btn, i) => btn.classList.toggle('active', i === idx));
+    };
+
+    if (images.length > 1) {
+      tabsEl.innerHTML = images
+        .map((im, i) => `<button class="qe-lightbox-tab" type="button">${escapeAttr(im.label || `Imaginea ${i + 1}`)}</button>`)
+        .join('');
+      tabsEl.classList.remove('hidden');
+      tabsEl.querySelectorAll('.qe-lightbox-tab').forEach((btn, i) => btn.addEventListener('click', () => showImageAt(i)));
+    } else {
+      tabsEl.innerHTML = '';
+      tabsEl.classList.add('hidden');
+    }
+
+    showImageAt(0);
+    overlay.classList.remove('hidden');
+  }
+
+  closeSourceImage() {
+    const overlay = this.container.querySelector('#qeSourceImageOverlay');
+    if (overlay) overlay.classList.add('hidden');
   }
 
   // Aplică live setarea "Panou comenzi rapide" din Setări, fără să
@@ -769,6 +850,14 @@ class QuestionEngine {
     btn.textContent = isMarked ? '🚩 Marcată' : '🚩 Marchează';
   }
 
+  // Un slide "info" (type: 'info') nu se scorează NICIODATĂ — nu are
+  // opțiuni, nu are răspuns corect, e doar imaginea de răsfoit. Exclus
+  // explicit din orice calcul de progres/scor (vezi finish(),
+  // updateListPanel(), getStatus()).
+  isInfoSlide(q) {
+    return !!q && q.type === 'info';
+  }
+
   isAnswered(id) {
     const val = this.userAnswers[id];
     if (val === undefined || val === null) return false;
@@ -779,6 +868,7 @@ class QuestionEngine {
   }
 
   getStatus(q) {
+    if (this.isInfoSlide(q)) return 'info';
     if (this.submitted) {
       return this.isCorrect(q, this.userAnswers[q.id]) ? 'correct' : 'incorrect';
     }
@@ -794,8 +884,11 @@ class QuestionEngine {
     const panel = this.container.querySelector('#qeListPanel');
     if (!panel) return;
 
-    const total = this.questions.length;
-    const answeredCount = this.questions.filter(q => this.isAnswered(q.id)).length;
+    // Slide-urile "info" nu se numără la progres (nu au ce răspuns să
+    // dea) — dar rămân în grilă mai jos, ca să poți naviga la ele.
+    const scorable = this.questions.filter(q => !this.isInfoSlide(q));
+    const total = scorable.length;
+    const answeredCount = scorable.filter(q => this.isAnswered(q.id)).length;
     const pct = total ? Math.round((answeredCount / total) * 100) : 0;
 
     let html = `
@@ -816,12 +909,16 @@ class QuestionEngine {
       html += `<button class="qe-list-item qe-status-${status}${currentClass}" data-idx="${i}">${i + 1}</button>`;
     });
 
+    const hasInfoSlides = this.questions.some(q => this.isInfoSlide(q));
+    const infoLegend = hasInfoSlides ? `<span><span class="qe-legend-dot qe-status-info"></span> Info</span>` : '';
     const legend = this.submitted
       ? `<span><span class="qe-legend-dot qe-status-correct"></span> Corect</span>
-         <span><span class="qe-legend-dot qe-status-incorrect"></span> Greșit</span>`
+         <span><span class="qe-legend-dot qe-status-incorrect"></span> Greșit</span>
+         ${infoLegend}`
       : `<span><span class="qe-legend-dot qe-status-marked"></span> Marcată</span>
          <span><span class="qe-legend-dot qe-status-answered"></span> Cu răspuns</span>
-         <span><span class="qe-legend-dot qe-status-unanswered"></span> Fără răspuns</span>`;
+         <span><span class="qe-legend-dot qe-status-unanswered"></span> Fără răspuns</span>
+         ${infoLegend}`;
 
     html += `
         </div>
@@ -896,6 +993,12 @@ class QuestionEngine {
     progress.textContent = `Întrebarea ${this.current + 1} / ${this.questions.length}`;
     this.updateMarkButton();
     this.updateListPanel();
+    if (this.showSourceImageBtn) {
+      const srcBtn = this.container.querySelector('#qeSourceImageBtn');
+      const hasSourceImage = Array.isArray(q.sourceImage) ? q.sourceImage.length > 0 : !!q.sourceImage;
+      if (srcBtn) srcBtn.classList.toggle('hidden', !hasSourceImage);
+    }
+    this.closeSourceImage(); // ascunde lightbox-ul rămas deschis de la întrebarea anterioară
 
     let html = `<div class="qe-question">`;
     if (q.image) html += `<img class="qe-image" src="${escapeAttr(resolveAssetPath(q.image, this.basePath))}" alt="">`;
@@ -1041,6 +1144,18 @@ class QuestionEngine {
             </div>`;
         });
         html += `</div>`;
+        break;
+      }
+      case 'info': {
+        // Slide informativ — DOAR imagine (deja randată mai sus, comun
+        // tuturor tipurilor) + text opțional, FĂRĂ nicio opțiune de
+        // răspuns. Nu se scorează niciodată (vezi isCorrect/finish/
+        // updateListPanel — toate îl exclud explicit din total). Util
+        // pentru capturi pe care nu vrei să le transformi într-o
+        // întrebare reală (ex: prea complexe ca să le transcrii acum),
+        // dar tot vrei să le poți răsfoi în ordine, cu Următor/Anterior,
+        // alături de restul testului.
+        if (q.question) html += `<div class="qe-text">${q.question}</div>`;
         break;
       }
     }
@@ -1434,6 +1549,7 @@ class QuestionEngine {
     const wrongQuestions = [];
 
     this.questions.forEach(q => {
+      if (this.isInfoSlide(q)) return; // slide informativ — nu se scorează
       const given = this.userAnswers[q.id];
       if (this.isCorrect(q, given)) {
         correctCount++;
@@ -1446,7 +1562,7 @@ class QuestionEngine {
       }
     });
 
-    const total = this.questions.length;
+    const total = this.questions.filter(q => !this.isInfoSlide(q)).length;
     const pct = Math.round((correctCount / total) * 100);
     const resultEl = this.container.querySelector('#qeResult');
     resultEl.classList.remove('hidden');

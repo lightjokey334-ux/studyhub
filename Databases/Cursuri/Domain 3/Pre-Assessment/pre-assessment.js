@@ -21,7 +21,7 @@ var QUESTIONS_D3_PRE = [
     question: "When would one normally implement a full outer join? Choose two answers.",
     image: null,
     options: ["After combining two data sets into one", "Before combining two data sets into one", "Mismatched records from both tables in a join need to be visible", "Only matching records from both tables in a join need to be visible"],
-    correct: [1, 2]
+    correct: [0, 2]
   },
   {
     id: "d3_pre_03",
@@ -45,7 +45,7 @@ var QUESTIONS_D3_PRE = [
     question: "Which statement best defines a self join?",
     image: null,
     options: ["A join between two rows in the same table", "A join between two tables", "A join between two columns in the same table", "A join between two databases"],
-    correct: [0]
+    correct: [2]
   },
   {
     id: "d3_pre_06",

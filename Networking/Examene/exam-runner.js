@@ -41,6 +41,22 @@ function resolveExamAutoSaveAnswersDefault() {
   return 'on';
 }
 
+// Aceeași metodă și pentru butonul "🖼 Imagine sursă" (Setări -> Teste).
+const EXAM_SOURCE_IMAGE_BTN_KEY = 'studyhub_exam_source_image_btn_v1';
+
+function resolveExamShowSourceImageBtnDefault() {
+  const fromUrl = new URLSearchParams(window.location.search).get('showSourceImageBtn');
+  if (fromUrl === 'on' || fromUrl === 'off') {
+    try { localStorage.setItem(EXAM_SOURCE_IMAGE_BTN_KEY, fromUrl); } catch (e) { /* ignoră */ }
+    return fromUrl;
+  }
+  try {
+    const cached = localStorage.getItem(EXAM_SOURCE_IMAGE_BTN_KEY);
+    if (cached === 'on' || cached === 'off') return cached;
+  } catch (e) { /* ignoră */ }
+  return 'off';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof initProgressBridge === 'function') {
     initProgressBridge('../../../storage-bridge.html');
@@ -53,9 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const questions = typeof EXAM_QUESTIONS !== 'undefined' ? EXAM_QUESTIONS : [];
   const showShortcuts = resolveExamShortcutsPanelDefault() !== 'hidden';
   const autoSaveAnswers = resolveExamAutoSaveAnswersDefault() !== 'off';
+  const showSourceImageBtn = resolveExamShowSourceImageBtnDefault() === 'on';
   const testId = typeof EXAM_ID !== 'undefined' ? EXAM_ID : null;
+  const randomize = typeof EXAM_RANDOMIZE === 'boolean' ? EXAM_RANDOMIZE : true;
 
-  const engine = new QuestionEngine(container, questions, { title: titleEl.textContent, showShortcuts, autoSaveAnswers, testId, multiSession: true });
+  const engine = new QuestionEngine(container, questions, {
+    title: titleEl.textContent,
+    showShortcuts,
+    autoSaveAnswers,
+    testId,
+    multiSession: true,
+    showSourceImageBtn,
+    randomize,
+  });
 
   // Aplică live schimbarea panoului de comenzi rapide, dacă vine din
   // fereastra plutitoare de Setări (deschisă peste pagina de examen) —

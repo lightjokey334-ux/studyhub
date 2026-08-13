@@ -110,6 +110,6 @@ var QUESTIONS_D1_PRE = [
     question: "Within a database, what is data stored in?",
     image: null,
     options: ["Rows", "Columns", "Entities", "Graphs"],
-    correct: [0]
+    correct: [2]
   }
 ];

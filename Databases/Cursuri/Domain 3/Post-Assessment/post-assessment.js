@@ -29,7 +29,7 @@ var QUESTIONS_D3_POST = [
     question: "What function can be added to a computed column to show the results as dollar amounts?",
     image: null,
     options: ["Currency function (cur)", "Decimal function (dec)", "Dollar function (dol)", "String function (str)"],
-    correct: [2]
+    correct: [3]
   },
   {
     id: "d3_post_04",

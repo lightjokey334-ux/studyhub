@@ -17,6 +17,7 @@ const STUDYHUB_DEFAULT_SETTINGS = {
   shortcutsPanel: 'shown', // 'shown' | 'hidden' — panoul cu comenzi rapide din teste
   autoSaveAnswers: 'on', // 'on' | 'off' — reia testul de unde ai rămas dacă închizi din greșeală
   autoplayNextVideo: 'on', // 'on' | 'off' — trece automat la următorul videoclip din domeniu
+  showSourceImageBtn: 'off', // 'on' | 'off' — buton "🖼 Imagine sursă" lângă "Resetează întrebarea" (arată captura originală, q.sourceImage)
 };
 
 function studyhubLoadSettings() {

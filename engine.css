@@ -169,6 +169,23 @@
   text-align: left;
   white-space: nowrap;
 }
+
+/* Liste (<ul>/<ol>) direct în enunț — ex: "fiecare rând va conține:
+   Nume, Prenume, Data nașterii...". Fără asta, browserul le arăta cu
+   bullet-uri/indentare implicite, needorite pe tema dark. */
+.qe-text ul,
+.qe-text ol{
+  margin: 8px 0 16px 0;
+  padding-left: 22px;
+  color: var(--text, #e8e8f0);
+}
+.qe-text li{
+  margin: 4px 0;
+  line-height: 1.5;
+}
+.qe-text li::marker{
+  color: var(--accent-2, #5b8def);
+}
 .qe-text th{
   background: var(--bg-elevated, #171724);
   font-weight: 700;
@@ -567,7 +584,8 @@
   border: 1px solid var(--border, #2a2b3d);
   border-radius: 6px;
   padding: 8px 12px;
-  display: inline-block;
+  display: block;
+  margin: 12px 0;
   white-space: pre-wrap;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -695,6 +713,15 @@
   color: #e5484d;
 }
 
+/* Slide "info" (type: 'info') — doar imagine, fără opțiuni, niciodată
+   scorat. Culoare distinctă (mov), ca să nu se confunde cu "cu răspuns"
+   sau "marcată". */
+.qe-list-item.qe-status-info{
+  background: rgba(167,139,250,.18);
+  border-color: #a78bfa;
+  color: #a78bfa;
+}
+
 .qe-list-item.qe-list-item-current{
   box-shadow: 0 0 0 2px var(--accent-2, #5b8def);
 }
@@ -723,6 +750,7 @@
 .qe-legend-dot.qe-status-marked{ background: rgba(224,168,62,.2); border-color: #e0a83e; }
 .qe-legend-dot.qe-status-correct{ background: rgba(46,204,113,.22); border-color: #2ecc71; }
 .qe-legend-dot.qe-status-incorrect{ background: rgba(229,72,77,.2); border-color: #e5484d; }
+.qe-legend-dot.qe-status-info{ background: rgba(167,139,250,.18); border-color: #a78bfa; }
 
 .qe-correctness-banner{
   display: inline-block;
@@ -877,6 +905,80 @@
    media query-ului de mai jos, altfel câștigă ea la egalitate de
    specificitate (vezi nota despre cascada CSS de mai sus). */
 .qe-panel-fab, .qe-panel-backdrop{ display: none; }
+
+/* Lightbox "Imagine sursă" — arată captura originală din care a fost
+   extrasă întrebarea (q.sourceImage, opțional), activat din Setări ->
+   Teste și examene. Structură simplă, proprie (nu settings-modal.js),
+   ca să meargă din orice pagină (Cursuri ȘI Examene) fără dependențe
+   suplimentare. */
+.qe-lightbox-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 6, 10, .9);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: zoom-out;
+}
+.qe-lightbox-overlay.hidden{ display: none !important; }
+.qe-lightbox-img{
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  cursor: default;
+}
+.qe-lightbox-close{
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border, #2a2b3d);
+  background: rgba(15,15,23,.9);
+  color: var(--text, #e8e8f0);
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease;
+}
+.qe-lightbox-close:hover{ border-color: var(--accent-2, #5b8def); color: var(--accent-2, #5b8def); }
+
+/* Taburi — apar DOAR când q.sourceImage e un array cu mai multe capturi
+   (ex: "dropdown" cu screenshot separat per opțiune). La o singură
+   captură (string simplu), tabsEl rămâne gol/ascuns — vezi openSourceImage(). */
+.qe-lightbox-tabs{
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: calc(100% - 120px);
+}
+.qe-lightbox-tabs.hidden{ display: none; }
+.qe-lightbox-tab{
+  background: rgba(15,15,23,.85);
+  border: 1px solid var(--border, #2a2b3d);
+  color: var(--text-dim, #9494a8);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .15s ease;
+  white-space: nowrap;
+}
+.qe-lightbox-tab:hover{ border-color: var(--accent-2, #5b8def); color: var(--text, #e8e8f0); }
+.qe-lightbox-tab.active{
+  background: var(--accent-2, #5b8def);
+  border-color: var(--accent-2, #5b8def);
+  color: #06140d;
+  font-weight: 700;
+}
 
 /* =======================================================================
    RESPONSIVE — pus la finalul fișierului, intenționat, ca să câștige

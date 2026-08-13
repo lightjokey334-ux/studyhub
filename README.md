@@ -140,6 +140,66 @@
 > orizontal, în unele viewere de markdown — înlocuite cu text simplu, ca
 > restul exemplelor din fișier.
 
+> **A treisprezecea actualizare:** **Examene la Python — complet, 4 (nu 3
+> ca Networking/Databases)** — `exam.css`, `exam-runner.js`, Examen 1-4,
+> fiecare cu fișier de întrebări gol + folder `Images/`. Numărul de
+> examene per materie e acum configurabil (`EXAM_COUNT` în `script.js`),
+> cardurile de pe ecranul de opțiuni se generează dinamic — nu mai sunt
+> hardcodate în `index.html`. Am mai adăugat:
+> - Câmp nou, opțional, `sourceImage` — numele capturii originale din care
+>   a fost extrasă o întrebare (sau un array `{ label, file }`, pentru
+>   cazuri cu mai multe capturi per întrebare, ex: `dropdown` cu screenshot
+>   separat per opțiune). Vezi secțiunea 4.
+> - Setare nouă, **Setări → Teste și examene → „Buton imagine sursă"**
+>   (implicit oprit) — activează un buton „🖼 Imagine sursă" lângă
+>   „Resetează întrebarea", la orice test, care arată captura din
+>   `sourceImage` într-un lightbox (cu taburi, dacă sunt mai multe).
+> - Foldere `Images/` — de lângă fiecare fișier de întrebări (Pre/Post-
+>   Assessment, Fill in the Blanks, Practical Application, Examene) —
+>   aici pui capturile referite de `sourceImage`. Le-am creat deja în
+>   structura Python generată; **Networking/Databases nu le au încă**,
+>   creează-le manual acolo dacă vrei să folosești funcția și la ele.
+> - `DEEPSEEK_PROMPT.md` cere acum modelului să completeze `sourceImage`
+>   la FIECARE întrebare, întotdeauna.
+
+> **A paisprezecea actualizare:** blocul `<code>` avea `display:
+> inline-block` — se amesteca cu textul dinainte/după (ex: "Evaluate the
+> following SQL statement:" și "What would cause..." se lipeau de cutia
+> de cod, pe același rând). Schimbat la `display: block` — acum se
+> desparte mereu pe rândul lui, indiferent de conținutul din jur.
+
+> **A cincisprezecea actualizare:** am analizat 49 de întrebări reale
+> (Databases, Examen 1, SQL) — **niciuna nu are nevoie de un tip nou** de
+> întrebare, toate se încadrează în cele 8 tipuri existente. Am documentat
+> 4 convenții noi, în `DEEPSEEK_PROMPT.md` și aici: opțiuni de răspuns
+> care sunt cod (`single`/`multi`), „completează query-ul" trăgând bucăți
+> de cod (`dragtext`, în 3 variante — șablon cu spații goale, pași
+> numerotați, canvas gol), tabel de date + cod combinate în aceeași
+> întrebare, și liste (`<ul>`/`<ol>`) în enunț — cu stil CSS nou pentru
+> ultima. Verificat concret (nu presupus): chip-urile la `dragtext`/
+> `match` NU dispar din pool după prima folosire, deci reutilizarea
+> („may be used once, more than once, or not at all", frază frecventă la
+> SQL) mergea deja, fără nimic de schimbat.
+
+> **A șaisprezecea actualizare:** câmp nou, opțional, `noShuffle: true` —
+> oprește amestecul de opțiuni/ordine la o întrebare (implicit, orice
+> întrebare se amestecă la fiecare pornire de test). Rolul principal:
+> permite întrebări „direct din imagine" — pui captura întreagă la
+> `image`, opțiuni cu etichete generice ("Opțiunea 1", "Opțiunea 2"...) și
+> `noShuffle: true`, fără să mai transcrii deloc enunțul/opțiunile reale.
+> Fără `noShuffle`, etichetele generice s-ar amesteca și nu ar mai
+> corespunde cu poziția din imagine — verificat direct în motor, era un
+> bug real, nu doar o presupunere. Vezi secțiunea 4.
+
+> **A șaptesprezecea actualizare:** tip nou, al 9-lea, `info` — un slide
+> DOAR cu imagine, fără nicio opțiune de răspuns, care nu se scorează
+> niciodată (exclus explicit din progres, din „X / Y răspunse" și din
+> rezultatul final — testat direct în motor, cu întrebări reale mixate
+> cu un slide info, rezultatul nu s-a schimbat). Are Următor/Anterior
+> normal, ca restul testului — util pentru capturi pe care nu vrei să le
+> transformi acum într-o întrebare reală. Are și un status vizual propriu
+> (mov) în panoul de întrebări. Vezi secțiunea 4, litera i).
+
 Platformă locală, offline-first, pentru studiu — dark mode, în română,
 inspirată vizual după interfața LearnKey/GMetrix. Deocamdată e construită
 complet secțiunea **Networking** și **Databases**; Python e schelet gol,
@@ -180,28 +240,44 @@ SiteFile/
 │  │  ├─ Domain 1/ … Domain 5/
 │  │  │  ├─ Videos/                  (.mp4 + opțional .vtt cu același nume)
 │  │  │  ├─ Pre-Assessment/
-│  │  │  │  └─ pre-assessment.js     ← întrebările Pre-Assessment
-│  │  │  └─ Post-Assessment/
-│  │  │     └─ post-assessment.js    ← întrebările Post-Assessment
+│  │  │  │  ├─ pre-assessment.js     ← întrebările Pre-Assessment
+│  │  │  │  └─ Images/               ← capturi sursă (sourceImage), opțional
+│  │  │  └─ Post-Assessment/ (la fel: post-assessment.js + Images/)
 │  │
 │  └─ Examene/
 │     ├─ exam.css
-│     ├─ exam-runner.js   logica comună pentru toate cele 3 examene
+│     ├─ exam-runner.js   logica comună pentru toate examenele (3 la Networking/Databases)
 │     ├─ Examen 1/
 │     │  ├─ examen1.html
-│     │  └─ examen1-questions.js     ← întrebările Examenului 1
+│     │  ├─ examen1-questions.js     ← întrebările Examenului 1
+│     │  └─ Images/                  ← capturi sursă (sourceImage), opțional
 │     ├─ Examen 2/ (la fel)
 │     └─ Examen 3/ (la fel)
 │
-├─ Python/     (gol, deocamdată)
-└─ Databases/  (structură completă, la fel ca Networking — vezi mai jos)
+├─ Databases/  (structură identică cu Networking — 5 domenii, 3 Examene)
+│
+└─ Python/  (structură EXTINSĂ față de Networking/Databases — vezi mai jos)
    ├─ Cursuri/
-   │  ├─ cursuri.html / cursuri.js   (cursuri.js: DOAR SUBJECT + DOMAINS)
-   │  └─ Domain 1/ … Domain 5/  (Videos + Pre-Assessment + Post-Assessment)
+   │  ├─ cursuri.html / cursuri.js   (cursuri.js: SUBJECT + DOMAINS, cu `assessments`
+   │  │                               custom per domeniu — vezi secțiunea „Tipuri de
+   │  │                               test custom per domeniu" mai jos)
+   │  └─ Domain 1/ … Domain 6/, fiecare cu:
+   │     ├─ Videos/
+   │     ├─ Pre-Assessment/ (+ Images/)
+   │     ├─ Post-Assessment/ (+ Images/)
+   │     ├─ Fill in the Blanks/ (+ Images/)
+   │     └─ Practical Application/ (+ Images/) — la Domain 1: Part 1 + Part 2, separat
    └─ Examene/
       ├─ exam.css / exam-runner.js
-      └─ Examen 1/ … Examen 3/
+      └─ Examen 1/ … Examen 4/ (Python are 4, nu 3 — vezi EXAM_COUNT în script.js)
 ```
+
+**Numărul de Examene per materie** e configurabil, în `script.js`, în
+`EXAM_COUNT = { Networking: 3, Databases: 3, Python: 4 }` — cardurile de
+pe ecranul de opțiuni (index.html) se generează dinamic din acest obiect,
+nu mai sunt hardcodate în HTML. Dacă mai adaugi vreodată un Examen la o
+materie, crești doar numărul de-aici — restul (buildPath, navigare) merge
+automat.
 
 **De ce e construit așa:** fiecare test/evaluare are propriul fișier `.js`
 care conține DOAR datele întrebărilor (un array). Motorul care le afișează
@@ -230,7 +306,9 @@ Deschide `index.html` direct în browser (dublu-click, funcționează pe
 
 Fluxul de navigare:
 1. `index.html` → alegi un card (Databases / Networking / Python).
-2. Apar 4 opțiuni: **Cursuri**, **Examen 1**, **Examen 2**, **Examen 3**.
+2. Apar opțiunile materiei: **Cursuri** + câte un **Examen** pentru
+   fiecare din `EXAM_COUNT[materie]` (3 la Networking/Databases, 4 la
+   Python) — generate dinamic, vezi secțiunea 1.
 3. Fiecare opțiune se deschide în **același tab** (nu tab nou).
    (Networking și Databases sunt „active"; Python încă arată un mesaj
    „în lucru" — vezi `READY_SUBJECTS` din `script.js` când vrei să-l
@@ -367,14 +445,16 @@ Fiecare întrebare e un obiect JS cu această formă:
 ```js
 {
   id: "d1_pre_01",       // identificator unic, orice string
-  type: "single",        // "single" | "multi" | "order" | "blank" | "dragtext" | "match" | "truefalse" | "dropdown"
+  type: "single",        // "single" | "multi" | "order" | "blank" | "dragtext" | "match" | "truefalse" | "dropdown" | "info"
   question: "...",       // textul întrebării
   image: null,           // null SAU doar numele fișierului, ex: "schema1.png"
   options: [...],        // vezi mai jos, diferă în funcție de tip
   pairs: [...],          // DOAR la tipul "match" — vezi litera f) mai jos
   statements: [...],     // DOAR la "truefalse" (litera g) și "dropdown" (litera h)
   correct: [...],        // vezi mai jos, diferă în funcție de tip
-  explanation: "..."     // OPȚIONAL — vezi nota de mai jos
+  explanation: "...",    // OPȚIONAL — vezi nota de mai jos
+  sourceImage: "...",    // OPȚIONAL — vezi nota de mai jos
+  noShuffle: true        // OPȚIONAL — vezi nota de mai jos
 }
 ```
 
@@ -394,6 +474,75 @@ să fie prea puțin timp să citești o explicație lungă (spune-mi dacă vrei
 să mărim acea pauză când există `explanation` pe întrebare). Dacă nu
 adaugi câmpul, nu se întâmplă nimic diferit — e complet opțional,
 întrebare cu întrebare.
+
+### Câmpul opțional `sourceImage` (orice tip de întrebare)
+Numele fișierului capturii de ecran originale din care a fost extrasă
+întrebarea — DOAR pentru verificare de către tine, nu se arată niciodată
+automat celui care dă testul. Se activează din **Setări → Teste și
+examene → „Buton imagine sursă"** (implicit oprit) — când e pornită,
+apare un buton „🖼 Imagine sursă" lângă „Resetează întrebarea", la orice
+test (Cursuri ȘI Examene), dar DOAR la întrebările care au acest câmp
+completat.
+
+Forma simplă (o singură captură):
+```js
+sourceImage: "os-path-exists.png"
+```
+Forma cu mai multe capturi (ex: `dropdown`, unde enunțul are propria
+captură ȘI fiecare opțiune dintr-un meniu are propria ei captură) — un
+array de `{ label, file }`, cu taburi în lightbox ca să comuți între ele:
+```js
+sourceImage: [
+  { label: "Întrebare", file: "d1_post_05_q.png" },
+  { label: "Opțiunea 1", file: "d1_post_05_opt1.png" },
+  { label: "Opțiunea 2", file: "d1_post_05_opt2.png" },
+]
+```
+Fișierele stau într-un folder `Images/`, de lângă fișierul de întrebări
+(ex: `Domain 1/Post-Assessment/Images/`, sau `Examene/Examen 1/Images/`
+la examene) — creezi tu acest folder și pui capturile acolo, cu numele
+exact din `sourceImage`. `DEEPSEEK_PROMPT.md` cere modelului să completeze
+acest câmp la FIECARE întrebare — dacă nu-l completezi tu manual mai
+târziu sau nu îl folosești deloc, nu se întâmplă nimic diferit, câmpul e
+complet opțional.
+
+### Câmpul opțional `noShuffle` (orice tip de întrebare)
+Implicit, motorul amestecă opțiunile/ordinea unei întrebări de fiecare
+dată când pornești testul (randomizare — vezi și „A unsprezecea
+actualizare" din changelog, despre salvarea acestei amestecări). Dacă
+adaugi `noShuffle: true` pe o întrebare, acea întrebare NU se mai
+amestecă deloc — rămâne exact în ordinea din date, de fiecare dată.
+
+### Întrebare „direct din imagine" (fără transcriere)
+Combinând `image` (câmpul normal, NU `sourceImage`) cu `noShuffle` și
+opțiuni cu etichete generice, poți sări complet peste transcrierea
+enunțului/opțiunilor dintr-o captură — utilă când transcrierea exactă (cod
+SQL complex, tabele, diagrame) ar dura mult sau ar risca greșeli. Toată
+interfața de test (buton Următor, progres, verificare, istoric) merge la
+fel ca la orice altă întrebare — doar conținutul vizibil e chiar captura,
+nu text scris de tine:
+```js
+{
+  id: "ex1_05",
+  type: "single",
+  question: "", // sau o instrucțiune scurtă, ex: "Alege răspunsul corect."
+  image: "ex1_05_full.png", // captura ÎNTREAGĂ — enunț + toate opțiunile vizibile
+  options: ["Opțiunea 1", "Opțiunea 2", "Opțiunea 3", "Opțiunea 4"], // etichete generice, NU textul real
+  correct: [2], // indexul opțiunii corecte DIN IMAGINE, în ordinea în care apar acolo
+  noShuffle: true, // OBLIGATORIU aici — altfel etichetele generice se amestecă și nu mai corespund cu poza
+}
+```
+⚠️ `noShuffle: true` e OBLIGATORIU la acest tipar — fără el, „Opțiunea 2"
+ar putea apărea prima pe ecran, complet desincronizată de la ce arată
+captura. Verificat direct în motor (nu presupus): fără `noShuffle`,
+opțiunile generice chiar se amestecau.
+
+Merge la fel la `match`/`truefalse`/`dropdown`/`order` — pui etichete
+generice (ex: „Rândul 1"/„Rândul 2" la `truefalse`, „Eticheta 1" la
+`pairs` pentru `match`) și `noShuffle: true`, cu imaginea întreagă
+arătând tabelul/lista reală. Fișierul de imagine stă direct în folderul
+testului (ca la `image` normal — NU în `Images/`, ăla e doar pentru
+`sourceImage`).
 
 ### a) `single` — alegere unică (radio button)
 ```js
@@ -569,6 +718,27 @@ aceeași ordine. Spre deosebire de `truefalse`/`match`, ordinea rândurilor
 „problema" înaintea „soluției") — dar opțiunile din interiorul fiecărui
 dropdown SE amestecă.
 
+### i) `info` — slide doar cu imagine, fără scor
+Nu e o întrebare propriu-zisă — e o „pagină" de răsfoit, cu
+Următor/Anterior ca restul testului, dar FĂRĂ nicio opțiune de răspuns și
+FĂRĂ să afecteze scorul/progresul (exclus explicit din calculul de
+„X / Y răspunse" și din rezultatul final — verificat direct în motor).
+```js
+{
+  id: "ex1_09",
+  type: "info",
+  image: "captura-prea-complexa.png",
+  question: "" // opțional — poate fi și un text scurt sub imagine
+}
+```
+Nu are `options`, `pairs`, `statements`, `labels` sau `correct` — nu le
+adaugi deloc. Util pentru capturi pe care nu vrei să le transformi acum
+într-o întrebare reală (prea complexe, risc de greșeală la transcriere),
+dar tot vrei să le poți vedea în ordine, alături de restul testului —
+util mai ales dacă vrei să te ajut eu, direct în chat, să interpretez
+o parte din ele mai târziu, fără să te pun pe verificat 40+ obiecte JSON
+unul câte unul.
+
 ### Cuvinte/fraze subliniate în enunț (orice tip de întrebare)
 Nu există un tip special pentru asta — textul din `question` se randează
 direct ca HTML, deci pui `<u>` și `</u>` în jurul porțiunii subliniate,
@@ -617,7 +787,61 @@ rezervă — amândouă fonturi de sistem, fără nicio dependență de internet
 la fel ca restul site-ului), într-o cutie cu fundal ușor diferit, ca să se
 distingă clar de restul textului. `white-space: pre-wrap` păstrează EXACT
 spațiile de indentare pe care le scrii — important la Python, unde
-indentarea e parte din sintaxă, nu doar stil vizual.
+indentarea e parte din sintaxă, nu doar stil vizual. Cutia se desparte
+SINGURĂ pe rândul ei, automat (`display: block`) — nu se mai amestecă
+niciodată cu textul dinainte/după, indiferent dacă pui sau nu `<br><br>`
+în jurul ei (rămâne opțional, doar cosmetic — un rând gol în plus).
+
+### Opțiuni de răspuns care sunt cod (tipurile `single`/`multi`)
+`options` acceptă ACELAȘI HTML ca `question` — deci o variantă de răspuns
+poate fi ea însăși un bloc de cod întreg, încadrat în `<code>`:
+```js
+options: [
+  "<code>SELECT lastname, firstname<br>FROM customers<br>WHERE sales >=50000 AND (...)</code>",
+  "<code>SELECT lastname, firstname<br>FROM customers<br>WHERE sales >=50000 OR (...)</code>",
+]
+```
+Restul schemei (`correct`: indecși) rămâne exact la fel — doar textul
+opțiunii e cod în loc de cuvinte simple.
+
+### „Completează query-ul" (tipul `dragtext`)
+Trei variante ale aceluiași tip, pentru capturi unde tragi bucăți de cod
+dintr-un pool ca să construiești o interogare — alegi ce pui în `question`:
+
+- **Șablon cu spații goale în interiorul codului** (ex: `CREATE TABLE` cu
+  câmpuri lipsă) — codul complet, cu `{{1}}`, `{{2}}`... exact la spațiile
+  libere:
+  ```js
+  question: "<code>CREATE TABLE [dbo].[Member]<br>(<br>[Id] {{1}},<br>[FirstName] NCHAR(255) NULL,<br>[LastName] {{2}},<br>{{3}},<br>[DateOfBirth] {{4}},<br>[PhoneNumber] NCHAR(10) NULL,<br>{{5}}<br>)</code>"
+  ```
+- **Pași numerotați goi** („Step 1"..."Step N") — un blank per pas:
+  ```js
+  question: "Step 1: {{1}}<br>Step 2: {{2}}<br>Step 3: {{3}}"
+  ```
+- **Canvas complet gol** (construiești de la zero) — doar blank-uri:
+  ```js
+  question: "{{1}}<br>{{2}}<br>{{3}}"
+  ```
+La toate: `options` = toate bucățile disponibile (inclusiv distractori
+nefolosiți), `correct` = valoarea corectă pentru fiecare `{{n}}`, în
+ordine — schema `dragtext` normală, neschimbată (litera e) mai sus).
+Motorul permite deja ca ACEEAȘI bucată să fie trasă la mai multe blank-uri
+deodată — chip-urile nu dispar din pool după prima folosire — deci fraza
+„each item may be used once, more than once, or not at all", frecventă la
+capturile astea, funcționează deja, fără nimic special de făcut în date.
+
+### Tabel de date + cod, în aceeași întrebare
+`<table>` și `<code>` se pot combina liber în același `question`:
+```js
+question: "Evaluate the following table of data:<table><tr><th>ID</th><th>Salary</th></tr><tr><td>1</td><td>83000</td></tr></table>What is the result of the following query?<br><br><code>SELECT MAX(salary) FROM employee;</code>"
+```
+
+### Liste (orice tip de întrebare)
+Pentru liste cu marcatori, `<ul>` + câte un `<li>` per element:
+```js
+question: "Each record will contain:<ul><li>First name</li><li>Last name</li></ul>"
+```
+Pentru liste numerotate, `<ol>` în loc de `<ul>`, la fel.
 
 ### Notă despre amestecare (shuffle)
 Motorul amestecă automat, la fiecare încărcare a testului: ordinea
