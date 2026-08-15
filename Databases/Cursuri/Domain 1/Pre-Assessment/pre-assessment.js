@@ -18,7 +18,8 @@ var QUESTIONS_D1_PRE = [
       "They use a primary key in one table and a non-primary key in another table",
       "They use primary keys from three tables"
     ],
-    correct: [1]
+    correct: [1],
+    explanation: "One-to-one relationships use primary keys from two tables (Establishing Relationships)."
   },
   {
     id: "d1_pre_02",
@@ -26,7 +27,8 @@ var QUESTIONS_D1_PRE = [
     question: "Which two data field types are text fields?",
     image: null,
     options: ["Varchar", "Int", "Nvarchar", "Money"],
-    correct: [0, 2]
+    correct: [0, 2],
+    explanation: "Varchar and Nvarchar are both text fields (Importance of Data Types)."
   },
   {
     id: "d1_pre_03",
@@ -39,7 +41,8 @@ var QUESTIONS_D1_PRE = [
       "A field that is unable to be altered",
       "A field that can only be altered by one person with specific credentials"
     ],
-    correct: [1]
+    correct: [1],
+    explanation: "A primary key ensures that every record in a table is unique (Primary Key)."
   },
   {
     id: "d1_pre_04",
@@ -52,7 +55,8 @@ var QUESTIONS_D1_PRE = [
       "The process of ensuring that all entities in a database has a solid design and that the data in the entity can work well with other entities",
       "The process of ensuring that all entities in a database have at least one primary key and one composite key"
     ],
-    correct: [2]
+    correct: [2],
+    explanation: "Normalization is the process of ensuring that an entity has a solid design and works well with other entities (Reasons for Normalization)."
   },
   {
     id: "d1_pre_05",
@@ -65,7 +69,8 @@ var QUESTIONS_D1_PRE = [
       "Time can be calculated to the second but no further",
       "Time can be calculated to 1/1000 of a second"
     ],
-    correct: [1, 2]
+    correct: [1, 2],
+    explanation: "Smalldatetime has a date range of 1900 to 2079 and time is calculated to the second, but no further (Data Types for Storing Text)."
   },
   {
     id: "d1_pre_06",
@@ -78,7 +83,8 @@ var QUESTIONS_D1_PRE = [
       "After a database has been built",
       "After a database has been in use for a significant period of time"
     ],
-    correct: [0]
+    correct: [0],
+    explanation: "ERDs should be created before a database is built (Entity-Relationship Diagrams)."
   },
   {
     id: "d1_pre_07",
@@ -86,7 +92,8 @@ var QUESTIONS_D1_PRE = [
     question: "It is important to make sure a database is backed up regularly so that the data can be ______ if it is accidentally deleted or changed.",
     image: null,
     options: ["debugged", "replaced", "remade", "restored"],
-    correct: [3]
+    correct: [3],
+    explanation: "A database is backed up regularly so that data can be restored if it is accidentally deleted or changed (Backups)."
   },
   {
     id: "d1_pre_08",
@@ -94,7 +101,8 @@ var QUESTIONS_D1_PRE = [
     question: "What ensures that orphaned records do not occur?",
     image: null,
     options: ["Primary keys", "Composite keys", "Referential integrity", "Entity-relationship diagrams (ERDs)"],
-    correct: [2]
+    correct: [2],
+    explanation: "Referential integrity ensures that primary key values exist before corresponding foreign key values are allowed, preventing orphaned records (Referential Integrity)."
   },
   {
     id: "d1_pre_09",
@@ -102,7 +110,8 @@ var QUESTIONS_D1_PRE = [
     question: "Which data field type would be used to store a value of 0 or 1?",
     image: null,
     options: ["Varchar", "Bit", "Datetime", "Date"],
-    correct: [1]
+    correct: [1],
+    explanation: "A bit field stores a value of 0 or 1 (Data Types for Storing Text)."
   },
   {
     id: "d1_pre_10",
@@ -110,6 +119,7 @@ var QUESTIONS_D1_PRE = [
     question: "Within a database, what is data stored in?",
     image: null,
     options: ["Rows", "Columns", "Entities", "Graphs"],
-    correct: [2]
+    correct: [2],
+    explanation: "Data is stored in entities (tables) within a database (Entities, Rows, and Columns)."
   }
 ];

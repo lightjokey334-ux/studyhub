@@ -12,24 +12,42 @@ var QUESTIONS_D3_PRE = [
     type: "single",
     question: "Where should a WHERE clause be used within the GROUP BY clause?",
     image: null,
-    options: ["Before the GROUP BY clause", "After the GROUP BY clause", "With the GROUP BY clause", "The WHERE clause is not used with the GROUP BY clause"],
-    correct: [0]
+    options: [
+      "Before the GROUP BY clause",
+      "After the GROUP BY clause",
+      "With the GROUP BY clause",
+      "The WHERE clause is not used with the GROUP BY clause"
+    ],
+    correct: [0],
+    explanation: "The WHERE clause filters individual records and must be used before the GROUP BY clause. (HAVING)"
   },
   {
     id: "d3_pre_02",
     type: "multi",
     question: "When would one normally implement a full outer join? Choose two answers.",
     image: null,
-    options: ["After combining two data sets into one", "Before combining two data sets into one", "Mismatched records from both tables in a join need to be visible", "Only matching records from both tables in a join need to be visible"],
-    correct: [0, 2]
+    options: [
+      "After combining two data sets into one",
+      "Before combining two data sets into one",
+      "Mismatched records from both tables in a join need to be visible",
+      "Only matching records from both tables in a join need to be visible"
+    ],
+    correct: [0, 2],
+    explanation: "A full outer join is normally used after combining two datasets into one, and when you want to see mismatched records from both tables. (Join Types)"
   },
   {
     id: "d3_pre_03",
     type: "single",
     question: "Which statement best defines an inner join?",
     image: null,
-    options: ["A join in which records will only display if the value of the join field is in both tables", "A join in which records will be displayed from one table specified in the join field", "A join in which records are filtered from one table and displayed on the second table", "A join in which all records are displayed from one table, and only the value of the join field is displayed from the second table"],
-    correct: [0]
+    options: [
+      "A join in which records will only display if the value of the join field is in both tables",
+      "A join in which records will be displayed from one table specified in the join field",
+      "A join in which records are filtered from one table and displayed on the second table",
+      "A join in which all records are displayed from one table, and only the value of the join field is displayed from the second table"
+    ],
+    correct: [0],
+    explanation: "An inner join displays records only if the value of the join field exists in both tables. (Join Types)"
   },
   {
     id: "d3_pre_04",
@@ -37,15 +55,22 @@ var QUESTIONS_D3_PRE = [
     question: "The WHERE clause creates _______ on the data being queried.",
     image: null,
     options: ["tags", "notes", "filters", "lists"],
-    correct: [2]
+    correct: [2],
+    explanation: "The WHERE clause creates filters on the data being queried. (WHERE)"
   },
   {
     id: "d3_pre_05",
     type: "single",
     question: "Which statement best defines a self join?",
     image: null,
-    options: ["A join between two rows in the same table", "A join between two tables", "A join between two columns in the same table", "A join between two databases"],
-    correct: [2]
+    options: [
+      "A join between two rows in the same table",
+      "A join between two tables",
+      "A join between two columns in the same table",
+      "A join between two databases"
+    ],
+    correct: [2],
+    explanation: "A self join is a join between two columns in the same table. (Self Joins)"
   },
   {
     id: "d3_pre_06",
@@ -53,7 +78,8 @@ var QUESTIONS_D3_PRE = [
     question: "Once a table alias is established, it has to be used throughout the _______.",
     image: null,
     options: ["row", "column", "query", "database"],
-    correct: [2]
+    correct: [2],
+    explanation: "Once a table alias is established, it must be used throughout the query. (Column Alias)"
   },
   {
     id: "d3_pre_07",
@@ -61,7 +87,8 @@ var QUESTIONS_D3_PRE = [
     question: "The percent symbol (%) is a _______ that allows any number of characters.",
     image: null,
     options: ["wildcard", "clause", "statement", "table"],
-    correct: [0]
+    correct: [0],
+    explanation: "The percent symbol (%) is a wildcard that allows any number of characters. (LIKE)"
   },
   {
     id: "d3_pre_08",
@@ -69,7 +96,8 @@ var QUESTIONS_D3_PRE = [
     question: "Rather than using a join, one may use a _______ to display fields from a corresponding table.",
     image: null,
     options: ["substitute query", "SELECT statement", "query", "subquery"],
-    correct: [3]
+    correct: [3],
+    explanation: "Rather than using a join, you can use a subquery to display fields from a corresponding table. (ANY)"
   },
   {
     id: "d3_pre_09",
@@ -77,7 +105,8 @@ var QUESTIONS_D3_PRE = [
     question: "What clause is used to sort information in a query?",
     image: null,
     options: ["SORT BY", "ORDER BY", "SORT", "ORDER FROM"],
-    correct: [1]
+    correct: [1],
+    explanation: "The ORDER BY clause is used to sort information in a query. (ORDER BY)"
   },
   {
     id: "d3_pre_10",
@@ -85,6 +114,7 @@ var QUESTIONS_D3_PRE = [
     question: "Which comparison operator should one use to return records from before a given date?",
     image: null,
     options: [">", "<", ">=", "<="],
-    correct: [1]
+    correct: [1],
+    explanation: "The less-than operator (<) returns records before a given date. (Comparison Operators)"
   }
 ];

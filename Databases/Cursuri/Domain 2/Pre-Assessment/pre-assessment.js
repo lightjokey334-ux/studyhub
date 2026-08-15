@@ -18,7 +18,8 @@ var QUESTIONS_D2_PRE = [
       "column",
       "row"
     ],
-    correct: [1]
+    correct: [1],
+    explanation: "A clustered index is based on a primary key field, while a nonclustered index can be based on any other field. (Clustered Indexes)"
   },
   {
     id: "d2_pre_02",
@@ -31,7 +32,8 @@ var QUESTIONS_D2_PRE = [
       "A stored statement that leads one to general information",
       "A location within a database that stores general information"
     ],
-    correct: [0]
+    correct: [0],
+    explanation: "A view is a saved query that leads to getting specific information; it does not store data itself. (Create, Alter, and Drop Views)"
   },
   {
     id: "d2_pre_03",
@@ -44,7 +46,8 @@ var QUESTIONS_D2_PRE = [
       "Input",
       "Output"
     ],
-    correct: [3]
+    correct: [3],
+    explanation: "Output parameters must be explicitly specified (using the OUTPUT keyword) when creating a stored procedure. (Input and Output Parameters)"
   },
   {
     id: "d2_pre_04",
@@ -57,7 +60,8 @@ var QUESTIONS_D2_PRE = [
       "Spaces",
       "Special characters"
     ],
-    correct: [2]
+    correct: [2],
+    explanation: "Spaces are not allowed in object names in SQL unless the object name is enclosed in square brackets. (Work with Tables)"
   },
   {
     id: "d2_pre_05",
@@ -70,6 +74,7 @@ var QUESTIONS_D2_PRE = [
       "ELIMINATE TABLE",
       "DELETE TABLE"
     ],
-    correct: [1]
+    correct: [1],
+    explanation: "The DROP TABLE command removes a table from a database. (Work with Tables)"
   }
 ];
