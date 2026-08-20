@@ -176,6 +176,7 @@ body{
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }
 video.c-player{
   width: 100%;
@@ -184,6 +185,78 @@ video.c-player{
   border-radius: 10px;
   border: 1px solid var(--border);
 }
+.c-video-toolbar{
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.c-transcript-btn{
+  appearance: none;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(62, 207, 142, 0.12), rgba(62, 207, 142, 0.02));
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+  box-shadow: 0 0 0 1px rgba(62, 207, 142, 0.12);
+}
+.c-transcript-btn:hover{
+  border-color: var(--accent-dim);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(62, 207, 142, 0.14);
+}
+
+.c-video-transcript{
+  position: relative;
+  margin-top: 14px;
+  flex: 1;
+  min-height: 0;
+  background:
+    linear-gradient(180deg, rgba(18, 18, 28, 0.98), rgba(12, 12, 20, 0.98)),
+    repeating-linear-gradient(
+      transparent 0,
+      transparent 26px,
+      rgba(255, 255, 255, 0.02) 26px,
+      rgba(255, 255, 255, 0.02) 27px
+    );
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 22px 22px 18px 34px;
+  overflow-y: auto;
+  color: var(--text);
+  line-height: 1.85;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 16px 24px rgba(0,0,0,0.18);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.c-video-transcript::before{
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(62, 207, 142, 0.14), rgba(62, 207, 142, 0.5), rgba(62, 207, 142, 0.14));
+}
+.c-video-transcript p{
+  position: relative;
+  margin: 0 0 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 15px;
+  color: #edf1f6;
+}
+.c-video-transcript p:last-child{ margin-bottom: 0; }
+.c-transcript-empty{
+  margin: 0;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
 .c-video-empty-note{
   margin-top: 14px;
   color: var(--text-dim);
@@ -335,6 +408,10 @@ video.c-player{
   .c-main-video .c-video-layout{
     height: 100%;
     min-height: 0;
+  }
+  .c-video-transcript{
+    flex: none;
+    max-height: 320px;
   }
   .c-main-video .c-video-player-col{
     flex: 0 0 auto; /* NU crește — își păstrează înălțimea naturală (aspect-ratio); tot spațiul rămas se duce la lista de capitole */

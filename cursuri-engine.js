@@ -390,6 +390,55 @@ function markChapterWatched(domain, sectionIdx, chapterIdx) {
   try { localStorage.setItem(WATCHED_VIDEOS_KEY, JSON.stringify(data)); } catch (e) { /* ignoră */ }
 }
 
+function convertVttToTxt(vttContent) {
+  if (typeof vttContent !== 'string') return '';
+
+  const lines = vttContent.split('\n');
+  const result = [];
+  let lastAddedLine = null;
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    if (/^WEBVTT/i.test(line)) continue;
+    if (/^(kind|language|style|region|x-timestamp-map)\s*:/i.test(line)) continue;
+    if (/^\d{2}:\d{2}:\d{2}[.,]\d{3}\s*-->\s*\d{2}:\d{2}:\d{2}[.,]\d{3}/.test(line)) continue;
+    if (/^\d+$/.test(line)) continue;
+    if (/^NOTE\b/i.test(line)) continue;
+
+    let cleaned = line
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&[a-zA-Z]+;/g, ' ')
+      .replace(/\{[^}]*\}/g, ' ');
+
+    cleaned = cleaned.replace(/\s+/g, ' ').trim();
+    if (!cleaned) continue;
+    if (lastAddedLine !== null && cleaned === lastAddedLine) continue;
+
+    result.push(cleaned);
+    lastAddedLine = cleaned;
+  }
+
+  return result.join('\n');
+}
+
+async function loadTranscriptText(trackEl) {
+  if (!trackEl || !trackEl.src) {
+    return '';
+  }
+
+  try {
+    const response = await fetch(trackEl.src, { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const rawText = await response.text();
+    return convertVttToTxt(rawText);
+  } catch (err) {
+    return '';
+  }
+}
+
 function renderVideos(domain) {
   currentEngineInstance = null;
   currentChapter = { domainId: domain.id, sectionIdx: 0, chapterIdx: 0 };
@@ -400,6 +449,12 @@ function renderVideos(domain) {
         <video class="c-player" id="videoPlayer" controls>
           <track id="videoSubtitles" kind="subtitles" srclang="en" label="English">
         </video>
+        <div class="c-video-toolbar">
+          <button class="c-transcript-btn" id="transcriptToggleBtn" type="button" aria-expanded="false">
+            See Subtitles Text
+          </button>
+        </div>
+        <div class="c-video-transcript" id="videoTranscript" tabindex="0" aria-label="Textul subtitrărilor" hidden></div>
         <div class="c-video-empty-note" id="videoNote"></div>
       </div>
       <div class="c-chapters" id="chapterList"></div>
@@ -463,6 +518,17 @@ function renderVideos(domain) {
   // per randare a domeniului — elementul <video> nu se recreează la
   // schimbarea capitolului (doar loadChapter() îi schimbă src-ul).
   const player = document.getElementById('videoPlayer');
+  const transcriptPanel = document.getElementById('videoTranscript');
+  transcriptPanel.addEventListener('keydown', event => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'a') {
+      event.preventDefault();
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(transcriptPanel);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }
+  });
   player.addEventListener('ended', () => {
     markChapterWatched(domain, currentChapter.sectionIdx, currentChapter.chapterIdx);
     renderChapterList(); // arată bifa imediat; păstrează stările collapse (sectionOpen)
@@ -505,6 +571,17 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
   const player = document.getElementById('videoPlayer');
   const note = document.getElementById('videoNote');
   const track = document.getElementById('videoSubtitles');
+  const transcriptPanel = document.getElementById('videoTranscript');
+  const transcriptBtn = document.getElementById('transcriptToggleBtn');
+
+  if (transcriptPanel) {
+    transcriptPanel.hidden = true;
+    transcriptPanel.innerHTML = '';
+  }
+  if (transcriptBtn) {
+    transcriptBtn.textContent = 'See Subtitles Text';
+    transcriptBtn.setAttribute('aria-expanded', 'false');
+  }
 
   if (chapter.src) {
     // chapter.src e doar numele fișierului (ex: "01-introduction.mp4");
@@ -525,6 +602,35 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
     note.textContent = `Fișierul video pentru „${chapter.title}” nu a fost adăugat încă. ` +
       `Pune-l în folderul „${domain.folder}/Videos” și completează câmpul "src" din cursuri.js ` +
       `(doar numele fișierului, ex: "01-introduction.mp4").`;
+  }
+
+  if (transcriptBtn) {
+    transcriptBtn.onclick = async () => {
+      const currentTrack = document.getElementById('videoSubtitles');
+      const transcriptBox = document.getElementById('videoTranscript');
+      if (!transcriptBox || !currentTrack) return;
+
+      if (transcriptBox.hidden) {
+        transcriptBox.hidden = false;
+        transcriptBtn.setAttribute('aria-expanded', 'true');
+        transcriptBtn.textContent = 'Hide Subtitles Text';
+
+        const text = await loadTranscriptText(currentTrack);
+        if (!text) {
+          transcriptBox.innerHTML = '<p class="c-transcript-empty">No subtitles available for this video.</p>';
+          return;
+        }
+
+        transcriptBox.innerHTML = text
+          .split('\n')
+          .map(line => `<p>${line || '&nbsp;'}</p>`)
+          .join('');
+      } else {
+        transcriptBox.hidden = true;
+        transcriptBtn.setAttribute('aria-expanded', 'false');
+        transcriptBtn.textContent = 'See Subtitles Text';
+      }
+    };
   }
 }
 

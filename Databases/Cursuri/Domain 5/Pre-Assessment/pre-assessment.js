@@ -39,4 +39,4 @@ var QUESTIONS_D5_PRE = [
     correct: [2],
     explanation: "A syntax error causes a statement not to run. (Object Management Errors)"
   }
-];
+];2
