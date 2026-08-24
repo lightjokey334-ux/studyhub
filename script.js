@@ -12,9 +12,9 @@ let currentSubject = null;
 // Add "Python" / "Databases" here once those folders exist.
 const READY_SUBJECTS = ['Networking', 'Databases', 'Python'];
 
-// Câte Examene are fiecare materie — Python are 4, restul au 3. Citit și
-// de renderExamCards() mai jos, ca să genereze exact atâtea carduri.
-const EXAM_COUNT = { Networking: 3, Databases: 3, Python: 4 };
+// Câte Examene are fiecare materie. Citit și de renderExamCards() mai jos,
+// ca să genereze exact atâtea carduri.
+const EXAM_COUNT = { Networking: 3, Databases: 2, Python: 4 };
 
 // Maps an option key to the relative path (from index.html) that should open.
 function buildPath(subject, optionKey){
@@ -51,8 +51,7 @@ function showOptionsScreen(subject){
 }
 
 // Butoanele de Examen NU mai sunt fixe în index.html — se generează aici,
-// câte unul pentru fiecare Examen din EXAM_COUNT[subject] (Python are 4,
-// restul au 3). Cardul "Cursuri" rămâne static în HTML (identic peste
+// câte unul pentru fiecare Examen din EXAM_COUNT[subject]. Cardul "Cursuri" rămâne static în HTML (identic peste
 // tot), doar Examenele sunt per-materie.
 function renderExamCards(subject){
   const grid = document.getElementById('optionGrid');

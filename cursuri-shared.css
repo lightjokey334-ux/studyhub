@@ -188,6 +188,7 @@ video.c-player{
 .c-video-toolbar{
   margin-top: 14px;
   display: flex;
+  gap: 10px;
   justify-content: flex-start;
 }
 
@@ -208,6 +209,10 @@ video.c-player{
   border-color: var(--accent-dim);
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(62, 207, 142, 0.14);
+}
+.c-transcript-btn:disabled{
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 .c-video-transcript{

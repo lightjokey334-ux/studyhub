@@ -439,6 +439,24 @@ async function loadTranscriptText(trackEl) {
   }
 }
 
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  textArea.setAttribute('readonly', '');
+  textArea.style.position = 'fixed';
+  textArea.style.opacity = '0';
+  document.body.appendChild(textArea);
+  textArea.select();
+  const copied = document.execCommand('copy');
+  textArea.remove();
+  if (!copied) throw new Error('Clipboard copy failed');
+}
+
 function renderVideos(domain) {
   currentEngineInstance = null;
   currentChapter = { domainId: domain.id, sectionIdx: 0, chapterIdx: 0 };
@@ -452,6 +470,9 @@ function renderVideos(domain) {
         <div class="c-video-toolbar">
           <button class="c-transcript-btn" id="transcriptToggleBtn" type="button" aria-expanded="false">
             See Subtitles Text
+          </button>
+          <button class="c-transcript-btn" id="transcriptCopyBtn" type="button">
+            Copy Subtitles
           </button>
         </div>
         <div class="c-video-transcript" id="videoTranscript" tabindex="0" aria-label="Textul subtitrărilor" hidden></div>
@@ -573,6 +594,7 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
   const track = document.getElementById('videoSubtitles');
   const transcriptPanel = document.getElementById('videoTranscript');
   const transcriptBtn = document.getElementById('transcriptToggleBtn');
+  const transcriptCopyBtn = document.getElementById('transcriptCopyBtn');
 
   if (transcriptPanel) {
     transcriptPanel.hidden = true;
@@ -581,6 +603,11 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
   if (transcriptBtn) {
     transcriptBtn.textContent = 'See Subtitles Text';
     transcriptBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  if (transcriptCopyBtn) {
+    transcriptCopyBtn.textContent = 'Copy Subtitles';
+    transcriptCopyBtn.disabled = false;
   }
 
   if (chapter.src) {
@@ -630,6 +657,28 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
         transcriptBtn.setAttribute('aria-expanded', 'false');
         transcriptBtn.textContent = 'See Subtitles Text';
       }
+    };
+  }
+
+  if (transcriptCopyBtn) {
+    transcriptCopyBtn.onclick = async () => {
+      const currentTrack = document.getElementById('videoSubtitles');
+      if (!currentTrack) return;
+
+      const text = await loadTranscriptText(currentTrack);
+      if (!text) {
+        transcriptCopyBtn.textContent = 'No Subtitles';
+        setTimeout(() => { transcriptCopyBtn.textContent = 'Copy Subtitles'; }, 1800);
+        return;
+      }
+
+      try {
+        await copyTextToClipboard(text);
+        transcriptCopyBtn.textContent = 'Subtitles Copied';
+      } catch (err) {
+        transcriptCopyBtn.textContent = 'Clipboard Unavailable';
+      }
+      setTimeout(() => { transcriptCopyBtn.textContent = 'Copy Subtitles'; }, 1800);
     };
   }
 }
