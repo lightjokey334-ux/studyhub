@@ -8,6 +8,7 @@
 
 var EXAM_TITLE = "Networking — Examen 3";
 var EXAM_ID = "Networking_exam3"; // folosit pentru istoricul de progres
+var EXAM_RANDOMIZE = true; // pune true dacă vrei amestecarea întrebărilor pentru acest test
 
 var EXAM_QUESTIONS = [
   {
@@ -21,7 +22,8 @@ var EXAM_QUESTIONS = [
       "A server used to authenticate users",
       "A smart device that can be controlled with an app"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1186).png"
   },
   {
     id: "ex3_02",
@@ -34,7 +36,8 @@ var EXAM_QUESTIONS = [
       "ISDN",
       "No change is needed"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1187).png"
   },
   {
     id: "ex3_03",
@@ -49,7 +52,12 @@ var EXAM_QUESTIONS = [
       ["Crossover", "Rollover", "Straight-through"],
       ["Switch to computer", "Switch to router", "Switch to switch"]
     ],
-    correct: ["Crossover", "Switch to switch"]
+    correct: ["Crossover", "Switch to switch"],
+    sourceImage: [
+      { label: "Intrebare", file: "Screenshot (1188)q37.png" },
+      { label: "Raspunsul 1", file: "Screenshot (1189)q37 r1.png" },
+      { label: "Raspunsul 2", file: "Screenshot (1190)q37 r2.png" }
+    ]
   },
   {
     id: "ex3_04",
@@ -63,7 +71,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     options: [],
-    correct: [false, true, true]
+    correct: [false, true, true],
+    sourceImage: "Screenshot (1191).png"
   },
   {
     id: "ex3_05",
@@ -78,7 +87,12 @@ var EXAM_QUESTIONS = [
       ["Bus", "Mesh", "Star"],
       ["3", "4", "6"]
     ],
-    correct: ["Mesh", "6"]
+    correct: ["Mesh", "6"],
+    sourceImage: [
+      { label: "Întrebare", file: "screenshot (1141)q1.png" },
+      { label: "Raspusul 1", file: "screenshot (1142)q1 r1.png" },
+      { label: "Raspusul 2", file: "screenshot (1143)q1 r2.png" }
+    ]
   },
   {
     id: "ex3_06",
@@ -91,7 +105,8 @@ var EXAM_QUESTIONS = [
       "Connect all the Administrative Assistants to one dedicated switch.",
       "Reconfigure the entire company onto one large class B subnet."
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1144).png"
   },
   {
     id: "ex3_07",
@@ -104,7 +119,8 @@ var EXAM_QUESTIONS = [
       "Toner",
       "Multimeter"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1145).png"
   },
   {
     id: "ex3_08",
@@ -117,7 +133,8 @@ var EXAM_QUESTIONS = [
       "Half duplex",
       "Simplex"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1146).png"
   },
   {
     id: "ex3_09",
@@ -130,7 +147,8 @@ var EXAM_QUESTIONS = [
       "Protocols",
       "User accounts"
     ],
-    correct: [1, 2]
+    correct: [1, 2],
+    sourceImage: "Screenshot (1147).png"
   },
   {
     id: "ex3_10",
@@ -145,7 +163,12 @@ var EXAM_QUESTIONS = [
       ["Configure options by clicking the Advanced button", "Enable Obtain an IP address automatically", "Enable Obtain DNS server address automatically"],
       ["Automatically, through the DHCP server", "Manually", "Through the Advanced button"]
     ],
-    correct: ["Enable Obtain an IP address automatically", "Automatically, through the DHCP server"]
+    correct: ["Enable Obtain an IP address automatically", "Automatically, through the DHCP server"],
+    sourceImage: [
+      {label: "Intrebare", file: "Screenshot (1148)q6.png"},
+      {label: "Raspunsul 1", file: "Screenshot (1149)q6 r1.png"},
+      {label: "Raspunsul 2", file: "Screenshot (1150)q6 r2.png"}
+    ]
   },
   {
     id: "ex3_11",
@@ -158,7 +181,8 @@ var EXAM_QUESTIONS = [
       "Print server",
       "Web server"
     ],
-    correct: [0, 3]
+    correct: [0, 3],
+    sourceImage: "Screenshot (1151).png"
   },
   {
     id: "ex3_12",
@@ -171,7 +195,8 @@ var EXAM_QUESTIONS = [
       "support.microsoft.com",
       "www.gmetrix.com"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1152).png"
   },
   {
     id: "ex3_13",
@@ -184,7 +209,8 @@ var EXAM_QUESTIONS = [
       "127.0.0.1",
       "255.255.255.255"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1153).png"
   },
   {
     id: "ex3_14",
@@ -199,7 +225,12 @@ var EXAM_QUESTIONS = [
       ["Crossover", "Rollover", "Straight-through"],
       ["Crossover", "Rollover", "Straight-through"]
     ],
-    correct: ["Straight-through", "Crossover"]
+    correct: ["Straight-through", "Crossover"],
+    sourceImage: [
+      {label: "Intrebare", file: "Screenshot (1154)q10.png"},
+      {label: "Raspunsul 1", file: "Screenshot (1155)q10 r1.png"},
+      {label: "Raspunsul 2", file: "Screenshot (1156)q10 r2.png"}
+    ]
   },
   {
     id: "ex3_15",
@@ -214,7 +245,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     options: [],
-    correct: [true, true, true, true]
+    correct: [true, true, true, true],
+    sourceImage: "Screenshot (1157).png"
   },
   {
     id: "ex3_16",
@@ -231,7 +263,8 @@ var EXAM_QUESTIONS = [
       "Use connections over shared broadband",
       "Uses dedicated phone lines to connect to telco provider offices",
       "Uses two 64Kbps channels"
-    ]
+    ],
+    sourceImage: "Screenshot (1158).png"
   },
   {
     id: "ex3_17",
@@ -245,7 +278,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     options: [],
-    correct: [true, false, true]
+    correct: [true, false, true],
+    sourceImage: "Screenshot (1159).png"
   },
   {
     id: "ex3_18",
@@ -258,7 +292,8 @@ var EXAM_QUESTIONS = [
       "::127",
       "::87"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1160).png"
   },
   {
     id: "ex3_19",
@@ -274,7 +309,8 @@ var EXAM_QUESTIONS = [
       "Session",
       "Transport"
     ],
-    correct: [0, 4, 5]
+    correct: [0, 4, 5],
+    sourceImage: "Screenshot (1161).png"
   },
   {
     id: "ex3_20",
@@ -289,7 +325,12 @@ var EXAM_QUESTIONS = [
       ["Bus", "Mesh", "Star"],
       ["Ethernet", "FDDI", "Internet"]
     ],
-    correct: ["Star", "Ethernet"]
+    correct: ["Star", "Ethernet"],
+    sourceImage: [
+      {label: "Intrebare", file: "Screenshot (1162)q18.png"},
+      {label: "Raspunsul 1", file: "Screenshot (1163)q18 r1.png"},
+      {label: "Raspunsul 2", file: "Screenshot (1164)q18 r2.png"}
+    ]
   },
   {
     id: "ex3_21",
@@ -302,7 +343,8 @@ var EXAM_QUESTIONS = [
       "Question end-users on what they see is the problem",
       "Identify the number of users affected by the problem"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1166).png"
   },
   {
     id: "ex3_22",
@@ -315,7 +357,8 @@ var EXAM_QUESTIONS = [
       "Usually connects 10 or fewer devices",
       "Uses RADIUS to authenticate users"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1167).png"
   },
   {
     id: "ex3_23",
@@ -330,7 +373,12 @@ var EXAM_QUESTIONS = [
       ["The DNS server is incorrect", "The IP address should be on the 192.168.1.x network", "The subnet mask is incorrect", "There is no default gateway"],
       ["Configure a default gateway in the 10.1.3.x network", "Configure a default gateway in the 192.168.1.x network", "Configure a default gateway in the 255.255.255.x network", "Configure a static IP address"]
     ],
-    correct: ["The IP address should be on the 192.168.1.x network", "Configure a static IP address"]
+    correct: ["The IP address should be on the 192.168.1.x network", "Configure a static IP address"],
+    sourceImage: [
+      {label: "Intrebare", file: "Screenshot (1168)q19.png"},
+      {label: "Raspunsul 1", file: "Screenshot (1169)q19 r1.png"},
+      {label: "Raspunsul 2", file: "Screenshot (1170)q19 r2.png"}
+    ]
   },
   {
     id: "ex3_24",
@@ -345,7 +393,8 @@ var EXAM_QUESTIONS = [
       "192.168.1.5",
       "192.168.100.1"
     ],
-    correct: [2, 4]
+    correct: [2, 4],
+    sourceImage: "Screenshot (1171).png"
   },
   {
     id: "ex3_25",
@@ -364,7 +413,8 @@ var EXAM_QUESTIONS = [
       "Continuously pings a remote host until stopped",
       "Specifies the size of the packet to transmit",
       "Sends four packets to the local loopback address"
-    ]
+    ],
+    sourceImage: "Screenshot (1172).png"
   },
   {
     id: "ex3_26",
@@ -378,7 +428,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     options: [],
-    correct: [true, true, false]
+    correct: [true, true, false],
+    sourceImage: "Screenshot (1173).png"
   },
   {
     id: "ex3_27",
@@ -391,7 +442,8 @@ var EXAM_QUESTIONS = [
       "DSL",
       "T1"
     ],
-    correct: [2, 3]
+    correct: [2, 3],
+    sourceImage: "Screenshot (1174).png"
   },
   {
     id: "ex3_28",
@@ -404,7 +456,8 @@ var EXAM_QUESTIONS = [
       "Internet",
       "Application"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1175).png"
   },
   {
     id: "ex3_29",
@@ -417,7 +470,8 @@ var EXAM_QUESTIONS = [
       "Single-mode fiber",
       "Twisted-Pair"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1176).png"
   },
   {
     id: "ex3_30",
@@ -430,7 +484,8 @@ var EXAM_QUESTIONS = [
       "Teredo",
       "VPN"
     ],
-    correct: [1, 2]
+    correct: [1, 2],
+    sourceImage: "Screenshot (1177).png"
   },
   {
     id: "ex3_31",
@@ -451,7 +506,8 @@ var EXAM_QUESTIONS = [
       "Authenticates a user from an external network",
       "Allows or blocks data packets",
       "Uses a public network for private data communications"
-    ]
+    ],
+    sourceImage: "Screenshot (1178).png"
   },
   {
     id: "ex3_32",
@@ -464,7 +520,8 @@ var EXAM_QUESTIONS = [
       "Site-to-Host",
       "Site-to-Site"
     ],
-    correct: [3]
+    correct: [3],
+    sourceImage: "Screenshot (1179).png"
   },
   {
     id: "ex3_33",
@@ -477,7 +534,8 @@ var EXAM_QUESTIONS = [
       "One node or device contains multiple radio cards or modules",
       "The network has a single point of failure"
     ],
-    correct: [3]
+    correct: [3],
+    sourceImage: "Screenshot (1180).png"
   },
   {
     id: "ex3_34",
@@ -490,7 +548,8 @@ var EXAM_QUESTIONS = [
       "Ring",
       "Star"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1181).png"
   },
   {
     id: "ex3_35",
@@ -505,7 +564,8 @@ var EXAM_QUESTIONS = [
       "peer layer in other networked computer systems",
       "there is not communication"
     ],
-    correct: [2, 3, 4]
+    correct: [2, 3, 4],
+    sourceImage: "Screenshot (1182).png"
   },
   {
     id: "ex3_36",
@@ -518,7 +578,8 @@ var EXAM_QUESTIONS = [
       "ping",
       "ping -d"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1183).png"
   },
   {
     id: "ex3_37",
@@ -531,7 +592,8 @@ var EXAM_QUESTIONS = [
       "Remote Desktop Services",
       "Windows Deployment Services"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1184).png"
   },
   {
     id: "ex3_38",
@@ -544,7 +606,8 @@ var EXAM_QUESTIONS = [
       "10 Mbps",
       "100 Mbps"
     ],
-    correct: ["1 Gbps", "", "10 Mbps", "100 Mbps"]
+    correct: ["1 Gbps", "", "10 Mbps", "100 Mbps"],
+    sourceImage: "Screenshot (1185).png"
   },
   {
     id: "ex3_39",
@@ -557,7 +620,8 @@ var EXAM_QUESTIONS = [
       "VPN",
       "WAN"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1192).png"
   },
   {
     id: "ex3_40",
@@ -570,7 +634,8 @@ var EXAM_QUESTIONS = [
       "No change is needed",
       "Star"
     ],
-    correct: [3]
+    correct: [3],
+    sourceImage: "Screenshot (1193).png"
   },
   {
     id: "ex3_41",
@@ -583,7 +648,8 @@ var EXAM_QUESTIONS = [
       "Physical",
       "Transport"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1194).png"
   },
   {
     id: "ex3_42",
@@ -604,7 +670,8 @@ var EXAM_QUESTIONS = [
       "192.168.0.0 - 192.168.255.255",
       "75.0.0.0 - 75.255.255.255",
       "224.0.0.0 - 239.255.255.255"
-    ]
+    ],
+    sourceImage: "Screenshot (1195).png"
   },
   {
     id: "ex3_43",
@@ -618,7 +685,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     options: [],
-    correct: [true, false, true]
+    correct: [true, false, true],
+    sourceImage: "Screenshot (1196).png"
   },
   {
     id: "ex3_44",
@@ -635,7 +703,13 @@ var EXAM_QUESTIONS = [
       ["Extranet", "Internet", "Intranet"],
       ["Extranet", "Internet", "Intranet"]
     ],
-    correct: ["Internet", "Intranet", "Extranet"]
+    correct: ["Internet", "Intranet", "Extranet"],
+    sourceImage: [
+      { label: "Intrebare", file: "Screenshot (1197)q44.png" },
+      { label: "Raspunsul 1", file: "Screenshot (1198)q44 r1.png" },
+      { label: "Raspunsul 2", file: "Screenshot (1199)q44 r2.png" },
+      { label: "Raspunsul 3", file: "Screenshot (1200)q44 r3.png" }
+    ]
   },
   {
     id: "ex3_45",
@@ -649,7 +723,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     options: [],
-    correct: [true, false, true]
+    correct: [true, false, true],
+    sourceImage: "Screenshot (1201).png"
   },
   {
     id: "ex3_46",
@@ -662,6 +737,7 @@ var EXAM_QUESTIONS = [
       "Infrastructure",
       "Peer-to-peer"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1202).png"
   }
 ];

@@ -22,7 +22,7 @@ function buildPath(subject, optionKey){
   const qs = `shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}&showSourceImageBtn=${settings.showSourceImageBtn}`;
 
   if(optionKey === 'cursuri'){
-    return `${subject}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&${qs}`;
+    return `${subject}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&transcriptGuideLine=${settings.transcriptGuideLine}&transcriptSentenceFlow=${settings.transcriptSentenceFlow}&${qs}`;
   }
   const examMatch = optionKey.match(/^examen(\d+)$/);
   if(examMatch){

@@ -12,7 +12,8 @@ var EXAM_QUESTIONS = [
       "Call the customer to let the customer know you are running behind schedule",
       "Offer the customer a discount on services"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1025).png"
   },
   {
     id: "ex1_02",
@@ -25,7 +26,8 @@ var EXAM_QUESTIONS = [
       "Route management becomes more effective as the network expands.",
       "Routes are calculated based on the number of hops required."
     ],
-    correct: [0, 3]
+    correct: [0, 3],
+    sourceImage: "Screenshot (1026).png"
   },
   {
     id: "ex1_03",
@@ -39,7 +41,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, true, false],
-    options: []
+    options: [],
+    sourceImage: "Screenshot (1027).png"
   },
   {
     id: "ex1_04",
@@ -52,25 +55,27 @@ var EXAM_QUESTIONS = [
       "255",
       "No change is needed"
     ],
-    correct: [3]
+    correct: [3],
+    sourceImage: "Screenshot (1028).png"
   },
   {
-"id": "ex1_05",
-"type": "match",
-"question": "Match each layer in the OSI Model with the encapsulation state of data.",
-"image": null,
-"pairs": ["Bit", "Frame", "Packet", "Segment"],
-"options": [
-"Application Layer",
-"Session Layer",
-"Physical Layer",
-"Presentation Layer",
-"Data Link Layer",
-"Transport Layer",
-"Network Layer"
-],
-"correct": ["Physical Layer", "Data Link Layer", "Network Layer", "Transport Layer"]
-},
+    id: "ex1_05",
+    type: "match",
+    question: "Match each layer in the OSI Model with the encapsulation state of data.",
+    image: null,
+    pairs: ["Bit", "Frame", "Packet", "Segment"],
+    options: [
+      "Application Layer",
+      "Session Layer",
+      "Physical Layer",
+      "Presentation Layer",
+      "Data Link Layer",
+      "Transport Layer",
+      "Network Layer"
+    ],
+    correct: ["Physical Layer", "Data Link Layer", "Network Layer", "Transport Layer"],
+    sourceImage: "Screenshot (1029).png"
+  },
   {
     id: "ex1_06",
     type: "single",
@@ -82,7 +87,8 @@ var EXAM_QUESTIONS = [
       "Ring",
       "Star"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1030).png"
   },
   {
     id: "ex1_07",
@@ -95,7 +101,8 @@ var EXAM_QUESTIONS = [
       "L2TP",
       "PPTP"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1031).png"
   },
   {
     id: "ex1_08",
@@ -108,7 +115,8 @@ var EXAM_QUESTIONS = [
       "WPA",
       "WPA2"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1032).png"
   },
   {
     id: "ex1_09",
@@ -121,7 +129,8 @@ var EXAM_QUESTIONS = [
       "Namespace",
       "Root"
     ],
-    correct: [3]
+    correct: [3],
+    sourceImage: "Screenshot (1033).png"
   },
   {
     id: "ex1_10",
@@ -134,7 +143,8 @@ var EXAM_QUESTIONS = [
       "LMHOSTS",
       "WINS"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1034).png"
   },
   {
     id: "ex1_11",
@@ -147,7 +157,8 @@ var EXAM_QUESTIONS = [
       "802.3",
       "802.5"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1035).png"
   },
   {
     id: "ex1_12",
@@ -160,7 +171,8 @@ var EXAM_QUESTIONS = [
       "QoS",
       "Static routing"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1036).png"
   },
   {
     id: "ex1_13",
@@ -173,7 +185,8 @@ var EXAM_QUESTIONS = [
       "636",
       "53"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1037).png"
   },
   {
     id: "ex1_14",
@@ -186,7 +199,8 @@ var EXAM_QUESTIONS = [
       "It is self-healing and can still operate when one node breaks down",
       "The protocols used are very lightweight with little overhead"
     ],
-    correct: [1, 2]
+    correct: [1, 2],
+    sourceImage: "Screenshot (1038).png"
   },
   {
     id: "ex1_15",
@@ -200,20 +214,26 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, true, false],
-    options: []
+    options: [],
+    sourceImage: "Screenshot (1039).png"
   },
   {
-"id": "ex1_16",
-"type": "dropdown",
-"question": "A user in your company cannot connect to the Internet. You execute the ipconfig command on the user's computer and see the results displayed in the following image:",
-"image": "image(35).png",
-"statements": ["The problem is", "The solution is"],
-"options": [
-["DHCP should be enabled", "The default gateway is a broadcast address", "The default gateway is a network address", "The subnet mask is incorrect"],
-["DHCP needs to be enabled", "The default gateway address needs to be changed", "The subnet mask needs to be changed"]
-],
-"correct": ["The default gateway is a broadcast address", "The default gateway address needs to be changed"]
-},
+    id: "ex1_16",
+    type: "dropdown",
+    question: "A user in your company cannot connect to the Internet. You execute the ipconfig command on the user's computer and see the results displayed in the following image:",
+    image: "image(35).png",
+    statements: ["The problem is", "The solution is"],
+    options: [
+      ["DHCP should be enabled", "The default gateway is a broadcast address", "The default gateway is a network address", "The subnet mask is incorrect"],
+      ["DHCP needs to be enabled", "The default gateway address needs to be changed", "The subnet mask needs to be changed"]
+    ],
+    correct: ["The default gateway is a broadcast address", "The default gateway address needs to be changed"],
+    sourceImage: [
+      { label: "Intrebare", file: "Screenshot (1040)q16.png" },
+      { label: "Raspunsul 1", file: "Screenshot (1041)q16 r1.png" },
+      { label: "Raspunsul 2", file: "Screenshot (1042)q16 r2.png" }
+    ]
+  },
   {
     id: "ex1_17",
     type: "dropdown",
@@ -227,7 +247,12 @@ var EXAM_QUESTIONS = [
       ["heat sensor", "motion detector", "an app"],
       ["a firewall", "an IP address", "an account"]
     ],
-    correct: ["an app", "an IP address"]
+    correct: ["an app", "an IP address"],
+    sourceImage: [
+      { label: "Intrebare", file: "Screenshot (1043)q17.png" },
+      { label: "Raspunsul 1", file: "Screenshot (1044)q17 r1.png" },
+      { label: "Raspunsul 2", file: "Screenshot (1045)q17 r2.png" }
+    ]
   },
   {
     id: "ex1_18",
@@ -241,7 +266,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, true, false],
-    options: []
+    options: [],
+    sourceImage: "Screenshot (1046).png"
   },
   {
     id: "ex1_19",
@@ -254,7 +280,8 @@ var EXAM_QUESTIONS = [
       "802.11g",
       "802.11n"
     ],
-    correct: [0, 3]
+    correct: [0, 3],
+    sourceImage: "Screenshot (1047).png"
   },
   {
     id: "ex1_20",
@@ -267,7 +294,8 @@ var EXAM_QUESTIONS = [
       "44.736 Mbps",
       "No change is needed"
     ],
-    correct: [3]
+    correct: [3],
+    sourceImage: "Screenshot (1048).png"
   },
   {
     id: "ex1_21",
@@ -280,7 +308,8 @@ var EXAM_QUESTIONS = [
       "OTDR",
       "Toner"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1049).png"
   },
   {
     id: "ex1_22",
@@ -293,17 +322,19 @@ var EXAM_QUESTIONS = [
       "OSPF",
       "RIP"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1050).png"
   },
   {
-"id": "ex1_23",
-"type": "match",
-"question": "Match each Maximum Data Transfer Rate to a WAN Technology.",
-"image": null,
-"pairs": ["128 Kbps", "56 Kbps", "1.536 Mbps", "2.048 Mbps"],
-"options": ["Dial-up", "E1", "ISDN", "T1"],
-"correct": ["ISDN", "Dial-up", "T1", "E1"]
-},
+    id: "ex1_23",
+    type: "match",
+    question: "Match each Maximum Data Transfer Rate to a WAN Technology.",
+    image: null,
+    pairs: ["128 Kbps", "56 Kbps", "1.536 Mbps", "2.048 Mbps"],
+    options: ["Dial-up", "E1", "ISDN", "T1"],
+    correct: ["ISDN", "Dial-up", "T1", "E1"],
+    sourceImage: "Screenshot (1051).png"
+  },
   {
     id: "ex1_24",
     type: "single",
@@ -315,7 +346,8 @@ var EXAM_QUESTIONS = [
       "Type III",
       "Type IV"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1052).png"
   },
   {
     id: "ex1_25",
@@ -329,7 +361,8 @@ var EXAM_QUESTIONS = [
       "Protocols",
       "User accounts"
     ],
-    correct: [1, 2]
+    correct: [1, 2],
+    sourceImage: "Screenshot (1053).png"
   },
   {
     id: "ex1_26",
@@ -343,27 +376,29 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, true, true],
-    options: []
+    options: [],
+    sourceImage: "Screenshot (1054).png"
   },
   {
-"id": "ex1_27",
-"type": "match",
-"question": "Match each port speed to its definition. Each port speed may be used once, more than once, or not at all.",
-"image": null,
-"pairs": ["1000 Kbps", "1 Gbps", "1 Kbps", "10 Mbps"],
-"options": [
-"1 Mbps",
-"1,000 bits per second",
-"1,000 Megabits per second",
-"10,000,000 bits per second"
-],
-"correct": [
-"1 Mbps",
-"1,000 Megabits per second",
-"1,000 bits per second",
-"10,000,000 bits per second"
-]
-},
+    id: "ex1_27",
+    type: "match",
+    question: "Match each port speed to its definition. Each port speed may be used once, more than once, or not at all.",
+    image: null,
+    pairs: ["1000 Kbps", "1 Gbps", "1 Kbps", "10 Mbps"],
+    options: [
+      "1 Mbps",
+      "1,000 bits per second",
+      "1,000 Megabits per second",
+      "10,000,000 bits per second"
+    ],
+    correct: [
+      "1 Mbps",
+      "1,000 Megabits per second",
+      "1,000 bits per second",
+      "10,000,000 bits per second"
+    ],
+    sourceImage: "Screenshot (1055).png"
+  },
   {
     id: "ex1_28",
     type: "single",
@@ -375,7 +410,8 @@ var EXAM_QUESTIONS = [
       "Class C",
       "Class D"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1056).png"
   },
   {
     id: "ex1_29",
@@ -389,7 +425,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, true, false],
-    options: []
+    options: [],
+    sourceImage: "Screenshot (1057).png"
   },
   {
     id: "ex1_30",
@@ -402,17 +439,19 @@ var EXAM_QUESTIONS = [
       "L2TP",
       "PPTP"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1058).png"
   },
   {
-"id": "ex1_31",
-"type": "match",
-"question": "Using drag and drop, match each port with its port number.",
-"image": null,
-"pairs": ["443", "21", "25", "53", "22"],
-"options": ["FTP", "SSH", "SMTP", "HTTPS", "DNS"],
-"correct": ["HTTPS", "FTP", "SMTP", "DNS", "SSH"]
-},
+    id: "ex1_31",
+    type: "match",
+    question: "Using drag and drop, match each port with its port number.",
+    image: null,
+    pairs: ["443", "21", "25", "53", "22"],
+    options: ["FTP", "SSH", "SMTP", "HTTPS", "DNS"],
+    correct: ["HTTPS", "FTP", "SMTP", "DNS", "SSH"],
+    sourceImage: "Screenshot (1059).png"
+  },
   {
     id: "ex1_32",
     type: "single",
@@ -424,7 +463,8 @@ var EXAM_QUESTIONS = [
       "STP",
       "UTP"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1060).png"
   },
   {
     id: "ex1_33",
@@ -438,7 +478,8 @@ var EXAM_QUESTIONS = [
       "The security level for Restricted sites can be changed.",
       "Windows Firewall is the application you must use to add or remove websites to security zones."
     ],
-    correct: [1, 3]
+    correct: [1, 3],
+    sourceImage: "Screenshot (1061).png"
   },
   {
     id: "ex1_34",
@@ -451,7 +492,8 @@ var EXAM_QUESTIONS = [
       "255.255.255.0",
       "255.255.255.255"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1062).png"
   },
   {
     id: "ex1_35",
@@ -464,32 +506,43 @@ var EXAM_QUESTIONS = [
       "ipconfig",
       "ipconfig /all"
     ],
-    correct: [3]
+    correct: [3],
+    sourceImage: "Screenshot (1063).png"
   },
   {
-"id": "ex1_36",
-"type": "dropdown",
-"question": "The corporation where you work has asked you to telecommute from home two days per week. The access you've been provided to your company network looks similar to the following image:",
-"image": "image(36).png",
-"statements": ["The access you will use to securely connect your home computer to your company intranet is a", "Which type of VPN is in use in this example?"],
-"options": [
-["GRE", "IPsec", "VPN"],
-["Host-to-Host", "Host-to-Site", "Site-to-Site"]
-],
-"correct": ["VPN", "Host-to-Site"]
-},
+    id: "ex1_36",
+    type: "dropdown",
+    question: "The corporation where you work has asked you to telecommute from home two days per week. The access you've been provided to your company network looks similar to the following image:",
+    image: "image(36).png",
+    statements: ["The access you will use to securely connect your home computer to your company intranet is a", "Which type of VPN is in use in this example?"],
+    options: [
+      ["GRE", "IPsec", "VPN"],
+      ["Host-to-Host", "Host-to-Site", "Site-to-Site"]
+    ],
+    correct: ["VPN", "Host-to-Site"],
+    sourceImage: [
+      { label: "Intrebare", file: "Screenshot (1064)q36.png" },
+      { label: "Raspunsul 1", file: "Screenshot (1065)q36 r1.png" },
+      { label: "Raspunsul 2", file: "Screenshot (1066)q36 r2.png" }
+    ]
+  },
   {
-"id": "ex1_37",
-"type": "dropdown",
-"question": "Your small business has been growing and so has the number of computers on your network. Your employees are starting to complain that their computers are responding slowly whenever they access network resources. The layout of your LAN is similar to the following image:",
-"image": "image(37).png",
-"statements": ["The physical topology of this network is which kind of topology?", "Which device change on the network would greatly improve network speed?"],
-"options": [
-["Bus", "Mesh", "Star"],
-["Replace the hub with a router", "Replace the hub with a switch", "Replace twisted-pair cables with fiber-optic cables"]
-],
-"correct": ["Star", "Replace the hub with a switch"]
-},
+    id: "ex1_37",
+    type: "dropdown",
+    question: "Your small business has been growing and so has the number of computers on your network. Your employees are starting to complain that their computers are responding slowly whenever they access network resources. The layout of your LAN is similar to the following image:",
+    image: "image(37).png",
+    statements: ["The physical topology of this network is which kind of topology?", "Which device change on the network would greatly improve network speed?"],
+    options: [
+      ["Bus", "Mesh", "Star"],
+      ["Replace the hub with a router", "Replace the hub with a switch", "Replace twisted-pair cables with fiber-optic cables"]
+    ],
+    correct: ["Star", "Replace the hub with a switch"],
+    sourceImage: [
+      { label: "Intrebare", file: "Screenshot (1067)q37.png" },
+      { label: "Raspunsul 1", file: "Screenshot (1068)q37 r1.png" },
+      { label: "Raspunsul 2", file: "Screenshot (1069)q37 r2.png" }
+    ]
+  },
   {
     id: "ex1_38",
     type: "single",
@@ -501,7 +554,8 @@ var EXAM_QUESTIONS = [
       "Wireless network adapter",
       "Wireless router"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1070).png"
   },
   {
     id: "ex1_39",
@@ -514,7 +568,8 @@ var EXAM_QUESTIONS = [
       "172.168.0.1",
       "192.168.1.0"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1071).png"
   },
   {
     id: "ex1_40",
@@ -529,7 +584,12 @@ var EXAM_QUESTIONS = [
       ["A", "CNAME", "PTR"],
       ["A", "CNAME", "PTR"]
     ],
-    correct: ["CNAME", "PTR"]
+    correct: ["CNAME", "PTR"],
+    sourceImage: [
+      { label: "Intrebare", file: "Screenshot (1072)q40.png" },
+      { label: "Raspunsul 1", file: "Screenshot (1073)q40 r1.png" },
+      { label: "Raspunsul 2", file: "Screenshot (1074)q40 r2.png" }
+    ]
   },
   {
     id: "ex1_41",
@@ -542,7 +602,8 @@ var EXAM_QUESTIONS = [
       "Multicast",
       "Singlecast"
     ],
-    correct: [2]
+    correct: [2],
+    sourceImage: "Screenshot (1075).png"
   },
   {
     id: "ex1_42",
@@ -556,7 +617,8 @@ var EXAM_QUESTIONS = [
       "ipconfig",
       "ping"
     ],
-    correct: [1, 2, 4]
+    correct: [1, 2, 4],
+    sourceImage: "Screenshot (1076).png"
   },
   {
     id: "ex1_43",
@@ -569,7 +631,8 @@ var EXAM_QUESTIONS = [
       "500 meters",
       "No change is needed"
     ],
-    correct: [0]
+    correct: [0],
+    sourceImage: "Screenshot (1077).png"
   },
   {
     id: "ex1_44",
@@ -584,7 +647,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, false, true, true],
-    options: []
+    options: [],
+    sourceImage: "Screenshot (1078).png"
   },
   {
     id: "ex1_45",
@@ -597,7 +661,8 @@ var EXAM_QUESTIONS = [
       "WPA",
       "WPA2"
     ],
-    correct: [3]
+    correct: [3],
+    sourceImage: "Screenshot (1079).png"
   },
   {
     id: "ex1_46",
@@ -609,6 +674,7 @@ var EXAM_QUESTIONS = [
       "2001:4860:0:2001:0:0:68",
       "21:486::21::68"
     ],
-    correct: [1]
+    correct: [1],
+    sourceImage: "Screenshot (1080).png"
   }
 ];

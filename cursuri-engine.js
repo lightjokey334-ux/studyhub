@@ -180,6 +180,33 @@ function resolveAutoplayNextVideoDefault() {
 
 let autoplayNextVideo = resolveAutoplayNextVideoDefault() !== 'off';
 
+const TRANSCRIPT_GUIDE_LINE_KEY = 'studyhub_cursuri_transcript_guide_line_v1';
+
+function resolveTranscriptGuideLineDefault() {
+  const fromUrl = new URLSearchParams(window.location.search).get('transcriptGuideLine');
+  if (fromUrl === 'on' || fromUrl === 'off') {
+    try { localStorage.setItem(TRANSCRIPT_GUIDE_LINE_KEY, fromUrl); } catch (e) { /* ignoră */ }
+    return fromUrl;
+  }
+  try {
+    const cached = localStorage.getItem(TRANSCRIPT_GUIDE_LINE_KEY);
+    if (cached === 'on' || cached === 'off') return cached;
+  } catch (e) { /* ignoră */ }
+  return 'on';
+}
+
+let showTranscriptGuideLine = resolveTranscriptGuideLineDefault() !== 'off';
+
+function resolveTranscriptSentenceFlowDefault() {
+  const fromUrl = new URLSearchParams(window.location.search).get('transcriptSentenceFlow');
+  if (fromUrl === 'on' || fromUrl === 'off') {
+    return fromUrl;
+  }
+  return 'on';
+}
+
+let transcriptSentenceFlowDefault = resolveTranscriptSentenceFlowDefault() !== 'off';
+
 // Referință către testul curent (Pre/Post-Assessment) activ, dacă există —
 // null când ești pe Videos. Folosită ca să aplicăm live schimbări din
 // Setări (ex: panoul de comenzi rapide) fără să reîncărcăm pagina și să
@@ -196,6 +223,25 @@ window.addEventListener('message', (e) => {
   if (msg.key === 'autoplayNextVideo') {
     try { localStorage.setItem(AUTOPLAY_NEXT_VIDEO_KEY, msg.value); } catch (err) { /* ignoră */ }
     autoplayNextVideo = msg.value !== 'off';
+  }
+  if (msg.key === 'transcriptGuideLine') {
+    try { localStorage.setItem(TRANSCRIPT_GUIDE_LINE_KEY, msg.value); } catch (err) { /* ignoră */ }
+    showTranscriptGuideLine = msg.value !== 'off';
+    const transcriptPanel = document.getElementById('videoTranscript');
+    if (transcriptPanel) transcriptPanel.classList.toggle('c-no-transcript-guide', !showTranscriptGuideLine);
+  }
+  if (msg.key === 'transcriptSentenceFlow') {
+    transcriptSentenceFlowDefault = msg.value !== 'off';
+    const transcriptOrderBtn = document.getElementById('transcriptOrderBtn');
+    const transcriptContent = document.getElementById('transcriptContent');
+    if (transcriptOrderBtn) {
+      transcriptOrderBtn.setAttribute('aria-pressed', String(transcriptSentenceFlowDefault));
+      transcriptOrderBtn.setAttribute('aria-label', transcriptSentenceFlowDefault ? 'Show subtitles line by line' : 'Group subtitles into sentences');
+      transcriptOrderBtn.setAttribute('title', transcriptSentenceFlowDefault ? 'Show subtitles line by line' : 'Group subtitles into sentences');
+    }
+    if (transcriptContent?.dataset.rawText) {
+      transcriptContent.innerHTML = renderTranscriptText(transcriptContent.dataset.rawText, transcriptSentenceFlowDefault);
+    }
   }
 });
 
@@ -303,15 +349,15 @@ function selectItem(flatIdx) {
 }
 
 // ---- Urmărește timpul petrecut pe fiecare tab (Videos/Pre/Post), per domeniu ----
-// Pauzează automat cât timp fila e ascunsă (ai schimbat tab-ul din browser)
-// sau e deschis un modal peste pagină (Setări/Progres) — vezi
-// onActivityPause/onActivityResume din progress-bridge.js — ca să nu se
-// adune timp "irosit" care nu are legătură cu învățatul.
+// Pentru Videos, timpul continuă cât pagina rămâne deschisă, chiar dacă
+// lucrezi temporar în alt tab sau în altă aplicație. Testele își păstrează
+// cronometrul activ separat, în progress-bridge.js.
 let _currentSectionKey = null;
 let _currentSectionLabel = null;
 let _sectionStartTime = null;
 let _sectionPausedAccumMs = 0;
 let _sectionPausedAt = null;
+let _sectionCountsInBackground = false;
 
 // "Checkpoint": scrie în localStorage timpul acumulat PÂNĂ ACUM pe secțiunea
 // curentă, apoi resetează cronometrul de la acest moment încolo (fără să
@@ -337,15 +383,18 @@ function trackSectionTime(newKey, newLabel) {
   _sectionStartTime = newKey ? Date.now() : null;
   _sectionPausedAccumMs = 0;
   _sectionPausedAt = null;
+  _sectionCountsInBackground = Boolean(newKey && newKey.endsWith('_videos'));
 }
 
 if (typeof onActivityPause === 'function') {
   onActivityPause(() => {
+    if (_sectionCountsInBackground) return;
     if (_sectionStartTime != null && _sectionPausedAt == null) _sectionPausedAt = Date.now();
   });
 }
 if (typeof onActivityResume === 'function') {
   onActivityResume(() => {
+    if (_sectionCountsInBackground) return;
     if (_sectionPausedAt != null) {
       _sectionPausedAccumMs += Date.now() - _sectionPausedAt;
       _sectionPausedAt = null;
@@ -422,6 +471,27 @@ function convertVttToTxt(vttContent) {
   return result.join('\n');
 }
 
+function renderTranscriptText(text, groupSentences) {
+  const lines = text.split('\n').map(line => line.trim()).filter(Boolean);
+  const paragraphs = [];
+
+  if (groupSentences) {
+    let sentence = '';
+    lines.forEach(line => {
+      sentence = `${sentence} ${line}`.trim();
+      if (/[.!?](?:["')\]]+)?$/.test(line)) {
+        paragraphs.push(sentence);
+        sentence = '';
+      }
+    });
+    if (sentence) paragraphs.push(sentence);
+  } else {
+    paragraphs.push(...lines);
+  }
+
+  return paragraphs.map(line => `<p>${line}</p>`).join('');
+}
+
 async function loadTranscriptText(trackEl) {
   if (!trackEl || !trackEl.src) {
     return '';
@@ -475,7 +545,11 @@ function renderVideos(domain) {
             Copy Subtitles
           </button>
         </div>
-        <div class="c-video-transcript" id="videoTranscript" tabindex="0" aria-label="Textul subtitrărilor" hidden></div>
+        <div class="c-video-transcript${showTranscriptGuideLine ? '' : ' c-no-transcript-guide'}" id="videoTranscript" tabindex="0" aria-label="Textul subtitrărilor" hidden>
+          <button class="c-transcript-reading-btn" id="transcriptReadingBtn" type="button" aria-label="Open reading mode" aria-pressed="false" title="Open reading mode">⛶</button>
+          <button class="c-transcript-order-btn" id="transcriptOrderBtn" type="button" aria-label="Group subtitles into sentences" aria-pressed="false" title="Group subtitles into sentences">≋</button>
+          <div class="c-transcript-content" id="transcriptContent"></div>
+        </div>
         <div class="c-video-empty-note" id="videoNote"></div>
       </div>
       <div class="c-chapters" id="chapterList"></div>
@@ -540,6 +614,9 @@ function renderVideos(domain) {
   // schimbarea capitolului (doar loadChapter() îi schimbă src-ul).
   const player = document.getElementById('videoPlayer');
   const transcriptPanel = document.getElementById('videoTranscript');
+  const transcriptReadingBtn = document.getElementById('transcriptReadingBtn');
+  const transcriptOrderBtn = document.getElementById('transcriptOrderBtn');
+  const transcriptContent = document.getElementById('transcriptContent');
   transcriptPanel.addEventListener('keydown', event => {
     if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'a') {
       event.preventDefault();
@@ -549,6 +626,26 @@ function renderVideos(domain) {
       selection.removeAllRanges();
       selection.addRange(range);
     }
+  });
+  transcriptReadingBtn.addEventListener('click', () => {
+    const readingMode = transcriptPanel.classList.toggle('c-reading-mode');
+    transcriptContent.scrollTop = 0;
+    requestAnimationFrame(() => { transcriptContent.scrollTop = 0; });
+    transcriptReadingBtn.setAttribute('aria-pressed', String(readingMode));
+    transcriptReadingBtn.setAttribute('aria-label', readingMode ? 'Close reading mode' : 'Open reading mode');
+    transcriptReadingBtn.setAttribute('title', readingMode ? 'Close reading mode' : 'Open reading mode');
+  });
+  transcriptOrderBtn.addEventListener('click', () => {
+    const grouped = transcriptOrderBtn.getAttribute('aria-pressed') !== 'true';
+    transcriptOrderBtn.setAttribute('aria-pressed', String(grouped));
+    transcriptOrderBtn.setAttribute('title', grouped ? 'Show subtitles line by line' : 'Group subtitles into sentences');
+    transcriptOrderBtn.setAttribute('aria-label', grouped ? 'Show subtitles line by line' : 'Group subtitles into sentences');
+    const rawText = transcriptContent.dataset.rawText;
+    if (rawText) transcriptContent.innerHTML = renderTranscriptText(rawText, grouped);
+  });
+  document.addEventListener('click', event => {
+    if (!transcriptPanel.classList.contains('c-reading-mode') || event.target.closest('#transcriptReadingBtn, #transcriptOrderBtn')) return;
+    transcriptReadingBtn.click();
   });
   player.addEventListener('ended', () => {
     markChapterWatched(domain, currentChapter.sectionIdx, currentChapter.chapterIdx);
@@ -593,12 +690,29 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
   const note = document.getElementById('videoNote');
   const track = document.getElementById('videoSubtitles');
   const transcriptPanel = document.getElementById('videoTranscript');
+  const transcriptContent = document.getElementById('transcriptContent');
   const transcriptBtn = document.getElementById('transcriptToggleBtn');
+  const transcriptReadingBtn = document.getElementById('transcriptReadingBtn');
+  const transcriptOrderBtn = document.getElementById('transcriptOrderBtn');
   const transcriptCopyBtn = document.getElementById('transcriptCopyBtn');
 
   if (transcriptPanel) {
     transcriptPanel.hidden = true;
-    transcriptPanel.innerHTML = '';
+    transcriptPanel.classList.remove('c-reading-mode');
+  }
+  if (transcriptContent) {
+    transcriptContent.innerHTML = '';
+    delete transcriptContent.dataset.rawText;
+  }
+  if (transcriptReadingBtn) {
+    transcriptReadingBtn.setAttribute('aria-pressed', 'false');
+    transcriptReadingBtn.setAttribute('aria-label', 'Open reading mode');
+    transcriptReadingBtn.setAttribute('title', 'Open reading mode');
+  }
+  if (transcriptOrderBtn) {
+    transcriptOrderBtn.setAttribute('aria-pressed', String(transcriptSentenceFlowDefault));
+    transcriptOrderBtn.setAttribute('aria-label', transcriptSentenceFlowDefault ? 'Show subtitles line by line' : 'Group subtitles into sentences');
+    transcriptOrderBtn.setAttribute('title', transcriptSentenceFlowDefault ? 'Show subtitles line by line' : 'Group subtitles into sentences');
   }
   if (transcriptBtn) {
     transcriptBtn.textContent = 'See Subtitles Text';
@@ -635,7 +749,8 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
     transcriptBtn.onclick = async () => {
       const currentTrack = document.getElementById('videoSubtitles');
       const transcriptBox = document.getElementById('videoTranscript');
-      if (!transcriptBox || !currentTrack) return;
+      const transcriptContent = document.getElementById('transcriptContent');
+      if (!transcriptBox || !transcriptContent || !currentTrack) return;
 
       if (transcriptBox.hidden) {
         transcriptBox.hidden = false;
@@ -644,14 +759,13 @@ function loadChapter(domain, sectionIdx, chapterIdx) {
 
         const text = await loadTranscriptText(currentTrack);
         if (!text) {
-          transcriptBox.innerHTML = '<p class="c-transcript-empty">No subtitles available for this video.</p>';
+          transcriptContent.innerHTML = '<p class="c-transcript-empty">No subtitles available for this video.</p>';
           return;
         }
 
-        transcriptBox.innerHTML = text
-          .split('\n')
-          .map(line => `<p>${line || '&nbsp;'}</p>`)
-          .join('');
+        transcriptContent.dataset.rawText = text;
+        const grouped = transcriptOrderBtn.getAttribute('aria-pressed') === 'true';
+        transcriptContent.innerHTML = renderTranscriptText(text, grouped);
       } else {
         transcriptBox.hidden = true;
         transcriptBtn.setAttribute('aria-expanded', 'false');
