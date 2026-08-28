@@ -447,6 +447,14 @@ video.c-player{
 /* assessment mode */
 .c-assessment-wrap{ max-width: 1300px; margin: 0 auto; }
 
+@media (min-width: 901px){
+  .c-video-transcript{ overflow: visible; }
+  .c-video-transcript:not(.c-reading-mode) .c-transcript-reading-btn,
+  .c-video-transcript:not(.c-reading-mode) .c-transcript-order-btn{
+    top: -54px;
+  }
+}
+
 /* =======================================================================
    RESPONSIVE — mobil / tabletă
    ======================================================================= */
