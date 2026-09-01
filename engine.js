@@ -44,7 +44,7 @@ class QuestionEngine {
     this._pausedAccumMs = 0; // timp total petrecut cu fila ascunsă / un modal deschis peste test
     this._pausedAt = null; // momentul la care a început pauza curentă (null = nu e în pauză acum)
     this.showShortcuts = opts.showShortcuts !== false; // implicit: da
-    this.keyMode = 'navigate'; // 'navigate' | 'answer' — vezi butonul rotund din topbar
+    this.keyMode = opts.keyMode === 'answer' ? 'answer' : 'navigate'; // 'navigate' | 'answer' — vezi butonul rotund din topbar
     this._answerCursorIdx = 0; // poziția evidențiată în modul "Răspuns" (multi)
     this.autoSaveAnswers = opts.autoSaveAnswers === true; // setarea din Setări -> Teste și examene
     this.showSourceImageBtn = opts.showSourceImageBtn === true; // setarea din Setări -> Teste și examene ("Buton imagine sursă")
@@ -84,7 +84,7 @@ class QuestionEngine {
       this.current = Math.min(Math.max(restored.current || 0, 0), Math.max(this.questions.length - 1, 0));
       this.mode = restored.mode === 'learn' ? 'learn' : 'test';
       this._learnRevealed = new Set(restored.learnRevealed || []);
-      this.startTest();
+      this.renderModePicker();
     } else {
       this.renderModePicker();
     }
@@ -169,12 +169,215 @@ class QuestionEngine {
   // fiecare întrebare răspunsă, fără să blocheze editarea). Apare doar la
   // pornirea unei sesiuni noi — dacă exista deja o sesiune auto-salvată,
   // se sare peste acest ecran (vezi constructor).
+  loadAttemptHistory() {
+    if (!this.testId) return [];
+    try {
+      const raw = localStorage.getItem('studyhub_test_history_v1');
+      if (!raw) return [];
+      const history = JSON.parse(raw) || {};
+      const attempts = (history[this.testId] && Array.isArray(history[this.testId].attempts)) ? history[this.testId].attempts : [];
+      return attempts.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+    } catch (e) {
+      return [];
+    }
+  }
+
+  resumeSavedAttempt() {
+    const restored = this.autoSaveAnswers ? this.loadAutoSave() : null;
+    if (!restored) return;
+    this.questions = restored.questions;
+    this.userAnswers = restored.userAnswers || {};
+    this.marked = new Set(restored.marked || []);
+    this.current = Math.min(Math.max(restored.current || 0, 0), Math.max(this.questions.length - 1, 0));
+    this.mode = restored.mode === 'learn' ? 'learn' : 'test';
+    this._learnRevealed = new Set(restored.learnRevealed || []);
+    this.submitted = false;
+    this.startTest();
+  }
+
+  startFreshAttempt() {
+    this.userAnswers = {};
+    this.marked = new Set();
+    this.submitted = false;
+    this._learnRevealed = new Set();
+    this.mode = this.mode === 'learn' ? 'learn' : 'test';
+    const source = this._pendingSource || [];
+    this.questions = this.randomize
+      ? this.shuffleArray(source).map(q => this.shuffleQuestionOptions(q))
+      : source.map(q => {
+          const copy = JSON.parse(JSON.stringify(q));
+          copy._shuffleRecipe = {};
+          return copy;
+        });
+    this.current = 0;
+    this.startTest();
+  }
+
+  renderReviewQuestionCard(q, idx, given) {
+    const correct = this.isCorrect(q, given);
+    const statusText = correct ? 'Corect' : 'Greșit';
+    const answerParts = this.buildAnswerParts(q, given);
+    const imageHtml = q.image ? `<img class="qe-image qe-review-image" src="${escapeAttr(resolveAssetPath(q.image, this.basePath))}" alt="">` : '';
+
+    let optionsHtml = '';
+    if (q.type === 'single' || q.type === 'multi') {
+      const selectedSet = new Set(Array.isArray(given) ? given : [given].filter(v => v !== undefined && v !== null));
+      const rows = q.options.map((opt, i) => {
+        const isCorrect = q.correct.includes(i);
+        const isChosen = q.type === 'single' ? given === i : selectedSet.has(i);
+        const rowClass = [
+          'qe-review-option',
+          isCorrect ? 'qe-review-option-correct' : '',
+          isChosen && !isCorrect ? 'qe-review-option-incorrect' : ''
+        ].filter(Boolean).join(' ');
+        return `
+          <div class="${rowClass}">
+            <span class="qe-review-option-mark">${isCorrect ? '✓' : (isChosen ? '✕' : '')}</span>
+            <span>${opt}</span>
+          </div>`;
+      }).join('');
+      optionsHtml = `<div class="qe-review-options">${rows}</div>`;
+    } else if (q.type === 'blank') {
+      const blanks = (q.correct || []).map((acceptable, i) => {
+        const value = Array.isArray(given) ? (given[i] || '') : '';
+        const acceptableOptions = Array.isArray(acceptable) ? acceptable : [acceptable];
+        const ok = acceptableOptions.some(v => (value || '').toLowerCase().trim() === v.toLowerCase().trim());
+        return `
+          <div class="qe-review-blank-row">
+            <span class="qe-review-answer-label">${q.correct.length > 1 ? `Spațiul ${i + 1}` : 'Răspuns'}</span>
+            <span class="qe-review-blank-value ${ok ? 'qe-review-correct' : 'qe-review-incorrect'}">${value || '(fără răspuns)'}</span>
+            <span class="qe-review-blank-hint">Corect: ${acceptableOptions[0]}</span>
+          </div>`;
+      }).join('');
+      optionsHtml = `<div class="qe-review-blank-list">${blanks}</div>`;
+    } else if (q.type === 'order') {
+      const userOrder = Array.isArray(given) ? given.map(v => q.options[v]).join(' → ') : '(fără răspuns)';
+      const correctOrder = q.correct.map(v => q.options[v]).join(' → ');
+      optionsHtml = `
+        <div class="qe-review-answer-row">
+          <span class="qe-review-answer-label">Răspuns</span>
+          <span class="qe-review-answer-your">${userOrder}</span>
+          <span class="qe-review-answer-correct">Corect: ${correctOrder}</span>
+        </div>`;
+    } else if (q.type === 'truefalse') {
+      const labels = (Array.isArray(q.labels) && q.labels.length === 2) ? q.labels : ['Yes', 'No'];
+      const rows = q.statements.map((stmt, i) => {
+        const userVal = Array.isArray(given) ? given[i] : undefined;
+        const selectedLabel = userVal === true ? labels[0] : (userVal === false ? labels[1] : 'N/A');
+        const correctLabel = q.correct[i] ? labels[0] : labels[1];
+        const ok = userVal === q.correct[i];
+        return `
+          <div class="qe-review-answer-row qe-review-truefalse-row">
+            <span class="qe-review-answer-label">${stmt}</span>
+            <span class="qe-review-answer-your ${ok ? '' : 'qe-review-incorrect'}">${selectedLabel}</span>
+            <span class="qe-review-answer-correct">Corect: ${correctLabel}</span>
+          </div>`;
+      }).join('');
+      optionsHtml = `<div class="qe-review-truefalse-list">${rows}</div>`;
+    } else if (q.type === 'dropdown') {
+      const rows = q.statements.map((stmt, i) => {
+        const userVal = Array.isArray(given) ? (given[i] || '(fără răspuns)') : '(fără răspuns)';
+        const correctVal = q.correct[i] || '(fără răspuns)';
+        const ok = (userVal || '').trim() === (correctVal || '').trim();
+        return `
+          <div class="qe-review-answer-row">
+            <span class="qe-review-answer-label">${stmt}</span>
+            <span class="qe-review-answer-your ${ok ? '' : 'qe-review-incorrect'}">${userVal}</span>
+            <span class="qe-review-answer-correct">Corect: ${correctVal}</span>
+          </div>`;
+      }).join('');
+      optionsHtml = rows;
+    } else {
+      const rows = answerParts.map(part => `
+        <div class="qe-review-answer-row">
+          <span class="qe-review-answer-label">${part.label || 'Răspuns'}</span>
+          <span class="qe-review-answer-your ${part.yourAnswer === part.correctAnswer ? '' : 'qe-review-incorrect'}">${part.yourAnswer}</span>
+          <span class="qe-review-answer-correct">Corect: ${part.correctAnswer}</span>
+        </div>`).join('');
+      optionsHtml = rows;
+    }
+
+    const explanation = q.explanation ? `<div class="qe-review-explanation"><strong>Explicație:</strong> ${q.explanation}</div>` : '';
+    return `
+      <div class="qe-review-question ${correct ? 'qe-review-correct' : 'qe-review-incorrect'}">
+        <div class="qe-review-question-head">
+          <span>Întrebarea ${idx + 1}</span>
+          <span class="qe-review-status">${statusText}</span>
+        </div>
+        <div class="qe-review-text">${q.question || ''}</div>
+        ${imageHtml}
+        ${optionsHtml}
+        ${explanation}
+      </div>`;
+  }
+
+  renderAttemptReviewDetail(attempt) {
+    const source = this._pendingSource || [];
+    const byId = {};
+    source.forEach(q => { byId[q.id] = q; });
+    const orderedIds = Array.isArray(attempt.questionOrder) && attempt.questionOrder.length
+      ? attempt.questionOrder
+      : source.map(q => q.id);
+    const attemptName = attempt.name || 'Încercare';
+
+    const questionCards = orderedIds.map((id, idx) => {
+      const q = byId[id];
+      if (!q) return '';
+      const given = attempt.answers && Object.prototype.hasOwnProperty.call(attempt.answers, q.id) ? attempt.answers[q.id] : undefined;
+      return this.renderReviewQuestionCard(q, idx, given);
+    }).join('');
+
+    this.container.innerHTML = `
+      <div class="qe-mode-picker qe-review-panel">
+        <div class="qe-review-header-row">
+          <button type="button" class="qe-mode-card qe-back-card" data-action="back-review">← Înapoi</button>
+          <div class="qe-review-summary">
+            <h2 class="qe-mode-picker-title">${attemptName}</h2>
+            <p class="qe-mode-picker-sub">${new Date(attempt.date).toLocaleString('ro-RO')} · ${attempt.correct}/${attempt.total} (${attempt.pct}%)</p>
+          </div>
+          <div class="qe-review-spacer"></div>
+        </div>
+        <div class="qe-review-list">${questionCards}</div>
+      </div>`;
+
+    this.container.querySelector('[data-action="back-review"]').addEventListener('click', () => this.renderModePicker());
+  }
+
   renderModePicker() {
+    const saved = this.autoSaveAnswers ? this.loadAutoSave() : null;
+    const attempts = this.loadAttemptHistory();
+    const attemptCards = attempts.length
+      ? attempts.map((attempt, i) => {
+          const name = attempt.name || `Încercarea ${attempts.length - i}`;
+          return `
+          <button type="button" class="qe-attempt-card" data-review-attempt="${i}">
+            <span class="qe-attempt-name">${name}</span>
+            <span class="qe-attempt-date">${new Date(attempt.date).toLocaleString('ro-RO')}</span>
+            <span class="qe-attempt-score ${attempt.pct >= 70 ? 'qe-attempt-good' : attempt.pct >= 40 ? 'qe-attempt-mid' : 'qe-attempt-bad'}">${attempt.correct}/${attempt.total} · ${attempt.pct}%</span>
+          </button>`;
+        }).join('')
+      : '<div class="qe-attempt-empty">Nicio încercare finalizată încă.</div>';
+
+    const continueCard = saved ? `
+      <button type="button" class="qe-mode-card qe-mode-continue" data-action="continue-saved">
+        <span class="qe-mode-card-icon">↩️</span>
+        <span class="qe-mode-card-title">Continuă încercarea</span>
+        <span class="qe-mode-card-desc">Reluai răspunsurile salvate și poți continua testul de unde ai rămas.</span>
+      </button>` : '';
+
     this.container.innerHTML = `
       <div class="qe-mode-picker">
         <h2 class="qe-mode-picker-title">Cum vrei să faci testul?</h2>
         <p class="qe-mode-picker-sub">${this.testLabel}</p>
+
+        ${attempts.length ? `
+          <div class="qe-attempts-block">
+            <h3 class="qe-attempts-title">Încercările tale</h3>
+            <div class="qe-attempts-list">${attemptCards}</div>
+          </div>` : ''}
+
         <div class="qe-mode-picker-grid">
+          ${continueCard}
           <button type="button" class="qe-mode-card" data-mode="test">
             <span class="qe-mode-card-icon">📝</span>
             <span class="qe-mode-card-title">Mod Test</span>
@@ -188,18 +391,23 @@ class QuestionEngine {
         </div>
       </div>`;
 
-    this.container.querySelectorAll('.qe-mode-card').forEach(btn => {
+    this.container.querySelectorAll('[data-review-attempt]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.reviewAttempt, 10);
+        this.renderAttemptReviewDetail(attempts[idx]);
+      });
+    });
+
+    const continueBtn = this.container.querySelector('[data-action="continue-saved"]');
+    if (continueBtn) {
+      continueBtn.addEventListener('click', () => this.resumeSavedAttempt());
+    }
+
+    this.container.querySelectorAll('.qe-mode-card[data-mode]').forEach(btn => {
       btn.addEventListener('click', () => {
         this.mode = btn.dataset.mode === 'learn' ? 'learn' : 'test';
-        const source = this._pendingSource;
-        this.questions = this.randomize
-          ? this.shuffleArray(source).map(q => this.shuffleQuestionOptions(q))
-          : source.map(q => {
-              const copy = JSON.parse(JSON.stringify(q));
-              copy._shuffleRecipe = {};
-              return copy;
-            });
-        this.startTest();
+        if (this.autoSaveAnswers) this.clearAutoSave();
+        this.startFreshAttempt();
       });
     });
   }
@@ -494,6 +702,7 @@ class QuestionEngine {
               ${this.showSourceImageBtn ? '<button class="qe-nav-btn hidden" id="qeSourceImageBtn" type="button">🖼 Imagine sursă</button>' : ''}
               <button class="qe-nav-btn qe-mark-btn" id="qeMark">🚩 Marchează</button>
               <button class="qe-nav-btn qe-round-btn" id="qeKeyModeToggle" type="button">⇅</button>
+              <button class="qe-nav-btn qe-exit-btn" id="qeExitBtn" type="button">⤴ Ieși din test</button>
               <div class="qe-progress" id="qeProgress"></div>
             </div>
             <button class="qe-nav-btn qe-primary" id="qeNext">Următor →</button>
@@ -520,6 +729,7 @@ class QuestionEngine {
     this.container.querySelector('#qeReset').addEventListener('click', () => this.resetCurrent());
     this.container.querySelector('#qeSubmit').addEventListener('click', () => this.finish());
     this.container.querySelector('#qeMark').addEventListener('click', () => this.toggleMark());
+    this.container.querySelector('#qeExitBtn').addEventListener('click', () => this.exitTest());
     this.container.querySelector('#qePanelFab').addEventListener('click', () => this.openPanel());
     this.container.querySelector('#qePanelBackdrop').addEventListener('click', () => this.closePanel());
     this.container.querySelector('#qeKeyModeToggle').addEventListener('click', () => this.toggleKeyMode());
@@ -830,6 +1040,19 @@ class QuestionEngine {
     delete this.userAnswers[q.id];
     this._learnRevealed.delete(q.id);
     this.renderQuestion();
+  }
+
+  exitTest() {
+    if (this.autoSaveAnswers) {
+      this.saveAutoSave();
+    } else {
+      this.clearAutoSave();
+    }
+    if (this.multiSession) {
+      this.renderSessionPicker(this.loadSessionsIndex());
+    } else {
+      this.renderModePicker();
+    }
   }
 
   toggleMark() {
@@ -1583,6 +1806,8 @@ class QuestionEngine {
         pct,
         durationSec,
         wrongQuestions,
+        answers: this.userAnswers,
+        questionOrder: this.questions.map(q => q.id),
       });
     }
 

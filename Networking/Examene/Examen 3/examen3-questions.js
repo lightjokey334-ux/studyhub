@@ -1,14 +1,10 @@
 /* ===================================================================
    Examen 3 — Networking
-   Completează array-ul de mai jos cu întrebările testului (ex: cu Deepseek).
-   Vezi README.md din rădăcina proiectului pentru schema completă.
-
-   Tipuri disponibile: "single", "multi", "order", "blank", "dragtext"
    =================================================================== */
 
 var EXAM_TITLE = "Networking — Examen 3";
-var EXAM_ID = "Networking_exam3"; // folosit pentru istoricul de progres
-var EXAM_RANDOMIZE = true; // pune true dacă vrei amestecarea întrebărilor pentru acest test
+var EXAM_ID = "Networking_exam3";
+var EXAM_RANDOMIZE = true;
 
 var EXAM_QUESTIONS = [
   {
@@ -23,7 +19,8 @@ var EXAM_QUESTIONS = [
       "A smart device that can be controlled with an app"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1186).png"
+    sourceImage: "Screenshot (1186).png",
+    explanation: "Mașinile virtuale sunt instanțe software ale unui sistem de operare care rulează pe un singur computer fizic (Video: Virtual Machines)."
   },
   {
     id: "ex3_02",
@@ -36,8 +33,9 @@ var EXAM_QUESTIONS = [
       "ISDN",
       "No change is needed"
     ],
-    correct: [2],
-    sourceImage: "Screenshot (1187).png"
+    correct: [1],   // corectat de la [2]
+    sourceImage: "Screenshot (1187).png",
+    explanation: "Descrierea corespunde DSL-ului, nu WAN-ului (Video: DSL, Cable Modem)."
   },
   {
     id: "ex3_03",
@@ -57,7 +55,8 @@ var EXAM_QUESTIONS = [
       { label: "Intrebare", file: "Screenshot (1188)q37.png" },
       { label: "Raspunsul 1", file: "Screenshot (1189)q37 r1.png" },
       { label: "Raspunsul 2", file: "Screenshot (1190)q37 r2.png" }
-    ]
+    ],
+    explanation: "Cablul crossover se folosește pentru conectarea dispozitivelor similare (switch-switch) (Video: Configuration)."
   },
   {
     id: "ex3_04",
@@ -72,7 +71,8 @@ var EXAM_QUESTIONS = [
     labels: ["Yes", "No"],
     options: [],
     correct: [false, true, true],
-    sourceImage: "Screenshot (1191).png"
+    sourceImage: "Screenshot (1191).png",
+    explanation: "Port 25 = SMTP; 443 = HTTPS; 80 = HTTP (Video: Well-Known Ports)."
   },
   {
     id: "ex3_05",
@@ -92,7 +92,8 @@ var EXAM_QUESTIONS = [
       { label: "Întrebare", file: "screenshot (1141)q1.png" },
       { label: "Raspusul 1", file: "screenshot (1142)q1 r1.png" },
       { label: "Raspusul 2", file: "screenshot (1143)q1 r2.png" }
-    ]
+    ],
+    explanation: "Topologie Mesh (fiecare nod conectat la toate celelalte); 4 noduri → 6 conexiuni (Video: Star, Mesh)."
   },
   {
     id: "ex3_06",
@@ -106,7 +107,8 @@ var EXAM_QUESTIONS = [
       "Reconfigure the entire company onto one large class B subnet."
     ],
     correct: [0],
-    sourceImage: "Screenshot (1144).png"
+    sourceImage: "Screenshot (1144).png",
+    explanation: "VLAN-urile permit gruparea logică a dispozitivelor indiferent de locația fizică (Video: VLAN Capabilities)."
   },
   {
     id: "ex3_07",
@@ -120,7 +122,8 @@ var EXAM_QUESTIONS = [
       "Multimeter"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1145).png"
+    sourceImage: "Screenshot (1145).png",
+    explanation: "Cable tester-ul verifică integritatea și tipul cablului Ethernet (Video: Cable Tester)."
   },
   {
     id: "ex3_08",
@@ -134,7 +137,8 @@ var EXAM_QUESTIONS = [
       "Simplex"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1146).png"
+    sourceImage: "Screenshot (1146).png",
+    explanation: "Full duplex permite transmiterea și recepția simultană a datelor (Video: Hubs vs. Switches)."
   },
   {
     id: "ex3_09",
@@ -148,7 +152,8 @@ var EXAM_QUESTIONS = [
       "User accounts"
     ],
     correct: [1, 2],
-    sourceImage: "Screenshot (1147).png"
+    sourceImage: "Screenshot (1147).png",
+    explanation: "Firewall-urile filtrează pe baza porturilor și protocoalelor (Video: Firewalls)."
   },
   {
     id: "ex3_10",
@@ -168,7 +173,8 @@ var EXAM_QUESTIONS = [
       {label: "Intrebare", file: "Screenshot (1148)q6.png"},
       {label: "Raspunsul 1", file: "Screenshot (1149)q6 r1.png"},
       {label: "Raspunsul 2", file: "Screenshot (1150)q6 r2.png"}
-    ]
+    ],
+    explanation: "Pentru a primi IP prin DHCP, se activează 'Obtain an IP address automatically'; DNS-ul se obține automat de la DHCP (Video: DHCP)."
   },
   {
     id: "ex3_11",
@@ -182,7 +188,8 @@ var EXAM_QUESTIONS = [
       "Web server"
     ],
     correct: [0, 3],
-    sourceImage: "Screenshot (1151).png"
+    sourceImage: "Screenshot (1151).png",
+    explanation: "Într-o rețea perimetrală (DMZ) se plasează servere web și de email (Video: Perimeter Networks)."
   },
   {
     id: "ex3_12",
@@ -196,7 +203,8 @@ var EXAM_QUESTIONS = [
       "www.gmetrix.com"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1152).png"
+    sourceImage: "Screenshot (1152).png",
+    explanation: "in-addr.arpa este un domeniu de nivel 2 invers (Video: DNS)."
   },
   {
     id: "ex3_13",
@@ -210,7 +218,8 @@ var EXAM_QUESTIONS = [
       "255.255.255.255"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1153).png"
+    sourceImage: "Screenshot (1153).png",
+    explanation: "Ruta implicită este 0.0.0.0 (Video: Default Routes)."
   },
   {
     id: "ex3_14",
@@ -230,7 +239,8 @@ var EXAM_QUESTIONS = [
       {label: "Intrebare", file: "Screenshot (1154)q10.png"},
       {label: "Raspunsul 1", file: "Screenshot (1155)q10 r1.png"},
       {label: "Raspunsul 2", file: "Screenshot (1156)q10 r2.png"}
-    ]
+    ],
+    explanation: "PC-hub = straight-through; hub-switch (dispozitive similare) = crossover (Video: Configuration)."
   },
   {
     id: "ex3_15",
@@ -246,7 +256,8 @@ var EXAM_QUESTIONS = [
     labels: ["Yes", "No"],
     options: [],
     correct: [true, true, true, true],
-    sourceImage: "Screenshot (1157).png"
+    sourceImage: "Screenshot (1157).png",
+    explanation: "Toate afirmațiile sunt adevărate pentru uneltele Linux (Video: Tool Selection, Syntax 1)."
   },
   {
     id: "ex3_16",
@@ -264,7 +275,8 @@ var EXAM_QUESTIONS = [
       "Uses dedicated phone lines to connect to telco provider offices",
       "Uses two 64Kbps channels"
     ],
-    sourceImage: "Screenshot (1158).png"
+    sourceImage: "Screenshot (1158).png",
+    explanation: "Cable = shared; DSL = dedicat; ISDN = 2x64 Kbps (Video: DSL, Cable Modem; Leased Lines, Dial-Up, ISDN)."
   },
   {
     id: "ex3_17",
@@ -279,7 +291,8 @@ var EXAM_QUESTIONS = [
     labels: ["Yes", "No"],
     options: [],
     correct: [true, false, true],
-    sourceImage: "Screenshot (1159).png"
+    sourceImage: "Screenshot (1159).png",
+    explanation: "Zone transfer true; AAAA = IPv6, nu IPv4; HOSTS are prioritate față de DNS (Video: DNS, Resource Records, HOSTS File)."
   },
   {
     id: "ex3_18",
@@ -293,7 +306,8 @@ var EXAM_QUESTIONS = [
       "::87"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1160).png"
+    sourceImage: "Screenshot (1160).png",
+    explanation: "Adresa loopback IPv6 este ::1 (Video: IPv6 Reserved Address Ranges)."
   },
   {
     id: "ex3_19",
@@ -310,7 +324,8 @@ var EXAM_QUESTIONS = [
       "Transport"
     ],
     correct: [0, 4, 5],
-    sourceImage: "Screenshot (1161).png"
+    sourceImage: "Screenshot (1161).png",
+    explanation: "TCP Application layer corespunde OSI: Application, Presentation, Session (Video: TCP Model)."
   },
   {
     id: "ex3_20",
@@ -330,7 +345,8 @@ var EXAM_QUESTIONS = [
       {label: "Intrebare", file: "Screenshot (1162)q18.png"},
       {label: "Raspunsul 1", file: "Screenshot (1163)q18 r1.png"},
       {label: "Raspunsul 2", file: "Screenshot (1164)q18 r2.png"}
-    ]
+    ],
+    explanation: "Topologie stea cu hub central; Ethernet este un exemplu tipic (Video: Star, Mesh)."
   },
   {
     id: "ex3_21",
@@ -344,7 +360,8 @@ var EXAM_QUESTIONS = [
       "Identify the number of users affected by the problem"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1166).png"
+    sourceImage: "Screenshot (1166).png",
+    explanation: "Primul pas în depanare este identificarea problemei (Video: Steps in the Troubleshooting Process)."
   },
   {
     id: "ex3_22",
@@ -358,7 +375,8 @@ var EXAM_QUESTIONS = [
       "Uses RADIUS to authenticate users"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1167).png"
+    sourceImage: "Screenshot (1167).png",
+    explanation: "Rețelele peer-to-peer au de obicei maxim 10 dispozitive (Video: Define Network Concepts)."
   },
   {
     id: "ex3_23",
@@ -378,7 +396,8 @@ var EXAM_QUESTIONS = [
       {label: "Intrebare", file: "Screenshot (1168)q19.png"},
       {label: "Raspunsul 1", file: "Screenshot (1169)q19 r1.png"},
       {label: "Raspunsul 2", file: "Screenshot (1170)q19 r2.png"}
-    ]
+    ],
+    explanation: "IP-ul este în altă subrețea; trebuie configurat static corect (Video: IPv4 Ipconfig)."
   },
   {
     id: "ex3_24",
@@ -394,7 +413,8 @@ var EXAM_QUESTIONS = [
       "192.168.100.1"
     ],
     correct: [2, 4],
-    sourceImage: "Screenshot (1171).png"
+    sourceImage: "Screenshot (1171).png",
+    explanation: "Pe rețeaua 192.168.1.0/24, adresele valide sunt 192.168.1.1-254 (excluzând .100, .255 broadcast). Deci .254 și .5 sunt valide (Video: Subnet Masks)."
   },
   {
     id: "ex3_25",
@@ -414,7 +434,8 @@ var EXAM_QUESTIONS = [
       "Specifies the size of the packet to transmit",
       "Sends four packets to the local loopback address"
     ],
-    sourceImage: "Screenshot (1172).png"
+    sourceImage: "Screenshot (1172).png",
+    explanation: "-n = număr; -t = continuu; -l = dimensiune; 127.0.0.1 = loopback (Video: Ping)."
   },
   {
     id: "ex3_26",
@@ -429,7 +450,8 @@ var EXAM_QUESTIONS = [
     labels: ["Yes", "No"],
     options: [],
     correct: [true, true, false],
-    sourceImage: "Screenshot (1173).png"
+    sourceImage: "Screenshot (1173).png",
+    explanation: "Firewall-urile pot fi hardware sau software, nu o cameră specială (Video: Firewalls)."
   },
   {
     id: "ex3_27",
@@ -443,7 +465,8 @@ var EXAM_QUESTIONS = [
       "T1"
     ],
     correct: [2, 3],
-    sourceImage: "Screenshot (1174).png"
+    sourceImage: "Screenshot (1174).png",
+    explanation: "DSL și T1 sunt linii închiriate (dedicate); cable broadband nu este dedicat, dial-up nu este leased line (Video: DSL, Cable Modem; T1, T3, E1, E3)."
   },
   {
     id: "ex3_28",
@@ -457,7 +480,8 @@ var EXAM_QUESTIONS = [
       "Application"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1175).png"
+    sourceImage: "Screenshot (1175).png",
+    explanation: "TCP este protocolul principal la nivelul Transport în modelul TCP (Video: TCP Model)."
   },
   {
     id: "ex3_29",
@@ -471,7 +495,8 @@ var EXAM_QUESTIONS = [
       "Twisted-Pair"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1176).png"
+    sourceImage: "Screenshot (1176).png",
+    explanation: "Fibra optică single-mode poate transmite pe distanțe foarte mari (până la 70 km) (Video: Fiber Optic)."
   },
   {
     id: "ex3_30",
@@ -485,7 +510,8 @@ var EXAM_QUESTIONS = [
       "VPN"
     ],
     correct: [1, 2],
-    sourceImage: "Screenshot (1177).png"
+    sourceImage: "Screenshot (1177).png",
+    explanation: "ISATAP și Teredo sunt tuneluri IPv6-over-IPv4 (Video: IPv4 to IPv6 Tunneling Protocols)."
   },
   {
     id: "ex3_31",
@@ -507,7 +533,8 @@ var EXAM_QUESTIONS = [
       "Allows or blocks data packets",
       "Uses a public network for private data communications"
     ],
-    sourceImage: "Screenshot (1178).png"
+    sourceImage: "Screenshot (1178).png",
+    explanation: "NAT = routabil; DHCP = distribuie IP; Remote Access = autentifică; Firewall = blochează/permite; VPN = tunel privat (Video: Network Address Translation, DHCP, Remote Access, Firewalls, VPN)."
   },
   {
     id: "ex3_32",
@@ -521,7 +548,8 @@ var EXAM_QUESTIONS = [
       "Site-to-Site"
     ],
     correct: [3],
-    sourceImage: "Screenshot (1179).png"
+    sourceImage: "Screenshot (1179).png",
+    explanation: "Conectarea a două companii se face prin VPN Site-to-Site (Video: VPN)."
   },
   {
     id: "ex3_33",
@@ -535,7 +563,8 @@ var EXAM_QUESTIONS = [
       "The network has a single point of failure"
     ],
     correct: [3],
-    sourceImage: "Screenshot (1180).png"
+    sourceImage: "Screenshot (1180).png",
+    explanation: "Topologia bus are un singur punct de defect (cablul principal) (Video: Ring, Bus)."
   },
   {
     id: "ex3_34",
@@ -549,7 +578,8 @@ var EXAM_QUESTIONS = [
       "Star"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1181).png"
+    sourceImage: "Screenshot (1181).png",
+    explanation: "Terminatori sunt necesari în topologia Bus, nu Mesh (Video: Ring, Bus)."
   },
   {
     id: "ex3_35",
@@ -565,7 +595,8 @@ var EXAM_QUESTIONS = [
       "there is not communication"
     ],
     correct: [2, 3, 4],
-    sourceImage: "Screenshot (1182).png"
+    sourceImage: "Screenshot (1182).png",
+    explanation: "Comunicarea între straturi are loc cu stratul imediat superior, imediat inferior și cu stratul pereche de pe alt sistem (Video: OSI Model 2)."
   },
   {
     id: "ex3_36",
@@ -579,7 +610,8 @@ var EXAM_QUESTIONS = [
       "ping -d"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1183).png"
+    sourceImage: "Screenshot (1183).png",
+    explanation: "ipconfig /all afișează informații detaliate, inclusiv serverul DHCP (Video: IPv4 Ipconfig)."
   },
   {
     id: "ex3_37",
@@ -593,7 +625,8 @@ var EXAM_QUESTIONS = [
       "Windows Deployment Services"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1184).png"
+    sourceImage: "Screenshot (1184).png",
+    explanation: "Rolul Remote Access include servicii de rutare și VPN (Video: Installing and Configuring Routing)."
   },
   {
     id: "ex3_38",
@@ -607,7 +640,8 @@ var EXAM_QUESTIONS = [
       "100 Mbps"
     ],
     correct: ["1 Gbps", "", "10 Mbps", "100 Mbps"],
-    sourceImage: "Screenshot (1185).png"
+    sourceImage: "Screenshot (1185).png",
+    explanation: "Cat5e = 1 Gbps; Cat3 = 10 Mbps; Cat5 = 100 Mbps (Cat2 nu se potrivește) (Video: CAT Cabling)."
   },
   {
     id: "ex3_39",
@@ -621,7 +655,8 @@ var EXAM_QUESTIONS = [
       "WAN"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1192).png"
+    sourceImage: "Screenshot (1192).png",
+    explanation: "VPN oferă un tunel securizat printr-o rețea publică (Video: VPN)."
   },
   {
     id: "ex3_40",
@@ -635,7 +670,8 @@ var EXAM_QUESTIONS = [
       "Star"
     ],
     correct: [3],
-    sourceImage: "Screenshot (1193).png"
+    sourceImage: "Screenshot (1193).png",
+    explanation: "Opt hub-uri conectate la un singur switch este topologie stea, nu inel (Video: Star, Mesh)."
   },
   {
     id: "ex3_41",
@@ -649,7 +685,8 @@ var EXAM_QUESTIONS = [
       "Transport"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1194).png"
+    sourceImage: "Screenshot (1194).png",
+    explanation: "Router-ul funcționează la nivelul Network (Layer 3), nu Data Link (Video: OSI/TCP Models and Layers)."
   },
   {
     id: "ex3_42",
@@ -671,7 +708,8 @@ var EXAM_QUESTIONS = [
       "75.0.0.0 - 75.255.255.255",
       "224.0.0.0 - 239.255.255.255"
     ],
-    sourceImage: "Screenshot (1195).png"
+    sourceImage: "Screenshot (1195).png",
+    explanation: "192.168.x.x = privat; 75.x.x.x = public; 224.x.x.x = multicast (Video: Addressing, Reserved Address Ranges)."
   },
   {
     id: "ex3_43",
@@ -686,7 +724,8 @@ var EXAM_QUESTIONS = [
     labels: ["Yes", "No"],
     options: [],
     correct: [true, false, true],
-    sourceImage: "Screenshot (1196).png"
+    sourceImage: "Screenshot (1196).png",
+    explanation: "Layer 2 switch = bridge; nu folosește tabele de rutare; flood-ează dacă nu știe destinația (Video: Hubs vs. Switches)."
   },
   {
     id: "ex3_44",
@@ -709,7 +748,8 @@ var EXAM_QUESTIONS = [
       { label: "Raspunsul 1", file: "Screenshot (1198)q44 r1.png" },
       { label: "Raspunsul 2", file: "Screenshot (1199)q44 r2.png" },
       { label: "Raspunsul 3", file: "Screenshot (1200)q44 r3.png" }
-    ]
+    ],
+    explanation: "A = Internet, B = Intranet (rețeaua internă), C = Extranet (perimetral) (Video: Perimeter Networks)."
   },
   {
     id: "ex3_45",
@@ -724,7 +764,8 @@ var EXAM_QUESTIONS = [
     labels: ["Yes", "No"],
     options: [],
     correct: [true, false, true],
-    sourceImage: "Screenshot (1201).png"
+    sourceImage: "Screenshot (1201).png",
+    explanation: "Router separă rețele; VLAN-urile se configurează pe switch-uri; NAT mapează private → public (Video: VLAN Capabilities, Network Address Translation)."
   },
   {
     id: "ex3_46",
@@ -738,6 +779,7 @@ var EXAM_QUESTIONS = [
       "Peer-to-peer"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1202).png"
+    sourceImage: "Screenshot (1202).png",
+    explanation: "Rețelele ad-hoc nu au un dispozitiv central (Video: P2P and Ad Hoc Connections)."
   }
 ];

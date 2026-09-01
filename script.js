@@ -19,7 +19,7 @@ const EXAM_COUNT = { Networking: 3, Databases: 2, Python: 4 };
 // Maps an option key to the relative path (from index.html) that should open.
 function buildPath(subject, optionKey){
   const settings = studyhubLoadSettings();
-  const qs = `shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}&showSourceImageBtn=${settings.showSourceImageBtn}`;
+  const qs = `shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}&showSourceImageBtn=${settings.showSourceImageBtn}&keyboardMode=${settings.keyboardMode}`;
 
   if(optionKey === 'cursuri'){
     return `${subject}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&transcriptGuideLine=${settings.transcriptGuideLine}&transcriptSentenceFlow=${settings.transcriptSentenceFlow}&${qs}`;
@@ -121,7 +121,7 @@ homeLogo.addEventListener('click', showSubjectScreen);
     const target = settings[key] || 'home';
 
     if(target === 'cursuri'){
-      window.location.replace(`${logoFrom}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}&showSourceImageBtn=${settings.showSourceImageBtn}`);
+      window.location.replace(`${logoFrom}/Cursuri/cursuri.html?videoSections=${settings.videoSections}&autoplayNextVideo=${settings.autoplayNextVideo}&shortcutsPanel=${settings.shortcutsPanel}&autoSaveAnswers=${settings.autoSaveAnswers}&showSourceImageBtn=${settings.showSourceImageBtn}&keyboardMode=${settings.keyboardMode}`);
       return;
     }
     if(target === 'options'){

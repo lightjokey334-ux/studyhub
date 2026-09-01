@@ -16,6 +16,7 @@ const STUDYHUB_DEFAULT_SETTINGS = {
   videoSections: 'expanded', // 'expanded' | 'collapsed' — capitolele video din Cursuri
   shortcutsPanel: 'shown', // 'shown' | 'hidden' — panoul cu comenzi rapide din teste
   autoSaveAnswers: 'on', // 'on' | 'off' — reia testul de unde ai rămas dacă închizi din greșeală
+  keyboardMode: 'navigate', // 'navigate' | 'answer' — modul tastatură implicit la deschiderea unui test
   autoplayNextVideo: 'on', // 'on' | 'off' — trece automat la următorul videoclip din domeniu
   transcriptGuideLine: 'on', // 'on' | 'off' — linia decorativă din panoul de subtitrări
   transcriptSentenceFlow: 'on', // 'on' | 'off' — grupează automat liniile subtitrării în propoziții

@@ -13,7 +13,7 @@ var EXAM_QUESTIONS = [
       "Offer the customer a discount on services"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1025).png"
+    explanation: "Eticheta profesională impune anunțarea întârzierii (Video: Etiquette/Professional Conduct - F0002)."
   },
   {
     id: "ex1_02",
@@ -27,7 +27,7 @@ var EXAM_QUESTIONS = [
       "Routes are calculated based on the number of hops required."
     ],
     correct: [0, 3],
-    sourceImage: "Screenshot (1026).png"
+    explanation: "RIP are un hop count maxim de 15 și calculează rutele pe baza numărului de hop-uri (Video: RIP vs. OSPF - F0012)."
   },
   {
     id: "ex1_03",
@@ -41,8 +41,7 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, true, false],
-    options: [],
-    sourceImage: "Screenshot (1027).png"
+    explanation: "CNAME și MX trebuie create manual; DNS rezolvă hostname-uri; LMHOSTS rezolvă NetBIOS, nu hostname-uri (Video: Resource Records - M0015, LMHOSTS File - M0017)."
   },
   {
     id: "ex1_04",
@@ -56,7 +55,7 @@ var EXAM_QUESTIONS = [
       "No change is needed"
     ],
     correct: [3],
-    sourceImage: "Screenshot (1028).png"
+    explanation: "Rutele direct conectate au administrativ distance 0 (Video: Routing Table and Selection - M0006)."
   },
   {
     id: "ex1_05",
@@ -74,7 +73,7 @@ var EXAM_QUESTIONS = [
       "Network Layer"
     ],
     correct: ["Physical Layer", "Data Link Layer", "Network Layer", "Transport Layer"],
-    sourceImage: "Screenshot (1029).png"
+    explanation: "Bit → Physical, Frame → Data-link, Packet → Network, Segment → Transport (Video: Packets and Frames - F0006)."
   },
   {
     id: "ex1_06",
@@ -88,7 +87,7 @@ var EXAM_QUESTIONS = [
       "Star"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1030).png"
+    explanation: "Topologia în cerc este ring (Video: Ring, Bus - F0011)."
   },
   {
     id: "ex1_07",
@@ -102,7 +101,7 @@ var EXAM_QUESTIONS = [
       "PPTP"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1031).png"
+    explanation: "ESP oferă autentificare și criptare; AH doar autentificare (Video: VPN - F0005)."
   },
   {
     id: "ex1_08",
@@ -116,7 +115,7 @@ var EXAM_QUESTIONS = [
       "WPA2"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1032).png"
+    explanation: "WEP este cel mai slab și a fost spart (Video: Types of Network Security - FM001)."
   },
   {
     id: "ex1_09",
@@ -130,7 +129,7 @@ var EXAM_QUESTIONS = [
       "Root"
     ],
     correct: [3],
-    sourceImage: "Screenshot (1033).png"
+    explanation: "Cele 13 servere DNS rădăcină au tabele complete (Video: DNS - M0014)."
   },
   {
     id: "ex1_10",
@@ -144,7 +143,7 @@ var EXAM_QUESTIONS = [
       "WINS"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1034).png"
+    explanation: "LMHOSTS rezolvă nume NetBIOS în adrese IP (Video: LMHOSTS File - M0017)."
   },
   {
     id: "ex1_11",
@@ -158,7 +157,7 @@ var EXAM_QUESTIONS = [
       "802.5"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1035).png"
+    explanation: "Standardul pentru wireless este 802.11 (Video: Standards and Characteristics - F0008)."
   },
   {
     id: "ex1_12",
@@ -172,7 +171,7 @@ var EXAM_QUESTIONS = [
       "Static routing"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1036).png"
+    explanation: "QoS (Quality of Service) prioritizează traficul (Video: Quality of Service - M0009)."
   },
   {
     id: "ex1_13",
@@ -186,7 +185,7 @@ var EXAM_QUESTIONS = [
       "53"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1037).png"
+    explanation: "RDP rulează pe portul 3389 (Video: RDP, SSH - M0013)."
   },
   {
     id: "ex1_14",
@@ -200,7 +199,7 @@ var EXAM_QUESTIONS = [
       "The protocols used are very lightweight with little overhead"
     ],
     correct: [1, 2],
-    sourceImage: "Screenshot (1038).png"
+    explanation: "Mesh este mai fiabil și auto-vindecător (Video: Star, Mesh - F0010)."
   },
   {
     id: "ex1_15",
@@ -214,8 +213,7 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, true, false],
-    options: [],
-    sourceImage: "Screenshot (1039).png"
+    explanation: "Telefoanele fără fir și cuptoarele cu microunde interferează cu rețelele wireless, nu cu cele cablate; fluorescentele cauzează EMI (Video: Susceptibility - F0020)."
   },
   {
     id: "ex1_16",
@@ -228,11 +226,7 @@ var EXAM_QUESTIONS = [
       ["DHCP needs to be enabled", "The default gateway address needs to be changed", "The subnet mask needs to be changed"]
     ],
     correct: ["The default gateway is a broadcast address", "The default gateway address needs to be changed"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1040)q16.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1041)q16 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1042)q16 r2.png" }
-    ]
+    explanation: "Gateway-ul 10.1.13.255 este adresă de broadcast; trebuie schimbat (Video: Reserved Address Ranges - M0005)."
   },
   {
     id: "ex1_17",
@@ -248,11 +242,7 @@ var EXAM_QUESTIONS = [
       ["a firewall", "an IP address", "an account"]
     ],
     correct: ["an app", "an IP address"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1043)q17.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1044)q17 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1045)q17 r2.png" }
-    ]
+    explanation: "Dispozitivele IoT sunt controlate prin aplicații și au nevoie de o adresă IP (Video: Define Network Concepts - C0001)."
   },
   {
     id: "ex1_18",
@@ -266,8 +256,7 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, true, false],
-    options: [],
-    sourceImage: "Screenshot (1046).png"
+    explanation: "Firewall-urile pot fi hardware sau software; nu sunt doar pe host-uri; filtrează după IP, port, protocol, nu conturi (Video: Firewalls - M0020)."
   },
   {
     id: "ex1_19",
@@ -281,7 +270,7 @@ var EXAM_QUESTIONS = [
       "802.11n"
     ],
     correct: [0, 3],
-    sourceImage: "Screenshot (1047).png"
+    explanation: "802.11ac (single-band 5 GHz) este compatibil cu 802.11a și 802.11n (care suportă 5 GHz); 802.11b/g sunt doar 2.4 GHz (Video: Standards and Characteristics - F0008)."
   },
   {
     id: "ex1_20",
@@ -295,7 +284,7 @@ var EXAM_QUESTIONS = [
       "No change is needed"
     ],
     correct: [3],
-    sourceImage: "Screenshot (1048).png"
+    explanation: "E1 are 32 de canale × 64 Kbps = 2.048 Mbps (Video: T1, T3, E1, E3 - F0006)."
   },
   {
     id: "ex1_21",
@@ -309,7 +298,7 @@ var EXAM_QUESTIONS = [
       "Toner"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1049).png"
+    explanation: "Multimetrul măsoară curent, tensiune și rezistență (Video: Multimeter - C0001)."
   },
   {
     id: "ex1_22",
@@ -323,7 +312,7 @@ var EXAM_QUESTIONS = [
       "RIP"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1050).png"
+    explanation: "OSPF este link-state și monitorizează schimbările de stare (Video: RIP vs. OSPF - F0012)."
   },
   {
     id: "ex1_23",
@@ -333,7 +322,7 @@ var EXAM_QUESTIONS = [
     pairs: ["128 Kbps", "56 Kbps", "1.536 Mbps", "2.048 Mbps"],
     options: ["Dial-up", "E1", "ISDN", "T1"],
     correct: ["ISDN", "Dial-up", "T1", "E1"],
-    sourceImage: "Screenshot (1051).png"
+    explanation: "ISDN BRI = 128 Kbps; Dial-up = 56 Kbps; T1 = 1.544 Mbps (aprox. 1.536); E1 = 2.048 Mbps (Video: Leased Lines, Dial-Up, ISDN - F0004; T1, T3, E1, E3 - F0006)."
   },
   {
     id: "ex1_24",
@@ -347,7 +336,7 @@ var EXAM_QUESTIONS = [
       "Type IV"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1052).png"
+    explanation: "Hypervizorii de tip I (bare-metal) nu rulează într-un OS (Video: Hypervisors - M0001)."
   },
   {
     id: "ex1_25",
@@ -362,7 +351,7 @@ var EXAM_QUESTIONS = [
       "User accounts"
     ],
     correct: [1, 2],
-    sourceImage: "Screenshot (1053).png"
+    explanation: "Firewall-urile filtrează pe baza adreselor IP și a porturilor (Video: Firewalls - M0020)."
   },
   {
     id: "ex1_26",
@@ -376,8 +365,7 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, true, true],
-    options: [],
-    sourceImage: "Screenshot (1054).png"
+    explanation: "IP este connectionless; TCP este connection-oriented; UDP este connectionless (Video: TCP and UDP - F0004)."
   },
   {
     id: "ex1_27",
@@ -397,7 +385,7 @@ var EXAM_QUESTIONS = [
       "1,000 bits per second",
       "10,000,000 bits per second"
     ],
-    sourceImage: "Screenshot (1055).png"
+    explanation: "1000 Kbps = 1 Mbps; 1 Gbps = 1000 Mbps; 1 Kbps = 1000 bps; 10 Mbps = 10.000.000 bps."
   },
   {
     id: "ex1_28",
@@ -411,7 +399,7 @@ var EXAM_QUESTIONS = [
       "Class D"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1056).png"
+    explanation: "Clasa B suportă până la ~65.000 de gazde (Video: Addressing - F0011)."
   },
   {
     id: "ex1_29",
@@ -424,9 +412,8 @@ var EXAM_QUESTIONS = [
       "In a star topology, failure of a central connectivity device does not bring down the entire network."
     ],
     labels: ["Yes", "No"],
-    correct: [false, true, false],
-    options: [],
-    sourceImage: "Screenshot (1057).png"
+    correct: [true, true, false],   // ← AM CORECTAT AICI (era false, true, false)
+    explanation: "În stea, un cablu defect afectează doar acea conexiune (două interfețe); punctul central oferă flexibilitate; defectarea dispozitivului central întrerupe întreaga rețea (Video: Star, Mesh - F0010)."
   },
   {
     id: "ex1_30",
@@ -440,7 +427,7 @@ var EXAM_QUESTIONS = [
       "PPTP"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1058).png"
+    explanation: "ESP oferă autenticitate, integritate și confidențialitate (Video: VPN - F0005)."
   },
   {
     id: "ex1_31",
@@ -450,7 +437,7 @@ var EXAM_QUESTIONS = [
     pairs: ["443", "21", "25", "53", "22"],
     options: ["FTP", "SSH", "SMTP", "HTTPS", "DNS"],
     correct: ["HTTPS", "FTP", "SMTP", "DNS", "SSH"],
-    sourceImage: "Screenshot (1059).png"
+    explanation: "443=HTTPS, 21=FTP, 25=SMTP, 53=DNS, 22=SSH (Video: Well-Known Ports - F0005; RDP, SSH - M0013)."
   },
   {
     id: "ex1_32",
@@ -464,7 +451,7 @@ var EXAM_QUESTIONS = [
       "UTP"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1060).png"
+    explanation: "Fibra optică nu este afectată de interferențe electromagnetice (Video: Fiber Optic - F0017)."
   },
   {
     id: "ex1_33",
@@ -479,7 +466,7 @@ var EXAM_QUESTIONS = [
       "Windows Firewall is the application you must use to add or remove websites to security zones."
     ],
     correct: [1, 3],
-    sourceImage: "Screenshot (1061).png"
+    explanation: "IE are patru zone de securitate; nivelul pentru siturile restricționate poate fi modificat (Video: nu este în material, dar este corect)."
   },
   {
     id: "ex1_34",
@@ -493,7 +480,7 @@ var EXAM_QUESTIONS = [
       "255.255.255.255"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1062).png"
+    explanation: "Clasa C are masca implicită 255.255.255.0 (Video: Subnet Masks - FM001)."
   },
   {
     id: "ex1_35",
@@ -507,7 +494,7 @@ var EXAM_QUESTIONS = [
       "ipconfig /all"
     ],
     correct: [3],
-    sourceImage: "Screenshot (1063).png"
+    explanation: "`ipconfig /all` afișează adresa MAC (Physical Address) (Video: IPv4 Ipconfig - M0002)."
   },
   {
     id: "ex1_36",
@@ -520,11 +507,7 @@ var EXAM_QUESTIONS = [
       ["Host-to-Host", "Host-to-Site", "Site-to-Site"]
     ],
     correct: ["VPN", "Host-to-Site"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1064)q36.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1065)q36 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1066)q36 r2.png" }
-    ]
+    explanation: "VPN oferă acces securizat; conexiunea de la un computer individual la un site este Host-to-Site (Video: VPN - M0004)."
   },
   {
     id: "ex1_37",
@@ -537,11 +520,7 @@ var EXAM_QUESTIONS = [
       ["Replace the hub with a router", "Replace the hub with a switch", "Replace twisted-pair cables with fiber-optic cables"]
     ],
     correct: ["Star", "Replace the hub with a switch"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1067)q37.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1068)q37 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1069)q37 r2.png" }
-    ]
+    explanation: "Topologia fizică este stea (hub central); înlocuirea hub-ului cu un switch îmbunătățește viteza (Video: Hubs vs. Switches - F0009)."
   },
   {
     id: "ex1_38",
@@ -555,7 +534,7 @@ var EXAM_QUESTIONS = [
       "Wireless router"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1070).png"
+    explanation: "Un pod wireless (wireless bridge) poate conecta rețele cu standarde diferite (Video: Wireless Bridging - F0009)."
   },
   {
     id: "ex1_39",
@@ -569,7 +548,7 @@ var EXAM_QUESTIONS = [
       "192.168.1.0"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1071).png"
+    explanation: "Clasa A privată este 10.0.0.0/8 (Video: Addressing - F0011)."
   },
   {
     id: "ex1_40",
@@ -585,11 +564,7 @@ var EXAM_QUESTIONS = [
       ["A", "CNAME", "PTR"]
     ],
     correct: ["CNAME", "PTR"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1072)q40.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1073)q40 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1074)q40 r2.png" }
-    ]
+    explanation: "CNAME creează alias; PTR rezolvă IP în hostname (Video: Resource Records - M0015)."
   },
   {
     id: "ex1_41",
@@ -603,7 +578,7 @@ var EXAM_QUESTIONS = [
       "Singlecast"
     ],
     correct: [2],
-    sourceImage: "Screenshot (1075).png"
+    explanation: "Multicast trimite fiecărui membru al grupului; IPv6 nu are broadcast (Video: IPv6 Address Types - M0010)."
   },
   {
     id: "ex1_42",
@@ -618,7 +593,7 @@ var EXAM_QUESTIONS = [
       "ping"
     ],
     correct: [1, 2, 4],
-    sourceImage: "Screenshot (1076).png"
+    explanation: "Linux folosește `ping`, `ip` și `netstat`; `ipconfig` este Windows (Video: Tool Selection, Syntax 1 - M0006)."
   },
   {
     id: "ex1_43",
@@ -632,7 +607,7 @@ var EXAM_QUESTIONS = [
       "No change is needed"
     ],
     correct: [0],
-    sourceImage: "Screenshot (1077).png"
+    explanation: "1000BaseT are lungimea maximă de 100 de metri (Video: Cable Types and Characteristics - F0016)."
   },
   {
     id: "ex1_44",
@@ -647,8 +622,7 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, false, true, true],
-    options: [],
-    sourceImage: "Screenshot (1078).png"
+    explanation: "În Windows, `ipconfig /release` și `/renew` sunt corecte; comenzile `dhcp -...` nu există (Video: IPv4 Ipconfig - M0002)."
   },
   {
     id: "ex1_45",
@@ -662,7 +636,7 @@ var EXAM_QUESTIONS = [
       "WPA2"
     ],
     correct: [3],
-    sourceImage: "Screenshot (1079).png"
+    explanation: "WPA2 este cel mai puternic standard de criptare wireless (Video: Types of Network Security - FM001)."
   },
   {
     id: "ex1_46",
@@ -675,6 +649,6 @@ var EXAM_QUESTIONS = [
       "21:486::21::68"
     ],
     correct: [1],
-    sourceImage: "Screenshot (1080).png"
+    explanation: "Forma corectă (cu eliminarea zerourilor din față, dar fără compresia ultimelor trei blocuri) este `2001:4860:0:2001:0:0:68`; opțiunea cu `::` singur ar omite secțiunea `2001`. (Video: IPv6 Addressing, Subnet Masks - F0016)."
   }
 ];

@@ -1,13 +1,9 @@
 /* ===================================================================
    Examen 2 — Networking
-   Completează array-ul de mai jos cu întrebările testului (ex: cu Deepseek).
-   Vezi README.md din rădăcina proiectului pentru schema completă.
-
-   Tipuri disponibile: "single", "multi", "order", "blank", "dragtext"
    =================================================================== */
 
 var EXAM_TITLE = "Networking — Examen 2";
-var EXAM_ID = "Networking_exam2"; // folosit pentru istoricul de progres
+var EXAM_ID = "Networking_exam2";
 
 var EXAM_QUESTIONS = [
   {
@@ -17,7 +13,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Layer 1", "Layer 2", "Layer 3", "Layer 4"],
     correct: [3],
-    sourceImage: "Screenshot (1130).png"
+    explanation: "TCP este un protocol de transport, deci funcționează la Layer 4 (Transport) (Video: OSI Model 2)."
   },
   {
     id: "ex2_02",
@@ -33,7 +29,7 @@ var EXAM_QUESTIONS = [
       "Instruct the employee to disconnect and reconnect the network cable connection to the computer."
     ],
     correct: [0, 3],
-    sourceImage: "Screenshot (1081).png"
+    explanation: "Primii pași în depanare: identificarea problemei și stabilirea unei teorii a cauzei probabile – de obicei se începe cu reboot și conectare la distanță (Video: Steps in the Troubleshooting Process)."
   },
   {
     id: "ex2_03",
@@ -42,7 +38,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["1.5 Mbps", "1.536 Mbps", "1.544 Mbps", "15.35 Mbps"],
     correct: [2],
-    sourceImage: "Screenshot (1082).png"
+    explanation: "Debitul maxim al unei linii T1 este 1.544 Mbps (Video: T1, T3, E1, E3)."
   },
   {
     id: "ex2_04",
@@ -51,7 +47,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Internal", "Private", "External", "Endpoint"],
     correct: [0],
-    sourceImage: "Screenshot (1083).png"
+    explanation: "Comutatorul virtual de tip Internal permite VM-urilor să comunice cu gazda, dar nu mai departe (Video: Virtual Switches)."
   },
   {
     id: "ex2_05",
@@ -60,7 +56,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Arpa Mapping", "Cut-Through", "Fragment-Free", "Packet Switching", "Routing", "Store-and-Forward"],
     correct: [1, 2, 5],
-    sourceImage: "Screenshot (1084).png"
+    explanation: "Metodele de forwarding sunt: Cut-Through, Fragment-Free și Store-and-Forward (Video: Switching Types and MAC Address Tables)."
   },
   {
     id: "ex2_06",
@@ -69,7 +65,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Link-Local", "Link-Private", "Logic-Link", "Malformed"],
     correct: [0],
-    sourceImage: "Screenshot (1085).png"
+    explanation: "Adresele care încep cu fe80::/10 sunt link-local și nu sunt rutabile pe Internet (Video: IPv6 Address Types)."
   },
   {
     id: "ex2_07",
@@ -91,7 +87,7 @@ var EXAM_QUESTIONS = [
       "Frequency range: 2.4 GHz or 5 GHz - Data rate: 65 - 600 Mbps",
       "Frequency: 2.4 GHz - Data rate: 54 Mbps"
     ],
-    sourceImage: "Screenshot (1086).png"
+    explanation: "802.11b = 2.4 GHz, 11 Mbps; 802.11a = 5 GHz, 54 Mbps; 802.11ac = 5 GHz, până la 1.3 Gbps; 802.11n = 2.4/5 GHz, 65-600 Mbps; 802.11g = 2.4 GHz, 54 Mbps (Video: Standards and Characteristics)."
   },
   {
     id: "ex2_08",
@@ -100,7 +96,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Managed", "Multilayer", "Unmanaged", "Virtual"],
     correct: [2],
-    sourceImage: "Screenshot (1087).png"
+    explanation: "Switch-urile neadministrate (unmanaged) sunt plug and play – nu necesită configurare (Video: Managed or Unmanaged Switches)."
   },
   {
     id: "ex2_09",
@@ -110,7 +106,7 @@ var EXAM_QUESTIONS = [
     pairs: ["130.34.3.223", "10.123.12.1", "199.11.221.4", "224.2.200.35"],
     options: ["Class A", "Class B", "Class C", "Class D"],
     correct: ["Class B", "Class A", "Class C", "Class D"],
-    sourceImage: "Screenshot (1088).png"
+    explanation: "130.34.3.223 → Clasa B (128-191); 10.123.12.1 → Clasa A; 199.11.221.4 → Clasa C (192-223); 224.2.200.35 → Clasa D (224-239) (Video: Addressing)."
   },
   {
     id: "ex2_10",
@@ -119,7 +115,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["::1", "2001:db8::", "2003:dead:beef:4dad:23:46:bb:101", "No change is needed"],
     correct: [2],
-    sourceImage: "Screenshot (1089).png"
+    explanation: "f00:: nu este o adresă globală unicast validă pentru o gazdă; adresa corectă pentru o gazdă trebuie să înceapă cu 2000::/3 (Video: IPv6 Addressing, Subnet Masks)."
   },
   {
     id: "ex2_11",
@@ -127,8 +123,8 @@ var EXAM_QUESTIONS = [
     question: "Which layers of the OSI model are considered to be hardware layers?",
     image: null,
     options: ["1-2", "1-3", "3-7", "4-7"],
-    correct: [0],
-    sourceImage: "Screenshot (1090).png"
+    correct: [1],   // corectat de la [0]
+    explanation: "Layers 1-3 (Physical, Data-link, Network) sunt considerate straturi hardware (Video: OSI Model 2)."
   },
   {
     id: "ex2_12",
@@ -142,8 +138,7 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, false, true],
-    options: [],
-    sourceImage: "Screenshot (1091).png"
+    explanation: "Dynamic NAT folosește un pool de IP-uri publice; PAT poate funcționa cu un singur IP public; Static NAT necesită un IP public pentru fiecare IP privat (Video: Private and Port NAT)."
   },
   {
     id: "ex2_13",
@@ -152,7 +147,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["16", "2", "28", "3"],
     correct: [2],
-    sourceImage: "Screenshot (1092).png"
+    explanation: "Un T3 este echivalentul a 28 de linii T1 (Video: T1, T3, E1, E3)."
   },
   {
     id: "ex2_14",
@@ -161,7 +156,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Cable modems", "DSL", "E1", "ISDN", "T1"],
     correct: [0, 1],
-    sourceImage: "Screenshot (1093).png"
+    explanation: "Cable modem și DSL sunt cele mai comune pentru utilizatorii casnici (Video: DSL, Cable Modem)."
   },
   {
     id: "ex2_15",
@@ -171,7 +166,7 @@ var EXAM_QUESTIONS = [
     pairs: ["100.100.1.1", "170.100.1.5", "198.126.1.55", "224.0.0.2", "241.241.241.241"],
     options: ["Class A", "Class B", "Class C", "Class D", "Class E"],
     correct: ["Class A", "Class B", "Class C", "Class D", "Class E"],
-    sourceImage: "Screenshot (1094).png"
+    explanation: "100.100.1.1 → A; 170.100.1.5 → B; 198.126.1.55 → C; 224.0.0.2 → D; 241.241.241.241 → E (Video: Classful vs Classless)."
   },
   {
     id: "ex2_16",
@@ -191,13 +186,7 @@ var EXAM_QUESTIONS = [
       ["MAC filtering", "QoS", "SSID"]
     ],
     correct: ["Ad hoc", "Ad hoc", "Infrastructure", "SSID"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1095)q15.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1096)q15 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1097)q15 r2.png" },
-      { label: "Raspunsul 3", file: "Screenshot (1098)q15 r3.png" },
-      { label: "Raspunsul 4", file: "Screenshot (1099)q15 r4.png" }
-    ]
+    explanation: "Conexiunea directă este ad-hoc; rețelele ad-hoc nu au securitate centralizată; infrastructure are WAP; dezactivarea SSID-ului sporește securitatea (Video: P2P and Ad Hoc Connections)."
   },
   {
     id: "ex2_17",
@@ -207,11 +196,7 @@ var EXAM_QUESTIONS = [
     statements: ["The IP address tested in this ping is the ______ address.", "The equivalent IPv6 address is ___."],
     options: [["APIPA", "Default gateway", "Loopback"], ["::0", "::1", "::8/"]],
     correct: ["Loopback", "::1"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1100)q16.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1101)q16 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1102)q16 r2.png" }
-    ]
+    explanation: "ping 127.0.0.1 testează adresa loopback; echivalentul IPv6 este ::1 (Video: Reserved Address Ranges)."
   },
   {
     id: "ex2_18",
@@ -220,7 +205,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Mesh", "No change is needed", "Ring", "Star"],
     correct: [0],
-    sourceImage: "Screenshot (1103).png"
+    explanation: "Topologia în care fiecare calculator este conectat la toate celelalte se numește Mesh (Video: Star, Mesh)."
   },
   {
     id: "ex2_19",
@@ -229,7 +214,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Access", "Managed", "Trunk", "Unmanaged", "Voice access"],
     correct: [0, 2, 4],
-    sourceImage: "Screenshot (1104).png"
+    explanation: "Porturile de switch pot fi: Access, Trunk și Voice access (Video: VLAN Capabilities)."
   },
   {
     id: "ex2_20",
@@ -239,11 +224,7 @@ var EXAM_QUESTIONS = [
     statements: ["Which command was run to generate these results?", "Which command should be run to just show these results for tcp connections?"],
     options: [["netstat -a", "netstat -p", "netstat -s"], ["netstat -a tcp", "netstat -p tcp", "netstat -proto tcp"]],
     correct: ["netstat -a", "netstat -p tcp"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1105)q19.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1106)q19 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1107)q19 r2.png" }
-    ]
+    explanation: "netstat -a afișează toate conexiunile; netstat -p tcp afișează doar TCP (Video: Netstat)."
   },
   {
     id: "ex2_21",
@@ -257,8 +238,7 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, true, true],
-    options: [],
-    sourceImage: "Screenshot (1108).png"
+    explanation: "Switch-urile layer 2 folosesc MAC; layer 3 pot folosi și MAC pentru comutare și IP pentru rutare (Video: Layer 2 and Layer 3 Switches)."
   },
   {
     id: "ex2_22",
@@ -268,11 +248,7 @@ var EXAM_QUESTIONS = [
     statements: ["The number of hops a packet must take from the source network to the destination network is...", "___ is a common routing protocol that uses hop count."],
     options: [["4", "5", "6"], ["EIGRP", "OSPF", "RIP"]],
     correct: ["4", "RIP"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1109)q21.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1110)q21 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1111)q21 r2.png" }
-    ]
+    explanation: "De la sursă la destinație sunt 4 routere (hop-uri); RIP utilizează hop count (Video: RIP vs. OSPF)."
   },
   {
     id: "ex2_23",
@@ -281,7 +257,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Application", "Data Link", "Presentation", "Session"],
     correct: [2],
-    sourceImage: "Screenshot (1112).png"
+    explanation: "Criptarea are loc la nivelul Presentation (Video: OSI Model 2)."
   },
   {
     id: "ex2_24",
@@ -291,11 +267,7 @@ var EXAM_QUESTIONS = [
     statements: ["Which command-line tool was used to generate these results?", "Which command-line tool should be used if both hops and statistics showing a percentage of dropped packets need to be known?"],
     options: [["pathping", "ping", "tracert"], ["netstat", "pathping", "ping"]],
     correct: ["tracert", "pathping"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1113)q23.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1114)q23 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1115)q23 r2.png" }
-    ]
+    explanation: "Ieșirea arată fiecare hop → tracert; pathping combină ping și tracert (Video: Tracert, Pathping)."
   },
   {
     id: "ex2_25",
@@ -304,7 +276,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Remote Desktop Services is running.", "RRAS is running.", "The DNS service is running.", "The WINS service is running."],
     correct: [0],
-    sourceImage: "Screenshot (1116).png"
+    explanation: "Portul 3389 este folosit de Remote Desktop Protocol (Video: RDP, SSH)."
   },
   {
     id: "ex2_26",
@@ -317,11 +289,7 @@ var EXAM_QUESTIONS = [
       ["ipconfig /cleardns", "ipconfig /emptydns", "ipconfig /flushdns"]
     ],
     correct: ["ipconfig /displaydns", "ipconfig /flushdns"],
-    sourceImage: [
-      { label: "Intrebare", file: "Screenshot (1117)q25.png" },
-      { label: "Raspunsul 1", file: "Screenshot (1118)q25 r1.png" },
-      { label: "Raspunsul 2", file: "Screenshot (1119)q25 r2.png" }
-    ]
+    explanation: "ipconfig /displaydns afișează cache-ul DNS; ipconfig /flushdns îl golește (Video: IPv4 Ipconfig)."
   },
   {
     id: "ex2_27",
@@ -334,9 +302,8 @@ var EXAM_QUESTIONS = [
       "A multimeter is used to see if an Ethernet cable is functional."
     ],
     labels: ["Yes", "No"],
-    correct: [false, true, true], // Corectat: TDR nu este pentru fibră
-    options: [],
-    sourceImage: "Screenshot (1120).png"
+    correct: [false, true, false],   // corectat ultimul de la true la false
+    explanation: "TDR este pentru cablu de cupru, nu fibră; toner-ul urmărește cabluri de cupru; multimetrul măsoară curent/tensiune, nu integritatea cablului Ethernet (Video: Cable Tester, Toner, Multimeter)."
   },
   {
     id: "ex2_28",
@@ -345,7 +312,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["IPsec", "L2TP", "PPTP", "VPN"],
     correct: [3],
-    sourceImage: "Screenshot (1121).png"
+    explanation: "VPN oferă un tunel privat peste o rețea publică (Video: VPN)."
   },
   {
     id: "ex2_29",
@@ -354,7 +321,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["A", "IPv4", "IPv6", "No change is needed"],
     correct: [3],
-    sourceImage: "Screenshot (1122).png"
+    explanation: "Înregistrările AAAA rezolvă hostname-uri în adrese IPv6 (128 biți) – corect, nu este necesară schimbarea (Video: Resource Records)."
   },
   {
     id: "ex2_30",
@@ -373,7 +340,7 @@ var EXAM_QUESTIONS = [
       "",
       "Uses MAC addressing to determine which port to forward a frame"
     ],
-    sourceImage: "Screenshot (1123).png"
+    explanation: "Ethernet = tehnologie Layer 1; Router = conectează rețele; NIC nu are potrivire; Layer 2 Switch = MAC addressing (Video: OSI/TCP Models and Layers)."
   },
   {
     id: "ex2_31",
@@ -388,7 +355,7 @@ var EXAM_QUESTIONS = [
       "Switches are faster than hubs in all circumstances."
     ],
     correct: [1, 2],
-    sourceImage: "Screenshot (1124).png"
+    explanation: "Layer 2 switches folosesc tabele MAC; dacă nu știu adresa, flood-ează (Video: Transmission Speeds 2)."
   },
   {
     id: "ex2_32",
@@ -406,7 +373,7 @@ var EXAM_QUESTIONS = [
       "Provides access to services needed by partners and customers without granting them access to the entire network",
       "A network restricted to users within an organization"
     ],
-    sourceImage: "Screenshot (1125).png"
+    explanation: "Internet = global; Extranet = parteneri/clienți; Intranet = intern (Video: Define Network Concepts)."
   },
   {
     id: "ex2_33",
@@ -415,7 +382,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["dig", "host", "nslookup", "dnslookup"],
     correct: [0],
-    sourceImage: "Screenshot (1126).png"
+    explanation: "În Linux, dig afișează serverul DNS curent și serverele rădăcină (Video: Tool Selection, Syntax 1)."
   },
   {
     id: "ex2_34",
@@ -424,7 +391,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["FTP", "HTTP", "HTTPS", "UDP"],
     correct: [1],
-    sourceImage: "Screenshot (1127).png"
+    explanation: "În mod implicit, browserul inițiază HTTP (port 80) pentru site-uri web (Video: HTTP, HTTPS, FTP)."
   },
   {
     id: "ex2_35",
@@ -460,7 +427,7 @@ var EXAM_QUESTIONS = [
       "Session Layer",
       "Transport Layer"
     ],
-    sourceImage: "Screenshot (1128).png"
+    explanation: "Aplicații = Application; rutare = Network; voltaj = Physical; formate = Presentation; interfață utilizator = Application; cadre = Data Link; sesiuni = Session; transport = Transport (Video: OSI Model 2)."
   },
   {
     id: "ex2_36",
@@ -469,7 +436,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Dynamic NAT", "One-to-many NAT", "PAT", "Static NAT"],
     correct: [2],
-    sourceImage: "Screenshot (1129).png"
+    explanation: "PAT (Port Address Translation) permite ca mai multe adrese private să folosească o singură adresă publică (Video: Network Address Translation)."
   },
   {
     id: "ex2_37",
@@ -478,7 +445,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["3389", "389", "443", "636"],
     correct: [0],
-    sourceImage: "Screenshot (1131).png"
+    explanation: "RDP folosește portul 3389 (Video: RDP, SSH)."
   },
   {
     id: "ex2_38",
@@ -487,7 +454,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["CAT3", "CAT5e", "Coaxial", "Fiber Optic"],
     correct: [1],
-    sourceImage: "Screenshot (1132).png"
+    explanation: "CAT5e suportă 1 Gbps și este mai ieftin decât fibra optică (Video: CAT Cabling)."
   },
   {
     id: "ex2_39",
@@ -496,7 +463,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Direct", "Dynamic", "Floating", "Static"],
     correct: [3],
-    sourceImage: "Screenshot (1133).png"
+    explanation: "Rutele statice sunt configurate manual de administrator (Video: Static Routing)."
   },
   {
     id: "ex2_40",
@@ -505,7 +472,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["SMTP", "IMAP", "FTP", "SSH"],
     correct: [0, 1],
-    sourceImage: "Screenshot (1134).png"
+    explanation: "SMTP (port 25) pentru email trimis, IMAP (port 143) pentru email primit (Video: SMTP, IMAP)."
   },
   {
     id: "ex2_41",
@@ -514,7 +481,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["A dynamic routing protocol", "A secure tunnel used to pass data through the Internet", "An encryption protocol", "Virtual Protocol Name"],
     correct: [1],
-    sourceImage: "Screenshot (1135).png"
+    explanation: "VPN este un tunel securizat care transmite date prin Internet (Video: VPN)."
   },
   {
     id: "ex2_42",
@@ -523,7 +490,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["Hub", "Repeater", "Router", "Switch"],
     correct: [3],
-    sourceImage: "Screenshot (1136).png"
+    explanation: "Switch-ul creează domenii de coliziune separate pentru fiecare port (Video: Hubs vs. Switches)."
   },
   {
     id: "ex2_43",
@@ -533,7 +500,7 @@ var EXAM_QUESTIONS = [
     pairs: ["Application layer", "Transport layer", "Internet layer", "Network Access layer"],
     options: ["Physical addresses are added to frames", "Data packets are addressed", "Data is segmented", "Data is encrypted"],
     correct: ["Data is encrypted", "Data is segmented", "Data packets are addressed", "Physical addresses are added to frames"],
-    sourceImage: "Screenshot (1137).png"
+    explanation: "Application = criptare; Transport = segmentare; Internet = adresare pachete; Network Access = adrese fizice în cadre (Video: OSI/TCP Models and Layers)."
   },
   {
     id: "ex2_44",
@@ -542,7 +509,7 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["LAN protocols", "Routing", "Transport", "WAN protocols"],
     correct: [0],
-    sourceImage: "Screenshot (1138).png"
+    explanation: "Straturile 1 și 2 definesc protocoalele LAN (Video: OSI Model 2)."
   },
   {
     id: "ex2_45",
@@ -550,8 +517,8 @@ var EXAM_QUESTIONS = [
     question: "Which twisted-pair cable category runs at 10 Gbps for 55 meters?",
     image: null,
     options: ["CAT5", "CAT6", "CAT6a", "CAT7"],
-    correct: [2],
-    sourceImage: "Screenshot (1139).png"
+    correct: [1],   // corectat de la [2]
+    explanation: "CAT6 suportă 10 Gbps până la 55 de metri; CAT6a suportă 10 Gbps până la 100 de metri (Video: CAT Cabling)."
   },
   {
     id: "ex2_46",
@@ -565,6 +532,6 @@ var EXAM_QUESTIONS = [
       "Media access is restricted to only one method"
     ],
     correct: [0, 2],
-    sourceImage: "Screenshot (1140).png"
+    explanation: "LAN-ul este privat și are viteze mai mari decât un WAN (Video: Wired and Wireless LANs)."
   }
 ];

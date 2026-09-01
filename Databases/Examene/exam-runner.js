@@ -57,6 +57,27 @@ function resolveExamShowSourceImageBtnDefault() {
   return 'off';
 }
 
+function resolveExamKeyboardModeDefault() {
+  const fromUrl = new URLSearchParams(window.location.search).get('keyboardMode');
+  if (fromUrl === 'navigate' || fromUrl === 'answer') {
+    try { localStorage.setItem('studyhub_keyboard_mode_v1', fromUrl); } catch (e) { /* ignoră */ }
+    return fromUrl;
+  }
+  try {
+    const cached = localStorage.getItem('studyhub_keyboard_mode_v1');
+    if (cached === 'navigate' || cached === 'answer') return cached;
+  } catch (e) { /* ignoră */ }
+  try {
+    const settingsRaw = localStorage.getItem('studyhub_settings_v1');
+    if (settingsRaw) {
+      const settings = JSON.parse(settingsRaw);
+      const value = settings.keyboardMode;
+      if (value === 'navigate' || value === 'answer') return value;
+    }
+  } catch (e) { /* ignoră */ }
+  return 'navigate';
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof initProgressBridge === 'function') {
     initProgressBridge('../../../storage-bridge.html');
@@ -70,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const showShortcuts = resolveExamShortcutsPanelDefault() !== 'hidden';
   const autoSaveAnswers = resolveExamAutoSaveAnswersDefault() !== 'off';
   const showSourceImageBtn = resolveExamShowSourceImageBtnDefault() === 'on';
+  const keyMode = resolveExamKeyboardModeDefault();
   const testId = typeof EXAM_ID !== 'undefined' ? EXAM_ID : null;
   const randomize = typeof EXAM_RANDOMIZE === 'boolean' ? EXAM_RANDOMIZE : true;
 
@@ -77,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     title: titleEl.textContent,
     showShortcuts,
     autoSaveAnswers,
+    keyMode,
     testId,
     multiSession: true,
     showSourceImageBtn,

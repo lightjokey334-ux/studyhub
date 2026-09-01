@@ -264,11 +264,14 @@ function renderAssessmentRow(key, label, testData, timeSec) {
     html += `<div class="hist-attempt-row"><span class="hist-attempt-date">Nu ai dat încă acest test.</span></div>`;
   } else {
     [...attempts].reverse().forEach((a, i) => {
-      const attemptKey = `${key}__${attempts.length - 1 - i}`;
+      const attemptIndex = attempts.length - i;
+      const attemptKey = `${key}__${attemptIndex}`;
+      const attemptName = a.name || `Încercarea ${attemptIndex}`;
       const wrongCount = (a.wrongQuestions || []).length;
       html += `
         <div class="hist-attempt-block">
           <div class="hist-attempt-row">
+            <span class="hist-attempt-name">${attemptName}</span>
             <span class="hist-attempt-date">${formatDate(a.date)}</span>
             <span class="hist-attempt-score ${scoreClass(a.pct)}">${a.correct}/${a.total} (${a.pct}%)</span>
             <span class="hist-attempt-duration">${formatDuration(a.durationSec)}</span>

@@ -5,7 +5,8 @@ var QUESTIONS_D5_POST = [
     question: "Arrange the steps of the troubleshooting process in the correct order.",
     image: null,
     options: ["Establish a plan to solve the problem", "Establish a theory of probable cause", "Identify the problem", "Implement or escalate the solution", "Verify the success of the solution", "Test the theory", "Document the solution"],
-    correct: [2, 1, 5, 0, 3, 4, 6]
+    correct: [2, 1, 5, 0, 3, 4, 6],
+    explanation: "Ordinea corectă: 1) Identify problem, 2) Theory of probable cause, 3) Test theory, 4) Establish plan, 5) Implement/escalate, 6) Verify solution, 7) Document solution (Video: Steps in the Troubleshooting Process 2 - F0001)."
   },
   {
     id: "d5_post_02",
@@ -13,7 +14,8 @@ var QUESTIONS_D5_POST = [
     question: "What tips should network administrators follow to maintain good customer relations? Choose three answers.",
     image: null,
     options: ["Keep confidential information confidential", "Work quickly but avoid giving deadlines", "Avoid social media distractions", "Use appropriate titles", "Provide thorough explanations using technical terms"],
-    correct: [0, 2, 3]
+    correct: [0, 2, 3],
+    explanation: "Pentru o conduită profesională: păstrează confidențialitatea, evită distragerile (social media), folosește titluri potrivite. Evită jargonul tehnic și stabilește așteptări realiste privind timpul (Video: Etiquette/Professional Conduct - F0002)."
   },
   {
     id: "d5_post_03",
@@ -22,7 +24,8 @@ var QUESTIONS_D5_POST = [
     image: null,
     pairs: ["Netstat -p", "Netstat -a", "Netstat -s"],
     options: ["Active connections (with PID)", "Active connections (no PID)", "ICMPv6 Statistics"],
-    correct: ["Active connections (with PID)", "Active connections (no PID)", "ICMPv6 Statistics"]
+    correct: ["Active connections (with PID)", "Active connections (no PID)", "ICMPv6 Statistics"],
+    explanation: "`netstat -a` afișează toate conexiunile și porturile (fără PID); `netstat -p tcp` arată conexiunile pentru un protocol specific; `netstat -s` afișează statistici per protocol (Video: Netstat - M0005)."
   },
   {
     id: "d5_post_04",
@@ -30,7 +33,8 @@ var QUESTIONS_D5_POST = [
     question: "Which netstat command will an administrator run to just see port information for TCP ports?",
     image: null,
     options: ["netstat -a", "netstat -p tcp", "netstat -proto tcp", "netstat -tcp"],
-    correct: [1]
+    correct: [1],
+    explanation: "`netstat -p tcp` afișează doar informațiile pentru protocolul TCP (Video: Netstat - M0005)."
   },
   {
     id: "d5_post_05",
@@ -38,7 +42,8 @@ var QUESTIONS_D5_POST = [
     question: "A multimeter is plugged into a computer's power supply, but does not provide any readings. What does this indicate?",
     image: null,
     options: ["The power supply is functioning normally", "The power supply has been overclocked", "The power supply is compatible with the computer", "The power supply needs to be replaced", "The power supply cannot effectively charge the computer"],
-    correct: [3]
+    correct: [3],
+    explanation: "Dacă multimetrul nu indică nicio citire la testarea unei surse de alimentare, aceasta trebuie înlocuită (Video: Multimeter - C0001)."
   },
   {
     id: "d5_post_06",
@@ -46,7 +51,8 @@ var QUESTIONS_D5_POST = [
     question: "An administrator uses an OTDR to locate faults in a fiber-optic cable. The OTDR sends a signal down the cable and is bounced back to the origin. What does this reaction indicate?",
     image: null,
     options: ["The cable is functioning correctly", "The cable has suffered a break", "The cable must be measured using a TDR instead", "The cable is incompatible with the network", "The cable needs to be relocated"],
-    correct: [1]
+    correct: [1],
+    explanation: "Un OTDR trimite un semnal; dacă semnalul se reflectă înapoi, indică o ruptură sau un defect în cablul de fibră optică (Video: Time Domain Reflectometer (TDR), Optical TDR (OTDR) - F0005)."
   },
   {
     id: "d5_post_07",
@@ -54,7 +60,8 @@ var QUESTIONS_D5_POST = [
     question: "Refer to the image. Which hop shows a slight delay in returning statistics?",
     image: "tracert-delay.png",
     options: ["Hop 0", "Hop 1", "Hop 2", "Hop 3"],
-    correct: [3]
+    correct: [3],
+    explanation: "În ieșirea `tracert`, întârzierile sunt vizibile la hop-urile cu timpi mari de răspuns; conform imaginii, hop-ul 3 prezintă o ușoară întârziere (Video: Tracert - M0002)."
   },
   {
     id: "d5_post_08",
@@ -62,7 +69,8 @@ var QUESTIONS_D5_POST = [
     question: "Which port is used for SSH?",
     image: null,
     options: ["20", "21", "22", "23"],
-    correct: [2]
+    correct: [2],
+    explanation: "SSH rulează pe portul 22 (Video: Telnet - F0006)."
   },
   {
     id: "d5_post_09",
@@ -70,7 +78,8 @@ var QUESTIONS_D5_POST = [
     question: "An administrator wants to ping an IP address and keep pinging that address until the administrator stops the process. Which command should the administrator use?",
     image: null,
     options: ["ping -c", "ping -n", "ping -s", "ping -t"],
-    correct: [3]
+    correct: [3],
+    explanation: "`ping -t` rulează ping continuu până la întreruperea cu Ctrl+C (Video: Ping - M0001)."
   },
   {
     id: "d5_post_10",
@@ -78,7 +87,8 @@ var QUESTIONS_D5_POST = [
     question: "Which best describes the use of tracert?",
     image: null,
     options: ["Show a routing table", "Show routing statistics", "Troubleshoot connectivity problems", "Troubleshoot specific routes"],
-    correct: [3]
+    correct: [3],
+    explanation: "`tracert` este folosit pentru a depana trasee specifice, arătând fiecare hop și timpul de răspuns, ajutând la identificarea unde apar problemele (Video: Tracert - M0002)."
   },
   {
     id: "d5_post_11",
@@ -86,7 +96,8 @@ var QUESTIONS_D5_POST = [
     question: "After using tracert, which series of symbols in the command prompt indicates that a router is experiencing problems?",
     image: null,
     options: ["!!!", "???", "***", "%%%", "###"],
-    correct: [2]
+    correct: [2],
+    explanation: "În ieșirea `tracert`, `***` (asteriscuri) în locul timpilor de răspuns indică faptul că routerul respectiv are probleme sau nu răspunde (Video: Tracert - M0002)."
   },
   {
     id: "d5_post_12",
@@ -94,7 +105,8 @@ var QUESTIONS_D5_POST = [
     question: "What aspects of an optic-fiber cable do OTDRs measure? Choose two answers.",
     image: null,
     options: ["Overall attenuation", "Overall latency", "Network speed", "Electromagnetic interference", "Cable length"],
-    correct: [0, 4]
+    correct: [0, 4],
+    explanation: "Un OTDR măsoară atenuarea generală (pierderea de semnal) și lungimea cablului de fibră optică (Video: Time Domain Reflectometer (TDR), Optical TDR (OTDR) - F0005)."
   },
   {
     id: "d5_post_13",
@@ -103,7 +115,8 @@ var QUESTIONS_D5_POST = [
     image: null,
     pairs: ["Ping", "Traceroute", "Host", "Netstat", "Arp"],
     options: ["Indicates whether a destination can be reached", "Displays the complete path from a source to a destination", "Shows IP addresses and accompanying MAC addresses", "Performs DNS lookups", "Displays open and listening ports on a device"],
-    correct: ["Indicates whether a destination can be reached", "Displays the complete path from a source to a destination", "Performs DNS lookups", "Displays open and listening ports on a device", "Shows IP addresses and accompanying MAC addresses"]
+    correct: ["Indicates whether a destination can be reached", "Displays the complete path from a source to a destination", "Performs DNS lookups", "Displays open and listening ports on a device", "Shows IP addresses and accompanying MAC addresses"],
+    explanation: "`ping` = verifică accesibilitatea; `traceroute` = afișează calea completă; `host` = interogări DNS; `netstat` = porturi deschise; `arp` = adrese IP și MAC (Video: Tool Selection, Syntax 1 - M0006)."
   },
   {
     id: "d5_post_14",
@@ -111,7 +124,8 @@ var QUESTIONS_D5_POST = [
     question: "A cable tester can identify an Ethernet cable as one of which types of cable? Choose two answers.",
     image: null,
     options: ["STP", "UTP", "Straight-through", "Twisted pair", "Crossover"],
-    correct: [2, 4]
+    correct: [2, 4],
+    explanation: "Un cable tester poate determina dacă un cablu Ethernet este de tip straight‑through sau crossover (Video: Cable Tester - F0003)."
   },
   {
     id: "d5_post_15",
@@ -119,7 +133,8 @@ var QUESTIONS_D5_POST = [
     question: "How does data transmit over a Telnet connection?",
     image: null,
     options: ["Using asymmetric encryption", "Using cleartext", "Using hashes", "Using symmetric encryption"],
-    correct: [1]
+    correct: [1],
+    explanation: "Telnet transmite datele în text clar (cleartext), inclusiv numele de utilizator și parolele, motiv pentru care nu este securizat (Video: Telnet - F0006)."
   },
   {
     id: "d5_post_16",
@@ -127,7 +142,8 @@ var QUESTIONS_D5_POST = [
     question: "Refer to the image. How many echo replies did the ping to learnkey.com return?",
     image: "ping-replies.png",
     options: ["1", "2", "3", "4", "5"],
-    correct: [2]
+    correct: [2],
+    explanation: "Ieșirea `ping` afișează de obicei patru răspunsuri; conform imaginii, au revenit două răspunsuri (Video: Ping - M0001)."
   },
   {
     id: "d5_post_17",
@@ -135,7 +151,8 @@ var QUESTIONS_D5_POST = [
     question: "Which statements are true of a tone generator? Choose three answers.",
     image: null,
     options: ["Consists of a tone generator and a toner probe", "Emits a tone if a cable connection is functional", "Emits a tone if a cable connection is faulty or has terminated", "Traces copper cable wires in walls"],
-    correct: [0, 1, 3]
+    correct: [0, 1, 3],
+    explanation: "Un tone generator (toner probe) are două componente (generator și sondă), emite un ton dacă conexiunea este funcțională și este folosit pentru a urmări cablurile de cupru în pereți (Video: Toner - F0004)."
   },
   {
     id: "d5_post_18",
@@ -143,7 +160,8 @@ var QUESTIONS_D5_POST = [
     question: "What should an administrator type to see all possible options for the ipconfig command?",
     image: null,
     options: ["ipconfig /all", "ipconfig /help", "ipconfig /man", "ipconfig /?"],
-    correct: [3]
+    correct: [3],
+    explanation: "Pentru a vedea toate opțiunile disponibile pentru `ipconfig`, se folosește `ipconfig /?` (Video: Ipconfig - M0004)."
   },
  {
    id: "d5_post_19",
@@ -151,6 +169,7 @@ var QUESTIONS_D5_POST = [
    question: "Which is a Class B private IP address?",
    image: null,
    options: ["10.0.0.1", "169.254.0.1", "172.16.0.0", "192.168.0.0"],
-   correct: [2]
+   correct: [2],
+   explanation: "Adresele private de clasă B sunt în intervalul 172.16.0.0 – 172.31.255.255, deci 172.16.0.0 este corect (Video: Reserved Ranges, Protocols - FM001)."
  }
 ];

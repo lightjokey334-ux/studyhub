@@ -96,13 +96,17 @@ async function recordTestAttempt(entry) {
 
   if (!history[entry.testId]) history[entry.testId] = { label: entry.testLabel, attempts: [] };
   history[entry.testId].label = entry.testLabel; // mereu actualizat, în caz că titlul s-a schimbat
+  const nextAttemptNumber = history[entry.testId].attempts.length + 1;
   history[entry.testId].attempts.push({
+    name: `Încercarea ${nextAttemptNumber}`,
     date: new Date().toISOString(),
     correct: entry.correct,
     total: entry.total,
     pct: entry.pct,
     durationSec: entry.durationSec,
     wrongQuestions: entry.wrongQuestions || [],
+    answers: entry.answers || {},
+    questionOrder: entry.questionOrder || [],
   });
 
   _bridgeSet(PROGRESS_HISTORY_KEY, JSON.stringify(history));

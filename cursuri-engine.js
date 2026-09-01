@@ -162,6 +162,33 @@ function resolveShowSourceImageBtnDefault() {
 
 const showSourceImageBtnDefault = resolveShowSourceImageBtnDefault() === 'on';
 
+// ---- Preferința pentru modul tastatură implicit (Setări -> Teste) ----
+const KEYBOARD_MODE_KEY = 'studyhub_keyboard_mode_v1';
+
+function resolveKeyboardModeDefault() {
+  const fromUrl = new URLSearchParams(window.location.search).get('keyboardMode');
+  if (fromUrl === 'navigate' || fromUrl === 'answer') {
+    try { localStorage.setItem(KEYBOARD_MODE_KEY, fromUrl); } catch (e) { /* ignoră */ }
+    return fromUrl;
+  }
+  try {
+    const cached = localStorage.getItem(KEYBOARD_MODE_KEY);
+    if (cached === 'navigate' || cached === 'answer') return cached;
+  } catch (e) { /* ignoră */ }
+
+  try {
+    const settingsRaw = localStorage.getItem('studyhub_settings_v1');
+    if (settingsRaw) {
+      const settings = JSON.parse(settingsRaw);
+      const value = settings.keyboardMode;
+      if (value === 'navigate' || value === 'answer') return value;
+    }
+  } catch (e) { /* ignoră */ }
+  return 'navigate';
+}
+
+const keyboardModeDefault = resolveKeyboardModeDefault();
+
 // ---- Preferința pentru auto-redarea următorului videoclip (Setări -> Cursuri) ----
 const AUTOPLAY_NEXT_VIDEO_KEY = 'studyhub_cursuri_autoplay_next_v1';
 
@@ -226,6 +253,13 @@ window.addEventListener('message', (e) => {
   if (msg.key === 'autoplayNextVideo') {
     try { localStorage.setItem(AUTOPLAY_NEXT_VIDEO_KEY, msg.value); } catch (err) { /* ignoră */ }
     autoplayNextVideo = msg.value !== 'off';
+  }
+  if (msg.key === 'keyboardMode') {
+    try { localStorage.setItem('studyhub_keyboard_mode_v1', msg.value); } catch (err) { /* ignoră */ }
+    if (currentEngineInstance) {
+      currentEngineInstance.keyMode = msg.value === 'answer' ? 'answer' : 'navigate';
+      if (typeof currentEngineInstance.updateKeyModeButton === 'function') currentEngineInstance.updateKeyModeButton();
+    }
   }
   if (msg.key === 'transcriptGuideLine') {
     try { localStorage.setItem(TRANSCRIPT_GUIDE_LINE_KEY, msg.value); } catch (err) { /* ignoră */ }
@@ -847,6 +881,7 @@ function renderAssessment(domain, type) {
     showShortcuts: showShortcutsDefault,
     autoSaveAnswers: autoSaveAnswersDefault,
     showSourceImageBtn: showSourceImageBtnDefault,
+    keyMode: keyboardModeDefault,
     testId: `${SUBJECT}_${domain.id}_${type}`,
     randomize,
   });
