@@ -318,10 +318,14 @@ class QuestionEngine {
     const orderedIds = Array.isArray(attempt.questionOrder) && attempt.questionOrder.length
       ? attempt.questionOrder
       : source.map(q => q.id);
+    const savedRecipes = attempt.shuffleRecipes || {};
     const attemptName = attempt.name || 'Încercare';
 
     const questionCards = orderedIds.map((id, idx) => {
-      const q = byId[id];
+      const sourceQuestion = byId[id];
+      const q = sourceQuestion && this.randomize
+        ? this.shuffleQuestionOptions(sourceQuestion, savedRecipes[id])
+        : sourceQuestion;
       if (!q) return '';
       const given = attempt.answers && Object.prototype.hasOwnProperty.call(attempt.answers, q.id) ? attempt.answers[q.id] : undefined;
       return this.renderReviewQuestionCard(q, idx, given);
@@ -1798,6 +1802,8 @@ class QuestionEngine {
     if (this.testId && typeof recordTestAttempt === 'function') {
       const pausedMs = this._pausedAccumMs + (this._pausedAt != null ? Date.now() - this._pausedAt : 0);
       const durationSec = Math.max(0, Math.round((Date.now() - this._startTime - pausedMs) / 1000));
+      const shuffleRecipes = {};
+      this.questions.forEach(q => { if (q._shuffleRecipe) shuffleRecipes[q.id] = q._shuffleRecipe; });
       recordTestAttempt({
         testId: this.testId,
         testLabel: this.testLabel,
@@ -1808,6 +1814,7 @@ class QuestionEngine {
         wrongQuestions,
         answers: this.userAnswers,
         questionOrder: this.questions.map(q => q.id),
+        shuffleRecipes,
       });
     }
 

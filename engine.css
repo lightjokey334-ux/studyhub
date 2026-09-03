@@ -1043,10 +1043,38 @@
 }
 
 @media (max-width: 640px){
+  body:has(.qe-review-panel){ overflow: hidden; }
+
   .qe-mode-picker{ margin: 24px auto; }
   .qe-mode-picker-grid{ grid-template-columns: 1fr; }
   .qe-review-header-row{ grid-template-columns: 1fr; }
   .qe-review-answer-row{ grid-template-columns: 1fr; }
+
+  .qe-review-panel{
+    margin: 8px auto;
+    padding: 0;
+    width: 100%;
+  }
+  .qe-review-header-row{
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .qe-back-card{
+    min-height: 42px;
+    padding: 10px 14px;
+  }
+  .qe-review-summary .qe-mode-picker-title{
+    font-size: 19px;
+    margin-bottom: 3px;
+  }
+  .qe-review-summary .qe-mode-picker-sub{
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+  .qe-review-list{
+    max-height: calc(100dvh - 205px);
+    padding-right: 0;
+  }
 }
 
 /* .qe-panel-fab / .qe-panel-backdrop nu au niciun rol pe desktop — panoul e

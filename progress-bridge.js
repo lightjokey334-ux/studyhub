@@ -107,6 +107,7 @@ async function recordTestAttempt(entry) {
     wrongQuestions: entry.wrongQuestions || [],
     answers: entry.answers || {},
     questionOrder: entry.questionOrder || [],
+    shuffleRecipes: entry.shuffleRecipes || {},
   });
 
   _bridgeSet(PROGRESS_HISTORY_KEY, JSON.stringify(history));
