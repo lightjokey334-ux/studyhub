@@ -182,16 +182,28 @@ altceva în cod.
    întrebări gen "Use the dropdown menus to complete each statement",
    indiferent câte dropdown-uri are (1, 2, 5, oricâte apar în captură, nu
    doar 2).
-   - question: instrucțiunea generală + orice context (imagine, tabel),
-     FĂRĂ propozițiile de completat în text.
-   - statements: array cu textul de dinaintea fiecărui dropdown, EXACT ca
-     în captură (ex: "The problem is ....", "The solution is ....").
-   - options: array de array-uri — câte o listă de variante pentru FIECARE
-     dropdown, în aceeași ordine ca "statements" (ex:
-     `[["opt1a","opt1b"], ["opt2a","opt2b","opt2c"]]` — pot avea număr
-     diferit de variante între ele).
-   - correct: array cu răspunsul corect (ca TEXT, nu index) pentru fiecare
-     dropdown, în aceeași ordine ca "statements".
+   - Dacă dropdown-ul sau dropdown-urile apar în interiorul unei propoziții sau al unui
+     paragraf, pune textul complet în `question` și înlocuiește fiecare loc
+     liber cu exact `____` (câte un marker pentru fiecare dropdown, în ordine).
+     Motorul înlocuiește markerii cu meniurile direct în text, deci nu scrie
+     cod HTML pentru `<select>` și NU include câmpul `statements` (sau folosește
+     `statements: []`). Pentru un singur dropdown, `options` trebuie să fie tot
+     array de array-uri, cu o singură listă, iar `correct` cu un singur răspuns.
+     Exemplu: `question: "The device uses ____ to connect to the network.", options: [["Wi-Fi", "Bluetooth"]], correct: ["Wi-Fi"]`
+     Pentru mai multe: `question: "The device uses ____ to connect and ____ to authenticate."`
+   - Dacă întrebarea are rânduri separate, iar fiecare rând are propriul
+     dropdown, folosește formatul vechi: `question` conține instrucțiunea și
+     contextul, iar `statements` conține textul de dinaintea fiecărui menu
+     (ex: `["The problem is ...", "The solution is ..."]`). Nu pune `____` în
+     acest caz.
+   - `options` este array de array-uri — câte o listă de variante pentru
+     FIECARE dropdown, în aceeași ordine ca markerii `____` sau ca
+     `statements` (ex: `[["opt1a","opt1b"], ["opt2a","opt2b","opt2c"]]` —
+     pot avea număr diferit de variante între ele).
+   - `correct` este array cu răspunsul corect (ca TEXT, nu index) pentru
+     fiecare dropdown, în aceeași ordine ca markerii sau ca `statements`.
+   - Pentru formatul inline cu markeri, `statements` poate fi omis sau poate
+     fi `[]`; nu adăuga statements duplicate.
 
 9) "info" — slide DOAR cu imagine, FĂRĂ nicio opțiune de răspuns, nu se
    scorează niciodată — NU e o întrebare propriu-zisă, e o "pagină" de

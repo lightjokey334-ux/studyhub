@@ -1,14 +1,10 @@
 /* ===================================================================
    Examen 2 — Databases
-   Completează array-ul de mai jos cu întrebările testului (ex: cu Deepseek).
-   Vezi README.md din rădăcina proiectului pentru schema completă.
-
-   Tipuri disponibile: "single", "multi", "order", "blank", "dragtext"
    =================================================================== */
 
 var EXAM_TITLE = "Databases — Examen 2";
-var EXAM_ID = "Databases_exam2"; // folosit pentru istoricul de progres
-var EXAM_RANDOMIZE = false; // pune true dacă vrei amestecarea întrebărilor pentru acest test
+var EXAM_ID = "Databases_exam2";
+var EXAM_RANDOMIZE = false;
 
 var EXAM_QUESTIONS = [
   {
@@ -23,7 +19,8 @@ var EXAM_QUESTIONS = [
       "SUBTRACT"
     ],
     correct: [0],
-    sourceImage: "screenshot_0001.png"
+    sourceImage: "screenshot_0001.png",
+    explanation: "MINUS nu este un cuvânt rezervat în SQL Server (este în Oracle). ADD este un cuvânt rezervat valid, deci înlocuind MINUS cu ADD afirmația devine corectă. (Work with Tables - D2001)"
   },
   {
     id: "ex2_02",
@@ -47,7 +44,8 @@ var EXAM_QUESTIONS = [
       { label: "Răspuns 1", file: "screenshot_0002_r1.png" },
       { label: "Răspuns 2", file: "screenshot_0002_r2.png" },
       { label: "Răspuns 3", file: "screenshot_0002_r3.png" }
-    ]
+    ],
+    explanation: "Transaction → Customer este one-to-many. AccountID pe Transaction este cheie străină (foreign key). Diagrama este Entity-Relationship. (Establishing Relationships - D1009, Entity-Relationship Diagrams - D1010)"
   },
   {
     id: "ex2_03",
@@ -61,7 +59,8 @@ var EXAM_QUESTIONS = [
       "repeating groups"
     ],
     correct: [3],
-    sourceImage: "screenshot_0003.png"
+    sourceImage: "screenshot_0003.png",
+    explanation: "First normal form (1NF) elimină grupurile repetitive (repeating groups). (Reasons for Normalization - D1012)"
   },
   {
     id: "ex2_04",
@@ -74,8 +73,9 @@ var EXAM_QUESTIONS = [
       "rows",
       "SQL statements"
     ],
-    correct: [2],
-    sourceImage: "screenshot_0004.png"
+    correct: [0],
+    sourceImage: "screenshot_0004.png",
+    explanation: "O tabelă este implementată folosind un index common (indexing scheme), nu coloane. (Clustered Indexes - D2006)"
   },
   {
     id: "ex2_05",
@@ -89,7 +89,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, false, true],
-    sourceImage: "screenshot_0005.png"
+    sourceImage: "screenshot_0005.png",
+    explanation: "CHAR este fix, VARCHAR este variabil, TEXT (în SQL Server) este variabil, nu fix. (Data Types for Storing Text - D1008)"
   },
   {
     id: "ex2_06",
@@ -103,7 +104,8 @@ var EXAM_QUESTIONS = [
       "DROP VIEW potential_customers"
     ],
     correct: [3],
-    sourceImage: "screenshot_0006.png"
+    sourceImage: "screenshot_0006.png",
+    explanation: "DROP VIEW elimină doar definiția view-ului, nu datele subiacente. (Create, Alter, and Drop Views - D2003)"
   },
   {
     id: "ex2_07",
@@ -122,7 +124,8 @@ var EXAM_QUESTIONS = [
     sourceImage: [
       { label: "Întrebare", file: "screenshot_0007.png" },
       { label: "Imagine", file: "screenshot_0007_img.png" }
-    ]
+    ],
+    explanation: "Structura B-tree este utilizată pentru indecși. Paginile și rândurile sunt noduri frunză (leaf nodes). (Clustered Indexes - D2006, Nonclustered Indexes - D2007)"
   },
   {
     id: "ex2_08",
@@ -136,7 +139,8 @@ var EXAM_QUESTIONS = [
       "Social Security Number"
     ],
     correct: [0],
-    sourceImage: "screenshot_0008.png"
+    sourceImage: "screenshot_0008.png",
+    explanation: "O cheie primară trebuie să fie o coloană sau combinație de coloane care identifică unic fiecare rând. „A table containing only one FOREIGN key” nu este o cheie, ci o tabelă. (Primary Key - D1003)"
   },
   {
     id: "ex2_09",
@@ -150,7 +154,8 @@ var EXAM_QUESTIONS = [
       "VALUES"
     ],
     correct: [0],
-    sourceImage: "screenshot_0009.png"
+    sourceImage: "screenshot_0009.png",
+    explanation: "MAX returnează valoarea maximă dintr-un set. (MIN and MAX - D3023)"
   },
   {
     id: "ex2_10",
@@ -169,7 +174,8 @@ var EXAM_QUESTIONS = [
     sourceImage: [
       { label: "Întrebare", file: "screenshot_0010.png" },
       { label: "Imagine", file: "screenshot_0010_img.png" }
-    ]
+    ],
+    explanation: "Atac de dicționar (încearcă parole comune). Blocarea contului (Account lockout) previne acest atac."
   },
   {
     id: "ex2_11",
@@ -183,7 +189,8 @@ var EXAM_QUESTIONS = [
       "Right Outer Join"
     ],
     correct: [1],
-    sourceImage: "screenshot_0011.png"
+    sourceImage: "screenshot_0011.png",
+    explanation: "INNER JOIN returnează doar rândurile care au potrivire în ambele tabele. (Join Types - D3001)"
   },
   {
     id: "ex2_12",
@@ -197,7 +204,8 @@ var EXAM_QUESTIONS = [
       "7"
     ],
     correct: [1],
-    sourceImage: "screenshot_0012.png"
+    sourceImage: "screenshot_0012.png",
+    explanation: "În majoritatea cursurilor introductive sunt menționate trei forme normale (1NF, 2NF, 3NF). (Reasons for Normalization - D1012)"
   },
   {
     id: "ex2_13",
@@ -211,7 +219,8 @@ var EXAM_QUESTIONS = [
       "None of the above"
     ],
     correct: [2],
-    sourceImage: "screenshot_0013.png"
+    sourceImage: "screenshot_0013.png",
+    explanation: "REPLACE înlocuiește toate aparițiile 'S' (inclusiv 's' dacă collation-ul este case-insensitive) cu 'z'. Rezultatul este: The bezt TTz zolutions iz provided by GMetrix. (Data Manipulation)"
   },
   {
     id: "ex2_14",
@@ -227,7 +236,8 @@ var EXAM_QUESTIONS = [
       "Revoke"
     ],
     correct: [0, 1, 5],
-    sourceImage: "screenshot_0014.png"
+    sourceImage: "screenshot_0014.png",
+    explanation: "În T-SQL, comenzile pentru privilegii sunt GRANT, DENY și REVOKE. (Permission Grants - D1016, Permission Revokes - D1017)"
   },
   {
     id: "ex2_15",
@@ -241,7 +251,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, true, false],
-    sourceImage: "screenshot_0015.png"
+    sourceImage: "screenshot_0015.png",
+    explanation: "SELECT * INTO este corect. INSERT * INTO este incorect (INSERT nu suportă *). INSERT INTO ... SELECT este corect. (INSERT INTO...SELECT - D4001)"
   },
   {
     id: "ex2_16",
@@ -255,7 +266,8 @@ var EXAM_QUESTIONS = [
       "REMOVE TABLE"
     ],
     correct: [1],
-    sourceImage: "screenshot_0016.png"
+    sourceImage: "screenshot_0016.png",
+    explanation: "DROP TABLE elimină tabela din bază de date. (Work with Tables - D2001)"
   },
   {
     id: "ex2_17",
@@ -269,7 +281,8 @@ var EXAM_QUESTIONS = [
       "setupadmin"
     ],
     correct: [2],
-    sourceImage: "screenshot_0017.png"
+    sourceImage: "screenshot_0017.png",
+    explanation: "serveradmin poate opri serverul SQL. (Permission of Roles - D1018)"
   },
   {
     id: "ex2_18",
@@ -284,7 +297,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, true, false, false],
-    sourceImage: "screenshot_0018.png"
+    sourceImage: "screenshot_0018.png",
+    explanation: "Views restricționează accesul, pot fi create din mai multe tabele, dar nu se alterează cu ADD COLUMN și nu stochează date (sunt doar interogări salvate). (Create, Alter, and Drop Views - D2003)"
   },
   {
     id: "ex2_19",
@@ -298,7 +312,8 @@ var EXAM_QUESTIONS = [
       "Redundant NICs"
     ],
     correct: [0],
-    sourceImage: "screenshot_0019.png"
+    sourceImage: "screenshot_0019.png",
+    explanation: "Backup este metoda principală pentru prevenirea pierderii datelor. UPS protejează doar împotriva întreruperilor de curent. (Backups - D1014)"
   },
   {
     id: "ex2_20",
@@ -312,7 +327,8 @@ var EXAM_QUESTIONS = [
       "Setupadmin"
     ],
     correct: [2],
-    sourceImage: "screenshot_0020.png"
+    sourceImage: "screenshot_0020.png",
+    explanation: "Bulkadmin este rolul care permite operațiuni bulk insert. Afirmația este corectă. (Permission of Roles - D1018)"
   },
   {
     id: "ex2_21",
@@ -326,7 +342,8 @@ var EXAM_QUESTIONS = [
       "TRUNCATE TABLE"
     ],
     correct: [3],
-    sourceImage: "screenshot_0021.png"
+    sourceImage: "screenshot_0021.png",
+    explanation: "TRUNCATE TABLE elimină toate rândurile fără a loga fiecare ștergere individual. (Truncate Table - D4005)"
   },
   {
     id: "ex2_22",
@@ -340,7 +357,8 @@ var EXAM_QUESTIONS = [
       "It refers to a set of rules that determine how data is sorted and compared."
     ],
     correct: [3],
-    sourceImage: "screenshot_0022.png"
+    sourceImage: "screenshot_0022.png",
+    explanation: "Collation definește regulile de sortare și comparare a datelor. (Data Types for Storing Text - D1008)"
   },
   {
     id: "ex2_23",
@@ -364,7 +382,8 @@ var EXAM_QUESTIONS = [
       "WHERE orderdetailid = @orderdetailid",
       "END"
     ],
-    sourceImage: "screenshot_0023.png"
+    sourceImage: "screenshot_0023.png",
+    explanation: "Procedura stocată corectă are parametru de intrare și ieșire, SELECT, WHERE și END. (Input and Output Parameters - D2004, Return Values - D2005)"
   },
   {
     id: "ex2_24",
@@ -379,7 +398,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, false, true, true],
-    sourceImage: "screenshot_0024.png"
+    sourceImage: "screenshot_0024.png",
+    explanation: "Windows user group, SQL Server Login și Windows login pot identifica securitatea la nivel de server. Root login nu există în SQL Server. (Permission of Roles - D1018, Permission of Roles (2) - D1019)"
   },
   {
     id: "ex2_25",
@@ -393,7 +413,8 @@ var EXAM_QUESTIONS = [
       "salary BETWEEN 10000 AND 50000"
     ],
     correct: [2],
-    sourceImage: "screenshot_0025.png"
+    sourceImage: "screenshot_0025.png",
+    explanation: "Opțiunea 2 are sintaxă incorectă: BETWEEN nu acceptă paranteze și AND între două expresii BETWEEN. (BETWEEN - D3011)"
   },
   {
     id: "ex2_26",
@@ -407,7 +428,8 @@ var EXAM_QUESTIONS = [
       "Drop User"
     ],
     correct: [2],
-    sourceImage: "screenshot_0026.png"
+    sourceImage: "screenshot_0026.png",
+    explanation: "DROP Login este comanda corectă pentru a șterge un cont de login. (Permission of Roles - D1018)"
   },
   {
     id: "ex2_27",
@@ -421,7 +443,8 @@ var EXAM_QUESTIONS = [
       "TINYINT"
     ],
     correct: [2],
-    sourceImage: "screenshot_0027.png"
+    sourceImage: "screenshot_0027.png",
+    explanation: "SMALLINT (2 bytes) poate stoca valori până la 32767, fiind mai economic decât INT (4 bytes). TINYINT (1 byte) nu acoperă până la 1024 (max 255). (Storage Requirements - D1007, Data Types for Storing Text - D1008)"
   },
   {
     id: "ex2_28",
@@ -435,7 +458,8 @@ var EXAM_QUESTIONS = [
       "SELECT lastname, firstname<br>FROM customers<br>WHERE city != 'Los Angeles' AND state != ('Oregon', 'Washington')"
     ],
     correct: [0],
-    sourceImage: "screenshot_0028.png"
+    sourceImage: "screenshot_0028.png",
+    explanation: "<> este operator standard, NOT IN este corect pentru excluderea mai multor stări. (NOT - D3014, IN and NOT IN - D3016)"
   },
   {
     id: "ex2_29",
@@ -449,7 +473,8 @@ var EXAM_QUESTIONS = [
       "View"
     ],
     correct: [3],
-    sourceImage: "screenshot_0029.png"
+    sourceImage: "screenshot_0029.png",
+    explanation: "Un view restricționează accesul la anumite rânduri sau coloane. Un index nu restricționează, ci accelerează. (Create, Alter, and Drop Views - D2003)"
   },
   {
     id: "ex2_30",
@@ -463,7 +488,8 @@ var EXAM_QUESTIONS = [
       "SET NOCOUNT ON"
     ],
     correct: [3],
-    sourceImage: "screenshot_0030.png"
+    sourceImage: "screenshot_0030.png",
+    explanation: "SET NOCOUNT ON suprimă mesajul de număr de rânduri afectate."
   },
   {
     id: "ex2_31",
@@ -477,7 +503,8 @@ var EXAM_QUESTIONS = [
       "Variable"
     ],
     correct: [2],
-    sourceImage: "screenshot_0031.png"
+    sourceImage: "screenshot_0031.png",
+    explanation: "O grupă de rânduri și coloane se numește tabel (table) sau entitate. (Entities, Rows, and Columns - D1002)"
   },
   {
     id: "ex2_32",
@@ -491,7 +518,8 @@ var EXAM_QUESTIONS = [
       "The use of SQL statements in high level languages."
     ],
     correct: [0],
-    sourceImage: "screenshot_0032.png"
+    sourceImage: "screenshot_0032.png",
+    explanation: "SQL injection exploatează vulnerabilități în stratul bazei de date al unei aplicații."
   },
   {
     id: "ex2_33",
@@ -505,7 +533,8 @@ var EXAM_QUESTIONS = [
       "The developer has insufficient permissions to delete the view."
     ],
     correct: [0],
-    sourceImage: "screenshot_0033.png"
+    sourceImage: "screenshot_0033.png",
+    explanation: "Pentru a șterge un view se folosește DROP VIEW, nu DELETE. (Create, Alter, and Drop Views - D2003)"
   },
   {
     id: "ex2_34",
@@ -533,7 +562,8 @@ var EXAM_QUESTIONS = [
       "Every non-trivial multivalued dependency in the table is a dependency on a superkey",
       "Every non-trivial Join dependency in the table is implied by the superkeys of the table"
     ],
-    sourceImage: "screenshot_0034.png"
+    sourceImage: "screenshot_0034.png",
+    explanation: "1NF: fără grupări repetitive. 2NF: fără dependențe parțiale. 3NF: fără dependențe tranzitive. 4NF: fără dependențe multivalorice non-triviale. 5NF: dependențe de join. (Reasons for Normalization - D1012, Third Normal Form - D1013)"
   },
   {
     id: "ex2_35",
@@ -546,8 +576,9 @@ var EXAM_QUESTIONS = [
       "A Function must be compiled every time it is called.",
       "Functions cannot be called from a Stored Procedure, but a Stored Procedure can be called from a Function."
     ],
-    correct: [2],
-    sourceImage: "screenshot_0035.png"
+    correct: [3],
+    sourceImage: "screenshot_0035.png",
+    explanation: "În SQL Server, funcțiile pot fi apelate din proceduri, dar procedurile nu pot fi apelate din funcții. (Input and Output Parameters - D2004, Return Values - D2005)"
   },
   {
     id: "ex2_36",
@@ -561,7 +592,8 @@ var EXAM_QUESTIONS = [
       "Compound key"
     ],
     correct: [2],
-    sourceImage: "screenshot_0036.png"
+    sourceImage: "screenshot_0036.png",
+    explanation: "FOREIGN KEY constrânge integritatea referențială. (Referential Integrity - D1011, Establishing Relationships - D1009)"
   },
   {
     id: "ex2_37",
@@ -575,7 +607,8 @@ var EXAM_QUESTIONS = [
       "View a subset of columns."
     ],
     correct: [0],
-    sourceImage: "screenshot_0037.png"
+    sourceImage: "screenshot_0037.png",
+    explanation: "WHERE filtrează rânduri (obține un subset de rânduri). (WHERE - D3009)"
   },
   {
     id: "ex2_38",
@@ -590,7 +623,8 @@ var EXAM_QUESTIONS = [
       "You can create a Foreign Key by defining a Foreign Key constraint when you create or alter a table"
     ],
     correct: [0, 1, 4],
-    sourceImage: "screenshot_0038.png"
+    sourceImage: "screenshot_0038.png",
+    explanation: "Cheile străine stabilesc legături între tabele, aplică integritatea referențială și se creează prin constrângeri. (Establishing Relationships - D1009)"
   },
   {
     id: "ex2_39",
@@ -604,7 +638,8 @@ var EXAM_QUESTIONS = [
       "0"
     ],
     correct: [0],
-    sourceImage: "screenshot_0039.png"
+    sourceImage: "screenshot_0039.png",
+    explanation: "Doar rândul 2 are Clothing='Shirt' AND Color='Blue', deci se actualizează un singur rând. (Update Data in a Single Table - D4003)"
   },
   {
     id: "ex2_40",
@@ -618,7 +653,8 @@ var EXAM_QUESTIONS = [
       "Structured Question Language"
     ],
     correct: [1],
-    sourceImage: "screenshot_0040.png"
+    sourceImage: "screenshot_0040.png",
+    explanation: "SQL = Structured Query Language."
   },
   {
     id: "ex2_41",
@@ -633,7 +669,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, false, true, true],
-    sourceImage: "screenshot_0041.png"
+    sourceImage: "screenshot_0041.png",
+    explanation: "ALTER TABLE poate ADD column, DROP multiple columns și ALTER COLUMN data type. Nu poate schimba IDENTITY. (Work with Tables - D2001)"
   },
   {
     id: "ex2_42",
@@ -656,7 +693,8 @@ var EXAM_QUESTIONS = [
       "Name VARCHAR(25)",
       "Cabin VARCHAR(25)"
     ],
-    sourceImage: "screenshot_0042.png"
+    sourceImage: "screenshot_0042.png",
+    explanation: "Sintaxa corectă: CREATE TABLE Campers ( ID INT, Name VARCHAR(25), Cabin VARCHAR(25) ). (Work with Tables - D2001)"
   },
   {
     id: "ex2_43",
@@ -670,7 +708,8 @@ var EXAM_QUESTIONS = [
       "Stored Procedures"
     ],
     correct: [1],
-    sourceImage: "screenshot_0043.png"
+    sourceImage: "screenshot_0043.png",
+    explanation: "Funcțiile definite de utilizator sunt folosite în interogări (queries), nu pentru a crea join-uri. (Input and Output Parameters - D2004)"
   },
   {
     id: "ex2_44",
@@ -691,32 +730,35 @@ var EXAM_QUESTIONS = [
       { label: "Imagine (tabel)", file: "screenshot_0044_img.png" },
       { label: "Raspusul 1", file: "screenshot_0044_r1.png" },
       { label: "Raspusul 2", file: "screenshot_0044_r2.png" }
-    ]
+    ],
+    explanation: "Cheia primară ar trebui să fie Student ID. 1234567 este un exemplu valid pentru un câmp numeric. (Primary Key - D1003)"
   },
   {
-  id: "ex2_45",
-  type: "dropdown",
-  question: "A new database administrator wants to test a backup and restore for the sales database on a SQL server. Using the dropdown arrows, choose the correct code for both a full backup of the database to the backups folder on the E: drive, naming the backup sales.bak, and a restore of the database.",
-  image: null,
-  statements: [
-    "What is the correct statement for backing up the database?",
-    "What is the correct statement for restoring the database?"
-  ],
-  options: [
-    [
-      "BACKUP DATABASE sales TO 'E:\\backups\\sales.bak'",
-      "CREATE BACKUP TO DISK = 'E:\\backups\\sales.bak' FROM SALES",
-      "BACKUP DATABASE sales TO DISK = 'E:\\backups\\sales.bak'"
+    id: "ex2_45",
+    type: "dropdown",
+    question: "A new database administrator wants to test a backup and restore for the sales database on a SQL server. Using the dropdown arrows, choose the correct code for both a full backup of the database to the backups folder on the E: drive, naming the backup sales.bak, and a restore of the database.",
+    image: null,
+    statements: [
+      "What is the correct statement for backing up the database?",
+      "What is the correct statement for restoring the database?"
     ],
-    [
-      "CREATE RESTORE sales FROM 'E:\\backups\\sales.bak'",
-      "RESTORE DATABASE sales FROM DISK = 'E:\\backups\\sales.bak'",
-      "RESTORE DATABASE sales FROM 'E:\\backups\\sales.bak'"
-    ]
-  ],
-  correct: [
-    "BACKUP DATABASE sales TO DISK = 'E:\\backups\\sales.bak'",
-    "RESTORE DATABASE sales FROM DISK = 'E:\\backups\\sales.bak'"
-  ]
-}
+    options: [
+      [
+        "BACKUP DATABASE sales TO 'E:\\backups\\sales.bak'",
+        "CREATE BACKUP TO DISK = 'E:\\backups\\sales.bak' FROM SALES",
+        "BACKUP DATABASE sales TO DISK = 'E:\\backups\\sales.bak'"
+      ],
+      [
+        "CREATE RESTORE sales FROM 'E:\\backups\\sales.bak'",
+        "RESTORE DATABASE sales FROM DISK = 'E:\\backups\\sales.bak'",
+        "RESTORE DATABASE sales FROM 'E:\\backups\\sales.bak'"
+      ]
+    ],
+    correct: [
+      "BACKUP DATABASE sales TO DISK = 'E:\\backups\\sales.bak'",
+      "RESTORE DATABASE sales FROM DISK = 'E:\\backups\\sales.bak'"
+    ],
+    sourceImage: null,
+    explanation: "BACKUP DATABASE ... TO DISK = ... și RESTORE DATABASE ... FROM DISK = ... sunt sintaxele corecte. (Backups - D1014, Restore - D1014U)"
+  }
 ];

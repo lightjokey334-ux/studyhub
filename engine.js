@@ -1194,7 +1194,10 @@ class QuestionEngine {
         return checked.value === 'true';
       });
     } else if (q.type === 'dropdown') {
-      this.userAnswers[q.id] = q.statements.map((_, i) => {
+      const dropdownCount = /____+/.test(q.question || '')
+        ? (q.question.match(/____+/g) || []).length
+        : (q.statements || []).length;
+      this.userAnswers[q.id] = Array.from({ length: dropdownCount }, (_, i) => {
         const sel = body.querySelector(`.qe-dd-select[data-row="${i}"]`);
         return (sel && sel.value) ? sel.value : null;
       });
@@ -1355,22 +1358,32 @@ class QuestionEngine {
       }
 
       case 'dropdown': {
-        html += `<div class="qe-text">${q.question}</div>`;
         const saved = this.userAnswers[q.id] || [];
-        html += `<div class="qe-dd-list">`;
-        q.statements.forEach((stmt, i) => {
+        const renderSelect = (i) => {
           const val = saved[i] || '';
           const rowOptions = (q.options && q.options[i]) || [];
-          html += `
-            <div class="qe-dd-row">
-              <span class="qe-dd-label">${stmt}</span>
-              <select class="qe-dd-select" data-row="${i}" ${disabledAttr}>
-                <option value="" ${!val ? 'selected' : ''} disabled>Alege...</option>
-                ${rowOptions.map(opt => `<option value="${escapeAttr(opt)}" ${val === opt ? 'selected' : ''}>${opt}</option>`).join('')}
-              </select>
-            </div>`;
-        });
-        html += `</div>`;
+          return `<select class="qe-dd-select" data-row="${i}" ${disabledAttr}>
+            <option value="" ${!val ? 'selected' : ''} disabled>Alege...</option>
+            ${rowOptions.map(opt => `<option value="${escapeAttr(opt)}" ${val === opt ? 'selected' : ''}>${opt}</option>`).join('')}
+          </select>`;
+        };
+
+        if (/____+/.test(q.question || '')) {
+          let dropdownIndex = 0;
+          const inlineText = q.question.replace(/____+/g, () => renderSelect(dropdownIndex++));
+          html += `<div class="qe-text qe-dd-inline-text">${inlineText}</div>`;
+        } else {
+          html += `<div class="qe-text">${q.question}</div>`;
+          html += `<div class="qe-dd-list">`;
+          (q.statements || []).forEach((stmt, i) => {
+            html += `
+              <div class="qe-dd-row">
+                <span class="qe-dd-label">${stmt}</span>
+                ${renderSelect(i)}
+              </div>`;
+          });
+          html += `</div>`;
+        }
         break;
       }
       case 'info': {
@@ -1757,10 +1770,11 @@ class QuestionEngine {
 
     if (q.type === 'dropdown') {
       const arr = Array.isArray(given) ? given : [];
-      return q.statements.map((stmt, i) => ({
-        label: stmt,
+      const labels = q.statements || q.correct.map((_, i) => `Spațiul ${i + 1}`);
+      return q.correct.map((correctAnswer, i) => ({
+        label: labels[i],
         yourAnswer: arr[i] || NONE,
-        correctAnswer: q.correct[i],
+        correctAnswer,
       }));
     }
 

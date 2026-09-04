@@ -1,14 +1,10 @@
 /* ===================================================================
    Examen 1 — Databases
-   Completează array-ul de mai jos cu întrebările testului (ex: cu Deepseek).
-   Vezi README.md din rădăcina proiectului pentru schema completă.
-
-   Tipuri disponibile: "single", "multi", "order", "blank", "dragtext"
    =================================================================== */
 
 var EXAM_TITLE = "Databases — Examen 1";
-var EXAM_ID = "Databases_exam1"; // folosit pentru istoricul de progres
-var EXAM_RANDOMIZE = true; // pune true dacă vrei amestecarea întrebărilor pentru acest test
+var EXAM_ID = "Databases_exam1";
+var EXAM_RANDOMIZE = true;
 
 var EXAM_QUESTIONS = [
   {
@@ -19,7 +15,8 @@ var EXAM_QUESTIONS = [
     pairs: ["Step 1", "Step 2", "Step 3"],
     options: ["SELECT *", "FROM", "SELECT ALL", "FROM clients", "SELECT FROM CLIENTS", "WHERE state = 'New Mexico' AND city = 'Roswell'"],
     correct: ["SELECT *", "FROM clients", "WHERE state = 'New Mexico' AND city = 'Roswell'"],
-    sourceImage: "screenshot_0001.png"
+    sourceImage: "screenshot_0001.png",
+    explanation: "The correct SQL query is: SELECT * FROM clients WHERE state = 'New Mexico' AND city = 'Roswell'. SELECT * selects all columns, FROM clients specifies the table, and WHERE filters for both conditions using AND. (WHERE - D3009, AND - D3012)"
   },
   {
     id: "ex1_02",
@@ -33,7 +30,8 @@ var EXAM_QUESTIONS = [
       "DELETE UPDATE FROM USER : alpha ON employees"
     ],
     correct: [0],
-    sourceImage: "screenshot_0002.png"
+    sourceImage: "screenshot_0002.png",
+    explanation: "REVOKE is used to remove previously granted permissions. The correct syntax is: REVOKE UPDATE ON OBJECT :: employees FROM alpha. (Permission Revokes - D1017)"
   },
   {
     id: "ex1_03",
@@ -47,7 +45,8 @@ var EXAM_QUESTIONS = [
       "SELECT DISTINCT flowername FROM flowers"
     ],
     correct: [3],
-    sourceImage: "screenshot_0003.png"
+    sourceImage: "screenshot_0003.png",
+    explanation: "DISTINCT removes duplicate rows from the result set. The correct syntax is SELECT DISTINCT flowername FROM flowers. (DISTINCT - D3005)"
   },
   {
     id: "ex1_04",
@@ -61,7 +60,8 @@ var EXAM_QUESTIONS = [
       "The object type needs to be specified within the UPDATE statement"
     ],
     correct: [1],
-    sourceImage: "screenshot_0004.png"
+    sourceImage: "screenshot_0004.png",
+    explanation: "SQL does not use IF for filtering rows in an UPDATE statement. The correct keyword is WHERE: UPDATE Customers SET Status = 'Gold' WHERE TotalAmount > 10000. (Update Data in a Single Table - D4003)"
   },
   {
     id: "ex1_05",
@@ -75,7 +75,8 @@ var EXAM_QUESTIONS = [
       "SELECT firstname, lastname, subtotal, subtotal * .05 as sales_tax <br>FROM customers <br>INNER JOIN orders on customers.customerid = orders.customerd"
     ],
     correct: [1],
-    sourceImage: "screenshot_0005.png"
+    sourceImage: "screenshot_0005.png",
+    explanation: "INNER JOIN shows only customers who have placed orders (matching records in both tables). The computed column subtotal * .05 as sales_tax calculates the tax. (Join Types - D3001, Computed Columns - D3007)"
   },
   {
     id: "ex1_06",
@@ -89,7 +90,8 @@ var EXAM_QUESTIONS = [
       "orderdate SMALLDATETIME"
     ],
     correct: [2, 3],
-    sourceImage: "screenshot_0006.png"
+    sourceImage: "screenshot_0006.png",
+    explanation: "DATETIME and SMALLDATETIME both store date and time in YYYY-MM-DD HH:MI:SS format. DATE stores only date. TIMESTAMP is different and used for row versioning. (Data Types for Storing Text - D1008)"
   },
   {
     id: "ex1_07",
@@ -103,7 +105,8 @@ var EXAM_QUESTIONS = [
       "The table faithfully represents a relation and has no repeating groups."
     ],
     correct: [0],
-    sourceImage: "screenshot_0007.png"
+    sourceImage: "screenshot_0007.png",
+    explanation: "Third normal form (3NF) requires that every non-prime attribute is non-transitively dependent on every candidate key. Option 0 is the correct definition. (Third Normal Form - D1013)"
   },
   {
     id: "ex1_08",
@@ -117,7 +120,8 @@ var EXAM_QUESTIONS = [
       "SELECT log_date, calls FROM call_log GROUP BY log_date;"
     ],
     correct: [1],
-    sourceImage: "screenshot_0008.png"
+    sourceImage: "screenshot_0008.png",
+    explanation: "The subquery (SELECT MIN(calls) FROM call_log) finds the lowest number of calls. The outer query then returns the date(s) and calls count matching that value. (MIN and MAX - D3023)"
   },
   {
     id: "ex1_09",
@@ -131,7 +135,8 @@ var EXAM_QUESTIONS = [
       "The result of the execution of a query."
     ],
     correct: [2],
-    sourceImage: "screenshot_0009.png"
+    sourceImage: "screenshot_0009.png",
+    explanation: "ALTER VIEW changes an existing view definition without dropping it. The correct syntax is: ALTER VIEW vw_customers AS SELECT customerid, firstname, lastname FROM customers. (Create, Alter, and Drop Views - D2003)"
   },
   {
     id: "ex1_10",
@@ -151,7 +156,8 @@ var EXAM_QUESTIONS = [
       { label: "Întrebare", file: "screenshot_0010.png" },
       { label: "q10 r1", file: "q10 r1.png" },
       { label: "q10 r2", file: "q10 r2.png" }
-    ]
+    ],
+    explanation: "Clustered indexes sort and store data rows in order based on the clustered key. Non-clustered indexes store data in a separate structure from the table. (Clustered Indexes - D2006, Nonclustered Indexes - D2007)"
   },
   {
     id: "ex1_11",
@@ -165,33 +171,35 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, true, true],
-    sourceImage: "screenshot_0011.png"
+    sourceImage: "screenshot_0011.png",
+    explanation: "Unique constraints allow NULL values and there can be multiple per table, while a primary key does not allow NULL and there is only one per table. User ID is a valid primary key example. Foreign keys store table relationships. (Primary Key - D1003, Establishing Relationships - D1009)"
   },
   {
-  id: "ex1_12",
-  type: "match",
-  question: "Match each JOIN type to its function.",
-  image: null,
-  pairs: [
-    "Returns all rows from the left table, even if there are no matches in the right table.",
-    "Returns all rows from the right table, even if there are no matches in the left table.",
-    "Returns rows when there is a match in one of the tables.",
-    "Returns rows when there is at least one match in both tables."
-  ],
-  options: [
-    "INNER JOIN",
-    "RIGHT OUTER JOIN",
-    "LEFT OUTER JOIN",
-    "FULL OUTER JOIN"
-  ],
-  correct: [
-    "LEFT OUTER JOIN",
-    "RIGHT OUTER JOIN",
-    "FULL OUTER JOIN",
-    "INNER JOIN"
-  ],
-  sourceImage: "screenshot_0012.png"
-},
+    id: "ex1_12",
+    type: "match",
+    question: "Match each JOIN type to its function.",
+    image: null,
+    pairs: [
+      "Returns all rows from the left table, even if there are no matches in the right table.",
+      "Returns all rows from the right table, even if there are no matches in the left table.",
+      "Returns rows when there is a match in one of the tables.",
+      "Returns rows when there is at least one match in both tables."
+    ],
+    options: [
+      "INNER JOIN",
+      "RIGHT OUTER JOIN",
+      "LEFT OUTER JOIN",
+      "FULL OUTER JOIN"
+    ],
+    correct: [
+      "LEFT OUTER JOIN",
+      "RIGHT OUTER JOIN",
+      "FULL OUTER JOIN",
+      "INNER JOIN"
+    ],
+    sourceImage: "screenshot_0012.png",
+    explanation: "LEFT OUTER JOIN returns all left table rows; RIGHT OUTER JOIN returns all right table rows; FULL OUTER JOIN returns rows with a match in either table; INNER JOIN returns only matching rows. (Join Types - D3001)"
+  },
   {
     id: "ex1_13",
     type: "truefalse",
@@ -205,7 +213,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, false, true, true],
-    sourceImage: "screenshot_0013.png"
+    sourceImage: "screenshot_0013.png",
+    explanation: "ALTER TABLE can ADD columns, DROP multiple columns, and ALTER COLUMN data type. Changing IDENTITY specification of an existing column is not possible in SQL Server without dropping and recreating. (Work with Tables - D2001)"
   },
   {
     id: "ex1_14",
@@ -219,7 +228,8 @@ var EXAM_QUESTIONS = [
       "Compound key"
     ],
     correct: [2],
-    sourceImage: "screenshot_0014.png"
+    sourceImage: "screenshot_0014.png",
+    explanation: "A FOREIGN KEY constraint enforces referential integrity by ensuring that every value in the foreign key column exists in the referenced primary key column. (Referential Integrity - D1011, Establishing Relationships - D1009)"
   },
   {
     id: "ex1_15",
@@ -233,7 +243,8 @@ var EXAM_QUESTIONS = [
       "INSERT INTO table_name <br>VALUES (value1, value2, value3,...)"
     ],
     correct: [1],
-    sourceImage: "screenshot_0015.png"
+    sourceImage: "screenshot_0015.png",
+    explanation: "Multiple row insertion uses comma-separated value sets after VALUES. The syntax is: INSERT INTO table_name (column1, column2) VALUES (value1a,value1b), (value2a, value2b). (INSERT INTO...VALUES - D4002)"
   },
   {
     id: "ex1_16",
@@ -247,7 +258,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [false, true, false],
-    sourceImage: "screenshot_0016.png"
+    sourceImage: "screenshot_0016.png",
+    explanation: "GROUP BY must contain all non-aggregated fields in the SELECT list. HAVING and WHERE are optional, not required. (GROUP BY and SUM - D3021, HAVING - D3022)"
   },
   {
     id: "ex1_17",
@@ -261,7 +273,8 @@ var EXAM_QUESTIONS = [
       "UPDATE Ticket SET Park = Ticket * 1.1"
     ],
     correct: [2],
-    sourceImage: "screenshot_0017.png"
+    sourceImage: "screenshot_0017.png",
+    explanation: "To increase by 10%, multiply the existing value by 1.1: UPDATE Park SET Ticket = Ticket * 1.1. This updates the Ticket column in the Park table. (Update Data in a Single Table - D4003)"
   },
   {
     id: "ex1_18",
@@ -270,7 +283,8 @@ var EXAM_QUESTIONS = [
     image: null,
     options: ["SORT BY", "WHERE", "WHEN", "ORDER BY", "HAVING"],
     correct: ["WHERE", "ORDER BY"],
-    sourceImage: "screenshot_0018.png"
+    sourceImage: "screenshot_0018.png",
+    explanation: "WHERE filters records (state = 'UT'). ORDER BY sorts results (lastname). (WHERE - D3009, ORDER BY - D3008)"
   },
   {
     id: "ex1_19",
@@ -284,7 +298,8 @@ var EXAM_QUESTIONS = [
       "A schema is missing."
     ],
     correct: [0],
-    sourceImage: "screenshot_0019.png"
+    sourceImage: "screenshot_0019.png",
+    explanation: "FirstName is in the SELECT list but is not included in GROUP BY. All non-aggregated columns must be in GROUP BY. The correct GROUP BY should be: GROUP BY LastName, FirstName. (GROUP BY and SUM - D3021)"
   },
   {
     id: "ex1_20",
@@ -298,7 +313,8 @@ var EXAM_QUESTIONS = [
       "Deleting an order deletes the first detail of that order."
     ],
     correct: [1],
-    sourceImage: "screenshot_0020.png"
+    sourceImage: "screenshot_0020.png",
+    explanation: "A cascading delete means that when a parent record (order) is deleted, all related child records (order details) are automatically deleted. (Truncate Table - D4005)"
   },
   {
     id: "ex1_21",
@@ -312,7 +328,8 @@ var EXAM_QUESTIONS = [
       "Reduces the size of a database."
     ],
     correct: [0, 1],
-    sourceImage: "screenshot_0021.png"
+    sourceImage: "screenshot_0021.png",
+    explanation: "Normalization reduces data redundancy (duplicates) and reduces dependencies between data. It may actually increase the number of tables. (Reasons for Normalization - D1012, Third Normal Form - D1013)"
   },
   {
     id: "ex1_22",
@@ -326,7 +343,8 @@ var EXAM_QUESTIONS = [
       "Gomez"
     ],
     correct: [1],
-    sourceImage: "screenshot_0022.png"
+    sourceImage: "screenshot_0022.png",
+    explanation: "MAX(Salary) returns the highest salary from the table. The highest value is 83000 (Gomez). (MIN and MAX - D3023)"
   },
   {
     id: "ex1_23",
@@ -343,7 +361,8 @@ var EXAM_QUESTIONS = [
     sourceImage: [
       { label: "Întrebare", file: "screenshot_0023.png" },
       { label: "q23 ce", file: "q23_ceeacenusevedea.png" }
-    ]
+    ],
+    explanation: "AND ensures sales ≥ 50000. OR combines the location criteria: (city='Los Angeles' AND state='California') OR state IN ('Nevada','Arizona'). (AND - D3012, OR - D3013, NOT - D3014, IN and NOT IN - D3016)"
   },
   {
     id: "ex1_24",
@@ -357,7 +376,8 @@ var EXAM_QUESTIONS = [
       "TRUNCATE TABLE testtable"
     ],
     correct: [0],
-    sourceImage: "screenshot_0024.png"
+    sourceImage: "screenshot_0024.png",
+    explanation: "DROP TABLE removes the entire table structure from the database. DELETE removes rows only. TRUNCATE removes all rows but keeps the table structure. (Work with Tables - D2001)"
   },
   {
     id: "ex1_25",
@@ -381,7 +401,8 @@ var EXAM_QUESTIONS = [
       "WHERE orderdetailid = @orderdetailid",
       "END"
     ],
-    sourceImage: "screenshot_0025.png"
+    sourceImage: "screenshot_0025.png",
+    explanation: "A stored procedure with an input parameter (@orderdetailID) and an output parameter (@orderID OUTPUT). The SELECT assigns the orderID to the output parameter. (Input and Output Parameters - D2004, Return Values - D2005)"
   },
   {
     id: "ex1_26",
@@ -395,7 +416,8 @@ var EXAM_QUESTIONS = [
       "CREATE TABLE Signups ( studentID varchar(5) UNIQUE NOT NULL, classID varchar(5) UNIQUE NOT NULL, signupdate DATETIME, composite key (studentID, classID) )"
     ],
     correct: [0],
-    sourceImage: "screenshot_0026.png"
+    sourceImage: "screenshot_0026.png",
+    explanation: "A composite primary key uses the syntax: PRIMARY KEY (studentID, classID). The keyword is PRIMARY KEY (singular) and the columns are listed in parentheses. (Composite/Compound Key 1 - D1004, Composite/Compound Key 2 - D1005)"
   },
   {
     id: "ex1_27",
@@ -409,33 +431,35 @@ var EXAM_QUESTIONS = [
       "Change ALL to IN"
     ],
     correct: [3],
-    sourceImage: "screenshot_0027.png"
+    sourceImage: "screenshot_0027.png",
+    explanation: "ALL requires the condition to be true for every value in the subquery (which doesn't make sense here). IN checks if the EmployeeID is in the subquery result set, which will return all employees with matching IDs. (ALL - D3018, IN and NOT IN - D3016)"
   },
   {
-  id: "ex1_28",
-  type: "match",
-  question: "Match each database component to its function.",
-  image: null,
-  pairs: [
-    "A group of database items listed left to right (horizontally)",
-    "A group of items listed up and down (vertically)",
-    "A location in a record in which a particular type of data is stored.",
-    "A table of rows and columns. Used to store and organize data."
-  ],
-  options: [
-    "Column",
-    "Field",
-    "Row",
-    "Entity"
-  ],
-  correct: [
-    "Row",
-    "Column",
-    "Field",
-    "Entity"
-  ],
-  sourceImage: "screenshot_0028.png"
-},
+    id: "ex1_28",
+    type: "match",
+    question: "Match each database component to its function.",
+    image: null,
+    pairs: [
+      "A group of database items listed left to right (horizontally)",
+      "A group of items listed up and down (vertically)",
+      "A location in a record in which a particular type of data is stored.",
+      "A table of rows and columns. Used to store and organize data."
+    ],
+    options: [
+      "Column",
+      "Field",
+      "Row",
+      "Entity"
+    ],
+    correct: [
+      "Row",
+      "Column",
+      "Field",
+      "Entity"
+    ],
+    sourceImage: "screenshot_0028.png",
+    explanation: "Row = horizontal group of items (record). Column = vertical group of items. Field = location in a record where data is stored (synonym for column). Entity = table of rows and columns. (Entities, Rows, and Columns - D1002)"
+  },
   {
     id: "ex1_29",
     type: "single",
@@ -448,7 +472,8 @@ var EXAM_QUESTIONS = [
       "SELECT orderid, ordertype, orderdate, customerid <br>FROM orders <br>WHERE orderdate <> NULL AND NOT ordertype = 'pre-order'"
     ],
     correct: [2],
-    sourceImage: "screenshot_0029.png"
+    sourceImage: "screenshot_0029.png",
+    explanation: "AND combines both conditions: completed orders (orderdate IS NOT NULL) and not pre-orders (NOT ordertype = 'pre-order'). IS NOT NULL is the correct syntax for checking non-empty values. (NULL and NOT NULL Values - D3019, NOT - D3014)"
   },
   {
     id: "ex1_30",
@@ -462,7 +487,8 @@ var EXAM_QUESTIONS = [
       "SELECT product from products LEFT OUTER JOIN location from locations ON products.product = locations.location"
     ],
     correct: [0],
-    sourceImage: "screenshot_0030.png"
+    sourceImage: "screenshot_0030.png",
+    explanation: "CROSS JOIN (Cartesian product) returns every combination of rows from both tables. This is used when each item should be paired with every location. (Cartesian Product - D3002)"
   },
   {
     id: "ex1_31",
@@ -476,7 +502,8 @@ var EXAM_QUESTIONS = [
       "The creation of a view called cambridge_data with the data ordered by the field FullName."
     ],
     correct: [1],
-    sourceImage: "screenshot_0031.png"
+    sourceImage: "screenshot_0031.png",
+    explanation: "In SQL Server, ORDER BY is not allowed directly in a view definition. Instead, use ORDER BY in the query that selects from the view. (Create, Alter, and Drop Views - D2003)"
   },
   {
     id: "ex1_32",
@@ -495,7 +522,8 @@ var EXAM_QUESTIONS = [
       "VALUES ('Snickerdoodle', 77)"
     ],
     correct: ["INSERT INTO Cookies (Name, CookieID)", "VALUES ('Snickerdoodle', 77)"],
-    sourceImage: "screenshot_0032.png"
+    sourceImage: "screenshot_0032.png",
+    explanation: "The correct syntax is: INSERT INTO table (column1, column2) VALUES (value1, value2). Column order and value order must match. (INSERT INTO...VALUES - D4002)"
   },
   {
     id: "ex1_33",
@@ -509,7 +537,8 @@ var EXAM_QUESTIONS = [
       "Referential integrity"
     ],
     correct: [2],
-    sourceImage: "screenshot_0033.png"
+    sourceImage: "screenshot_0033.png",
+    explanation: "The primary key uniquely identifies each record, even if other columns have identical values. (Primary Key - D1003)"
   },
   {
     id: "ex1_34",
@@ -523,7 +552,8 @@ var EXAM_QUESTIONS = [
       "The first record will be deleted by default."
     ],
     correct: [0],
-    sourceImage: "screenshot_0034.png"
+    sourceImage: "screenshot_0034.png",
+    explanation: "DELETE without a WHERE clause removes ALL records from the table. Always use a WHERE clause to limit deletions. (Delete Data from a Single Table - D4004, Truncate Table - D4005)"
   },
   {
     id: "ex1_35",
@@ -537,7 +567,8 @@ var EXAM_QUESTIONS = [
       "Active INT"
     ],
     correct: [0],
-    sourceImage: "screenshot_0035.png"
+    sourceImage: "screenshot_0035.png",
+    explanation: "BIT stores either 0 or 1 and is perfect for boolean/flag fields. VARCHAR(1) could store any character, INT could store many values, CHECK is a constraint, not a data type. (Importance of Data Types - D1006)"
   },
   {
     id: "ex1_36",
@@ -555,7 +586,8 @@ var EXAM_QUESTIONS = [
       "SET FirstName = 'Kayden'"
     ],
     correct: ["UPDATE Students", "SET FirstName = 'Kayden'", "WHERE FirstName = 'Benjamin'"],
-    sourceImage: "screenshot_0036.png"
+    sourceImage: "screenshot_0036.png",
+    explanation: "The UPDATE statement needs: UPDATE table, SET column = new_value, and WHERE to identify which record(s) to update. (Update Data in a Single Table - D4003)"
   },
   {
     id: "ex1_37",
@@ -568,8 +600,9 @@ var EXAM_QUESTIONS = [
       "A Function must be compiled every time it is called.",
       "Functions cannot be called from a Stored Procedure, but a Stored Procedure can be called from a Function."
     ],
-    correct: [0],
-    sourceImage: "screenshot_0037.png"
+    correct: [3],
+    sourceImage: "screenshot_0037.png",
+    explanation: "In SQL Server, functions CAN be called from stored procedures, but stored procedures CANNOT be called from functions. Also, stored procedures have input and output parameters; functions have input parameters and return a value. (Input and Output Parameters - D2004, Return Values - D2005)"
   },
   {
     id: "ex1_38",
@@ -600,7 +633,8 @@ var EXAM_QUESTIONS = [
       { label: "Întrebare", file: "screenshot_0038.png" },
       { label: "q38 r1", file: "q38 r1.png" },
       { label: "q38 r2", file: "q38 r2.png" }
-    ]
+    ],
+    explanation: "GRANT EXECUTE is used for stored procedures. GRANT SELECT is used for views. WITH GRANT OPTION allows the grantee to grant the same permission to others. (Permission Grants - D1016, Permission of Roles - D1018, Permission of Roles (2) - D1019)"
   },
   {
     id: "ex1_39",
@@ -614,7 +648,8 @@ var EXAM_QUESTIONS = [
       "The number of records in the employees table."
     ],
     correct: [3],
-    sourceImage: "screenshot_0039.png"
+    sourceImage: "screenshot_0039.png",
+    explanation: "COUNT(*) returns the total number of rows (records) in the table. (COUNT and AVG - D3024)"
   },
   {
     id: "ex1_40",
@@ -628,7 +663,8 @@ var EXAM_QUESTIONS = [
     ],
     labels: ["Yes", "No"],
     correct: [true, false, true],
-    sourceImage: "screenshot_0040.png"
+    sourceImage: "screenshot_0040.png",
+    explanation: "CHAR is fixed-length, VARCHAR is variable-length, TEXT (in SQL Server) is variable-length. TEXT is not fixed-length. (Data Types for Storing Text - D1008)"
   },
   {
     id: "ex1_41",
@@ -641,18 +677,21 @@ var EXAM_QUESTIONS = [
       "DATE NULL",
       "IMAGE NULL",
       "INT NOT NULL FOREIGN KEY",
-      "TIMESTAMP NULL"
+      "TIMESTAMP NULL",
+      "NULL"
     ],
     correct: [
       "INT NOT NULL PRIMARY KEY",
       "NCHAR(255) NULL",
+      "NULL",
       "DATE NULL",
       "IMAGE NULL"
     ],
     sourceImage: [
       { label: "Întrebare", file: "screenshot_0041.png" },
       { label: "q41 jos", file: "q41 jos.png" }
-    ]
+    ],
+    explanation: "Id needs INT NOT NULL PRIMARY KEY (unique identifier). LastName uses NCHAR(255) NULL (variable-length Unicode). DateOfBirth uses DATE NULL. Photo uses IMAGE NULL. The placeholder {{3}} is an additional column with no specific requirement. (Work with Tables - D2001, NULL and NOT NULL - D2002)"
   },
   {
     id: "ex1_42",
@@ -666,7 +705,8 @@ var EXAM_QUESTIONS = [
       "Roles are states of a database."
     ],
     correct: [2],
-    sourceImage: "screenshot_0042.png"
+    sourceImage: "screenshot_0042.png",
+    explanation: "Roles are containers of permissions that can be assigned to users and groups, simplifying security management. (Permission of Roles - D1018, Permission of Roles (2) - D1019)"
   },
   {
     id: "ex1_43",
@@ -680,6 +720,7 @@ var EXAM_QUESTIONS = [
       "DROP VIEW potential_customers"
     ],
     correct: [3],
-    sourceImage: "screenshot_0043.png"
+    sourceImage: "screenshot_0043.png",
+    explanation: "DROP VIEW removes only the view definition, not the underlying data. DELETE removes data, not objects. (Create, Alter, and Drop Views - D2003)"
   }
 ];
